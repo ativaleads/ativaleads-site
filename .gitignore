@@ -1,0 +1,8 @@
+# Fontes de imagem locais; os arquivos otimizados são publicados.
+/Logo Ativaleads*.png
+/Favicon Ed Ativaleads*.png
+# Segredos e artefatos locais
+.env
+.env.*
+*.log
+__pycache__/
