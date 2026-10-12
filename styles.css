@@ -199,3 +199,6 @@ details p { font-size: .92rem; color: var(--muted); margin: 15px 0 0; }
 .sponsored-copy .post-time{margin-top:8px;font-size:.68rem;color:var(--muted)}
 .connection-art .art-footnote{position:static;margin-top:12px}
 .connection-art{padding-bottom:0}
+/* Fotos do anúncio e dos cartões. */
+.property-photo>img,.campaign-photo>img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-post>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% center}
