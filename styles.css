@@ -180,3 +180,22 @@ details p { font-size: .92rem; color: var(--muted); margin: 15px 0 0; }
 .sponsored-copy>strong{font-size:1.15rem}
 .sponsored-copy p{font-size:.8rem}.sponsored-copy p b{color:var(--ink);margin-right:5px}
 .sponsored-copy .tags{color:var(--green-dark);font-size:.72rem;margin-top:-6px}
+/* Anúncio fictício do hero, no formato de feed. */
+.connection-art .ad-preview{border-radius:10px;border:1px solid var(--line);overflow:hidden}
+.mini-brand{padding:12px 14px;gap:10px}
+.avatar-ring{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:conic-gradient(var(--green),#007a3f,var(--green))}
+.avatar-ring .brand-mark{width:32px;height:32px;box-shadow:0 0 0 2px #fff;font-size:1.1rem}
+.mini-brand .who{font-size:.8rem;line-height:1.2}.mini-brand .who small{font-size:.66rem;color:var(--muted);letter-spacing:0}
+.mini-brand .dots{margin-left:auto;width:20px;height:20px;color:var(--ink);fill:currentColor;stroke:none}
+.property-photo{position:relative}
+.photo-count{position:absolute;top:12px;right:12px;background:#092338b3;color:#fff;font-size:.62rem;padding:3px 9px;border-radius:12px;letter-spacing:.04em}
+.cta-bar{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.82rem;font-weight:600;color:var(--ink);background:#fff}
+.cta-bar .icon{width:20px;height:20px;color:var(--green-dark)}.cta-bar .arrow{margin-left:auto;width:16px;height:16px;color:var(--muted)}
+.cta-bar:hover{background:#f3f6f1}
+.sponsored-copy{border:0;border-radius:0 0 10px 10px;padding:12px 14px 16px}
+.post-actions{align-items:center;gap:12px;margin-bottom:10px}.post-actions .icon{width:22px;height:22px}
+.carousel-dots{display:flex;gap:4px;margin-left:auto;margin-right:auto;padding-left:70px}.carousel-dots i{width:5px;height:5px;border-radius:50%;background:#c5d0cb}.carousel-dots i.on{background:var(--green-dark)}
+.sponsored-copy p{font-size:.8rem;line-height:1.55;margin:0;color:var(--ink)}.sponsored-copy p b{margin-right:4px}
+.sponsored-copy .post-time{margin-top:8px;font-size:.68rem;color:var(--muted)}
+.connection-art .art-footnote{position:static;margin-top:12px}
+.connection-art{padding-bottom:0}
