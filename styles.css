@@ -173,3 +173,10 @@ details p { font-size: .92rem; color: var(--muted); margin: 15px 0 0; }
 .illus{display:block;width:100%;height:100%}
 .property-photo .illus,.campaign-photo>.illus{width:100%;height:100%}
 .photo-post>.illus{position:absolute;inset:0;width:100%;height:100%}
+/* Postagem fictícia do hero. */
+.mini-brand .who{font-weight:600;font-size:.78rem;line-height:1.25}.mini-brand .who small{font-weight:400;font-size:.66rem}
+.mini-brand>span:last-child{font-size:.66rem;color:var(--muted);font-weight:400}
+.post-actions{display:flex;gap:14px;color:var(--ink);margin-bottom:14px}.post-actions .save{margin-left:auto}
+.sponsored-copy>strong{font-size:1.15rem}
+.sponsored-copy p{font-size:.8rem}.sponsored-copy p b{color:var(--ink);margin-right:5px}
+.sponsored-copy .tags{color:var(--green-dark);font-size:.72rem;margin-top:-6px}
