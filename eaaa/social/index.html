@@ -123,6 +123,9 @@ section{padding:88px 0;scroll-margin-top:60px}
 .passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
 .rodape{background:var(--tinta2);color:#a9b0b8;padding:40px 0;font-size:14px}
 .rodape b{color:#efe9de;font-weight:500}
+.perfil-wrap>*,.carrossel>*,.duas>*{min-width:0}
+@media (max-width:899px){.perfil-wrap,.carrossel{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:819px){.duas{grid-template-columns:minmax(0,1fr)}}
 .bio-prop{margin:18px 0 0;padding:16px 18px;border-left:2px solid var(--ouro2);background:rgba(255,255,255,.6);font-size:15px;line-height:1.55}
 .bio-prop small{display:block;font:500 11px 'IBM Plex Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
 .surge{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
@@ -210,7 +213,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 
 <section id="perfil" class="creme">
   <div class="faixa perfil-wrap">
-    <div class="tela-ig" aria-label="Simulação do perfil no Instagram"><div tabindex="0"><img src="img/feed.jpg" alt="Simulação do perfil @emilsonantunes_aa com doze publicações em formatos diferentes" loading="lazy"></div></div>
+    <div class="tela-ig" aria-label="Simulação do perfil no Instagram"><div tabindex="0"><img src="img/feed.jpg?v=s42" alt="Simulação do perfil @emilsonantunes_aa com doze publicações em formatos diferentes" loading="lazy"></div></div>
     <div>
       <div class="chapeu">4 · Instagram e Facebook</div>
       <h2 class="surge">Retomar o perfil que já tem 6,7 mil seguidores.</h2>
@@ -340,7 +343,7 @@ section{padding:88px 0;scroll-margin-top:60px}
     trilho.innerHTML = ""; pontos.innerHTML = "";
     for (var s = 1; s <= 6; s++){
       var im = document.createElement("img");
-      im.src = "img/p" + (tema + 1) + dir + s + ".jpg";
+      im.src = "img/p" + (tema + 1) + dir + s + ".jpg?v=s42";
       im.alt = TEMAS[tema].t + ", tela " + s + " de 6"; im.loading = s === 1 ? "eager" : "lazy"; im.draggable = false;
       trilho.appendChild(im);
       var p = document.createElement("button"); p.type = "button"; p.setAttribute("aria-label", "Tela " + s);
