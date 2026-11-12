@@ -33,7 +33,7 @@ a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px;
 nav { display: flex; gap: 22px; font-size: .9rem; }
 nav a { text-decoration: none; padding-block: 6px; }
 nav a:hover { text-decoration: underline; }
-.contato :focus-visible { outline-color: var(--green); }
+
 
 /* Botão */
 .botao { display: inline-block; text-decoration: none; font-weight: 600; font-size: .98rem; padding: 14px 24px; background: var(--green); color: var(--deep); border-radius: 4px; }
@@ -116,13 +116,14 @@ nav a:hover { text-decoration: underline; }
 .faq details[open] summary::after { background: linear-gradient(currentColor, currentColor) center/12px 2px no-repeat; }
 .faq details p { padding: 0 0 20px; max-width: 62ch; color: var(--muted); }
 
-/* Contato */
-.contato { background: var(--navy); color: #fff; }
-.contato .sec-cab h2 { color: #fff; }
-.contato-corpo p:first-child { color: var(--on-navy); max-width: 52ch; }
-.email { margin-top: 18px; font-size: clamp(1.35rem, 3.2vw, 2.1rem); font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; }
-.email a { text-decoration-color: var(--green); text-decoration-thickness: 2px; }
-.contato .acoes { margin-top: 28px; }
+/* Contato: claro, em duas colunas; o e-mail grande já abre a mensagem pronta (S41). */
+.contato { background: var(--white); color: var(--ink); border-top: 1px solid var(--line); }
+.contato-in { display: grid; gap: 22px; }
+.contato-in h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--navy); }
+.contato-texto p { margin-top: 12px; max-width: 46ch; color: var(--muted); }
+.email { font-size: clamp(1.35rem, 3.2vw, 2.1rem); font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.email a { color: var(--navy); text-decoration-color: var(--green); text-decoration-thickness: 2px; }
+@media (min-width: 900px) { .contato-in { grid-template-columns: 5fr 7fr; align-items: end; gap: 48px; } .email { justify-self: end; } }
 
 /* Páginas de texto (privacidade, termos, 404) */
 .texto { padding-block: 64px 96px; }
@@ -144,7 +145,7 @@ nav a:hover { text-decoration: underline; }
 .rodape-marca p { margin-top: 12px; }
 .rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
 .rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.rodape-legal { border-top: 1px solid rgba(255, 255, 255, .22); padding-block: 18px 26px; font-size: .8rem; }
+.rodape-legal { border-top: 1px solid rgba(255, 255, 255, .22); padding-block: 18px 26px; font-size: .8rem; text-align: center; }
 @media (min-width: 760px) { .rodape-grade { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; } }
 
 @media (max-width: 640px) {
@@ -152,5 +153,8 @@ nav a:hover { text-decoration: underline; }
   .marca img { width: 128px; }
   nav { gap: 14px; font-size: .82rem; }
   nav .some-celular { display: none; }
+  /* Rodapé no celular: alvo de toque com altura de dedo. */
+  .rodape ul { gap: 0; }
+  .rodape ul a { display: inline-block; padding-block: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
