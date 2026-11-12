@@ -365,3 +365,6 @@ nav.menu-pc{display:flex;align-items:center;gap:30px;font-size:14.5px}
 .menu-pc .menu-whats:hover{background:#c9a66b;color:#141f2b}
 details.menu-cel{display:none}
 }
+/* dentro da moldura de celular da proposta: sem barra de rolagem · S42 */
+html.embutido{scrollbar-width:none}
+html.embutido::-webkit-scrollbar{width:0;height:0;display:none}
