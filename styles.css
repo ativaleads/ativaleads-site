@@ -134,11 +134,18 @@ nav a:hover { text-decoration: underline; }
 .texto .acoes { margin-top: 28px; }
 .texto a:not(.botao) { color: var(--green-dark); }
 
-/* Rodapé */
-.rodape { background: var(--deep); color: #b6c4cf; font-size: .85rem; }
-.rodape a { color: #fff; }
-.rodape-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; padding-block: 32px; }
-.rodape-links { display: flex; gap: 22px; }
+/* Rodapé: verde da marca, colunas */
+.rodape { background: var(--green-dark); color: #d7efe1; font-size: .9rem; }
+.rodape a { color: #fff; text-decoration: none; }
+.rodape a:hover { text-decoration: underline; }
+.rodape :focus-visible { outline-color: #fff; }
+.rodape-grade { display: grid; gap: 32px; padding-block: 56px 40px; }
+.rodape-marca .marca img { width: 180px; }
+.rodape-marca p { margin-top: 12px; }
+.rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
+.rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.rodape-legal { border-top: 1px solid rgba(255, 255, 255, .22); padding-block: 18px 26px; font-size: .8rem; }
+@media (min-width: 760px) { .rodape-grade { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; } }
 
 @media (max-width: 640px) {
   body { font-size: 1rem; }
