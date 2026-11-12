@@ -6,3 +6,4 @@
 .env.*
 *.log
 __pycache__/
+/_preview/
