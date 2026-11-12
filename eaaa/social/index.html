@@ -213,7 +213,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 
 <section id="perfil" class="creme">
   <div class="faixa perfil-wrap">
-    <div class="tela-ig" aria-label="Simulação do perfil no Instagram"><div tabindex="0"><img src="img/feed.jpg" alt="Simulação do perfil @emilsonantunes_aa com doze publicações em formatos diferentes" loading="lazy"></div></div>
+    <div class="tela-ig" aria-label="Simulação do perfil no Instagram"><div tabindex="0"><img src="img/feed.jpg?v=s42" alt="Simulação do perfil @emilsonantunes_aa com doze publicações em formatos diferentes" loading="lazy"></div></div>
     <div>
       <div class="chapeu">4 · Instagram e Facebook</div>
       <h2 class="surge">Retomar o perfil que já tem 6,7 mil seguidores.</h2>
@@ -343,7 +343,7 @@ section{padding:88px 0;scroll-margin-top:60px}
     trilho.innerHTML = ""; pontos.innerHTML = "";
     for (var s = 1; s <= 6; s++){
       var im = document.createElement("img");
-      im.src = "img/p" + (tema + 1) + dir + s + ".jpg";
+      im.src = "img/p" + (tema + 1) + dir + s + ".jpg?v=s42";
       im.alt = TEMAS[tema].t + ", tela " + s + " de 6"; im.loading = s === 1 ? "eager" : "lazy"; im.draggable = false;
       trilho.appendChild(im);
       var p = document.createElement("button"); p.type = "button"; p.setAttribute("aria-label", "Tela " + s);
