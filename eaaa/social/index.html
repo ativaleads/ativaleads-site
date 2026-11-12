@@ -123,6 +123,9 @@ section{padding:88px 0;scroll-margin-top:60px}
 .passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
 .rodape{background:var(--tinta2);color:#a9b0b8;padding:40px 0;font-size:14px}
 .rodape b{color:#efe9de;font-weight:500}
+.perfil-wrap>*,.carrossel>*,.duas>*{min-width:0}
+@media (max-width:899px){.perfil-wrap,.carrossel{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:819px){.duas{grid-template-columns:minmax(0,1fr)}}
 .bio-prop{margin:18px 0 0;padding:16px 18px;border-left:2px solid var(--ouro2);background:rgba(255,255,255,.6);font-size:15px;line-height:1.55}
 .bio-prop small{display:block;font:500 11px 'IBM Plex Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
 .surge{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
