@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposta de site e redes · Emilson Antunes e Advogados Associados · Ativaleads</title>
+<meta name="description" content="Proposta da Ativaleads para o site e as redes sociais de Emilson Antunes e Advogados Associados.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+:root{--tinta:#16222e;--tinta2:#0f1822;--creme:#f4efe6;--ouro:#8a6a33;--ouro2:#c9a66b;--cinza:#5b6570;--linha:#ddd3c2;--branco:#fffdf8}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--tinta);background:var(--branco);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ouro2);outline-offset:3px}
+.faixa{max-width:1120px;margin:0 auto;padding:0 20px}
+.estreita{max-width:760px}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:400;line-height:1.12;margin:0}
+h2{font-size:clamp(30px,5vw,46px);margin-bottom:22px;max-width:20ch}
+h3{font-size:24px;margin:28px 0 10px}
+p{margin:0 0 14px}
+.chapeu{font:500 12px 'IBM Plex Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:14px}
+section{padding:88px 0;scroll-margin-top:60px}
+.escuro{background:var(--tinta);color:#efe9de}.escuro .chapeu{color:var(--ouro2)}
+.creme{background:var(--creme)}
+/* aviso e menu */
+.aviso{font-size:13px;text-align:center;padding:8px 16px;background:var(--tinta2);color:#b9b1a3}
+.menu{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.menu .faixa{display:flex;align-items:center;gap:22px;height:56px;overflow-x:auto;scrollbar-width:none}
+.menu .faixa::-webkit-scrollbar{display:none}
+.menu b{font-family:'Newsreader',serif;font-weight:500;font-size:17px;white-space:nowrap;margin-right:auto}
+.menu a{text-decoration:none;font-size:14px;color:var(--cinza);white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+.menu a.ativo{color:var(--tinta);border-color:var(--ouro2)}
+/* capa */
+.capa{background:var(--tinta);color:#efe9de;padding:110px 0 120px;position:relative;overflow:hidden}
+.capa .chapeu{color:var(--ouro2)}
+.capa h1{font-size:clamp(42px,8vw,84px);max-width:13ch;letter-spacing:-.01em}
+.capa h1 em{display:block;font-style:italic;color:var(--ouro2);font-size:.5em;margin-top:18px}
+.capa p{max-width:56ch;color:#c4c9cf;margin-top:30px}
+.capa .gig{position:absolute;right:-70px;bottom:-20px;width:min(78vw,820px);height:auto;opacity:.13;pointer-events:none}
+.numeros{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:#2c3a47;margin-top:60px;border:1px solid #2c3a47}
+.numeros div{background:var(--tinta);padding:22px 20px}
+.numeros b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:44px;line-height:1;color:var(--ouro2)}
+.numeros span{font-size:14px;color:#a9b0b8}
+/* diagnóstico */
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:24px}
+.card .rot{font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}
+.card h3{margin:8px 0 8px;font-size:22px}
+.card p{font-size:15.5px;color:#3d4650;margin:0}
+.alerta{background:#fbf3ea;border-left:3px solid #a8834a;padding:18px 22px;margin:26px 0 0;font-size:16px}
+/* regra */
+.duas{display:grid;gap:28px}
+@media(min-width:820px){.duas{grid-template-columns:1fr 1fr}}
+.lista{list-style:none;padding:0;margin:0}
+.lista li{padding:12px 0;border-top:1px solid rgba(127,127,127,.3);font-size:16px}
+.lista li small{display:block;color:var(--cinza);font-size:13px}
+.escuro .lista li small{color:#a9b0b8}
+/* site: dispositivos */
+.alterna{display:inline-flex;border:1px solid var(--tinta);border-radius:40px;padding:4px;margin:6px 0 26px}
+.alterna button{font:600 14px 'IBM Plex Sans';border:0;background:transparent;color:var(--tinta);padding:9px 18px;border-radius:40px;cursor:pointer}
+.alterna button[aria-pressed="true"]{background:var(--tinta);color:#fff}
+.alterna button{transition:background .2s ease,color .2s ease}
+.alterna button[aria-pressed="false"]{color:var(--tinta);text-decoration:underline;text-decoration-color:rgba(22,34,46,.35);text-underline-offset:4px}
+.alterna button[aria-pressed="false"]:hover{background:rgba(22,34,46,.08);text-decoration-color:currentColor}
+.escolha{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:6px 0 26px}
+.escolha .alterna{margin:0!important}
+.escolha-rot{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 'IBM Plex Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ouro,#8a6a33)}
+.escolha-rot .ic-troca{flex:none}
+.escuro .alterna{border-color:var(--ouro2)}.escuro .alterna button{color:#efe9de}.escuro .alterna button[aria-pressed="true"]{background:var(--ouro2);color:var(--tinta2)}
+.palco{display:flex;justify-content:center}
+.aparelho{background:#0f1822;border-radius:38px;padding:14px;box-shadow:0 30px 60px -30px rgba(15,24,34,.55);transition:width .35s ease}
+.aparelho iframe{display:block;border:0;border-radius:26px;background:#fff;width:100%;height:100%}
+.aparelho.cel{width:360px;height:720px}
+.aparelho.pc{width:min(100%,1040px);height:640px;border-radius:14px;padding:10px}
+.aparelho.pc iframe{border-radius:6px}
+.abrir{display:inline-block;margin-top:18px;font-weight:600;color:var(--ouro)}
+/* perfil no celular */
+.perfil-wrap{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.perfil-wrap{grid-template-columns:380px 1fr}}
+.tela-ig{width:360px;max-width:100%;height:720px;margin:0 auto;background:#0f1822;border-radius:38px;padding:14px}
+.tela-ig div{height:100%;border-radius:26px;overflow-y:auto;background:#fff;scrollbar-width:thin}
+.formatos{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.formatos div{border-top:1px solid rgba(127,127,127,.3);padding-top:10px;font-size:15px}
+.formatos b{display:block}
+.dica{font:500 12px 'IBM Plex Mono';letter-spacing:.08em;color:var(--ouro);margin-top:12px}
+/* carrosséis */
+.controles{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.temas{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:22px;scrollbar-width:thin}
+.temas button{flex:none;font:500 14px 'IBM Plex Sans';border:1px solid var(--linha);background:#fff;color:var(--tinta);padding:9px 16px;border-radius:40px;cursor:pointer}
+.temas button[aria-pressed="true"]{border-color:var(--tinta);background:var(--tinta);color:#fff}
+.carrossel{display:grid;gap:30px;align-items:start}
+@media(min-width:900px){.carrossel{grid-template-columns:440px 1fr}}
+.visor{position:relative;width:100%;max-width:440px;margin:0 auto;aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:#e7e1d6;box-shadow:0 24px 50px -28px rgba(15,24,34,.5);touch-action:pan-y}
+.trilho{display:flex;height:100%;transition:transform .35s ease}
+.trilho img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+.seta{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,253,248,.92);color:var(--tinta);font-size:20px;cursor:pointer;display:grid;place-items:center}
+.seta.ant{left:10px}.seta.prox{right:10px}
+.seta:disabled{opacity:.3;cursor:default}
+.pontos{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.pontos button{width:9px;height:9px;border-radius:50%;border:0;background:#cfc6b6;padding:0;cursor:pointer}
+.pontos button[aria-current="true"]{background:var(--tinta);width:24px;border-radius:5px}
+.legenda{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:24px;font-size:15.5px}
+.legenda .rot{font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
+.legenda h3{margin:0 0 12px;font-size:26px}
+.legenda .antes{border-top:1px solid var(--linha);margin-top:16px;padding-top:14px;color:var(--cinza);font-size:14.5px}
+/* antes/depois */
+.comparar{position:relative;max-width:900px;margin:0 auto;aspect-ratio:16/10;overflow:hidden;border-radius:6px;user-select:none;background:#ddd}
+.comparar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.comparar .depois{clip-path:inset(0 0 0 50%)}
+.comparar .depois-fundo{position:absolute;inset:0;background:var(--tinta);clip-path:inset(0 0 0 50%);display:flex;align-items:center;justify-content:center;gap:2%;padding:4%}
+.comparar .depois-fundo img{position:static;width:30%;height:auto;aspect-ratio:4/5;border-radius:3px}
+.barra{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--ouro2);transform:translateX(-50%)}
+.barra::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ouro2);color:var(--tinta2);display:grid;place-items:center;font-size:20px}
+.comparar input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.rotulos{display:flex;justify-content:space-between;max-width:900px;margin:10px auto 0;font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+/* precisamos / próximos */
+.passos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.passos li{counter-increment:p;border-top:2px solid var(--ouro2);padding-top:14px;font-size:15.5px}
+.passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
+.rodape{background:var(--tinta2);color:#a9b0b8;padding:40px 0;font-size:14px}
+.rodape b{color:#efe9de;font-weight:500}
+.bio-prop{margin:18px 0 0;padding:16px 18px;border-left:2px solid var(--ouro2);background:rgba(255,255,255,.6);font-size:15px;line-height:1.55}
+.bio-prop small{display:block;font:500 11px 'IBM Plex Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
+.surge{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.surge.visto{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.surge{opacity:1;transform:none}.trilho,.aparelho{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="aviso" role="note">Proposta da Ativaleads, para conversa com o escritório. Nada foi publicado em nome do escritório.</div>
+
+<nav class="menu" aria-label="Seções">
+  <div class="faixa">
+    <b>Emilson Antunes · proposta</b>
+    <a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#seguir">Próximos passos</a>
+  </div>
+</nav>
+
+<header class="capa">
+  <img class="gig" src="../img/simbolo.png" alt="" aria-hidden="true">
+  <div class="faixa">
+    <div class="chapeu">Ativaleads · novembro de 2026</div>
+    <h1>Site e redes sociais<em>Emilson Antunes e Advogados Associados</em></h1>
+    <p>O que existe hoje, como pode ficar e o que precisamos do escritório para seguir. Tudo dentro da regra de publicidade da OAB.</p>
+    <div class="numeros">
+      <div><b>6.683</b><span>seguidores no Instagram, que hoje não mostra nenhuma publicação</span></div>
+      <div><b>4 anos</b><span>sem publicação no Facebook (a última é de outubro de 2022)</span></div>
+      <div><b>0</b><span>avaliações no perfil do Google</span></div>
+      <div><b>0</b><span>advogados do escritório apresentados no site</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="hoje">
+  <div class="faixa">
+    <div class="chapeu">1 · O que existe hoje</div>
+    <h2 class="surge">Quatro canais, nenhum trabalhando a favor do escritório.</h2>
+    <div class="cards surge">
+      <div class="card"><div class="rot">Site</div><h3>Tema pronto de 2016</h3><p>Editado pela última vez em 2020. Nenhum advogado aparece, textos genéricos e repetidos, sem descrição para o Google, pesado no celular.</p></div>
+      <div class="card"><div class="rot">Facebook</div><h3>Parado desde 2022</h3><p>179 publicações, no máximo 4 reações cada. A página aparece como "emilsonantunes_aa". Fotos de banco de imagem e texto miúdo.</p></div>
+      <div class="card"><div class="rot">Instagram</div><h3>Público sem conteúdo</h3><p>6.683 seguidores e nenhuma publicação visível. É o canal com mais gente esperando.</p></div>
+      <div class="card"><div class="rot">Google</div><h3>Perfil sem dono</h3><p>Aparece como não reivindicado, sem avaliações, só com a foto da fachada e horário de sexta diferente do site.</p></div>
+    </div>
+    <div class="alerta surge"><b>Para resolver já:</b> o site atual ainda mantém publicadas, com o nome do escritório, páginas de demonstração do tema (perfis e depoimentos de exemplo) e frases como "os melhores profissionais" e "entre as melhores no mercado". A regra da OAB exige informação verdadeira e veda autoelogio (Provimento 205/2021, arts. 1º, 3º e 6º).</div>
+  </div>
+</section>
+
+<section id="regra" class="escuro">
+  <div class="faixa">
+    <div class="chapeu">2 · A regra que orienta tudo</div>
+    <h2 class="surge">Publicidade informativa, sóbria e verdadeira.</h2>
+    <p class="surge" style="max-width:62ch;color:#c4c9cf">Código de Ética e Disciplina (arts. 39 a 47-A) e Provimento 205/2021 do Conselho Federal, lidos na fonte oficial em 11/11/2026.</p>
+    <div class="duas surge">
+      <div><h3>O que fazemos</h3><ul class="lista">
+        <li>Explicamos temas jurídicos com a lei citada<small>marketing de conteúdo, Prov. 205, art. 4º</small></li>
+        <li>Mostramos as pessoas de verdade, com nome e inscrição<small>CED, art. 44; Prov. 205, art. 5º, § 2º</small></li>
+        <li>Impulsionamos só conteúdo informativo<small>Anexo Único do Provimento</small></li>
+        <li>Nome da sociedade e OAB em todas as peças<small>CED, art. 44</small></li>
+      </ul></div>
+      <div><h3>O que nunca fazemos</h3><ul class="lista">
+        <li>Preço, gratuidade ou desconto<small>Prov. 205, art. 3º, I</small></li>
+        <li>Promessa de resultado ou caso de cliente<small>Prov. 205, art. 6º</small></li>
+        <li>"Os melhores", "de sucesso", "especialista" sem título<small>Prov. 205, art. 3º, III e IV</small></li>
+        <li>Convite a processar<small>CED, art. 41</small></li>
+        <li>Foto de banco fingindo ser a equipe; logotipo da OAB<small>Prov. 205, arts. 3º, II, e 5º, § 2º</small></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="site">
+  <div class="faixa">
+    <div class="chapeu">3 · Site novo</div>
+    <h2 class="surge">Moderno, direto, com a sede e as pessoas do escritório à frente.</h2>
+    <p class="surge" style="max-width:64ch">Abertura com a sede do escritório e uma chamada clara, as quatro áreas em galeria, quem somos com os advogados e contato direto pelo WhatsApp. Cada área tem página própria com o que o escritório faz e perguntas frequentes respondidas com a lei. O protótipo abaixo funciona: role, clique nas áreas.</p>
+    <div class="escolha"><span class="escolha-rot"><svg class="ic-troca" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Ver o site no</span>
+    <div class="alterna" role="group" aria-label="Ver o site em">
+      <button type="button" data-aparelho="cel" aria-pressed="true">Celular</button>
+      <button type="button" data-aparelho="pc" aria-pressed="false">Computador</button>
+    </div></div>
+    <div class="palco"><div class="aparelho cel" id="aparelho"><iframe src="../index.html" title="Protótipo do site novo" loading="lazy"></iframe></div></div>
+    <p style="text-align:center"><a class="abrir" href="../index.html">Abrir o protótipo em tela cheia &rarr;</a></p>
+  </div>
+</section>
+
+<section id="perfil" class="creme">
+  <div class="faixa perfil-wrap">
+    <div class="tela-ig" aria-label="Simulação do perfil no Instagram"><div tabindex="0"><img src="img/feed.jpg" alt="Simulação do perfil @emilsonantunes_aa com doze publicações em formatos diferentes" loading="lazy"></div></div>
+    <div>
+      <div class="chapeu">4 · Instagram e Facebook</div>
+      <h2 class="surge">Retomar o perfil que já tem 6,7 mil seguidores.</h2>
+      <p>Em vez de criar outro perfil, o escritório continua no mesmo endereço, <b>@emilsonantunes_aa</b>, com os 6,7 mil seguidores. Mudam três coisas que aparecem no perfil: o nome em destaque passa a ser "Emilson Antunes Advogados", a categoria passa a ser "Escritório de advocacia" e a bio é a de baixo. A partir daí, <b>duas publicações por semana</b>. O Facebook recebe a mesma peça e passa a se chamar "Emilson Antunes e Advogados Associados".</p>
+      <p class="bio-prop"><small>Bio proposta</small>Emilson Antunes Advogados · Escritório de advocacia<br>Consultoria e contencioso: tributário, trabalhista, empresarial e civil<br>OAB/SP 5.120 · eaaa.com.br</p>
+      <div class="formatos">
+        <div><b>Explicado</b>carrossel com a lei</div>
+        <div><b>Mudou</b>lei ou prazo novo, com fonte</div>
+        <div><b>Pergunta da semana</b>dúvida comum, resposta curta</div>
+        <div><b>A lei em uma frase</b>o artigo em destaque</div>
+        <div><b>Checklist</b>o que conferir antes</div>
+        <div><b>Infográfico</b>prazo ou número desenhado</div>
+        <div><b>Vídeo curto</b>um advogado, 30 a 40 s</div>
+        <div><b>Escritório</b>fotos reais e bastidores</div>
+      </div>
+      <p class="dica">Role a tela do celular para ver o perfil inteiro.</p>
+    </div>
+  </div>
+</section>
+
+<section id="carrosseis">
+  <div class="faixa">
+    <div class="chapeu">5 · Seis carrosséis prontos</div>
+    <h2 class="surge">Temas que o escritório já tratou, refeitos.</h2>
+    <div class="controles">
+      <p style="margin:0;max-width:52ch">Duas direções visuais, mesma paleta e mesma letra. Toque em X ou em Y para trocar o carrossel abaixo.</p>
+      <div class="escolha"><span class="escolha-rot"><svg class="ic-troca" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Escolha o estilo</span>
+      <div class="alterna" role="group" aria-label="Direção visual" style="margin:0">
+        <button type="button" data-dir="x" aria-pressed="true">X · Editorial</button>
+        <button type="button" data-dir="y" aria-pressed="false">Y · Gráfica</button>
+      </div></div>
+    </div>
+    <div class="temas" role="group" aria-label="Tema" id="temas"></div>
+    <div class="carrossel">
+      <div>
+        <div class="visor" id="visor" aria-roledescription="carrossel" aria-label="Telas do carrossel">
+          <div class="trilho" id="trilho"></div>
+          <button class="seta ant" type="button" aria-label="Tela anterior">&larr;</button>
+          <button class="seta prox" type="button" aria-label="Próxima tela">&rarr;</button>
+        </div>
+        <div class="pontos" id="pontos"></div>
+      </div>
+      <div class="legenda" id="legenda" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="antes" class="escuro">
+  <div class="faixa">
+    <div class="chapeu">6 · Antes e depois</div>
+    <h2 class="surge">Arraste para comparar.</h2>
+    <div class="comparar" id="comparar">
+      <img src="img/fb_antes.jpg" alt="Publicações antigas do Facebook, de 2021" loading="lazy">
+      <div class="depois-fundo" id="depois"><img src="img/p1x1.jpg" alt="" loading="lazy"><img src="img/p2x1.jpg" alt="" loading="lazy"><img src="img/p6y1.jpg" alt="" loading="lazy"></div>
+      <div class="barra" id="barra"></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+    </div>
+    <div class="rotulos"><span>Hoje · Facebook, 2021</span><span>Proposta</span></div>
+  </div>
+</section>
+
+<section id="google">
+  <div class="faixa duas">
+    <div>
+      <div class="chapeu">7 · Google</div>
+      <h2 class="surge">O primeiro contato de muita gente.</h2>
+      <ul class="lista">
+        <li>Reivindicar o perfil<small>feito pelo próprio escritório</small></li>
+        <li>Categoria "Escritório de advocacia"</li>
+        <li>Mesmo horário do site e WhatsApp no perfil</li>
+        <li>Fotos reais da recepção, da sala e das pessoas</li>
+        <li>Os mesmos conteúdos informativos das redes</li>
+      </ul>
+    </div>
+    <div>
+      <div class="chapeu">8 · O que precisamos do escritório</div>
+      <ul class="lista">
+        <li>Nome, inscrição, formação e área de cada advogado<small>e quem tem título de especialista</small></li>
+        <li>Fotos reais e um advogado para vídeos curtos<small>podemos organizar a sessão</small></li>
+        <li>Fotos da sede e da recepção<small>a capa do site usa, por enquanto, uma foto da construtora do Edifício Geon</small></li>
+        <li>Logotipo em arquivo vetorial<small>o site usa o arquivo publicado no site atual</small></li>
+        <li>Acesso ao Facebook, ao Instagram, ao Google e ao painel do site</li>
+        <li>Quem aprova os textos e quais temas querem em destaque</li>
+        <li>Horário de sexta: até as 17h ou até as 18h?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="seguir" class="creme">
+  <div class="faixa">
+    <div class="chapeu">9 · Próximos passos</div>
+    <h2 class="surge">Do esboço ao ar.</h2>
+    <ol class="passos">
+      <li>Conversa para escolher a direção visual e responder o que falta.</li>
+      <li>Revisão dos textos e das leis citadas pelo escritório.</li>
+      <li>Sessão de fotos reais.</li>
+      <li>Site no ar e Instagram retomado com as primeiras publicações.</li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer class="rodape"><div class="faixa"><b>Ativaleads</b> · proposta elaborada para Emilson Antunes e Advogados Associados · novembro de 2026.<br>Esboço para conversa. Textos legais devem ser revisados pelo escritório antes de qualquer publicação.</div></footer>
+
+<script>
+(function(){
+  var TEMAS = [
+    {t:"Tributo pago a mais", area:"Tributário", leg:"Pagou tributo a mais? O CTN garante a restituição (art. 165) e o prazo é de 5 anos (art. 168). Nos tributos federais, o pedido de restituição ou compensação é feito pelo PER/DCOMP (Lei 9.430/1996, art. 74).", antes:"Antes (Facebook, 2022): “O que é a recuperação de crédito tributário?”, foto de banco de imagem, sem a lei, 1 reação."},
+    {t:"Holding familiar", area:"Empresarial", leg:"O que é uma holding familiar, o que ela pode organizar (a sucessão) e o que não resolve (dívidas que já existem). Custos: ITBI com imunidade limitada (Constituição, art. 156, § 2º, I; STF, Tema 796) e ITCMD.", antes:"Antes (Facebook, 2022): “Conheça algumas vantagens da Holding Familiar!”, promessa de benefício sem limites, 2 reações."},
+    {t:"MEI, ME ou EPP", area:"Empresarial · Mudou", leg:"O limite do MEI sobe: R$ 81 mil em 2026, R$ 110 mil em 2027 e R$ 140 mil a partir de 2028 (Lei Complementar 238/2026). ME até R$ 360 mil; EPP até R$ 4,8 milhões (LC 123/2006).", antes:"Antes (Facebook, 2021): “O que compensa mais: ser MEI ou ME?”, sem os limites, nenhuma reação."},
+    {t:"Compra de negócio", area:"Empresarial", leg:"Quem compra o estabelecimento e continua a exploração responde pelos tributos anteriores (CTN, art. 133). Débitos contabilizados: vendedor solidário por um ano (Código Civil, art. 1.146). Contratos de trabalho seguem (CLT, arts. 10 e 448).", antes:"Antes (Facebook, 2021): sucessão empresarial em arte de texto miúdo, 2 reações."},
+    {t:"Contratação como PJ", area:"Trabalhista", leg:"A CLT define empregado por pessoalidade, não eventualidade, subordinação e pagamento (arts. 2º e 3º). O nome do contrato não decide: são nulos os atos para fraudar a CLT (art. 9º).", antes:"Antes (Facebook, 2021): notícia sobre aumento de contratações PJ, sem explicar o que a lei olha, 3 reações."},
+    {t:"Garantias do aluguel", area:"Civil", leg:"Quatro garantias possíveis, uma por contrato (Lei 8.245/1991, art. 37). Caução em dinheiro até três aluguéis (art. 38, § 2º). O fiador pode sair se o contrato vira prazo indeterminado (art. 40, X).", antes:"Antes (Facebook, 2021): texto que começava no meio do assunto, 2 reações."}
+  ];
+  var dir = "x", tema = 0, tela = 0;
+  var trilho = document.getElementById("trilho"), pontos = document.getElementById("pontos"),
+      legenda = document.getElementById("legenda"), temas = document.getElementById("temas"),
+      visor = document.getElementById("visor"), ant = visor.querySelector(".ant"), prox = visor.querySelector(".prox");
+  TEMAS.forEach(function(o, i){
+    var b = document.createElement("button"); b.type = "button"; b.textContent = o.t;
+    b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+    b.addEventListener("click", function(){ tema = i; tela = 0; montar(); });
+    temas.appendChild(b);
+  });
+  function montar(){
+    trilho.innerHTML = ""; pontos.innerHTML = "";
+    for (var s = 1; s <= 6; s++){
+      var im = document.createElement("img");
+      im.src = "img/p" + (tema + 1) + dir + s + ".jpg";
+      im.alt = TEMAS[tema].t + ", tela " + s + " de 6"; im.loading = s === 1 ? "eager" : "lazy"; im.draggable = false;
+      trilho.appendChild(im);
+      var p = document.createElement("button"); p.type = "button"; p.setAttribute("aria-label", "Tela " + s);
+      (function(k){ p.addEventListener("click", function(){ ir(k); }); })(s - 1);
+      pontos.appendChild(p);
+    }
+    [].forEach.call(temas.children, function(b, i){ b.setAttribute("aria-pressed", i === tema ? "true" : "false"); });
+    var o = TEMAS[tema];
+    legenda.innerHTML = '<div class="rot">' + o.area + '</div><h3>' + o.t + '</h3><p>' + o.leg + '</p><p class="antes">' + o.antes + '</p><p class="dica">Deslize ou use as setas: são seis telas, com legenda pronta.</p>';
+    ir(tela);
+  }
+  function ir(k){
+    tela = Math.max(0, Math.min(5, k));
+    trilho.style.transform = "translateX(" + (-100 * tela) + "%)";
+    [].forEach.call(pontos.children, function(p, i){ p.setAttribute("aria-current", i === tela ? "true" : "false"); });
+    ant.disabled = tela === 0; prox.disabled = tela === 5;
+  }
+  ant.addEventListener("click", function(){ ir(tela - 1); });
+  prox.addEventListener("click", function(){ ir(tela + 1); });
+  visor.addEventListener("keydown", function(e){ if (e.key === "ArrowLeft") ir(tela - 1); if (e.key === "ArrowRight") ir(tela + 1); });
+  var x0 = null;
+  visor.addEventListener("pointerdown", function(e){ x0 = e.clientX; });
+  visor.addEventListener("pointerup", function(e){ if (x0 === null) return; var dx = e.clientX - x0; if (Math.abs(dx) > 40) ir(tela + (dx < 0 ? 1 : -1)); x0 = null; });
+  document.querySelectorAll("[data-dir]").forEach(function(b){
+    b.addEventListener("click", function(){
+      dir = b.dataset.dir;
+      document.querySelectorAll("[data-dir]").forEach(function(o){ o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      montar();
+    });
+  });
+  montar();
+
+  // aparelho do site
+  var ap = document.getElementById("aparelho");
+  document.querySelectorAll("[data-aparelho]").forEach(function(b){
+    b.addEventListener("click", function(){
+      ap.className = "aparelho " + b.dataset.aparelho;
+      document.querySelectorAll("[data-aparelho]").forEach(function(o){ o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+    });
+  });
+
+  // antes e depois
+  var cmp = document.getElementById("comparar"), rng = cmp.querySelector("input"), dep = document.getElementById("depois"), bar = document.getElementById("barra");
+  function corte(v){ dep.style.clipPath = "inset(0 0 0 " + v + "%)"; bar.style.left = v + "%"; }
+  rng.addEventListener("input", function(){ corte(rng.value); }); corte(50);
+
+  // menu acompanha a rolagem e blocos surgem
+  var links = [].slice.call(document.querySelectorAll(".menu a"));
+  if ("IntersectionObserver" in window){
+    var obs = new IntersectionObserver(function(es){ es.forEach(function(en){
+      if (en.isIntersecting){ links.forEach(function(a){ a.classList.toggle("ativo", a.getAttribute("href") === "#" + en.target.id); }); }
+    }); }, {rootMargin: "-45% 0px -50% 0px"});
+    document.querySelectorAll("main section[id]").forEach(function(s){ obs.observe(s); });
+    var obs2 = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("visto"); obs2.unobserve(en.target); } }); }, {threshold: .15});
+    document.querySelectorAll(".surge").forEach(function(el){ obs2.observe(el); });
+  } else { document.querySelectorAll(".surge").forEach(function(el){ el.classList.add("visto"); }); }
+})();
+</script>
+</body>
+</html>
