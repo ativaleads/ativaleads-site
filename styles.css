@@ -75,9 +75,9 @@ a { color: inherit; text-underline-offset: .2em; }
 .seta { font-weight: 700; font-size: .92rem; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; }
 /* ilustrações dos cartões (só CSS) */
 .balao { position: absolute; border-radius: 12px; padding: 8px 10px; font-size: .72rem; font-weight: 700; }
-.balao-1 { left: 18px; top: 22px; background: #fff; color: var(--ink); box-shadow: 0 6px 14px -10px rgba(0,0,0,.4); }
-.balao-2 { right: 18px; top: 66px; background: var(--green); color: var(--deep); }
-.balao-3 { left: 18px; bottom: 18px; background: #fff; color: var(--muted); box-shadow: 0 6px 14px -10px rgba(0,0,0,.4); }
+.balao-1 { left: 18px; top: 44px; background: #fff; color: var(--ink); box-shadow: 0 6px 14px -10px rgba(0,0,0,.4); }
+.balao-2 { right: 18px; top: 92px; background: var(--green); color: var(--deep); }
+.ilus-rot { position: absolute; left: 18px; top: 14px; display: flex; align-items: center; gap: 7px; font-size: .72rem; font-weight: 800; color: var(--ink); }
 .mini-site { position: absolute; inset: 18px 22px auto; height: 124px; background: #fff; border-radius: 8px; border: 1px solid var(--line); overflow: hidden; }
 .mini-site .barra { height: 16px; border-bottom: 1px solid var(--line); background: #fafbf9; }
 .mini-site .titulo { margin: 14px 14px 8px; height: 12px; width: 60%; border-radius: 6px; background: var(--navy); }
