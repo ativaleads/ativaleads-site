@@ -42,6 +42,21 @@ figcaption b{color:var(--preto);font-weight:600}
 .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;margin-right:8px;vertical-align:1px}
 .tag.antes{background:#ececec;color:#555}.tag.depois{background:var(--preto);color:var(--ouro2)}
 .largo{margin-top:22px}
+/* navegar */
+.navegar{display:grid;gap:34px;margin-top:30px;align-items:start}
+@media(min-width:900px){.navegar{grid-template-columns:1fr 260px}}
+.janela{border:1px solid #d9d4cb;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.janela .barra{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#efece6;border-bottom:1px solid #e1dcd3}
+.janela .barra i{width:10px;height:10px;border-radius:50%;background:#d3cdc3;display:block}
+.janela .barra span{margin-left:12px;font-size:12px;color:#8a847a}
+.rola{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.janela .rola{height:min(560px,70vh)}
+@media(max-width:899px){.janela .rola{height:auto;max-height:70vh}}
+.janela .rola img{width:100%;border:0}
+.fone.rola-fone{max-width:260px;margin:0 auto}
+.fone .rola{height:460px}
+.fone .rola img{width:100%;border:0}
+.dica{font-size:14px;color:var(--cinza);margin-top:10px;text-align:center}
 /* celular */
 .celulares{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 16px;margin-top:30px;justify-items:center}
 @media(min-width:900px){.celulares{grid-template-columns:repeat(4,1fr);gap:28px}}
@@ -82,6 +97,27 @@ footer a{color:var(--ouro2)}
     <span class="selo">Salvo como rascunho: nada mudou para as clientes</span>
   </div>
 </header>
+
+<section class="creme">
+  <div class="faixa">
+    <div class="chapeu">O site novo</div>
+    <h2>Role para ver a página inteira</h2>
+    <p>Esta é a nova página inicial do jeito que está salva no seu Editor da Wix, no computador e no celular. Ela ainda não está no ar: só passa a valer para as clientes com o seu ok.</p>
+    <div class="navegar">
+      <figure>
+        <div class="janela">
+          <div class="barra"><i></i><i></i><i></i><span>vitocasella.com</span></div>
+          <div class="rola" tabindex="0" aria-label="Página inicial nova no computador, role para ver"><img src="img/site_novo_computador.jpg?v=s43b" alt="Página inicial nova da loja Vito Casella no computador, do topo ao rodapé" width="1200" height="1550" loading="lazy"></div>
+        </div>
+        <figcaption class="dica">Computador · role dentro da janela</figcaption>
+      </figure>
+      <figure>
+        <div class="fone rola-fone"><div class="rola" tabindex="0" aria-label="Página inicial nova no celular, role para ver"><img src="img/site_novo_celular.jpg?v=s43b" alt="Página inicial nova da loja Vito Casella no celular, do topo ao rodapé" width="261" height="2241" loading="lazy"></div></div>
+        <figcaption class="dica">Celular · role dentro da tela</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="faixa">
@@ -155,7 +191,7 @@ footer a{color:var(--ouro2)}
     <h2>O que falta</h2>
     <ol class="decidir">
       <li><b>Ok para o rascunho virar a página inicial</b><span>Com o seu ok, o rascunho passa a ser o Início e a loja é publicada. A publicação leva junto tudo o que estiver salvo no Editor, inclusive alterações suas que ainda não estavam no ar.</span></li>
-      <li><b>Política de trocas e devoluções</b><span>A loja ainda não tem uma. Em compra pela internet a cliente pode desistir em até 7 dias depois de receber (Código de Defesa do Consumidor, art. 49). Precisamos da sua regra: prazo para troca, quem paga o frete de volta e como a cliente pede.</span></li>
+      <li><b>Política de trocas e devoluções</b><span>A loja ainda não tem uma de verdade. O rodapé antigo mostrava "Entregas e devoluções" e "Termos de uso e privacidade", mas os links levavam para a página inicial, e a página de termos só tem o texto de exemplo da Wix. Em compra pela internet a cliente pode desistir em até 7 dias depois de receber (Código de Defesa do Consumidor, art. 49). Você nos passa a sua regra (prazo para troca, quem paga o frete de volta e como a cliente pede) e nós montamos as páginas de trocas e de termos e colocamos os links no rodapé.</span></li>
       <li><b>Parcelamento na página do produto</b><span>A linha "ou 12x de R$4.99 sem juros" é colocada sozinha pelo Wix Pagamentos. O "sem juros" está certo: no Wix Pagamentos Brasil não dá para cobrar taxa da cliente no parcelamento. O ponto no lugar da vírgula não é configuração da loja (o site está em português do Brasil e os preços saem "R$ 59,90"); é falha do próprio componente da Wix, que não deixa editar nem esconder essa linha. O caminho é abrir um chamado no suporte da Wix pela sua conta.</span></li>
       <li><b>Bandeiras do rodapé</b><span>Colocamos Visa, Mastercard, Elo, Amex, Pix e boleto, que é o que o Wix Pagamentos costuma aceitar no Brasil. Confira na sua tela de pagamentos se Elo e Amex estão ativos; se não estiverem, a imagem é trocada em um minuto.</span></li>
       <li><b>Foto do perfil no Instagram</b><span>Trocar pela versão nova do monograma (o arquivo vai junto).</span></li>
