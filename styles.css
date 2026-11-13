@@ -92,6 +92,7 @@ a { color: inherit; text-underline-offset: .2em; }
 /* Serviços: grade de cartões, dois em destaque */
 .grade { display: grid; gap: 16px; }
 @media (min-width: 760px) { .grade { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .grade { grid-template-columns: repeat(3, 1fr); } }
 .servico { background: #fff; border-radius: 18px; padding: 28px 28px 30px; display: flex; flex-direction: column; gap: 12px; }
 .servico .icone { width: 38px; height: 38px; border-radius: 10px; background: var(--tint); display: grid; place-items: center; color: var(--green-dark); margin-bottom: 6px; }
 .servico .icone svg { width: 20px; height: 20px; }
