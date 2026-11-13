@@ -34,11 +34,27 @@ section{padding:88px 0;scroll-margin-top:60px}
 .menu b{font-family:'Newsreader',serif;font-weight:500;font-size:17px;white-space:nowrap;margin-right:auto}
 .menu a{text-decoration:none;font-size:14px;color:var(--cinza);white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
 .menu a.ativo{color:var(--tinta);border-color:var(--ouro2)}
+.menu-cel{display:none}
+@media (max-width:759px){
+.menu .faixa{overflow:visible}
+.menu .faixa>a{display:none}
+.menu-cel{display:block;flex:none}
+.menu b{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:15.5px}
+.menu-cel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 14px 'IBM Plex Sans';color:var(--tinta);padding:8px 14px;border:1px solid var(--linha);border-radius:40px;background:#fff}
+.menu-cel summary::-webkit-details-marker{display:none}
+.menu-cel[open] summary svg{transform:rotate(180deg)}
+.menu-painel{position:absolute;left:0;right:0;top:56px;display:flex;flex-direction:column;background:var(--branco);border-bottom:1px solid var(--linha);box-shadow:0 18px 30px -20px rgba(15,24,34,.35);padding:4px 20px 14px}
+.menu-painel a{font-size:16px;color:var(--tinta);padding:13px 0;border-bottom:1px solid var(--linha)}
+.menu-painel a:last-child{border-bottom:0}
+.temas{flex-wrap:wrap;overflow:visible}
+}
 /* capa */
 .capa{background:var(--tinta);color:#efe9de;padding:110px 0 120px;position:relative;overflow:hidden}
 .capa .chapeu{color:var(--ouro2)}
 .capa h1{font-size:clamp(42px,8vw,84px);max-width:13ch;letter-spacing:-.01em}
 .capa h1 em{display:block;font-style:italic;color:var(--ouro2);font-size:.5em;margin-top:18px}
+@media (min-width:860px){.capa h1{max-width:none;white-space:nowrap}}
+@media (min-width:860px){h2{font-size:min(40px,3.3vw)}h2.linha1{max-width:none;white-space:nowrap}}
 .capa p{max-width:56ch;color:#c4c9cf;margin-top:30px}
 .capa .gig{position:absolute;right:-70px;bottom:-20px;width:min(78vw,820px);height:auto;opacity:.13;pointer-events:none}
 .numeros{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:#2c3a47;margin-top:60px;border:1px solid #2c3a47}
@@ -123,6 +139,8 @@ section{padding:88px 0;scroll-margin-top:60px}
 .passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
 .rodape{background:var(--tinta2);color:#a9b0b8;padding:40px 0;font-size:14px}
 .rodape b{color:#efe9de;font-weight:500}
+.logo-ativa{display:block;width:max-content;margin-bottom:16px}
+.logo-ativa img{display:block;height:26px;width:auto}
 .perfil-wrap>*,.carrossel>*,.duas>*{min-width:0}
 @media (max-width:899px){.perfil-wrap,.carrossel{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:819px){.duas{grid-template-columns:minmax(0,1fr)}}
@@ -140,6 +158,7 @@ section{padding:88px 0;scroll-margin-top:60px}
   <div class="faixa">
     <b>Emilson Antunes · proposta</b>
     <a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#seguir">Próximos passos</a>
+    <details class="menu-cel"><summary>Seções <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="menu-painel"><a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#seguir">Próximos passos</a></div></details>
   </div>
 </nav>
 
@@ -162,21 +181,21 @@ section{padding:88px 0;scroll-margin-top:60px}
 <section id="hoje">
   <div class="faixa">
     <div class="chapeu">1 · O que existe hoje</div>
-    <h2 class="surge">Quatro canais, nenhum trabalhando a favor do escritório.</h2>
+    <h2 class="surge linha1">Quatro canais, nenhum trabalhando a favor do escritório.</h2>
     <div class="cards surge">
       <div class="card"><div class="rot">Site</div><h3>Tema pronto de 2016</h3><p>Editado pela última vez em 2020. Nenhum advogado aparece, textos genéricos e repetidos, sem descrição para o Google, pesado no celular.</p></div>
       <div class="card"><div class="rot">Facebook</div><h3>Parado desde 2022</h3><p>179 publicações, no máximo 4 reações cada. A página aparece como "emilsonantunes_aa". Fotos de banco de imagem e texto miúdo.</p></div>
       <div class="card"><div class="rot">Instagram</div><h3>Público sem conteúdo</h3><p>6.683 seguidores e nenhuma publicação visível. É o canal com mais gente esperando.</p></div>
       <div class="card"><div class="rot">Google</div><h3>Perfil sem dono</h3><p>Aparece como não reivindicado, sem avaliações, só com a foto da fachada e horário de sexta diferente do site.</p></div>
     </div>
-    <div class="alerta surge"><b>Para resolver já:</b> o site atual ainda mantém publicadas, com o nome do escritório, páginas de demonstração do tema (perfis e depoimentos de exemplo) e frases como "os melhores profissionais" e "entre as melhores no mercado". A regra da OAB exige informação verdadeira e veda autoelogio (Provimento 205/2021, arts. 1º, 3º e 6º).</div>
+    <div class="alerta surge"><b>Para resolver já:</b> o site atual ainda mantém publicadas, com o nome do escritório, páginas de demonstração do tema (perfis e depoimentos de exemplo: <a href="https://eaaa.com.br/lawyer/william-stiller/" target="_blank" rel="noopener noreferrer">um perfil</a>, <a href="https://eaaa.com.br/testimonial/tyrion-lannister/" target="_blank" rel="noopener noreferrer">um depoimento</a>) e frases como "os melhores profissionais" e "entre as melhores no mercado". A regra da OAB exige informação verdadeira e veda autoelogio (Provimento 205/2021, arts. 1º, 3º e 6º).</div>
   </div>
 </section>
 
 <section id="regra" class="escuro">
   <div class="faixa">
     <div class="chapeu">2 · A regra que orienta tudo</div>
-    <h2 class="surge">Publicidade informativa, sóbria e verdadeira.</h2>
+    <h2 class="surge linha1">Publicidade informativa, sóbria e verdadeira.</h2>
     <p class="surge" style="max-width:62ch;color:#c4c9cf">Código de Ética e Disciplina (arts. 39 a 47-A) e Provimento 205/2021 do Conselho Federal, lidos na fonte oficial em 11/11/2026.</p>
     <div class="duas surge">
       <div><h3>O que fazemos</h3><ul class="lista">
@@ -189,7 +208,7 @@ section{padding:88px 0;scroll-margin-top:60px}
         <li>Preço, gratuidade ou desconto<small>Prov. 205, art. 3º, I</small></li>
         <li>Promessa de resultado ou caso de cliente<small>Prov. 205, art. 6º</small></li>
         <li>"Os melhores", "de sucesso", "especialista" sem título<small>Prov. 205, art. 3º, III e IV</small></li>
-        <li>Convite a processar<small>CED, art. 41</small></li>
+        <li>Incentivar o leitor a entrar na Justiça<small>como "você tem direito, processe já" · CED, art. 41</small></li>
         <li>Foto de banco fingindo ser a equipe; logotipo da OAB<small>Prov. 205, arts. 3º, II, e 5º, § 2º</small></li>
       </ul></div>
     </div>
@@ -199,7 +218,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 <section id="site">
   <div class="faixa">
     <div class="chapeu">3 · Site novo</div>
-    <h2 class="surge">Moderno, direto, com a sede e as pessoas do escritório à frente.</h2>
+    <h2 class="surge linha1">Moderno, direto, com a sede e as pessoas do escritório à frente.</h2>
     <p class="surge" style="max-width:64ch">Abertura com a sede do escritório e uma chamada clara, as quatro áreas em galeria, quem somos com os advogados e contato direto pelo WhatsApp. Cada área tem página própria com o que o escritório faz e perguntas frequentes respondidas com a lei. O protótipo abaixo funciona: role, clique nas áreas.</p>
     <div class="escolha"><span class="escolha-rot"><svg class="ic-troca" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Ver o site no</span>
     <div class="alterna" role="group" aria-label="Ver o site em">
@@ -237,7 +256,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 <section id="carrosseis">
   <div class="faixa">
     <div class="chapeu">5 · Seis carrosséis prontos</div>
-    <h2 class="surge">Temas que o escritório já tratou, refeitos.</h2>
+    <h2 class="surge linha1">Temas que o escritório já tratou, refeitos.</h2>
     <div class="controles">
       <p style="margin:0;max-width:52ch">Duas direções visuais, mesma paleta e mesma letra. Toque em X ou em Y para trocar o carrossel abaixo.</p>
       <div class="escolha"><span class="escolha-rot"><svg class="ic-troca" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Escolha o estilo</span>
@@ -264,7 +283,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 <section id="antes" class="escuro">
   <div class="faixa">
     <div class="chapeu">6 · Antes e depois</div>
-    <h2 class="surge">Arraste para comparar.</h2>
+    <h2 class="surge linha1">Arraste para comparar.</h2>
     <div class="comparar" id="comparar">
       <img src="img/fb_antes.jpg" alt="Publicações antigas do Facebook, de 2021" loading="lazy">
       <div class="depois-fundo" id="depois"><img src="img/p1x1.jpg" alt="" loading="lazy"><img src="img/p2x1.jpg" alt="" loading="lazy"><img src="img/p6y1.jpg" alt="" loading="lazy"></div>
@@ -306,7 +325,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 <section id="seguir" class="creme">
   <div class="faixa">
     <div class="chapeu">9 · Próximos passos</div>
-    <h2 class="surge">Do esboço ao ar.</h2>
+    <h2 class="surge linha1">Do esboço ao ar.</h2>
     <ol class="passos">
       <li>Conversa para escolher a direção visual e responder o que falta.</li>
       <li>Revisão dos textos e das leis citadas pelo escritório.</li>
@@ -317,7 +336,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 </section>
 </main>
 
-<footer class="rodape"><div class="faixa"><b>Ativaleads</b> · proposta elaborada para Emilson Antunes e Advogados Associados · novembro de 2026.<br>Esboço para conversa. Textos legais devem ser revisados pelo escritório antes de qualquer publicação.</div></footer>
+<footer class="rodape"><div class="faixa"><a class="logo-ativa" href="https://ativaleads.com.br/" rel="noopener"><img src="img/ativaleads-branco.webp" width="160" height="26" alt="Ativaleads"></a><b>Ativaleads</b> · proposta elaborada para Emilson Antunes e Advogados Associados · novembro de 2026.<br>Esboço para conversa. Textos legais devem ser revisados pelo escritório antes de qualquer publicação.</div></footer>
 
 <script>
 (function(){
@@ -392,6 +411,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 
   // menu acompanha a rolagem e blocos surgem
   var links = [].slice.call(document.querySelectorAll(".menu a"));
+  document.querySelectorAll(".menu-painel a").forEach(function(a){ a.addEventListener("click", function(){ a.closest("details").open = false; }); });
   if ("IntersectionObserver" in window){
     var obs = new IntersectionObserver(function(es){ es.forEach(function(en){
       if (en.isIntersecting){ links.forEach(function(a){ a.classList.toggle("ativo", a.getAttribute("href") === "#" + en.target.id); }); }
