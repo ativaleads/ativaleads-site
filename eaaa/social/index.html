@@ -54,6 +54,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 .capa h1{font-size:clamp(42px,8vw,84px);max-width:13ch;letter-spacing:-.01em}
 .capa h1 em{display:block;font-style:italic;color:var(--ouro2);font-size:.5em;margin-top:18px}
 @media (min-width:860px){.capa h1{max-width:none;white-space:nowrap}}
+@media (min-width:860px){p.quebra{max-width:none!important}p.quebra .l{display:block;white-space:nowrap}}
 @media (min-width:860px){h2{font-size:min(40px,3.3vw)}h2.linha1{max-width:none;white-space:nowrap}}
 .capa p{max-width:56ch;color:#c4c9cf;margin-top:30px}
 .capa .gig{position:absolute;right:-70px;bottom:-20px;width:min(78vw,820px);height:auto;opacity:.13;pointer-events:none}
@@ -91,8 +92,10 @@ section{padding:88px 0;scroll-margin-top:60px}
 .aparelho{background:#0f1822;border-radius:38px;padding:14px;box-shadow:0 30px 60px -30px rgba(15,24,34,.55);transition:width .35s ease}
 .aparelho iframe{display:block;border:0;border-radius:26px;background:#fff;width:100%;height:100%}
 .aparelho.cel{width:360px;height:720px}
-.aparelho.pc{width:min(100%,1040px);height:640px;border-radius:14px;padding:10px}
-.aparelho.pc iframe{border-radius:6px}
+.aparelho .vidro{width:100%;height:100%;overflow:hidden;border-radius:26px}
+.aparelho.pc{width:min(100%,1040px);height:auto;border-radius:14px;padding:10px}
+.aparelho.pc .vidro{height:calc(800px * var(--k,.8));border-radius:6px}
+.aparelho.pc iframe{width:1280px;height:800px;border-radius:0;transform:scale(var(--k,.8));transform-origin:0 0}
 .abrir{display:inline-block;margin-top:18px;font-weight:600;color:var(--ouro)}
 /* perfil no celular */
 .perfil-wrap{display:grid;gap:40px;align-items:center}
@@ -167,7 +170,7 @@ section{padding:88px 0;scroll-margin-top:60px}
   <div class="faixa">
     <div class="chapeu">Ativaleads · novembro de 2026</div>
     <h1>Site e redes sociais<em>Emilson Antunes e Advogados Associados</em></h1>
-    <p>O que existe hoje, como pode ficar e o que precisamos do escritório para seguir. Tudo dentro da regra de publicidade da OAB.</p>
+    <p class="quebra"><span class="l">O que existe hoje, como pode ficar e o que precisamos do escritório para seguir.</span> <span class="l">Tudo dentro da regra de publicidade da OAB.</span></p>
     <div class="numeros">
       <div><b>6.683</b><span>seguidores no Instagram, que hoje não mostra nenhuma publicação</span></div>
       <div><b>4 anos</b><span>sem publicação no Facebook (a última é de outubro de 2022)</span></div>
@@ -196,7 +199,7 @@ section{padding:88px 0;scroll-margin-top:60px}
   <div class="faixa">
     <div class="chapeu">2 · A regra que orienta tudo</div>
     <h2 class="surge linha1">Publicidade informativa, sóbria e verdadeira.</h2>
-    <p class="surge" style="max-width:62ch;color:#c4c9cf">Código de Ética e Disciplina (arts. 39 a 47-A) e Provimento 205/2021 do Conselho Federal, lidos na fonte oficial em 11/11/2026.</p>
+    <p class="surge quebra" style="max-width:62ch;color:#c4c9cf"><span class="l">Código de Ética e Disciplina (arts. 39 a 47-A) e Provimento 205/2021 do Conselho Federal,</span> <span class="l">lidos na fonte oficial em 11/11/2026.</span></p>
     <div class="duas surge">
       <div><h3>O que fazemos</h3><ul class="lista">
         <li>Explicamos temas jurídicos com a lei citada<small>marketing de conteúdo, Prov. 205, art. 4º</small></li>
@@ -219,13 +222,13 @@ section{padding:88px 0;scroll-margin-top:60px}
   <div class="faixa">
     <div class="chapeu">3 · Site novo</div>
     <h2 class="surge linha1">Moderno, direto, com a sede e as pessoas do escritório à frente.</h2>
-    <p class="surge" style="max-width:64ch">Abertura com a sede do escritório e uma chamada clara, as quatro áreas em galeria, quem somos com os advogados e contato direto pelo WhatsApp. Cada área tem página própria com o que o escritório faz e perguntas frequentes respondidas com a lei. O protótipo abaixo funciona: role, clique nas áreas.</p>
+    <p class="surge quebra" style="max-width:64ch"><span class="l">Abertura com a sede do escritório e uma chamada clara, as quatro áreas em galeria,</span> <span class="l">quem somos com os advogados e contato direto pelo WhatsApp.</span> <span class="l">Cada área tem página própria com o que o escritório faz e perguntas frequentes respondidas com a lei.</span> <span class="l">O protótipo abaixo funciona: role, clique nas áreas.</span></p>
     <div class="escolha"><span class="escolha-rot"><svg class="ic-troca" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Ver o site no</span>
     <div class="alterna" role="group" aria-label="Ver o site em">
       <button type="button" data-aparelho="cel" aria-pressed="true">Celular</button>
       <button type="button" data-aparelho="pc" aria-pressed="false">Computador</button>
     </div></div>
-    <div class="palco"><div class="aparelho cel" id="aparelho"><iframe src="../index.html" title="Protótipo do site novo" loading="lazy"></iframe></div></div>
+    <div class="palco"><div class="aparelho cel" id="aparelho"><div class="vidro"><iframe src="../index.html" title="Protótipo do site novo" loading="lazy"></iframe></div></div></div>
     <p style="text-align:center"><a class="abrir" href="../index.html">Abrir o protótipo em tela cheia &rarr;</a></p>
   </div>
 </section>
@@ -258,7 +261,7 @@ section{padding:88px 0;scroll-margin-top:60px}
     <div class="chapeu">5 · Seis carrosséis prontos</div>
     <h2 class="surge linha1">Temas que o escritório já tratou, refeitos.</h2>
     <div class="controles">
-      <p style="margin:0;max-width:52ch">Duas direções visuais, mesma paleta e mesma letra. Toque em X ou em Y para trocar o carrossel abaixo.</p>
+      <p class="quebra" style="margin:0;max-width:52ch"><span class="l">Duas direções visuais, mesma paleta e mesma letra.</span> <span class="l">Toque em X ou em Y para trocar o carrossel abaixo.</span></p>
       <div class="escolha"><span class="escolha-rot"><svg class="ic-troca" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Escolha o estilo</span>
       <div class="alterna" role="group" aria-label="Direção visual" style="margin:0">
         <button type="button" data-dir="x" aria-pressed="true">X · Editorial</button>
@@ -397,9 +400,13 @@ section{padding:88px 0;scroll-margin-top:60px}
 
   // aparelho do site
   var ap = document.getElementById("aparelho");
+  // no modo computador o site é desenhado com 1280 px e reduzido para caber na moldura
+  function escala(){ if (!ap.classList.contains("pc")) return; var w = ap.clientWidth - 20; ap.style.setProperty("--k", (w / 1280).toFixed(4)); }
+  window.addEventListener("resize", escala);
+  if ("ResizeObserver" in window) new ResizeObserver(escala).observe(ap); else ap.addEventListener("transitionend", escala);
   document.querySelectorAll("[data-aparelho]").forEach(function(b){
     b.addEventListener("click", function(){
-      ap.className = "aparelho " + b.dataset.aparelho;
+      ap.className = "aparelho " + b.dataset.aparelho; escala();
       document.querySelectorAll("[data-aparelho]").forEach(function(o){ o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
     });
   });
