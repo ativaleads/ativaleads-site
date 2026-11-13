@@ -1,6 +1,6 @@
 # Ativaleads — site institucional
 
-Site estático, sem framework, build, dependências, JavaScript de interação, fontes externas ou rastreamento. Uma única folha de estilos (`styles.css`, direção visual B "institucional" com topo e abertura brancos e logo verde, refeita na S38 em 11/11/2026) e a fonte Manrope auto-hospedada em `assets/fonts/`. O JSON-LD é dado estruturado, não código executável.
+Site estático, sem framework, build, dependências, JavaScript de interação, fontes externas ou rastreamento. Uma única folha de estilos (`styles.css`, modelo de referência helenacrm.com com peças próprias do serviço na abertura, refeito na S41 em 13/11/2026) e a fonte Manrope auto-hospedada em `assets/fonts/`. O JSON-LD é dado estruturado, não código executável.
 
 ## Testar
 
