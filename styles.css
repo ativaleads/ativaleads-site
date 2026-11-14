@@ -157,6 +157,8 @@ a { color: inherit; text-underline-offset: .2em; }
 .chamada h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
 .chamada p { margin-top: 12px; color: #c6d4de; max-width: 50ch; }
 .chamada .botao { overflow-wrap: anywhere; }
+.botao-zap { display: inline-flex; align-items: center; gap: 10px; }
+.botao-zap svg { width: 20px; height: 20px; flex-shrink: 0; }
 @media (min-width: 900px) { .chamada { grid-template-columns: 1.3fr 1fr; padding: 56px 56px; } .chamada .acao { justify-self: end; } }
 @media (max-width: 640px) { .chamada { padding: 36px 24px; } }
 
@@ -301,3 +303,107 @@ a { color: inherit; text-underline-offset: .2em; }
 .animada.saindo .msg { opacity: 0; transition-duration: .5s; }
 @keyframes dig { 0%, 60%, 100% { transform: none; opacity: .35; } 30% { transform: translateY(-3px); opacity: .9; } }
 @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } .msg .dig i { animation: none; } }
+
+/* Roteiro fixo: a seção prende na tela e a rolagem troca o passo (S41). Sem JavaScript vira lista simples. */
+.roteiro { padding-bottom: 40px; }
+.roteiro-grade { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 900px) { .roteiro-grade { grid-template-columns: 1fr 1.05fr; gap: 56px; } }
+.roteiro-conta { display: none; font-size: 3.4rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; color: var(--ink); }
+.roteiro-conta small { font-size: .9rem; font-weight: 700; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+.roteiro-pontos { display: none; gap: 10px; margin: 18px 0 30px; }
+.roteiro-ponto { width: 34px; height: 6px; border-radius: 4px; border: 0; padding: 0; background: var(--line); cursor: pointer; transition: background .3s, width .3s; }
+.roteiro-ponto[data-estado="antes"] { background: #9ddfbd; }
+.roteiro-ponto[data-estado="atual"] { background: var(--green); width: 54px; }
+.roteiro-ponto:focus-visible { outline: 3px solid var(--green-dark); outline-offset: 3px; }
+.roteiro-textos { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.roteiro-texto .tag { font-size: .82rem; font-weight: 800; color: var(--green-dark); text-transform: uppercase; letter-spacing: .06em; }
+.roteiro-texto h3 { margin-top: 8px; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.1; letter-spacing: -.03em; font-weight: 800; }
+.roteiro-texto > p:last-child { margin-top: 12px; color: var(--muted); font-size: 1.05rem; max-width: 44ch; }
+.roteiro-palco { display: flex; align-items: flex-end; justify-content: center; gap: 22px; }
+.celular { position: relative; width: 270px; height: 540px; flex-shrink: 0; border-radius: 40px; border: 10px solid var(--deep); background: #fff; box-shadow: 0 40px 70px -40px rgba(16,45,70,.6); overflow: hidden; }
+.celular::before { content: ""; position: absolute; z-index: 5; left: 50%; top: 8px; width: 84px; height: 22px; margin-left: -42px; border-radius: 12px; background: var(--deep); }
+.tela { position: absolute; inset: 0; padding: 40px 14px 14px; display: flex; flex-direction: column; gap: 10px; font-size: .78rem; opacity: 0; transition: opacity .45s cubic-bezier(.2,.75,.2,1), transform .45s cubic-bezier(.2,.75,.2,1); }
+.tela-2 { opacity: 1; }
+.roteiro-lista { width: 210px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: 0 26px 50px -30px rgba(16,45,70,.5); margin-bottom: 40px; }
+.roteiro-lista p { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.roteiro-lista ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: .86rem; font-weight: 600; }
+.roteiro-lista li { display: flex; align-items: center; gap: 9px; color: var(--ink); transition: color .3s; }
+.roteiro-lista .ck { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--green); background: var(--green); flex-shrink: 0; position: relative; transition: background .3s, border-color .3s; }
+.roteiro-lista .ck::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); transition: opacity .3s; }
+/* telas */
+.t-barras { display: flex; gap: 4px; } .t-barras i { flex: 1; height: 3px; border-radius: 2px; background: var(--green); }
+.t-barras i:nth-child(n+2) { background: var(--line); }
+.t-perfil { display: flex; align-items: center; gap: 8px; } .t-perfil b { font-size: .8rem; } .t-perfil small { margin-left: auto; color: var(--muted); font-size: .68rem; }
+.av { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--navy)); flex-shrink: 0; }
+.t-foto { position: relative; flex: 1; border-radius: 14px; background: #d9f3e5; overflow: hidden; min-height: 150px; }
+.t-foto .sol { position: absolute; right: 22px; top: 22px; width: 30px; height: 30px; border-radius: 50%; background: #fff; }
+.t-foto .morro { position: absolute; bottom: -40px; border-radius: 50%; }
+.t-foto .m1 { left: -30px; width: 200px; height: 130px; background: var(--green); }
+.t-foto .m2 { right: -50px; width: 220px; height: 120px; background: var(--green-dark); }
+.t-oferta { font-weight: 800; font-size: .95rem; color: var(--ink); }
+.t-linha { height: 7px; width: 70%; border-radius: 4px; background: var(--line); }
+.t-cta { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 10px; background: var(--green); color: var(--deep); font-weight: 800; }
+.t-cta .zap { box-shadow: inset 0 0 0 3px var(--green), 0 0 0 1px var(--deep); background: var(--deep); }
+.t-zap-cab { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.t-zap-cab b { display: block; font-size: .82rem; } .t-zap-cab small { color: var(--green-dark); font-weight: 700; font-size: .68rem; }
+.t-zap { display: grid; gap: 8px; align-content: start; }
+.t-zap .msg { font-size: .76rem; max-width: 88%; }
+.t-agenda { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; border: 1px solid #bfe9d2; background: var(--tint); margin-top: 4px; }
+.t-dia { display: grid; place-items: center; width: 40px; height: 44px; border-radius: 8px; background: #fff; font-weight: 800; font-size: 1rem; line-height: 1; color: var(--ink); }
+.t-dia small { font-size: .56rem; color: var(--green-dark); }
+.t-agenda b { display: block; font-size: .8rem; } .t-agenda small { color: var(--muted); font-size: .68rem; }
+.t-ok { margin-left: auto; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--deep); display: grid; place-items: center; font-weight: 800; font-size: .7rem; }
+.t-aviso { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: var(--deep); color: #fff; }
+.t-aviso b { display: block; font-size: .78rem; } .t-aviso small { color: #b9c7d1; font-size: .68rem; }
+.t-aviso .zap { box-shadow: inset 0 0 0 3px var(--deep), 0 0 0 1px var(--green); }
+.t-rel-cab { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.t-rel-cab b { font-size: .9rem; } .t-rel-cab small { color: var(--muted); font-size: .68rem; }
+.t-rel-sub { color: var(--muted); font-size: .72rem; margin-top: 4px; }
+.t-barras-graf { display: flex; align-items: flex-end; gap: 12px; height: 90px; padding: 0 6px; border-bottom: 1px solid var(--line); }
+.t-barras-graf i { flex: 1; height: var(--h); border-radius: 6px 6px 0 0; background: var(--green); transform-origin: bottom; }
+.t-linha-graf { width: 100%; height: 70px; } .t-linha-graf .area { fill: var(--tint); } .t-linha-graf .linha { fill: none; stroke: var(--green-dark); stroke-width: 2.5; }
+.t-prox { margin-top: auto; padding: 10px; border-radius: 10px; background: var(--gray); display: grid; gap: 6px; }
+.t-prox b { font-size: .76rem; } .t-prox i { height: 6px; border-radius: 4px; background: var(--line); } .t-prox i + i { width: 70%; }
+/* modo roteiro (com JavaScript) */
+.js .roteiro-corpo { height: 400vh; position: relative; }
+.js .roteiro-fixo { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.js .roteiro-conta { display: block; }
+.js .roteiro-pontos { display: flex; }
+.js .roteiro-textos { display: block; position: relative; min-height: 14em; }
+.js .roteiro-texto { position: absolute; inset: 0 0 auto 0; opacity: 0; transform: translateY(26px); transition: opacity .5s cubic-bezier(.2,.75,.2,1), transform .5s cubic-bezier(.2,.75,.2,1); pointer-events: none; }
+.js .roteiro-texto[data-estado="antes"] { transform: translateY(-26px); }
+.js .roteiro-texto[data-estado="atual"] { opacity: 1; transform: none; pointer-events: auto; }
+.js .tela { opacity: 0; transform: translateY(18px) scale(.98); }
+.js .tela[data-estado="antes"] { transform: translateY(-18px) scale(.98); }
+.js .tela[data-estado="atual"] { opacity: 1; transform: none; }
+.js .roteiro-lista li[data-estado="depois"] { color: var(--muted); }
+.js .roteiro-lista li[data-estado="depois"] .ck { background: transparent; border-color: var(--line); }
+.js .roteiro-lista li[data-estado="depois"] .ck::after { opacity: 0; }
+.js .tela-4[data-estado="atual"] .t-barras-graf i { animation: sobe-barra .7s cubic-bezier(.2,.75,.2,1) both; }
+.js .tela-4[data-estado="atual"] .t-barras-graf i:nth-child(2) { animation-delay: .08s; } .js .tela-4[data-estado="atual"] .t-barras-graf i:nth-child(3) { animation-delay: .16s; } .js .tela-4[data-estado="atual"] .t-barras-graf i:nth-child(4) { animation-delay: .24s; }
+@keyframes sobe-barra { from { transform: scaleY(0); } }
+@media (max-width: 899px) {
+  .roteiro-lista { display: none; }
+  .celular { width: 210px; height: 420px; border-width: 8px; border-radius: 32px; }
+  .js .celular { height: min(420px, 46svh); width: min(210px, 23svh); }
+  .js .roteiro-grade { gap: 18px; }
+  .js .roteiro-conta { font-size: 2.2rem; }
+  .js .roteiro-pontos { margin: 10px 0 14px; }
+  .js .roteiro-textos { min-height: 9.5em; }
+  .js .roteiro-texto h3 { font-size: 1.45rem; }
+  .js .roteiro-texto > p:last-child { font-size: .95rem; margin-top: 8px; }
+  .js .tela { padding: 32px 10px 10px; font-size: .7rem; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .tela, .roteiro-texto, .roteiro-ponto { transition: none !important; } .js .tela-4 .t-barras-graf i { animation: none !important; } }
+
+.t-campo { margin-top: auto; display: flex; align-items: center; gap: 8px; }
+.t-campo span { flex: 1; padding: 8px 12px; border-radius: 18px; background: var(--gray); color: var(--muted); }
+.t-campo i { width: 30px; height: 30px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+/* Ana nos serviços: cartão largo */
+.servico.d-ana { background: var(--deep) radial-gradient(circle at 0% 0%, rgba(0,191,99,.22), transparent 50%); color: #fff; }
+.servico.d-ana .icone { background: rgba(0,191,99,.16); color: var(--green); }
+.servico.d-ana .sub { color: var(--green); margin-top: 4px; }
+.servico.d-ana p { color: #c6d4de; max-width: 72ch; }
+.servico.d-ana .obs { background: rgba(255,255,255,.12); color: #fff; }
+@media (min-width: 760px) { .servico.d-ana { grid-column: 1 / -1; } }
