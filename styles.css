@@ -124,11 +124,11 @@ a { color: inherit; text-underline-offset: .2em; }
 .checks strong { font-weight: 800; }
 .acessos { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px 10px; box-shadow: 0 30px 60px -36px rgba(16, 45, 70, .45); }
 .acessos-cab { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: .95rem; }
-.acessos-cab small { font-weight: 600; color: var(--muted); font-size: .78rem; }
+.acessos-cab small { font-weight: 600; color: var(--muted); font-size: .78rem; white-space: nowrap; }
 .acessos li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
 .acessos li:last-child { border-bottom: 0; }
 .acessos .ativo { font-weight: 700; }
-.acessos .dono { justify-self: end; font-size: .78rem; font-weight: 800; color: var(--green-dark); background: var(--tint); padding: 3px 10px; border-radius: 999px; }
+.acessos .dono { justify-self: end; align-self: start; white-space: nowrap; line-height: 1.5; font-size: .78rem; font-weight: 800; color: var(--green-dark); background: var(--tint); padding: 3px 10px; border-radius: 999px; }
 .acessos .papel { grid-column: 1 / -1; color: var(--muted); font-size: .8rem; }
 
 /* Como trabalhamos: quatro passos ligados por setas */
@@ -274,7 +274,7 @@ a { color: inherit; text-underline-offset: .2em; }
   .com-rot .peca { position: relative; top: auto; left: auto; right: auto; }
 }
 
-.com-rot .relatorio .pc-titulo small { display: none; }
+.com-rot .relatorio:not(.funil) .pc-titulo small { display: none; }
 @media (max-width: 560px) { .com-rot .peca.calendario, .com-rot .peca.relatorio, .com-rot .peca { width: 100%; max-width: 320px; } }
 
 /* Efeitos (S41): revelação ao rolar, barra de progresso, conversa encenada. Só opacity e transform. */
@@ -416,7 +416,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .ana-av::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--deep); }
 .ana-figura figcaption { font-size: .8rem; font-weight: 700; color: #c6d4de; white-space: nowrap; }
 .servico.d-ana { display: grid; grid-template-columns: 1fr; gap: 12px; }
-.servico.d-ana .ana-figura { order: -1; justify-self: start; }
+.servico.d-ana .ana-figura { order: -1; justify-self: center; }
 .servico.d-ana .obs { justify-self: start; }
 .servico.d-ana .ana-av { width: 96px; height: 96px; }
 @media (min-width: 760px) {
@@ -444,7 +444,7 @@ a { color: inherit; text-underline-offset: .2em; }
 }
 @media (max-width: 899px) { html.roteiro-snap { scroll-snap-type: y proximity; } }
 .roteiro-ancora { display: none; }
-.js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - 100svh) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: always; pointer-events: none; }
+.js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - var(--fixo-h, 100svh)) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: always; pointer-events: none; }
 @media (max-width: 899px) { .js .roteiro-corpo { height: 560svh; } }
 
 /* Frente larga "Atendimento e vendas no WhatsApp" (S41) */
@@ -456,3 +456,72 @@ a { color: inherit; text-underline-offset: .2em; }
 .recursos li { position: relative; padding-left: 28px; font-size: .95rem; color: var(--ink); line-height: 1.4; }
 .recursos li::before { content: ""; position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%; background: var(--tint); }
 .recursos li::after { content: ""; position: absolute; left: 6px; top: 4px; width: 5px; height: 9px; border: solid var(--green-dark); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+
+/* Funil de vendas da abertura (peça 4) */
+.funil .fn-vendas { font-size: .68rem !important; }
+.funil .fn-vendas b { color: var(--green-dark); }
+.fn-quadro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+.fn-col { background: var(--gray); border-radius: 8px; padding: 6px 5px 8px; min-height: 112px; display: flex; flex-direction: column; gap: 5px; }
+.fn-col p { font-size: .6rem; font-weight: 800; color: var(--muted); line-height: 1.2; min-height: 2.4em; }
+.fn-card { display: flex; align-items: center; gap: 5px; padding: 5px 6px; border-radius: 6px; background: #fff; box-shadow: 0 2px 6px -3px rgba(16,45,70,.35); font-size: .66rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; }
+.fn-card i { width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--navy)); flex-shrink: 0; }
+.fn-col[data-col="3"] .fn-card { background: var(--green); color: var(--deep); }
+.fn-col[data-col="3"] .fn-card i { background: #fff; }
+.fn-card[hidden] { display: none; }
+.funil .pc-titulo { white-space: nowrap; }
+.fn-card.entra { animation: fn-entra .45s cubic-bezier(.2,.75,.2,1) both; }
+.funil.saindo .fn-card { opacity: 0; transition: opacity .4s; }
+@keyframes fn-entra { from { opacity: 0; transform: translateY(-8px) scale(.9); } }
+/* Painel de vendas do roteiro (passo 4) */
+.t-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.t-kpis div { background: var(--gray); border-radius: 10px; padding: 8px 6px; text-align: center; }
+.t-kpis b { display: block; font-size: 1.15rem; font-weight: 800; color: var(--ink); line-height: 1.1; }
+.t-kpis div:last-child { background: var(--tint); } .t-kpis div:last-child b { color: var(--green-dark); }
+.t-kpis small { font-size: .62rem; color: var(--muted); }
+.t-funil { display: grid; gap: 6px; }
+.t-funil span { display: block; padding-bottom: 3px; font-size: .66rem; font-weight: 700; color: var(--ink); }
+.t-funil i { display: block; height: 9px; width: var(--w); border-radius: 5px; background: #9ddfbd; transform-origin: left; }
+.t-funil div:last-child i { background: var(--green); }
+.js .tela-4[data-estado="atual"] .t-funil i { animation: sobe-barra-x .8s cubic-bezier(.2,.75,.2,1) both; }
+.js .tela-4[data-estado="atual"] .t-funil div:nth-child(2) i { animation-delay: .1s; } .js .tela-4[data-estado="atual"] .t-funil div:nth-child(3) i { animation-delay: .2s; }
+@keyframes sobe-barra-x { from { transform: scaleX(0); } }
+.t-resp { display: flex; align-items: baseline; gap: 6px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); font-size: .7rem; color: var(--muted); }
+.t-resp b { margin-left: auto; font-size: .95rem; color: var(--ink); } .t-resp small { color: var(--green-dark); font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .js .tela-4 .t-funil i { animation: none !important; } }
+
+/* Anúncio da abertura (peça 1): sol se mexe, toque no botão, aviso de nova conversa. Só com a peça na tela. */
+.anuncio .cta { position: relative; overflow: hidden; }
+.anuncio .cta::after { content: ""; position: absolute; left: 50%; top: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: rgba(0,122,63,.35); opacity: 0; pointer-events: none; }
+.an-toast { position: absolute; left: 50%; bottom: 58px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: var(--deep); color: #fff; font-size: .7rem; font-weight: 700; white-space: nowrap; opacity: 0; transform: translate(-50%, 6px); pointer-events: none; }
+.an-toast .zap { width: 10px; height: 10px; box-shadow: inset 0 0 0 2px var(--deep), 0 0 0 1px var(--green); }
+.anuncio.animada .foto .sol { animation: an-sol 6s ease-in-out infinite; }
+.anuncio.animada .cta { animation: an-aperta 4.5s ease-in-out infinite; }
+.anuncio.animada .cta::after { animation: an-toque 4.5s ease-out infinite; }
+.anuncio.animada .an-toast { animation: an-aviso 4.5s ease-out infinite; }
+@keyframes an-sol { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px) scale(1.08); } }
+@keyframes an-aperta { 0%, 28%, 40%, 100% { transform: none; background: var(--tint); } 33% { transform: scale(.95); background: #cdeedd; } }
+@keyframes an-toque { 0%, 28% { opacity: 0; transform: scale(.4); } 31% { opacity: 1; transform: scale(.8); } 45%, 100% { opacity: 0; transform: scale(5); } }
+@keyframes an-aviso { 0%, 36% { opacity: 0; transform: translate(-50%, 6px); } 44%, 72% { opacity: 1; transform: translate(-50%, 0); } 84%, 100% { opacity: 0; transform: translate(-50%, -10px); } }
+@media (prefers-reduced-motion: reduce) { .anuncio.animada *, .anuncio.animada .cta::after { animation: none !important; } }
+
+/* Faixa: títulos com a mesma altura (duas linhas) para os subtítulos alinharem quando há colunas */
+@media (min-width: 640px) { .faixa strong { min-height: 2.4em; } }
+
+/* Ajustes de alinhamento e espaçamento (S41, varredura medida) */
+@media (max-width: 899px) { .faq-dupla .cab { margin-bottom: 32px; } }
+@media (min-width: 900px) {
+  .roteiro { padding-bottom: 96px; }
+  .js .roteiro-fixo { height: auto; top: 8svh; display: block; }
+  .js .roteiro-grade { align-items: start; }
+}
+@media (max-width: 899px) { .roteiro { padding-bottom: 72px; } .js .roteiro-fixo { height: auto; top: 4svh; display: block; } }
+
+/* Celular: câmera do aparelho na mesma escala da tela; folga entre texto e aparelho; subtítulo dos cartões largos */
+@media (max-width: 899px) {
+  .celular::before { width: 62px; height: 16px; margin-left: -31px; top: 6px; border-radius: 9px; }
+  .js .roteiro-grade { gap: 28px; }
+}
+@media (max-width: 899px) and (max-height: 720px) {
+  .celular::before { width: 50px; height: 13px; margin-left: -25px; top: 5px; }
+}
+.servico > div > .sub { margin-top: 6px; }

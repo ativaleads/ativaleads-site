@@ -16,10 +16,10 @@
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=41">
+<link rel="stylesheet" href="/styles.css?v=51">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Ativaleads","legalName":"Ativaleads Consultoria em Marketing Digital LTDA","taxID":"52.788.441/0001-01","email":"contato@ativaleads.com.br","telephone":"+5511969692055","url":"https://ativaleads.com.br/ativaleads/","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"}}</script>
 <script>document.documentElement.classList.add('js')</script>
-<script src="/assets/efeitos.js?v=4" defer></script>
+<script src="/assets/efeitos.js?v=8" defer></script>
 </head>
 <body>
 <div class="progresso" aria-hidden="true"></div>
@@ -48,11 +48,12 @@
       <p class="acoes"><a class="botao botao-cheio" href="/ativaleads/#contato">Fale com a Ativaleads</a></p>
     </div>
     <div class="mes com-rot" aria-hidden="true">
-      <div class="peca anuncio"><span class="rot">1 · Anúncio no Instagram</span>
+      <div class="peca anuncio" data-anuncio><span class="rot">1 · Anúncio no Instagram</span>
         <div class="pc-cab"><span class="av"></span><span class="nm"><b></b><i>Patrocinado</i></span></div>
         <div class="foto"><span class="sol"></span><span class="morro m1"></span><span class="morro m2"></span></div>
         <div class="pc-txt"><b></b><i></i></div>
         <div class="cta"><span class="zap"></span>Enviar mensagem</div>
+        <span class="an-toast" aria-hidden="true"><span class="zap"></span>Nova conversa</span>
       </div>
       <div class="peca conversa" data-conversa><span class="rot">2 · Conversa no WhatsApp</span>
         <div class="pc-titulo"><span class="zap"></span>WhatsApp da empresa<small class="pc-status">online</small></div>
@@ -68,18 +69,21 @@
         <div class="dias"><span class="cel">1</span><span class="cel ok">2</span><span class="cel">3</span><span class="cel ok">4</span><span class="cel">5</span><span class="cel ok">6</span><span class="cel">7</span><span class="cel">8</span><span class="cel ok">9</span><span class="cel">10</span><span class="cel ok">11</span><span class="cel">12</span><span class="cel ok">13</span><span class="cel">14</span><span class="cel">15</span><span class="cel ok">16</span><span class="cel">17</span><span class="cel ok">18</span><span class="cel">19</span><span class="cel prod">20</span><span class="cel">21</span><span class="cel">22</span><span class="cel prod">23</span><span class="cel">24</span><span class="cel prod">25</span><span class="cel">26</span><span class="cel prod">27</span><span class="cel">28</span><span class="cel">29</span><span class="cel prod">30</span></div>
         <div class="legenda"><span class="l-ok">aprovado</span><span class="l-prod">em produção</span></div>
       </div>
-      <div class="peca relatorio"><span class="rot">4 · Relatório semanal</span>
-        <div class="pc-titulo">Relatório semanal <small>resultados e próximos passos</small></div>
-        <p class="pc-sub">Conversas iniciadas pelo WhatsApp, por dia</p>
-        <svg class="grafico" viewBox="0 0 260 90" aria-hidden="true"><path class="area" d="M0 78 L65 66 L130 52 L195 40 L260 22 L260 90 L0 90 Z"/><path class="linha" d="M0 78 L65 66 L130 52 L195 40 L260 22"/><circle cx="260" cy="22" r="4"/></svg>
-        <div class="semanas"><span>seg</span><span>qua</span><span>sex</span><span>dom</span></div>
+      <div class="peca relatorio funil" data-funil><span class="rot">4 · Funil de vendas no WhatsApp</span>
+        <div class="pc-titulo">Esta semana <small class="fn-vendas">vendas: <b>1</b></small></div>
+        <div class="fn-quadro">
+          <div class="fn-col" data-col="1"><p>Nova conversa</p><span class="fn-card" data-k="a"><i></i>Marina</span><span class="fn-card" data-k="b"><i></i>Paulo</span></div>
+          <div class="fn-col" data-col="2"><p>Horário marcado</p><span class="fn-card" data-k="c"><i></i>Lúcia</span></div>
+          <div class="fn-col" data-col="3"><p>Venda</p><span class="fn-card" data-k="d"><i></i>Rafael</span></div>
+        </div>
+        <span class="fn-card fn-novo" data-k="e" hidden><i></i>Beatriz</span>
       </div>
     </div>
   </div>
   <div class="wrap">
     <div class="faixa">
       <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5"/></svg></span><strong>Plano antes da execução</strong><span>relatório estratégico com metas e os primeiros 90 dias</span></div>
-      <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 17v-3M12 17v-6M15 17v-4"/></svg></span><strong>Relatório toda semana</strong><span>resultados, o que mudou e os próximos passos, por escrito</span></div>
+      <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="11" rx="1.5"/><rect x="17" y="4" width="4" height="7" rx="1.5"/></svg></span><strong>Cada conversa no funil</strong><span>responsável, etapa e próximo passo no sistema, com relatório toda semana</span></div>
       <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 19 4M16 7l2 2M14 9l2 2"/></svg></span><strong>Tudo em nome do cliente</strong><span>domínio, site, perfis e contas de anúncio</span></div>
       <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 15h2"/></svg></span><strong>Verba sem intermediário</strong><span>o cliente paga os anúncios direto ao Google e à Meta</span></div>
     </div>
@@ -140,13 +144,13 @@
             <button type="button" class="roteiro-ponto" data-n="1" aria-label="Passo 1: o anúncio"></button>
             <button type="button" class="roteiro-ponto" data-n="2" aria-label="Passo 2: a Ana atende"></button>
             <button type="button" class="roteiro-ponto" data-n="3" aria-label="Passo 3: horário marcado"></button>
-            <button type="button" class="roteiro-ponto" data-n="4" aria-label="Passo 4: o relatório"></button>
+            <button type="button" class="roteiro-ponto" data-n="4" aria-label="Passo 4: o painel de vendas"></button>
           </div>
           <ol class="roteiro-textos">
             <li class="roteiro-texto" data-n="1"><p class="tag">Gestão de tráfego pago</p><h3>O anúncio encontra <span class="verde">quem procura</span></h3><p>Campanhas no Instagram, no Facebook e no Google levam o interessado direto para o WhatsApp da empresa.</p></li>
             <li class="roteiro-texto" data-n="2"><p class="tag">Ana no WhatsApp</p><h3>A Ana responde <span class="verde">na hora</span></h3><p>24 horas por dia, ela entende o pedido e tira as dúvidas com as informações que a empresa aprovou.</p></li>
             <li class="roteiro-texto" data-n="3"><p class="tag">Ana no WhatsApp</p><h3>A conversa termina <span class="verde">com horário marcado</span></h3><p>A Ana confirma o horário com o cliente e avisa a equipe, com o resumo do pedido.</p></li>
-            <li class="roteiro-texto" data-n="4"><p class="tag">Relatório semanal</p><h3>Tudo vira <span class="verde">resultado medido</span></h3><p>Toda semana, o relatório mostra de onde vieram as conversas, quantas viraram horário marcado e o que ajustar.</p></li>
+            <li class="roteiro-texto" data-n="4"><p class="tag">Sistema e relatório semanal</p><h3>Tudo vira <span class="verde">resultado medido</span></h3><p>O sistema registra cada conversa, e o relatório semanal mostra de onde vieram, quantas viraram venda e o que ajustar.</p></li>
           </ol>
         </div>
         <div class="roteiro-palco" aria-hidden="true">
@@ -178,12 +182,20 @@
               <div class="t-aviso"><span class="zap"></span><div><b>Equipe avisada</b><small>Novo horário, com o resumo do pedido</small></div></div>
             </div>
             <div class="tela tela-4" data-n="4">
-              <div class="t-rel-cab"><b>Relatório semanal</b><small>exemplo</small></div>
-              <p class="t-rel-sub">Conversas iniciadas pelo anúncio</p>
-              <div class="t-barras-graf"><i style="--h:38%"></i><i style="--h:55%"></i><i style="--h:68%"></i><i style="--h:90%"></i></div>
-              <p class="t-rel-sub">Horários marcados pela Ana</p>
-              <svg class="t-linha-graf" viewBox="0 0 200 60"><path class="area" d="M0 52 L66 42 L133 30 L200 12 L200 60 L0 60 Z"/><path class="linha" d="M0 52 L66 42 L133 30 L200 12"/></svg>
-              <div class="t-prox"><b>Próximos passos</b><i></i><i></i></div>
+              <div class="t-rel-cab"><b>Painel de vendas</b><small>exemplo · semana</small></div>
+              <div class="t-kpis">
+                <div><b data-alvo="128">128</b><small>conversas</small></div>
+                <div><b data-alvo="46">46</b><small>horários</small></div>
+                <div><b data-alvo="19">19</b><small>vendas</small></div>
+              </div>
+              <p class="t-rel-sub">Funil da semana</p>
+              <div class="t-funil">
+                <div style="--w:100%"><span>Nova conversa</span><i></i></div>
+                <div style="--w:36%"><span>Horário marcado</span><i></i></div>
+                <div style="--w:15%"><span>Venda</span><i></i></div>
+              </div>
+              <div class="t-resp"><span>Primeira resposta</span><b>8 s</b><small>Ana</small></div>
+              <div class="t-prox"><b>Relatório semanal</b><i></i><i></i></div>
             </div>
           </div></div>
           <div class="roteiro-lista">
@@ -192,7 +204,7 @@
               <li data-n="1"><span class="ck"></span>Anúncio no ar</li>
               <li data-n="2"><span class="ck"></span>Conversa atendida pela Ana</li>
               <li data-n="3"><span class="ck"></span>Horário marcado</li>
-              <li data-n="4"><span class="ck"></span>Resultado no relatório</li>
+              <li data-n="4"><span class="ck"></span>Venda no funil e no relatório</li>
             </ul>
           </div>
         </div>
@@ -219,13 +231,13 @@
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-6v14L3 13z"/><path d="M7 12.5V18h3"/></svg></span>
         <h3>Gestão de tráfego pago</h3><p class="sub">Google, Instagram e Facebook</p>
         <p>Google Ads e Meta Ads (Instagram e Facebook). Estruturamos as contas, a medição de conversões e as campanhas, produzimos os anúncios e otimizamos ao longo do mês. Campanhas de mensagem levam o interessado direto ao WhatsApp da empresa.</p>
-        <span class="obs">Verba paga pelo cliente direto às plataformas</span>
+        <span class="obs">Verba paga direto às plataformas</span>
       </article>
       <article class="servico reveal">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><path d="M16.5 7.5h.01"/></svg></span>
         <h3>Gestão de redes sociais</h3><p class="sub">Planejamento e produção</p>
         <p>Repaginação do perfil no Instagram e da página no Facebook, com nome, bio, foto, capa e destaques, e, todo mês, calendário editorial, publicações em formatos variados, vídeos curtos, stories de apoio, legendas e agendamento.</p>
-        <span class="obs">Calendário e peças aprovados antes da publicação</span>
+        <span class="obs">Peças aprovadas antes de publicar</span>
       </article>
       <article class="servico reveal">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>
@@ -267,7 +279,7 @@
   <div class="wrap dupla">
     <div>
       <p class="etiqueta">Ativos em nome do cliente</p>
-      <div class="cab reveal" style="margin-bottom:28px">
+      <div class="cab reveal">
         <h2 id="t-ativos">O que é da empresa <span class="verde">continua da empresa</span></h2>
         <p>Contas de anúncio, páginas, perfis, domínio e site pertencem ao cliente. A Ativaleads atua com acesso de parceiro, revogável a qualquer momento.</p>
       </div>
