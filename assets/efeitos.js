@@ -3,6 +3,9 @@
 // sem JavaScript ou com "reduzir movimento" ligado, a página aparece pronta e nada se mexe.
 (function () {
   var reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // As cenas da abertura começam depois que a página termina de abrir: até lá a capa fica no estado final
+  // (é o que a pessoa vê de cara e o que o PageSpeed mede).
+  var INICIO = 3000;
   var temObservador = 'IntersectionObserver' in window;
 
   function revelar() {
@@ -98,6 +101,7 @@
     }
 
     async function rodar() {
+      await esperar(INICIO);
       for (;;) {
         mensagens.forEach(function (mensagem) {
           estado(mensagem, 'oculta');
@@ -234,6 +238,7 @@
     async function rodar() {
       var i;
 
+      await esperar(INICIO);
       for (;;) {
         aprovados.forEach(function (dia) { dia.classList.remove('ok', 'aprovando'); });
         producao.forEach(function (dia) { dia.classList.remove('prod'); });
@@ -310,6 +315,7 @@
     }
 
     async function rodar() {
+      await esperar(INICIO);
       for (;;) {
         inicio();
         await esperar(1500);
@@ -361,11 +367,13 @@
     document.querySelectorAll('[data-funil]').forEach(funil);
     // Anúncio da abertura: a animação (só CSS) liga com a peça na tela e desliga fora dela.
     if (!reduzido && temObservador) {
-      document.querySelectorAll('[data-anuncio]').forEach(function (cena) {
-        new IntersectionObserver(function (entradas) {
-          cena.classList.toggle('animada', entradas[0].isIntersecting);
-        }, { threshold: 0.3 }).observe(cena);
-      });
+      window.setTimeout(function () {
+        document.querySelectorAll('[data-anuncio]').forEach(function (cena) {
+          new IntersectionObserver(function (entradas) {
+            cena.classList.toggle('animada', entradas[0].isIntersecting);
+          }, { threshold: 0.3 }).observe(cena);
+        });
+      }, INICIO);
     }
     document.querySelectorAll('[data-roteiro]').forEach(function (corpo) {
       // No celular a rolagem encaixa em cada passo, para um gesto rápido não pular dois de uma vez.
