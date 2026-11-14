@@ -164,7 +164,7 @@ a { color: inherit; text-underline-offset: .2em; }
 @media (max-width: 640px) { .chamada { padding: 36px 24px; } }
 
 /* Rodapé (o verde escolhido na S38) */
-.rodape { background: var(--green-dark); color: #d7efe1; font-size: .9rem; margin-top: 96px; }
+.rodape { background: var(--green-dark); color: #eaf7ef; font-size: .9rem; margin-top: 96px; }
 .rodape a { color: #fff; text-decoration: none; }
 .rodape a:hover { text-decoration: underline; }
 .rodape :focus-visible { outline-color: #fff; }
