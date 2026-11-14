@@ -407,3 +407,24 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico.d-ana p { color: #c6d4de; max-width: 72ch; }
 .servico.d-ana .obs { background: rgba(255,255,255,.12); color: #fff; }
 @media (min-width: 760px) { .servico.d-ana { grid-column: 1 / -1; } }
+
+/* Avatar da Ana (S41) */
+.ana-figura { margin: 0; display: grid; justify-items: center; gap: 10px; }
+.ana-av { position: relative; display: block; width: 132px; height: 132px; }
+.ana-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px rgba(0,191,99,.45), 0 24px 44px -22px rgba(0,0,0,.7); }
+.ana-av::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--deep); }
+.ana-figura figcaption { font-size: .8rem; font-weight: 700; color: #c6d4de; white-space: nowrap; }
+.servico.d-ana { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.servico.d-ana .ana-figura { order: -1; justify-self: start; }
+.servico.d-ana .obs { justify-self: start; }
+.servico.d-ana .ana-av { width: 96px; height: 96px; }
+@media (min-width: 760px) {
+  .servico.d-ana { grid-template-columns: 1fr auto; column-gap: 48px; align-items: start; }
+  .servico.d-ana > :not(.ana-figura) { grid-column: 1; }
+  .servico.d-ana .ana-figura { order: 0; grid-column: 2; grid-row: 1 / span 4; align-self: center; justify-self: end; margin-right: 24px; }
+  .servico.d-ana .ana-av { width: 132px; height: 132px; }
+}
+.ana-acao { display: grid; justify-items: center; gap: 22px; }
+.chamada .ana-av { width: 140px; height: 140px; }
+.ana-acao .botao { white-space: nowrap; justify-content: center; }
+@media (max-width: 899px) { .ana-acao { justify-items: stretch; } .ana-acao .ana-figura { justify-self: center; } .ana-acao .botao { width: 100%; } .chamada .ana-av { width: 104px; height: 104px; } }
