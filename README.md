@@ -8,6 +8,7 @@ Na raiz, execute `python -m http.server 8000` e abra http://localhost:8000 (pág
 
 ## Estado
 
+- **CSS embutido na página principal (S41, PageSpeed 100):** `ativaleads/index.html` traz o `styles.css` dentro de `<style>` (entre `<!-- css:inicio -->` e `<!-- css:fim -->`). A fonte é o `styles.css`; depois de mudar o CSS, rodar `python _preview/s41/embutir_css.py` (fora do git, no clone de trabalho) ou colar o arquivo no bloco. As outras páginas usam o `<link>` com `?v=`.
 - **Estrutura desde a S41 (13/11/2026):** a raiz (`index.html`) é a página "em breve" com o logo animado (camadas em `assets/logo/anim/`, só CSS). O site institucional fica em `/ativaleads/` (com `/ativaleads/privacidade/` e `/ativaleads/termos/`); `_redirects` leva os endereços antigos `/privacidade/` e `/termos/` para lá. `styles.css`, `assets/` e `404.html` continuam na raiz.
 - **Fora do Google por decisão do Operador (11/11/2026):** todas as páginas têm `<meta name="robots" content="noindex">` e o `robots.txt` não aponta o `sitemap.xml`. Para voltar a indexar: tirar o `noindex` das páginas e devolver a linha `Sitemap: https://ativaleads.com.br/sitemap.xml` ao `robots.txt`.
 - **Contato:** WhatsApp da Ana (+55 11 96969-2055, assistente virtual) na chamada final, com mensagem pronta; e-mail contato@ativaleads.com.br no rodapé, nos termos e na privacidade. Não há formulário nem armazenamento no site.
