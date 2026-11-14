@@ -200,10 +200,49 @@
     atualizar();
   }
 
+  // Calendário da abertura: os dias "em produção" vão sendo aprovados, um a um, e o ciclo recomeça.
+  function calendario(cena) {
+    var dias = Array.prototype.slice.call(cena.querySelectorAll('.cel.prod'));
+    var esperar;
+
+    if (dias.length === 0 || reduzido || !temObservador) {
+      return;
+    }
+
+    esperar = relogio(cena);
+
+    async function rodar() {
+      for (;;) {
+        dias.forEach(function (dia) {
+          dia.classList.remove('ok', 'aprovando');
+          dia.classList.add('prod');
+        });
+        await esperar(1600);
+
+        for (var i = 0; i < dias.length; i++) {
+          dias[i].classList.add('aprovando');
+          dias[i].classList.replace('prod', 'ok');
+          await esperar(350);
+          dias[i].classList.remove('aprovando');
+          await esperar(550);
+        }
+
+        await esperar(3200);
+      }
+    }
+
+    rodar();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     revelar();
     progresso();
     document.querySelectorAll('[data-conversa]').forEach(conversa);
-    document.querySelectorAll('[data-roteiro]').forEach(roteiro);
+    document.querySelectorAll('[data-calendario]').forEach(calendario);
+    document.querySelectorAll('[data-roteiro]').forEach(function (corpo) {
+      // No celular a rolagem encaixa em cada passo, para um gesto rápido não pular dois de uma vez.
+      document.documentElement.classList.add('roteiro-snap');
+      roteiro(corpo);
+    });
   });
 })();
