@@ -414,7 +414,9 @@ a { color: inherit; text-underline-offset: .2em; }
 .ana-av { position: relative; display: block; width: 132px; height: 132px; }
 .ana-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px rgba(0,191,99,.45), 0 24px 44px -22px rgba(0,0,0,.7); }
 .ana-av::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--deep); }
-.ana-figura figcaption { font-size: .8rem; font-weight: 700; color: #c6d4de; white-space: nowrap; }
+.ana-figura figcaption { display: grid; justify-items: center; gap: 2px; text-align: center; color: #c6d4de; line-height: 1.3; max-width: 100%; }
+.ana-figura figcaption b { font-size: .82rem; font-weight: 800; color: #fff; letter-spacing: .04em; }
+.ana-figura figcaption span { font-size: .74rem; font-weight: 600; }
 .servico.d-ana { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .servico.d-ana .ana-figura { order: -1; justify-self: center; }
 .servico.d-ana .obs { justify-self: start; }
@@ -525,3 +527,6 @@ a { color: inherit; text-underline-offset: .2em; }
   .celular::before { width: 50px; height: 13px; margin-left: -25px; top: 5px; }
 }
 .servico > div > .sub { margin-top: 6px; }
+
+/* Sigla da Ana no subtítulo: numa linha própria no celular */
+@media (max-width: 640px) { .sub .sigla { display: block; } .sub .sep { display: none; } }
