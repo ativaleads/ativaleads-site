@@ -3,250 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ativaleads · Gestão de tráfego pago e de redes sociais</title>
-<meta name="description" content="Consultoria de marketing digital: gestão de tráfego pago no Google e na Meta, gestão de redes sociais, Google Empresas, landing pages e sites sob medida, com relatório estratégico, relatório mensal e todos os ativos em nome do cliente.">
-<meta name="robots" content="noindex">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="Ativaleads">
-<meta property="og:title" content="Ativaleads · Gestão de tráfego pago e de redes sociais">
-<meta property="og:description" content="Consultoria de marketing digital: gestão de tráfego pago no Google e na Meta, gestão de redes sociais, Google Empresas, landing pages e sites sob medida, com relatório estratégico, relatório mensal e todos os ativos em nome do cliente.">
-<meta property="og:url" content="https://ativaleads.com.br/">
-<link rel="canonical" href="https://ativaleads.com.br/">
-<link rel="icon" href="/assets/favicon.png" type="image/png">
+<meta name="robots" content="noindex, nofollow">
+<title>Ativaleads · Novidades a caminho</title>
+<meta name="description" content="Ativaleads Consultoria em Marketing Digital. Novidades a caminho.">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
-<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=32">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Ativaleads","legalName":"Ativaleads Consultoria em Marketing Digital LTDA","taxID":"52.788.441/0001-01","email":"contato@ativaleads.com.br","url":"https://ativaleads.com.br/","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"}}</script>
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<style>
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap; src: url(/assets/fonts/manrope-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap; src: url(/assets/fonts/manrope-latin.woff2) format('woff2'); }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { font-family: "Manrope", "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; display: grid; grid-template-rows: 1fr auto; min-height: 100vh; min-height: 100dvh; }
+main { display: grid; place-items: center; align-content: center; gap: 36px; padding: 48px 16px; text-align: center; }
+.logo { position: relative; width: min(560px, 84vw); aspect-ratio: 1000 / 162; }
+.logo img { position: absolute; inset: 0; width: 100%; height: 100%; }
+h1 { margin: 0; font-size: clamp(1.35rem, 3.2vw, 2rem); font-weight: 700; letter-spacing: -.02em; }
+.contato { margin: 0; font-size: .95rem; }
+.contato a { color: inherit; }
+footer { padding: 20px 16px 26px; text-align: center; font-size: .78rem; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+body { background: #0b1e2f radial-gradient(circle at 50% 38%, rgba(0,191,99,.20), transparent 55%); color: #fff; }
+.contato, footer { color: #b9c7d1; }
+.l-a, .l-texto { animation: foca .9s ease both; }
+.l-check { transform-origin: 18% 85%; animation: estala .6s cubic-bezier(.3,1.6,.5,1) .85s both; }
+.brilho { position: absolute; inset: 0; -webkit-mask: url(/assets/logo/anim/texto.webp) center / 100% 100% no-repeat; mask: url(/assets/logo/anim/texto.webp) center / 100% 100% no-repeat;
+  background: linear-gradient(100deg, transparent 35%, rgba(255,255,255,.75) 50%, transparent 65%) no-repeat; background-size: 40% 100%; background-position: -60% 0;
+  animation: brilho 5s ease-in-out 1.8s infinite; }
+h1, .contato { animation: aparece .7s ease 1.4s both; }
+.pontos span { animation: ponto 1.4s ease-in-out infinite; }
+.pontos span:nth-child(2) { animation-delay: .2s; } .pontos span:nth-child(3) { animation-delay: .4s; }
+@keyframes ponto { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
+@keyframes foca { from { opacity: 0; filter: blur(10px); transform: scale(.96); } }
+@keyframes estala { from { opacity: 0; transform: scale(0) rotate(-12deg); } }
+@keyframes brilho { 0% { background-position: -60% 0; } 30%, 100% { background-position: 160% 0; } }
+@keyframes aparece { from { opacity: 0; transform: translateY(10px); } }
+</style>
 </head>
 <body>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
-
-<header class="topo">
-  <div class="wrap topo-in">
-    <a class="marca" href="/" aria-label="Ativaleads, início"><img src="/assets/logo/ativaleads-verde.webp" alt="Ativaleads" width="1000" height="162"></a>
-    <nav aria-label="Navegação principal">
-      <a class="some-celular" href="/#servicos">Serviços</a>
-      <a class="some-celular" href="/#como">Como trabalhamos</a>
-      <a class="some-celular" href="/#perguntas">Perguntas</a>
-      <a class="botao botao-cheio" href="/#contato">Fale conosco</a>
-    </nav>
+<main>
+  <div class="logo" role="img" aria-label="Ativaleads">
+    <img class="l-a" src="/assets/logo/anim/a.webp" alt="">
+    <img class="l-check" src="/assets/logo/anim/check.webp" alt="">
+    <img class="l-texto" src="/assets/logo/anim/texto.webp" alt="">
+    <span class="brilho" aria-hidden="true"></span>
   </div>
-</header>
-
-<main id="conteudo">
-
-<section class="abertura" aria-labelledby="t-abertura">
-  <div class="wrap abertura-in">
-    <div>
-      <p class="etiqueta">Gestão de tráfego pago e de redes sociais</p>
-      <h1 id="t-abertura">Seus clientes estão no Google, no Instagram e no WhatsApp. <span class="verde">Nós levamos a sua empresa até eles.</span></h1>
-      <p class="lead">Planejamos, executamos e medimos o marketing digital de empresas, marcas e profissionais: gestão de tráfego pago no Google e na Meta, gestão de redes sociais, landing pages e sites, com relatório estratégico na entrada, relatório mensal de resultados e todos os ativos em nome do cliente.</p>
-      <p class="acoes"><a class="botao botao-cheio" href="/#contato">Fale com a Ativaleads</a><a class="botao botao-linha" href="/#como">Como trabalhamos</a></p>
-    </div>
-    <div class="mes com-rot" aria-hidden="true">
-      <div class="peca anuncio"><span class="rot">1 · Anúncio no Instagram</span>
-        <div class="pc-cab"><span class="av"></span><span class="nm"><b></b><i>Patrocinado</i></span></div>
-        <div class="foto"><span class="sol"></span><span class="morro m1"></span><span class="morro m2"></span></div>
-        <div class="pc-txt"><b></b><i></i></div>
-        <div class="cta"><span class="zap"></span>Enviar mensagem</div>
-      </div>
-      <div class="peca conversa"><span class="rot">2 · Conversa no WhatsApp</span>
-        <div class="pc-titulo"><span class="zap"></span>WhatsApp da empresa</div>
-        <p class="msg rec">Oi! Vi o anúncio. Ainda tem horário nesta semana?</p>
-        <p class="msg env">Tem sim! Quinta às 15h fica bom?</p>
-        <p class="msg rec">Fica ótimo, obrigado.</p>
-      </div>
-      <div class="peca calendario"><span class="rot">3 · Posts aprovados no calendário</span>
-        <div class="pc-titulo">Calendário de posts <small>novembro</small></div>
-        <div class="semana"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
-        <div class="dias"><span class="cel">1</span><span class="cel ok">2</span><span class="cel">3</span><span class="cel ok">4</span><span class="cel">5</span><span class="cel ok">6</span><span class="cel">7</span><span class="cel">8</span><span class="cel ok">9</span><span class="cel">10</span><span class="cel ok">11</span><span class="cel">12</span><span class="cel ok">13</span><span class="cel">14</span><span class="cel">15</span><span class="cel ok">16</span><span class="cel">17</span><span class="cel ok">18</span><span class="cel">19</span><span class="cel prod">20</span><span class="cel">21</span><span class="cel">22</span><span class="cel prod">23</span><span class="cel">24</span><span class="cel prod">25</span><span class="cel">26</span><span class="cel prod">27</span><span class="cel">28</span><span class="cel">29</span><span class="cel prod">30</span></div>
-        <div class="legenda"><span class="l-ok">aprovado</span><span class="l-prod">em produção</span></div>
-      </div>
-      <div class="peca relatorio"><span class="rot">4 · Relatório mensal</span>
-        <div class="pc-titulo">Relatório mensal <small>resultados e próximos passos</small></div>
-        <p class="pc-sub">Conversas iniciadas pelo WhatsApp, por semana</p>
-        <svg class="grafico" viewBox="0 0 260 90" aria-hidden="true"><path class="area" d="M0 78 L65 66 L130 52 L195 40 L260 22 L260 90 L0 90 Z"/><path class="linha" d="M0 78 L65 66 L130 52 L195 40 L260 22"/><circle cx="260" cy="22" r="4"/></svg>
-        <div class="semanas"><span>sem 1</span><span>sem 2</span><span>sem 3</span><span>sem 4</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="faixa">
-      <div><strong>1 dia útil</strong><span>para responder o primeiro contato</span></div>
-      <div><strong>Estratégia</strong><span>relatório estratégico na entrada e relatório mensal de resultados</span></div>
-      <div><strong>100%</strong><span>dos ativos em nome do cliente</span></div>
-      <div><strong>Direto</strong><span>verba dos anúncios paga pelo cliente às plataformas</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="secao" aria-labelledby="t-quem">
-  <div class="wrap">
-    <div class="cab">
-      <p class="etiqueta">Para quem</p>
-      <h2 id="t-quem">Cada negócio tem <span class="verde">um caminho até o cliente</span></h2>
-      <p>Do comércio de bairro ao consultório, do prestador de serviço à loja virtual: o trabalho parte do que a empresa vende e de onde vêm os seus clientes.</p>
-    </div>
-    <div class="cartoes-3">
-      <article class="cartao">
-        <div class="ilus" aria-hidden="true"><span class="ilus-rot"><span class="zap"></span>WhatsApp da empresa</span><span class="balao balao-1">Vi o anúncio, tem horário?</span><span class="balao balao-2">Tem sim, às 15h</span></div>
-        <p class="publico">Quem vende pelo WhatsApp</p>
-        <h3>Mais conversas com quem já quer comprar.</h3>
-        <p>Campanhas de mensagem no Instagram, no Facebook e no Google levam o interessado direto à conversa com a empresa.</p>
-        <ul class="tags"><li>Meta Ads</li><li>Google Ads</li><li>WhatsApp</li></ul>
-        <a class="seta" href="/#servicos">Ver tráfego pago →</a>
-      </article>
-      <article class="cartao">
-        <div class="ilus" aria-hidden="true"><div class="mini-site"><div class="barra"></div><div class="titulo"></div><div class="linha"></div><div class="linha c"></div><div class="bt"></div></div></div>
-        <p class="publico">Quem é escolhido pela reputação</p>
-        <h3>Presença à altura do trabalho.</h3>
-        <p>Site e perfis com conteúdo planejado, para quem pesquisa a empresa encontrar um trabalho bem apresentado.</p>
-        <ul class="tags"><li>Site sob medida</li><li>Redes sociais</li></ul>
-        <a class="seta" href="/#servicos">Ver sites →</a>
-      </article>
-      <article class="cartao">
-        <div class="ilus" aria-hidden="true"><div class="mini-lp"><b></b><i></i><i></i><i></i><s></s></div></div>
-        <p class="publico">Quem tem uma oferta para divulgar</p>
-        <h3>Uma página para cada campanha.</h3>
-        <p>Landing page com uma mensagem e uma ação, e a medição de conversões ligada ao Google Ads e à Meta.</p>
-        <ul class="tags"><li>Landing pages</li><li>Medição</li></ul>
-        <a class="seta" href="/#servicos">Ver landing pages →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="secao secao-cinza" id="servicos" aria-labelledby="t-servicos">
-  <div class="wrap">
-    <div class="cab">
-      <p class="etiqueta">Serviços</p>
-      <h2 id="t-servicos">Seis frentes, <span class="verde">juntas ou separadas</span></h2>
-      <p>Cada frente tem escopo próprio. O relatório estratégico abre o trabalho e orienta as outras.</p>
-    </div>
-    <div class="grade">
-      <article class="servico d-verde">
-        <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 17v-3M12 17v-6M15 17v-4"/></svg></span>
-        <h3>Relatório estratégico</h3><p class="sub">Ponto de partida</p>
-        <p>Diagnóstico da presença atual no site, nas redes e no Google, concorrência, público, posicionamento, linha editorial e calendário dos três primeiros meses, palavras-chave e presença nas respostas de IA, plano de anúncios recomendado, metas para 3, 6 e 12 meses e plano de ação dos primeiros 90 dias.</p>
-        <span class="obs">Valor único, apresentado em reunião</span>
-      </article>
-      <article class="servico">
-        <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-6v14L3 13z"/><path d="M7 12.5V18h3"/></svg></span>
-        <h3>Gestão de tráfego pago</h3><p class="sub">Google, Instagram e Facebook</p>
-        <p>Google Ads e Meta Ads (Instagram e Facebook). Estruturamos as contas, a medição de conversões e as campanhas, produzimos os anúncios e otimizamos ao longo do mês. Campanhas de mensagem levam o interessado direto ao WhatsApp da empresa.</p>
-        <span class="obs">Verba paga pelo cliente direto às plataformas</span>
-      </article>
-      <article class="servico">
-        <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><path d="M16.5 7.5h.01"/></svg></span>
-        <h3>Gestão de redes sociais</h3><p class="sub">Planejamento e produção</p>
-        <p>Repaginação do perfil no Instagram e da página no Facebook, com nome, bio, foto, capa e destaques, e, todo mês, calendário editorial, publicações em formatos variados, vídeos curtos, stories de apoio, legendas e agendamento.</p>
-        <span class="obs">Calendário e peças aprovados antes da publicação</span>
-      </article>
-      <article class="servico">
-        <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>
-        <h3>Google Empresas</h3><p class="sub">Busca e mapa</p>
-        <p>Configuração do Perfil da Empresa no Google, com categoria, horário, fotos, WhatsApp e site, e publicações mensais com link para o site. É o que aparece para quem procura a empresa no Google e no Maps.</p>
-        <span class="obs">Perfil em nome da empresa</span>
-      </article>
-      <article class="servico d-navy">
-        <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>
-        <h3>Sites</h3><p class="sub">Sob medida</p>
-        <p>Sites institucionais desenvolvidos sob medida, sem construtores prontos: uma página por serviço, carregamento rápido no celular, título e descrição em cada página, cadastro no Google Search Console e preparação para aparecer nas respostas de IA, como o ChatGPT, o Gemini e o resumo com IA do Google.</p>
-        <span class="obs">Domínio e hospedagem em nome do cliente</span>
-      </article>
-      <article class="servico">
-        <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h5M9 16h6"/></svg></span>
-        <h3>Landing pages</h3><p class="sub">Para campanhas</p>
-        <p>Páginas de uma oferta só, feitas para receber o tráfego de uma campanha: uma mensagem, uma ação, medição de conversões integrada ao Google Ads e à Meta.</p>
-        <span class="obs">Publicadas no domínio do cliente</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="secao" aria-labelledby="t-ativos">
-  <div class="wrap dupla">
-    <div>
-      <p class="etiqueta">Ativos em nome do cliente</p>
-      <div class="cab" style="margin-bottom:28px">
-        <h2 id="t-ativos">O que é da empresa <span class="verde">continua da empresa</span></h2>
-        <p>Contas de anúncio, páginas, perfis, domínio e site pertencem ao cliente. A Ativaleads atua com acesso de parceiro, revogável a qualquer momento.</p>
-      </div>
-      <ul class="checks">
-        <li><strong>Conta de anúncios</strong> no nome da empresa, no Google e na Meta.</li>
-        <li><strong>Verba paga direto</strong> às plataformas, com visibilidade total na própria conta.</li>
-        <li><strong>Domínio e hospedagem</strong> registrados no nome do cliente.</li>
-        <li><strong>Acesso de parceiro</strong>, revogável a qualquer momento.</li>
-      </ul>
-    </div>
-    <div class="acessos" aria-label="Como fica a divisão de acessos">
-      <div class="acessos-cab">Quem é dono de cada ativo <small>exemplo de conta</small></div>
-      <ul>
-        <li><span class="ativo">Conta de anúncios · Meta</span><span class="dono">Empresa</span><span class="papel">Ativaleads: parceiro com acesso de anunciante</span></li>
-        <li><span class="ativo">Conta do Google Ads</span><span class="dono">Empresa</span><span class="papel">Ativaleads: acesso de administrador convidado</span></li>
-        <li><span class="ativo">Página e perfil do Instagram</span><span class="dono">Empresa</span><span class="papel">Ativaleads: acesso de parceiro</span></li>
-        <li><span class="ativo">Domínio e site</span><span class="dono">Empresa</span><span class="papel">Ativaleads: acesso técnico para manutenção</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="secao secao-cinza" id="como" aria-labelledby="t-como">
-  <div class="wrap">
-    <div class="cab">
-      <p class="etiqueta">Como trabalhamos</p>
-      <h2 id="t-como">Do relatório estratégico <span class="verde">à gestão do mês</span></h2>
-    </div>
-    <ol class="passos">
-      <li class="passo"><span class="n">01</span><h3>Proposta</h3><p>Conversa inicial e proposta por escrito com escopo, prazos e valores.</p></li>
-      <li class="passo"><span class="n">02</span><h3>Relatório estratégico</h3><p>Diagnóstico, público, concorrência, metas e plano dos primeiros 90 dias, apresentados em reunião.</p></li>
-      <li class="passo d"><span class="n">03</span><h3>Implantação</h3><p>Site, perfis nas redes e Google Empresas prontos, na mesma linguagem.</p></li>
-      <li class="passo"><span class="n">04</span><h3>Gestão mensal</h3><p>Publicações, campanhas e ajustes todo mês, com relatório mensal de resultados e próximos passos.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="secao" id="perguntas" aria-labelledby="t-perguntas">
-  <div class="wrap faq-dupla">
-    <div class="cab">
-      <p class="etiqueta">Perguntas frequentes</p>
-      <h2 id="t-perguntas">Antes de <span class="verde">conversar</span></h2>
-    </div>
-    <div class="faq" style="--x:0">
-      <details><summary>Os serviços podem ser contratados separadamente?</summary><p>Sim. Cada frente tem escopo próprio e pode ser somada às outras depois.</p></details>
-      <details><summary>A verba dos anúncios está incluída nos honorários?</summary><p>A verba é paga pelo cliente diretamente ao Google e à Meta, com visibilidade total na própria conta. Os honorários de gestão são cobrados à parte, e a proposta indica a verba mínima recomendada para cada objetivo.</p></details>
-      <details><summary>Há garantia de resultado?</summary><p>Resultados de tráfego pago dependem de produto, preço, mercado e atendimento; por isso não trabalhamos com promessa de números. O compromisso é com o escopo contratado, executado e reportado com transparência.</p></details>
-      <details><summary>Como é cobrado?</summary><p>Em duas partes: a implantação, com o relatório estratégico, o site e os perfis, por valor único, e a gestão mensal. A proposta detalha cada uma, por escrito, antes do início.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="wrap escuro" id="contato" aria-labelledby="t-contato">
-  <div class="chamada">
-    <div>
-      <h2 id="t-contato">Conte o que a sua empresa <span class="verde">precisa resolver</span></h2>
-      <p>Envie um e-mail com o nome da empresa, a cidade e o objetivo. Retornamos em até um dia útil.</p>
-    </div>
-    <p class="acao"><a class="botao botao-cheio" href="mailto:contato@ativaleads.com.br?subject=Contato%20pelo%20site&amp;body=Empresa%3A%0ACidade%3A%0AObjetivo%3A%0A">contato@ativaleads.com.br</a></p>
-  </div>
-</section>
-
+  <h1>Novidades a caminho<span class="pontos" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></h1>
+  <p class="contato"><a href="mailto:contato@ativaleads.com.br">contato@ativaleads.com.br</a></p>
 </main>
-
-<footer class="rodape">
-  <div class="wrap">
-    <div class="rodape-grade">
-      <div class="rodape-marca">
-        <a class="marca" href="/" aria-label="Ativaleads, início"><img src="/assets/logo/ativaleads-branco.webp" alt="Ativaleads" width="1000" height="162" loading="lazy"></a>
-        <p>Consultoria de marketing digital.</p>
-      </div>
-      <div><h2>Serviços</h2><ul><li><a href="/#servicos">Relatório estratégico</a></li><li><a href="/#servicos">Gestão de tráfego pago</a></li><li><a href="/#servicos">Gestão de redes sociais</a></li><li><a href="/#servicos">Google Empresas</a></li><li><a href="/#servicos">Sites</a></li><li><a href="/#servicos">Landing pages</a></li></ul></div>
-      <div><h2>Empresa</h2><ul><li><a href="/#como">Como trabalhamos</a></li><li><a href="/#perguntas">Perguntas frequentes</a></li><li><a href="/privacidade/">Privacidade</a></li><li><a href="/termos/">Termos</a></li></ul></div>
-      <div><h2>Contato</h2><ul><li><a href="mailto:contato@ativaleads.com.br">contato@ativaleads.com.br</a></li><li>Retorno em até um dia útil</li></ul></div>
-    </div>
-    <p class="rodape-legal">Ativaleads Consultoria em Marketing Digital LTDA · CNPJ 52.788.441/0001-01 · São Paulo/SP</p>
-  </div>
-</footer>
+<footer>Ativaleads Consultoria em Marketing Digital LTDA · CNPJ 52.788.441/0001-01 · São Paulo/SP</footer>
 </body>
 </html>
