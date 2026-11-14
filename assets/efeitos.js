@@ -140,9 +140,70 @@
     rodar();
   }
 
+  // Roteiro fixo: a seção fica presa na tela e a rolagem só troca o passo. Cada peça com data-n recebe
+  // data-estado (antes, atual ou depois) e o CSS anima só opacity e transform.
+  function roteiro(corpo) {
+    var passos = corpo.querySelectorAll('.roteiro-texto').length;
+    var fixo = corpo.querySelector('.roteiro-fixo');
+    var conta = corpo.querySelector('.js-passo');
+    var pecas = corpo.querySelectorAll('[data-n]');
+    var agendado = false;
+
+    function percurso() {
+      return Math.max(corpo.offsetHeight - fixo.offsetHeight, 1);
+    }
+
+    function marcar(passo) {
+      pecas.forEach(function (peca) {
+        var n = Number(peca.getAttribute('data-n'));
+
+        peca.setAttribute('data-estado', n < passo ? 'antes' : (n === passo ? 'atual' : 'depois'));
+
+        if (peca.classList.contains('roteiro-ponto')) {
+          peca.setAttribute('aria-current', n === passo ? 'step' : 'false');
+        }
+      });
+
+      if (conta !== null) {
+        conta.textContent = '0' + passo;
+      }
+    }
+
+    function atualizar() {
+      var progresso = Math.min(Math.max(-corpo.getBoundingClientRect().top / percurso(), 0), 1);
+      var passo = Math.min(Math.floor(progresso * passos) + 1, passos);
+
+      agendado = false;
+
+      if (corpo.getAttribute('data-passo') !== String(passo)) {
+        corpo.setAttribute('data-passo', String(passo));
+        marcar(passo);
+      }
+    }
+
+    corpo.querySelectorAll('.roteiro-ponto').forEach(function (ponto) {
+      ponto.addEventListener('click', function () {
+        var n = Number(ponto.getAttribute('data-n'));
+        var inicio = window.scrollY + corpo.getBoundingClientRect().top;
+
+        window.scrollTo({ top: inicio + percurso() * (n - 0.5) / passos, behavior: reduzido ? 'auto' : 'smooth' });
+      });
+    });
+
+    window.addEventListener('scroll', function () {
+      if (!agendado) {
+        agendado = true;
+        window.requestAnimationFrame(atualizar);
+      }
+    }, { passive: true });
+    window.addEventListener('resize', atualizar);
+    atualizar();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     revelar();
     progresso();
     document.querySelectorAll('[data-conversa]').forEach(conversa);
+    document.querySelectorAll('[data-roteiro]').forEach(roteiro);
   });
 })();
