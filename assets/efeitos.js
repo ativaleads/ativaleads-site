@@ -178,6 +178,7 @@
       if (corpo.getAttribute('data-passo') !== String(passo)) {
         corpo.setAttribute('data-passo', String(passo));
         marcar(passo);
+        corpo.querySelectorAll('.tela[data-estado="atual"]').forEach(contarNumeros);
       }
     }
 
@@ -196,7 +197,24 @@
         window.requestAnimationFrame(atualizar);
       }
     }, { passive: true });
-    window.addEventListener('resize', atualizar);
+    // A altura do bloco fixo posiciona os pontos de encaixe da rolagem (CSS: --fixo-h).
+    var textos = corpo.querySelector('.roteiro-textos');
+
+    function medirFixo() {
+      // Os textos dos passos ficam um sobre o outro; a caixa reserva a altura do mais alto, para nenhum
+      // encostar no aparelho, qualquer que seja o tamanho de letra do celular.
+      if (textos !== null) {
+        var maior = 0;
+
+        textos.querySelectorAll('.roteiro-texto').forEach(function (t) { maior = Math.max(maior, t.offsetHeight); });
+        textos.style.minHeight = maior + 'px';
+      }
+
+      corpo.style.setProperty('--fixo-h', fixo.offsetHeight + 'px');
+    }
+
+    window.addEventListener('resize', function () { medirFixo(); atualizar(); });
+    medirFixo();
     atualizar();
   }
 
@@ -242,11 +260,113 @@
     rodar();
   }
 
+  // Funil de vendas da abertura: os cartões passam de coluna em coluna (Nova conversa → Horário marcado → Venda),
+  // um cliente novo chega, e o ciclo recomeça. O movimento é FLIP: mede antes, troca de coluna, anima a diferença.
+  function funil(cena) {
+    var cols = {};
+    var cards = {};
+    var vendas = cena.querySelector('.fn-vendas b');
+    var esperar;
+
+    cena.querySelectorAll('.fn-col').forEach(function (col) { cols[col.getAttribute('data-col')] = col; });
+    cena.querySelectorAll('.fn-card').forEach(function (card) { cards[card.getAttribute('data-k')] = card; });
+
+    if (!cols['1'] || reduzido || !temObservador) {
+      return;
+    }
+
+    esperar = relogio(cena);
+
+    function mover(card, col) {
+      var antes = card.getBoundingClientRect();
+      var outros = Array.prototype.filter.call(cena.querySelectorAll('.fn-card'), function (c) { return c !== card && !c.hidden; });
+      var posOutros = outros.map(function (c) { return c.getBoundingClientRect(); });
+
+      col.appendChild(card);
+      [card].concat(outros).forEach(function (c, i) {
+        var a = i === 0 ? antes : posOutros[i - 1];
+        var d = c.getBoundingClientRect();
+
+        c.style.transition = 'none';
+        c.style.transform = 'translate(' + (a.left - d.left) + 'px,' + (a.top - d.top) + 'px)';
+      });
+      card.getBoundingClientRect();
+      [card].concat(outros).forEach(function (c) {
+        c.style.transition = 'transform .6s cubic-bezier(.2,.75,.2,1)';
+        c.style.transform = '';
+      });
+    }
+
+    function inicio() {
+      cena.classList.remove('saindo');
+      cols['1'].appendChild(cards.a);
+      cols['1'].appendChild(cards.b);
+      cols['2'].appendChild(cards.c);
+      cols['3'].appendChild(cards.d);
+      cards.e.hidden = true;
+      cena.appendChild(cards.e);
+      Object.keys(cards).forEach(function (k) { cards[k].style.transform = ''; cards[k].classList.remove('entra'); });
+      if (vendas) { vendas.textContent = '1'; }
+    }
+
+    async function rodar() {
+      for (;;) {
+        inicio();
+        await esperar(1500);
+        mover(cards.b, cols['2']);
+        await esperar(1400);
+        mover(cards.c, cols['3']);
+        if (vendas) { vendas.textContent = '2'; }
+        await esperar(1400);
+        cards.e.hidden = false;
+        cards.e.classList.add('entra');
+        cols['1'].appendChild(cards.e);
+        await esperar(1400);
+        mover(cards.a, cols['2']);
+        await esperar(3200);
+        cena.classList.add('saindo');
+        await esperar(500);
+      }
+    }
+
+    rodar();
+  }
+
+  // Números do painel (passo 4 do roteiro) contam até o valor quando a tela aparece.
+  function contarNumeros(tela) {
+    if (reduzido) {
+      return;
+    }
+
+    tela.querySelectorAll('[data-alvo]').forEach(function (el) {
+      var alvo = Number(el.getAttribute('data-alvo'));
+      var inicio = performance.now();
+
+      function passo(agora) {
+        var t = Math.min((agora - inicio) / 900, 1);
+
+        el.textContent = String(Math.round(alvo * (1 - Math.pow(1 - t, 3))));
+        if (t < 1) { window.requestAnimationFrame(passo); }
+      }
+
+      window.requestAnimationFrame(passo);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     revelar();
     progresso();
     document.querySelectorAll('[data-conversa]').forEach(conversa);
     document.querySelectorAll('[data-calendario]').forEach(calendario);
+    document.querySelectorAll('[data-funil]').forEach(funil);
+    // Anúncio da abertura: a animação (só CSS) liga com a peça na tela e desliga fora dela.
+    if (!reduzido && temObservador) {
+      document.querySelectorAll('[data-anuncio]').forEach(function (cena) {
+        new IntersectionObserver(function (entradas) {
+          cena.classList.toggle('animada', entradas[0].isIntersecting);
+        }, { threshold: 0.3 }).observe(cena);
+      });
+    }
     document.querySelectorAll('[data-roteiro]').forEach(function (corpo) {
       // No celular a rolagem encaixa em cada passo, para um gesto rápido não pular dois de uma vez.
       document.documentElement.classList.add('roteiro-snap');
