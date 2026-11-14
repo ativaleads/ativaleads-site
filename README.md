@@ -4,14 +4,15 @@ Site estático, sem framework, build, dependências, JavaScript de interação, 
 
 ## Testar
 
-Na raiz, execute `python -m http.server 8000` e abra http://localhost:8000. Confira também /privacidade/, /termos/ e /404.html. Em Cloudflare Pages, 404.html é usado para endereços inexistentes; o servidor Python exibe seu próprio erro nesses endereços.
+Na raiz, execute `python -m http.server 8000` e abra http://localhost:8000 (página "em breve") e http://localhost:8000/ativaleads/ (site). Confira também /ativaleads/privacidade/, /ativaleads/termos/ e /404.html. Em Cloudflare Pages, 404.html é usado para endereços inexistentes; o servidor Python exibe seu próprio erro nesses endereços.
 
 ## Estado
 
+- **Estrutura desde a S41 (13/11/2026):** a raiz (`index.html`) é a página "em breve" com o logo animado (camadas em `assets/logo/anim/`, só CSS). O site institucional fica em `/ativaleads/` (com `/ativaleads/privacidade/` e `/ativaleads/termos/`); `_redirects` leva os endereços antigos `/privacidade/` e `/termos/` para lá. `styles.css`, `assets/` e `404.html` continuam na raiz.
 - **Fora do Google por decisão do Operador (11/11/2026):** todas as páginas têm `<meta name="robots" content="noindex">` e o `robots.txt` não aponta o `sitemap.xml`. Para voltar a indexar: tirar o `noindex` das páginas e devolver a linha `Sitemap: https://ativaleads.com.br/sitemap.xml` ao `robots.txt`.
-- **Contato:** só e-mail, contato@ativaleads.com.br. O botão abre uma mensagem pronta com "Empresa / Cidade / Objetivo"; não há formulário nem armazenamento no site. WhatsApp comercial entra quando houver número oficial.
+- **Contato:** só e-mail, contato@ativaleads.com.br. O botão abre uma mensagem pronta com "Empresa / O que vende / Onde atende"; não há formulário nem armazenamento no site. WhatsApp comercial entra quando houver número oficial.
 - **Privacidade:** a Ativaleads é agente de tratamento de pequeno porte e não indicou encarregado (art. 11 da Resolução CD/ANPD nº 2/2022); o canal é o e-mail comercial.
-- **Caminho reservado:** `/eaaa/` é de outro site (exemplo de cliente), que entra em pasta própria e não usa o CSS deste. Não criar página, redirecionamento ou regra que ocupe esse caminho.
+- **Caminho reservado:** `/eaaa/` e `/vitocasella/` são de outros sites (clientes), que entra em pasta própria e não usa o CSS deste. Não criar página, redirecionamento ou regra que ocupe esse caminho.
 - Logos oficiais em `assets/logo/` (variantes branca e verde, WebP transparente). Favicon oficial em `assets/favicon.png` e `favicon.ico`.
 
 ## Cloudflare Pages
