@@ -200,34 +200,42 @@
     atualizar();
   }
 
-  // Calendário da abertura: os dias "em produção" vão sendo aprovados, um a um, e o ciclo recomeça.
+  // Calendário da abertura: começa vazio, os dias aprovados ficam verdes um a um (até o dia 18), depois
+  // aparecem os dias em produção, e o ciclo recomeça. O HTML traz o estado final.
   function calendario(cena) {
-    var dias = Array.prototype.slice.call(cena.querySelectorAll('.cel.prod'));
+    var aprovados = Array.prototype.slice.call(cena.querySelectorAll('.cel.ok'));
+    var producao = Array.prototype.slice.call(cena.querySelectorAll('.cel.prod'));
     var esperar;
 
-    if (dias.length === 0 || reduzido || !temObservador) {
+    if (aprovados.length === 0 || reduzido || !temObservador) {
       return;
     }
 
     esperar = relogio(cena);
 
     async function rodar() {
-      for (;;) {
-        dias.forEach(function (dia) {
-          dia.classList.remove('ok', 'aprovando');
-          dia.classList.add('prod');
-        });
-        await esperar(1600);
+      var i;
 
-        for (var i = 0; i < dias.length; i++) {
-          dias[i].classList.add('aprovando');
-          dias[i].classList.replace('prod', 'ok');
-          await esperar(350);
-          dias[i].classList.remove('aprovando');
-          await esperar(550);
+      for (;;) {
+        aprovados.forEach(function (dia) { dia.classList.remove('ok', 'aprovando'); });
+        producao.forEach(function (dia) { dia.classList.remove('prod'); });
+        await esperar(1200);
+
+        for (i = 0; i < aprovados.length; i++) {
+          aprovados[i].classList.add('ok', 'aprovando');
+          await esperar(300);
+          aprovados[i].classList.remove('aprovando');
+          await esperar(200);
         }
 
-        await esperar(3200);
+        await esperar(500);
+
+        for (i = 0; i < producao.length; i++) {
+          producao[i].classList.add('prod');
+          await esperar(220);
+        }
+
+        await esperar(3500);
       }
     }
 
