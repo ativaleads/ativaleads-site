@@ -446,3 +446,13 @@ a { color: inherit; text-underline-offset: .2em; }
 .roteiro-ancora { display: none; }
 .js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - 100svh) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: always; pointer-events: none; }
 @media (max-width: 899px) { .js .roteiro-corpo { height: 560svh; } }
+
+/* Frente larga "Atendimento e vendas no WhatsApp" (S41) */
+@media (min-width: 760px) { .servico.d-largo { grid-column: 1 / -1; } }
+.servico.d-largo { border: 1px solid #bfe9d2; }
+.servico.d-largo p { max-width: 72ch; }
+.recursos { list-style: none; margin: 4px 0 6px; padding: 0; display: grid; gap: 10px 28px; }
+@media (min-width: 760px) { .recursos { grid-template-columns: 1fr 1fr; } }
+.recursos li { position: relative; padding-left: 28px; font-size: .95rem; color: var(--ink); line-height: 1.4; }
+.recursos li::before { content: ""; position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%; background: var(--tint); }
+.recursos li::after { content: ""; position: absolute; left: 6px; top: 4px; width: 5px; height: 9px; border: solid var(--green-dark); border-width: 0 2px 2px 0; transform: rotate(45deg); }
