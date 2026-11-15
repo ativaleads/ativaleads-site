@@ -643,3 +643,13 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 
 /* Sigla da Ana no subtítulo: numa linha própria no celular */
 @media (max-width: 640px) { .sub .sigla { display: block; } .sub .sep { display: none; } }
+
+/* S50: roteiro no celular estreito com letra grande. O efeitos.js encolhe o aparelho para caber entre o topo fixo e o pé
+   da tela (piso k = .45); se ainda não couber, liga .roteiro-justo: sai o contador 01/04 (os pontos mostram o passo)
+   e a letra dos passos diminui um pouco. */
+@media (max-width: 899px) {
+  .js .roteiro-justo .roteiro-conta { display: none; }
+  .js .roteiro-justo .roteiro-pontos { margin-top: 4px; }
+  .js .roteiro-justo .roteiro-texto h3 { font-size: 1.3rem; }
+  .js .roteiro-justo .roteiro-texto > p:last-child { font-size: .9rem; }
+}
