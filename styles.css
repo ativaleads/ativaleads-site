@@ -178,14 +178,11 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 
 /* Ativos: texto + lista à esquerda, cartão de acessos à direita */
 .dupla { display: grid; gap: 48px; align-items: center; }
+/* S50: seção dos ativos enxuta (Operador: "Enxugar"): à esquerda só etiqueta, título e parágrafo; o quadro "Quem é dono de cada ativo" mostra o resto. Sem a lista, o .cab é a última peça e não leva margem embaixo */
+.dupla .cab:last-child { margin-bottom: 0; }
 @media (min-width: 960px) { .dupla { grid-template-columns: 1fr 1fr; gap: 64px; } }
-.checks { display: grid; gap: 14px; margin-top: 6px; }
-.checks li { position: relative; padding-left: 32px; }
-.checks li::before { content: ""; position: absolute; left: 2px; top: .35em; width: 14px; height: 8px; border-left: 2px solid var(--green-dark); border-bottom: 2px solid var(--green-dark); transform: rotate(-45deg); }
-.checks strong { font-weight: 800; }
 .acessos { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px 10px; box-shadow: 0 30px 60px -36px rgba(16, 45, 70, .45); }
 .acessos-cab { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: .95rem; }
-.acessos-cab small { font-weight: 600; color: var(--muted); font-size: .78rem; white-space: nowrap; }
 .acessos li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
 .acessos li:last-child { border-bottom: 0; }
 .acessos .ativo { font-weight: 700; }
