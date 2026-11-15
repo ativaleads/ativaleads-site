@@ -43,7 +43,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .etiqueta::before { content: ""; width: 12px; height: 12px; border-radius: 4px 4px 4px 1px; background: var(--green); }
 .escuro .etiqueta { color: #fff; }
 .botao { display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; padding: 14px 24px; border-radius: 10px; border: 1.5px solid transparent; }
-.botao-cheio { background: var(--green); color: var(--deep); }
+.botao-cheio { background: var(--green); color: #fff; }
 .botao-cheio:hover { background: #12d474; }
 .botao-linha { border-color: var(--ink); color: var(--ink); }
 .botao-linha:hover { background: var(--gray); }
@@ -94,7 +94,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .seta { font-weight: 700; font-size: .92rem; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; }
 .balao { position: absolute; border-radius: 12px; padding: 8px 10px; font-size: .72rem; font-weight: 700; }
 .balao-1 { left: 18px; top: 44px; background: #fff; color: var(--ink); box-shadow: 0 6px 14px -10px rgba(0,0,0,.4); }
-.balao-2 { right: 18px; top: 92px; background: var(--green); color: var(--deep); }
+.balao-2 { right: 18px; top: 92px; background: var(--green); color: #fff; }
 .ilus-rot { position: absolute; left: 18px; top: 14px; display: flex; align-items: center; gap: 7px; font-size: .72rem; font-weight: 800; color: var(--ink); }
 .mini-site { position: absolute; inset: 18px 22px auto; height: 124px; background: #fff; border-radius: 8px; border: 1px solid var(--line); overflow: hidden; }
 .mini-site .barra { height: 16px; border-bottom: 1px solid var(--line); background: #fafbf9; }
@@ -120,9 +120,9 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico h3 { font-size: min(1.3rem, 100cqi / 11.6); }
 .servico .sub { font-size: min(.88rem, 100cqi / 15); }
 .servico .obs { font-size: min(.8rem, 100cqi / 22.6); }
-.servico.d-verde { background: var(--green); }
-.servico.d-verde .icone { background: rgba(255,255,255,.35); color: var(--deep); }
-.servico.d-verde .sub, .servico.d-verde p { color: var(--deep); }
+.servico.d-verde { background: var(--green); color: #fff; }
+.servico.d-verde .icone { background: var(--green-dark); color: #fff; }
+.servico.d-verde .sub, .servico.d-verde p { color: #fff; }
 .grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; }
 @media (min-width: 760px) and (max-width: 1039px) { .grade > .d-fecha { grid-column: 1 / -1; } }
 @media (min-width: 1040px) { .grade { grid-template-columns: repeat(6, 1fr); } .grade > .servico { grid-column: span 2; } .grade > .servico.d-meio { grid-column: span 3; } .grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; } }
@@ -134,7 +134,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .d-inicio .ini-lado { display: flex; flex-direction: column; gap: 14px; }
 .marcos { display: grid; gap: 10px; }
 @media (min-width: 480px) and (max-width: 759px) { .marcos { grid-template-columns: 1fr 1fr; } }
-.marcos li { background: rgba(255,255,255,.35); border-radius: 12px; padding: 14px 16px; color: var(--deep); }
+.marcos li { background: var(--green-dark); border-radius: 12px; padding: 14px 16px; color: #fff; }
 .marcos b { display: block; font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
 .marcos span { display: block; margin-top: 4px; font-size: .88rem; font-weight: 600; }
 @media (min-width: 760px) { .servico.d-inicio { grid-template-columns: 1.4fr 1fr; align-items: center; } .d-inicio br.q { display: none; } }
@@ -163,8 +163,8 @@ a { color: inherit; text-underline-offset: .2em; }
 .passo p { color: var(--muted); font-size: .95rem; }
 .passo { container-type: inline-size; }
 .passo h3 { font-size: min(1.2rem, 100cqi / 10.5); }
-.passo.d { background: var(--green); border-color: var(--green); }
-.passo.d .n, .passo.d p { color: var(--deep); }
+.passo.d { background: var(--green); border-color: var(--green); color: #fff; }
+.passo.d .n, .passo.d p { color: #fff; }
 @media (min-width: 1100px) { .passo:not(:last-child)::after { content: "→"; position: absolute; right: -27px; top: 50%; transform: translateY(-50%); color: var(--green-dark); font-weight: 800; } }
 .faq-dupla { display: grid; gap: 12px; }
 @media (min-width: 900px) { .faq-dupla { grid-template-columns: 4fr 8fr; gap: 48px; } }
@@ -205,7 +205,7 @@ a { color: inherit; text-underline-offset: .2em; }
   .rodape ul a { display: inline-block; padding-block: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-.skip { position: absolute; left: 12px; top: -80px; z-index: 10; padding: 10px 14px; background: var(--green); color: var(--deep); font-weight: 700; border-radius: 8px; }
+.skip { position: absolute; left: 12px; top: -80px; z-index: 10; padding: 10px 14px; background: var(--green); color: #fff; font-weight: 700; border-radius: 8px; }
 .skip:focus { top: 12px; }
 .texto { padding-block: 40px 24px; }
 .texto h1 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
@@ -238,7 +238,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .semana, .dias { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
 .semana { margin: 12px 0 6px; font-size: .64rem; font-weight: 700; color: var(--muted); }
 .cel { height: 26px; border-radius: 6px; display: grid; place-items: center; font-size: .66rem; color: var(--muted); background: var(--gray); }
-.cel.ok { background: var(--green); color: var(--deep); font-weight: 800; }
+.cel.ok { background: var(--green); color: #fff; font-weight: 800; }
 .cel.prod { background: #fff; box-shadow: inset 0 0 0 1.5px var(--green); color: var(--green-dark); font-weight: 800; }
 .legenda { display: flex; gap: 14px; margin-top: 10px; font-size: .68rem; color: var(--muted); }
 .legenda span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
@@ -336,7 +336,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .t-foto .m2 { right: -50px; width: 220px; height: 120px; background: var(--green-dark); }
 .t-oferta { font-weight: 800; font-size: .95rem; color: var(--ink); }
 .t-linha { height: 7px; width: 70%; border-radius: 4px; background: var(--line); }
-.t-cta { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 10px; background: var(--green); color: var(--deep); font-weight: 800; }
+.t-cta { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 10px; background: var(--green); color: #fff; font-weight: 800; }
 .t-cta .zap { box-shadow: inset 0 0 0 3px var(--green), 0 0 0 1px var(--deep); background: var(--deep); }
 .t-zap-cab { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
 .t-zap-cab b { display: block; font-size: .82rem; } .t-zap-cab small { color: var(--green-dark); font-weight: 700; font-size: .68rem; }
@@ -346,7 +346,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .t-dia { display: grid; place-items: center; width: 40px; height: 44px; border-radius: 8px; background: #fff; font-weight: 800; font-size: 1rem; line-height: 1; color: var(--ink); }
 .t-dia small { font-size: .56rem; color: var(--green-dark); }
 .t-agenda b { display: block; font-size: .8rem; } .t-agenda small { color: var(--muted); font-size: .68rem; }
-.t-ok { margin-left: auto; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--deep); display: grid; place-items: center; font-weight: 800; font-size: .7rem; }
+.t-ok { margin-left: auto; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .7rem; }
 .t-aviso { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: var(--deep); color: #fff; }
 .t-aviso b { display: block; font-size: .78rem; } .t-aviso small { color: #fff; font-size: .68rem; }
 .t-aviso .zap { box-shadow: inset 0 0 0 3px var(--deep), 0 0 0 1px var(--green); }
@@ -406,23 +406,26 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico.d-ana { display: grid; grid-template-columns: 1fr; gap: 28px; }
 .d-ana .ana-txt { display: flex; flex-direction: column; gap: 14px; }
 .selos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 4px; }
-.selos li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 14px 10px; border-radius: 14px; background: rgba(0,191,99,.10); border: 1px solid rgba(0,191,99,.24); color: #fff; font-weight: 700; font-size: .88rem; line-height: 1.25; text-align: center; }
-.selos svg { width: 22px; height: 22px; color: var(--green); flex: none; }
+.selos li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px 8px; border-radius: 12px; background: rgba(0,191,99,.10); border: 1px solid rgba(0,191,99,.24); color: #fff; font-weight: 700; font-size: .8rem; line-height: 1.25; text-align: center; }
+.selos svg { width: 18px; height: 18px; color: var(--green); flex: none; }
 @media (max-width: 519px) { .selos br.q { display: none; } .selos { grid-template-columns: 1fr; gap: 8px; } .selos li { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 10px 14px; text-align: left; } .selos svg { width: 19px; height: 19px; } }
 .ana-demo { display: flex; align-items: flex-end; justify-content: center; gap: 16px; }
 .ana-demo .ana-av { width: 104px; height: 104px; flex: none; }
 .ana-chat { display: grid; gap: 8px; width: 100%; max-width: 340px; padding: 14px; border-radius: 18px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); }
 .ana-chat .b { max-width: 86%; padding: 8px 12px; border-radius: 14px; font-size: .86rem; line-height: 1.35; }
 .ana-chat .rec { justify-self: start; background: #fff; color: var(--ink); border-bottom-left-radius: 4px; }
-.ana-chat .env { justify-self: end; background: var(--green); color: var(--deep); font-weight: 600; border-bottom-right-radius: 4px; }
+.ana-chat .env { justify-self: end; background: var(--green); color: #fff; font-weight: 600; border-bottom-right-radius: 4px; }
 @media (max-width: 519px), (min-width: 900px) and (max-width: 1099px) { .ana-demo { flex-direction: column; align-items: center; } }
 @media (min-width: 900px) { .servico.d-ana { grid-template-columns: 1.1fr 1fr; column-gap: 48px; align-items: center; } .ana-demo .ana-av { width: 128px; height: 128px; } }
 @media (min-width: 1100px) {
-  .servico.d-ana { grid-template-columns: minmax(0, 1fr) auto minmax(280px, 340px); column-gap: 56px; align-items: stretch; }
+  .servico.d-ana { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); column-gap: 56px; align-items: stretch; }
   .ana-demo { grid-column: 2 / 4; display: grid; grid-template-columns: subgrid; column-gap: normal; align-items: center; }
   .ana-demo .ana-av { width: 160px; height: 160px; align-self: center; }
   .ana-chat { max-width: none; }
+  .servico.d-ana .ana-fecho { text-align: center; padding: 24px 10% 0; border-top: 1px solid rgba(255,255,255,.14); text-wrap: balance; }
 }
+.servico.d-ana .ana-fecho { grid-column: 1 / -1; max-width: none; }
+@media (max-width: 1099px) { .ana-fecho br.q { display: none; } }
 .ana-acao { display: grid; justify-items: center; gap: 22px; }
 .chamada .ana-av { width: 140px; height: 140px; }
 .ana-acao .botao { white-space: nowrap; justify-content: center; }
@@ -458,7 +461,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .fn-col p { font-size: .6rem; font-weight: 800; color: var(--muted); line-height: 1.2; min-height: 2.4em; }
 .fn-card { display: flex; align-items: center; gap: 5px; padding: 5px 6px; border-radius: 6px; background: #fff; box-shadow: 0 2px 6px -3px rgba(16,45,70,.35); font-size: .66rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; }
 .fn-card i { width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--navy)); flex-shrink: 0; }
-.fn-col[data-col="3"] .fn-card { background: var(--green); color: var(--deep); }
+.fn-col[data-col="3"] .fn-card { background: var(--green); color: #fff; }
 .fn-col[data-col="3"] .fn-card i { background: #fff; }
 .fn-card[hidden] { display: none; }
 .funil .pc-titulo { white-space: nowrap; }
@@ -766,7 +769,6 @@ a { color: inherit; text-underline-offset: .2em; }
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></span>
         <div><h3>Ana no WhatsApp</h3><p class="sub"><span class="sigla">A.N.A.<span class="sep"> · </span></span>Agente de Negociação e Atendimento</p></div>
         <ul class="selos"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Responde <br class="q">na hora</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12Z"/><path d="M10 10a2 2 0 1 1 3 1.7c-.6.4-1 .8-1 1.5M12 16h.01"/></svg><span>Tira as <br class="q">dúvidas</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M9 15l2 2 4-4"/></svg><span>Marca o <br class="q">horário</span></li></ul>
-        <p>24 horas por dia, com as informações que a empresa aprovou. A equipe recebe o resumo de cada conversa e assume quando quiser.</p>
         </div>
         <div class="ana-demo" role="img" aria-label="Exemplo de conversa: o cliente pergunta se a empresa atende no sábado e a Ana reserva o horário">
           <span class="ana-av"><img src="/assets/img/ana.webp?v=2" alt="A.N.A., Agente de Negociação e Atendimento da Ativaleads" width="200" height="200" loading="lazy"></span>
@@ -777,6 +779,7 @@ a { color: inherit; text-underline-offset: .2em; }
             <div class="b env">Pronto, reservado! Sábado, 10h. ✓</div>
           </div>
         </div>
+        <p class="ana-fecho">24 horas por dia, com as informações que a empresa aprovou. <br class="q">A equipe recebe o resumo de cada conversa e assume quando quiser.</p>
       </article>
     </div>
   </div>
