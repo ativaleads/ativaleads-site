@@ -41,7 +41,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .topo nav a:not(.botao):hover { text-decoration: underline; }
 .topo .botao { padding: 10px 18px; font-size: .92rem; }
 /* S47 (Operador: "fundo verde claro e usa aquele que vc fez branco com o check em verde escuro" → "pode seguir e publicar"): topo em verde, logo branco com check verde-escuro, menu branco, botão branco */
-.topo { background: var(--green); }
+.topo { background: var(--green-dark); } /* S47: verdes invertidos (Operador: "inverte os verdes"): topo verde-escuro, check do logo verde-claro */
 .topo nav a { color: #fff; }
 .topo .botao-cheio { background: #fff; color: var(--green-dark); }
 .topo .botao-cheio:hover { background: var(--tint); }
@@ -131,8 +131,8 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico h3 { font-size: min(1.3rem, 100cqi / 11.6); }
 .servico .sub { font-size: min(.88rem, 100cqi / 15); }
 .servico .obs { font-size: min(.8rem, 100cqi / 22.6); } /* S47: etiqueta cinza só no cartão "Atendimento e vendas no WhatsApp" (fora do escopo); nos demais saiu (Operador: "acho esse tipo de aviso desnecessário") */
-.servico.d-verde { background: var(--green); color: #fff; }
-.servico.d-verde .icone { background: var(--green-dark); color: #fff; } /* S47: caixas dentro do cartão verde em verde-escuro (Operador: "o verde mais escuro aqui nos contornos") */
+.servico.d-verde { background: var(--green-dark); color: #fff; } /* S47: verdes invertidos: cartão verde-escuro, caixas verde-claro */
+.servico.d-verde .icone { background: var(--green); color: #fff; } /* S47: caixas dentro do cartão verde em verde-escuro (Operador: "o verde mais escuro aqui nos contornos") */
 .servico.d-verde .sub, .servico.d-verde p { color: #fff; }
 /* S47 · Serviços redesenhado (Operador: "aqui precisamos melhorar tudo" → "gostei mas mexa tb no design"):
    Relatório estratégico em destaque na largura toda (é o ponto de partida), depois 3 cartões e 2 cartões largos; só o Relatório é colorido.
@@ -148,7 +148,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .d-inicio .ini-lado { display: flex; flex-direction: column; gap: 14px; }
 .marcos { display: grid; gap: 10px; }
 @media (min-width: 480px) and (max-width: 759px) { .marcos { grid-template-columns: 1fr 1fr; } }
-.marcos li { background: var(--green-dark); border-radius: 12px; padding: 14px 16px; color: #fff; }
+.marcos li { background: var(--green); border-radius: 12px; padding: 14px 16px; color: #fff; }
 .marcos b { display: block; font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
 .marcos span { display: block; margin-top: 4px; font-size: .88rem; font-weight: 600; }
 @media (min-width: 760px) { .servico.d-inicio { grid-template-columns: 1.4fr 1fr; align-items: center; } .d-inicio br.q { display: none; } }
