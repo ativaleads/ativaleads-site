@@ -21,7 +21,7 @@ Na raiz, execute `python -m http.server 8000` e abra http://localhost:8000 (pág
 - **Contato:** WhatsApp da Ana (+55 11 96969-2055, assistente virtual) na chamada final, com mensagem pronta; e-mail contato@ativaleads.com.br no rodapé, nos termos e na privacidade. Não há formulário nem armazenamento no site.
 - **Privacidade:** a Ativaleads é agente de tratamento de pequeno porte e não indicou encarregado (art. 11 da Resolução CD/ANPD nº 2/2022); o canal é o e-mail comercial.
 - **Caminho reservado:** `/eaaa/` e `/vitocasella/` são de outros sites (clientes), que entra em pasta própria e não usa o CSS deste. Não criar página, redirecionamento ou regra que ocupe esse caminho.
-- Logos oficiais em `assets/logo/` (variantes branca e verde, WebP transparente). Favicon oficial em `assets/favicon.png` e `favicon.ico`.
+- **Logo (S47, 15/11/2026, Operador: "só no site da ativaleads, coloca esse logo. e faz um branco para o rodapé, se gostar depois mando arquivo oficial"):** o site em `/ativaleads/` (com privacidade, termos e 404) usa o logo novo, verde com o check verde-escuro, em `assets/logo/ativaleads-2026-verde-250.webp`/`-440.webp` (cabeçalho) e a versão branca feita aqui, toda #FBFBFB, em `ativaleads-2026-branco-300.webp` (rodapé). É provisório: quando o Operador mandar o arquivo oficial, refazer os três arquivos a partir dele com os mesmos nomes. A raiz "em breve" (logo animado em `assets/logo/anim/`) e as páginas de `/eaaa/` continuam com o logo antigo (`ativaleads-verde-*` e `ativaleads-branco-*`); não apagar esses arquivos. Favicon oficial em `assets/favicon.png` e `favicon.ico`.
 
 ## Cloudflare Pages
 
