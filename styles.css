@@ -60,7 +60,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .faixa { background: var(--deep); color: #fff; border-radius: 20px; display: grid; grid-template-columns: 1fr; overflow: hidden; }
 .faixa > div { padding: 26px 24px; }
 .faixa > div + div { border-top: 1px solid rgba(255,255,255,.12); }
-.faixa .ic { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 16px; background: rgba(0,191,99,.14); color: var(--green); }
+.faixa .ic { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 16px; background: var(--green-dark); color: #fff; } /* S47 (Operador: "esses contornos vamos testar brancos?" → "testa invertendo a cor"): quadradinho verde-escuro com ícone branco em fundo escuro */
 .faixa .ic svg { width: 22px; height: 22px; }
 .faixa strong { display: block; font-size: 1.25rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
 .faixa span:not(.ic) { display: block; margin-top: 6px; font-size: .9rem; color: #fff; line-height: 1.45; } /* S47: texto em fundo escuro é branco, nunca cinza-azulado (Operador: "não gosto dessa cor, tudo que tiver no site assim deixa branco") */
@@ -453,7 +453,7 @@ a { color: inherit; text-underline-offset: .2em; }
 
 /* Ana nos serviços: cartão largo */
 .servico.d-ana { background: var(--deep) radial-gradient(circle at 0% 0%, rgba(0,191,99,.22), transparent 50%); color: #fff; }
-.servico.d-ana .icone { background: rgba(0,191,99,.16); color: var(--green); }
+.servico.d-ana .icone { background: var(--green-dark); color: #fff; }
 .servico.d-ana .sub { color: var(--green); margin-top: 4px; }
 .servico.d-ana p { color: #fff; max-width: 72ch; }
 @media (min-width: 760px) { .servico.d-ana { grid-column: 1 / -1; } }
@@ -472,8 +472,8 @@ a { color: inherit; text-underline-offset: .2em; }
 .d-ana .ana-txt { display: flex; flex-direction: column; gap: 14px; }
 /* selos: três blocos iguais numa linha (ícone em cima, texto embaixo); no celular, lista com ícone ao lado (Operador: "aqui precisa melhorar visualização") */
 .selos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 4px; }
-.selos li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px 8px; border-radius: 12px; background: rgba(0,191,99,.10); border: 1px solid rgba(0,191,99,.24); color: #fff; font-weight: 700; font-size: .8rem; line-height: 1.25; text-align: center; }
-.selos svg { width: 18px; height: 18px; color: var(--green); flex: none; } /* S47: selos um pouco menores (Operador: "um pouco menores") */
+.selos li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px 8px; border-radius: 12px; background: var(--green-dark); border: 1px solid var(--green-dark); color: #fff; font-weight: 700; font-size: .8rem; line-height: 1.25; text-align: center; }
+.selos svg { width: 18px; height: 18px; color: #fff; flex: none; } /* S47: selos um pouco menores (Operador: "um pouco menores"); verde-escuro com branco, como os ícones (Operador: "verde com branco com um teste antes") */
 @media (max-width: 519px) { .selos br.q { display: none; } .selos { grid-template-columns: 1fr; gap: 8px; } .selos li { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 10px 14px; text-align: left; } .selos svg { width: 19px; height: 19px; } }
 .ana-demo { display: flex; align-items: flex-end; justify-content: center; gap: 16px; }
 .ana-demo .ana-av { width: 104px; height: 104px; flex: none; }
