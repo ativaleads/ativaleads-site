@@ -76,14 +76,22 @@ a { color: inherit; text-underline-offset: .2em; }
 
 /* Para quem: três cartões com ilustração */
 .cartoes-3 { display: grid; gap: 18px; }
-@media (min-width: 900px) { .cartoes-3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .cartoes-3 { grid-template-columns: repeat(3, 1fr); } }
 .cartao { background: #fff; border: 1px solid #bfe9d2; border-radius: 18px; padding: 20px 20px 26px; display: flex; flex-direction: column; gap: 14px; }
 .ilus { height: 150px; border-radius: 12px; background: var(--gray); position: relative; overflow: hidden; }
 .cartao .publico { font-size: .82rem; font-weight: 700; color: var(--muted); }
 .cartao h3 { font-size: 1.32rem; line-height: 1.2; letter-spacing: -.02em; font-weight: 800; }
 .cartao p { color: var(--muted); font-size: .98rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
-.tags li { font-size: .8rem; padding: 4px 12px; border: 1px solid #9edcbb; border-radius: 999px; color: var(--green-dark); font-weight: 600; }
+.tags li { font-size: .8em; padding: .3125em .9375em; border: 1px solid #9edcbb; border-radius: 999px; color: var(--green-dark); font-weight: 600; }
+/* S47: cartões "Para quem" (Operador: "precisa de alinhamento tb"): lado a lado, cada peça começa na mesma altura nos 3 cartões.
+   Título sempre em 2 linhas pelo sentido (br.q); título, público e etiquetas acompanham a largura do cartão para não ganhar linha
+   (metade mais longa do título 10,9 em; público mais longo 16,9 em; as 3 etiquetas do 1º cartão 17,8 em, numa linha só). */
+.cartao { container-type: inline-size; }
+.cartao h3 { font-size: min(1.32rem, 100cqi / 11.2); }
+.cartao .publico { font-size: min(.82rem, 100cqi / 17.3); }
+.tags { gap: .5em; font-size: 1rem; }
+@media (min-width: 1000px) { .cartao .tags { flex-wrap: nowrap; font-size: min(1rem, 100cqi / 18); } }
 .seta { font-weight: 700; font-size: .92rem; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; }
 /* ilustrações dos cartões (só CSS) */
 .balao { position: absolute; border-radius: 12px; padding: 8px 10px; font-size: .72rem; font-weight: 700; }
