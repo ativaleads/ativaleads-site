@@ -88,7 +88,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .tags li { font-size: .8em; padding: .3125em .9375em; border: 1px solid #9edcbb; border-radius: 999px; color: var(--green-dark); font-weight: 600; }
 .cartao { container-type: inline-size; }
 .cartao h3 { font-size: min(1.32rem, 100cqi / 11.2); }
-.cartao .publico { font-size: min(.82rem, 100cqi / 17.3); }
+.cartao .publico { font-size: min(.82rem, 100cqi / 17.3); color: var(--green-dark); }
 .tags { gap: .5em; font-size: 1rem; }
 @media (min-width: 1000px) { .cartao .tags { flex-wrap: nowrap; font-size: min(1rem, 100cqi / 18); } }
 .seta { font-weight: 700; font-size: .92rem; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; }
@@ -124,11 +124,24 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico.d-verde .icone { background: rgba(255,255,255,.35); color: var(--deep); }
 .servico.d-verde .sub, .servico.d-verde p { color: var(--deep); }
 .servico.d-verde .obs { background: rgba(255,255,255,.4); }
-.servico.d-navy { background: var(--navy); color: #fff; }
-.servico.d-navy .icone { background: rgba(255,255,255,.12); color: var(--green); }
-.servico.d-navy .sub { color: var(--green); }
-.servico.d-navy p { color: #c6d4de; }
-.servico.d-navy .obs { background: rgba(255,255,255,.12); color: #fff; }
+.grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; }
+@media (min-width: 760px) and (max-width: 1039px) { .grade > .d-fecha { grid-column: 1 / -1; } }
+@media (min-width: 1040px) { .grade { grid-template-columns: repeat(6, 1fr); } .grade > .servico { grid-column: span 2; } .grade > .servico.d-meio { grid-column: span 3; } .grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; } }
+.grade > .servico:not(.d-ana):not(.d-largo) .sub { font-size: min(1.05rem, 100cqi / 11.6); line-height: 1.3; margin-top: -4px; }
+.servico.d-inicio { display: grid; gap: 22px 48px; padding: 32px 32px 34px; }
+.d-inicio .ini-txt { display: flex; flex-direction: column; gap: 12px; }
+.d-inicio .ini-txt .sub { margin-top: -4px; }
+.servico.d-inicio h3 { font-size: min(clamp(1.45rem, 2.4vw, 1.9rem), 100cqi / 10.6); }
+.d-inicio .ini-lado { display: flex; flex-direction: column; gap: 14px; }
+.marcos { display: grid; gap: 10px; }
+@media (min-width: 480px) and (max-width: 759px) { .marcos { grid-template-columns: 1fr 1fr; } }
+.marcos li { background: rgba(255,255,255,.35); border-radius: 12px; padding: 14px 16px; color: var(--deep); }
+.marcos b { display: block; font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+.marcos span { display: block; margin-top: 4px; font-size: .88rem; font-weight: 600; }
+.d-inicio .obs { margin-top: 0; }
+@media (min-width: 760px) { .servico.d-inicio { grid-template-columns: 1.4fr 1fr; align-items: center; } .d-inicio br.q { display: none; } }
+@media (min-width: 1040px) { .d-meio br.q { display: none; } }
+.servico p { text-wrap: pretty; }
 .dupla { display: grid; gap: 48px; align-items: center; }
 @media (min-width: 960px) { .dupla { grid-template-columns: 1fr 1fr; gap: 64px; } }
 .checks { display: grid; gap: 14px; margin-top: 6px; }
@@ -180,7 +193,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
 .rodape ul { display: grid; gap: 8px; }
 .rodape-fim { border-top: 1px solid rgba(255,255,255,.22); padding-block: 28px 26px; display: grid; justify-items: center; gap: 14px; text-align: center; }
-.rodape .rodape-fim img { width: 135px; }
+.rodape .rodape-fim img { width: 108px; }
 .rodape-legal { font-size: .8rem; }
 @media (min-width: 760px) { .rodape-grade { display: flex; justify-content: space-between; } }
 @media (max-width: 640px) {
@@ -695,44 +708,49 @@ a { color: inherit; text-underline-offset: .2em; }
   <div class="wrap">
     <div class="cab reveal">
       <p class="etiqueta">Serviços</p>
-      <h2 id="t-servicos">Oito frentes, <span class="verde">um só trabalho</span></h2>
-      <p>As frentes são combinadas em pacotes, de acordo com o que a empresa precisa. O relatório estratégico abre o trabalho e orienta as outras.</p>
+      <h2 id="t-servicos">Tudo o que traz cliente, <span class="verde">com uma equipe só</span></h2>
+      <p>Anúncios, redes sociais, Google, site e WhatsApp trabalhando juntos, com o mesmo plano. O relatório estratégico mostra por onde começar.</p>
     </div>
     <div class="grade">
-      <article class="servico d-verde reveal">
+      <article class="servico d-verde d-inicio reveal">
+        <div class="ini-txt">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 17v-3M12 17v-6M15 17v-4"/></svg></span>
-        <h3>Relatório estratégico</h3><p class="sub">Ponto de partida</p>
-        <p>Diagnóstico da presença atual no site, nas redes e no Google, concorrência, público, posicionamento, linha editorial e calendário dos três primeiros meses, palavras-chave e presença nas respostas de IA, plano de anúncios recomendado, metas para 3, 6 e 12 meses e plano de ação dos primeiros 90 dias.</p>
-        <span class="obs">Valor único, apresentado em reunião</span>
+        <h3>Relatório estratégico</h3><p class="sub">O plano antes <br class="q">do primeiro anúncio</p>
+        <p>Diagnóstico do site, das redes e do Google, concorrência e público, com metas para 3, 6 e 12 meses e o plano dos primeiros 90 dias.</p>
+        </div>
+        <div class="ini-lado">
+          <ul class="marcos"><li><b>90 dias</b><span>de plano de ação</span></li><li><b>3, 6 e 12 meses</b><span>de metas</span></li></ul>
+          <span class="obs">Valor único, apresentado em reunião</span>
+        </div>
       </article>
       <article class="servico reveal">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-6v14L3 13z"/><path d="M7 12.5V18h3"/></svg></span>
-        <h3>Gestão de tráfego pago</h3><p class="sub">Google, Instagram e Facebook</p>
-        <p>Google Ads e Meta Ads (Instagram e Facebook). Estruturamos as contas, a medição de conversões e as campanhas, produzimos os anúncios e otimizamos ao longo do mês. Campanhas de mensagem levam o interessado direto ao WhatsApp da empresa.</p>
+        <h3>Gestão de tráfego pago</h3><p class="sub">Anúncio que vira <br class="q">conversa no WhatsApp</p>
+        <p>Campanhas no Google, no Instagram e no Facebook, com anúncios feitos por nós e ajustes ao longo do mês.</p>
         <span class="obs">Verba paga direto às plataformas</span>
       </article>
       <article class="servico reveal">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><path d="M16.5 7.5h.01"/></svg></span>
-        <h3>Gestão de redes sociais</h3><p class="sub">Planejamento e produção</p>
-        <p>Repaginação do perfil no Instagram e da página no Facebook, com nome, bio, foto, capa e destaques, e, todo mês, calendário editorial, publicações em formatos variados, vídeos curtos, stories de apoio, legendas e agendamento.</p>
+        <h3>Gestão de redes sociais</h3><p class="sub">Perfil ativo todo mês, <br class="q">sem você produzir</p>
+        <p>Perfil repaginado e, todo mês, calendário, publicações, vídeos curtos, stories e legendas, já agendados.</p>
         <span class="obs">Peças aprovadas antes de publicar</span>
       </article>
       <article class="servico reveal">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>
-        <h3>Google Empresas</h3><p class="sub">Busca e mapa</p>
-        <p>Configuração do Perfil da Empresa no Google, com categoria, horário, fotos, WhatsApp e site, e publicações mensais com link para o site. É o que aparece para quem procura a empresa no Google e no Maps.</p>
+        <h3>Google Empresas</h3><p class="sub">Apareça para quem <br class="q">procura perto</p>
+        <p>Perfil configurado com horário, fotos, WhatsApp e site, e publicações todo mês. Aparece na busca e no Maps.</p>
         <span class="obs">Perfil em nome da empresa</span>
       </article>
-      <article class="servico d-navy reveal">
+      <article class="servico d-meio reveal">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>
-        <h3>Sites</h3><p class="sub">Sob medida</p>
-        <p>Sites institucionais desenvolvidos sob medida, sem construtores prontos: uma página por serviço, carregamento rápido no celular, título e descrição em cada página, cadastro no Google Search Console e preparação para aparecer nas respostas de IA, como o ChatGPT, o Gemini e o resumo com IA do Google.</p>
+        <h3>Sites</h3><p class="sub">Rápido, seu e <br class="q">pronto para a IA</p>
+        <p>Sob medida, sem construtor pronto: uma página por serviço, rápido no celular e preparado para o Google e as respostas de IA.</p>
         <span class="obs">Domínio e hospedagem em nome do cliente</span>
       </article>
-      <article class="servico reveal">
+      <article class="servico d-meio d-fecha reveal">
         <span class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h5M9 16h6"/></svg></span>
-        <h3>Landing pages</h3><p class="sub">Para campanhas</p>
-        <p>Páginas de uma oferta só, feitas para receber o tráfego de uma campanha: uma mensagem, uma ação, medição de conversões integrada ao Google Ads e à Meta.</p>
+        <h3>Landing pages</h3><p class="sub">Cada campanha <br class="q">com a sua página</p>
+        <p>Uma mensagem e uma ação para receber o tráfego da campanha, com a medição de conversões ligada ao Google Ads e à Meta.</p>
         <span class="obs">Publicadas no domínio do cliente</span>
       </article>
       <article class="servico d-largo reveal">

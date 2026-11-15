@@ -89,7 +89,7 @@ a { color: inherit; text-underline-offset: .2em; }
    (metade mais longa do título 10,9 em; público mais longo 16,9 em; as 3 etiquetas do 1º cartão 17,8 em, numa linha só). */
 .cartao { container-type: inline-size; }
 .cartao h3 { font-size: min(1.32rem, 100cqi / 11.2); }
-.cartao .publico { font-size: min(.82rem, 100cqi / 17.3); }
+.cartao .publico { font-size: min(.82rem, 100cqi / 17.3); color: var(--green-dark); }
 .tags { gap: .5em; font-size: 1rem; }
 @media (min-width: 1000px) { .cartao .tags { flex-wrap: nowrap; font-size: min(1rem, 100cqi / 18); } }
 .seta { font-weight: 700; font-size: .92rem; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; }
@@ -130,11 +130,28 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico.d-verde .icone { background: rgba(255,255,255,.35); color: var(--deep); }
 .servico.d-verde .sub, .servico.d-verde p { color: var(--deep); }
 .servico.d-verde .obs { background: rgba(255,255,255,.4); }
-.servico.d-navy { background: var(--navy); color: #fff; }
-.servico.d-navy .icone { background: rgba(255,255,255,.12); color: var(--green); }
-.servico.d-navy .sub { color: var(--green); }
-.servico.d-navy p { color: #c6d4de; }
-.servico.d-navy .obs { background: rgba(255,255,255,.12); color: #fff; }
+/* S47 · Serviços redesenhado (Operador: "aqui precisamos melhorar tudo" → "gostei mas mexa tb no design"):
+   Relatório estratégico em destaque na largura toda (é o ponto de partida), depois 3 cartões e 2 cartões largos; só o Relatório é colorido.
+   Linha verde = gancho, sempre em 2 linhas quebradas pelo sentido (br.q), maior que antes; texto de prova curto. */
+.grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; }
+@media (min-width: 760px) and (max-width: 1039px) { .grade > .d-fecha { grid-column: 1 / -1; } }
+@media (min-width: 1040px) { .grade { grid-template-columns: repeat(6, 1fr); } .grade > .servico { grid-column: span 2; } .grade > .servico.d-meio { grid-column: span 3; } .grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; } }
+.grade > .servico:not(.d-ana):not(.d-largo) .sub { font-size: min(1.05rem, 100cqi / 11.6); line-height: 1.3; margin-top: -4px; }
+.servico.d-inicio { display: grid; gap: 22px 48px; padding: 32px 32px 34px; }
+.d-inicio .ini-txt { display: flex; flex-direction: column; gap: 12px; }
+.d-inicio .ini-txt .sub { margin-top: -4px; }
+.servico.d-inicio h3 { font-size: min(clamp(1.45rem, 2.4vw, 1.9rem), 100cqi / 10.6); }
+.d-inicio .ini-lado { display: flex; flex-direction: column; gap: 14px; }
+.marcos { display: grid; gap: 10px; }
+@media (min-width: 480px) and (max-width: 759px) { .marcos { grid-template-columns: 1fr 1fr; } }
+.marcos li { background: rgba(255,255,255,.35); border-radius: 12px; padding: 14px 16px; color: var(--deep); }
+.marcos b { display: block; font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+.marcos span { display: block; margin-top: 4px; font-size: .88rem; font-weight: 600; }
+.d-inicio .obs { margin-top: 0; }
+@media (min-width: 760px) { .servico.d-inicio { grid-template-columns: 1.4fr 1fr; align-items: center; } .d-inicio br.q { display: none; } }
+/* nos 2 cartões largos (lado a lado a partir de 1040 px) o gancho cabe numa linha nos dois: a quebra some */
+@media (min-width: 1040px) { .d-meio br.q { display: none; } }
+.servico p { text-wrap: pretty; }
 
 /* Ativos: texto + lista à esquerda, cartão de acessos à direita */
 .dupla { display: grid; gap: 48px; align-items: center; }
@@ -198,7 +215,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
 .rodape ul { display: grid; gap: 8px; }
 .rodape-fim { border-top: 1px solid rgba(255,255,255,.22); padding-block: 28px 26px; display: grid; justify-items: center; gap: 14px; text-align: center; }
-.rodape .rodape-fim img { width: 135px; }
+.rodape .rodape-fim img { width: 108px; } /* S47: 20% menor (Operador: "ativaleads (logo) do rodapé diminui 20%"), era 135 px */
 .rodape-legal { font-size: .8rem; }
 @media (min-width: 760px) { .rodape-grade { display: flex; justify-content: space-between; } }
 
