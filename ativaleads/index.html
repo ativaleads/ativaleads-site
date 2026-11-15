@@ -78,14 +78,19 @@ a { color: inherit; text-underline-offset: .2em; }
 .cab p { margin-top: 16px; color: var(--muted); font-size: 1.08rem; }
 .cab .etiqueta { margin-top: 0; color: var(--ink); font-size: .85rem; }
 .cartoes-3 { display: grid; gap: 18px; }
-@media (min-width: 900px) { .cartoes-3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .cartoes-3 { grid-template-columns: repeat(3, 1fr); } }
 .cartao { background: #fff; border: 1px solid #bfe9d2; border-radius: 18px; padding: 20px 20px 26px; display: flex; flex-direction: column; gap: 14px; }
 .ilus { height: 150px; border-radius: 12px; background: var(--gray); position: relative; overflow: hidden; }
 .cartao .publico { font-size: .82rem; font-weight: 700; color: var(--muted); }
 .cartao h3 { font-size: 1.32rem; line-height: 1.2; letter-spacing: -.02em; font-weight: 800; }
 .cartao p { color: var(--muted); font-size: .98rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
-.tags li { font-size: .8rem; padding: 4px 12px; border: 1px solid #9edcbb; border-radius: 999px; color: var(--green-dark); font-weight: 600; }
+.tags li { font-size: .8em; padding: .3125em .9375em; border: 1px solid #9edcbb; border-radius: 999px; color: var(--green-dark); font-weight: 600; }
+.cartao { container-type: inline-size; }
+.cartao h3 { font-size: min(1.32rem, 100cqi / 11.2); }
+.cartao .publico { font-size: min(.82rem, 100cqi / 17.3); }
+.tags { gap: .5em; font-size: 1rem; }
+@media (min-width: 1000px) { .cartao .tags { flex-wrap: nowrap; font-size: min(1rem, 100cqi / 18); } }
 .seta { font-weight: 700; font-size: .92rem; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; }
 .balao { position: absolute; border-radius: 12px; padding: 8px 10px; font-size: .72rem; font-weight: 700; }
 .balao-1 { left: 18px; top: 44px; background: #fff; color: var(--ink); box-shadow: 0 6px 14px -10px rgba(0,0,0,.4); }
@@ -567,7 +572,7 @@ a { color: inherit; text-underline-offset: .2em; }
       <article class="cartao reveal">
         <div class="ilus" aria-hidden="true"><span class="ilus-rot"><span class="zap"></span>WhatsApp da empresa</span><span class="balao balao-1">Vi o anúncio, tem horário?</span><span class="balao balao-2">Tem sim, às 15h</span></div>
         <p class="publico">Quem vende pelo WhatsApp</p>
-        <h3>Mais conversas com quem já quer comprar.</h3>
+        <h3>Mais conversas com <br class="q">quem já quer comprar.</h3>
         <p>Campanhas de mensagem no Instagram, no Facebook e no Google levam o interessado direto à conversa com a empresa.</p>
         <ul class="tags"><li>Meta Ads</li><li>Google Ads</li><li>WhatsApp</li></ul>
         <a class="seta" href="/ativaleads/#servicos">Ver tráfego pago →</a>
@@ -575,7 +580,7 @@ a { color: inherit; text-underline-offset: .2em; }
       <article class="cartao reveal">
         <div class="ilus" aria-hidden="true"><div class="mini-site"><div class="barra"></div><div class="titulo"></div><div class="linha"></div><div class="linha c"></div><div class="bt"></div></div></div>
         <p class="publico">Quem é escolhido pela reputação</p>
-        <h3>Presença à altura do trabalho.</h3>
+        <h3>Presença à altura <br class="q">do trabalho.</h3>
         <p>Site e perfis com conteúdo planejado, para quem pesquisa a empresa encontrar um trabalho bem apresentado.</p>
         <ul class="tags"><li>Site sob medida</li><li>Redes sociais</li></ul>
         <a class="seta" href="/ativaleads/#servicos">Ver sites →</a>
@@ -583,7 +588,7 @@ a { color: inherit; text-underline-offset: .2em; }
       <article class="cartao reveal">
         <div class="ilus" aria-hidden="true"><div class="mini-lp"><b></b><i></i><i></i><i></i><s></s></div></div>
         <p class="publico">Quem tem uma oferta para divulgar</p>
-        <h3>Uma página para cada campanha.</h3>
+        <h3>Uma oferta, <br class="q">uma página.</h3>
         <p>Landing page com uma mensagem e uma ação, e a medição de conversões ligada ao Google Ads e à Meta.</p>
         <ul class="tags"><li>Landing pages</li><li>Medição</li></ul>
         <a class="seta" href="/ativaleads/#servicos">Ver landing pages →</a>
