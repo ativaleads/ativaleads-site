@@ -653,3 +653,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
   .js .roteiro-justo .roteiro-texto h3 { font-size: 1.3rem; }
   .js .roteiro-justo .roteiro-texto > p:last-child { font-size: .9rem; }
 }
+/* S50: com o aparelho do tamanho da altura que sobra (efeitos.js), câmera e cantos acompanham a escala --k */
+@media (max-width: 899px) {
+  .js .celular { border-radius: calc(14px + 24px * var(--k)); }
+  .js .celular::before { width: calc(84px * var(--k)); height: calc(22px * var(--k)); margin-left: calc(-42px * var(--k)); top: calc(8px * var(--k)); }
+}

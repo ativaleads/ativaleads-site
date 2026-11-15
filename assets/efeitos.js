@@ -220,10 +220,11 @@
       }
     }
 
-    // S50: no celular o roteiro preso precisa caber entre o topo fixo e o pé da tela, também com letra grande
-    // em tela estreita. O aparelho encolhe até o piso; se ainda não couber, o modo justo tira o contador 01/04
-    // (os pontos já mostram o passo) e diminui um pouco a letra dos passos.
+    // S50: no celular o roteiro preso ocupa a altura entre o topo fixo e o pé da tela, também com letra grande
+    // em tela estreita. O aparelho cresce até o teto ou encolhe até o piso; se nem no piso couber, o modo justo
+    // tira o contador 01/04 (os pontos já mostram o passo) e diminui um pouco a letra dos passos.
     var K_PISO = 0.45;
+    var K_TETO = 0.736;
     var FOLGA = 12;
 
     function sobraParaAparelho() {
@@ -242,23 +243,22 @@
 
       if (window.innerWidth >= 900) { return; }
 
-      var estilo = window.getComputedStyle(celular);
-      var borda = parseFloat(estilo.borderTopWidth) || 0;
-      var kMax = parseFloat(estilo.getPropertyValue('--k')) || 0.5;
-      var k = Math.min(kMax, (sobraParaAparelho() - 2 * borda) / 520);
+      // O aparelho ocupa a altura que sobra, entre o piso e o teto (o tamanho de tela alta, 200 × 399 px).
+      var borda = parseFloat(window.getComputedStyle(celular).borderTopWidth) || 0;
+      // Na largura, o aparelho deixa de cada lado o lugar do botão da seta (40 px a 20 px da borda) mais 12 px de vão.
+      var teto = Math.min(K_TETO, (window.innerWidth - 2 * (20 + 40 + 12) - 2 * borda) / 250);
+      var k = Math.min(teto, (sobraParaAparelho() - 2 * borda) / 520);
 
       if (k < K_PISO) {
         corpo.classList.add('roteiro-justo');
         medirTextos();
-        k = Math.min(kMax, (sobraParaAparelho() - 2 * borda) / 520);
+        k = Math.min(teto, (sobraParaAparelho() - 2 * borda) / 520);
       }
 
-      if (k < kMax) {
-        k = Math.max(k, K_PISO);
-        celular.style.setProperty('--k', k.toFixed(3));
-        celular.style.width = Math.round(250 * k + 2 * borda) + 'px';
-        celular.style.height = Math.round(520 * k + 2 * borda) + 'px';
-      }
+      k = Math.max(k, K_PISO);
+      celular.style.setProperty('--k', k.toFixed(3));
+      celular.style.width = Math.round(250 * k + 2 * borda) + 'px';
+      celular.style.height = Math.round(520 * k + 2 * borda) + 'px';
     }
 
     function medirFixo() {
