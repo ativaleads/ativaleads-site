@@ -54,6 +54,17 @@ a { color: inherit; text-underline-offset: .2em; }
 .topo nav a:not(.botao):hover { text-decoration: underline; }
 .topo .botao { padding: 10px 18px; font-size: .92rem; }
 .topo { position: sticky; top: 0; z-index: 40; }
+.menu-cel { display: none; }
+.menu-cel summary { list-style: none; display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 6px; color: #fff; font-weight: 700; font-size: .85rem; line-height: 1; cursor: pointer; }
+.menu-cel summary::-webkit-details-marker { display: none; }
+.menu-ic { position: relative; width: 16px; height: 2px; border-radius: 2px; background: #fff; box-shadow: 0 -5px 0 #fff, 0 5px 0 #fff; transition: transform .2s, box-shadow .2s; }
+.menu-cel[open] .menu-ic { transform: rotate(45deg); box-shadow: none; }
+.menu-cel[open] .menu-ic::after { content: ""; position: absolute; inset: 0; border-radius: 2px; background: #fff; transform: rotate(-90deg); }
+.menu-cel-lista { position: absolute; left: 0; right: 0; top: 100%; display: grid; padding: 4px 20px 12px; background: var(--green-dark); border-top: 1px solid rgba(255,255,255,.18); box-shadow: 0 18px 28px -18px rgba(0,0,0,.45); }
+.menu-cel-lista a { padding: 13px 0; color: #fff; font-weight: 700; font-size: 1rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.14); }
+.menu-cel-lista a:last-child { border-bottom: 0; }
+.menu-cel-lista a.menu-ana { margin-top: 10px; padding: 12px 16px; border: 0; border-radius: 10px; background: #fff; color: var(--green-dark); text-align: center; }
+.topo .botao { white-space: nowrap; }
 html { scroll-padding-top: var(--topo-h, 86px); }
 .topo { background: var(--green-dark); }
 .topo nav a { color: #fff; }
@@ -205,6 +216,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
   .marca img { width: 124px; }
   .topo nav { gap: 14px; font-size: .85rem; }
   .topo nav .some-celular { display: none; }
+  .menu-cel { display: block; }
+  .topo nav .botao { display: none; }
   .topo .botao { padding: 8px 12px; font-size: .82rem; }
   .secao { padding-block: 72px; }
   .rodape ul { gap: 0; }
@@ -367,7 +380,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 .t-linha-graf { width: 100%; height: 70px; } .t-linha-graf .area { fill: var(--tint); } .t-linha-graf .linha { fill: none; stroke: var(--green-dark); stroke-width: 2.5; }
 .t-prox { margin-top: auto; padding: 10px; border-radius: 10px; background: var(--gray); display: grid; gap: 6px; }
 .t-prox b { font-size: .76rem; } .t-prox i { height: 6px; border-radius: 4px; background: var(--line); } .t-prox i + i { width: 70%; }
-.js .roteiro-corpo { height: 400vh; position: relative; }
+.js .roteiro-corpo { height: 280vh; position: relative; }
 .js .roteiro-fixo { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
 .js .roteiro-conta { display: block; }
 .roteiro-dica { display: none; position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); margin: 0; font-size: .8rem; font-weight: 700; color: var(--muted); letter-spacing: .02em; white-space: nowrap; }
@@ -462,8 +475,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 }
 @media (max-width: 899px) { html.roteiro-snap { scroll-snap-type: y proximity; } }
 .roteiro-ancora { display: none; }
-.js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - var(--fixo-h, 100svh)) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: always; pointer-events: none; }
-@media (max-width: 899px) { .js .roteiro-corpo { height: 560svh; } }
+.js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - var(--fixo-h, 100svh)) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: normal; pointer-events: none; }
+@media (max-width: 899px) { .js .roteiro-corpo { height: 360svh; } }
 @media (min-width: 760px) { .servico.d-largo { grid-column: 1 / -1; } }
 .servico.d-largo { border: 1px solid #bfe9d2; }
 .servico.d-largo p { max-width: 72ch; }
@@ -542,7 +555,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 <!-- css:fim -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Ativaleads","legalName":"Ativaleads Consultoria em Marketing Digital LTDA","taxID":"52.788.441/0001-01","email":"contato@ativaleads.com.br","telephone":"+5511969692055","url":"https://ativaleads.com.br/ativaleads/","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"}}</script>
 <script>document.documentElement.classList.add('js')</script>
-<script src="/assets/efeitos.js?v=11" defer></script>
+<script src="/assets/efeitos.js?v=12" defer></script>
 </head>
 <body>
 <div class="progresso" aria-hidden="true"></div>
@@ -555,6 +568,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
       <a class="some-celular" href="/ativaleads/#servicos">Serviços</a>
       <a class="some-celular" href="/ativaleads/#como">Como trabalhamos</a>
       <a class="some-celular" href="/ativaleads/#perguntas">Perguntas</a>
+      <details class="menu-cel"><summary aria-label="Abrir o menu"><span class="menu-ic" aria-hidden="true"></span><span class="menu-tx">Menu</span></summary><div class="menu-cel-lista"><a href="/ativaleads/#servicos">Serviços</a><a href="/ativaleads/#como">Como trabalhamos</a><a href="/ativaleads/#perguntas">Perguntas</a><a class="menu-ana" href="https://wa.me/5511969692055?text=Ol%C3%A1%2C%20Ana%21%20Vim%20pelo%20site%20da%20Ativaleads%20e%20quero%20contar%20sobre%20a%20minha%20empresa." target="_blank" rel="noopener">Fale com a Ana</a></div></details>
       <a class="botao botao-cheio" href="/ativaleads/#contato">Fale conosco</a>
     </nav>
   </div>

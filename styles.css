@@ -42,6 +42,19 @@ a { color: inherit; text-underline-offset: .2em; }
 .topo .botao { padding: 10px 18px; font-size: .92rem; }
 /* S47: topo fixo no alto da tela, como no site da Labate (Operador: "deixa o cabeçalho fixo igual o da labate imóveis, travado"); --topo-h vem do efeitos.js (altura real do topo) */
 .topo { position: sticky; top: 0; z-index: 40; }
+/* S47 (Operador: "menu do celular vc tem razão, não tem" → "Pode publicar"): no celular os links vão para um botão "Menu" que abre uma faixa abaixo do topo; <details> funciona sem JavaScript */
+.menu-cel { display: none; }
+.menu-cel summary { list-style: none; display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 6px; color: #fff; font-weight: 700; font-size: .85rem; line-height: 1; cursor: pointer; }
+.menu-cel summary::-webkit-details-marker { display: none; }
+.menu-ic { position: relative; width: 16px; height: 2px; border-radius: 2px; background: #fff; box-shadow: 0 -5px 0 #fff, 0 5px 0 #fff; transition: transform .2s, box-shadow .2s; }
+.menu-cel[open] .menu-ic { transform: rotate(45deg); box-shadow: none; }
+.menu-cel[open] .menu-ic::after { content: ""; position: absolute; inset: 0; border-radius: 2px; background: #fff; transform: rotate(-90deg); }
+.menu-cel-lista { position: absolute; left: 0; right: 0; top: 100%; display: grid; padding: 4px 20px 12px; background: var(--green-dark); border-top: 1px solid rgba(255,255,255,.18); box-shadow: 0 18px 28px -18px rgba(0,0,0,.45); }
+.menu-cel-lista a { padding: 13px 0; color: #fff; font-weight: 700; font-size: 1rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.14); }
+.menu-cel-lista a:last-child { border-bottom: 0; }
+.menu-cel-lista a.menu-ana { margin-top: 10px; padding: 12px 16px; border: 0; border-radius: 10px; background: #fff; color: var(--green-dark); text-align: center; }
+.topo .botao { white-space: nowrap; }
+
 html { scroll-padding-top: var(--topo-h, 86px); }
 /* S47 (Operador: "fundo verde claro e usa aquele que vc fez branco com o check em verde escuro" → "pode seguir e publicar"): topo em verde, logo branco com check verde-escuro, menu branco, botão branco */
 .topo { background: var(--green-dark); } /* S47: verdes invertidos (Operador: "inverte os verdes"): topo verde-escuro, check do logo verde-claro */
@@ -230,6 +243,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
   .marca img { width: 124px; }
   .topo nav { gap: 14px; font-size: .85rem; }
   .topo nav .some-celular { display: none; }
+  .menu-cel { display: block; }
+  .topo nav .botao { display: none; } /* S47: no celular o topo fica só com o logo e o Menu; o contato vai dentro do menu (Operador: "só menu, fale conosco ou fale com a Ana fica no menu") */
   .topo .botao { padding: 8px 12px; font-size: .82rem; }
   .secao { padding-block: 72px; }
   .rodape ul { gap: 0; }
@@ -419,7 +434,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 .t-prox { margin-top: auto; padding: 10px; border-radius: 10px; background: var(--gray); display: grid; gap: 6px; }
 .t-prox b { font-size: .76rem; } .t-prox i { height: 6px; border-radius: 4px; background: var(--line); } .t-prox i + i { width: 70%; }
 /* modo roteiro (com JavaScript) */
-.js .roteiro-corpo { height: 400vh; position: relative; }
+.js .roteiro-corpo { height: 280vh; position: relative; } /* S47: era 400vh; cerca de 0,7 tela por passo */
 .js .roteiro-fixo { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
 .js .roteiro-conta { display: block; }
 /* S47: dica no pé do roteiro preso (só no computador), para não parecer que a página acabou */
@@ -529,8 +544,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 }
 @media (max-width: 899px) { html.roteiro-snap { scroll-snap-type: y proximity; } }
 .roteiro-ancora { display: none; }
-.js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - var(--fixo-h, 100svh)) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: always; pointer-events: none; }
-@media (max-width: 899px) { .js .roteiro-corpo { height: 560svh; } }
+.js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - var(--fixo-h, 100svh)) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: normal; pointer-events: none; }
+@media (max-width: 899px) { .js .roteiro-corpo { height: 360svh; } } /* S47: era 560svh; cerca de 0,9 tela por passo */
 
 /* Frente larga "Atendimento e vendas no WhatsApp" (S41) */
 @media (min-width: 760px) { .servico.d-largo { grid-column: 1 / -1; } }
