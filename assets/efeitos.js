@@ -204,16 +204,65 @@
     // A altura do bloco fixo posiciona os pontos de encaixe da rolagem (CSS: --fixo-h).
     var textos = corpo.querySelector('.roteiro-textos');
 
-    function medirFixo() {
+    var celular = corpo.querySelector('.celular');
+    var palco = corpo.querySelector('.roteiro-palco');
+    var topoSite = document.querySelector('.topo');
+
+    function medirTextos() {
       // Os textos dos passos ficam um sobre o outro; a caixa reserva a altura do mais alto, para nenhum
       // encostar no aparelho, qualquer que seja o tamanho de letra do celular.
       if (textos !== null) {
         var maior = 0;
 
+        textos.style.minHeight = '';
         textos.querySelectorAll('.roteiro-texto').forEach(function (t) { maior = Math.max(maior, t.offsetHeight); });
         textos.style.minHeight = maior + 'px';
       }
+    }
 
+    // S50: no celular o roteiro preso precisa caber entre o topo fixo e o pé da tela, também com letra grande
+    // em tela estreita. O aparelho encolhe até o piso; se ainda não couber, o modo justo tira o contador 01/04
+    // (os pontos já mostram o passo) e diminui um pouco a letra dos passos.
+    var K_PISO = 0.45;
+    var FOLGA = 12;
+
+    function sobraParaAparelho() {
+      var topoH = topoSite !== null ? topoSite.offsetHeight : 0;
+
+      return window.innerHeight - topoH - 4 - (palco.getBoundingClientRect().top - fixo.getBoundingClientRect().top) - FOLGA;
+    }
+
+    function encaixarCelular() {
+      corpo.classList.remove('roteiro-justo');
+      if (celular === null || palco === null) { medirTextos(); return; }
+      celular.style.removeProperty('--k');
+      celular.style.width = '';
+      celular.style.height = '';
+      medirTextos();
+
+      if (window.innerWidth >= 900) { return; }
+
+      var estilo = window.getComputedStyle(celular);
+      var borda = parseFloat(estilo.borderTopWidth) || 0;
+      var kMax = parseFloat(estilo.getPropertyValue('--k')) || 0.5;
+      var k = Math.min(kMax, (sobraParaAparelho() - 2 * borda) / 520);
+
+      if (k < K_PISO) {
+        corpo.classList.add('roteiro-justo');
+        medirTextos();
+        k = Math.min(kMax, (sobraParaAparelho() - 2 * borda) / 520);
+      }
+
+      if (k < kMax) {
+        k = Math.max(k, K_PISO);
+        celular.style.setProperty('--k', k.toFixed(3));
+        celular.style.width = Math.round(250 * k + 2 * borda) + 'px';
+        celular.style.height = Math.round(520 * k + 2 * borda) + 'px';
+      }
+    }
+
+    function medirFixo() {
+      encaixarCelular();
       corpo.style.setProperty('--fixo-h', fixo.offsetHeight + 'px');
     }
 
