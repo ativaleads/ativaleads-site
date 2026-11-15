@@ -209,6 +209,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 /* Perguntas */
 .faq-dupla { display: grid; gap: 12px; }
 @media (min-width: 900px) { .faq-dupla { grid-template-columns: 4fr 8fr; gap: 48px; } }
+/* S50: com 10 perguntas a coluna da direita fica alta; no computador o título acompanha a rolagem, logo abaixo do topo fixo */
+@media (min-width: 900px) { .faq-dupla .cab { position: sticky; top: calc(var(--topo-h, 86px) + 24px); align-self: start; } }
 .faq { display: grid; gap: 10px; }
 .faq details { background: var(--gray); border-radius: 14px; padding: 0 22px; }
 .faq summary { cursor: pointer; list-style: none; font-weight: 700; padding: 18px 34px 18px 0; position: relative; }
