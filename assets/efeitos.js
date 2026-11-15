@@ -222,11 +222,12 @@
     atualizar();
   }
 
-  // Calendário da abertura: começa vazio, os dias aprovados ficam verdes um a um (até o dia 18), depois
-  // aparecem os dias em produção, e o ciclo recomeça. O HTML traz o estado final.
+  // Calendário da abertura (S47): todos os dias de publicação começam com contorno verde (em produção); os aprovados
+  // ficam verdes um a um, os dois seguintes ficam laranja (em aprovação), os demais seguem em produção, e o ciclo
+  // recomeça. O HTML traz o estado final.
   function calendario(cena) {
     var aprovados = Array.prototype.slice.call(cena.querySelectorAll('.cel.ok'));
-    var producao = Array.prototype.slice.call(cena.querySelectorAll('.cel.prod'));
+    var revisao = Array.prototype.slice.call(cena.querySelectorAll('.cel.rev'));
     var esperar;
 
     if (aprovados.length === 0 || reduzido || !temObservador) {
@@ -240,22 +241,23 @@
 
       await esperar(INICIO);
       for (;;) {
-        aprovados.forEach(function (dia) { dia.classList.remove('ok', 'aprovando'); });
-        producao.forEach(function (dia) { dia.classList.remove('prod'); });
+        aprovados.concat(revisao).forEach(function (dia) { dia.classList.remove('ok', 'rev', 'aprovando'); dia.classList.add('prod'); });
         await esperar(1200);
 
         for (i = 0; i < aprovados.length; i++) {
+          aprovados[i].classList.remove('prod');
           aprovados[i].classList.add('ok', 'aprovando');
           await esperar(300);
           aprovados[i].classList.remove('aprovando');
           await esperar(200);
         }
 
-        await esperar(500);
-
-        for (i = 0; i < producao.length; i++) {
-          producao[i].classList.add('prod');
-          await esperar(220);
+        for (i = 0; i < revisao.length; i++) {
+          revisao[i].classList.remove('prod');
+          revisao[i].classList.add('rev', 'aprovando');
+          await esperar(300);
+          revisao[i].classList.remove('aprovando');
+          await esperar(200);
         }
 
         await esperar(3500);

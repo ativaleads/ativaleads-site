@@ -53,6 +53,10 @@ a { color: inherit; text-underline-offset: .2em; }
 .topo nav a { text-decoration: none; }
 .topo nav a:not(.botao):hover { text-decoration: underline; }
 .topo .botao { padding: 10px 18px; font-size: .92rem; }
+.topo { background: var(--green); }
+.topo nav a { color: #fff; }
+.topo .botao-cheio { background: #fff; color: var(--green-dark); }
+.topo .botao-cheio:hover { background: var(--tint); }
 .abertura-in { display: grid; gap: 48px; align-items: center; padding-block: 56px 72px; }
 .abertura h1 { font-size: clamp(2rem, 3.7vw, 2.85rem); line-height: 1.05; letter-spacing: -.035em; font-weight: 800; color: var(--ink); }
 @media (min-width: 360px) { .abertura h1 .verde { white-space: nowrap; } }
@@ -191,7 +195,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
 .rodape ul { display: grid; gap: 8px; }
 .rodape-fim { border-top: 1px solid rgba(255,255,255,.22); padding-block: 28px 26px; display: grid; justify-items: center; gap: 14px; text-align: center; }
-.rodape .rodape-fim img { width: 86px; }
+.rodape .rodape-fim img { width: 69px; }
 .rodape-legal { font-size: .8rem; }
 @media (min-width: 760px) { .rodape-grade { display: flex; justify-content: space-between; } }
 @media (max-width: 640px) {
@@ -239,11 +243,14 @@ a { color: inherit; text-underline-offset: .2em; }
 .semana { margin: 12px 0 6px; font-size: .64rem; font-weight: 700; color: var(--muted); }
 .cel { height: 26px; border-radius: 6px; display: grid; place-items: center; font-size: .66rem; color: var(--muted); background: var(--gray); }
 .cel.ok { background: var(--green); color: #fff; font-weight: 800; }
+.cel.rev { background: #e8780c; color: #fff; font-weight: 800; }
 .cel.prod { background: #fff; box-shadow: inset 0 0 0 1.5px var(--green); color: var(--green-dark); font-weight: 800; }
-.legenda { display: flex; gap: 14px; margin-top: 10px; font-size: .68rem; color: var(--muted); }
-.legenda span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.legenda { display: flex; flex-wrap: wrap; gap: 4px 6px; justify-content: space-between; margin-top: 10px; font-size: min(.68rem, (100cqi - 51px) / 17); color: var(--muted); white-space: nowrap; }
+.calendario { container-type: inline-size; }
+.legenda span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
 .l-ok::before { background: var(--green); }
 .l-prod::before { box-shadow: inset 0 0 0 1.5px var(--green); }
+.l-rev::before { background: #e8780c; }
 .relatorio { width: 300px; }
 .grafico { display: block; width: 100%; height: auto; margin-top: 10px; }
 .grafico .area { fill: var(--tint); }
@@ -456,11 +463,11 @@ a { color: inherit; text-underline-offset: .2em; }
 .recursos li::after { content: ""; position: absolute; left: 6px; top: 4px; width: 5px; height: 9px; border: solid var(--green-dark); border-width: 0 2px 2px 0; transform: rotate(45deg); }
 .funil .fn-vendas { font-size: .68rem !important; }
 .funil .fn-vendas b { color: var(--green-dark); }
-.fn-quadro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
-.fn-col { background: var(--gray); border-radius: 8px; padding: 6px 5px 8px; min-height: 112px; display: flex; flex-direction: column; gap: 5px; }
+.fn-quadro { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 10px; }
+.fn-col { background: var(--gray); border-radius: 8px; padding: 6px 4px 8px; min-height: 112px; display: flex; flex-direction: column; gap: 5px; container-type: inline-size; }
 .fn-col p { font-size: .6rem; font-weight: 800; color: var(--muted); line-height: 1.2; min-height: 2.4em; }
-.fn-card { display: flex; align-items: center; gap: 5px; padding: 5px 6px; border-radius: 6px; background: #fff; box-shadow: 0 2px 6px -3px rgba(16,45,70,.35); font-size: .66rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; }
-.fn-card i { width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--navy)); flex-shrink: 0; }
+.fn-card { display: flex; align-items: center; gap: 4px; padding: 5px 4px; border-radius: 6px; background: #fff; box-shadow: 0 2px 6px -3px rgba(16,45,70,.35); font-size: .66rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; font-size: min(.66rem, (100cqi - 23px) / 3.5); }
+.fn-card i { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--navy)); flex-shrink: 0; }
 .fn-col[data-col="3"] .fn-card { background: var(--green); color: #fff; }
 .fn-col[data-col="3"] .fn-card i { background: #fff; }
 .fn-card[hidden] { display: none; }
@@ -520,7 +527,7 @@ a { color: inherit; text-underline-offset: .2em; }
 <!-- css:fim -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Ativaleads","legalName":"Ativaleads Consultoria em Marketing Digital LTDA","taxID":"52.788.441/0001-01","email":"contato@ativaleads.com.br","telephone":"+5511969692055","url":"https://ativaleads.com.br/ativaleads/","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"}}</script>
 <script>document.documentElement.classList.add('js')</script>
-<script src="/assets/efeitos.js?v=9" defer></script>
+<script src="/assets/efeitos.js?v=10" defer></script>
 </head>
 <body>
 <div class="progresso" aria-hidden="true"></div>
@@ -528,7 +535,7 @@ a { color: inherit; text-underline-offset: .2em; }
 
 <header class="topo">
   <div class="wrap topo-in">
-    <a class="marca" href="/ativaleads/" aria-label="Ativaleads, início"><img src="/assets/logo/ativaleads-2026-verde-440.webp" srcset="/assets/logo/ativaleads-2026-verde-250.webp 250w, /assets/logo/ativaleads-2026-verde-440.webp 440w" sizes="(max-width: 640px) 124px, 150px" alt="Ativaleads" width="440" height="73"></a>
+    <a class="marca" href="/ativaleads/" aria-label="Ativaleads, início"><img src="/assets/logo/ativaleads-2026-branco-check-440.webp" srcset="/assets/logo/ativaleads-2026-branco-check-250.webp 250w, /assets/logo/ativaleads-2026-branco-check-440.webp 440w" sizes="(max-width: 640px) 124px, 150px" alt="Ativaleads" width="440" height="73"></a>
     <nav aria-label="Navegação principal">
       <a class="some-celular" href="/ativaleads/#servicos">Serviços</a>
       <a class="some-celular" href="/ativaleads/#como">Como trabalhamos</a>
@@ -567,8 +574,8 @@ a { color: inherit; text-underline-offset: .2em; }
       <div class="peca calendario" data-calendario><span class="rot">3 · Posts aprovados no calendário</span>
         <div class="pc-titulo">Calendário de posts <small>novembro</small></div>
         <div class="semana"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
-        <div class="dias"><span class="cel">1</span><span class="cel ok">2</span><span class="cel">3</span><span class="cel ok">4</span><span class="cel">5</span><span class="cel ok">6</span><span class="cel">7</span><span class="cel">8</span><span class="cel ok">9</span><span class="cel">10</span><span class="cel ok">11</span><span class="cel">12</span><span class="cel ok">13</span><span class="cel">14</span><span class="cel">15</span><span class="cel ok">16</span><span class="cel">17</span><span class="cel ok">18</span><span class="cel">19</span><span class="cel prod">20</span><span class="cel">21</span><span class="cel">22</span><span class="cel prod">23</span><span class="cel">24</span><span class="cel prod">25</span><span class="cel">26</span><span class="cel prod">27</span><span class="cel">28</span><span class="cel">29</span><span class="cel prod">30</span></div>
-        <div class="legenda"><span class="l-ok">aprovado</span><span class="l-prod">em produção</span></div>
+        <div class="dias"><span class="cel">1</span><span class="cel ok">2</span><span class="cel">3</span><span class="cel ok">4</span><span class="cel">5</span><span class="cel ok">6</span><span class="cel">7</span><span class="cel">8</span><span class="cel ok">9</span><span class="cel">10</span><span class="cel ok">11</span><span class="cel">12</span><span class="cel ok">13</span><span class="cel">14</span><span class="cel">15</span><span class="cel rev">16</span><span class="cel">17</span><span class="cel rev">18</span><span class="cel">19</span><span class="cel prod">20</span><span class="cel">21</span><span class="cel">22</span><span class="cel prod">23</span><span class="cel">24</span><span class="cel prod">25</span><span class="cel">26</span><span class="cel prod">27</span><span class="cel">28</span><span class="cel">29</span><span class="cel prod">30</span></div>
+        <div class="legenda"><span class="l-ok">aprovado</span><span class="l-rev">em aprovação</span><span class="l-prod">em produção</span></div>
       </div>
       <div class="peca relatorio funil" data-funil><span class="rot">4 · Funil de vendas no WhatsApp</span>
         <div class="pc-titulo">Esta semana <small class="fn-vendas">vendas: <b>1</b></small></div>
