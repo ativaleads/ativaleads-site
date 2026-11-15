@@ -58,7 +58,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .faixa .ic { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 16px; background: rgba(0,191,99,.14); color: var(--green); }
 .faixa .ic svg { width: 22px; height: 22px; }
 .faixa strong { display: block; font-size: 1.25rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
-.faixa span:not(.ic) { display: block; margin-top: 6px; font-size: .9rem; color: #b9c7d1; line-height: 1.45; }
+.faixa span:not(.ic) { display: block; margin-top: 6px; font-size: .9rem; color: #fff; line-height: 1.45; } /* S47: texto em fundo escuro é branco, nunca cinza-azulado (Operador: "não gosto dessa cor, tudo que tiver no site assim deixa branco") */
 @media (min-width: 640px) { .faixa { grid-template-columns: 1fr 1fr; } .faixa > div + div { border-top: 0; } .faixa > div:nth-child(even) { border-left: 1px solid rgba(255,255,255,.12); } .faixa > div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.12); } }
 @media (min-width: 980px) { .faixa { grid-template-columns: repeat(4, 1fr); } .faixa > div { padding: 30px 28px; } .faixa > div:nth-child(n+2) { border-left: 1px solid rgba(255,255,255,.12); } .faixa > div:nth-child(n+3) { border-top: 0; } }
 
@@ -125,11 +125,10 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico { container-type: inline-size; }
 .servico h3 { font-size: min(1.3rem, 100cqi / 11.6); }
 .servico .sub { font-size: min(.88rem, 100cqi / 15); }
-.servico .obs { font-size: min(.8rem, 100cqi / 22.6); }
+.servico .obs { font-size: min(.8rem, 100cqi / 22.6); } /* S47: etiqueta cinza só no cartão "Atendimento e vendas no WhatsApp" (fora do escopo); nos demais saiu (Operador: "acho esse tipo de aviso desnecessário") */
 .servico.d-verde { background: var(--green); }
 .servico.d-verde .icone { background: rgba(255,255,255,.35); color: var(--deep); }
 .servico.d-verde .sub, .servico.d-verde p { color: var(--deep); }
-.servico.d-verde .obs { background: rgba(255,255,255,.4); }
 /* S47 · Serviços redesenhado (Operador: "aqui precisamos melhorar tudo" → "gostei mas mexa tb no design"):
    Relatório estratégico em destaque na largura toda (é o ponto de partida), depois 3 cartões e 2 cartões largos; só o Relatório é colorido.
    Linha verde = gancho, sempre em 2 linhas quebradas pelo sentido (br.q), maior que antes; texto de prova curto. */
@@ -147,7 +146,6 @@ a { color: inherit; text-underline-offset: .2em; }
 .marcos li { background: rgba(255,255,255,.35); border-radius: 12px; padding: 14px 16px; color: var(--deep); }
 .marcos b { display: block; font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
 .marcos span { display: block; margin-top: 4px; font-size: .88rem; font-weight: 600; }
-.d-inicio .obs { margin-top: 0; }
 @media (min-width: 760px) { .servico.d-inicio { grid-template-columns: 1.4fr 1fr; align-items: center; } .d-inicio br.q { display: none; } }
 /* nos 2 cartões largos (lado a lado a partir de 1040 px) o gancho cabe numa linha nos dois: a quebra some */
 @media (min-width: 1040px) { .d-meio br.q { display: none; } }
@@ -199,7 +197,7 @@ a { color: inherit; text-underline-offset: .2em; }
 /* Chamada final: bloco escuro arredondado */
 .chamada { background: var(--deep); color: #fff; border-radius: 22px; padding: 48px 40px; display: grid; gap: 28px; align-items: center; background-image: radial-gradient(circle at 0% 0%, rgba(0, 191, 99, .22), transparent 45%); }
 .chamada h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
-.chamada p { margin-top: 12px; color: #c6d4de; max-width: 50ch; }
+.chamada p { margin-top: 12px; color: #fff; max-width: 50ch; }
 .chamada .botao { overflow-wrap: anywhere; }
 .botao-zap { display: inline-flex; align-items: center; gap: 10px; }
 .botao-zap svg { width: 20px; height: 20px; flex-shrink: 0; }
@@ -207,7 +205,7 @@ a { color: inherit; text-underline-offset: .2em; }
 @media (max-width: 640px) { .chamada { padding: 36px 24px; } }
 
 /* Rodapé (o verde escolhido na S38) */
-.rodape { background: var(--green-dark); color: #eaf7ef; font-size: .9rem; margin-top: 96px; }
+.rodape { background: var(--green-dark); color: #fff; font-size: .9rem; margin-top: 96px; }
 .rodape a { color: #fff; text-decoration: none; }
 .rodape a:hover { text-decoration: underline; }
 .rodape :focus-visible { outline-color: #fff; }
@@ -215,7 +213,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
 .rodape ul { display: grid; gap: 8px; }
 .rodape-fim { border-top: 1px solid rgba(255,255,255,.22); padding-block: 28px 26px; display: grid; justify-items: center; gap: 14px; text-align: center; }
-.rodape .rodape-fim img { width: 108px; } /* S47: 20% menor (Operador: "ativaleads (logo) do rodapé diminui 20%"), era 135 px */
+.rodape .rodape-fim img { width: 86px; } /* S47: 135 → 108 → 86 px (Operador: "diminui 20%" e depois "diminui mais o ativaleads do rodapé -20%") */
 .rodape-legal { font-size: .8rem; }
 @media (min-width: 760px) { .rodape-grade { display: flex; justify-content: space-between; } }
 
@@ -398,7 +396,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .t-agenda b { display: block; font-size: .8rem; } .t-agenda small { color: var(--muted); font-size: .68rem; }
 .t-ok { margin-left: auto; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--deep); display: grid; place-items: center; font-weight: 800; font-size: .7rem; }
 .t-aviso { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: var(--deep); color: #fff; }
-.t-aviso b { display: block; font-size: .78rem; } .t-aviso small { color: #b9c7d1; font-size: .68rem; }
+.t-aviso b { display: block; font-size: .78rem; } .t-aviso small { color: #fff; font-size: .68rem; }
 .t-aviso .zap { box-shadow: inset 0 0 0 3px var(--deep), 0 0 0 1px var(--green); }
 .t-rel-cab { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
 .t-rel-cab b { font-size: .9rem; } .t-rel-cab small { color: var(--muted); font-size: .68rem; }
@@ -448,8 +446,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .servico.d-ana { background: var(--deep) radial-gradient(circle at 0% 0%, rgba(0,191,99,.22), transparent 50%); color: #fff; }
 .servico.d-ana .icone { background: rgba(0,191,99,.16); color: var(--green); }
 .servico.d-ana .sub { color: var(--green); margin-top: 4px; }
-.servico.d-ana p { color: #c6d4de; max-width: 72ch; }
-.servico.d-ana .obs { background: rgba(255,255,255,.12); color: #fff; }
+.servico.d-ana p { color: #fff; max-width: 72ch; }
 @media (min-width: 760px) { .servico.d-ana { grid-column: 1 / -1; } }
 
 /* Avatar da Ana (S41) */
@@ -457,25 +454,34 @@ a { color: inherit; text-underline-offset: .2em; }
 .ana-av { position: relative; display: block; width: 132px; height: 132px; }
 .ana-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px rgba(0,191,99,.45), 0 24px 44px -22px rgba(0,0,0,.7); }
 .ana-av::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--deep); }
-.ana-figura figcaption { display: grid; justify-items: center; gap: 2px; text-align: center; color: #c6d4de; line-height: 1.3; max-width: 100%; }
+.ana-figura figcaption { display: grid; justify-items: center; gap: 2px; text-align: center; color: #fff; line-height: 1.3; max-width: 100%; }
 .ana-figura figcaption b { font-size: .82rem; font-weight: 800; color: #fff; letter-spacing: .04em; }
 .ana-figura figcaption span { font-size: .74rem; font-weight: 600; }
 /* S47 · cartão da Ana mais visual (Operador: "aqui acho que é mais visual mesmo" → "faz"): à esquerda título, selos do que ela faz e frase curta;
    à direita a Ana trabalhando (foto + exemplo de conversa). "A.N.A. · Agente…" aparece uma vez só, na linha verde. */
 .servico.d-ana { display: grid; grid-template-columns: 1fr; gap: 28px; }
 .d-ana .ana-txt { display: flex; flex-direction: column; gap: 14px; }
-.d-ana .ana-txt .obs { margin-top: 2px; }
-.selos { display: flex; flex-wrap: wrap; gap: 8px; }
-.selos li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 12px; border-radius: 999px; background: rgba(0,191,99,.14); color: #fff; font-weight: 700; font-size: .9rem; }
-.selos svg { width: 17px; height: 17px; color: var(--green); flex: none; }
+/* selos: três blocos iguais numa linha (ícone em cima, texto embaixo); no celular, lista com ícone ao lado (Operador: "aqui precisa melhorar visualização") */
+.selos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 4px; }
+.selos li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 14px 10px; border-radius: 14px; background: rgba(0,191,99,.10); border: 1px solid rgba(0,191,99,.24); color: #fff; font-weight: 700; font-size: .88rem; line-height: 1.25; text-align: center; }
+.selos svg { width: 22px; height: 22px; color: var(--green); flex: none; }
+@media (max-width: 519px) { .selos br.q { display: none; } .selos { grid-template-columns: 1fr; gap: 8px; } .selos li { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 10px 14px; text-align: left; } .selos svg { width: 19px; height: 19px; } }
 .ana-demo { display: flex; align-items: flex-end; justify-content: center; gap: 16px; }
-.ana-demo .ana-av { width: 88px; height: 88px; flex: none; }
+.ana-demo .ana-av { width: 104px; height: 104px; flex: none; }
 .ana-chat { display: grid; gap: 8px; width: 100%; max-width: 340px; padding: 14px; border-radius: 18px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); }
 .ana-chat .b { max-width: 86%; padding: 8px 12px; border-radius: 14px; font-size: .86rem; line-height: 1.35; }
 .ana-chat .rec { justify-self: start; background: #fff; color: var(--ink); border-bottom-left-radius: 4px; }
 .ana-chat .env { justify-self: end; background: var(--green); color: var(--deep); font-weight: 600; border-bottom-right-radius: 4px; }
 @media (max-width: 519px), (min-width: 900px) and (max-width: 1099px) { .ana-demo { flex-direction: column; align-items: center; } }
-@media (min-width: 900px) { .servico.d-ana { grid-template-columns: 1.1fr 1fr; column-gap: 48px; align-items: center; } .ana-demo .ana-av { width: 112px; height: 112px; } }
+@media (min-width: 900px) { .servico.d-ana { grid-template-columns: 1.1fr 1fr; column-gap: 48px; align-items: center; } .ana-demo .ana-av { width: 128px; height: 128px; } }
+/* S47 (Operador: "separar em 3 partes, esq, centro e dir" → "faz, se der aumenta um pouco a Ana"): a partir de 1100 px,
+   texto | Ana | conversa, com o mesmo espaço entre as três; a Ana e a conversa ficam no centro da altura do cartão */
+@media (min-width: 1100px) {
+  .servico.d-ana { grid-template-columns: minmax(0, 1fr) auto minmax(280px, 340px); column-gap: 56px; align-items: stretch; }
+  .ana-demo { grid-column: 2 / 4; display: grid; grid-template-columns: subgrid; column-gap: normal; align-items: center; }
+  .ana-demo .ana-av { width: 160px; height: 160px; align-self: center; }
+  .ana-chat { max-width: none; }
+}
 .ana-acao { display: grid; justify-items: center; gap: 22px; }
 .chamada .ana-av { width: 140px; height: 140px; }
 .ana-acao .botao { white-space: nowrap; justify-content: center; }
