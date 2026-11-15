@@ -515,7 +515,13 @@ a { color: inherit; text-underline-offset: .2em; }
 @media (prefers-reduced-motion: reduce) { .anuncio.animada *, .anuncio.animada .cta::after { animation: none !important; } }
 
 /* Faixa: títulos com a mesma altura (duas linhas) para os subtítulos alinharem quando há colunas */
-@media (min-width: 640px) { .faixa strong { min-height: 2.4em; } }
+/* S47: faixa centralizada (Operador: "eu aqui centralizaria tudo") */
+.faixa > div { text-align: center; }
+.faixa .ic { margin-left: auto; margin-right: auto; }
+/* todo título tem 2 linhas, quebradas pelo sentido (br.q), em qualquer largura: lado a lado, ícones, títulos e frases começam na mesma altura.
+   A letra acompanha a coluna para a metade mais longa ("Nenhum cliente", 7,8 em) nunca virar 3ª linha. */
+@media (min-width: 640px) { .faixa { container-type: inline-size; } .faixa strong { font-size: min(1.25rem, (50cqi - 49px) / 8.2); } }
+@media (min-width: 980px) { .faixa strong { font-size: min(1.25rem, (25cqi - 57px) / 8.2); } }
 
 /* Ajustes de alinhamento e espaçamento (S41, varredura medida) */
 @media (max-width: 899px) { .faq-dupla .cab { margin-bottom: 32px; } }
