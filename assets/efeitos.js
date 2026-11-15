@@ -373,6 +373,15 @@
 
     medirTopo();
     window.addEventListener('resize', medirTopo);
+    // Menu do celular (S47): fecha ao escolher um link ou ao tocar fora dele.
+    document.querySelectorAll('.menu-cel').forEach(function (menu) {
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () { menu.removeAttribute('open'); });
+      });
+      document.addEventListener('click', function (evento) {
+        if (menu.hasAttribute('open') && !menu.contains(evento.target)) { menu.removeAttribute('open'); }
+      });
+    });
     revelar();
     progresso();
     document.querySelectorAll('[data-conversa]').forEach(conversa);
