@@ -362,6 +362,17 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    // Topo fixo (S47): a altura real do topo vai para --topo-h, usada pelo roteiro preso e pelos links internos.
+    var topo = document.querySelector('.topo');
+
+    function medirTopo() {
+      if (topo !== null) {
+        document.documentElement.style.setProperty('--topo-h', topo.offsetHeight + 'px');
+      }
+    }
+
+    medirTopo();
+    window.addEventListener('resize', medirTopo);
     revelar();
     progresso();
     document.querySelectorAll('[data-conversa]').forEach(conversa);
