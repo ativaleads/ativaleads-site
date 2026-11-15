@@ -375,6 +375,10 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 @keyframes dica-desce { 50% { transform: translateY(4px); } }
 @media (prefers-reduced-motion: reduce) { .roteiro-dica span { animation: none; } }
 @media (min-width: 900px) and (min-height: 720px) { .js .roteiro-dica { display: block; } }
+@media (max-width: 899px) {
+  .js .roteiro-dica { display: flex; align-items: center; justify-content: center; left: auto; right: 20px; bottom: 6px; transform: none; width: 40px; height: 40px; border-radius: 50%; background: var(--green-dark); font-size: 0; box-shadow: 0 8px 18px -10px rgba(16,45,70,.6); }
+  .js .roteiro-dica span { margin: 0; font-size: 1.15rem; line-height: 1; color: #fff; }
+}
 .js .roteiro-pontos { display: flex; }
 .js .roteiro-textos { display: block; position: relative; min-height: 14em; }
 .js .roteiro-texto { position: absolute; inset: 0 0 auto 0; opacity: 0; transform: translateY(26px); transition: opacity .5s cubic-bezier(.2,.75,.2,1), transform .5s cubic-bezier(.2,.75,.2,1); pointer-events: none; }
