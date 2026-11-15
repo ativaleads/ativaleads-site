@@ -170,6 +170,10 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 @media (min-width: 760px) { .servico.d-inicio { grid-template-columns: 1.4fr 1fr; align-items: center; } .d-inicio br.q { display: none; } }
 /* nos 2 cartões largos (lado a lado a partir de 1040 px) o gancho cabe numa linha nos dois: a quebra some */
 @media (min-width: 1040px) { .d-meio br.q { display: none; } }
+/* S47: Sites e Landing pages em verde-escuro, no padrão do Relatório (Operador: "e essas duas no tom verde escuro") */
+.servico.d-meio { background: var(--green-dark); color: #fff; }
+.servico.d-meio .icone { background: var(--green); color: #fff; }
+.servico.d-meio .sub, .servico.d-meio p { color: #fff; }
 .servico p { text-wrap: pretty; }
 
 /* Ativos: texto + lista à esquerda, cartão de acessos à direita */
