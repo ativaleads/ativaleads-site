@@ -201,7 +201,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 /* S47 (alinhamento): título do passo numa linha só, a letra acompanha a largura do cartão ("Relatório estratégico" 10,1 em) */
 .passo { container-type: inline-size; }
 .passo h3 { font-size: min(1.2rem, 100cqi / 10.5); }
-.passo.d { background: var(--green); border-color: var(--green); color: #fff; }
+.passo p { font-size: min(.95rem, 100cqi / 12.6); } /* S50: com o cartão estreito e letra grande o título encolhia abaixo do texto (18,4 contra 19 px a 1100 px com 125%); o texto encolhe junto e fica sempre menor que o título */
+.passo.d { background: var(--green-dark); border-color: var(--green-dark); color: #fff; } /* S50: o destaque é o Relatório estratégico (passo 2, ponto de partida, como em Serviços), em verde-escuro; antes era a Implantação em verde-claro */
 .passo.d .n, .passo.d p { color: #fff; }
 @media (min-width: 1100px) { .passo:not(:last-child)::after { content: "→"; position: absolute; right: -27px; top: 50%; transform: translateY(-50%); color: var(--green-dark); font-weight: 800; } }
 
