@@ -370,6 +370,11 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 .js .roteiro-corpo { height: 400vh; position: relative; }
 .js .roteiro-fixo { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
 .js .roteiro-conta { display: block; }
+.roteiro-dica { display: none; position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); margin: 0; font-size: .8rem; font-weight: 700; color: var(--muted); letter-spacing: .02em; white-space: nowrap; }
+.roteiro-dica span { display: inline-block; margin-left: 6px; color: var(--green-dark); animation: dica-desce 1.6s ease-in-out infinite; }
+@keyframes dica-desce { 50% { transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .roteiro-dica span { animation: none; } }
+@media (min-width: 900px) and (min-height: 720px) { .js .roteiro-dica { display: block; } }
 .js .roteiro-pontos { display: flex; }
 .js .roteiro-textos { display: block; position: relative; min-height: 14em; }
 .js .roteiro-texto { position: absolute; inset: 0 0 auto 0; opacity: 0; transform: translateY(26px); transition: opacity .5s cubic-bezier(.2,.75,.2,1), transform .5s cubic-bezier(.2,.75,.2,1); pointer-events: none; }
@@ -512,7 +517,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 @media (max-width: 899px) { .faq-dupla .cab { margin-bottom: 32px; } }
 @media (min-width: 900px) {
   .roteiro { padding-bottom: 96px; }
-  .js .roteiro-fixo { height: auto; top: calc(var(--topo-h, 86px) + 4svh); display: block; }
+  .js .roteiro-fixo { top: var(--topo-h, 86px); height: calc(100svh - var(--topo-h, 86px)); display: flex; align-items: center; }
   .js .roteiro-grade { align-items: start; }
 }
 @media (max-width: 899px) { .roteiro { padding-bottom: 72px; } .js .roteiro-fixo { height: auto; top: calc(var(--topo-h, 80px) + 4px); display: block; } }
@@ -651,6 +656,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
   <div class="roteiro-corpo" data-roteiro>
     <span class="roteiro-ancora" style="--i:1"></span><span class="roteiro-ancora" style="--i:2"></span><span class="roteiro-ancora" style="--i:3"></span><span class="roteiro-ancora" style="--i:4"></span>
     <div class="roteiro-fixo">
+      <p class="roteiro-dica" aria-hidden="true">Role para continuar<span>↓</span></p>
       <div class="wrap roteiro-grade">
         <div class="roteiro-lado">
           <p class="roteiro-conta" aria-hidden="true"><span class="js-passo">01</span><small>/ 04</small></p>
