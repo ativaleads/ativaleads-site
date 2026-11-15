@@ -161,14 +161,10 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 .servico.d-meio .sub, .servico.d-meio p { color: #fff; }
 .servico p { text-wrap: pretty; }
 .dupla { display: grid; gap: 48px; align-items: center; }
+.dupla .cab:last-child { margin-bottom: 0; }
 @media (min-width: 960px) { .dupla { grid-template-columns: 1fr 1fr; gap: 64px; } }
-.checks { display: grid; gap: 14px; margin-top: 6px; }
-.checks li { position: relative; padding-left: 32px; }
-.checks li::before { content: ""; position: absolute; left: 2px; top: .35em; width: 14px; height: 8px; border-left: 2px solid var(--green-dark); border-bottom: 2px solid var(--green-dark); transform: rotate(-45deg); }
-.checks strong { font-weight: 800; }
 .acessos { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px 10px; box-shadow: 0 30px 60px -36px rgba(16, 45, 70, .45); }
 .acessos-cab { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: .95rem; }
-.acessos-cab small { font-weight: 600; color: var(--muted); font-size: .78rem; white-space: nowrap; }
 .acessos li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
 .acessos li:last-child { border-bottom: 0; }
 .acessos .ativo { font-weight: 700; }
@@ -843,15 +839,9 @@ html { scroll-padding-top: var(--topo-h, 86px); }
         <h2 id="t-ativos">O que é da empresa <span class="verde">continua da empresa</span></h2>
         <p>Contas de anúncio, páginas, perfis, domínio e site pertencem ao cliente. A Ativaleads atua com acesso de parceiro, revogável a qualquer momento.</p>
       </div>
-      <ul class="checks reveal">
-        <li><strong>Conta de anúncios</strong> no nome da empresa, no Google e na Meta.</li>
-        <li><strong>Verba paga direto</strong> às plataformas, com visibilidade total na própria conta.</li>
-        <li><strong>Domínio e hospedagem</strong> registrados no nome do cliente.</li>
-        <li><strong>Acesso de parceiro</strong>, revogável a qualquer momento.</li>
-      </ul>
     </div>
     <div class="acessos reveal" aria-label="Como fica a divisão de acessos">
-      <div class="acessos-cab">Quem é dono de cada ativo <small>exemplo de conta</small></div>
+      <div class="acessos-cab">Quem é dono de cada ativo</div>
       <ul>
         <li><span class="ativo">Conta de anúncios · Meta</span><span class="dono">Empresa</span><span class="papel">Ativaleads: parceiro com acesso de anunciante</span></li>
         <li><span class="ativo">Conta do Google Ads</span><span class="dono">Empresa</span><span class="papel">Ativaleads: acesso de administrador convidado</span></li>
