@@ -5,6 +5,11 @@ Variantes branca e verde fornecidas pelo usuário. Arquivos WebP transparentes, 
 - ativaleads-branco.webp: rodapés sobre azul profundo.
 - ativaleads-verde.webp: cabeçalhos sobre fundo claro.
 
-Logo novo (S47, 15/11/2026, provisório até o arquivo oficial): `ativaleads-2026-verde-250.webp` e `-440.webp` no cabeçalho do site em /ativaleads/, `ativaleads-2026-branco-300.webp` no rodapé (desenho inteiro em #FBFBFB). Os arquivos antigos seguem em uso em /eaaa/. Na S50 a raiz "em breve" passou ao logo novo animado, em camadas em `anim-2026/` (letras #FBFBFB, check #00BF63, sobre o verde-escuro #007A3F); `anim/` (logo antigo) fica sem uso.
+Logo oficial (S53, 16/11/2026, arquivo do Operador: "Vamos usar esse logo"): letras verde-escuro #007A3F, check verde-claro #00BF63. Os arquivos `ativaleads-2026-*` (nomes da S47, quando era provisório) foram refeitos a partir dele por `_preview/s53/logo_oficial.py`, fora do git:
+- `ativaleads-2026-verde-250.webp` e `-440.webp`: cores originais, para fundo claro;
+- `ativaleads-2026-branco-checkclaro-250.webp` e `-440.webp`: letras brancas e check verde-claro, no topo verde-escuro de /ativaleads/;
+- `ativaleads-2026-branco-300.webp`: todo branco (#FFFFFF), no rodapé (300 × 49);
+- `anim-2026/`: camadas da raiz "em breve" (letras brancas, check verde-claro), grade 1000 × 165.
+`ativaleads-2026-branco-check-*` (check verde-escuro) ficou com o desenho provisório, sem uso. Os arquivos antigos (`ativaleads-verde-*`, `ativaleads-branco-*`) seguem em uso em /eaaa/; `anim/` (logo antigo) fica sem uso.
 
-Cores extraídas do logo verde: #00BF63 e #007A3F. Branco do logo: #FBFBFB. Azul profundo do site: #102D46.
+Cores do logo: #00BF63 e #007A3F. Branco das variações brancas: #FFFFFF (o provisório usava #FBFBFB).
