@@ -138,12 +138,13 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .comparar .depois{clip-path:inset(0 0 0 50%)}
 .comparar .depois-fundo{position:absolute;inset:0;background:var(--tinta);clip-path:inset(0 0 0 50%);display:flex;align-items:center;justify-content:center;gap:2%;padding:4%}
 .comparar .depois-fundo img{position:static;width:30%;height:auto;aspect-ratio:4/5;border-radius:3px}
+.comparar .depois-fundo img.grade{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 0;border-radius:0} /* S56: grade cheia no depois, como a do antes (Operador: "o antes tem tudo e o depois só 3") */
 .barra{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--ouro2);transform:translateX(-50%)}
 .barra::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ouro2);color:var(--tinta2);display:grid;place-items:center;font-size:20px}
 .comparar input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
 .rotulos{display:flex;justify-content:space-between;max-width:900px;margin:10px auto 0;font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--claro)}
 /* precisamos / próximos */
-.passos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.passos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:1fr}@media (min-width:560px){.passos{grid-template-columns:repeat(2,1fr)}}@media (min-width:1000px){.passos{grid-template-columns:repeat(4,1fr)}} /* S56: 4, 2+2 ou 1, nunca um passo sozinho na fileira */
 .passos li{counter-increment:p;border-top:2px solid var(--ouro2);padding-top:14px;font-size:15.5px}
 .passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
 .rodape{background:var(--tinta2);color:var(--claro);padding:40px 0;font-size:14px}
@@ -228,7 +229,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
   <div class="faixa">
     <div class="chapeu">3 · Site novo</div>
     <h2 class="surge linha1">Moderno, direto, com a sede e as pessoas do escritório à frente.</h2>
-    <p class="surge quebra" style="max-width:64ch"><span class="l">Abertura com a sede do escritório e uma chamada clara, as quatro áreas em galeria,</span> <span class="l">quem somos com os advogados e contato direto pelo WhatsApp.</span> <span class="l">Cada área tem página própria com o que o escritório faz e perguntas frequentes respondidas com a lei.</span> <span class="l">O protótipo abaixo funciona: role, clique nas áreas.</span></p>
+    <p class="surge quebra" style="max-width:64ch"><span class="l">Abertura com a sede do escritório e uma chamada clara, as quatro áreas em galeria,</span> <span class="l">quem somos com os advogados e contato direto pelo WhatsApp.</span> <span class="l">Cada área tem página própria com o que o escritório faz e perguntas frequentes respondidas com a lei.</span> <span class="l">Feito para aparecer no Google e nas respostas de IA.</span> <span class="l">O protótipo abaixo funciona: role, clique nas áreas.</span></p>
     <div class="escolha"><span class="escolha-rot"><svg class="ic-troca" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Ver o site no</span>
     <div class="alterna" role="group" aria-label="Ver o site em">
       <button type="button" data-aparelho="cel" aria-pressed="true">Celular</button>
@@ -245,7 +246,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
     <div>
       <div class="chapeu">4 · Instagram e Facebook</div>
       <h2 class="surge"><span class="m">Retomar o perfil</span> <span class="m">que já tem</span> <span class="m">6,7 mil seguidores.</span></h2>
-      <p>Em vez de criar outro perfil, o escritório continua no mesmo endereço, <b>@emilsonantunes_aa</b>, com os 6,7 mil seguidores. Mudam três coisas que aparecem no perfil: o nome em destaque passa a ser "Emilson Antunes Advogados", a categoria passa a ser "Escritório de advocacia" e a bio é a de baixo. A partir daí, <b>duas publicações por semana</b>. O Facebook recebe a mesma peça e passa a se chamar "Emilson Antunes e Advogados Associados".</p>
+      <p>Em vez de criar outro perfil, o escritório continua no mesmo endereço, <b>@emilsonantunes_aa</b>, com os 6,7 mil seguidores. Mudam três coisas que aparecem no perfil: o nome em destaque passa a ser "Emilson Antunes Advogados", a categoria passa a ser "Escritório de advocacia" e a bio é a de baixo. A partir daí, <b>de duas a quatro publicações por semana</b> (o primeiro mês é de acerto do tom), sempre com stories de apoio. O Facebook recebe a mesma peça e passa a se chamar "Emilson Antunes e Advogados Associados".</p>
       <p class="bio-prop"><small>Bio proposta</small>Emilson Antunes Advogados · Escritório de advocacia<br>Consultoria e contencioso: tributário, trabalhista, empresarial e civil<br>OAB/SP 5.120 · eaaa.com.br</p>
       <div class="formatos">
         <div><b>Explicado</b>carrossel com a lei</div>
@@ -254,7 +255,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
         <div><b>A lei em uma frase</b>o artigo em destaque</div>
         <div><b>Checklist</b>o que conferir antes</div>
         <div><b>Infográfico</b>prazo ou número desenhado</div>
-        <div><b>Vídeo curto</b>um advogado, 30 a 40 s</div>
+        <div><b>Vídeo curto</b>um por semana, um advogado, 30 a 40 s</div>
         <div><b>Escritório</b>fotos reais e bastidores</div>
       </div>
       <p class="dica">Role a tela do celular para ver o perfil inteiro.</p>
@@ -295,7 +296,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
     <h2 class="surge linha1">Arraste para comparar.</h2>
     <div class="comparar" id="comparar">
       <img src="img/fb_antes.jpg" alt="Publicações antigas do Facebook, de 2021" loading="lazy">
-      <div class="depois-fundo" id="depois"><img src="img/p1x1.jpg" alt="" loading="lazy"><img src="img/p2x1.jpg" alt="" loading="lazy"><img src="img/p6y1.jpg" alt="" loading="lazy"></div>
+      <div class="depois-fundo" id="depois"><img class="grade" src="img/depois_grade.jpg" alt="Grade de publicações propostas: os seis temas em carrosséis com a lei citada" loading="lazy"></div>
       <div class="barra" id="barra"></div>
       <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
     </div>
@@ -320,7 +321,8 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
       <div class="chapeu">8 · O que precisamos do escritório</div>
       <ul class="lista">
         <li>Nome, inscrição, formação e área de cada advogado<small>e quem tem título de especialista</small></li>
-        <li>Fotos reais e um advogado para vídeos curtos<small>podemos organizar a sessão</small></li>
+        <li>Agenda para a sessão de fotos<small>com fotógrafo profissional, já incluída na implantação</small></li>
+        <li>Um advogado para gravar os vídeos curtos<small>um por semana, de 30 a 40 segundos</small></li>
         <li>Fotos da recepção, das salas e das pessoas<small>a capa do site já usa uma foto do Edifício Geon</small></li>
         <li>Logotipo em arquivo vetorial<small>o site usa o arquivo publicado no site atual</small></li>
         <li>Acesso ao Facebook, ao Instagram, ao Google e ao painel do site</li>
@@ -337,8 +339,8 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
     <h2 class="surge linha1">Do esboço ao ar.</h2>
     <ol class="passos">
       <li>Conversa para escolher a direção visual e responder o que falta.</li>
-      <li>Revisão dos textos e das leis citadas pelo escritório.</li>
-      <li>Sessão de fotos reais.</li>
+      <li>Relatório estratégico apresentado em reunião: diagnóstico, linha editorial e calendário dos três primeiros meses.</li>
+      <li>Sessão de fotos e revisão dos textos e das leis citadas pelo escritório.</li>
       <li>Site no ar e Instagram retomado com as primeiras publicações.</li>
     </ol>
   </div>
