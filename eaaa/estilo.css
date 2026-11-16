@@ -369,3 +369,14 @@ details.menu-cel{display:none}
 /* dentro da moldura de celular da proposta: sem barra de rolagem · S42 */
 html.embutido{scrollbar-width:none}
 html.embutido::-webkit-scrollbar{width:0;height:0;display:none}
+/* títulos quebram pelo sentido · S56 (Operador: "começamos pela 2")
+   .l = linha pensada; .m = pedaço que nunca se parte. Se a linha não couber, quebra só entre pedaços. */
+.m{white-space:nowrap}
+.com-capa h1{max-width:none}
+.com-capa h1 .l,.com-capa .lead .l{display:block}
+.com-capa .lead .l{text-wrap:pretty}
+.metodo .cab-metodo{container-type:inline-size}
+.metodo .cab-metodo h2{max-width:none;font-size:min(clamp(30px,4vw,44px),100cqi/9.5)}
+.metodo .cab-metodo h2 .l{display:block}
+h2,h3,.cw-titulo,.cw-texto,.cab-sec p,.area .para{text-wrap:balance}
+p{text-wrap:pretty}
