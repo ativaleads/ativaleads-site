@@ -230,7 +230,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .pessoa.pendente .foto::after{background:url(img/simbolo.webp) center 44%/96px auto no-repeat;opacity:.28}
 .rodape .faixa{text-align:center}
 .logo-rodape{height:92px;width:auto;margin:0 auto 18px}
-.rodape .dev{margin-top:22px!important;font-size:12.5px;color:#9ea7b1}
+.rodape .dev{margin-top:22px!important;font-size:12.5px;color:#fff}
 .rodape .legal{opacity:1;color:#b8b0a3}
 .rodape .dev a{color:inherit;text-decoration:none;font-weight:600}
 .rodape .dev a:hover{text-decoration:underline}
