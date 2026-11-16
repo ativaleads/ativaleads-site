@@ -249,7 +249,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .frentes h3{font-size:26px;margin:0 0 8px;color:#ffffff}
 .metodo .frentes p{margin:0;font-size:16.5px;line-height:1.6;color:#ffffff;max-width:52ch}
 /* capa com o Geon (foto provisória da construtora) · S42 */
-.com-capa .capa-geon{aspect-ratio:4/3;object-position:50% 50%} /* S56: foto do Operador (retrato) */
+.com-capa .capa-geon{aspect-ratio:4/3;object-position:50% 50%} /* S56: foto do Operador, edição C (recorte na esquina) */
 .credito-capa{position:absolute;right:12px;bottom:10px;top:auto;left:auto;margin:0;font-size:11px;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,.6);z-index:1}
 @media (max-width:859px){
 .com-capa{display:block;padding:64px 0 72px}
@@ -258,7 +258,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .credito-capa{top:auto;bottom:8px;right:10px}
 }
 @media (min-width:860px){
-.com-capa .capa-geon{width:50%;aspect-ratio:auto;object-position:50% 58%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
+.com-capa .capa-geon{width:50%;aspect-ratio:auto;object-position:50% 60%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
 .com-capa .faixa > .lead{max-width:520px}
 .com-capa h1 .l,.com-capa .lead .l{display:block;white-space:nowrap}
 .com-capa h1:has(.l){font-size:clamp(40px,4.4vw,56px);max-width:none}
@@ -281,7 +281,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .area .mais span{font-size:16px}
 @media (max-width:420px){.area{padding:24px 20px 0}.area .mais{margin:auto -20px 0;padding:14px 20px}.area .num{font-size:52px}}
 /* contato enxuto: faixa do WhatsApp + quatro blocos · S42 */
-.contato .cta-faixa{margin-bottom:36px}
+.contato .cta-faixa{margin-top:36px} /* S56: faixa embaixo dos canais (Operador: "icones em cima e faixa embaixo") */
 @media (min-width:860px){.contato .cab-sec{align-items:baseline}.contato .cta-faixa{padding:38px 48px}}
 .contato .cw-titulo{max-width:none;font-size:clamp(24px,2.8vw,30px)}
 .contato .cw-texto{max-width:58ch}
