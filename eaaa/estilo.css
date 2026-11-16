@@ -380,3 +380,12 @@ html.embutido::-webkit-scrollbar{width:0;height:0;display:none}
 .metodo .cab-metodo h2 .l{display:block}
 h2,h3,.cw-titulo,.cw-texto,.cab-sec p,.area .para{text-wrap:balance}
 p{text-wrap:pretty}
+/* WhatsApp: um nome só ("Falar pelo WhatsApp") e o ícone do WhatsApp em todo botão · S56 (achado A3) */
+.ic-wa{width:1.15em;height:1.15em;flex:none}
+a.botao:has(.ic-wa){display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.menu-painel a.botao:has(.ic-wa){display:flex}
+.contatos .icone .ic-wa{width:20px;height:20px;stroke-width:1.6}
+/* com o botão "Falar pelo WhatsApp" no topo, o menu do computador só cabe numa linha a partir de 960 px (letra a 125%); abaixo, botão de menu */
+@media (min-width:860px) and (max-width:959px){nav.menu-pc{display:none}details.menu-cel{display:block}}
+/* celular estreito: o botão da faixa ocupa a largura e cabe numa linha */
+@media (max-width:400px){.cta-faixa{padding:32px 22px}.cta-faixa .botao{width:100%;padding:17px 18px}}
