@@ -13,9 +13,10 @@
 @font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap; src: url(/assets/fonts/manrope-latin.woff2) format('woff2'); }
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
+body { overflow-x: clip; } /* S53: o desfoque do "foca" passava 1 px da tela em 320 px durante a animação */
 body { font-family: "Manrope", "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; display: grid; grid-template-rows: 1fr auto; min-height: 100vh; min-height: 100dvh; }
 main { display: grid; place-items: center; align-content: center; gap: 36px; padding: 48px 16px; text-align: center; }
-.logo { position: relative; width: min(560px, 84vw); aspect-ratio: 1000 / 166; }
+.logo { position: relative; width: min(560px, 84vw); aspect-ratio: 1000 / 165; }
 .logo img { position: absolute; inset: 0; width: 100%; height: 100%; }
 h1 { margin: 0; font-size: clamp(1.35rem, 3.2vw, 2rem); font-weight: 700; letter-spacing: -.02em; }
 .contato { margin: 0; font-size: .95rem; }
@@ -24,14 +25,15 @@ footer { padding: 20px 16px 26px; text-align: center; font-size: .78rem; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 /* S50: logo novo (o do topo do site) animado, nas cores do topo: fundo verde-escuro, letras brancas, check verde-claro.
+   S53: camadas refeitas do logo OFICIAL (Operador: "Vamos usar esse logo"), por _preview/s53/logo_oficial.py; grade 1000 × 165, pingo do i em 23,1% 16,1%.
    Ordem: o A foca, o check se desenha da esquerda para a direita, "tivaleads" foca, o pingo do i estala, depois o brilho. */
 body { background: #007A3F radial-gradient(circle at 50% 40%, rgba(0,191,99,.32), transparent 58%); color: #fff; }
 .contato, footer { color: #fff; }
 .l-a { animation: foca .8s ease both; }
 .l-check { animation: desenha .7s cubic-bezier(.5,0,.3,1) .55s both; }
 .l-texto { animation: foca .9s ease .9s both; }
-.l-pingo { transform-origin: 26.2% 12%; animation: estala .55s cubic-bezier(.3,1.7,.5,1) 1.55s both; }
-.brilho { position: absolute; inset: 0; -webkit-mask: url(/assets/logo/anim-2026/texto.webp) center / 100% 100% no-repeat; mask: url(/assets/logo/anim-2026/texto.webp) center / 100% 100% no-repeat;
+.l-pingo { transform-origin: 23.1% 16.1%; animation: estala .55s cubic-bezier(.3,1.7,.5,1) 1.55s both; }
+.brilho { position: absolute; inset: 0; -webkit-mask: url(/assets/logo/anim-2026/texto.webp?v=2) center / 100% 100% no-repeat; mask: url(/assets/logo/anim-2026/texto.webp?v=2) center / 100% 100% no-repeat;
   background: linear-gradient(100deg, transparent 35%, rgba(0,191,99,.9) 50%, transparent 65%) no-repeat; background-size: 40% 100%; background-position: -60% 0;
   animation: brilho 5s ease-in-out 2.4s infinite; }
 h1, .contato { animation: aparece .7s ease 1.9s both; }
@@ -48,10 +50,10 @@ h1, .contato { animation: aparece .7s ease 1.9s both; }
 <body>
 <main>
   <div class="logo" role="img" aria-label="Ativaleads">
-    <img class="l-a" src="/assets/logo/anim-2026/a.webp" alt="">
-    <img class="l-texto" src="/assets/logo/anim-2026/texto.webp" alt="">
-    <img class="l-pingo" src="/assets/logo/anim-2026/pingo.webp" alt="">
-    <img class="l-check" src="/assets/logo/anim-2026/check.webp" alt="">
+    <img class="l-a" src="/assets/logo/anim-2026/a.webp?v=2" alt="">
+    <img class="l-texto" src="/assets/logo/anim-2026/texto.webp?v=2" alt="">
+    <img class="l-pingo" src="/assets/logo/anim-2026/pingo.webp?v=2" alt="">
+    <img class="l-check" src="/assets/logo/anim-2026/check.webp?v=2" alt="">
     <span class="brilho" aria-hidden="true"></span>
   </div>
   <h1>Novidades a caminho<span class="pontos" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></h1>
