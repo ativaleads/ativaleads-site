@@ -35,7 +35,8 @@ section{padding:88px 0;scroll-margin-top:60px}
 .menu a{text-decoration:none;font-size:14px;color:var(--cinza);white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
 .menu a.ativo{color:var(--tinta);border-color:var(--ouro2)}
 .menu-cel{display:none}
-@media (max-width:759px){
+/* S56 (A6): botão "Seções" até 1099 px; o menu de links precisa de 878 px (1039 com letra a 125%) */
+@media (max-width:1099px){
 .menu .faixa{overflow:visible}
 .menu .faixa>a{display:none}
 .menu-cel{display:block;flex:none}
@@ -53,9 +54,10 @@ section{padding:88px 0;scroll-margin-top:60px}
 .capa .chapeu{color:var(--ouro2)}
 .capa h1{font-size:clamp(42px,8vw,84px);max-width:13ch;letter-spacing:-.01em}
 .capa h1 em{display:block;font-style:italic;color:var(--ouro2);font-size:.5em;margin-top:18px}
-@media (min-width:860px){.capa h1{max-width:none;white-space:nowrap}}
-@media (min-width:860px){p.quebra{max-width:none!important}p.quebra .l{display:block;white-space:nowrap}}
-@media (min-width:860px){h2{font-size:min(40px,3.3vw)}h2.linha1{max-width:none;white-space:nowrap}}
+@media (min-width:860px){.capa h1{max-width:none}}
+@media (min-width:860px){p.quebra{max-width:none!important}p.quebra .l{display:block}}
+@media (min-width:860px){h2{font-size:min(40px,3.3vw)}h2.linha1{max-width:none}}
+/* S56 (A7): títulos sem nowrap; cabem em 1 linha com letra a 100% e quebram em vez de vazar com letra maior */
 /* títulos quebram pelo sentido · S56: .m nunca se parte; o resto equilibra as linhas */
 .capa h1{max-width:none}.m{white-space:nowrap}
 h2,h3{text-wrap:balance}p{text-wrap:pretty}
@@ -112,7 +114,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .dica{font:500 12px 'IBM Plex Mono';letter-spacing:.08em;color:var(--ouro);margin-top:12px}
 /* carrosséis */
 .controles{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:28px}
-.temas{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:22px;scrollbar-width:thin}
+.temas{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:6px;margin-bottom:22px} /* S56 (A6): temas em linhas, nenhum escondido na rolagem lateral */
 .temas button{flex:none;font:500 14px 'IBM Plex Sans';border:1px solid var(--linha);background:#fff;color:var(--tinta);padding:9px 16px;border-radius:40px;cursor:pointer}
 .temas button[aria-pressed="true"]{border-color:var(--tinta);background:var(--tinta);color:#fff}
 .carrossel{display:grid;gap:30px;align-items:start}
@@ -319,7 +321,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
       <ul class="lista">
         <li>Nome, inscrição, formação e área de cada advogado<small>e quem tem título de especialista</small></li>
         <li>Fotos reais e um advogado para vídeos curtos<small>podemos organizar a sessão</small></li>
-        <li>Fotos da sede e da recepção<small>a capa do site usa, por enquanto, uma foto da construtora do Edifício Geon</small></li>
+        <li>Fotos da recepção, das salas e das pessoas<small>a capa do site já usa uma foto do Edifício Geon</small></li>
         <li>Logotipo em arquivo vetorial<small>o site usa o arquivo publicado no site atual</small></li>
         <li>Acesso ao Facebook, ao Instagram, ao Google e ao painel do site</li>
         <li>Quem aprova os textos e quais temas querem em destaque</li>
