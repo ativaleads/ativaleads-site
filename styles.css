@@ -1,160 +1,668 @@
-/* Ativaleads · direção B (institucional, topo e abertura brancos com logo verde), S38 · 11/11/2026. Paleta oficial, Manrope auto-hospedada, sem dependências externas. */
+/* Ativaleads · S41 (13/11/2026): modelo de referência helenacrm.com com peças próprias do serviço. Manrope auto-hospedada, paleta da marca, sem dependências externas. */
 @font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap;
   src: url(/assets/fonts/manrope-latin-ext.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap;
-  src: url(/assets/fonts/manrope-latin.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap; src: url(/assets/fonts/manrope-latin.woff2) format('woff2'); }
 :root {
-  --navy: #102d46; --deep: #092338; --green: #00bf63; --green-dark: #007a3f;
-  --paper: #f7f7f2; --white: #fff; --ink: #183247; --muted: #53646d; --line: #d6ded7;
-  --on-navy: #c6d4de;
-  --font: "Manrope", "Segoe UI", Arial, Helvetica, sans-serif;
+  --navy: #102d46; --deep: #0b1e2f; --green: #00bf63; --green-dark: #007a3f; --tint: #e7f7ee;
+  --ink: #14212b; --muted: #55646d; --line: #dfe5e0; --gray: #f3f4f1; --white: #fff;
+  --font: "Manrope", "Segoe UI", Arial, sans-serif;
 }
-
-/* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
-h1, h2, h3, p, ol { margin: 0; }
-ol { padding: 0; list-style: none; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
 img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+a { color: inherit; text-underline-offset: .2em; }
 :focus-visible { outline: 3px solid var(--green-dark); outline-offset: 3px; }
 .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
-.skip { position: absolute; left: 12px; top: -80px; z-index: 10; padding: 10px 14px; background: var(--green); color: var(--deep); font-weight: 600; }
-.skip:focus { top: 12px; }
+.verde { color: var(--green-dark); }
+.escuro .verde, .faixa .verde { color: #fff; } /* S50: os blocos escuros viraram verde-escuro (Operador: "tudo escuro vira verde escuro"); verde-claro sobre verde-escuro some (1,6:1), então a parte verde do título fica branca */
+
+/* Etiqueta com ponto, acima dos títulos */
+.etiqueta { display: inline-flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
+.etiqueta::before { content: ""; width: 12px; height: 12px; border-radius: 4px 4px 4px 1px; background: var(--green); }
+.escuro .etiqueta { color: #fff; }
+
+/* Botões */
+.botao { display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; padding: 14px 24px; border-radius: 10px; border: 1.5px solid transparent; }
+.botao-cheio { background: var(--green); color: #fff; } /* S47: texto em fundo verde é branco (Operador: "deixar branco tudo que for fundo verde") */
+.botao-cheio:hover { background: #12d474; }
+.botao-linha { border-color: var(--ink); color: var(--ink); }
+.botao-linha:hover { background: var(--gray); }
 
 /* Topo */
-.topo { background: var(--white); color: var(--navy); }
-.topo-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 22px; border-bottom: 1px solid var(--line); }
-.marca { display: inline-flex; flex-shrink: 0; }
-.marca img { width: 156px; }
-nav { display: flex; gap: 22px; font-size: .9rem; }
-nav a { text-decoration: none; padding-block: 6px; }
-nav a:hover { text-decoration: underline; }
+.topo-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; }
+.marca img { width: 150px; }
+.topo nav { display: flex; align-items: center; gap: 26px; font-size: .95rem; }
+.topo nav a { text-decoration: none; }
+.topo nav a:not(.botao):hover { text-decoration: underline; }
+.topo .botao { padding: 10px 18px; font-size: .92rem; }
+/* S47: topo fixo no alto da tela, como no site da Labate (Operador: "deixa o cabeçalho fixo igual o da labate imóveis, travado"); --topo-h vem do efeitos.js (altura real do topo) */
+.topo { position: sticky; top: 0; z-index: 40; }
+/* S47 (Operador: "menu do celular vc tem razão, não tem" → "Pode publicar"): no celular os links vão para um botão "Menu" que abre uma faixa abaixo do topo; <details> funciona sem JavaScript */
+.menu-cel { display: none; }
+.menu-cel summary { list-style: none; display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 6px; color: #fff; font-weight: 700; font-size: .85rem; line-height: 1; cursor: pointer; }
+.menu-cel summary::-webkit-details-marker { display: none; }
+.menu-ic { position: relative; width: 16px; height: 2px; border-radius: 2px; background: #fff; box-shadow: 0 -5px 0 #fff, 0 5px 0 #fff; transition: transform .2s, box-shadow .2s; }
+.menu-cel[open] .menu-ic { transform: rotate(45deg); box-shadow: none; }
+.menu-cel[open] .menu-ic::after { content: ""; position: absolute; inset: 0; border-radius: 2px; background: #fff; transform: rotate(-90deg); }
+.menu-cel-lista { position: absolute; left: 0; right: 0; top: 100%; display: grid; padding: 4px 20px 12px; background: var(--green-dark); border-top: 1px solid rgba(255,255,255,.18); box-shadow: 0 18px 28px -18px rgba(0,0,0,.45); }
+.menu-cel-lista a { padding: 13px 0; color: #fff; font-weight: 700; font-size: 1rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.14); }
+.menu-cel-lista a:last-child { border-bottom: 0; }
+.menu-cel-lista a.menu-ana { margin-top: 10px; padding: 12px 16px; border: 0; border-radius: 10px; background: #fff; color: var(--green-dark); text-align: center; }
+.topo .botao { white-space: nowrap; }
 
-
-/* Botão */
-.botao { display: inline-block; text-decoration: none; font-weight: 600; font-size: .98rem; padding: 14px 24px; background: var(--green); color: var(--deep); border-radius: 4px; }
-.botao:hover { background: #12d474; }
+html { scroll-padding-top: var(--topo-h, 86px); }
+/* S47 (Operador: "fundo verde claro e usa aquele que vc fez branco com o check em verde escuro" → "pode seguir e publicar"): topo em verde, logo branco com check verde-escuro, menu branco, botão branco */
+.topo { background: var(--green-dark); } /* S47: verdes invertidos (Operador: "inverte os verdes"): topo verde-escuro, check do logo verde-claro */
+.topo nav a { color: #fff; }
+.topo .botao-cheio { background: #fff; color: var(--green-dark); }
+.topo .botao-cheio:hover { background: var(--tint); }
 
 /* Abertura */
-.abertura { background: var(--white); color: var(--navy); }
-.abertura-in { padding-block: clamp(56px, 9vw, 112px) clamp(72px, 10vw, 128px); }
-.abertura h1 { font-size: clamp(2.3rem, 5.2vw, 4.2rem); font-weight: 700; line-height: 1.06; letter-spacing: -.035em; max-width: 16ch; }
-.abertura .lead { margin-top: 26px; max-width: 58ch; font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--muted); }
-.abertura .acoes { margin-top: 36px; }
-.abertura-in { display: grid; gap: 48px; }
-@media (min-width: 960px) {
-  .abertura-in { grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; }
-  .abertura h1 { font-size: clamp(2.3rem, 4.3vw, 3.7rem); }
-}
+.abertura-in { display: grid; gap: 48px; align-items: center; padding-block: 56px 72px; }
+.abertura h1 { font-size: clamp(2rem, 3.7vw, 2.85rem); line-height: 1.05; letter-spacing: -.035em; font-weight: 800; color: var(--ink); }
+@media (min-width: 360px) { .abertura h1 .verde { white-space: nowrap; } }
+/* S47: no computador "começa com uma conexão." fica numa linha; a letra do título acompanha a largura da coluna (12,6 = largura da frase em em, com folga) */
+@media (min-width: 960px) { .abertura-in > div:first-child { container-type: inline-size; } .abertura h1 { font-size: min(2.85rem, 100cqi / 12.6); } .abertura h1 .linha { white-space: nowrap; } }
+.abertura .lead { margin-top: 22px; max-width: 54ch; font-size: clamp(1.05rem, 1.5vw, 1.18rem); color: var(--muted); }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (min-width: 960px) { .abertura-in { grid-template-columns: 1.05fr 1fr; gap: 56px; } }
 
-/* Vitrine: site real rolando numa janela de navegador (só CSS; parado com movimento reduzido) */
-.vitrine { margin: 0; width: 100%; max-width: 540px; margin-inline: auto; --altura: 380px; }
-.janela { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 26px 50px -26px rgba(16, 45, 70, .5); }
-.janela-barra { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: .72rem; color: var(--muted); }
-.janela-barra i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
-.janela-barra span { margin-left: 10px; padding: 2px 10px; background: var(--paper); border-radius: 20px; }
-.janela-rolagem { height: var(--altura); overflow: hidden; }
-.janela-rolagem img { width: 100%; animation: rola 18s ease-in-out infinite alternate; }
-@keyframes rola { 0%, 12% { transform: translateY(0); } 88%, 100% { transform: translateY(calc(-100% + var(--altura))); } }
-.vitrine figcaption { margin-top: 12px; font-size: .85rem; color: var(--muted); }
-@media (max-width: 520px) { .vitrine { --altura: 300px; } }
-@media (prefers-reduced-motion: reduce) { .janela-rolagem img { animation: none; } }
+/* Faixa de destaques (S50: verde-escuro, era azul profundo) */
+.faixa { background: var(--green-dark); color: #fff; border-radius: 20px; display: grid; grid-template-columns: 1fr; overflow: hidden; }
+.faixa > div { padding: 26px 24px; }
+.faixa > div + div { border-top: 1px solid rgba(255,255,255,.12); }
+.faixa .ic { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 16px; background: var(--green); color: #fff; } /* S50: faixa em verde-escuro, quadradinho do ícone verde-claro com ícone branco (verdes invertidos: peça grande escura, detalhe claro) */
+.faixa .ic svg { width: 22px; height: 22px; }
+.faixa strong { display: block; font-size: 1.25rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
+.faixa span:not(.ic) { display: block; margin-top: 6px; font-size: .9rem; color: #fff; line-height: 1.45; } /* S47: texto em fundo escuro é branco, nunca cinza-azulado (Operador: "não gosto dessa cor, tudo que tiver no site assim deixa branco") */
+@media (min-width: 640px) { .faixa { grid-template-columns: 1fr 1fr; } .faixa > div + div { border-top: 0; } .faixa > div:nth-child(even) { border-left: 1px solid rgba(255,255,255,.12); } .faixa > div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.12); } }
+@media (min-width: 980px) { .faixa { grid-template-columns: repeat(4, 1fr); } .faixa > div { padding: 30px 28px; } .faixa > div:nth-child(n+2) { border-left: 1px solid rgba(255,255,255,.12); } .faixa > div:nth-child(n+3) { border-top: 0; } }
 
 /* Seções */
-.sec-in { padding-block: 88px; }
-.sec-cab { margin-bottom: 36px; }
-.sec-cab h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--navy); }
-.sec-cab p { margin-top: 10px; color: var(--muted); }
+.secao { padding-block: 96px; }
+.secao-cinza { background: var(--gray); }
+.cab { max-width: 640px; margin-bottom: 44px; }
+.cab h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
+/* S47: celular estreito com letra grande; "acompanhamento" (8,5 em) cabe em 280 px */
+@media (max-width: 399px) { .cab h2 { font-size: min(1.9rem, 10vw); } }
+/* S47: título de duas cores = parte preta em cima, parte verde embaixo, em toda largura (seções, chamada e passos do roteiro) */
+.cab h2 > .verde, .chamada h2 > .verde, .roteiro-texto h3 > .verde { display: block; }
+.cab p { margin-top: 16px; color: var(--muted); font-size: 1.08rem; }
+.cab .etiqueta { margin-top: 0; color: var(--ink); font-size: .85rem; }
 
-/* Serviços */
-.servicos { border-top: 1px solid var(--line); }
-.servicos .sec-in { padding-top: 72px; }
-/* Fios entre os cards: o fundo da lista aparece no vão de 1 px. */
-.lista-servicos { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-.lista-servicos li { display: flex; flex-direction: column; gap: 14px; padding: 28px 26px 30px; background: var(--white); }
-.srv-nome h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.02em; color: var(--navy); }
-.srv-sub { margin-top: 2px; font-size: .9rem; font-weight: 600; color: var(--green-dark); }
-.srv-desc { flex: 1; }
-.srv-obs { font-size: .88rem; color: var(--muted); padding-top: 14px; border-top: 1px dashed var(--line); }
-@media (min-width: 900px) {
-  .lista-servicos { grid-template-columns: repeat(2, 1fr); }
-  .lista-servicos li { padding: 34px 32px 36px; }
-}
+/* Para quem: três cartões com ilustração */
+.cartoes-3 { display: grid; gap: 18px; }
+@media (min-width: 1000px) { .cartoes-3 { grid-template-columns: repeat(3, 1fr); } }
+.cartao { background: #fff; border: 1px solid #bfe9d2; border-radius: 18px; padding: 20px 20px 26px; display: flex; flex-direction: column; gap: 14px; }
+.ilus { height: 150px; border-radius: 12px; background: var(--gray); position: relative; overflow: hidden; }
+.cartao .publico { font-size: .82rem; font-weight: 700; color: var(--muted); }
+.cartao h3 { font-size: 1.32rem; line-height: 1.2; letter-spacing: -.02em; font-weight: 800; }
+.cartao p { color: var(--muted); font-size: .98rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
+.tags li { font-size: .8em; padding: .3125em .9375em; border: 1px solid #9edcbb; border-radius: 999px; color: var(--green-dark); font-weight: 600; }
+/* S47: cartões "Para quem" (Operador: "precisa de alinhamento tb"): lado a lado, cada peça começa na mesma altura nos 3 cartões.
+   Título sempre em 2 linhas pelo sentido (br.q); título, público e etiquetas acompanham a largura do cartão para não ganhar linha
+   (metade mais longa do título 10,9 em; público mais longo 16,9 em; as 3 etiquetas do 1º cartão 17,8 em, numa linha só). */
+.cartao { container-type: inline-size; }
+.cartao h3 { font-size: min(1.32rem, 100cqi / 11.2); }
+.cartao .publico { font-size: min(.82rem, 100cqi / 17.3); color: var(--green-dark); }
+.tags { gap: .5em; font-size: 1rem; }
+@media (min-width: 1000px) { .cartao .tags { flex-wrap: nowrap; font-size: min(1rem, 100cqi / 18); } }
+.seta { font-weight: 700; font-size: .92rem; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; }
+/* ilustrações dos cartões (só CSS) */
+.balao { position: absolute; border-radius: 12px; padding: 8px 10px; font-size: .72rem; font-weight: 700; }
+.balao-1 { left: 18px; top: 44px; background: #fff; color: var(--ink); box-shadow: 0 6px 14px -10px rgba(0,0,0,.4); }
+.balao-2 { right: 18px; top: 92px; background: var(--green); color: #fff; }
+.ilus-rot { position: absolute; left: 18px; top: 14px; display: flex; align-items: center; gap: 7px; font-size: .72rem; font-weight: 800; color: var(--ink); }
+.mini-site { position: absolute; inset: 18px 22px auto; height: 124px; background: #fff; border-radius: 8px; border: 1px solid var(--line); overflow: hidden; }
+.mini-site .barra { height: 16px; border-bottom: 1px solid var(--line); background: #fafbf9; }
+.mini-site .titulo { margin: 14px 14px 8px; height: 12px; width: 60%; border-radius: 6px; background: var(--green-dark); }
+.mini-site .linha { margin: 6px 14px; height: 8px; border-radius: 4px; background: var(--line); }
+.mini-site .linha.c { width: 70%; }
+.mini-site .bt { margin: 10px 14px; width: 70px; height: 18px; border-radius: 6px; background: var(--green); }
+.mini-lp { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); width: 100px; height: 150px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 10px; display: grid; gap: 7px; align-content: start; }
+.mini-lp i { display: block; height: 7px; border-radius: 4px; background: var(--line); }
+.mini-lp b { display: block; height: 10px; width: 80%; border-radius: 5px; background: var(--green-dark); }
+.mini-lp s { display: block; height: 18px; border-radius: 6px; background: var(--green); margin-top: 6px; }
 
-/* Como trabalhamos */
-.como { background: var(--white); border-block: 1px solid var(--line); }
-.etapas { display: grid; grid-template-columns: 1fr; counter-reset: et; }
-.etapas li { counter-increment: et; position: relative; padding: 0 0 30px 46px; }
-.etapas li::before { content: counter(et); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: #fff; font-size: .85rem; font-weight: 700; display: grid; place-items: center; }
-.etapas li::after { content: ""; position: absolute; left: 14.5px; top: 34px; bottom: 4px; width: 1px; background: var(--line); }
-.etapas li:last-child::after { display: none; }
-.etapas h3 { font-size: 1.08rem; font-weight: 700; color: var(--navy); margin: 3px 0 6px; }
-.etapas p { color: var(--muted); font-size: .97rem; }
-@media (min-width: 900px) {
-  .etapas { grid-template-columns: repeat(4, 1fr); gap: 28px; }
-  .etapas li { padding: 50px 0 0; }
-  .etapas li::after { left: 38px; right: -28px; top: 15px; bottom: auto; width: auto; height: 1px; }
-}
-.principio { margin-top: 48px; background: var(--green-dark); color: #fff; border-radius: 6px; padding: 28px 30px; display: grid; gap: 8px; }
-.principio h3 { font-size: 1.2rem; font-weight: 700; }
-.principio p { max-width: 70ch; color: #e3f4ea; }
-@media (min-width: 900px) { .principio { grid-template-columns: 1fr 2fr; gap: 32px; align-items: baseline; } }
+/* Serviços: grade de cartões, dois em destaque */
+.grade { display: grid; gap: 16px; }
+@media (min-width: 760px) { .grade { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .grade { grid-template-columns: repeat(3, 1fr); } }
+.servico { background: #fff; border-radius: 18px; padding: 28px 28px 30px; display: flex; flex-direction: column; gap: 12px; }
+.servico .icone { width: 38px; height: 38px; border-radius: 10px; background: var(--tint); display: grid; place-items: center; color: var(--green-dark); margin-bottom: 6px; }
+.servico .icone svg { width: 20px; height: 20px; }
+.servico h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em; }
+.servico .sub { font-size: .88rem; font-weight: 700; color: var(--green-dark); margin-top: -8px; }
+.servico p { color: var(--muted); }
+.servico .obs { margin-top: auto; align-self: start; font-size: .8rem; font-weight: 600; background: var(--gray); color: var(--ink); padding: .39em .78em; border-radius: 6px; }
+/* S47 (alinhamento): título, linha verde e etiqueta cinza de cada serviço numa linha só; a letra acompanha a largura do cartão
+   (medidos no navegador: "Gestão de redes sociais" 11,2 em; "Google, Instagram e Facebook" 14,5 em; "Domínio e hospedagem em nome do cliente" 22,1 em com o respiro) */
+.servico { container-type: inline-size; }
+.servico h3 { font-size: min(1.3rem, 100cqi / 11.6); }
+.servico .sub { font-size: min(.88rem, 100cqi / 15); }
+.servico .obs { font-size: min(.8rem, 100cqi / 22.6); } /* S47: etiqueta cinza só no cartão "Atendimento e vendas no WhatsApp" (fora do escopo); nos demais saiu (Operador: "acho esse tipo de aviso desnecessário") */
+.servico.d-verde { background: var(--green-dark); color: #fff; } /* S47: verdes invertidos: cartão verde-escuro, caixas verde-claro */
+.servico.d-verde .icone { background: var(--green); color: #fff; } /* S47: caixas dentro do cartão verde em verde-escuro (Operador: "o verde mais escuro aqui nos contornos") */
+.servico.d-verde .sub, .servico.d-verde p { color: #fff; }
+/* S47 · Serviços redesenhado (Operador: "aqui precisamos melhorar tudo" → "gostei mas mexa tb no design"):
+   Relatório estratégico em destaque na largura toda (é o ponto de partida), depois 3 cartões e 2 cartões largos; só o Relatório é colorido.
+   Linha verde = gancho, sempre em 2 linhas quebradas pelo sentido (br.q), maior que antes; texto de prova curto. */
+.grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; }
+@media (min-width: 760px) and (max-width: 1039px) { .grade > .d-fecha { grid-column: 1 / -1; } }
+@media (min-width: 1040px) { .grade { grid-template-columns: repeat(6, 1fr); } .grade > .servico { grid-column: span 2; } .grade > .servico.d-meio { grid-column: span 3; } .grade > .d-inicio, .grade > .d-largo, .grade > .d-ana { grid-column: 1 / -1; } }
+.grade > .servico:not(.d-ana):not(.d-largo) .sub { font-size: min(1.05rem, 100cqi / 11.6); line-height: 1.3; margin-top: -4px; }
+.servico.d-inicio { display: grid; gap: 22px 48px; padding: 32px 32px 34px; }
+.d-inicio .ini-txt { display: flex; flex-direction: column; gap: 12px; }
+.d-inicio .ini-txt .sub { margin-top: -4px; }
+.servico.d-inicio h3 { font-size: min(clamp(1.45rem, 2.4vw, 1.9rem), 100cqi / 10.6); }
+.d-inicio .ini-lado { display: flex; flex-direction: column; gap: 14px; }
+.marcos { display: grid; gap: 10px; }
+@media (min-width: 480px) and (max-width: 759px) { .marcos { grid-template-columns: 1fr 1fr; } }
+.marcos li { background: var(--green); border-radius: 12px; padding: 14px 16px; color: #fff; }
+.marcos b { display: block; font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+.marcos span { display: block; margin-top: 4px; font-size: .88rem; font-weight: 600; }
+@media (min-width: 760px) { .servico.d-inicio { grid-template-columns: 1.4fr 1fr; align-items: center; } .d-inicio br.q { display: none; } }
+/* nos 2 cartões largos (lado a lado a partir de 1040 px) o gancho cabe numa linha nos dois: a quebra some */
+@media (min-width: 1040px) { .d-meio br.q { display: none; } }
+/* S47: Sites e Landing pages em verde-escuro, no padrão do Relatório (Operador: "e essas duas no tom verde escuro") */
+.servico.d-meio { background: var(--green-dark); color: #fff; }
+.servico.d-meio .icone { background: var(--green); color: #fff; }
+.servico.d-meio .sub, .servico.d-meio p { color: #fff; }
+.servico p { text-wrap: pretty; }
+
+/* Ativos: texto + lista à esquerda, cartão de acessos à direita */
+.dupla { display: grid; gap: 48px; align-items: center; }
+/* S50: seção dos ativos enxuta (Operador: "Enxugar"): à esquerda só etiqueta, título e parágrafo; o quadro "Quem é dono de cada ativo" mostra o resto. Sem a lista, o .cab é a última peça e não leva margem embaixo */
+.dupla .cab:last-child { margin-bottom: 0; }
+@media (min-width: 960px) { .dupla { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.acessos { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px 10px; box-shadow: 0 30px 60px -36px rgba(16, 45, 70, .45); }
+.acessos-cab { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-weight: 800; font-size: .95rem; }
+.acessos li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+.acessos li:last-child { border-bottom: 0; }
+.acessos .ativo { font-weight: 700; }
+.acessos .dono { justify-self: end; align-self: start; white-space: nowrap; line-height: 1.5; font-size: .78rem; font-weight: 800; color: var(--green-dark); background: var(--tint); padding: 3px 10px; border-radius: 999px; }
+.acessos .papel { grid-column: 1 / -1; color: var(--muted); font-size: .8rem; }
+
+/* Como trabalhamos: quatro passos ligados por setas */
+.passos { display: grid; gap: 14px; }
+/* S47: 2 colunas de 640 a 1099 px e 4 a partir de 1100 (com 4 colunas a 900 px o título do passo caía para 13 px, menor que o texto) */
+@media (min-width: 640px) { .passos { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+@media (min-width: 1100px) { .passos { grid-template-columns: repeat(4, 1fr); gap: 34px; } }
+.passo { position: relative; border: 1px solid #bfe9d2; border-radius: 18px; padding: 24px 22px 26px; background: #fff; }
+.passo .n { font-size: .8rem; font-weight: 800; color: var(--muted); }
+.passo h3 { margin: 10px 0 8px; font-size: 1.2rem; font-weight: 800; letter-spacing: -.02em; }
+.passo p { color: var(--muted); font-size: .95rem; }
+/* S47 (alinhamento): título do passo numa linha só, a letra acompanha a largura do cartão ("Relatório estratégico" 10,1 em) */
+.passo { container-type: inline-size; }
+.passo h3 { font-size: min(1.2rem, 100cqi / 10.5); }
+.passo p { font-size: min(.95rem, 100cqi / 12.6); } /* S50: com o cartão estreito e letra grande o título encolhia abaixo do texto (18,4 contra 19 px a 1100 px com 125%); o texto encolhe junto e fica sempre menor que o título */
+.passo.d { background: var(--green-dark); border-color: var(--green-dark); color: #fff; } /* S50: o destaque é o Relatório estratégico (passo 2, ponto de partida, como em Serviços), em verde-escuro; antes era a Implantação em verde-claro */
+.passo.d .n, .passo.d p { color: #fff; }
+@media (min-width: 1100px) { .passo:not(:last-child)::after { content: "→"; position: absolute; right: -27px; top: 50%; transform: translateY(-50%); color: var(--green-dark); font-weight: 800; } }
 
 /* Perguntas */
-.perguntas .sec-in { display: grid; gap: 8px; }
-@media (min-width: 900px) { .perguntas .sec-in { grid-template-columns: 4fr 8fr; gap: 48px; } }
-.faq details { border-top: 1px solid var(--line); }
-.faq details:last-child { border-bottom: 1px solid var(--line); }
-.faq summary { cursor: pointer; list-style: none; font-weight: 600; padding: 18px 40px 18px 0; position: relative; }
+.faq-dupla { display: grid; gap: 12px; }
+@media (min-width: 900px) { .faq-dupla { grid-template-columns: 4fr 8fr; gap: 48px; } }
+/* S50: com 10 perguntas a coluna da direita fica alta; no computador o título acompanha a rolagem, logo abaixo do topo fixo */
+@media (min-width: 900px) { .faq-dupla .cab { position: sticky; top: calc(var(--topo-h, 86px) + 24px); align-self: start; } }
+.faq { display: grid; gap: 10px; }
+.faq details { background: var(--gray); border-radius: 14px; padding: 0 22px; }
+.faq summary { cursor: pointer; list-style: none; font-weight: 700; padding: 18px 34px 18px 0; position: relative; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 12px; height: 12px; margin-top: -6px;
-  background: linear-gradient(currentColor, currentColor) center/12px 2px no-repeat, linear-gradient(currentColor, currentColor) center/2px 12px no-repeat; }
-.faq details[open] summary::after { background: linear-gradient(currentColor, currentColor) center/12px 2px no-repeat; }
-.faq details p { padding: 0 0 20px; max-width: 62ch; color: var(--muted); }
+.faq summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.4rem; font-weight: 600; color: var(--green-dark); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding: 0 0 20px; color: var(--muted); max-width: 62ch; }
 
-/* Contato: claro, em duas colunas; o e-mail grande já abre a mensagem pronta (S41). */
-.contato { background: var(--white); color: var(--ink); border-top: 1px solid var(--line); }
-.contato-in { display: grid; gap: 22px; }
-.contato-in h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--navy); }
-.contato-texto p { margin-top: 12px; max-width: 46ch; color: var(--muted); }
-.email { font-size: clamp(1.35rem, 3.2vw, 2.1rem); font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; }
-.email a { color: var(--navy); text-decoration-color: var(--green); text-decoration-thickness: 2px; }
-@media (min-width: 900px) { .contato-in { grid-template-columns: 5fr 7fr; align-items: end; gap: 48px; } .email { justify-self: end; } }
+/* Chamada final: bloco arredondado (S50: verde-escuro, era azul profundo) */
+.chamada { background: var(--green-dark); color: #fff; border-radius: 22px; padding: 48px 40px; display: grid; gap: 28px; align-items: center; background-image: radial-gradient(circle at 0% 0%, rgba(0, 191, 99, .22), transparent 45%); }
+.chamada h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
+/* S53 (Operador: "Caminho 2 (enxugar)"): título quebra pelo sentido, nunca onde a largura cair. Computador e tablet: "Converse com a Ana, / a assistente que trabalha / pela sua empresa / 24 horas por dia".
+   Abaixo de 640 px: "Converse com a Ana, / a assistente / que trabalha / pela sua empresa / 24 horas por dia" (br.m), com a letra acompanhando a coluna para "Converse com a Ana," caber numa linha (10,05 em) */
+.chamada h2 br.m { display: none; }
+@media (max-width: 639px) { .chamada > div:first-child { container-type: inline-size; } .chamada h2 { font-size: min(1.9rem, 100cqi / 10.3); } .chamada h2 br.m { display: inline; } }
+.chamada p { margin-top: 12px; color: #fff; max-width: 50ch; text-wrap: balance; }
+.chamada .botao { overflow-wrap: anywhere; }
+.botao-zap { display: inline-flex; align-items: center; gap: 10px; }
+.botao-zap svg { width: 20px; height: 20px; flex-shrink: 0; }
+@media (min-width: 900px) { .chamada { grid-template-columns: 1.3fr 1fr; padding: 56px 56px; } .chamada .acao { justify-self: center; } }
+@media (max-width: 640px) { .chamada { padding: 36px 24px; } }
+
+/* Rodapé (o verde escolhido na S38) */
+.rodape { background: var(--green-dark); color: #fff; font-size: .9rem; margin-top: 96px; }
+.rodape a { color: #fff; text-decoration: none; }
+.rodape a:hover { text-decoration: underline; }
+.rodape :focus-visible { outline-color: #fff; }
+.rodape-grade { display: grid; gap: 32px; padding-block: 56px 40px; }
+.rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
+.rodape ul { display: grid; gap: 8px; }
+.rodape-fim { border-top: 1px solid rgba(255,255,255,.22); padding-block: 28px 26px; display: grid; justify-items: center; gap: 14px; text-align: center; }
+.rodape .rodape-fim img { width: 69px; } /* S47: 135 → 108 → 86 → 69 px (Operador pediu -20% três vezes) */
+.rodape-legal { font-size: .8rem; }
+/* S53 (Operador: "Caminho 2 (enxugar)"): o rodapé não repete a página. Saiu a lista de 8 serviços (7 iam para a mesma seção); ficam "Navegação"
+   (os links do menu do topo + Privacidade e Termos) e "Contato", com o ícone do WhatsApp como nos botões. A linha da empresa quebra pelo sentido
+   no celular: razão social / CNPJ / cidade, cada parte inteira (balance dentro da razão social). */
+.rodape ul a.rodape-zap { display: inline-flex; align-items: center; gap: 8px; vertical-align: top; }
+.rodape-zap svg { width: 16px; height: 16px; flex-shrink: 0; }
+@media (max-width: 639px) { .rodape-legal > span:not(.sep) { display: block; text-wrap: balance; } .rodape-legal .sep { display: none; } }
+@media (min-width: 760px) { .rodape-grade { display: flex; justify-content: space-between; } }
+
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  .marca img { width: 124px; }
+  .topo nav { gap: 14px; font-size: .85rem; }
+  .topo nav .some-celular { display: none; }
+  .menu-cel { display: block; }
+  .topo nav .botao { display: none; } /* S47: no celular o topo fica só com o logo e o Menu; o contato vai dentro do menu (Operador: "só menu, fale conosco ou fale com a Ana fica no menu") */
+  .topo .botao { padding: 8px 12px; font-size: .82rem; }
+  .secao { padding-block: 72px; }
+  .rodape ul { gap: 0; }
+  .rodape ul a { display: inline-block; padding-block: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Pular para o conteúdo */
+.skip { position: absolute; left: 12px; top: -80px; z-index: 10; padding: 10px 14px; background: var(--green); color: #fff; font-weight: 700; border-radius: 8px; }
+.skip:focus { top: 12px; }
 
 /* Páginas de texto (privacidade, termos, 404) */
-.texto { padding-block: 64px 96px; }
-.texto h1 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--navy); margin-bottom: 20px; }
-.texto h2 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin: 40px 0 10px; }
+.texto { padding-block: 40px 24px; }
+.texto h1 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+.texto h2 { font-size: 1.2rem; font-weight: 800; margin: 40px 0 10px; }
 .texto p { max-width: 70ch; }
 .texto p + p { margin-top: 12px; }
 .texto .abre { font-size: 1.1rem; color: var(--muted); }
 .texto .acoes { margin-top: 28px; }
 .texto a:not(.botao) { color: var(--green-dark); }
 
-/* Rodapé: verde da marca, colunas */
-.rodape { background: var(--green-dark); color: #d7efe1; font-size: .9rem; }
-.rodape a { color: #fff; text-decoration: none; }
-.rodape a:hover { text-decoration: underline; }
-.rodape :focus-visible { outline-color: #fff; }
-.rodape-grade { display: grid; gap: 32px; padding-block: 56px 40px; }
-.rodape-marca .marca img { width: 180px; }
-.rodape-marca p { margin-top: 12px; }
-.rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
-.rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.rodape-legal { border-top: 1px solid rgba(255, 255, 255, .22); padding-block: 18px 26px; font-size: .8rem; text-align: center; }
-@media (min-width: 760px) { .rodape-grade { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; } }
+/* Peças do serviço (anúncio, calendário, relatório, conversa), só HTML e CSS. */
+.peca { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: 0 26px 50px -30px rgba(16, 45, 70, .5); font-size: .8rem; }
+.pc-titulo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: .86rem; color: var(--ink); }
+.pc-titulo small { margin-left: auto; font-weight: 600; color: var(--muted); font-size: .74rem; }
+.pc-sub { margin-top: 4px; color: var(--muted); font-size: .76rem; }
+.zap { width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: inset 0 0 0 3px #fff, 0 0 0 1px var(--green); flex-shrink: 0; }
 
-@media (max-width: 640px) {
-  body { font-size: 1rem; }
-  .marca img { width: 128px; }
-  nav { gap: 14px; font-size: .82rem; }
-  nav .some-celular { display: none; }
-  /* Rodapé no celular: alvo de toque com altura de dedo. */
-  .rodape ul { gap: 0; }
-  .rodape ul a { display: inline-block; padding-block: 10px; }
+/* anúncio */
+.anuncio { width: 230px; padding: 12px; }
+.pc-cab { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.pc-cab .av { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--green-dark)); }
+.pc-cab .nm b { display: block; width: 78px; height: 8px; border-radius: 4px; background: var(--ink); }
+.pc-cab .nm i { display: block; margin-top: 4px; font-style: normal; font-size: .66rem; color: var(--muted); }
+.foto { position: relative; height: 128px; border-radius: 10px; overflow: hidden; background: linear-gradient(180deg, #cfeedd 0%, #eaf7f0 100%); }
+.foto .sol { position: absolute; right: 26px; top: 20px; width: 26px; height: 26px; border-radius: 50%; background: #fff; }
+.foto .morro { position: absolute; bottom: -30px; border-radius: 50%; }
+.foto .m1 { left: -20px; width: 170px; height: 90px; background: var(--green); }
+.foto .m2 { right: -30px; width: 190px; height: 80px; background: var(--green-dark); }
+.pc-txt { margin: 10px 2px; display: grid; gap: 5px; }
+.pc-txt b { height: 8px; width: 90%; border-radius: 4px; background: var(--ink); opacity: .85; }
+.pc-txt i { height: 7px; width: 65%; border-radius: 4px; background: var(--line); }
+.cta { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 9px; border-radius: 8px; background: var(--tint); color: var(--green-dark); font-weight: 800; }
+
+/* calendário */
+.calendario { width: 260px; }
+.semana, .dias { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+.semana { margin: 12px 0 6px; font-size: .64rem; font-weight: 700; color: var(--muted); }
+.cel { height: 26px; border-radius: 6px; display: grid; place-items: center; font-size: .66rem; color: var(--muted); background: var(--gray); }
+.cel.ok { background: var(--green); color: #fff; font-weight: 800; }
+/* S47: dias em aprovação em laranja (Operador: "colocar nesse caminho 2 em laranja, com legenda… em revisão ou outra expressão") */
+.cel.rev { background: #e8780c; color: #fff; font-weight: 800; }
+.cel.prod { background: #fff; box-shadow: inset 0 0 0 1.5px var(--green); color: var(--green-dark); font-weight: 800; }
+.legenda { display: flex; flex-wrap: wrap; gap: 4px 6px; justify-content: space-between; margin-top: 10px; font-size: min(.68rem, (100cqi - 51px) / 17); color: var(--muted); white-space: nowrap; } /* S47: as 3 legendas numa linha só; a letra acompanha a largura da peça */
+.calendario { container-type: inline-size; }
+.legenda span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
+.l-ok::before { background: var(--green); }
+.l-prod::before { box-shadow: inset 0 0 0 1.5px var(--green); }
+.l-rev::before { background: #e8780c; }
+
+/* relatório */
+.relatorio { width: 300px; }
+.grafico { display: block; width: 100%; height: auto; margin-top: 10px; }
+.grafico .area { fill: var(--tint); }
+.grafico .linha { fill: none; stroke: var(--green-dark); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.grafico circle { fill: var(--green); stroke: #fff; stroke-width: 2; }
+.semanas { display: flex; justify-content: space-between; margin-top: 4px; font-size: .64rem; color: var(--muted); }
+
+/* conversa */
+.conversa { width: 260px; display: grid; gap: 8px; }
+.msg { padding: 8px 11px; border-radius: 12px; max-width: 86%; line-height: 1.35; }
+.msg.rec { background: var(--gray); justify-self: start; border-bottom-left-radius: 4px; }
+.msg.env { background: var(--tint); justify-self: end; border-bottom-right-radius: 4px; color: var(--deep); }
+
+/* A · o mês do cliente: três peças sobrepostas */
+.mes { position: relative; width: 100%; max-width: 520px; height: 520px; margin-inline: auto; }
+.mes .calendario { position: absolute; right: 0; top: 0; }
+.mes .anuncio { position: absolute; left: 0; top: 60px; z-index: 2; }
+.mes .relatorio { position: absolute; right: 10px; bottom: 0; z-index: 3; }
+@media (max-width: 560px) {
+  .mes { height: auto; display: grid; gap: 14px; justify-items: center; }
+  .mes .peca { position: static; width: 100%; max-width: 320px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* C · composição do A com as legendas numeradas do B */
+.rot { position: absolute; left: 4px; top: -26px; font-size: .78rem; font-weight: 800; color: var(--green-dark); white-space: nowrap; }
+.mes.com-rot { height: 600px; max-width: 540px; margin-top: 10px; }
+.com-rot .anuncio { left: 0; top: 26px; right: auto; bottom: auto; z-index: 1; }
+.com-rot .anuncio .foto { height: 104px; }
+.com-rot .conversa { position: absolute; right: 0; top: 76px; z-index: 2; }
+.com-rot .calendario { left: 0; top: 326px; right: auto; width: 248px; z-index: 3; }
+.com-rot .relatorio { right: 0; top: 366px; bottom: auto; width: 248px; z-index: 4; }
+@media (max-width: 560px) {
+  .mes.com-rot { height: auto; gap: 44px; padding-top: 26px; }
+  .com-rot .peca { position: relative; top: auto; left: auto; right: auto; }
+}
+
+.com-rot .relatorio:not(.funil) .pc-titulo small { display: none; }
+@media (max-width: 560px) { .com-rot .peca.calendario, .com-rot .peca.relatorio, .com-rot .peca { width: 100%; max-width: 320px; } }
+
+/* Efeitos (S41): revelação ao rolar, barra de progresso, conversa encenada. Só opacity e transform. */
+.progresso { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60; pointer-events: none; background: linear-gradient(90deg, var(--green), var(--green-dark)); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.75,.2,1), transform .8s cubic-bezier(.2,.75,.2,1); }
+.js .reveal.visivel { opacity: 1; transform: none; }
+.grade .reveal:nth-child(3n+2), .cartoes-3 .reveal:nth-child(3n+2), .passos .reveal:nth-child(2) { transition-delay: .1s; }
+.grade .reveal:nth-child(3n), .cartoes-3 .reveal:nth-child(3n), .passos .reveal:nth-child(3) { transition-delay: .2s; }
+.passos .reveal:nth-child(4) { transition-delay: .3s; }
+.cartao.reveal.visivel, .servico.reveal.visivel { transition: opacity .8s cubic-bezier(.2,.75,.2,1), transform .35s cubic-bezier(.2,.75,.2,1), box-shadow .35s; }
+.cartao.reveal.visivel:hover, .servico.reveal.visivel:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -28px rgba(16,45,70,.45); }
+
+.conversa .pc-titulo { flex-wrap: wrap; row-gap: 0; }
+.pc-status { flex-basis: 100%; margin-left: 22px !important; color: var(--green-dark) !important; font-weight: 700 !important; font-size: .72rem !important; line-height: 1.3; }
+.msgs { display: grid; gap: 8px; align-content: start; }
+.msg { position: relative; }
+.msg .dig { display: none; gap: 4px; align-items: center; height: 1.35em; }
+.msg .dig i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: .45; animation: dig 1.2s ease-in-out infinite; }
+.msg .dig i:nth-child(2) { animation-delay: .15s; } .msg .dig i:nth-child(3) { animation-delay: .3s; }
+.msg .tique { display: inline-block; width: 15px; height: 10px; margin-left: 6px; vertical-align: -1px; color: #9aa7ae; transition: color .3s; }
+.msg.lida .tique { color: #34b7f1; }
+.animada .msg { transition: opacity .35s cubic-bezier(.2,.75,.2,1), transform .35s cubic-bezier(.2,.75,.2,1); transform-origin: left bottom; }
+.animada .msg.env { transform-origin: right bottom; }
+.animada .msg[data-estado="oculta"] { opacity: 0; transform: translateY(8px) scale(.96); }
+.animada .msg[data-estado="digitando"] .txt, .animada .msg[data-estado="digitando"] .tique { display: none; }
+.animada .msg[data-estado="digitando"] .dig { display: inline-flex; }
+.animada.saindo .msg { opacity: 0; transition-duration: .5s; }
+@keyframes dig { 0%, 60%, 100% { transform: none; opacity: .35; } 30% { transform: translateY(-3px); opacity: .9; } }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } .msg .dig i { animation: none; } }
+
+/* Roteiro fixo: a seção prende na tela e a rolagem troca o passo (S41). Sem JavaScript vira lista simples. */
+.roteiro { padding-bottom: 40px; }
+.roteiro-grade { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 900px) { .roteiro-grade { grid-template-columns: 1fr 1.05fr; gap: 56px; } }
+.roteiro-conta { display: none; font-size: 3.4rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; color: var(--ink); }
+.roteiro-conta small { font-size: .9rem; font-weight: 700; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+.roteiro-pontos { display: none; gap: 10px; margin: 18px 0 30px; }
+.roteiro-ponto { width: 34px; height: 6px; border-radius: 4px; border: 0; padding: 0; background: var(--line); cursor: pointer; transition: background .3s, width .3s; }
+.roteiro-ponto[data-estado="antes"] { background: #9ddfbd; }
+.roteiro-ponto[data-estado="atual"] { background: var(--green); width: 54px; }
+.roteiro-ponto:focus-visible { outline: 3px solid var(--green-dark); outline-offset: 3px; }
+.roteiro-textos { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.roteiro-texto .tag { font-size: .82rem; font-weight: 800; color: var(--green-dark); text-transform: uppercase; letter-spacing: .06em; }
+.roteiro-texto h3 { margin-top: 8px; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.1; letter-spacing: -.03em; font-weight: 800; }
+.roteiro-texto > p:last-child { margin-top: 12px; color: var(--muted); font-size: 1.05rem; max-width: 44ch; }
+.roteiro-palco { display: flex; align-items: flex-end; justify-content: center; gap: 22px; }
+.celular { position: relative; width: 270px; height: 540px; flex-shrink: 0; border-radius: 40px; border: 10px solid var(--deep); background: #fff; box-shadow: 0 40px 70px -40px rgba(16,45,70,.6); overflow: hidden; }
+.celular::before { content: ""; position: absolute; z-index: 5; left: 50%; top: 8px; width: 84px; height: 22px; margin-left: -42px; border-radius: 12px; background: var(--deep); }
+.tela { position: absolute; inset: 0; padding: 40px 14px 14px; display: flex; flex-direction: column; gap: 10px; font-size: .78rem; opacity: 0; transition: opacity .45s cubic-bezier(.2,.75,.2,1), transform .45s cubic-bezier(.2,.75,.2,1); }
+.tela-2 { opacity: 1; }
+.roteiro-lista { width: 210px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: 0 26px 50px -30px rgba(16,45,70,.5); margin-bottom: 40px; }
+.roteiro-lista p { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.roteiro-lista ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: .86rem; font-weight: 600; }
+.roteiro-lista li { display: flex; align-items: center; gap: 9px; color: var(--ink); transition: color .3s; }
+.roteiro-lista .ck { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--green); background: var(--green); flex-shrink: 0; position: relative; transition: background .3s, border-color .3s; }
+.roteiro-lista .ck::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); transition: opacity .3s; }
+/* telas */
+.t-barras { display: flex; gap: 4px; } .t-barras i { flex: 1; height: 3px; border-radius: 2px; background: var(--green); }
+.t-barras i:nth-child(n+2) { background: var(--line); }
+.t-perfil { display: flex; align-items: center; gap: 8px; } .t-perfil b { font-size: .8rem; } .t-perfil small { margin-left: auto; color: var(--muted); font-size: .68rem; }
+.av { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--green-dark)); flex-shrink: 0; }
+.t-foto { position: relative; flex: 1; border-radius: 14px; background: #d9f3e5; overflow: hidden; min-height: 150px; }
+.t-foto .sol { position: absolute; right: 22px; top: 22px; width: 30px; height: 30px; border-radius: 50%; background: #fff; }
+.t-foto .morro { position: absolute; bottom: -40px; border-radius: 50%; }
+.t-foto .m1 { left: -30px; width: 200px; height: 130px; background: var(--green); }
+.t-foto .m2 { right: -50px; width: 220px; height: 120px; background: var(--green-dark); }
+.t-oferta { font-weight: 800; font-size: .95rem; color: var(--ink); }
+.t-linha { height: 7px; width: 70%; border-radius: 4px; background: var(--line); }
+.t-cta { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 10px; background: var(--green); color: #fff; font-weight: 800; }
+.t-cta .zap { box-shadow: inset 0 0 0 3px var(--green), 0 0 0 1px var(--green-dark); background: var(--green-dark); }
+.t-zap-cab { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.t-zap-cab b { display: block; font-size: .82rem; } .t-zap-cab small { color: var(--green-dark); font-weight: 700; font-size: .68rem; }
+.t-zap { display: grid; gap: 8px; align-content: start; }
+.t-zap .msg { font-size: .76rem; max-width: 88%; }
+.t-agenda { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; border: 1px solid #bfe9d2; background: var(--tint); margin-top: 4px; }
+.t-dia { display: grid; place-items: center; width: 40px; height: 44px; border-radius: 8px; background: #fff; font-weight: 800; font-size: 1rem; line-height: 1; color: var(--ink); }
+.t-dia small { font-size: .56rem; color: var(--green-dark); }
+.t-agenda b { display: block; font-size: .8rem; } .t-agenda small { color: var(--muted); font-size: .68rem; }
+.t-ok { margin-left: auto; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .7rem; }
+.t-aviso { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: var(--green-dark); color: #fff; }
+.t-aviso b { display: block; font-size: .78rem; } .t-aviso small { color: #fff; font-size: .68rem; }
+.t-aviso .zap { box-shadow: inset 0 0 0 3px var(--green-dark), 0 0 0 1px var(--green); }
+.t-rel-cab { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.t-rel-cab b { font-size: .9rem; } .t-rel-cab small { color: var(--muted); font-size: .68rem; }
+.t-rel-sub { color: var(--muted); font-size: .72rem; margin-top: 4px; }
+.t-barras-graf { display: flex; align-items: flex-end; gap: 12px; height: 90px; padding: 0 6px; border-bottom: 1px solid var(--line); }
+.t-barras-graf i { flex: 1; height: var(--h); border-radius: 6px 6px 0 0; background: var(--green); transform-origin: bottom; }
+.t-linha-graf { width: 100%; height: 70px; } .t-linha-graf .area { fill: var(--tint); } .t-linha-graf .linha { fill: none; stroke: var(--green-dark); stroke-width: 2.5; }
+.t-prox { margin-top: auto; padding: 10px; border-radius: 10px; background: var(--gray); display: grid; gap: 6px; }
+.t-prox b { font-size: .76rem; } .t-prox i { height: 6px; border-radius: 4px; background: var(--line); } .t-prox i + i { width: 70%; }
+/* modo roteiro (com JavaScript) */
+.js .roteiro-corpo { height: 280vh; position: relative; } /* S47: era 400vh; cerca de 0,7 tela por passo */
+.js .roteiro-fixo { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.js .roteiro-conta { display: block; }
+/* S47: dica no pé do roteiro preso (só no computador), para não parecer que a página acabou */
+.roteiro-dica { display: none; position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); margin: 0; font-size: .8rem; font-weight: 700; color: var(--muted); letter-spacing: .02em; white-space: nowrap; }
+.roteiro-dica span { display: inline-block; margin-left: 6px; color: var(--green-dark); animation: dica-desce 1.6s ease-in-out infinite; }
+@keyframes dica-desce { 50% { transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .roteiro-dica span { animation: none; } }
+@media (min-width: 900px) and (min-height: 720px) { .js .roteiro-dica { display: block; } } /* só onde sobra espaço abaixo do roteiro */
+/* S47: no celular a dica vira um botão redondo com a seta, no canto direito ao lado do aparelho (Operador: "precisa no celular tb") */
+@media (max-width: 899px) {
+  .js .roteiro-dica { display: flex; align-items: center; justify-content: center; left: auto; right: 20px; bottom: 6px; transform: none; width: 40px; height: 40px; border-radius: 50%; background: var(--green-dark); font-size: 0; box-shadow: 0 8px 18px -10px rgba(16,45,70,.6); }
+  .js .roteiro-dica span { margin: 0; font-size: 1.15rem; line-height: 1; color: #fff; }
+}
+.js .roteiro-pontos { display: flex; }
+.js .roteiro-textos { display: block; position: relative; min-height: 14em; }
+.js .roteiro-texto { position: absolute; inset: 0 0 auto 0; opacity: 0; transform: translateY(26px); transition: opacity .5s cubic-bezier(.2,.75,.2,1), transform .5s cubic-bezier(.2,.75,.2,1); pointer-events: none; }
+.js .roteiro-texto[data-estado="antes"] { transform: translateY(-26px); }
+.js .roteiro-texto[data-estado="atual"] { opacity: 1; transform: none; pointer-events: auto; }
+.js .tela { opacity: 0; transform: translateY(18px) scale(.98); }
+.js .tela[data-estado="antes"] { transform: translateY(-18px) scale(.98); }
+.js .tela[data-estado="atual"] { opacity: 1; transform: none; }
+.js .roteiro-lista li[data-estado="depois"] { color: var(--muted); }
+.js .roteiro-lista li[data-estado="depois"] .ck { background: transparent; border-color: var(--line); }
+.js .roteiro-lista li[data-estado="depois"] .ck::after { opacity: 0; }
+.js .tela-4[data-estado="atual"] .t-barras-graf i { animation: sobe-barra .7s cubic-bezier(.2,.75,.2,1) both; }
+.js .tela-4[data-estado="atual"] .t-barras-graf i:nth-child(2) { animation-delay: .08s; } .js .tela-4[data-estado="atual"] .t-barras-graf i:nth-child(3) { animation-delay: .16s; } .js .tela-4[data-estado="atual"] .t-barras-graf i:nth-child(4) { animation-delay: .24s; }
+@keyframes sobe-barra { from { transform: scaleY(0); } }
+@media (max-width: 899px) {
+  .roteiro-lista { display: none; }
+  .celular { width: 210px; height: 420px; border-width: 8px; border-radius: 32px; }
+  .js .celular { height: min(420px, 46svh); width: min(210px, 23svh); }
+  .js .roteiro-grade { gap: 18px; }
+  .js .roteiro-conta { font-size: 2.2rem; }
+  .js .roteiro-pontos { margin: 10px 0 14px; }
+  .js .roteiro-textos { min-height: 9.5em; }
+  .js .roteiro-texto h3 { font-size: 1.45rem; }
+  .js .roteiro-texto > p:last-child { font-size: .95rem; margin-top: 8px; }
+  .js .tela { padding: 32px 10px 10px; font-size: .7rem; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .tela, .roteiro-texto, .roteiro-ponto { transition: none !important; } .js .tela-4 .t-barras-graf i { animation: none !important; } }
+
+.t-campo { margin-top: auto; display: flex; align-items: center; gap: 8px; }
+.t-campo span { flex: 1; padding: 8px 12px; border-radius: 18px; background: var(--gray); color: var(--muted); }
+.t-campo i { width: 30px; height: 30px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+/* Ana nos serviços: cartão largo */
+.servico.d-ana { background: var(--green-dark) radial-gradient(circle at 0% 0%, rgba(0,191,99,.22), transparent 50%); color: #fff; }
+.servico.d-ana .icone { background: var(--green); color: #fff; }
+.servico.d-ana .sub { color: #fff; margin-top: 4px; }
+.servico.d-ana p { color: #fff; max-width: 72ch; }
+@media (min-width: 760px) { .servico.d-ana { grid-column: 1 / -1; } }
+
+/* Avatar da Ana (S41) */
+.ana-figura { margin: 0; display: grid; justify-items: center; gap: 10px; }
+.ana-av { position: relative; display: block; width: 132px; height: 132px; }
+.ana-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px rgba(0,191,99,.45), 0 24px 44px -22px rgba(0,0,0,.7); }
+.ana-av::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--green-dark); }
+/* S47 · cartão da Ana mais visual (Operador: "aqui acho que é mais visual mesmo" → "faz"): à esquerda título, selos do que ela faz e frase curta;
+   à direita a Ana trabalhando (foto + exemplo de conversa). "A.N.A. · Agente…" aparece uma vez só, na linha verde. */
+.servico.d-ana { display: grid; grid-template-columns: 1fr; gap: 28px; }
+.d-ana .ana-txt { display: flex; flex-direction: column; gap: 14px; }
+/* selos: três blocos iguais numa linha (ícone em cima, texto embaixo); no celular, lista com ícone ao lado (Operador: "aqui precisa melhorar visualização") */
+.selos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 4px; }
+.selos li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px 8px; border-radius: 12px; background: var(--green); border: 1px solid var(--green); color: #fff; font-weight: 700; font-size: .8rem; line-height: 1.25; text-align: center; }
+.selos svg { width: 18px; height: 18px; color: #fff; flex: none; } /* S47: selos um pouco menores (Operador: "um pouco menores"); S50: cartão verde-escuro, selos verde-claro com branco, como os ícones */
+@media (max-width: 519px) { .selos br.q { display: none; } .selos { grid-template-columns: 1fr; gap: 8px; } .selos li { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 10px 14px; text-align: left; } .selos svg { width: 19px; height: 19px; } }
+.ana-demo { display: flex; align-items: flex-end; justify-content: center; gap: 16px; }
+.ana-demo .ana-av { width: 104px; height: 104px; flex: none; }
+.ana-chat { display: grid; gap: 8px; width: 100%; max-width: 340px; padding: 14px; border-radius: 18px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); }
+.ana-chat .b { max-width: 86%; padding: 8px 12px; border-radius: 14px; font-size: .86rem; line-height: 1.35; }
+.ana-chat .rec { justify-self: start; background: #fff; color: var(--ink); border-bottom-left-radius: 4px; }
+.ana-chat .env { justify-self: end; background: var(--green); color: #fff; font-weight: 600; border-bottom-right-radius: 4px; }
+@media (max-width: 519px), (min-width: 900px) and (max-width: 1099px) { .ana-demo { flex-direction: column; align-items: center; } }
+@media (min-width: 900px) { .servico.d-ana { grid-template-columns: 1.1fr 1fr; column-gap: 48px; align-items: center; } .ana-demo .ana-av { width: 128px; height: 128px; } }
+/* S47 (Operador: "separar em 3 partes, esq, centro e dir" → "faz, se der aumenta um pouco a Ana"): a partir de 1100 px,
+   texto | Ana | conversa, com o mesmo espaço entre as três; a Ana e a conversa ficam no centro da altura do cartão */
+@media (min-width: 1100px) {
+  .servico.d-ana { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); column-gap: 56px; align-items: stretch; } /* colunas laterais iguais: a Ana fica no centro exato do cartão (Operador: "centralizar a Ana") */
+  .ana-demo { grid-column: 2 / 4; display: grid; grid-template-columns: subgrid; column-gap: normal; align-items: center; }
+  .ana-demo .ana-av { width: 160px; height: 160px; align-self: center; }
+  .ana-chat { max-width: none; }
+  .servico.d-ana .ana-fecho { text-align: center; padding: 24px 10% 0; border-top: 1px solid rgba(255,255,255,.14); text-wrap: balance; }
+}
+/* S47 (Operador: "centralizar e colocar em baixo das 3" → "faz"): a frase fecha o cartão, embaixo das três partes; centrada só a partir de 1100 px */
+.servico.d-ana .ana-fecho { grid-column: 1 / -1; max-width: none; }
+@media (max-width: 1099px) { .ana-fecho br.q { display: none; } }
+.ana-acao { display: grid; justify-items: center; gap: 22px; }
+.chamada .ana-av { width: 140px; height: 140px; }
+.ana-acao .botao { white-space: nowrap; justify-content: center; }
+@media (max-width: 399px) { .ana-acao .botao { white-space: normal; } }
+/* S53: empilhado, uma margem só: a foto da Ana (72 px) abre o cartão, à esquerda, acima do título; o botão fecha na largura toda */
+@media (max-width: 899px) { .chamada .ana-acao { display: contents; } .chamada .ana-figura { order: -1; justify-self: start; } .ana-acao .botao { width: 100%; } .chamada .ana-av { width: 72px; height: 72px; } .chamada .ana-av::after { right: 2px; bottom: 2px; width: 14px; height: 14px; box-shadow: 0 0 0 3px var(--green-dark); } }
+
+/* Ajustes S41 (22h24): calendário animado, tela do celular em escala, rolagem do roteiro passo a passo */
+.cel { transition: background .35s, border-color .35s, color .35s, transform .35s; }
+.calendario .cel.aprovando { transform: scale(1.18); }
+.celular-tela { position: absolute; left: 0; top: 0; width: 250px; height: 520px; transform-origin: 0 0; transform: scale(var(--k, 1)); }
+.celular { --k: 1; }
+@media (max-width: 899px) {
+  .celular, .js .celular { width: 200px; height: 399px; --k: .736; border-width: 8px; border-radius: 32px; }
+  .js .tela { padding: 40px 14px 14px; font-size: .78rem; gap: 10px; }
+}
+@media (max-width: 899px) and (max-height: 720px) {
+  .celular, .js .celular { width: 166px; height: 328px; --k: .6; }
+}
+@media (max-width: 899px) { html.roteiro-snap { scroll-snap-type: y proximity; } }
+.roteiro-ancora { display: none; }
+.js .roteiro-ancora { display: block; position: absolute; left: 0; width: 1px; height: 1px; top: calc((100% - var(--fixo-h, 100svh)) * (var(--i) - .5) / 4); scroll-snap-align: start; scroll-snap-stop: normal; pointer-events: none; }
+@media (max-width: 899px) { .js .roteiro-corpo { height: 360svh; } } /* S47: era 560svh; cerca de 0,9 tela por passo */
+
+/* Frente larga "Atendimento e vendas no WhatsApp" (S41) */
+@media (min-width: 760px) { .servico.d-largo { grid-column: 1 / -1; } }
+.servico.d-largo { border: 1px solid #bfe9d2; }
+.servico.d-largo p { max-width: 72ch; }
+.recursos { list-style: none; margin: 4px 0 6px; padding: 0; display: grid; gap: 10px 28px; }
+@media (min-width: 760px) { .recursos { grid-template-columns: 1fr 1fr; } }
+.recursos li { position: relative; padding-left: 28px; font-size: .95rem; color: var(--ink); line-height: 1.4; }
+.recursos li::before { content: ""; position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%; background: var(--tint); }
+.recursos li::after { content: ""; position: absolute; left: 6px; top: 4px; width: 5px; height: 9px; border: solid var(--green-dark); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+
+/* Funil de vendas da abertura (peça 4) */
+.funil .fn-vendas { font-size: .68rem !important; }
+.funil .fn-vendas b { color: var(--green-dark); }
+.fn-quadro { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 10px; } /* S47: colunas sempre do mesmo tamanho, o cinza não mexe quando os cartões andam e nada passa da peça (Operador: "alinhar o cinza do kanban… na última animação passa do espaço") */
+.fn-col { background: var(--gray); border-radius: 8px; padding: 6px 4px 8px; min-height: 112px; display: flex; flex-direction: column; gap: 5px; container-type: inline-size; }
+.fn-col p { font-size: .6rem; font-weight: 800; color: var(--muted); line-height: 1.2; min-height: 2.4em; }
+.fn-card { display: flex; align-items: center; gap: 4px; padding: 5px 4px; border-radius: 6px; background: #fff; box-shadow: 0 2px 6px -3px rgba(16,45,70,.35); font-size: .66rem; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; font-size: min(.66rem, (100cqi - 23px) / 3.5); }
+.fn-card i { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--green-dark)); flex-shrink: 0; }
+.fn-col[data-col="3"] .fn-card { background: var(--green); color: #fff; }
+.fn-col[data-col="3"] .fn-card i { background: #fff; }
+.fn-card[hidden] { display: none; }
+.funil .pc-titulo { white-space: nowrap; }
+.fn-card.entra { animation: fn-entra .45s cubic-bezier(.2,.75,.2,1) both; }
+.funil.saindo .fn-card { opacity: 0; transition: opacity .4s; }
+@keyframes fn-entra { from { opacity: 0; transform: translateY(-8px) scale(.9); } }
+/* Painel de vendas do roteiro (passo 4) */
+.t-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.t-kpis div { background: var(--gray); border-radius: 10px; padding: 8px 6px; text-align: center; }
+.t-kpis b { display: block; font-size: 1.15rem; font-weight: 800; color: var(--ink); line-height: 1.1; }
+.t-kpis div:last-child { background: var(--tint); } .t-kpis div:last-child b { color: var(--green-dark); }
+.t-kpis small { font-size: .62rem; color: var(--muted); }
+.t-funil { display: grid; gap: 6px; }
+.t-funil span { display: block; padding-bottom: 3px; font-size: .66rem; font-weight: 700; color: var(--ink); }
+.t-funil i { display: block; height: 9px; width: var(--w); border-radius: 5px; background: #9ddfbd; transform-origin: left; }
+.t-funil div:last-child i { background: var(--green); }
+.js .tela-4[data-estado="atual"] .t-funil i { animation: sobe-barra-x .8s cubic-bezier(.2,.75,.2,1) both; }
+.js .tela-4[data-estado="atual"] .t-funil div:nth-child(2) i { animation-delay: .1s; } .js .tela-4[data-estado="atual"] .t-funil div:nth-child(3) i { animation-delay: .2s; }
+@keyframes sobe-barra-x { from { transform: scaleX(0); } }
+.t-resp { display: flex; align-items: baseline; gap: 6px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); font-size: .7rem; color: var(--muted); }
+.t-resp b { margin-left: auto; font-size: .95rem; color: var(--ink); } .t-resp small { color: var(--green-dark); font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .js .tela-4 .t-funil i { animation: none !important; } }
+
+/* Anúncio da abertura (peça 1): sol se mexe, toque no botão, aviso de nova conversa. Só com a peça na tela. */
+.anuncio .cta { position: relative; overflow: hidden; }
+.anuncio .cta::after { content: ""; position: absolute; left: 50%; top: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: rgba(0,122,63,.35); opacity: 0; pointer-events: none; }
+.an-toast { position: absolute; left: 50%; bottom: 58px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: var(--green-dark); color: #fff; font-size: .7rem; font-weight: 700; white-space: nowrap; opacity: 0; transform: translate(-50%, 6px); pointer-events: none; }
+.an-toast .zap { width: 10px; height: 10px; box-shadow: inset 0 0 0 2px var(--green-dark), 0 0 0 1px var(--green); }
+.anuncio.animada .foto .sol { animation: an-sol 6s ease-in-out infinite; }
+.anuncio.animada .cta { animation: an-aperta 4.5s ease-in-out infinite; }
+.anuncio.animada .cta::after { animation: an-toque 4.5s ease-out infinite; }
+.anuncio.animada .an-toast { animation: an-aviso 4.5s ease-out infinite; }
+@keyframes an-sol { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px) scale(1.08); } }
+@keyframes an-aperta { 0%, 28%, 40%, 100% { transform: none; background: var(--tint); } 33% { transform: scale(.95); background: #cdeedd; } }
+@keyframes an-toque { 0%, 28% { opacity: 0; transform: scale(.4); } 31% { opacity: 1; transform: scale(.8); } 45%, 100% { opacity: 0; transform: scale(5); } }
+@keyframes an-aviso { 0%, 36% { opacity: 0; transform: translate(-50%, 6px); } 44%, 72% { opacity: 1; transform: translate(-50%, 0); } 84%, 100% { opacity: 0; transform: translate(-50%, -10px); } }
+@media (prefers-reduced-motion: reduce) { .anuncio.animada *, .anuncio.animada .cta::after { animation: none !important; } }
+
+/* Faixa: títulos com a mesma altura (duas linhas) para os subtítulos alinharem quando há colunas */
+/* S47: faixa centralizada (Operador: "eu aqui centralizaria tudo") */
+.faixa > div { text-align: center; }
+.faixa .ic { margin-left: auto; margin-right: auto; }
+/* todo título tem 2 linhas, quebradas pelo sentido (br.q), em qualquer largura: lado a lado, ícones, títulos e frases começam na mesma altura.
+   A letra acompanha a coluna para a metade mais longa ("Nenhum cliente", 7,8 em) nunca virar 3ª linha. */
+@media (min-width: 640px) { .faixa { container-type: inline-size; } .faixa strong { font-size: min(1.25rem, (50cqi - 49px) / 8.2); } }
+@media (min-width: 980px) { .faixa strong { font-size: min(1.25rem, (25cqi - 57px) / 8.2); } }
+
+/* Ajustes de alinhamento e espaçamento (S41, varredura medida) */
+@media (max-width: 899px) { .faq-dupla .cab { margin-bottom: 32px; } }
+@media (min-width: 900px) {
+  .roteiro { padding-bottom: 96px; }
+  .js .roteiro-fixo { top: var(--topo-h, 86px); height: calc(100svh - var(--topo-h, 86px)); display: flex; align-items: center; } /* S47: centrado na altura que sobra abaixo do topo (Operador: "fica essa cara de que não tem nada embaixo") */
+  .js .roteiro-grade { align-items: start; }
+}
+@media (max-width: 899px) { .roteiro { padding-bottom: 72px; } .js .roteiro-fixo { height: auto; top: calc(var(--topo-h, 80px) + 4px); display: block; } } /* S47: com o topo fixo, o roteiro preso no celular começa logo abaixo dele */
+
+/* Celular: câmera do aparelho na mesma escala da tela; folga entre texto e aparelho; subtítulo dos cartões largos */
+@media (max-width: 899px) {
+  .celular::before { width: 62px; height: 16px; margin-left: -31px; top: 6px; border-radius: 9px; }
+  .js .roteiro-grade { gap: 12px; } /* S47: era 28 px; com o topo fixo o roteiro precisa caber abaixo dele */
+}
+@media (max-width: 899px) and (max-height: 720px) {
+  .celular::before { width: 50px; height: 13px; margin-left: -25px; top: 5px; }
+}
+/* S47: celular baixo (até 740 px de altura): aparelho menor, para o roteiro caber abaixo do topo fixo */
+@media (max-width: 899px) and (max-height: 740px) {
+  .celular, .js .celular { width: 140px; height: 276px; --k: .5; border-width: 7px; border-radius: 26px; }
+  .celular::before { width: 42px; height: 11px; margin-left: -21px; top: 4px; }
+}
+.servico > div > .sub { margin-top: 6px; }
+
+/* Sigla da Ana no subtítulo: numa linha própria no celular */
+@media (max-width: 640px) { .sub .sigla { display: block; } .sub .sep { display: none; } }
+
+/* S50: roteiro no celular estreito com letra grande. O efeitos.js encolhe o aparelho para caber entre o topo fixo e o pé
+   da tela (piso k = .45); se ainda não couber, liga .roteiro-justo: sai o contador 01/04 (os pontos mostram o passo)
+   e a letra dos passos diminui um pouco. */
+@media (max-width: 899px) {
+  .js .roteiro-justo .roteiro-conta { display: none; }
+  .js .roteiro-justo .roteiro-pontos { margin-top: 4px; }
+  .js .roteiro-justo .roteiro-texto h3 { font-size: 1.3rem; }
+  .js .roteiro-justo .roteiro-texto > p:last-child { font-size: .9rem; }
+}
+/* S50: com o aparelho do tamanho da altura que sobra (efeitos.js), câmera e cantos acompanham a escala --k */
+@media (max-width: 899px) {
+  .js .celular { border-radius: calc(14px + 24px * var(--k)); }
+  .js .celular::before { width: calc(84px * var(--k)); height: calc(22px * var(--k)); margin-left: calc(-42px * var(--k)); top: calc(8px * var(--k)); }
+}
