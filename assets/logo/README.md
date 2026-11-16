@@ -10,6 +10,6 @@ Logo oficial (S53, 16/11/2026, arquivo do Operador: "Vamos usar esse logo"): let
 - `ativaleads-2026-branco-checkclaro-250.webp` e `-440.webp`: letras brancas e check verde-claro, no topo verde-escuro de /ativaleads/;
 - `ativaleads-2026-branco-300.webp`: todo branco (#FFFFFF), no rodapé (300 × 49);
 - `anim-2026/`: camadas da raiz "em breve" (letras brancas, check verde-claro), grade 1000 × 165.
-`ativaleads-2026-branco-check-*` (check verde-escuro) ficou com o desenho provisório, sem uso. Os arquivos antigos (`ativaleads-verde-*`, `ativaleads-branco-*`) seguem em uso em /eaaa/; `anim/` (logo antigo) fica sem uso.
+`ativaleads-2026-branco-check-*` (check verde-escuro) ficou com o desenho provisório, sem uso. Os nomes antigos (`ativaleads-verde.webp`, `-250`, `-440`, `ativaleads-branco.webp`, `-300`) também têm o desenho oficial desde a S53 (mesma tela de antes, logo no centro, por `_preview/s53/logo_demais.py`): as branches `eaaa-exemplo` e `vitocasella-proposta` usam esses nomes. `anim/` (logo antigo) fica sem uso.
 
 Cores do logo: #00BF63 e #007A3F. Branco das variações brancas: #FFFFFF (o provisório usava #FBFBFB).
