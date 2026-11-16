@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
 <style>
-:root{--tinta:#16222e;--tinta2:#0f1822;--creme:#f4efe6;--ouro:#8a6a33;--ouro2:#c9a66b;--cinza:#5b6570;--linha:#ddd3c2;--branco:#fffdf8}
+:root{--claro:#fff;--tinta:#16222e;--tinta2:#0f1822;--creme:#f4efe6;--ouro:#82632e;--ouro2:#c9a66b;--cinza:#5b6570;--linha:#ddd3c2;--branco:#fffdf8}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--tinta);background:var(--branco);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -24,10 +24,10 @@ h3{font-size:24px;margin:28px 0 10px}
 p{margin:0 0 14px}
 .chapeu{font:500 12px 'IBM Plex Mono';letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:14px}
 section{padding:88px 0;scroll-margin-top:60px}
-.escuro{background:var(--tinta);color:#efe9de}.escuro .chapeu{color:var(--ouro2)}
+.escuro{background:var(--tinta);color:var(--claro)}.escuro .chapeu{color:var(--ouro2)}
 .creme{background:var(--creme)}
 /* aviso e menu */
-.aviso{font-size:13px;text-align:center;padding:8px 16px;background:var(--tinta2);color:#b9b1a3}
+.aviso{font-size:13px;text-align:center;padding:8px 16px;background:var(--tinta2);color:var(--claro)}
 .menu{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
 .menu .faixa{display:flex;align-items:center;gap:22px;height:56px;overflow-x:auto;scrollbar-width:none}
 .menu .faixa::-webkit-scrollbar{display:none}
@@ -49,7 +49,7 @@ section{padding:88px 0;scroll-margin-top:60px}
 .temas{flex-wrap:wrap;overflow:visible}
 }
 /* capa */
-.capa{background:var(--tinta);color:#efe9de;padding:110px 0 120px;position:relative;overflow:hidden}
+.capa{background:var(--tinta);color:var(--claro);padding:110px 0 120px;position:relative;overflow:hidden}
 .capa .chapeu{color:var(--ouro2)}
 .capa h1{font-size:clamp(42px,8vw,84px);max-width:13ch;letter-spacing:-.01em}
 .capa h1 em{display:block;font-style:italic;color:var(--ouro2);font-size:.5em;margin-top:18px}
@@ -59,12 +59,13 @@ section{padding:88px 0;scroll-margin-top:60px}
 /* títulos quebram pelo sentido · S56: .m nunca se parte; o resto equilibra as linhas */
 .capa h1{max-width:none}.m{white-space:nowrap}
 h2,h3{text-wrap:balance}p{text-wrap:pretty}
-.capa p{max-width:56ch;color:#c4c9cf;margin-top:30px}
+/* texto em fundo escuro numa cor só (--claro), sem cinza apagado; dourado de texto um tom mais escuro (4,86:1 no creme) · S56 (achado A5) */
+.capa p{max-width:56ch;color:var(--claro);margin-top:30px}
 .capa .gig{position:absolute;right:-70px;bottom:-20px;width:min(78vw,820px);height:auto;opacity:.13;pointer-events:none}
 .numeros{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:#2c3a47;margin-top:60px;border:1px solid #2c3a47}
 .numeros div{background:var(--tinta);padding:22px 20px}
 .numeros b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:44px;line-height:1;color:var(--ouro2)}
-.numeros span{font-size:14px;color:#a9b0b8}
+.numeros span{font-size:14px;color:var(--claro)}
 /* diagnóstico */
 .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .card{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:24px}
@@ -78,7 +79,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .lista{list-style:none;padding:0;margin:0}
 .lista li{padding:12px 0;border-top:1px solid rgba(127,127,127,.3);font-size:16px}
 .lista li small{display:block;color:var(--cinza);font-size:13px}
-.escuro .lista li small{color:#a9b0b8}
+.escuro .lista li small{color:var(--claro)}
 /* site: dispositivos */
 .alterna{display:inline-flex;border:1px solid var(--tinta);border-radius:40px;padding:4px;margin:6px 0 26px}
 .alterna button{font:600 14px 'IBM Plex Sans';border:0;background:transparent;color:var(--tinta);padding:9px 18px;border-radius:40px;cursor:pointer}
@@ -90,7 +91,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .escolha .alterna{margin:0!important}
 .escolha-rot{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 'IBM Plex Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--ouro,#8a6a33)}
 .escolha-rot .ic-troca{flex:none}
-.escuro .alterna{border-color:var(--ouro2)}.escuro .alterna button{color:#efe9de}.escuro .alterna button[aria-pressed="true"]{background:var(--ouro2);color:var(--tinta2)}
+.escuro .alterna{border-color:var(--ouro2)}.escuro .alterna button{color:var(--claro)}.escuro .alterna button[aria-pressed="true"]{background:var(--ouro2);color:var(--tinta2)}
 .palco{display:flex;justify-content:center}
 .aparelho{background:#0f1822;border-radius:38px;padding:14px;box-shadow:0 30px 60px -30px rgba(15,24,34,.55);transition:width .35s ease}
 .aparelho iframe{display:block;border:0;border-radius:26px;background:#fff;width:100%;height:100%}
@@ -138,13 +139,13 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .barra{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--ouro2);transform:translateX(-50%)}
 .barra::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ouro2);color:var(--tinta2);display:grid;place-items:center;font-size:20px}
 .comparar input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-.rotulos{display:flex;justify-content:space-between;max-width:900px;margin:10px auto 0;font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+.rotulos{display:flex;justify-content:space-between;max-width:900px;margin:10px auto 0;font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--claro)}
 /* precisamos / próximos */
 .passos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .passos li{counter-increment:p;border-top:2px solid var(--ouro2);padding-top:14px;font-size:15.5px}
 .passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
-.rodape{background:var(--tinta2);color:#a9b0b8;padding:40px 0;font-size:14px}
-.rodape b{color:#efe9de;font-weight:500}
+.rodape{background:var(--tinta2);color:var(--claro);padding:40px 0;font-size:14px}
+.rodape b{color:var(--claro);font-weight:500}
 .logo-ativa{display:block;width:max-content;margin-bottom:16px}
 .logo-ativa img{display:block;height:26px;width:auto}
 .perfil-wrap>*,.carrossel>*,.duas>*{min-width:0}
@@ -202,7 +203,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
   <div class="faixa">
     <div class="chapeu">2 · A regra que orienta tudo</div>
     <h2 class="surge linha1">Publicidade informativa, sóbria e verdadeira.</h2>
-    <p class="surge quebra" style="max-width:62ch;color:#c4c9cf"><span class="l">Código de Ética e Disciplina (arts. 39 a 47-A) e Provimento 205/2021 do Conselho Federal,</span> <span class="l">lidos na fonte oficial em 11/11/2026.</span></p>
+    <p class="surge quebra" style="max-width:62ch;color:var(--claro)"><span class="l">Código de Ética e Disciplina (arts. 39 a 47-A) e Provimento 205/2021 do Conselho Federal,</span> <span class="l">lidos na fonte oficial em 11/11/2026.</span></p>
     <div class="duas surge">
       <div><h3>O que fazemos</h3><ul class="lista">
         <li>Explicamos temas jurídicos com a lei citada<small>marketing de conteúdo, Prov. 205, art. 4º</small></li>
