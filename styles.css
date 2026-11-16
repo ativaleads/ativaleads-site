@@ -222,11 +222,15 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 /* Chamada final: bloco arredondado (S50: verde-escuro, era azul profundo) */
 .chamada { background: var(--green-dark); color: #fff; border-radius: 22px; padding: 48px 40px; display: grid; gap: 28px; align-items: center; background-image: radial-gradient(circle at 0% 0%, rgba(0, 191, 99, .22), transparent 45%); }
 .chamada h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
-.chamada p { margin-top: 12px; color: #fff; max-width: 50ch; }
+/* S53 (Operador: "Caminho 2 (enxugar)"): título quebra pelo sentido, nunca onde a largura cair. Computador e tablet: "Converse com a Ana, / a assistente que trabalha / pela sua empresa / 24 horas por dia".
+   Abaixo de 640 px: "Converse com a Ana, / a assistente / que trabalha / pela sua empresa / 24 horas por dia" (br.m), com a letra acompanhando a coluna para "Converse com a Ana," caber numa linha (10,05 em) */
+.chamada h2 br.m { display: none; }
+@media (max-width: 639px) { .chamada > div:first-child { container-type: inline-size; } .chamada h2 { font-size: min(1.9rem, 100cqi / 10.3); } .chamada h2 br.m { display: inline; } }
+.chamada p { margin-top: 12px; color: #fff; max-width: 50ch; text-wrap: balance; }
 .chamada .botao { overflow-wrap: anywhere; }
 .botao-zap { display: inline-flex; align-items: center; gap: 10px; }
 .botao-zap svg { width: 20px; height: 20px; flex-shrink: 0; }
-@media (min-width: 900px) { .chamada { grid-template-columns: 1.3fr 1fr; padding: 56px 56px; } .chamada .acao { justify-self: end; } }
+@media (min-width: 900px) { .chamada { grid-template-columns: 1.3fr 1fr; padding: 56px 56px; } .chamada .acao { justify-self: center; } }
 @media (max-width: 640px) { .chamada { padding: 36px 24px; } }
 
 /* Rodapé (o verde escolhido na S38) */
@@ -496,9 +500,6 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 .ana-av { position: relative; display: block; width: 132px; height: 132px; }
 .ana-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px rgba(0,191,99,.45), 0 24px 44px -22px rgba(0,0,0,.7); }
 .ana-av::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--green-dark); }
-.ana-figura figcaption { display: grid; justify-items: center; gap: 2px; text-align: center; color: #fff; line-height: 1.3; max-width: 100%; }
-.ana-figura figcaption b { font-size: .82rem; font-weight: 800; color: #fff; letter-spacing: .04em; }
-.ana-figura figcaption span { font-size: .74rem; font-weight: 600; }
 /* S47 · cartão da Ana mais visual (Operador: "aqui acho que é mais visual mesmo" → "faz"): à esquerda título, selos do que ela faz e frase curta;
    à direita a Ana trabalhando (foto + exemplo de conversa). "A.N.A. · Agente…" aparece uma vez só, na linha verde. */
 .servico.d-ana { display: grid; grid-template-columns: 1fr; gap: 28px; }
@@ -532,7 +533,8 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 .chamada .ana-av { width: 140px; height: 140px; }
 .ana-acao .botao { white-space: nowrap; justify-content: center; }
 @media (max-width: 399px) { .ana-acao .botao { white-space: normal; } }
-@media (max-width: 899px) { .ana-acao { justify-items: stretch; } .ana-acao .ana-figura { justify-self: center; } .ana-acao .botao { width: 100%; } .chamada .ana-av { width: 104px; height: 104px; } }
+/* S53: empilhado, uma margem só: a foto da Ana (72 px) abre o cartão, à esquerda, acima do título; o botão fecha na largura toda */
+@media (max-width: 899px) { .chamada .ana-acao { display: contents; } .chamada .ana-figura { order: -1; justify-self: start; } .ana-acao .botao { width: 100%; } .chamada .ana-av { width: 72px; height: 72px; } .chamada .ana-av::after { right: 2px; bottom: 2px; width: 14px; height: 14px; box-shadow: 0 0 0 3px var(--green-dark); } }
 
 /* Ajustes S41 (22h24): calendário animado, tela do celular em escala, rolagem do roteiro passo a passo */
 .cel { transition: background .35s, border-color .35s, color .35s, transform .35s; }
