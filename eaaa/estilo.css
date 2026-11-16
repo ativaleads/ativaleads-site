@@ -74,13 +74,13 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .outras{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:8px}
 .outras a{color:var(--destaque);font-weight:600}
 
-:root{--fundo:#ffffff;--texto:#1a2430;--suave:#5a6470;--destaque:#8a6a33;--linha:#e4e1da;--cartao:#ffffff;
---topo-fundo:#141f2b;--topo-texto:#eae5da;--abertura-fundo:#141f2b;--abertura-texto:#f2ede3;
---faixa-fundo:#f3efe7;--faixa-texto:#1a2430;--rodape-fundo:#141f2b;--rodape-texto:#cfc8bb;
---botao-fundo:#c9a66b;--botao-texto:#141f2b;--campo-borda:#cfcac0;--aviso-fundo:#0d151e;--aviso-texto:#b9b1a3;
+:root{--fundo:#ffffff;--texto:#1a2430;--suave:#5a6470;--destaque:#82632e;--linha:#e4e1da;--cartao:#ffffff;
+--topo-fundo:#141f2b;--topo-texto:#ffffff;--abertura-fundo:#141f2b;--abertura-texto:#ffffff;
+--faixa-fundo:#f3efe7;--faixa-texto:#1a2430;--rodape-fundo:#141f2b;--rodape-texto:#ffffff;
+--botao-fundo:#c9a66b;--botao-texto:#141f2b;--campo-borda:#cfcac0;--aviso-fundo:#0d151e;--aviso-texto:#ffffff;
 --f-titulo:'Newsreader',Georgia,serif;--f-texto:'IBM Plex Sans',system-ui,sans-serif;--peso-titulo:400;--raio:4px}
 .topo{border-bottom-color:#26333f}.topo .monograma,.abertura .chapeu{color:#c9a66b;border-color:#c9a66b}
-.abertura{padding:64px 0 96px}.abertura .botao.secundario{color:#f2ede3}
+.abertura{padding:64px 0 96px}.abertura .botao.secundario{color:#ffffff}
 .area{border-top:3px solid #c9a66b}
 /* áreas de atuação · S42 */
 .cab-areas{display:grid;gap:14px;margin-bottom:40px}
@@ -96,11 +96,11 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .area .para{font-family:var(--f-titulo);font-size:19px;line-height:1.35;color:var(--texto);margin:10px 0 22px;max-width:30ch}
 .area ul{margin:0 0 30px}
 .area li{border:0;padding:6px 0 6px 22px;position:relative;font-size:15.5px;line-height:1.45}
-.area li::before{content:"";position:absolute;left:0;top:16px;width:10px;height:1px;background:#8a6a33}
+.area li::before{content:"";position:absolute;left:0;top:16px;width:10px;height:1px;background:#82632e}
 .area .mais{margin:auto -30px 0;padding:18px 30px;border-top:1px solid #e3dccd;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--texto);text-decoration:none;font-size:15px;transition:background .25s ease,color .25s ease}
 .area .mais::after{content:"";position:absolute;inset:0}
-.area .mais span{color:#8a6a33;font-size:18px;transition:transform .25s ease,color .25s ease}
-.area:hover .mais,.area:focus-within .mais{background:#141f2b;color:#f2ede3}
+.area .mais span{color:#82632e;font-size:18px;transition:transform .25s ease,color .25s ease}
+.area:hover .mais,.area:focus-within .mais{background:#141f2b;color:#ffffff}
 .area:hover .mais span,.area:focus-within .mais span{color:#c9a66b;transform:translateX(4px)}
 @media (max-width:420px){.area{padding:30px 22px 0}.area .mais{margin:auto -22px 0;padding:18px 22px}.area .num{font-size:76px}}
 @media (prefers-reduced-motion:reduce){.area,.area .mais,.area .mais span{transition:none}.area:hover,.area:focus-within{transform:none}}
@@ -114,11 +114,11 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .com-capa::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#141f2b 30%,rgba(20,31,43,.86) 46%,rgba(20,31,43,0) 76%)}
 }
 /* contato: cartão do WhatsApp no lugar do formulário · S42 */
-.cartao-whats{align-self:start;background:#141f2b;color:#f2ede3;border-radius:6px;padding:38px 34px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
+.cartao-whats{align-self:start;background:#141f2b;color:#ffffff;border-radius:6px;padding:38px 34px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
 .cartao-whats::before{content:"";position:absolute;left:34px;top:0;width:36px;height:2px;background:#c9a66b}
 .cartao-whats .chapeu{color:#c9a66b;margin:0}
 .cw-titulo{font-family:var(--f-titulo);font-size:clamp(26px,3.4vw,34px);line-height:1.15;margin:0;max-width:16ch}
-.cw-texto{margin:0;color:#cfc8bb;max-width:40ch}
+.cw-texto{margin:0;color:#ffffff;max-width:40ch}
 .cartao-whats .botao{margin-top:10px;display:inline-flex;align-items:center;gap:10px;padding:17px 24px;font-size:16px}
 .cartao-whats .botao span{transition:transform .25s ease}
 .cartao-whats .botao:hover span{transform:translateX(4px)}
@@ -139,17 +139,17 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .cartao-whats::before{display:none}
 .contato h2{margin-bottom:24px}
 /* áreas em xadrez azul-tinta e creme, com ícone · S42 */
-.area .icone{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;border:1px solid #c9a66b;color:#8a6a33;margin-bottom:18px;background:#fff}
+.area .icone{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;border:1px solid #c9a66b;color:#82632e;margin-bottom:18px;background:#fff}
 .area .icone svg{width:24px;height:24px}
 .area h3::before{display:none}
 .area .num{-webkit-text-stroke:1px rgba(138,106,51,.55)}
-.area.escura{background:#141f2b;color:#f2ede3}
+.area.escura{background:#141f2b;color:#ffffff}
 .area.escura .icone{background:transparent;color:#c9a66b}
-.area.escura .para{color:#f2ede3}
+.area.escura .para{color:#ffffff}
 .area.escura li{color:#ddd6c8}
 .area.escura li::before{background:#c9a66b}
 .area.escura .num{-webkit-text-stroke:1px rgba(201,166,107,.5)}
-.area.escura .mais{color:#f2ede3;border-top-color:rgba(242,237,227,.14)}
+.area.escura .mais{color:#ffffff;border-top-color:rgba(242,237,227,.14)}
 .area.escura .mais span{color:#c9a66b}
 .area.escura:hover .mais,.area.escura:focus-within .mais{background:#c9a66b;color:#141f2b}
 .area.escura:hover .mais span,.area.escura:focus-within .mais span{color:#141f2b}
@@ -168,7 +168,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .servicos{display:grid;gap:20px;list-style:none;margin:0;padding:0}
 @media (min-width:760px){.servicos{grid-template-columns:1fr 1fr}.servico:last-child:nth-child(odd){grid-column:1/-1}}
 .servico{background:#f6f2ea;border-radius:6px;padding:28px 28px 30px}
-.servico .snum{display:flex;align-items:center;gap:12px;font-family:var(--f-titulo);font-size:15px;color:#8a6a33;letter-spacing:.06em;margin-bottom:14px}
+.servico .snum{display:flex;align-items:center;gap:12px;font-family:var(--f-titulo);font-size:15px;color:#82632e;letter-spacing:.06em;margin-bottom:14px}
 .servico .snum::after{content:"";width:32px;height:1px;background:#c9a66b}
 .servico h3{font-size:24px;margin-bottom:8px}
 .servico p{margin:0;color:var(--suave);font-size:16px;max-width:60ch}
@@ -185,7 +185,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .lista-faq details[open] summary::after{content:"\2212"}
 .lista-faq details p{margin:0;padding:0 24px 24px;color:var(--suave);font-size:16px;max-width:64ch}
 .cta-sec{padding:72px 0 0}
-.cta-faixa{background:#141f2b;color:#f2ede3;border-radius:6px;padding:38px 30px;display:grid;gap:24px;align-items:center}
+.cta-faixa{background:#141f2b;color:#ffffff;border-radius:6px;padding:38px 30px;display:grid;gap:24px;align-items:center}
 @media (min-width:860px){.cta-faixa{grid-template-columns:1fr auto;padding:48px 52px}}
 .cta-faixa .chapeu{color:#c9a66b;margin:0 0 10px}
 .cta-faixa .cw-titulo{max-width:24ch}
@@ -194,11 +194,11 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .outras-grade{display:grid;gap:16px}
 @media (min-width:760px){.outras-grade{grid-template-columns:repeat(3,1fr)}}
 .outra{display:flex;align-items:center;gap:16px;padding:22px 24px;border:1px solid var(--linha);border-radius:6px;text-decoration:none;color:var(--texto);transition:background .25s ease,color .25s ease,border-color .25s ease}
-.outra .icone{width:48px;height:48px;border-radius:50%;border:1px solid #c9a66b;color:#8a6a33;display:grid;place-items:center;flex:none}
+.outra .icone{width:48px;height:48px;border-radius:50%;border:1px solid #c9a66b;color:#82632e;display:grid;place-items:center;flex:none}
 .outra .icone svg{width:22px;height:22px}
 .outra .onome{font-family:var(--f-titulo);font-size:22px;flex:1}
-.outra .seta{color:#8a6a33;transition:transform .25s ease}
-.outra:hover,.outra:focus-visible{background:#141f2b;color:#f2ede3;border-color:#141f2b}
+.outra .seta{color:#82632e;transition:transform .25s ease}
+.outra:hover,.outra:focus-visible{background:#141f2b;color:#ffffff;border-color:#141f2b}
 .outra:hover .icone,.outra:hover .seta,.outra:focus-visible .icone,.outra:focus-visible .seta{color:#c9a66b}
 .outra:hover .seta{transform:translateX(4px)}
 /* espaço reservado das fotos dos advogados */
@@ -208,16 +208,16 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .pessoa.pendente .foto::before{content:"Foto real";position:absolute;left:0;right:0;bottom:18px;text-align:center;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#c9a66b;opacity:.8}
 .pessoa .pnome{margin-top:4px}
 /* onde estamos: foto do prédio · S42 (foto provisória da construtora; trocar pela do Operador) */
-.local{position:relative;padding:0;background:#141f2b;color:#f2ede3;overflow:hidden;isolation:isolate}
+.local{position:relative;padding:0;background:#141f2b;color:#ffffff;overflow:hidden;isolation:isolate}
 .local-foto{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:28% 50%}
 .local .faixa{padding-top:40px;padding-bottom:60px}
 .local .chapeu{color:#c9a66b}
-.local-texto h2{margin:0 0 14px;color:#f2ede3}
-.local-texto p{color:#cfc8bb;margin:0 0 20px;max-width:40ch}
+.local-texto h2{margin:0 0 14px;color:#ffffff}
+.local-texto p{color:#ffffff;margin:0 0 20px;max-width:40ch}
 .link-claro{display:inline-flex;gap:8px;color:#c9a66b;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .link-claro span{transition:transform .25s ease}
 .link-claro:hover span{transform:translateX(4px)}
-.credito{position:absolute;right:12px;top:10px;margin:0;font-size:11px;letter-spacing:.02em;color:rgba(242,237,227,.75);text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.credito{position:absolute;right:12px;top:10px;margin:0;font-size:11px;letter-spacing:.02em;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,.6)}
 @media (min-width:860px){
 .local{min-height:580px;display:flex;align-items:center}
 .local-foto{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-position:22% 45%;z-index:-2}
@@ -235,20 +235,20 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .rodape .dev a{color:inherit;text-decoration:none;font-weight:600}
 .rodape .dev a:hover{text-decoration:underline}
 /* como o escritório trabalha */
-.metodo{background:#141f2b;color:#f2ede3;padding:88px 0}
+.metodo{background:#141f2b;color:#ffffff;padding:88px 0}
 .metodo-grade{display:grid;gap:36px}
 @media (min-width:860px){.metodo-grade{grid-template-columns:5fr 7fr;gap:72px;align-items:start}}
 .metodo .cab-metodo .chapeu{color:#c9a66b;margin:0 0 18px;font-size:13px;line-height:1.4}
-.metodo .cab-metodo h2{margin:0;color:#f2ede3;font-size:clamp(30px,4vw,44px);line-height:1.12;max-width:14ch}
+.metodo .cab-metodo h2{margin:0;color:#ffffff;font-size:clamp(30px,4vw,44px);line-height:1.12;max-width:14ch}
 .frentes{list-style:none;margin:0;padding:0}
 .frentes li{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:26px 0;border-top:1px solid rgba(201,166,107,.35)}
 .frentes li:last-child{border-bottom:1px solid rgba(201,166,107,.35)}
 .frentes .fn{font-family:var(--f-titulo);font-size:30px;line-height:1;color:#c9a66b}
-.frentes h3{font-size:26px;margin:0 0 8px;color:#f2ede3}
-.metodo .frentes p{margin:0;font-size:16.5px;line-height:1.6;color:#cfc8bb;max-width:52ch}
+.frentes h3{font-size:26px;margin:0 0 8px;color:#ffffff}
+.metodo .frentes p{margin:0;font-size:16.5px;line-height:1.6;color:#ffffff;max-width:52ch}
 /* capa com o Geon (foto provisória da construtora) · S42 */
 .com-capa .capa-geon{aspect-ratio:4/3;object-position:24% 50%}
-.credito-capa{position:absolute;right:12px;bottom:10px;top:auto;left:auto;margin:0;font-size:11px;color:rgba(242,237,227,.75);text-shadow:0 1px 2px rgba(0,0,0,.6);z-index:1}
+.credito-capa{position:absolute;right:12px;bottom:10px;top:auto;left:auto;margin:0;font-size:11px;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,.6);z-index:1}
 @media (max-width:859px){
 .com-capa{display:block;padding:64px 0 72px}
 .com-capa .capa-geon{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;margin:0;object-position:25% 50%;z-index:-2;-webkit-mask-image:none;mask-image:none}
@@ -295,12 +295,12 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .contatos li:nth-child(2),.contatos li:nth-child(3){align-items:center;text-align:center}
 .contatos li:nth-child(4){align-items:flex-end;text-align:right}}
 .contatos li{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-top:18px;border-top:1px solid var(--linha)}
-.contatos .icone{width:34px;height:34px;border-radius:50%;border:1px solid #c9a66b;color:#8a6a33;display:grid;place-items:center;margin-bottom:6px}
+.contatos .icone{width:34px;height:34px;border-radius:50%;border:1px solid #c9a66b;color:#82632e;display:grid;place-items:center;margin-bottom:6px}
 .contatos .icone svg{width:17px;height:17px}
-.contatos .rot{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8a6a33;font-weight:600}
+.contatos .rot{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#82632e;font-weight:600}
 .contatos .val{font-size:15.5px;line-height:1.5;color:var(--texto);text-decoration:none}
-.contatos a.val:hover{color:#8a6a33;text-decoration:underline}
-.link-mini{font-size:14px;font-weight:600;color:#8a6a33;text-decoration:none;margin-top:auto;padding-top:12px}
+.contatos a.val:hover{color:#82632e;text-decoration:underline}
+.link-mini{font-size:14px;font-weight:600;color:#82632e;text-decoration:none;margin-top:auto;padding-top:12px}
 .contatos li{height:100%}
 @media (max-width:639px){
 .contatos{gap:0}
@@ -319,7 +319,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .area{min-height:290px}
 .area .para{max-width:none;margin-bottom:28px}
 .meta-area{font-size:13px;letter-spacing:.03em;color:var(--suave);margin:0 0 24px}
-.area.escura .meta-area{color:#b9b1a3}
+.area.escura .meta-area{color:#ffffff}
 @media (max-width:759px){
 .grade-areas{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;gap:12px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
 .grade-areas::-webkit-scrollbar{display:none}
@@ -338,7 +338,7 @@ h2{margin-bottom:20px}
 /* o escritório: quem somos + advogados · S42 */
 .sobre{display:grid;gap:18px;margin-bottom:44px}
 @media (min-width:860px){.sobre{grid-template-columns:5fr 7fr;gap:72px;align-items:start}}
-.sobre .chapeu{color:#8a6a33;margin:0 0 14px}
+.sobre .chapeu{color:#82632e;margin:0 0 14px}
 .sobre h2{margin:0}
 .sobre-texto p{margin:0 0 14px;font-size:16.5px;line-height:1.65;color:var(--suave);max-width:62ch}
 .sobre-texto p:first-child{font-family:var(--f-titulo);font-size:clamp(20px,2vw,24px);line-height:1.4;color:var(--texto)}
@@ -349,16 +349,16 @@ html{scroll-padding-top:84px}
 nav.menu-pc{display:none}
 details.menu-cel summary{list-style:none;cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(201,166,107,.55);border-radius:4px}
 details.menu-cel summary::-webkit-details-marker{display:none}
-details.menu-cel summary{color:#eae5da}
+details.menu-cel summary{color:#ffffff}
 .ic-fechar{display:none}
 details[open] .ic-abrir{display:none}
 details[open] .ic-fechar{display:block}
 nav.menu-painel{position:absolute;left:0;right:0;top:100%;display:flex;flex-direction:column;gap:0;background:#141f2b;border-top:1px solid #26333f;padding:6px 20px 26px;box-shadow:0 22px 34px -20px rgba(0,0,0,.7)}
-.menu-painel a:not(.botao),.menu-painel a:not(:last-child){display:block;color:#f2ede3;text-decoration:none;font-family:var(--f-titulo);font-size:22px;padding:15px 0;border-bottom:1px solid #26333f}
+.menu-painel a:not(.botao),.menu-painel a:not(:last-child){display:block;color:#ffffff;text-decoration:none;font-family:var(--f-titulo);font-size:22px;padding:15px 0;border-bottom:1px solid #26333f}
 .menu-painel .botao{display:block;margin-top:22px;text-align:center}
 @media (min-width:860px){
 nav.menu-pc{display:flex;align-items:center;gap:30px;font-size:14.5px}
-.menu-pc a{position:relative;color:#eae5da;text-decoration:none;padding:8px 0}
+.menu-pc a{position:relative;color:#ffffff;text-decoration:none;padding:8px 0}
 .menu-pc a:not(.menu-whats)::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:#c9a66b;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
 .menu-pc a:not(.menu-whats):hover::after,.menu-pc a:not(.menu-whats):focus-visible::after{transform:scaleX(1)}
 .menu-pc a:not(.menu-whats):hover{color:#fff}
@@ -389,3 +389,5 @@ a.botao:has(.ic-wa){display:inline-flex;align-items:center;justify-content:cente
 @media (min-width:860px) and (max-width:959px){nav.menu-pc{display:none}details.menu-cel{display:block}}
 /* celular estreito: o botão da faixa ocupa a largura e cabe numa linha */
 @media (max-width:400px){.cta-faixa{padding:32px 22px}.cta-faixa .botao{width:100%;padding:17px 18px}}
+/* texto em fundo escuro numa cor só, sem opacidade · S56 (achado A5) */
+.lead{opacity:1}
