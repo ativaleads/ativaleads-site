@@ -192,7 +192,9 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .cta-faixa .cw-texto{margin-top:10px}
 .cta-faixa .botao{display:inline-flex;align-items:center;gap:10px;padding:17px 24px;font-size:16px;justify-self:start}
 .outras-grade{display:grid;gap:16px}
-@media (min-width:760px){.outras-grade{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:760px){.outras-grade{display:flex;flex-wrap:wrap} /* S56 (A7): 3 lado a lado quando cabem; com letra grande descem de linha em vez de vazar */
+.outras-grade .outra{flex:1 1 0;min-width:max-content}
+@media (max-width:859px){.outras-grade .outra{flex-basis:100%}}}
 .outra{display:flex;align-items:center;gap:16px;padding:22px 24px;border:1px solid var(--linha);border-radius:6px;text-decoration:none;color:var(--texto);transition:background .25s ease,color .25s ease,border-color .25s ease}
 .outra .icone{width:48px;height:48px;border-radius:50%;border:1px solid #c9a66b;color:#82632e;display:grid;place-items:center;flex:none}
 .outra .icone svg{width:22px;height:22px}
@@ -247,16 +249,16 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .frentes h3{font-size:26px;margin:0 0 8px;color:#ffffff}
 .metodo .frentes p{margin:0;font-size:16.5px;line-height:1.6;color:#ffffff;max-width:52ch}
 /* capa com o Geon (foto provisória da construtora) · S42 */
-.com-capa .capa-geon{aspect-ratio:4/3;object-position:24% 50%}
+.com-capa .capa-geon{aspect-ratio:4/3;object-position:50% 50%} /* S56: foto do Operador (retrato) */
 .credito-capa{position:absolute;right:12px;bottom:10px;top:auto;left:auto;margin:0;font-size:11px;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,.6);z-index:1}
 @media (max-width:859px){
 .com-capa{display:block;padding:64px 0 72px}
-.com-capa .capa-geon{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;margin:0;object-position:25% 50%;z-index:-2;-webkit-mask-image:none;mask-image:none}
+.com-capa .capa-geon{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;margin:0;object-position:50% 50%;z-index:-2;-webkit-mask-image:none;mask-image:none}
 .com-capa::before{content:"";display:block;position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,31,43,.62) 0%,rgba(20,31,43,.78) 45%,rgba(20,31,43,.9) 100%)}
 .credito-capa{top:auto;bottom:8px;right:10px}
 }
 @media (min-width:860px){
-.com-capa .capa-geon{width:50%;aspect-ratio:auto;object-position:13% 50%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
+.com-capa .capa-geon{width:50%;aspect-ratio:auto;object-position:50% 58%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
 .com-capa .faixa > .lead{max-width:520px}
 .com-capa h1 .l,.com-capa .lead .l{display:block;white-space:nowrap}
 .com-capa h1:has(.l){font-size:clamp(40px,4.4vw,56px);max-width:none}
