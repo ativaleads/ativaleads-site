@@ -398,7 +398,19 @@ a.botao:has(.ic-wa){display:inline-flex;align-items:center;justify-content:cente
 .insta .cab-sec .chapeu{margin:0 0 10px;text-transform:none;letter-spacing:.02em}
 .insta-grade{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 @media (min-width:760px){.insta-grade{grid-template-columns:repeat(4,1fr);gap:20px}}
-.insta-grade img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:4px;border:1px solid var(--linha)}
+/* carrosséis: arrastar no celular, setas e contador (Operador: "só faltou o arrasta ou setinha para ver os carrosséis") */
+.carrossel{position:relative}
+.trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;border-radius:4px;border:1px solid var(--linha)}
+.trilho::-webkit-scrollbar{display:none}
+.trilho:focus-visible{outline:2px solid #c9a66b;outline-offset:2px}
+.trilho img{flex:0 0 100%;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start;scroll-snap-stop:always}
+.carrossel .seta{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;padding:0;border:0;border-radius:50%;background:#fff;color:#141f2b;box-shadow:0 2px 10px rgba(0,0,0,.28);font:400 24px/1 var(--f-titulo);display:grid;place-items:center;cursor:pointer;transition:opacity .2s ease,background .2s ease}
+.carrossel .seta span{margin-top:-3px}
+.carrossel .seta:hover{background:#c9a66b;color:#141f2b}
+.carrossel .seta:disabled{opacity:0;pointer-events:none}
+.carrossel .ant{left:8px}.carrossel .prox{right:8px}
+.carrossel .contador{position:absolute;top:8px;right:8px;padding:2px 8px;border-radius:999px;background:#fff;color:#141f2b;box-shadow:0 1px 6px rgba(0,0,0,.2);font-size:11.5px;font-weight:600;line-height:1.5;letter-spacing:.04em}
+@media (max-width:759px){.carrossel .seta{width:28px;height:28px;font-size:20px}.carrossel .ant{left:5px}.carrossel .prox{right:5px}}
 .insta .insta-link{display:inline-flex;align-items:center;gap:10px;margin-top:28px;color:var(--texto);border-color:var(--texto)}
 .insta .insta-link:hover{background:#141f2b;border-color:#141f2b;color:#fff}
 .ic-ig{width:1.15em;height:1.15em;flex:none}
