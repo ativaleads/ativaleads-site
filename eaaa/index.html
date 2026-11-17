@@ -204,7 +204,7 @@
     </div>
   </section>
 
-  <script>document.querySelectorAll(".carrossel").forEach(function(c){var t=c.querySelector(".trilho"),a=c.querySelector(".ant"),p=c.querySelector(".prox"),n=c.querySelector(".contador"),tot=t.children.length;function at(){var i=Math.round(t.scrollLeft/t.clientWidth);n.textContent=(i+1)+"/"+tot;a.disabled=i<=0;p.disabled=i>=tot-1;}a.addEventListener("click",function(){t.scrollBy({left:-t.clientWidth,behavior:"smooth"});});p.addEventListener("click",function(){t.scrollBy({left:t.clientWidth,behavior:"smooth"});});t.addEventListener("scroll",function(){requestAnimationFrame(at);},{passive:true});at();});</script>
+  <script>document.querySelectorAll(".carrossel").forEach(function(c){var t=c.querySelector(".trilho"),a=c.querySelector(".ant"),p=c.querySelector(".prox"),n=c.querySelector(".contador"),tot=t.children.length,alvo=null;function idx(){return Math.round(t.scrollLeft/t.clientWidth);}function mostra(i){n.textContent=(i+1)+"/"+tot;a.disabled=i<=0;p.disabled=i>=tot-1;}function vai(d){var base=alvo!==null?alvo:idx();alvo=Math.max(0,Math.min(tot-1,base+d));mostra(alvo);t.scrollTo({left:alvo*t.clientWidth,behavior:"smooth"});}a.addEventListener("click",function(){vai(-1);});p.addEventListener("click",function(){vai(1);});t.addEventListener("scroll",function(){if(alvo!==null&&Math.abs(t.scrollLeft-alvo*t.clientWidth)<2)alvo=null;if(alvo===null)mostra(idx());},{passive:true});t.addEventListener("scrollend",function(){alvo=null;mostra(idx());});window.addEventListener("resize",function(){alvo=null;mostra(idx());});mostra(0);});</script>
 
   <section class="contato" id="contato" aria-labelledby="t-contato">
     <div class="faixa">
