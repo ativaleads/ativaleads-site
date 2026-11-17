@@ -1,3 +1,6 @@
+/* fontes servidas pelo próprio site, cortadas para as letras e pesos usados · S61 (Operador: "gostaria de no minimo 98") */
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400 500;font-display:swap;src:url(fonts/newsreader.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/plex.woff2) format('woff2')}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--fundo);color:var(--texto);font-family:var(--f-texto);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
