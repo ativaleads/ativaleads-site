@@ -74,7 +74,16 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .card .rot{font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}
 .card h3{margin:8px 0 8px;font-size:22px}
 .card p{font-size:15.5px;color:#3d4650;margin:0}
-.alerta{background:#fbf3ea;border-left:3px solid #a8834a;padding:18px 22px;margin:26px 0 0;font-size:16px}
+.alerta{display:grid;grid-template-columns:26px minmax(0,1fr);gap:0 16px;background:#fbf3ea;border:1px solid #efdcc4;border-left:4px solid #b45f1a;border-radius:4px;padding:22px 24px;margin:28px 0 0;font-size:16px} /* S61: alerta com sinal e links (Operador: "coloca um sinal de alerta e os links do site atual, e formata mais bonito") */
+.alerta-ic{width:26px;height:26px;color:#b45f1a}
+.alerta p{margin:0;max-width:74ch}
+.alerta .alerta-tit{margin:2px 0 8px;font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9a4f12}
+.alerta-links{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.alerta-links li{display:flex;flex-direction:column;gap:4px;min-width:0;background:#fff;border:1px solid #efdcc4;border-radius:4px;padding:12px 14px}
+.alerta-links span{font-size:14px;line-height:1.4;color:var(--tinta)}
+.alerta-links a{font:500 13px/1.45 'IBM Plex Mono',monospace;color:#9a4f12;overflow-wrap:break-word;text-underline-offset:3px}
+.alerta-links .ext{display:inline-block;vertical-align:-1px;margin-left:4px}
+@media (max-width:600px){.alerta{grid-template-columns:minmax(0,1fr);padding:20px 18px}.alerta-ic{margin-bottom:10px}.alerta-links{grid-template-columns:minmax(0,1fr)}}
 /* regra */
 .duas{display:grid;gap:28px}
 @media(min-width:820px){.duas{grid-template-columns:1fr 1fr}}
@@ -194,7 +203,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
   <div class="faixa">
     <div class="chapeu">Ativaleads · novembro de 2026</div>
     <h1><span class="m">Site e</span> <span class="m">redes sociais</span><em><span class="m">Emilson Antunes e</span> <span class="m">Advogados Associados</span></em></h1>
-    <p class="quebra"><span class="l">O que existe hoje, como pode ficar e o que precisamos do escritório para seguir.</span> <span class="l">Tudo dentro da regra de publicidade da OAB.</span></p>
+    <p class="quebra"><span class="l">O que existe hoje, como pode ficar e o que precisamos do escritório para seguir.</span></p>
     <p class="pergunta">Quanto custa não ser achado pelo cliente certo?</p>
     <p class="achado">No Google, quem busca “advogado tributário Tatuapé” vê três escritórios do bairro, com 103 a 144 avaliações cada, e não vê o Emilson Antunes. O mesmo vale para trabalhista, empresarial e “escritório de advocacia Tatuapé”.<small>Primeira página do Google, busca feita em 17/11/2026 com localização no Tatuapé.</small></p>
     <div class="numeros">
@@ -218,7 +227,19 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
       <div class="card"><div class="rot">Instagram</div><h3>Público sem conteúdo</h3><p>6.683 seguidores e nenhuma publicação visível. É o canal com mais gente esperando.</p></div>
       <div class="card"><div class="rot">Google</div><h3>Perfil sem dono</h3><p>Aparece como não reivindicado, sem avaliações, só com a foto da fachada e horário de sexta diferente do site.</p></div>
     </div>
-    <div class="alerta surge"><b>Para resolver já:</b> o site atual ainda mantém publicadas, com o nome do escritório, páginas de demonstração do tema (perfis e depoimentos de exemplo: <a href="https://eaaa.com.br/lawyer/william-stiller/" target="_blank" rel="noopener noreferrer">um perfil</a>, <a href="https://eaaa.com.br/testimonial/tyrion-lannister/" target="_blank" rel="noopener noreferrer">um depoimento</a>) e frases como "os melhores profissionais" e "entre as melhores no mercado". A regra da OAB exige informação verdadeira e veda autoelogio (Provimento 205/2021, arts. 1º, 3º e 6º).</div>
+    <div class="alerta surge" role="note">
+      <svg class="alerta-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <div>
+        <p class="alerta-tit">Para resolver já</p>
+        <p>O site atual ainda mostra, com o nome do escritório, páginas de demonstração do tema e frases de autoelogio. A OAB exige informação verdadeira e veda o autoelogio (Provimento 205/2021, arts.&nbsp;1º, 3º e&nbsp;6º).</p>
+        <ul class="alerta-links">
+          <li><span>Perfil de advogado de exemplo do tema</span><a href="https://eaaa.com.br/lawyer/william-stiller/" target="_blank" rel="noopener noreferrer">eaaa.com.br/<wbr>lawyer/<wbr>william-stiller<svg class="ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+          <li><span>Depoimento de exemplo do tema</span><a href="https://eaaa.com.br/testimonial/tyrion-lannister/" target="_blank" rel="noopener noreferrer">eaaa.com.br/<wbr>testimonial/<wbr>tyrion-lannister<svg class="ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+          <li><span>“contamos com os melhores profissionais”</span><a href="https://eaaa.com.br/" target="_blank" rel="noopener noreferrer">eaaa.com.br · página inicial<svg class="ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+          <li><span>“entre as melhores no mercado”</span><a href="https://eaaa.com.br/servicos/" target="_blank" rel="noopener noreferrer">eaaa.com.br/<wbr>servicos<svg class="ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
