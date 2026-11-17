@@ -258,7 +258,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .credito-capa{top:auto;bottom:8px;right:10px}
 }
 @media (min-width:860px){
-.com-capa .capa-geon{width:50%;aspect-ratio:auto;object-position:50% 60%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
+.com-capa .capa-geon{width:auto;max-width:50%;aspect-ratio:10/9;object-position:50% 60%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
 .com-capa .faixa > .lead{max-width:520px}
 .com-capa h1 .l,.com-capa .lead .l{display:block;white-space:nowrap}
 .com-capa h1:has(.l){font-size:clamp(40px,4.4vw,56px);max-width:none}
