@@ -185,6 +185,17 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .capa .achado+.numeros{margin-top:28px}
 .capa .pergunta+.numeros{margin-top:24px}
 .psi .pergunta{margin:8px 0 10px}
+/* S61: botão de baixar a proposta de valores no fim (Operador: "fim da página, baixar"; sem e-mail e sem senha: "se não for automático não rola") */
+.pedir{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;background:var(--tinta);color:var(--claro);border-radius:4px;padding:28px 32px}
+.pedir p{margin:0;max-width:54ch}
+.pedir .pedir-tit{font-family:'Newsreader',Georgia,serif;font-size:26px;line-height:1.2;margin:0 0 6px}
+.pedir-botoes{display:flex;flex-wrap:wrap;gap:12px}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:40px;font:600 15px/1.2 'IBM Plex Sans',system-ui,sans-serif;text-decoration:none;white-space:nowrap}
+.bt svg{width:18px;height:18px;flex:none}
+.bt-cheio{background:var(--ouro2);color:var(--tinta2);border:1px solid var(--ouro2)}
+.bt:hover{filter:brightness(1.06)}
+.bt:focus-visible{outline:2px solid var(--ouro2);outline-offset:3px}
+@media (max-width:600px){.pedir{padding:24px 20px}.pedir-botoes,.bt{width:100%}}
 </style>
 </head>
 <body>
@@ -420,6 +431,15 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
       <li>Sessão de fotos e revisão dos textos e das leis citadas pelo escritório.</li>
       <li>Site no ar, CRM ligado e Instagram retomado com as primeiras publicações.</li>
     </ol>
+    <div class="pedir surge">
+      <div>
+        <p class="pedir-tit">Proposta de valores</p>
+        <p>Implantação e os dois pacotes mensais, em PDF.</p>
+      </div>
+      <div class="pedir-botoes">
+        <a class="bt bt-cheio" href="Proposta_Ativaleads_EAAA.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Baixar o PDF</a>
+      </div>
+    </div>
   </div>
 </section>
 </main>
