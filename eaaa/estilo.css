@@ -257,7 +257,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 @media (max-width:859px){
 .com-capa{display:block;padding:64px 0 72px}
 .com-capa .capa-geon{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;margin:0;object-position:50% 50%;z-index:-2;-webkit-mask-image:none;mask-image:none}
-.com-capa::before{content:"";display:block;position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,31,43,.62) 0%,rgba(20,31,43,.78) 45%,rgba(20,31,43,.9) 100%)}
+.com-capa::before{content:"";display:block;position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,31,43,.48) 0%,rgba(20,31,43,.64) 45%,rgba(20,31,43,.84) 100%)} /* S61: véu do celular mais claro (Operador: "tá muito escura" → opção A, 48% a 84%; era 62% a 90%) */
 .credito-capa{top:auto;bottom:8px;right:10px}
 }
 @media (min-width:860px){
