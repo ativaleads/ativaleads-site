@@ -1,4 +1,4 @@
-// Testes do checkout (S68) sem rede: Mercado Pago, e-mail e KV simulados.
+// Testes do checkout (checkout MP) sem rede: Mercado Pago, e-mail e KV simulados.
 // Rodar: node --test testes/checkout/
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -136,7 +136,7 @@ test('documentos, códigos e preços', () => {
 test('/api/precos mostra a tabela do servidor', async () => {
   const r = await (await precos({ env: { MP_ACCESS_TOKEN: 'x', CHECKOUT: kvFalso() } })).json();
   assert.equal(r.implantacao.valor, 4997);
-  assert.deepEqual(r.pacotes.map((p) => p.mensal), [497, 597, 797]);
+  assert.deepEqual(r.pacotes.map((p) => p.mensal), [497, 597, 897]);
   assert.equal(r.teste, true);
 });
 
@@ -228,11 +228,11 @@ test('ponta a ponta simulada: implantação aprovada → assinatura → webhooks
   x = await assinar({ request: post(`${origem}/api/assinar`, { contrato: c, token: 'tokenrecusado00000000', email: 'fin@exemplo.com' }), env });
   assert.equal(x.status, 402);
 
-  // Assinatura com valor da tabela (797), sem preço vindo do navegador.
+  // Assinatura com valor da tabela (897), sem preço vindo do navegador.
   x = await assinar({ request: post(`${origem}/api/assinar`, { contrato: c, token: 'tokencartao0000000001', email: 'fin@exemplo.com', valor: 1 }), env });
   assert.equal(x.status, 200);
   const pre = Object.values(s.assinaturas)[0];
-  assert.equal(pre._pedido.auto_recurring.transaction_amount, 797);
+  assert.equal(pre._pedido.auto_recurring.transaction_amount, 897);
   assert.equal(pre._pedido.status, 'authorized');
   assert.equal(pre._pedido.external_reference, `${c}-mens`);
   // Segunda tentativa de assinar: não cria outra.
@@ -245,7 +245,7 @@ test('ponta a ponta simulada: implantação aprovada → assinatura → webhooks
   assert.match(s.emails.at(-1).subject, /Assinatura ATIVA/);
 
   // Parcela recusada (fatura em recycling) → aviso na 1ª recusa.
-  s.faturas['901'] = { id: 901, preapproval_id: pre.id, status: 'recycling', retry_attempt: 1, transaction_amount: 797, payment: { id: 555, status: 'rejected', status_detail: 'cc_rejected_insufficient_amount' }, next_retry_date: '2026-12-19T12:00:00.000-03:00' };
+  s.faturas['901'] = { id: 901, preapproval_id: pre.id, status: 'recycling', retry_attempt: 1, transaction_amount: 897, payment: { id: 555, status: 'rejected', status_detail: 'cc_rejected_insufficient_amount' }, next_retry_date: '2026-12-19T12:00:00.000-03:00' };
   await webhook({ request: reqWebhook({ tipo: 'subscription_authorized_payment', id: 901 }), env });
   assert.match(s.emails.at(-1).subject, /Mensalidade RECUSADA \(tentativa 1\)/);
 
@@ -323,7 +323,7 @@ test('conferir: webhook perdido é recuperado e implantação sem assinatura ger
   assert.equal(s.emails.length, 2);
 });
 
-test('valores de exibição batem com a tabela da S66', () => {
+test('valores de exibição batem com a tabela (S66 + Social + Tráfego R$ 897)', () => {
   assert.equal(IMPLANTACAO.valor, 4997);
-  assert.deepEqual(['social', 'trafego', 'social_trafego'].map((k) => pacote(k).mensal), [497, 597, 797]);
+  assert.deepEqual(['social', 'trafego', 'social_trafego'].map((k) => pacote(k).mensal), [497, 597, 897]);
 });

@@ -1,6 +1,7 @@
 // Tabela de preços do checkout da Ativaleads. É a ÚNICA fonte de valor:
 // o navegador manda só o código do pacote, nunca o preço.
-// Decisão do Operador em 17/11/2026 (S68): os valores da S66.
+// Decisão do Operador em 17/11/2026: valores da S66, com Social + Tráfego em R$ 897
+// ("social + trafeco vai par R$ 897", fala dele na S67; antes R$ 797).
 // Mudar preço = mudar este arquivo, revisar e publicar.
 
 export const IMPLANTACAO = {
@@ -30,13 +31,13 @@ export const PACOTES = {
     codigo: 'social_trafego',
     titulo: 'Social + Tráfego',
     descricao: 'Gestão de redes sociais e de tráfego pago',
-    mensal: 797.0,
+    mensal: 897.0,
   },
 };
 
 // Dias entre a assinatura e a 1ª mensalidade. 0 = o Mercado Pago cobra a 1ª
 // parcela cerca de 1 hora depois de criar a assinatura (documentação F4).
-// Decisão em aberto do Operador; ver ativaleads-ana/sessoes/S68.md.
+// Decisão em aberto do Operador; ver ativaleads-ana/sessoes/S_checkout_mp.md.
 export const INICIO_MENSALIDADE_DIAS = 0;
 
 // Meios excluídos do Checkout Pro da implantação. "ticket" = boleto (fica dias

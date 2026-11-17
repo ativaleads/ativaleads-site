@@ -1,4 +1,4 @@
-/* Checkout da Ativaleads (S68). Complementa o styles.css do site. */
+/* Checkout da Ativaleads (checkout MP). Complementa o styles.css do site. */
 .ck { max-width: 760px; }
 .ck .abre { margin-bottom: 8px; }
 .ck-passos { display: flex; gap: 8px; margin: 18px 0 28px; font-size: .9rem; font-weight: 700; color: var(--muted); }

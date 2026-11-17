@@ -1,4 +1,4 @@
-// Checkout da Ativaleads (S68). Sem dependências; o cartão é digitado no campo seguro do
+// Checkout da Ativaleads (checkout MP). Sem dependências; o cartão é digitado no campo seguro do
 // Mercado Pago (Card Payment Brick), que devolve só um token de uso único.
 (function () {
   'use strict';

@@ -5,7 +5,7 @@
 //  2. Implantação aprovada sem assinatura há mais de LEMBRETE_DIAS → lembrete ao Operador
 //     (no máximo um por dia por contrato).
 // Sem CONFERIR_TOKEN no ambiente a rota não existe (404). Quem chama: um agendador
-// (pendente; Pages Functions não têm cron). Ver ativaleads-ana/sessoes/S68.md.
+// (pendente; Pages Functions não têm cron). Ver ativaleads-ana/sessoes/S_checkout_mp.md.
 
 import { json, erro, iguais } from '../_lib/util.js';
 import { criarCliente, resumoErro } from '../_lib/mp.js';
