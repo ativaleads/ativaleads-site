@@ -242,7 +242,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 .rodape h2 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
 .rodape ul { display: grid; gap: 8px; }
 .rodape-fim { border-top: 1px solid rgba(255,255,255,.22); padding-block: 28px 26px; display: grid; justify-items: center; gap: 14px; text-align: center; }
-.rodape .rodape-fim img { width: 69px; } /* S47: 135 → 108 → 86 → 69 px (Operador pediu -20% três vezes) */
+.rodape .rodape-fim img { width: 83px; } /* S47: 135 → 108 → 86 → 69 px (Operador pediu -20% três vezes); S53: 69 → 83 px (+20%, Operador: "aumenta um pouco o logo do rodape") */
 .rodape-legal { font-size: .8rem; }
 /* S53 (Operador: "Caminho 2 (enxugar)"): o rodapé não repete a página. Saiu a lista de 8 serviços (7 iam para a mesma seção); ficam "Navegação"
    (os links do menu do topo + Privacidade e Termos) e "Contato", com o ícone do WhatsApp como nos botões. A linha da empresa quebra pelo sentido
