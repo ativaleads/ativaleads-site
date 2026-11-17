@@ -69,7 +69,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .numeros b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:44px;line-height:1;color:var(--ouro2)}
 .numeros span{font-size:14px;color:var(--claro)}
 /* diagnóstico */
-.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
 .card{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:24px}
 .card .rot{font:500 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}
 .card h3{margin:8px 0 8px;font-size:22px}
@@ -147,9 +147,17 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .passos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:1fr}@media (min-width:560px){.passos{grid-template-columns:repeat(2,1fr)}}@media (min-width:1000px){.passos{grid-template-columns:repeat(4,1fr)}} /* S56: 4, 2+2 ou 1, nunca um passo sozinho na fileira */
 .passos li{counter-increment:p;border-top:2px solid var(--ouro2);padding-top:14px;font-size:15.5px}
 .passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
-.rodape{background:var(--tinta2);color:var(--claro);padding:40px 0;font-size:14px}
+.rodape{background:var(--tinta2);color:var(--claro);padding:56px 0 40px;font-size:14px;border-top:3px solid var(--ouro2)} /* S61: rodapé refeito (Operador: "antes melhora o rodapé") */
+.rodape p{margin:0}
+.rod-topo{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;padding-bottom:28px;border-bottom:1px solid #2c3a47}
+.rod-para{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.3;text-align:right;text-wrap:balance}
+.rod-para span{display:block;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro2);margin-top:8px}
+.rod-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 40px;padding-top:22px;font-size:13px;line-height:1.5}
+.rod-base p:last-child{max-width:52ch;text-align:right}
+@media (min-width:1000px){.rod-base p:first-child{flex:0 0 auto;white-space:nowrap}}
+@media (max-width:999px){.rod-topo,.rod-base{flex-direction:column;align-items:flex-start}.rod-para,.rod-base p:last-child{text-align:left}}
 .rodape b{color:var(--claro);font-weight:500}
-.logo-ativa{display:block;width:max-content;margin-bottom:16px}
+.logo-ativa{display:block;width:max-content;line-height:0}
 .logo-ativa img{display:block;height:26px;width:auto}
 .perfil-wrap>*,.carrossel>*,.duas>*{min-width:0}
 @media (max-width:899px){.perfil-wrap,.carrossel{grid-template-columns:minmax(0,1fr)}}
@@ -159,7 +167,16 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .surge{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .surge.visto{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.surge{opacity:1;transform:none}.trilho,.aparelho{transition:none}html{scroll-behavior:auto}}
-/* comparativo PageSpeed · S61 (Operador: "faz um pagespeedy do site atual deles e dos nossos como comparativo") */.psi{margin-top:56px;padding-top:40px;border-top:1px solid var(--linha)}.psi h3{margin:6px 0 24px;font-size:clamp(22px,2.6vw,28px)}.psi-grade{display:grid;gap:16px}@media (min-width:760px){.psi-grade{grid-template-columns:1fr 1fr}}.psi-col{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:24px}.psi-col.novo{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro) inset}.psi-nome{margin:0 0 18px;font-weight:600;font-size:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.psi-nome small{font-weight:400;font-size:14px;color:var(--cinza)}.psi-notas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;font-size:13px;line-height:1.3;color:var(--cinza)}.psi-notas li{display:flex;flex-direction:column;align-items:center;gap:8px}.nota{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:4px solid;font:600 19px/1 'IBM Plex Mono',monospace}.nota.bom{border-color:#0c6;color:#080;background:#e9fbf1}.nota.med{border-color:#fa3;color:#c33300;background:#fff6e9}.nota.ruim{border-color:#f33;color:#c00;background:#ffecec}.psi-tempo{margin:20px 0 0;padding-top:16px;border-top:1px solid var(--linha);font-size:15px}.psi-tempo b{font-size:20px;margin-right:4px}.psi-pc{margin:6px 0 0;font-size:14px;color:var(--cinza)}.psi .rot{font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}.psi-pc a{color:var(--ouro);white-space:nowrap}.psi-nota{margin:16px 0 0;font-size:13.5px;color:var(--cinza);max-width:72ch}@media (max-width:420px){.nota{width:46px;height:46px;font-size:16px;border-width:3px}.psi-col{padding:18px}.psi-notas{font-size:12px;gap:4px}}.psi-grade>*{min-width:0}@media (max-width:360px){.psi-notas{grid-template-columns:repeat(2,1fr);row-gap:16px}}</style>
+/* comparativo PageSpeed · S61 (Operador: "faz um pagespeedy do site atual deles e dos nossos como comparativo") */.psi{margin-top:56px;padding-top:40px;border-top:1px solid var(--linha)}.psi h3{margin:6px 0 24px;font-size:clamp(22px,2.6vw,28px)}.psi-grade{display:grid;gap:16px}@media (min-width:760px){.psi-grade{grid-template-columns:1fr 1fr}}.psi-col{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:24px}.psi-col.novo{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro) inset}.psi-nome{margin:0 0 18px;font-weight:600;font-size:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.psi-nome small{font-weight:400;font-size:14px;color:var(--cinza)}.psi-notas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;font-size:13px;line-height:1.3;color:var(--cinza)}.psi-notas li{display:flex;flex-direction:column;align-items:center;gap:8px}.nota{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:4px solid;font:600 19px/1 'IBM Plex Mono',monospace}.nota.bom{border-color:#0c6;color:#080;background:#e9fbf1}.nota.med{border-color:#fa3;color:#c33300;background:#fff6e9}.nota.ruim{border-color:#f33;color:#c00;background:#ffecec}.psi-tempo{margin:20px 0 0;padding-top:16px;border-top:1px solid var(--linha);font-size:15px}.psi-tempo b{font-size:20px;margin-right:4px}.psi-pc{margin:6px 0 0;font-size:14px;color:var(--cinza)}.psi .rot{font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}.psi-pc a{color:var(--ouro);white-space:nowrap}.psi-nota{margin:16px 0 0;font-size:13.5px;color:var(--cinza);max-width:72ch}@media (max-width:420px){.nota{width:46px;height:46px;font-size:16px;border-width:3px}.psi-col{padding:18px}.psi-notas{font-size:12px;gap:4px}}.psi-grade>*{min-width:0}@media (max-width:360px){.psi-notas{grid-template-columns:repeat(2,1fr);row-gap:16px}}/* S61: perguntas ao escritório, em segunda pessoa (Operador: "Quanto custa não ser achado pelo cliente certo?") */
+.pergunta{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:clamp(21px,2.4vw,27px);line-height:1.3;margin:0 0 22px;max-width:30ch;padding-left:16px;border-left:3px solid var(--ouro);text-wrap:balance}
+.escuro .pergunta,.capa .pergunta{border-left-color:var(--ouro2);color:var(--claro)}
+.capa .pergunta{margin:56px 0 0}
+.capa .achado{max-width:62ch;margin:14px 0 0 19px;font-size:16px;color:var(--claro);text-wrap:pretty}
+.capa .achado small{display:block;margin-top:6px;font-size:13px}
+.capa .achado+.numeros{margin-top:28px}
+.capa .pergunta+.numeros{margin-top:24px}
+.psi .pergunta{margin:8px 0 10px}
+</style>
 </head>
 <body>
 <div class="aviso" role="note">Proposta da Ativaleads, para conversa com o escritório. Nada foi publicado em nome do escritório.</div>
@@ -167,8 +184,8 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 <nav class="menu" aria-label="Seções">
   <div class="faixa">
     <b>Emilson Antunes · proposta</b>
-    <a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#seguir">Próximos passos</a>
-    <details class="menu-cel"><summary>Seções <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="menu-painel"><a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#seguir">Próximos passos</a></div></details>
+    <a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a>
+    <details class="menu-cel"><summary>Seções <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="menu-painel"><a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a></div></details>
   </div>
 </nav>
 
@@ -178,6 +195,8 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
     <div class="chapeu">Ativaleads · novembro de 2026</div>
     <h1><span class="m">Site e</span> <span class="m">redes sociais</span><em><span class="m">Emilson Antunes e</span> <span class="m">Advogados Associados</span></em></h1>
     <p class="quebra"><span class="l">O que existe hoje, como pode ficar e o que precisamos do escritório para seguir.</span> <span class="l">Tudo dentro da regra de publicidade da OAB.</span></p>
+    <p class="pergunta">Quanto custa não ser achado pelo cliente certo?</p>
+    <p class="achado">No Google, quem busca “advogado tributário Tatuapé” vê três escritórios do bairro, com 103 a 144 avaliações cada, e não vê o Emilson Antunes. O mesmo vale para trabalhista, empresarial e “escritório de advocacia Tatuapé”.<small>Primeira página do Google, busca feita em 17/11/2026 com localização no Tatuapé.</small></p>
     <div class="numeros">
       <div><b>6.683</b><span>seguidores no Instagram, que hoje não mostra nenhuma publicação</span></div>
       <div><b>4 anos</b><span>sem publicação no Facebook (a última é de outubro de 2022)</span></div>
@@ -191,6 +210,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 <section id="hoje">
   <div class="faixa">
     <div class="chapeu">1 · O que existe hoje</div>
+    <p class="pergunta surge">O que o cliente encontra quando te pesquisa?</p>
     <h2 class="surge linha1">Quatro canais, nenhum trabalhando a favor do escritório.</h2>
     <div class="cards surge">
       <div class="card"><div class="rot">Site</div><h3>Tema pronto de 2016</h3><p>Editado pela última vez em 2020. Nenhum advogado aparece, textos genéricos e repetidos, sem descrição para o Google, pesado no celular.</p></div>
@@ -239,6 +259,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
     <p style="text-align:center"><a class="abrir" href="../index.html">Abrir o protótipo em tela cheia &rarr;</a></p>
     <div class="psi">
       <div class="rot">PageSpeed Insights do Google · 17/11/2026</div>
+      <p class="pergunta">Quanto tempo o cliente espera antes de ir para o próximo?</p>
       <h3>Velocidade e qualidade: site atual × site novo</h3>
       <div class="psi-grade">
       <div class="psi-col"><p class="psi-nome">Site atual<small>eaaa.com.br</small></p>
@@ -262,6 +283,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
     <div class="tela-ig" aria-label="Simulação do perfil no Instagram"><div tabindex="0"><img src="img/feed.jpg?v=s42" alt="Simulação do perfil @emilsonantunes_aa com doze publicações em formatos diferentes" loading="lazy"></div></div>
     <div>
       <div class="chapeu">4 · Instagram e Facebook</div>
+      <p class="pergunta surge">O que 6,7 mil seguidores viram de você nos últimos anos?</p>
       <h2 class="surge"><span class="m">Retomar o perfil</span> <span class="m">que já tem</span> <span class="m">6,7 mil seguidores.</span></h2>
       <p>Em vez de criar outro perfil, o escritório continua no mesmo endereço, <b>@emilsonantunes_aa</b>, com os 6,7 mil seguidores. Mudam três coisas que aparecem no perfil: o nome em destaque passa a ser "Emilson Antunes Advogados", a categoria passa a ser "Escritório de advocacia" e a bio é a de baixo. A partir daí, <b>de duas a quatro publicações por semana</b> (o primeiro mês é de acerto do tom), sempre com stories de apoio. O Facebook recebe a mesma peça e passa a se chamar "Emilson Antunes e Advogados Associados".</p>
       <p class="bio-prop"><small>Bio proposta</small>Emilson Antunes Advogados · Escritório de advocacia<br>Consultoria e contencioso: tributário, trabalhista, empresarial e civil<br>OAB/SP 5.120 · eaaa.com.br</p>
@@ -283,6 +305,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 <section id="carrosseis">
   <div class="faixa">
     <div class="chapeu">5 · Seis carrosséis prontos</div>
+    <p class="pergunta surge">Que dúvida o seu cliente leva ao Google antes de te ligar?</p>
     <h2 class="surge linha1">Temas que o escritório já tratou, refeitos.</h2>
     <div class="controles">
       <p class="quebra" style="margin:0;max-width:52ch"><span class="l">Duas direções visuais, mesma paleta e mesma letra.</span> <span class="l">Toque em X ou em Y para trocar o carrossel abaixo.</span></p>
@@ -310,6 +333,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 <section id="antes" class="escuro">
   <div class="faixa">
     <div class="chapeu">6 · Antes e depois</div>
+    <p class="pergunta surge">Qual dos dois você mostraria a um cliente novo?</p>
     <h2 class="surge linha1">Arraste para comparar.</h2>
     <div class="comparar" id="comparar">
       <img src="img/fb_antes.jpg" alt="Publicações antigas do Facebook, de 2021" loading="lazy">
@@ -325,6 +349,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
   <div class="faixa duas">
     <div>
       <div class="chapeu">7 · Google</div>
+      <p class="pergunta surge">Quem cuida do seu nome no Google?</p>
       <h2 class="surge">O primeiro contato de muita gente.</h2>
       <ul class="lista">
         <li>Reivindicar o perfil<small>feito pelo próprio escritório</small></li>
@@ -343,27 +368,45 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
         <li>Fotos da recepção, das salas e das pessoas<small>a capa do site já usa uma foto do Edifício Geon</small></li>
         <li>Logotipo em arquivo vetorial<small>o site usa o arquivo publicado no site atual</small></li>
         <li>Acesso ao Facebook, ao Instagram, ao Google e ao painel do site</li>
+        <li>Quem atende os novos contatos<small>e registra no CRM se fechou ou não</small></li>
         <li>Quem aprova os textos e quais temas querem em destaque</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section id="seguir" class="creme">
+<section id="crm" class="creme">
   <div class="faixa">
-    <div class="chapeu">9 · Próximos passos</div>
+    <div class="chapeu">9 · CRM do escritório</div>
+    <h2 class="surge linha1">Do primeiro contato ao cliente.</h2>
+    <p class="surge" style="max-width:62ch;margin:0 0 28px">Montado na implantação: cada contato que chega pelo WhatsApp, telefone, site ou redes fica registrado, sem o conteúdo do caso. As respostas a estas quatro perguntas vêm todo mês no relatório.</p>
+    <div class="cards surge">
+      <div class="card"><div class="rot">Entrada</div><h3>Quem chega?</h3><p>Nome, data e área do direito de cada contato, com quem atendeu.</p></div>
+      <div class="card"><div class="rot">Origem</div><h3>De onde?</h3><p>Google, Instagram, anúncio, site ou indicação, marcado no primeiro contato.</p></div>
+      <div class="card"><div class="rot">Fechamento</div><h3>Quem fecha?</h3><p>Quantos viraram clientes, por área, por origem e por advogado.</p></div>
+      <div class="card"><div class="rot">Perda</div><h3>Por que não fecha?</h3><p>O motivo anotado: área que o escritório não atende, honorários, sem retorno ou outro escritório.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="seguir">
+  <div class="faixa">
+    <div class="chapeu">10 · Próximos passos</div>
     <h2 class="surge linha1">Do esboço ao ar.</h2>
     <ol class="passos">
       <li>Conversa para escolher a direção visual e responder o que falta.</li>
       <li>Relatório estratégico apresentado em reunião: diagnóstico, linha editorial e calendário dos três primeiros meses.</li>
       <li>Sessão de fotos e revisão dos textos e das leis citadas pelo escritório.</li>
-      <li>Site no ar e Instagram retomado com as primeiras publicações.</li>
+      <li>Site no ar, CRM ligado e Instagram retomado com as primeiras publicações.</li>
     </ol>
   </div>
 </section>
 </main>
 
-<footer class="rodape"><div class="faixa"><a class="logo-ativa" href="https://ativaleads.com.br/" rel="noopener"><img src="img/ativaleads-branco.webp" width="160" height="26" alt="Ativaleads"></a><b>Ativaleads</b> · proposta elaborada para Emilson Antunes e Advogados Associados · novembro de 2026.<br>Esboço para conversa. Textos legais devem ser revisados pelo escritório antes de qualquer publicação.</div></footer>
+<footer class="rodape"><div class="faixa">
+  <div class="rod-topo"><a class="logo-ativa" href="https://ativaleads.com.br/" rel="noopener"><img src="img/ativaleads-branco.webp" width="160" height="26" alt="Ativaleads"></a><p class="rod-para">Proposta para Emilson Antunes e Advogados Associados<span>Novembro de 2026</span></p></div>
+  <div class="rod-base"><p>Ativaleads Consultoria em Marketing Digital · CNPJ 52.788.441/0001-01</p><p>Esboço para conversa. Textos legais devem ser revisados pelo escritório antes de qualquer publicação.</p></div>
+</div></footer>
 
 <script>
 (function(){
