@@ -410,7 +410,7 @@ a.botao:has(.ic-wa){display:inline-flex;align-items:center;justify-content:cente
 .trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;border-radius:4px;border:1px solid var(--linha)}
 .trilho::-webkit-scrollbar{display:none}
 .trilho:focus-visible{outline:2px solid #c9a66b;outline-offset:2px}
-.trilho img{flex:0 0 100%;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start;scroll-snap-stop:always}
+.trilho{background:#e9e3d8}.trilho img{flex:0 0 100%;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start;scroll-snap-stop:always}
 .carrossel .seta{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;padding:0;border:0;border-radius:50%;background:#fff;color:#141f2b;box-shadow:0 2px 10px rgba(0,0,0,.28);font:400 24px/1 var(--f-titulo);display:grid;place-items:center;cursor:pointer;transition:opacity .2s ease,background .2s ease}
 .carrossel .seta span{margin-top:-3px}
 .carrossel .seta:hover{background:#c9a66b;color:#141f2b}
