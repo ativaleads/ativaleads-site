@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Ativaleads · Novidades a caminho</title>
-<meta name="description" content="Ativaleads Consultoria em Marketing Digital. Novidades a caminho.">
+<title>Ativaleads · Estamos virando a página</title>
+<meta name="description" content="Ativaleads Consultoria em Marketing Digital. Estamos virando a página. A próxima é sua.">
 <link rel="icon" href="/favicon.ico?v=2" sizes="16x16 32x32">
 <link rel="icon" href="/assets/favicon.png?v=2" type="image/png">
 <style>
@@ -37,14 +37,17 @@ body { background: #007A3F radial-gradient(circle at 50% 40%, rgba(0,191,99,.32)
   background: linear-gradient(100deg, transparent 35%, rgba(0,191,99,.9) 50%, transparent 65%) no-repeat; background-size: 40% 100%; background-position: -60% 0;
   animation: brilho 5s ease-in-out 2.4s infinite; }
 h1, .contato { animation: aparece .7s ease 1.9s both; }
-.pontos span { animation: ponto 1.4s ease-in-out infinite; }
-.pontos span:nth-child(2) { animation-delay: .2s; } .pontos span:nth-child(3) { animation-delay: .4s; }
-@keyframes ponto { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
 @keyframes foca { from { opacity: 0; filter: blur(10px); transform: scale(.96); } }
 @keyframes desenha { from { clip-path: inset(0 99.5% 0 0); } to { clip-path: inset(0 83% 0 0); } }
 @keyframes estala { from { opacity: 0; transform: scale(0) rotate(-45deg); } }
 @keyframes brilho { 0% { background-position: -60% 0; } 30%, 100% { background-position: 160% 0; } }
 @keyframes aparece { from { opacity: 0; transform: translateY(10px); } }
+
+/* S63: frase nova no lugar de "Novidades a caminho..." (Operador: "12, pode publicar"): "Estamos virando a página. A próxima é sua.".
+   Até 700 px cada frase vai numa linha (quebra pelo sentido); sem os três pontos. */
+h1 { text-wrap: balance; }
+.quebra { display: inline; }
+@media (max-width: 700px) { .quebra { display: block; } }
 </style>
 </head>
 <body>
@@ -56,8 +59,7 @@ h1, .contato { animation: aparece .7s ease 1.9s both; }
     <img class="l-check" src="/assets/logo/anim-2026/check.webp?v=2" alt="">
     <span class="brilho" aria-hidden="true"></span>
   </div>
-  <h1>Novidades a caminho<span class="pontos" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></h1>
-  <p class="contato"><a href="mailto:contato@ativaleads.com.br">contato@ativaleads.com.br</a></p>
+  <h1>Estamos virando a página. <span class="quebra">A próxima é sua.</span></h1>  <p class="contato"><a href="mailto:contato@ativaleads.com.br">contato@ativaleads.com.br</a></p>
 </main>
 <footer>Ativaleads Consultoria em Marketing Digital LTDA · CNPJ 52.788.441/0001-01 · São Paulo/SP</footer>
 </body>
