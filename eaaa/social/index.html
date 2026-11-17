@@ -159,7 +159,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .surge{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .surge.visto{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.surge{opacity:1;transform:none}.trilho,.aparelho{transition:none}html{scroll-behavior:auto}}
-</style>
+/* comparativo PageSpeed · S61 (Operador: "faz um pagespeedy do site atual deles e dos nossos como comparativo") */.psi{margin-top:56px;padding-top:40px;border-top:1px solid var(--linha)}.psi h3{margin:6px 0 24px;font-size:clamp(22px,2.6vw,28px)}.psi-grade{display:grid;gap:16px}@media (min-width:760px){.psi-grade{grid-template-columns:1fr 1fr}}.psi-col{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:24px}.psi-col.novo{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro) inset}.psi-nome{margin:0 0 18px;font-weight:600;font-size:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.psi-nome small{font-weight:400;font-size:14px;color:var(--cinza)}.psi-notas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;font-size:13px;line-height:1.3;color:var(--cinza)}.psi-notas li{display:flex;flex-direction:column;align-items:center;gap:8px}.nota{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:4px solid;font:600 19px/1 'IBM Plex Mono',monospace}.nota.bom{border-color:#0c6;color:#080;background:#e9fbf1}.nota.med{border-color:#fa3;color:#c33300;background:#fff6e9}.nota.ruim{border-color:#f33;color:#c00;background:#ffecec}.psi-tempo{margin:20px 0 0;padding-top:16px;border-top:1px solid var(--linha);font-size:15px}.psi-tempo b{font-size:20px;margin-right:4px}.psi-pc{margin:6px 0 0;font-size:14px;color:var(--cinza)}.psi .rot{font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}.psi-pc a{color:var(--ouro);white-space:nowrap}.psi-nota{margin:16px 0 0;font-size:13.5px;color:var(--cinza);max-width:72ch}@media (max-width:420px){.nota{width:46px;height:46px;font-size:16px;border-width:3px}.psi-col{padding:18px}.psi-notas{font-size:12px;gap:4px}}.psi-grade>*{min-width:0}@media (max-width:360px){.psi-notas{grid-template-columns:repeat(2,1fr);row-gap:16px}}</style>
 </head>
 <body>
 <div class="aviso" role="note">Proposta da Ativaleads, para conversa com o escritório. Nada foi publicado em nome do escritório.</div>
@@ -237,6 +237,23 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
     </div></div>
     <div class="palco"><div class="aparelho cel" id="aparelho"><div class="vidro"><iframe src="../index.html" title="Protótipo do site novo" loading="lazy"></iframe></div></div></div>
     <p style="text-align:center"><a class="abrir" href="../index.html">Abrir o protótipo em tela cheia &rarr;</a></p>
+    <div class="psi">
+      <div class="rot">PageSpeed Insights do Google · 17/11/2026</div>
+      <h3>Velocidade e qualidade: site atual × site novo</h3>
+      <div class="psi-grade">
+      <div class="psi-col"><p class="psi-nome">Site atual<small>eaaa.com.br</small></p>
+        <ul class="psi-notas"><li><span class="nota med">58</span>Desempenho</li><li><span class="nota bom">98</span>Acessibilidade</li><li><span class="nota med">77</span>Boas práticas</li><li><span class="nota bom">92</span>SEO</li></ul>
+        <p class="psi-tempo"><b>9,8 s</b> para mostrar o conteúdo principal no celular</p>
+        <p class="psi-pc">No computador: 80 · 91 · 77 · 92 · <a href="https://pagespeed.web.dev/analysis/https-eaaa-com-br/rp05j6qs6f?form_factor=mobile" rel="noopener">ver relatório</a></p>
+      </div>
+      <div class="psi-col novo"><p class="psi-nome">Site novo<small>proposta</small></p>
+        <ul class="psi-notas"><li><span class="nota bom">94</span>Desempenho</li><li><span class="nota bom">100</span>Acessibilidade</li><li><span class="nota bom">100</span>Boas práticas</li><li><span class="nota med">66*</span>SEO</li></ul>
+        <p class="psi-tempo"><b>3,0 s</b> para mostrar o conteúdo principal no celular</p>
+        <p class="psi-pc">No computador: 100 · 100 · 100 · 66* · <a href="https://pagespeed.web.dev/analysis/https-ativaleads-com-br-eaaa/t3cs5ifs51?form_factor=mobile" rel="noopener">ver relatório</a></p>
+      </div>
+      </div>
+      <p class="psi-nota">Notas do celular, de 0 a 100. *O SEO fica em 66 só porque a proposta está fechada para o Google de propósito; no domínio do escritório, sem esse bloqueio, o item passa.</p>
+    </div>
   </div>
 </section>
 
