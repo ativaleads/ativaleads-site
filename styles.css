@@ -70,6 +70,7 @@ html { scroll-padding-top: var(--topo-h, 86px); }
 @media (min-width: 960px) { .abertura-in > div:first-child { container-type: inline-size; } .abertura h1 { font-size: min(2.85rem, 100cqi / 12.6); } .abertura h1 .linha { white-space: nowrap; } }
 .abertura .lead { margin-top: 22px; max-width: 54ch; font-size: clamp(1.05rem, 1.5vw, 1.18rem); color: var(--muted); }
 .acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (max-width: 640px) { .abertura .acoes { justify-content: center; } } /* S53 (Operador, com captura da capa no celular: "centraliza esse botão no celular"): só o botão vai ao centro; etiqueta, título e frase seguem à esquerda */
 @media (min-width: 960px) { .abertura-in { grid-template-columns: 1.05fr 1fr; gap: 56px; } }
 
 /* Faixa de destaques (S50: verde-escuro, era azul profundo) */
