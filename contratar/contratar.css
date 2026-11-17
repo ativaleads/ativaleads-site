@@ -1,0 +1,37 @@
+/* Checkout da Ativaleads (S68). Complementa o styles.css do site. */
+.ck { max-width: 760px; }
+.ck .abre { margin-bottom: 8px; }
+.ck-passos { display: flex; gap: 8px; margin: 18px 0 28px; font-size: .9rem; font-weight: 700; color: var(--muted); }
+.ck-passos span { padding: 6px 12px; border-radius: 999px; background: var(--gray); }
+.ck-passos .ativo { background: var(--green-dark); color: #fff; }
+.ck-passos .feito { background: var(--tint); color: var(--green-dark); }
+.ck form { display: grid; gap: 18px; }
+.ck fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
+.ck legend { font-weight: 800; margin-bottom: 8px; padding: 0; }
+.ck-pacote { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 12px; align-items: center; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer; }
+.ck-pacote:has(input:checked) { border-color: var(--green-dark); background: var(--tint); }
+.ck-pacote input { accent-color: var(--green-dark); width: 18px; height: 18px; margin: 0; }
+.ck-pacote b { font-size: 1.05rem; }
+.ck-pacote small { grid-column: 2; color: var(--muted); font-size: .92rem; }
+.ck-pacote .preco { grid-row: 1 / span 2; grid-column: 3; font-weight: 800; white-space: nowrap; }
+.ck label.campo { display: grid; gap: 6px; font-weight: 700; font-size: .95rem; }
+.ck input[type=text], .ck input[type=email] { font: inherit; font-weight: 500; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px; width: 100%; background: #fff; color: var(--ink); }
+.ck input[type=text]:focus, .ck input[type=email]:focus { border-color: var(--green-dark); outline: none; box-shadow: 0 0 0 3px var(--tint); }
+.ck .aceite { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; font-size: .95rem; }
+.ck .aceite input { width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--green-dark); }
+.ck-resumo { background: var(--gray); border-radius: 12px; padding: 16px 18px; display: grid; gap: 6px; }
+.ck-resumo div { display: flex; justify-content: space-between; gap: 12px; }
+.ck-resumo b { white-space: nowrap; }
+.ck-nota { font-size: .9rem; color: var(--muted); }
+.ck-erro { color: #a1261b; font-weight: 700; min-height: 1.4em; }
+.ck-teste { background: #fff3cd; color: #5c4400; border-radius: 10px; padding: 10px 14px; font-weight: 700; font-size: .95rem; margin-bottom: 16px; }
+.ck button.botao { border: 0; cursor: pointer; font-family: inherit; }
+.ck button.botao[disabled] { opacity: .6; cursor: wait; }
+.ck-ok { background: var(--tint); border-radius: 12px; padding: 16px 18px; font-weight: 700; color: var(--green-dark); }
+#ck-cartao { margin-top: 8px; }
+[hidden] { display: none !important; }
+@media (max-width: 560px) {
+  .ck-pacote { grid-template-columns: auto 1fr; }
+  .ck-pacote .preco { grid-row: auto; grid-column: 2; }
+  .ck-resumo div { flex-direction: column; gap: 0; }
+}

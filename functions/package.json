@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "Pages Functions do checkout da Ativaleads (Mercado Pago). Sem dependências: só fetch e Web Crypto."
+}
