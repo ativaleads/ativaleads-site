@@ -11,8 +11,10 @@ import {
 } from '../_lib/contratos.js';
 
 const VALIDADE_PREF_H = 72;
+// Sobe quando o formato da preferência muda: preferências antigas deixam de ser reaproveitadas.
+const VERSAO_PREF = 2;
 
-function preferencia(c, origem, docObj) {
+function preferencia(c, origem, docObj, teste) {
   const pk = pacote(c.pacote);
   const [primeiro, ...resto] = c.cliente.nome.split(' ');
   const volta = (p) => `${origem}/contratar/${p}/?c=${c.codigo}`;
@@ -27,7 +29,9 @@ function preferencia(c, origem, docObj) {
       currency_id: 'BRL',
       unit_price: IMPLANTACAO.valor,
     }],
-    payer: {
+    // Em teste o pagador é o comprador de teste logado no Mercado Pago; mandar o e-mail do
+    // formulário faz o MP recusar ("e-mail corporativo do Mercado Livre", medido em 17/11/2026).
+    payer: teste ? undefined : {
       name: primeiro,
       surname: resto.join(' ') || undefined,
       email: c.cliente.email,
@@ -128,19 +132,19 @@ export async function onRequestPost({ request, env }) {
 
   // Reaproveita a preferência ainda válida (duplo clique, voltar e clicar de novo).
   const pref = c.implantacao && c.implantacao.preferencia;
-  if (pref && pref.expira && Date.parse(pref.expira) - Date.now() > 3600e3 && pref.origem === origem) {
+  if (pref && pref.versao === VERSAO_PREF && pref.expira && Date.parse(pref.expira) - Date.now() > 3600e3 && pref.origem === origem) {
     await gravarContrato(env, c);
     return json({ ok: true, situacao: 'pagar', contrato: c.codigo, url: pref.url });
   }
 
   try {
-    const p = preferencia(c, origem, docObj);
+    const p = preferencia(c, origem, docObj, env.MP_MODO !== 'producao');
     const tentativa = (c.implantacao.tentativas || 0) + 1;
     const r = await mp.criarPreferencia(p, `${c.codigo}-impl-${tentativa}`);
     c.implantacao = {
       ...c.implantacao,
       tentativas: tentativa,
-      preferencia: { id: r.id, url: r.init_point, expira: p.expiration_date_to, origem },
+      preferencia: { id: r.id, url: r.init_point, expira: p.expiration_date_to, origem, versao: VERSAO_PREF },
     };
     anotar(c, `preferência ${r.id} criada`);
     await gravarContrato(env, c);
