@@ -1,0 +1,4 @@
+# Cabeçalhos da Cloudflare Pages.
+# O PDF da proposta da EAAA abre pelo botão da /eaaa/social/, mas não deve aparecer em busca.
+/eaaa/social/Proposta_Ativaleads_EAAA.pdf
+  X-Robots-Tag: noindex, nofollow
