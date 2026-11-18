@@ -59,12 +59,17 @@ ol.conf b{display:block;font-size:18px;margin-bottom:2px}
 ol.conf span{color:var(--suave);font-size:16px}
 .resposta{background:var(--card);border:2px solid var(--amar);border-radius:12px;padding:20px 22px;margin-top:8px}
 .resposta p{margin:0}
-/* rodapé no padrão do site (Operador 18/11: "use nosso padrão para o rodapé, logo razao social"): verde da marca, logo branco e linha legal */
-footer{background:#007A3F;color:#fff;padding:34px 0 40px;font-family:Barlow,system-ui,sans-serif}
-footer .fim{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
-footer img{width:180px;height:auto}
-footer .legal{margin:0;font-size:14px;line-height:1.5}
-footer .legal .sep{opacity:.7}
+/* rodapé copiado de ativaleads-clientes/ativaleads/RODAPE_PADRAO.md (Operador 18/11: "use nosso padrão para o rodapé, logo razao social");
+   tudo em branco puro, sem opacity no separador; largura acompanha a coluna desta página (1080 px, 16 px de lado) */
+.rodape-padrao{background:#007A3F;color:#fff;padding:34px 0 40px}
+.rodape-padrao-fim{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
+.rodape-padrao img{width:180px;height:auto;display:block}
+.rodape-padrao-legal{margin:0;font-size:14px;line-height:1.5;color:#fff}
+@media (max-width:639px){
+  .rodape-padrao-fim{flex-direction:column;text-align:center}
+  .rodape-padrao-legal>span:not(.sep){display:block;text-wrap:balance}
+  .rodape-padrao-legal .sep{display:none}
+}
 </style>
 </head>
 <body>
@@ -72,7 +77,7 @@ footer .legal .sep{opacity:.7}
 
 <header class="capa">
   <div class="faixa">
-    <div class="chapeu">Flow Vila Matilde · Black Friday</div>
+    <div class="chapeu">Flow Vila Matilde</div>
     <h1>Black Friday<br>do <span class="amar">Flow</span></h1>
     <p>Maike, aqui estão os 2 Reels e o carrossel da campanha. Assista, passe os cartões e me diga se aprova ou o que muda.</p>
     <div class="oferta"><span>De</span> <s>R$ 529.500</s> <span>por</span> <b>R$ 469.500</b> <span>até 30/11/2026 · 2 dorms com suíte · 46&nbsp;m² · vaga coberta</span></div>
@@ -124,10 +129,9 @@ footer .legal .sep{opacity:.7}
 <section>
   <div class="faixa">
     <div class="chapeu">Antes de ir para a Meta</div>
-    <h2>Preciso que você confirme</h2>
+    <h2>Preciso da sua atenção aqui</h2>
     <ol class="conf">
       <li><b>A oferta</b><span>R$ 469.500 até 30/11/2026, nas unidades HMP 506, 606, 706 e 707 (R$ 529.500 na tabela de novembro). Se o anúncio precisar citar a regra de renda do HMP, me avise.</span></li>
-      <li><b>O registro da incorporação</b><span>Usamos "R.2 da matrícula 220.067, 7º CRI de São Paulo", do book. O site da REV3 mostra "R.05 da matrícula 197.838, 16º CRI". Qual vale?</span></li>
       <li><b>A entrega</b><span>"Entrega prevista para o 1º semestre de 2027", como previsão da incorporadora.</span></li>
       <li><b>As imagens</b><span>Uso da sua foto, do logo do Flow e das imagens do book nos anúncios.</span></li>
     </ol>
@@ -142,10 +146,10 @@ footer .legal .sep{opacity:.7}
   </div>
 </section>
 
-<footer>
-  <div class="faixa fim">
-    <a href="/ativaleads/" aria-label="Ativaleads"><img src="/assets/logo/ativaleads-2026-branco-300.webp?v=2" alt="Ativaleads" width="300" height="49"></a>
-    <p class="legal"><span>Ativaleads Consultoria em Marketing Digital LTDA</span><span class="sep"> · </span><span>CNPJ 52.788.441/0001-01</span><span class="sep"> · </span><span>São Paulo/SP</span></p>
+<footer class="rodape-padrao">
+  <div class="rodape-padrao-fim">
+    <a href="/ativaleads/" aria-label="Ativaleads"><img src="/assets/logo/ativaleads-2026-branco-300.webp?v=2" alt="Ativaleads" width="300" height="49" loading="lazy"></a>
+    <p class="rodape-padrao-legal"><span>Ativaleads Consultoria em Marketing Digital LTDA</span><span class="sep"> · </span><span>CNPJ 52.788.441/0001-01</span><span class="sep"> · </span><span>São Paulo/SP</span></p>
   </div>
 </footer>
 <script>
