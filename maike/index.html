@@ -39,10 +39,19 @@ section{padding:56px 0;border-top:1px solid var(--linha)}
 .reel h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;text-transform:uppercase;margin:14px 0 2px}
 .reel p{margin:0;color:var(--suave);font-size:16px}
 .dica{color:var(--suave);font-size:15px;margin:0 0 16px}
-.carrossel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;-webkit-overflow-scrolling:touch}
-.carrossel figure{flex:0 0 min(84%,420px);margin:0;scroll-snap-align:start}
-.carrossel img{width:100%;aspect-ratio:4/5;border-radius:10px}
-.carrossel figcaption{font-size:14px;color:var(--suave);margin-top:8px}
+/* carrossel 1 a 1, como no Instagram (Operador 18/11: "O Carrossel pode ser em carrossel mesmo 1 a 1?") */
+.car{position:relative;max-width:520px}
+.carrossel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;border-radius:12px}
+.carrossel::-webkit-scrollbar{display:none}
+.carrossel figure{flex:0 0 100%;margin:0;scroll-snap-align:center}
+.carrossel img{width:100%;aspect-ratio:4/5}
+.car .seta{position:absolute;top:calc(50% - 34px);transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:24px;line-height:44px;cursor:pointer}
+.car .seta:disabled{opacity:.25;cursor:default}
+.car .ant{left:10px}.car .prox{right:10px}
+.pontos{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:14px}
+.pontos button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:#555;cursor:pointer}
+.pontos button[aria-current="true"]{background:var(--amar);width:11px;height:11px}
+.legenda-car{text-align:center;color:var(--suave);font-size:15px;margin-top:8px}
 ol.conf{margin:18px 0 0;padding:0;list-style:none;counter-reset:c;display:grid;gap:14px}
 ol.conf li{counter-increment:c;background:var(--card);border-radius:10px;padding:16px 18px 16px 62px;position:relative}
 ol.conf li::before{content:counter(c);position:absolute;left:16px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--verm);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
@@ -50,8 +59,12 @@ ol.conf b{display:block;font-size:18px;margin-bottom:2px}
 ol.conf span{color:var(--suave);font-size:16px}
 .resposta{background:var(--card);border:2px solid var(--amar);border-radius:12px;padding:20px 22px;margin-top:8px}
 .resposta p{margin:0}
-footer{padding:36px 0 44px;border-top:1px solid var(--linha);color:#fff;font-size:14px}
-footer img{width:150px;margin-bottom:10px}
+/* rodapé no padrão do site (Operador 18/11: "use nosso padrão para o rodapé, logo razao social"): verde da marca, logo branco e linha legal */
+footer{background:#007A3F;color:#fff;padding:34px 0 40px;font-family:Barlow,system-ui,sans-serif}
+footer .fim{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
+footer img{width:180px;height:auto}
+footer .legal{margin:0;font-size:14px;line-height:1.5}
+footer .legal .sep{opacity:.7}
 </style>
 </head>
 <body>
@@ -60,8 +73,8 @@ footer img{width:150px;margin-bottom:10px}
 <header class="capa">
   <div class="faixa">
     <div class="chapeu">Flow Vila Matilde · Black Friday</div>
-    <h1>Maike, a campanha<br>está <span class="amar">pronta</span>.</h1>
-    <p>São 2 Reels e 1 carrossel. Assista, passe os cartões e me responda se aprova ou o que muda.</p>
+    <h1>Black Friday<br>do <span class="amar">Flow</span></h1>
+    <p>Maike, aqui estão os 2 Reels e o carrossel da campanha. Assista, passe os cartões e me diga se aprova ou o que muda.</p>
     <div class="oferta"><span>De</span> <s>R$ 529.500</s> <span>por</span> <b>R$ 469.500</b> <span>até 30/11/2026 · 2 dorms com suíte · 46&nbsp;m² · vaga coberta</span></div>
   </div>
 </header>
@@ -90,14 +103,20 @@ footer img{width:150px;margin-bottom:10px}
   <div class="faixa">
     <div class="chapeu">Carrossel · 6 cartões</div>
     <h2>1 carrossel</h2>
-    <p class="dica">Arraste para o lado para ver todos.</p>
-    <div class="carrossel">
-      <figure><img src="midia/cartao1.jpg?v=1" alt="Cartão 1: Black Friday no Flow, de R$ 529.500 por R$ 469.500" loading="lazy"><figcaption>1 · Capa</figcaption></figure>
-      <figure><img src="midia/cartao2.jpg?v=1" alt="Cartão 2: cerca de 500 m do metrô Vila Matilde" loading="lazy"><figcaption>2 · Metrô</figcaption></figure>
-      <figure><img src="midia/cartao3.jpg?v=1" alt="Cartão 3: 46,62 m² com suíte e varanda gourmet" loading="lazy"><figcaption>3 · Planta</figcaption></figure>
-      <figure><img src="midia/cartao4.jpg?v=1" alt="Cartão 4: piscina, fitness e espaço multiúso no 2º andar" loading="lazy"><figcaption>4 · Lazer</figcaption></figure>
-      <figure><img src="midia/cartao5.jpg?v=1" alt="Cartão 5: entrega prevista para o 1º semestre de 2027" loading="lazy"><figcaption>5 · Entrega</figcaption></figure>
-      <figure><img src="midia/cartao6.jpg?v=1" alt="Cartão 6: sair do aluguel custa R$ 60 mil a menos, com a foto do corretor Maike" loading="lazy"><figcaption>6 · Fecho com você</figcaption></figure>
+    <p class="dica">Um cartão por vez, como no Instagram: arraste ou use as setas.</p>
+    <div class="car">
+      <div class="carrossel" id="carrossel" aria-label="Carrossel com 6 cartões">
+        <figure><img src="midia/cartao1.jpg?v=1" alt="Cartão 1: Black Friday no Flow, de R$ 529.500 por R$ 469.500"></figure>
+        <figure><img src="midia/cartao2.jpg?v=1" alt="Cartão 2: cerca de 500 m do metrô Vila Matilde" loading="lazy"></figure>
+        <figure><img src="midia/cartao3.jpg?v=1" alt="Cartão 3: 46,62 m² com suíte e varanda gourmet" loading="lazy"></figure>
+        <figure><img src="midia/cartao4.jpg?v=1" alt="Cartão 4: piscina, fitness e espaço multiúso no 2º andar" loading="lazy"></figure>
+        <figure><img src="midia/cartao5.jpg?v=1" alt="Cartão 5: entrega prevista para o 1º semestre de 2027" loading="lazy"></figure>
+        <figure><img src="midia/cartao6.jpg?v=1" alt="Cartão 6: sair do aluguel custa R$ 60 mil a menos, com a foto do corretor Maike" loading="lazy"></figure>
+      </div>
+      <button class="seta ant" type="button" aria-label="Cartão anterior">‹</button>
+      <button class="seta prox" type="button" aria-label="Próximo cartão">›</button>
+      <div class="pontos" role="tablist"></div>
+      <div class="legenda-car" aria-live="polite">1 de 6 · Capa</div>
     </div>
   </div>
 </section>
@@ -124,10 +143,34 @@ footer img{width:150px;margin-bottom:10px}
 </section>
 
 <footer>
-  <div class="faixa">
-    <img src="/assets/logo/ativaleads-2026-branco-300.webp" alt="Ativaleads" width="150">
-    <div>Desenvolvido por Ativaleads · Consultoria de marketing digital.</div>
+  <div class="faixa fim">
+    <a href="/ativaleads/" aria-label="Ativaleads"><img src="/assets/logo/ativaleads-2026-branco-300.webp?v=2" alt="Ativaleads" width="300" height="49"></a>
+    <p class="legal"><span>Ativaleads Consultoria em Marketing Digital LTDA</span><span class="sep"> · </span><span>CNPJ 52.788.441/0001-01</span><span class="sep"> · </span><span>São Paulo/SP</span></p>
   </div>
 </footer>
+<script>
+// carrossel 1 a 1: setas, pontinhos e "n de 6" seguem a rolagem (o arrasto no celular é a rolagem nativa com encaixe)
+(function () {
+  var c = document.getElementById('carrossel'), figs = c.querySelectorAll('figure'), n = figs.length;
+  var nomes = ['Capa', 'Metrô', 'Planta', 'Lazer', 'Entrega', 'Fecho com você'];
+  var ant = document.querySelector('.car .ant'), prox = document.querySelector('.car .prox');
+  var pontos = document.querySelector('.car .pontos'), leg = document.querySelector('.car .legenda-car');
+  for (var i = 0; i < n; i++) {
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Cartão ' + (i + 1));
+    b.addEventListener('click', (function (k) { return function () { vai(k); }; })(i)); pontos.appendChild(b);
+  }
+  function atual() { return Math.round(c.scrollLeft / c.clientWidth); }
+  function vai(k) { c.scrollTo({ left: k * c.clientWidth, behavior: 'smooth' }); }
+  function marca() {
+    var k = Math.max(0, Math.min(n - 1, atual()));
+    pontos.querySelectorAll('button').forEach(function (b, i) { b.setAttribute('aria-current', i === k ? 'true' : 'false'); });
+    ant.disabled = k === 0; prox.disabled = k === n - 1; leg.textContent = (k + 1) + ' de ' + n + ' · ' + nomes[k];
+  }
+  ant.addEventListener('click', function () { vai(atual() - 1); });
+  prox.addEventListener('click', function () { vai(atual() + 1); });
+  c.addEventListener('scroll', function () { window.requestAnimationFrame(marca); }, { passive: true });
+  window.addEventListener('resize', marca); marca();
+})();
+</script>
 </body>
 </html>
