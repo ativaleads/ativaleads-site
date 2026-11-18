@@ -2,3 +2,7 @@
 # O PDF da proposta da EAAA abre pelo botão da /eaaa/social/, mas não deve aparecer em busca.
 /eaaa/social/Proposta_Ativaleads_EAAA.pdf
   X-Robots-Tag: noindex, nofollow
+
+# Página de aprovação das peças da Black Friday do Flow (corretor Maike, S73): fora da busca, inclusive vídeos e imagens.
+/maike/*
+  X-Robots-Tag: noindex, nofollow
