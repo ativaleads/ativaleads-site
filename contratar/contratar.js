@@ -58,6 +58,23 @@
       if (!d.disponivel) { texto('ck-erro', 'O checkout ainda não está ligado neste endereço.'); form.querySelector('button').disabled = true; }
     });
 
+    // Bandeiras e meios com as imagens oficiais do Mercado Pago (via /api/meios).
+    api('/api/meios').then(function (d) {
+      var ul = document.getElementById('ck-meios');
+      if (!ul || !d.ok) return;
+      d.meios.forEach(function (m) {
+        var li = document.createElement('li');
+        var img = document.createElement('img');
+        img.src = m.img;
+        img.alt = m.nome;
+        img.title = m.nome;
+        img.loading = 'lazy';
+        img.referrerPolicy = 'no-referrer';
+        li.appendChild(img);
+        ul.appendChild(li);
+      });
+    });
+
     form.addEventListener('change', function (e) { if (e.target.name === 'pacote') resumo(); });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
