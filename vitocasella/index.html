@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Proposta para a loja Vito Casella · Ativaleads</title>
-<meta name="description" content="Proposta da Ativaleads para a loja Vito Casella: nova página inicial, rodapé e logo.">
+<title>Loja Vito Casella: o que mudou · Ativaleads</title>
+<meta name="description" content="Entrega da Ativaleads para a loja Vito Casella: o que mudou na loja, o que fica com você, logos para baixar e o que conferir.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@400;500;600&display=swap">
 <style>
-:root{--preto:#0e0e0e;--preto2:#1a1a1a;--ouro:#b8893a;--ouro2:#d9b56d;--cinza:#5f5f5f;--linha:#e4dfd6;--creme:#f6f3ee;--branco:#fff}
+:root{--preto:#0e0e0e;--preto2:#1a1a1a;--ouro:#9a6f22;--ouro2:#d9b56d;--cinza:#5f5f5f;--linha:#e4dfd6;--creme:#f6f3ee;--branco:#fff}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--preto);background:var(--branco);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -24,179 +24,221 @@ p{margin:0 0 14px}
 section{padding:80px 0}
 .creme{background:var(--creme)}
 .aviso{font-size:13px;text-align:center;padding:8px 16px;background:var(--preto2);color:#bdb6aa}
-/* capa */
 .capa{background:var(--preto);color:#f1ece4;padding:96px 0 104px;text-align:center}
 .capa .chapeu{color:var(--ouro2)}
 .capa img.mono{width:120px;margin:0 auto 26px;border-radius:50%}
 .capa h1{font-size:clamp(46px,9vw,88px);font-style:italic}
 .capa .sub{display:block;font-family:'Bodoni Moda',serif;font-style:normal;font-size:clamp(13px,2vw,16px);letter-spacing:.42em;margin-top:14px;color:var(--ouro2)}
 .capa p{max-width:60ch;margin:32px auto 0;color:#cfc9bf}
-.selo{display:inline-block;margin-top:28px;border:1px solid #4a4438;padding:8px 16px;font-size:14px;color:#e2d6bd}
-/* antes e depois */
-.comparar{display:grid;gap:22px;margin-top:30px}
-@media(min-width:900px){.comparar{grid-template-columns:1fr 1fr}}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+.botao{display:inline-flex;align-items:center;gap:10px;background:var(--preto);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:13px 20px;border:1px solid var(--preto);line-height:1.2}
+.botao:hover{background:#2a2a2a}
+.botao.claro{background:#fff;color:var(--preto)}
+.botao.claro:hover{background:#f1ece4}
+.botao.contorno{background:transparent;color:#f1ece4;border-color:#6b6253}
+.botao svg{width:18px;height:18px;flex:none}
+.selo{display:inline-block;margin-top:24px;border:1px solid #4a4438;padding:8px 16px;font-size:14px;color:#e2d6bd}
 figure{margin:0}
 figure img{border:1px solid var(--linha)}
 figcaption{font-size:14px;color:var(--cinza);margin-top:10px}
-figcaption b{color:var(--preto);font-weight:600}
-.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;margin-right:8px;vertical-align:1px}
-.tag.antes{background:#ececec;color:#555}.tag.depois{background:var(--preto);color:var(--ouro2)}
-.largo{margin-top:22px}
-/* navegar */
-.navegar{display:grid;gap:34px;margin-top:30px;align-items:start}
-@media(min-width:900px){.navegar{grid-template-columns:1fr 260px}}
-.janela{border:1px solid #d9d4cb;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
-.janela .barra{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#efece6;border-bottom:1px solid #e1dcd3}
-.janela .barra i{width:10px;height:10px;border-radius:50%;background:#d3cdc3;display:block}
-.janela .barra span{margin-left:12px;font-size:12px;color:#8a847a}
-.rola{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-.janela .rola{height:min(560px,70vh)}
-@media(max-width:899px){.janela .rola{height:auto;max-height:70vh}}
-.janela .rola img{width:100%;border:0}
-.fone.rola-fone{max-width:260px;margin:0 auto}
-.fone .rola{height:460px}
-.fone .rola img{width:100%;border:0}
-.dica{font-size:14px;color:var(--cinza);margin-top:10px;text-align:center}
-/* celular */
-.celulares{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 16px;margin-top:30px;justify-items:center}
-@media(min-width:900px){.celulares{grid-template-columns:repeat(4,1fr);gap:28px}}
+.tela{margin-top:30px}
+.celulares{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 16px;margin-top:26px;justify-items:center}
+@media(min-width:900px){.celulares{grid-template-columns:repeat(4,1fr)}}
 .celulares figure{width:100%;max-width:240px}
 .fone{width:100%;max-width:240px;border:9px solid var(--preto);border-radius:28px;overflow:hidden;background:var(--preto)}
 .fone img{border:0;width:100%}
 .celulares figcaption{text-align:center}
-/* lista */
 .mudou{display:grid;gap:16px;margin-top:26px}
 @media(min-width:760px){.mudou{grid-template-columns:1fr 1fr}}
 .item{background:#fff;border:1px solid var(--linha);padding:22px 24px}
 .item p{margin:0;font-size:15.5px;color:#3c3c3c}
-/* logo */
-.logos{display:grid;gap:24px;align-items:center;margin-top:28px}
-@media(min-width:820px){.logos{grid-template-columns:2fr 1fr}}
-.logos .claro{background:#fff;border:1px solid var(--linha);padding:26px}
-.logos .redondo{max-width:220px;margin:0 auto;border-radius:50%}
-/* decidir */
-.decidir{list-style:none;padding:0;margin:26px 0 0;counter-reset:n}
-.decidir li{counter-increment:n;position:relative;padding:20px 0 20px 54px;border-top:1px solid var(--linha)}
-.decidir li::before{content:counter(n);position:absolute;left:0;top:18px;width:36px;height:36px;border-radius:50%;background:var(--preto);color:var(--ouro2);font-family:'Bodoni Moda',serif;font-size:19px;display:flex;align-items:center;justify-content:center}
-.decidir b{display:block;font-weight:600;margin-bottom:4px}
-.decidir span{color:#444;font-size:15.5px}
+.item p+p{margin-top:10px}
+.item img{margin-top:14px}
+.item a{color:var(--preto)}
+.dupla{display:grid;gap:22px;margin-top:30px}
+@media(min-width:900px){.dupla{grid-template-columns:1fr 1fr}}
+.logos{display:grid;gap:18px;margin-top:28px}
+@media(min-width:700px){.logos{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.logos{grid-template-columns:repeat(3,1fr)}}
+.logo{border:1px solid var(--linha);background:#fff;display:flex;flex-direction:column}
+.logo .amostra{height:170px;display:flex;align-items:center;justify-content:center;padding:22px;border-bottom:1px solid var(--linha)}
+.logo .amostra.escuro{background:var(--preto)}
+.logo .amostra.xadrez{background-color:#fff;background-image:linear-gradient(45deg,#f1eee8 25%,transparent 25%),linear-gradient(-45deg,#f1eee8 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#f1eee8 75%),linear-gradient(-45deg,transparent 75%,#f1eee8 75%);background-size:18px 18px;background-position:0 0,0 9px,9px -9px,-9px 0}
+.logo .amostra img{max-height:126px;width:auto;border:0}
+.logo .texto{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.logo .texto b{font-weight:600}
+.logo .texto span{font-size:14px;color:var(--cinza)}
+.logo .botao{margin-top:auto;align-self:flex-start;font-size:14px;padding:10px 16px}
+.todos{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.todos span{font-size:14px;color:var(--cinza)}
+.passos{list-style:none;padding:0;margin:26px 0 0;counter-reset:n}
+.passos li{counter-increment:n;position:relative;padding:18px 0 18px 54px;border-top:1px solid var(--linha)}
+.passos li::before{content:counter(n);position:absolute;left:0;top:16px;width:36px;height:36px;border-radius:50%;background:var(--preto);color:var(--ouro2);font-family:'Bodoni Moda',serif;font-size:19px;display:flex;align-items:center;justify-content:center}
+.passos b{display:block;font-weight:600;margin-bottom:4px}
+.passos span{color:#444;font-size:15.5px}
+.cartao{background:#fff;border:1px solid var(--linha);padding:24px 26px}
+.cartao h3{margin-bottom:14px}
+.cartao ol,.cartao ul{margin:0;padding-left:20px}
+.cartao li{margin-bottom:9px;font-size:15.5px;color:#333}
+.cartao li b{color:var(--preto)}
 .nota{font-size:14px;color:var(--cinza)}
+.confere{display:grid;gap:18px;margin-top:28px}
+@media(min-width:900px){.confere{grid-template-columns:repeat(3,1fr)}}
+.confere .cartao .quando{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--preto);color:var(--ouro2);padding:4px 9px;margin-bottom:12px}
+.confere ul{list-style:none;padding:0}
+.confere li{position:relative;padding-left:26px}
+.confere li::before{content:"";position:absolute;left:0;top:4px;width:15px;height:15px;border:1.5px solid var(--preto)}
 footer{background:var(--preto);color:#a8a196;font-size:14px;padding:34px 0;text-align:center}
 footer a{color:var(--ouro2)}
 </style>
 </head>
 <body>
-<div class="aviso">Proposta da Ativaleads para a loja Vito Casella · página fora do Google</div>
+<div class="aviso">Entrega da Ativaleads para a loja Vito Casella · página fora do Google</div>
 
 <header class="capa">
   <div class="faixa">
     <img class="mono" src="img/logo_instagram.jpg?v=s43" alt="Monograma VC dourado" width="120" height="120">
-    <div class="chapeu">Proposta · vitocasella.com</div>
+    <div class="chapeu">Entrega · vitocasella.com</div>
     <h1>Vito Casella<span class="sub">MODA FEMININA</span></h1>
-    <p>Nova página inicial, faixa do topo, rodapé e logo, montados dentro da sua loja na Wix, com os mesmos elementos e apps que você já usa no Editor. Você continua mexendo em tudo sozinho.</p>
-    <span class="selo">Salvo como rascunho: nada mudou para as clientes</span>
+    <p>A sua loja nova está no ar. Nesta página está tudo o que mudou, o que fica com você, os logos para baixar e as conferências que valem a pena fazer.</p>
+    <div class="acoes">
+      <a class="botao claro" href="https://www.vitocasella.com/" target="_blank" rel="noopener">Abrir a loja</a>
+      <a class="botao contorno" href="#logos">Baixar os logos</a>
+    </div>
+    <span class="selo">No ar desde 18 de novembro de 2026</span>
   </div>
 </header>
 
 <section class="creme">
   <div class="faixa">
-    <div class="chapeu">O site novo</div>
-    <h2>Role para ver a página inteira</h2>
-    <p>Esta é a nova página inicial do jeito que está salva no seu Editor da Wix, no computador e no celular. Ela ainda não está no ar: só passa a valer para as clientes com o seu ok.</p>
-    <div class="navegar">
-      <figure>
-        <div class="janela">
-          <div class="barra"><i></i><i></i><i></i><span>vitocasella.com</span></div>
-          <div class="rola" tabindex="0" aria-label="Página inicial nova no computador, role para ver"><img src="img/site_novo_computador.jpg?v=s43b" alt="Página inicial nova da loja Vito Casella no computador, do topo ao rodapé" width="1200" height="1550" loading="lazy"></div>
-        </div>
-        <figcaption class="dica">Computador · role dentro da janela</figcaption>
-      </figure>
-      <figure>
-        <div class="fone rola-fone"><div class="rola" tabindex="0" aria-label="Página inicial nova no celular, role para ver"><img src="img/site_novo_celular.jpg?v=s43b" alt="Página inicial nova da loja Vito Casella no celular, do topo ao rodapé" width="261" height="2241" loading="lazy"></div></div>
-        <figcaption class="dica">Celular · role dentro da tela</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="faixa">
-    <div class="chapeu">Antes e depois · computador</div>
-    <h2>A primeira tela da loja</h2>
-    <p>Saem o banner de modelo e os links que não levavam a lugar nenhum. Entram quatro peças da loja na capa, o nome da marca e as novidades logo abaixo.</p>
-    <div class="comparar">
-      <figure><img src="img/antes_pc_topo.jpg?v=s43" alt="Página inicial atual no computador" width="1400" height="875" loading="lazy"><figcaption><span class="tag antes">Antes</span>Topo com Sobre, Contato, Central de Ajuda e o telefone (11) 3456-7890, que vieram do modelo.</figcaption></figure>
-      <figure><img src="img/depois_pc_topo.jpg?v=s43" alt="Nova página inicial no computador" width="1400" height="596" loading="lazy"><figcaption><span class="tag depois">Depois</span>Faixa com frete grátis e 12x, logo novo e quatro peças da loja na capa.</figcaption></figure>
-    </div>
-    <figure class="largo"><img src="img/depois_pc_novidades.jpg?v=s43" alt="Nome da marca e vitrine de novidades" width="1400" height="596" loading="lazy"><figcaption><span class="tag depois">Depois</span>Logo abaixo das fotos, o nome da marca e a vitrine de Novidades. É a vitrine da própria Wix Stores: preço e foto saem do cadastro e mudam sozinhos quando você cadastra peça nova.</figcaption></figure>
-  </div>
-</section>
-
-<section class="creme">
-  <div class="faixa">
-    <div class="chapeu">Celular</div>
-    <h2>Pensado para quem compra pelo celular</h2>
-    <p>No celular a capa mostra uma foto só, o nome da marca vem logo abaixo e os ícones de busca, carrinho e menu ficam alinhados com o logo.</p>
+    <div class="chapeu">No ar</div>
+    <h2>A loja como está hoje</h2>
+    <p>Página inicial no computador e, logo abaixo, o celular: a primeira tela e a página de uma peça.</p>
+    <figure class="tela"><img src="img/entrega_inicio_pc.jpg?v=1" alt="Página inicial da loja Vito Casella no computador" width="1400" height="670" loading="lazy"><figcaption>Faixa de frete e parcelamento, logo novo, quatro peças na capa e o nome da marca.</figcaption></figure>
     <div class="celulares">
-      <figure><div class="fone"><img src="img/antes_cel_topo.jpg?v=s43" alt="Página inicial atual no celular" width="520" height="921" loading="lazy"></div><figcaption><span class="tag antes">Antes</span>Primeira tela</figcaption></figure>
-      <figure><div class="fone"><img src="img/depois_cel_topo.jpg?v=s43" alt="Nova página inicial no celular" width="261" height="462" loading="lazy"></div><figcaption><span class="tag depois">Depois</span>Primeira tela</figcaption></figure>
-      <figure><div class="fone"><img src="img/depois_cel_capa.jpg?v=s43" alt="Nome da marca e novidades no celular" width="261" height="462" loading="lazy"></div><figcaption><span class="tag depois">Depois</span>Nome e novidades</figcaption></figure>
-      <figure><div class="fone"><img src="img/depois_cel_rodape.jpg?v=s43" alt="Novo rodapé no celular" width="261" height="462" loading="lazy"></div><figcaption><span class="tag depois">Depois</span>Rodapé</figcaption></figure>
+      <figure><div class="fone"><img src="img/entrega_cel_inicio.jpg?v=1" alt="Página inicial no celular" width="261" height="542" loading="lazy"></div><figcaption>Início no celular</figcaption></figure>
+      <figure><div class="fone"><img src="img/entrega_cel_produto.jpg?v=1" alt="Página de uma peça no celular" width="261" height="542" loading="lazy"></div><figcaption>Página da peça</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section>
   <div class="faixa">
-    <div class="chapeu">Rodapé</div>
-    <h2>Só o que a cliente precisa</h2>
-    <div class="comparar">
-      <figure><img src="img/antes_pc_rodape.jpg?v=s43" alt="Rodapé atual" width="1400" height="1123" loading="lazy"><figcaption><span class="tag antes">Antes</span>Colunas de Suporte e Política, faixa "Tem dúvidas" e bandeiras de cartão do modelo.</figcaption></figure>
-      <figure><img src="img/depois_pc_rodape.jpg?v=s43" alt="Novo rodapé" width="1400" height="596" loading="lazy"><figcaption><span class="tag depois">Depois</span>Atendimento com e-mail, WhatsApp e horário, as bandeiras de pagamento da loja e "© 2026 Vito Casella".</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="creme">
-  <div class="faixa">
-    <div class="chapeu">O que mudou</div>
-    <h2>Resumo das mudanças</h2>
+    <div class="chapeu">O que fizemos</div>
+    <h2>Tudo o que mudou na loja</h2>
     <div class="mudou">
-      <div class="item"><h3>Capa</h3><p>Quatro fotos de peças da loja, sem marca d'água de fornecedor, e "Vito Casella · Moda feminina" numa faixa preta logo abaixo.</p></div>
-      <div class="item"><h3>Novidades</h3><p>Vitrine da Wix Stores com oito peças por vez, botão Comprar e "Ver mais".</p></div>
-      <div class="item"><h3>Faixa do topo</h3><p>"Frete grátis para todo o Brasil · Parcelamento em até 12x no cartão" no lugar dos links e do telefone do modelo.</p></div>
-      <div class="item"><h3>Rodapé</h3><p>Atendimento centralizado e "Formas de pagamento" com Visa, Mastercard, Elo, Amex, Pix e boleto. Saíram as colunas, os links e as bandeiras do modelo (PayPal, Mercado Pago e PagSeguro, que a loja não usa).</p></div>
-      <div class="item"><h3>Logo e ícone</h3><p>Logo novo no topo e o monograma VC no ícone da aba do navegador.</p></div>
-      <div class="item"><h3>Nome nas abas e no Google</h3><p>Era "Vitocasella-modafeminina/FRETE GRATIS/12X"; agora é "Vito Casella". Essa mudança já está no ar.</p></div>
+      <div class="item"><h3>Página inicial</h3><p>Capa com quatro peças, faixa "Vito Casella · Moda feminina" e a vitrine de Novidades. Agora o cartão da peça abre a página do produto; antes o botão "Comprar" da vitrine abria o carrinho lateral.</p></div>
+      <div class="item"><h3>Logo e nome</h3><p>Logo novo no topo, com link para o Início, e o monograma VC no ícone da aba. O nome do site nas abas e no Google é "Vito Casella".</p></div>
+      <div class="item"><h3>Página da peça</h3><p>Botão "Comprar" preto e preço antigo riscado em cinza. Não sobrou nada verde na loja.</p></div>
+      <div class="item"><h3>Tamanhos brasileiros</h3><p>As 18 peças com tamanho mostram PP, P, M, G, GG, XG e XGG, sempre do menor para o maior. Na calça boca de sino, a letra vem com a faixa de peso, como "P (47,5 a 52,5 kg)".</p><img src="img/entrega_tamanhos.jpg?v=1" alt="Lista de tamanhos PP, P, M, G, GG, XG e XGG na página de um vestido" width="941" height="446" loading="lazy"></div>
+      <div class="item"><h3>Endereços em português</h3><p>Os endereços das 23 peças saíram do inglês do fornecedor e passaram para o nome da peça, como "/product-page/cropped-cinza-gola-redonda". Os endereços antigos levam para os novos, então nenhum link que você já divulgou quebrou.</p></div>
+      <div class="item"><h3>Carrinho</h3><p>O botão diz "Finalizar compra", no carrinho lateral e na página do carrinho.</p><img src="img/entrega_carrinho.jpg?v=1" alt="Página do carrinho com o botão Finalizar compra" width="941" height="419" loading="lazy"></div>
+      <div class="item"><h3>Frete</h3><p>Uma opção só no checkout: "Frete grátis · 9 a 20 dias". Saíram as duas opções repetidas "Prazo conforme o destino".</p></div>
+      <div class="item"><h3>Checkout</h3><p>Logo maior no topo do checkout (versão empilhada, que cabe no espaço da Wix), botões pretos e quatro textos novos no rodapé dele: Política de Devolução, Política de Privacidade, Termos e Condições e "Entre em contato".</p><img src="img/entrega_checkout_logo.jpg?v=1" alt="Topo do checkout com o logo empilhado" width="815" height="154" loading="lazy"></div>
+      <div class="item"><h3>Políticas da loja</h3><p>Escritas a partir do Código de Defesa do Consumidor, do decreto do comércio eletrônico e da LGPD. As páginas "Termos e condições" e "Política de Cookies" estavam no ar com o texto de exemplo da Wix; agora têm o texto da loja.</p><p><a href="https://www.vitocasella.com/politica-de-devolucao" target="_blank" rel="noopener">Trocas e devoluções</a> · <a href="https://www.vitocasella.com/prazo-e-frete" target="_blank" rel="noopener">Prazo e frete</a> · <a href="https://www.vitocasella.com/medidas" target="_blank" rel="noopener">Medidas</a> · <a href="https://www.vitocasella.com/politica-de-privacidade" target="_blank" rel="noopener">Privacidade</a> · <a href="https://www.vitocasella.com/termos-e-condicoes" target="_blank" rel="noopener">Termos</a></p></div>
+      <div class="item"><h3>Rodapé preto</h3><p>Atendimento, formas de pagamento e os links das políticas. O e-mail do rodapé agora abre o programa de e-mail; antes levava para a página inicial.</p></div>
+    </div>
+    <figure class="tela"><img src="img/entrega_rodape_pc.jpg?v=1" alt="Rodapé preto da loja com atendimento, bandeiras e links das políticas" width="1400" height="387" loading="lazy"><figcaption>Rodapé no ar.</figcaption></figure>
+  </div>
+</section>
+
+<section class="creme" id="logos">
+  <div class="faixa">
+    <div class="chapeu">Logos</div>
+    <h2>Baixe os logos novos</h2>
+    <p>Todos em PNG. Os de fundo transparente servem para colocar sobre foto ou sobre outra cor.</p>
+    <div class="todos">
+      <a class="botao" href="logos/vito-casella-logos.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Baixar todos (.zip)</a>
+      <span>Os cinco arquivos abaixo num arquivo só</span>
+    </div>
+    <div class="logos">
+      <div class="logo"><div class="amostra escuro"><img src="logos/vito-casella-foto-de-perfil.png" alt="Monograma VC dourado sobre fundo preto" width="126" height="126" loading="lazy" style="border-radius:50%"></div><div class="texto"><b>Foto de perfil</b><span>WhatsApp e Instagram. Quadrado de 1080 × 1080, já pensado para o recorte redondo.</span><a class="botao" href="logos/vito-casella-foto-de-perfil.png" download>Baixar</a></div></div>
+      <div class="logo"><div class="amostra xadrez"><img src="logos/vito-casella-logo-preto.png" alt="Logo VC Vito Casella preto" width="300" height="40" loading="lazy" style="width:100%;height:auto"></div><div class="texto"><b>Logo preto</b><span>Para fundo claro: o mesmo do topo do site. Fundo transparente.</span><a class="botao" href="logos/vito-casella-logo-preto.png" download>Baixar</a></div></div>
+      <div class="logo"><div class="amostra escuro"><img src="logos/vito-casella-logo-dourado.png" alt="Logo VC Vito Casella dourado" width="300" height="40" loading="lazy" style="width:100%;height:auto"></div><div class="texto"><b>Logo dourado</b><span>Para fundo escuro. Fundo transparente.</span><a class="botao" href="logos/vito-casella-logo-dourado.png" download>Baixar</a></div></div>
+      <div class="logo"><div class="amostra xadrez"><img src="logos/vito-casella-logo-empilhado-preto.png" alt="Logo empilhado: monograma VC em cima e VITO CASELLA embaixo" width="236" height="126" loading="lazy"></div><div class="texto"><b>Logo empilhado</b><span>O que está no checkout. Bom para espaço quadrado ou estreito.</span><a class="botao" href="logos/vito-casella-logo-empilhado-preto.png" download>Baixar</a></div></div>
+      <div class="logo"><div class="amostra xadrez"><img src="logos/vito-casella-monograma-preto.png" alt="Monograma VC preto" width="126" height="126" loading="lazy"></div><div class="texto"><b>Monograma preto</b><span>Só o VC, para etiqueta, embalagem ou marca d'água discreta nas fotos.</span><a class="botao" href="logos/vito-casella-monograma-preto.png" download>Baixar</a></div></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="faixa">
-    <div class="chapeu">Logo</div>
-    <h2>Uma marca só, no site e no Instagram</h2>
-    <p>Partimos do monograma VC dourado que já está no seu Instagram. No site, o monograma ganha o nome ao lado, em preto, para ler bem no topo branco. No Instagram e no ícone da aba fica o monograma dourado sobre preto.</p>
-    <div class="logos">
-      <div class="claro"><img src="img/logo_site.jpg?v=s43" alt="Logo do site: monograma VC e VITO CASELLA" width="900" height="180" loading="lazy"><figcaption>Topo do site</figcaption></div>
-      <figure><img class="redondo" src="img/logo_instagram.jpg?v=s43" alt="Monograma VC para o Instagram" width="600" height="600" loading="lazy"><figcaption style="text-align:center">Foto do perfil no Instagram</figcaption></figure>
+    <div class="chapeu">WhatsApp e Instagram</div>
+    <h2>Troque a foto dos perfis</h2>
+    <p>Baixe a "Foto de perfil" no celular antes de começar. Os nomes dos menus mudam um pouco entre Android, iPhone e versões do aplicativo; se algum não aparecer igual, procure pelo item mais parecido.</p>
+    <div class="dupla">
+      <div class="cartao">
+        <h3>WhatsApp Business</h3>
+        <ol>
+          <li>Abra o WhatsApp Business e entre em <b>Configurações</b> (no Android, pelos três pontinhos; no iPhone, na aba de baixo).</li>
+          <li>Toque em <b>Ferramentas comerciais</b> e depois em <b>Perfil comercial</b>.</li>
+          <li>Toque na foto, escolha <b>Galeria</b> e selecione "vito-casella-foto-de-perfil". Ajuste o VC no centro do círculo e confirme.</li>
+          <li>No mesmo perfil, confira o <b>nome</b> "Vito Casella", o <b>site</b> "www.vitocasella.com", o <b>e-mail</b> "contato@vitocasella.com" e o <b>horário</b> de segunda a sexta, das 8h às 18h, igual ao rodapé da loja.</li>
+        </ol>
+      </div>
+      <div class="cartao">
+        <h3>Instagram</h3>
+        <ol>
+          <li>Abra o seu perfil e toque em <b>Editar perfil</b>.</li>
+          <li>Toque em <b>Editar foto</b>, escolha <b>Escolher da galeria</b> e selecione "vito-casella-foto-de-perfil".</li>
+          <li>Ainda em Editar perfil, confira o <b>nome</b> "Vito Casella" e, em <b>Links</b>, deixe "www.vitocasella.com".</li>
+          <li>Se as fotos de destaque usam o logo antigo, troque as capas pelo monograma novo.</li>
+        </ol>
+      </div>
     </div>
-    <p class="nota" style="margin-top:22px">Os arquivos do logo (fundo transparente e fundo preto) ficam com você para usar onde precisar.</p>
   </div>
 </section>
 
 <section class="creme">
   <div class="faixa">
-    <div class="chapeu">Para você decidir</div>
-    <h2>O que falta</h2>
-    <ol class="decidir">
-      <li><b>Ok para o rascunho virar a página inicial</b><span>Com o seu ok, o rascunho passa a ser o Início e a loja é publicada. A publicação leva junto tudo o que estiver salvo no Editor, inclusive alterações suas que ainda não estavam no ar.</span></li>
-      <li><b>Política de trocas e devoluções</b><span>A loja ainda não tem uma de verdade. O rodapé antigo mostrava "Entregas e devoluções" e "Termos de uso e privacidade", mas os links levavam para a página inicial, e a página de termos só tem o texto de exemplo da Wix. Em compra pela internet a cliente pode desistir em até 7 dias depois de receber (Código de Defesa do Consumidor, art. 49). Você nos passa a sua regra (prazo para troca, quem paga o frete de volta e como a cliente pede) e nós montamos as páginas de trocas e de termos e colocamos os links no rodapé.</span></li>
-      <li><b>Parcelamento na página do produto</b><span>A linha "ou 12x de R$4.99 sem juros" é colocada sozinha pelo Wix Pagamentos. O "sem juros" está certo: no Wix Pagamentos Brasil não dá para cobrar taxa da cliente no parcelamento. O ponto no lugar da vírgula não é configuração da loja (o site está em português do Brasil e os preços saem "R$ 59,90"); é falha do próprio componente da Wix, que não deixa editar nem esconder essa linha. O caminho é abrir um chamado no suporte da Wix pela sua conta.</span></li>
-      <li><b>Bandeiras do rodapé</b><span>Colocamos Visa, Mastercard, Elo, Amex, Pix e boleto, que é o que o Wix Pagamentos costuma aceitar no Brasil. Confira na sua tela de pagamentos se Elo e Amex estão ativos; se não estiverem, a imagem é trocada em um minuto.</span></li>
-      <li><b>Foto do perfil no Instagram</b><span>Trocar pela versão nova do monograma (o arquivo vai junto).</span></li>
-      <li><b>Endereços das peças em português</b><span>Vários endereços de produto ainda estão em inglês, do jeito que vieram do fornecedor, como "/product-page/fashion-casual-solid-gray-cropped-t-shirt-…". Recomendamos trocar todos pelo nome da peça em português: fica mais confiável para a cliente quando ela recebe o link e ajuda a loja a aparecer no Google. Nós podemos fazer essa troca para você. A Wix redireciona sozinha os endereços antigos, então os links que você já divulgou continuam funcionando.</span></li>
+    <div class="chapeu">Com você</div>
+    <h2>O que você precisa fazer</h2>
+    <ol class="passos">
+      <li><b>Ler as políticas e confirmar que dá para cumprir</b><span>Os textos prometem: arrependimento em 7 dias com frete de volta e valor total por conta da loja; defeito ou peça errada em até 90 dias, com envio por conta da loja; troca de tamanho em 30 dias; código de postagem enviado pela loja quando o frete é dela; resposta em até 5 dias úteis. Se alguma coisa não couber na sua operação, avise antes que um pedido chegue.</span></li>
+      <li><b>Nome e documento na loja</b><span>Loja virtual precisa mostrar o nome do responsável, CPF ou CNPJ e endereço (Decreto 7.962/2013, art. 2º). Decida se usa o seu CPF ou abre um MEI; com isso, colocamos a linha no rodapé e montamos a página "Quem somos".</span></li>
+      <li><b>Como contar a origem das peças</b><span>A página "Quem somos" ainda não existe porque depende de como você quer dizer que as peças são importadas e enviadas sob encomenda.</span></li>
+      <li><b>Preço riscado só se for verdade</b><span>O preço "de" riscado só pode ficar se a peça já foi vendida por aquele valor. Se não foi, apague o preço antigo no cadastro da peça.</span></li>
+      <li><b>Parcelamento com ponto no lugar da vírgula</b><span>A linha "ou 12x de R$4.99 sem juros" é da própria Wix e não dá para editar. O caminho é abrir um chamado no suporte da Wix pela sua conta.</span></li>
+      <li><b>Trocar a foto dos perfis</b><span>Com a "Foto de perfil" desta página, no WhatsApp Business e no Instagram (passo a passo acima).</span></li>
     </ol>
+  </div>
+</section>
+
+<section>
+  <div class="faixa">
+    <div class="chapeu">Conferências</div>
+    <h2>O que conferir e quando</h2>
+    <p>Pequenas checagens que evitam venda com problema. Não precisa pagar nada para fazer nenhuma delas.</p>
+    <div class="confere">
+      <div class="cartao">
+        <span class="quando">Agora, uma vez</span>
+        <ul>
+          <li><b>Tamanhos no DSers.</b> Abra algumas peças no DSers e veja se cada tamanho novo (PP, P, M…) continua ligado ao tamanho certo do fornecedor. Trocamos só o nome do tamanho; o código da variante é o mesmo.</li>
+          <li><b>Bandeiras.</b> Na tela de pagamentos da Wix, veja se Elo e Amex estão ativos. Se não estiverem, avise para tirarmos do rodapé.</li>
+          <li><b>E-mail.</b> Mande uma mensagem para contato@vitocasella.com e confirme que chega onde você lê.</li>
+          <li><b>Compra até o fim.</b> No celular, ponha uma peça no carrinho e vá até o checkout: confira o frete "Frete grátis · 9 a 20 dias" e abra as políticas. Pare antes de pagar.</li>
+        </ul>
+      </div>
+      <div class="cartao">
+        <span class="quando">A cada peça nova</span>
+        <ul>
+          <li><b>Nome e descrição em português</b>, sem "em estoque" e sem promessa de prazo diferente de 9 a 20 dias.</li>
+          <li><b>Tamanhos no padrão</b> PP, P, M, G, GG, XG, XGG, do menor para o maior. Se a peça vier do fornecedor com S, M, L, troque antes de publicar.</li>
+          <li><b>Endereço da peça em português</b>: no cadastro do produto, na parte de SEO, troque o endereço pelo nome da peça.</li>
+          <li><b>Fotos</b> sem marca d'água ou logo do fornecedor.</li>
+          <li><b>Preço riscado</b> só se for real.</li>
+        </ul>
+      </div>
+      <div class="cartao">
+        <span class="quando">Sempre que mexer</span>
+        <ul>
+          <li><b>Depois de publicar no Editor</b>, abra a loja no celular e no computador e veja se nada saiu do lugar.</li>
+          <li><b>Mudou uma política?</b> O texto está em dois lugares: no checkout (Configurações da loja, Checkout) e na página do rodapé. Mude nos dois.</li>
+          <li><b>A cada pedido</b>: compre a peça no fornecedor pelo DSers e confira se o código de rastreio chegou ao pedido da Wix.</li>
+          <li><b>Uma vez por semana</b>: veja se há pedido parado no DSers e mensagem sem resposta no e-mail e no WhatsApp.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
