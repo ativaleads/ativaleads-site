@@ -282,6 +282,21 @@ section{padding:84px 0;scroll-margin-top:60px}
 .cel-reel iframe{display:block;width:100%;height:100%;border:0;border-radius:22px;background:var(--tinta)}
 .nota-reel{margin-top:22px;font-size:15px;color:var(--cinza);max-width:80ch}
 
+
+/* S80 25/11 · comparação do PageSpeed (como na /eaaa/social/) */
+.psi-dupla{display:grid;gap:12px;grid-template-columns:minmax(0,1fr);margin-bottom:26px}
+@media (min-width:760px){.psi-dupla{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}}
+.psi-dupla .psi-col{gap:14px}
+.psi-col.novo{border-color:#0c6;box-shadow:0 0 0 1px #0c6 inset}
+.psi-notas{list-style:none;margin:0;padding:0;width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;font-size:var(--f-nota);line-height:1.3;color:var(--cinza)}
+.psi-notas li{display:flex;flex-direction:column;align-items:center;gap:8px}
+@media (max-width:420px){.psi-notas{grid-template-columns:repeat(2,1fr);row-gap:16px}}
+.psi-tempo{margin:4px 0 0!important;padding-top:14px;border-top:1px solid var(--linha);width:100%;font-size:var(--f-apoio)!important;color:var(--texto)!important}
+.psi-tempo b{font-size:20px;margin-right:4px}
+.psi-pc a{color:var(--madeira-t);white-space:nowrap}
+.psi-sub{font:700 var(--f-cartao)/1.1 'Barlow Condensed',sans-serif;margin:0 0 14px}
+.psi-grade{grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.psi-grade{grid-template-columns:repeat(5,minmax(0,1fr))}}
 /* S80 25/11 · escala única de letras (Operador: "manter uma padrão de tamanho de fontes tb").
    Título de seção (h2) · subtítulo de bloco 30 · título de cartão 24 · texto 17 · apoio 15,5 · nota 14 */
 :root{--f-sub:30px;--f-cartao:24px;--f-corpo:17px;--f-apoio:15.5px;--f-nota:14px}
@@ -418,15 +433,24 @@ section{padding:84px 0;scroll-margin-top:60px}
     <div class="psi">
       <div class="rot">PageSpeed Insights do Google · celular · 25/11/2026</div>
       <p class="pergunta">Quanto tempo o cliente espera antes de ir para o próximo?</p>
-      <h3>A régua da cidade é baixa</h3>
+      <h3>Site novo: 100. A cidade fica entre 37 e 94.</h3>
+      <div class="psi-dupla">
+        <div class="psi-col eu"><p class="psi-nome">Hoje<small>madeireiramartinelli.com.br</small></p><span class="nota zero">FORA<br>DO AR</span><p>O endereço abre uma página de erro: não há site para o Google medir.</p></div>
+        <div class="psi-col novo"><p class="psi-nome">Site novo<small>proposta · ativaleads.com.br/martinelli</small></p>
+          <ul class="psi-notas"><li><span class="nota bom">100</span>Desempenho</li><li><span class="nota bom">100</span>Acessibilidade</li><li><span class="nota bom">100</span>Boas práticas</li><li><span class="nota med">66*</span>SEO</li></ul>
+          <p class="psi-tempo"><b>1,5 s</b> para mostrar o conteúdo principal no celular</p>
+          <p class="psi-pc">No computador: 100 · 100 · 100 · 66* (0,8 s) · <a href="https://pagespeed.web.dev/analysis/https-ativaleads-com-br-martinelli/y32fh1oi40haux44vjgk93?form_factor=mobile" rel="noopener">relatório do celular</a> · <a href="https://pagespeed.web.dev/analysis/https-ativaleads-com-br-martinelli/w7psjlej7ppelfg6o0nx74?form_factor=desktop" rel="noopener">do computador</a></p>
+        </div>
+      </div>
+      <p class="psi-sub">E os concorrentes, medidos no mesmo dia</p>
       <div class="psi-grade">
-        <div class="psi-col eu"><span class="nota zero">FORA<br>DO AR</span><p class="psi-nome">Madeireira Martinelli<small>sem site para medir</small></p></div>
+        <div class="psi-col novo"><span class="nota bom">100</span><p class="psi-nome">Site novo da Martinelli<small>proposta</small></p></div>
         <div class="psi-col"><span class="nota ruim">37</span><p class="psi-nome">Avanço Madeiras<small>avancomadeiras.com.br</small></p></div>
         <div class="psi-col"><span class="nota med">52</span><p class="psi-nome">Alemão Madeiras<small>alemaomadeirassjc.com.br</small></p></div>
         <div class="psi-col"><span class="nota med">60</span><p class="psi-nome">Madeireira Pantanal<small>madeireirapantanalsjc.com.br</small></p></div>
         <div class="psi-col"><span class="nota bom">94</span><p class="psi-nome">Morumbi Madeiras<small>morumbimadeiras.com.br</small></p></div>
       </div>
-      <p class="psi-nota">Nota de desempenho no celular, de 0 a 100, medida pelo Google. Acima de 90 é verde.</p>
+      <p class="psi-nota">Notas do celular, de 0 a 100, medidas pelo Google em 25/11/2026 (acima de 90 é verde). *O SEO fica em 66 só porque a proposta está fechada para o Google de propósito; no domínio da madeireira, sem esse bloqueio, o item passa. A página do telhado tirou as mesmas notas.</p>
     </div>
   </div>
 </section>
