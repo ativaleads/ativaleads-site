@@ -233,3 +233,10 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .loja{align-self:flex-start;background:#fff;border-top-left-radius:3px}
 .foto{padding:5px;width:84%}
 .foto svg{display:block;width:100%;height:auto;border-radius:8px}
+
+/* Celular (S80, 25/11): logo do rodapé centralizado; telefone e horário em linhas próprias, sem palavra sobrando */
+@media (max-width:639px){
+  .rodape .marca-rodape{margin:0 auto}
+  .fecho-p>span:not(.sep){display:block}
+  .fecho-p .sep{display:none}
+}
