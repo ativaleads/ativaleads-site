@@ -143,12 +143,12 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .faixa-zap p{margin:0;font:700 30px/1.1 'Zilla Slab',serif;max-width:24ch}
 @media (max-width:420px){.faixa-zap .bt{width:100%}.faixa-zap{padding:26px 20px}}
 /* rodapé do cliente */
-.rodape{background:var(--nogueira2);color:#fff;padding:44px 0 34px;font-size:14.5px;border-top:6px solid var(--cambara)}
+.rodape{background:var(--nogueira2);color:var(--mel);padding:44px 0 34px;font-size:14.5px;border-top:6px solid var(--cambara)}
 .rodape .faixa{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 40px;align-items:flex-start}
-.rodape .marca b{color:#fff}
+.rodape .marca b{color:var(--mel)}
 .rodape .marca small{color:var(--mel)}
 .rodape p{margin:0;line-height:1.6}
-.rodape .dev{width:100%;padding-top:20px;margin-top:6px;border-top:1px solid #4a2a16;color:#fff;display:flex;justify-content:center;align-items:center;gap:10px;font-size:13px}
+.rodape .dev{width:100%;padding-top:20px;margin-top:6px;border-top:1px solid #4a2a16;color:var(--mel);display:flex;justify-content:center;align-items:center;gap:10px;font-size:13px}
 .rodape .dev a{display:block;line-height:0}
 .rodape .dev img{width:110px;height:auto;display:block}
 /* página de produto */
