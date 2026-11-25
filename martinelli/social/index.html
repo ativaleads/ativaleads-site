@@ -7,7 +7,7 @@
 <title>Proposta de site, Google e redes · Madeireira Martinelli · Ativaleads</title>
 <meta name="description" content="Proposta da Ativaleads para o site, o perfil do Google e as redes sociais da Madeireira Martinelli.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Zilla+Slab:wght@600;700&display=swap">
 <style>
 /* S80 · proposta local no estilo da /social/ da EAAA. Paleta e letra: proposta da S80 (ver REFERENCIA.md) */
 :root{/* S80 25/11: mesma paleta do site de exemplo (site_exemplo/site.css) */--tinta:#2b1a10;--tinta2:#1f120a;--texto:#4a2a16;--creme:#dfcfae;--papel:#ede3cf;--cartao:#f8f2e5;--madeira:#a8582a;--madeira-t:#8f4519;--madeira2:#e8b77a;--cinza:#6a5644;--linha:#cbb894;--claro:#fff;--alerta:#b3261e}
@@ -230,6 +230,55 @@ section{padding:84px 0;scroll-margin-top:60px}
 .paginas{grid-template-columns:minmax(0,1fr)}
 @media (min-width:560px){.paginas{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:900px){.paginas{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* S80 25/11 · 5 Nova identidade visual */
+.id-sub{font:700 clamp(24px,3vw,30px)/1.1 'Barlow Condensed',sans-serif;margin:44px 0 16px}
+.id-hoje{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:26px;padding:18px 20px;background:var(--cartao);border:1px solid var(--linha);border-radius:8px}
+.id-hoje img{width:325px;max-width:100%;height:auto;border-radius:4px;background:#fff}
+.id-hoje p{margin:0;flex:1 1 260px;font-size:15.5px;color:var(--cinza)}
+.paleta{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:700px){.paleta{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1000px){.paleta{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.cor{border:1px solid var(--linha);border-radius:8px;overflow:hidden;background:var(--cartao)}
+.cor i{display:block;height:84px}
+.cor b{display:block;padding:10px 12px 0;font:700 19px/1.1 'Barlow Condensed',sans-serif}
+.cor span{display:block;padding:2px 12px 12px;font-size:13.5px;line-height:1.35;color:var(--cinza)}
+.letras{display:grid;gap:10px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:860px){.letras{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.letras div{background:var(--cartao);border:1px solid var(--linha);border-radius:8px;padding:18px 20px}
+.letras .amostra{display:block;color:var(--texto);margin-bottom:8px;line-height:1.05}
+.letras small{font-size:14px;color:var(--cinza)}
+.logos{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:960px){.logos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.logo-op{display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:10px;background:var(--cartao);border:1px solid var(--linha);border-top:4px solid var(--madeira);border-radius:8px;padding:20px}
+.logo-op .rot{font:700 14px/1 'Barlow Condensed';letter-spacing:.14em;text-transform:uppercase;color:var(--madeira-t)}
+.logo-op h3{margin:0}
+.lg{border-radius:6px;display:grid;place-items:center;padding:18px;min-height:132px}
+.lg svg{width:100%;height:auto;max-height:110px;display:block}
+.lg-claro{background:var(--papel);color:var(--texto);border:1px solid var(--linha)}
+.lg-escuro{background:var(--tinta);color:var(--madeira2)}
+.lg-madeira{padding:0;overflow:hidden;min-height:0}
+.lg-madeira svg{max-height:none}
+.lg-perfil{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--cinza)}
+.lg-perfil .av{flex:none;width:64px;height:64px;border-radius:50%;background:var(--texto);color:var(--madeira2);display:grid;place-items:center}
+.lg-perfil .av svg{width:38px;height:38px}
+.logo-op p{margin:0;font-size:15px}
+.id-fim{margin-top:22px;font-size:15px;color:var(--cinza);max-width:80ch}
+
+/* S80 25/11 · 8 Carrosséis e Reels */
+.carros{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:960px){.carros{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.carro{margin:0;min-width:0}
+.tira{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;-webkit-overflow-scrolling:touch;scrollbar-color:var(--madeira) transparent}
+.tira img{flex:0 0 78%;max-width:300px;width:78%;height:auto;aspect-ratio:4/5;border-radius:6px;scroll-snap-align:start;box-shadow:0 14px 26px -18px rgba(31,18,10,.6)}
+.carro figcaption,.reel figcaption{margin-top:10px;font-size:15px;color:var(--cinza)}
+.carro figcaption b,.reel figcaption b{display:block;color:var(--texto);font-size:16.5px;margin-bottom:2px}
+.reels{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+@media (min-width:900px){.reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}}
+.reel{margin:0;flex:0 0 72%;scroll-snap-align:start;min-width:0}
+.cel{aspect-ratio:9/16;max-width:300px;background:var(--tinta2);border-radius:30px;padding:9px;box-shadow:0 26px 44px -26px rgba(31,18,10,.7)}
+.cel iframe{display:block;width:100%;height:100%;border:0;border-radius:22px;background:var(--tinta)}
+.nota-reel{margin-top:22px;font-size:15px;color:var(--cinza);max-width:80ch}
 </style>
 </head>
 <body>
@@ -238,8 +287,8 @@ section{padding:84px 0;scroll-margin-top:60px}
 <nav class="menu" aria-label="Seções">
   <div class="faixa">
     <b>Madeireira Martinelli · proposta</b>
-    <a href="#hoje">Hoje</a><a href="#google">Google</a><a href="#busca">Busca</a><a href="#site">Site</a><a href="#redes">Redes</a><a href="#posts">Posts</a><a href="#antes">Antes e depois</a><a href="#regra">Regra</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a>
-    <details class="menu-cel"><summary>Seções <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="menu-painel"><a href="#hoje">Hoje</a><a href="#google">Google</a><a href="#busca">Busca</a><a href="#site">Site</a><a href="#redes">Redes</a><a href="#posts">Posts</a><a href="#antes">Antes e depois</a><a href="#regra">Regra</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a></div></details>
+    <a href="#hoje">Hoje</a><a href="#google">Google</a><a href="#busca">Busca</a><a href="#site">Site</a><a href="#identidade">Identidade</a><a href="#redes">Redes</a><a href="#posts">Posts</a><a href="#reels">Reels</a><a href="#antes">Antes e depois</a><a href="#regra">Regra</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a>
+    <details class="menu-cel"><summary>Seções <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="menu-painel"><a href="#hoje">Hoje</a><a href="#google">Google</a><a href="#busca">Busca</a><a href="#site">Site</a><a href="#identidade">Identidade</a><a href="#redes">Redes</a><a href="#posts">Posts</a><a href="#reels">Reels</a><a href="#antes">Antes e depois</a><a href="#regra">Regra</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a></div></details>
   </div>
 </nav>
 
@@ -369,11 +418,73 @@ section{padding:84px 0;scroll-margin-top:60px}
   </div>
 </section>
 
-<section id="redes">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <!-- Logos do estudo da origem S79 (logo\LOGO_estudo.html), copiados sem mudar as posições medidas; cores pela paleta do site -->
+  <defs>
+    <symbol id="lgM" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="6"><polyline points="8,52 60,10 112,52" stroke-linecap="butt"/><path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106" stroke-linecap="butt"/></g></symbol>
+    <symbol id="lgA" viewBox="0 0 531 178"><use href="#lgM" x="10" y="12" width="120" height="120"/><g fill="currentColor"><text x="150.333" y="38.667" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="32" letter-spacing="25.815">MADEIREIRA</text><text x="149.667" y="117" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="82">Martinelli</text><text x="14.667" y="158" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="8.657">CONFIANÇA E HONESTIDADE, SEMPRE</text></g></symbol>
+    <symbol id="lgB" viewBox="0 0 200 200"><path id="lgArcoCima" d="M26,100 a74,74 0 1,1 148,0" fill="none"/><path id="lgArcoBaixo" d="M12,100 a88,88 0 0,0 176,0" fill="none"/><g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="95" stroke-width="5"/><circle cx="100" cy="100" r="66" stroke-width="1.6"/></g><g fill="currentColor" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="700" text-anchor="middle"><text font-size="17.5" letter-spacing="3.2"><textPath href="#lgArcoCima" startOffset="50%">MADEIREIRA MARTINELLI</textPath></text><text font-size="13" letter-spacing="2.2"><textPath href="#lgArcoBaixo" startOffset="50%">SÃO JOSÉ DOS CAMPOS · DESDE 2001</textPath></text><circle cx="17.5" cy="100" r="2.4"/><circle cx="182.5" cy="100" r="2.4"/></g><use href="#lgM" x="55" y="52" width="90" height="90"/></symbol>
+    <symbol id="lgC" viewBox="0 0 600 150"><g fill="none" stroke="currentColor"><rect x="5" y="14" width="590" height="122" rx="14" stroke-width="5"/><line x1="136" y1="34.3" x2="136" y2="116" stroke-width="2"/></g><use href="#lgM" x="24" y="31" width="96" height="96"/><g fill="currentColor"><text x="154.667" y="55.333" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="30" letter-spacing="32.489">MADEIREIRA</text><text x="154" y="116" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="62" letter-spacing="5.059">MARTINELLI</text></g></symbol>
+    <filter id="lgVeio" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.0035 0.12" numOctaves="4" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.24  0 0 0 0 0.12  0 0 0 0 0.05  0 0 0 2.0 -0.93"/></filter>
+    <filter id="lgPoro" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.02 0.9" numOctaves="2" seed="21"/><feColorMatrix type="matrix" values="0 0 0 0 0.10  0 0 0 0 0.05  0 0 0 0 0.02  0 0 0 1.5 -0.72"/></filter>
+    <linearGradient id="lgTom" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c08d58"/><stop offset=".5" stop-color="#b27d48"/><stop offset="1" stop-color="#a26d3b"/></linearGradient>
+    <filter id="lgEntalhe" x="-5%" y="-15%" width="110%" height="130%" color-interpolation-filters="sRGB"><feComponentTransfer in="SourceAlpha" result="inv"><feFuncA type="table" tableValues="1 0"/></feComponentTransfer><feGaussianBlur in="inv" stdDeviation="1.5" result="invb"/><feOffset in="invb" dx="2.4" dy="3.2" result="invo"/><feComposite in="invo" in2="SourceAlpha" operator="in" result="dentro"/><feFlood flood-color="#120702" flood-opacity=".9"/><feComposite in2="dentro" operator="in" result="sombra"/><feOffset in="SourceAlpha" dx="1.3" dy="1.9" result="desl"/><feComposite in="desl" in2="SourceAlpha" operator="out" result="borda"/><feGaussianBlur in="borda" stdDeviation=".45" result="bordab"/><feFlood flood-color="#ffe6bd" flood-opacity=".62"/><feComposite in2="bordab" operator="in" result="luz"/><feMerge><feMergeNode in="luz"/><feMergeNode in="SourceGraphic"/><feMergeNode in="sombra"/></feMerge></filter>
+    <filter id="lgFogo" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G" result="g"/><feGaussianBlur in="SourceAlpha" stdDeviation="3.2" result="halo"/><feFlood flood-color="#5b2a0b" flood-opacity=".5"/><feComposite in2="halo" operator="in" result="h"/><feMerge><feMergeNode in="h"/><feMergeNode in="g"/></feMerge></filter>
+  </defs>
+</svg>
+
+<section id="identidade">
+  <div class="faixa">
+    <div class="chapeu">5 · Nova identidade visual</div>
+    <p class="pergunta">O cliente reconhece a madeireira só de olhar o perfil?</p>
+    <h2>A mesma marca, <span class="m">com cara de madeireira.</span></h2>
+    <p class="texto">Releitura, não troca: o MM e o nome ficam, porque a marca tem mais de 20 anos e está na fachada. Saem o azul e o vermelho; entram os marrons e a madeira. Abaixo, a paleta, as letras e três caminhos para o logo, todos na paleta do site de exemplo. O caminho A é o que está no site.</p>
+    <div class="id-hoje"><img src="img/logo_hoje_2016.jpg" width="325" height="75" alt="Logo de hoje da Madeireira Martinelli: MM vermelho numa moldura de casa e o nome em azul" loading="lazy"><p><b>Hoje.</b> MM vermelho numa moldura em forma de casa, nome em azul e o lema "Confiança e Honestidade sempre!" (logo do site antigo).</p></div>
+    <h3 class="id-sub">Paleta</h3>
+    <div class="paleta"><div class="cor"><i style="background:#2b1a10"></i><b>Nogueira</b><span>#2b1a10 · faixas escuras e capa</span></div><div class="cor"><i style="background:#4a2a16"></i><b>Mogno</b><span>#4a2a16 · logo e textos</span></div><div class="cor"><i style="background:#a8582a"></i><b>Cambará</b><span>#a8582a · destaques e etiquetas</span></div><div class="cor"><i style="background:#e8b77a"></i><b>Mel</b><span>#e8b77a · sobre a madeira escura</span></div><div class="cor"><i style="background:#dfcfae"></i><b>Areia</b><span>#dfcfae · faixas claras</span></div><div class="cor"><i style="background:#ede3cf"></i><b>Papel</b><span>#ede3cf · fundo do site</span></div></div>
+    <h3 class="id-sub">Letras</h3>
+    <div class="letras">
+      <div><span class="amostra" style="font:700 34px/1.05 'Zilla Slab',Georgia,serif">Madeira para telhado</span><small>Zilla Slab · títulos e o nome no logo</small></div>
+      <div><span class="amostra" style="font:500 22px/1.35 'Barlow',sans-serif">Cada cliente é orientado pelos nossos vendedores.</span><small>Barlow · texto corrido</small></div>
+      <div><span class="amostra" style="font:700 24px/1 'Barlow Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase">Madeira nativa com DOF</span><small>Barlow Condensed · etiquetas e selos</small></div>
+    </div>
+    <h3 class="id-sub">Três caminhos para o logo</h3>
+    <div class="logos">
+      <div class="logo-op">
+        <div class="rot">Caminho A · no site de exemplo</div>
+        <h3>MM sob o telhado</h3>
+        <div class="lg lg-claro"><svg viewBox="0 0 531 178" role="img" aria-label="MM sob o telhado, fundo claro"><use href="#lgA"/></svg></div>
+        <div class="lg lg-escuro"><svg viewBox="0 0 531 178" role="img" aria-label="MM sob o telhado, fundo escuro"><use href="#lgA"/></svg></div>
+        <div class="lg lg-madeira"><svg viewBox="0 0 1000 300" role="img" aria-hidden="true"><rect width="1000" height="300" fill="url(#lgTom)"/><rect width="1000" height="300" filter="url(#lgVeio)"/><rect width="1000" height="300" filter="url(#lgPoro)" opacity=".6"/><g filter="url(#lgEntalhe)" color="rgba(46,22,8,.66)"><svg x="180" y="43" width="640" height="214.5" viewBox="0 0 531 178"><use href="#lgA"/></svg></g></svg></div>
+        <p>Releitura do símbolo de hoje: o MM continua dentro da casa, agora em traço de viga. É o que menos muda para quem já conhece a loja e fala de telhado, o carro-chefe.</p>
+      </div>
+      <div class="logo-op">
+        <div class="rot">Caminho B</div>
+        <h3>Selo marcado a fogo</h3>
+        <div class="lg lg-claro"><svg viewBox="0 0 200 200" style="max-width:120px" role="img" aria-label="Selo marcado a fogo, fundo claro"><use href="#lgB"/></svg></div>
+        <div class="lg lg-escuro"><svg viewBox="0 0 200 200" style="max-width:120px" role="img" aria-label="Selo marcado a fogo, fundo escuro"><use href="#lgB"/></svg></div>
+        <div class="lg lg-madeira"><svg viewBox="0 0 1000 300" role="img" aria-hidden="true"><rect width="1000" height="300" fill="url(#lgTom)"/><rect width="1000" height="300" filter="url(#lgVeio)"/><rect width="1000" height="300" filter="url(#lgPoro)" opacity=".6"/><g filter="url(#lgFogo)" color="rgba(24,11,4,.9)"><svg x="385" y="35" width="230" height="230" viewBox="0 0 200 200"><use href="#lgB"/></svg></g></svg></div>
+        <p>O mesmo MM num carimbo redondo, como o ferro quente que marca a tábua. Cabe inteiro na foto de perfil e vira assinatura em etiqueta e post de obra.</p>
+      </div>
+      <div class="logo-op">
+        <div class="rot">Caminho C</div>
+        <h3>A placa</h3>
+        <div class="lg lg-claro"><svg viewBox="0 0 600 150" role="img" aria-label="A placa, fundo claro"><use href="#lgC"/></svg></div>
+        <div class="lg lg-escuro"><svg viewBox="0 0 600 150" role="img" aria-label="A placa, fundo escuro"><use href="#lgC"/></svg></div>
+        <div class="lg lg-madeira"><svg viewBox="0 0 1000 300" role="img" aria-hidden="true"><rect width="1000" height="300" fill="url(#lgTom)"/><rect width="1000" height="300" filter="url(#lgVeio)"/><rect width="1000" height="300" filter="url(#lgPoro)" opacity=".6"/><g filter="url(#lgEntalhe)" color="rgba(46,22,8,.66)"><svg x="140" y="60" width="720" height="180" viewBox="0 0 600 150"><use href="#lgC"/></svg></g></svg></div>
+        <p>O nome por extenso numa placa, com o MM sob o telhado. É o mais literal: já nasce como placa talhada de fachada. Nas redes, entra só o MM.</p>
+      </div>
+    </div>
+    <p class="id-fim">Cada caminho tem a versão plana (o logo de verdade, para perfil, nota e fachada) e a aplicação na madeira (capa do site e posts). O lema entrou como "CONFIANÇA E HONESTIDADE, SEMPRE"; vale a grafia que o dono preferir. "Desde 2001" a confirmar com ele: o CNPJ é de 2002.</p>
+  </div>
+</section>
+
+<section id="redes" class="creme">
   <div class="faixa perfil">
     <figure class="grade-real" style="margin:0"><img src="img/antes/grade_antes.jpg" width="1076" height="1007" alt="As 12 publicações mais recentes do Instagram da Madeireira Martinelli, de maio de 2024 a outubro de 2025" loading="lazy"><figcaption>As 12 publicações mais recentes do @madeireiramartinelli, de 15/05/2024 a 31/10/2025.</figcaption></figure>
     <div>
-      <div class="chapeu">5 · Instagram e Facebook</div>
+      <div class="chapeu">6 · Instagram e Facebook</div>
       <p class="pergunta">O que 843 seguidores viram de você no último ano?</p>
       <h2><span class="m">Retomar o perfil</span> <span class="m">que já tem</span> <span class="m">843 seguidores.</span></h2>
       <div class="fatos"><div><b>843</b><span>seguidores</span></div><div><b>2 a 8</b><span>curtidas por post</span></div><div><b>13 meses</b><span>desde o último post</span></div></div>
@@ -393,9 +504,9 @@ section{padding:84px 0;scroll-margin-top:60px}
   </div>
 </section>
 
-<section id="posts" class="creme">
+<section id="posts">
   <div class="faixa">
-    <div class="chapeu">6 · Posts de exemplo</div>
+    <div class="chapeu">7 · Posts de exemplo</div>
     <p class="pergunta">Que dúvida o seu cliente tem antes de pedir o orçamento?</p>
     <h2>Seis exemplos, seis formatos.</h2>
     <div class="carrossel">
@@ -413,9 +524,23 @@ section{padding:84px 0;scroll-margin-top:60px}
   </div>
 </section>
 
+
+<section id="reels" class="creme">
+  <div class="faixa">
+    <div class="chapeu">8 · Carrosséis e Reels</div>
+    <p class="pergunta">O que faz o cliente parar de rolar o feed?</p>
+    <h2>Carrossel para explicar. <span class="m">Reel para parar o dedo.</span></h2>
+    <h3 class="id-sub">Carrosséis</h3>
+    <div class="carros"><figure class="carro"><div class="tira" tabindex="0" aria-label="Carrossel do telhado, 6 telas"><img src="img/carrossel/c1_1.jpg" width="720" height="900" alt="Carrossel do telhado, tela 1 de 6" loading="lazy"><img src="img/carrossel/c1_2.jpg" width="720" height="900" alt="Carrossel do telhado, tela 2 de 6" loading="lazy"><img src="img/carrossel/c1_3.jpg" width="720" height="900" alt="Carrossel do telhado, tela 3 de 6" loading="lazy"><img src="img/carrossel/c1_4.jpg" width="720" height="900" alt="Carrossel do telhado, tela 4 de 6" loading="lazy"><img src="img/carrossel/c1_5.jpg" width="720" height="900" alt="Carrossel do telhado, tela 5 de 6" loading="lazy"><img src="img/carrossel/c1_6.jpg" width="720" height="900" alt="Carrossel do telhado, tela 6 de 6" loading="lazy"></div><figcaption><b>Telhado novo? 5 perguntas antes de comprar.</b>6 telas · arraste para o lado</figcaption></figure><figure class="carro"><div class="tira" tabindex="0" aria-label="Carrossel da história, 6 telas"><img src="img/carrossel/c2_1.jpg" width="720" height="900" alt="Carrossel da história, tela 1 de 6" loading="lazy"><img src="img/carrossel/c2_2.jpg" width="720" height="900" alt="Carrossel da história, tela 2 de 6" loading="lazy"><img src="img/carrossel/c2_3.jpg" width="720" height="900" alt="Carrossel da história, tela 3 de 6" loading="lazy"><img src="img/carrossel/c2_4.jpg" width="720" height="900" alt="Carrossel da história, tela 4 de 6" loading="lazy"><img src="img/carrossel/c2_5.jpg" width="720" height="900" alt="Carrossel da história, tela 5 de 6" loading="lazy"><img src="img/carrossel/c2_6.jpg" width="720" height="900" alt="Carrossel da história, tela 6 de 6" loading="lazy"></div><figcaption><b>Nossa história: desde 2001, a verdade como pilar.</b>6 telas · arraste para o lado</figcaption></figure></div>
+    <h3 class="id-sub">Reels com movimento</h3>
+    <div class="reels"><figure class="reel"><div class="cel"><iframe src="reels/reel.html?r=1" title="Reel de exemplo: Comprou madeira nativa? Peça o DOF." loading="lazy"></iframe></div><figcaption><b>Comprou madeira nativa? Peça o DOF.</b>O carimbo entra batendo na tela; a lei em uma frase; o logo no fim.</figcaption></figure><figure class="reel"><div class="cel"><iframe src="reels/reel.html?r=2" title="Reel de exemplo: Quem segura o seu telhado?" loading="lazy"></iframe></div><figcaption><b>Quem segura o seu telhado?</b>Terça, caibro, ripa e telha caem uma a uma, cada uma com o seu nome.</figcaption></figure><figure class="reel"><div class="cel"><iframe src="reels/reel.html?r=3" title="Reel de exemplo: Do seu projeto ao orçamento, numa conversa." loading="lazy"></iframe></div><figcaption><b>Do seu projeto ao orçamento, numa conversa.</b>A conversa do site acontecendo: medidas, "digitando…", resposta e o botão do WhatsApp.</figcaption></figure></div>
+    <p class="nota-reel">Esboços de movimento feitos em código, em repetição de 12 segundos. No Reel de verdade entram filmagens do pátio, das obras e da equipe, com as mesmas letras, a régua e o logo no fim. A história vem do site de 2016 e é confirmada com o dono antes de publicar.</p>
+  </div>
+</section>
+
 <section id="antes" class="escuro">
   <div class="faixa">
-    <div class="chapeu">7 · Antes e depois</div>
+    <div class="chapeu">9 · Antes e depois</div>
     <p class="pergunta">Qual dos dois você mostraria a um cliente novo?</p>
     <h2>Arraste para comparar.</h2>
     <div class="comparar" id="comparar">
@@ -430,7 +555,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 
 <section id="regra">
   <div class="faixa">
-    <div class="chapeu">8 · A regra que orienta tudo</div>
+    <div class="chapeu">10 · A regra que orienta tudo</div>
     <h2>Madeira com origem, anúncio com verdade.</h2>
     <p class="texto">Código Florestal, Lei de Crimes Ambientais, Código de Defesa do Consumidor e o código do CONAR para apelos ambientais, lidos na fonte oficial em 25/11/2026.</p>
     <div class="duas">
@@ -452,7 +577,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 
 <section id="crm" class="creme">
   <div class="faixa">
-    <div class="chapeu">9 · CRM da madeireira</div>
+    <div class="chapeu">11 · CRM da madeireira</div>
     <h2>Do orçamento ao pedido.</h2>
     <p class="texto">Montado na implantação: cada pedido de orçamento que chega pelo WhatsApp, telefone, site ou redes fica registrado. As respostas a estas quatro perguntas vêm toda semana no relatório.</p>
     <div class="cards">
@@ -467,7 +592,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 <section id="precisamos">
   <div class="faixa duas">
     <div>
-      <div class="chapeu">10 · O que precisamos da madeireira</div>
+      <div class="chapeu">12 · O que precisamos da madeireira</div>
       <h2>Para começar.</h2>
     </div>
     <ul class="lista">
@@ -484,7 +609,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 
 <section id="seguir" class="creme">
   <div class="faixa">
-    <div class="chapeu">11 · Próximos passos</div>
+    <div class="chapeu">13 · Próximos passos</div>
     <h2>Do esboço ao ar.</h2>
     <ol class="passos">
       <li>Conversa para responder o que falta e escolher por onde começar.</li>
