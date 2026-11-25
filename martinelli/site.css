@@ -255,3 +255,22 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
   .fecho-p>span:not(.sep){display:block}
   .fecho-p .sep{display:none}
 }
+
+/* régua da capa (S80 25/11): textos alinhados pela linha mesmo quando o título quebra; no celular, centralizada */
+.regua .faixa{grid-auto-rows:auto}
+.regua div{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0;align-content:start}
+@media (max-width:860px){.regua div{text-align:center;padding-left:14px;padding-right:14px}}
+/* botões longos quebram a linha em celular estreito (320 px) em vez de vazar */
+@media (max-width:400px){.bt{white-space:normal;text-align:center;max-width:100%}}
+
+/* faixa enxuta abaixo da capa (S80 25/11, opção D: "gostei da faixa enxuta"); substitui a régua.
+   Computador: uma linha. Celular: 2 × 2, ícone em cima e texto embaixo, centralizado, todos na mesma altura. */
+.selos-capa{position:relative;z-index:1;background:var(--nogueira2);border-top:3px solid var(--mel);color:#f1e6d4}
+.selos-capa ul{list-style:none;margin:0 auto;padding-top:18px;padding-bottom:18px;display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:12px 24px}
+.selos-capa li{display:flex;align-items:center;gap:10px;font:600 16px/1.25 'Barlow','Barlow Fallback',sans-serif;white-space:nowrap}
+.selos-capa svg{width:22px;height:22px;color:var(--mel);flex:none}
+@media (max-width:860px){
+  .selos-capa ul{grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch;gap:18px 12px;padding-top:20px;padding-bottom:20px}
+  .selos-capa li{flex-direction:column;justify-content:flex-start;gap:8px;text-align:center;white-space:normal;font-size:15px}
+  .selos-capa svg{width:24px;height:24px}
+}
