@@ -255,8 +255,25 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .iso .pc,.iso .num-iso{transform-box:fill-box;transform-origin:center}
 .iso.pre .pc,.iso.pre .num-iso{opacity:0}
 .duas.alinha .diagrama{display:flex;align-items:center;justify-content:center}
-.pecas b .n{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:10px;border-radius:50%;background:var(--mogno);color:var(--mel);font:700 15px/1 'Zilla Slab',serif;vertical-align:3px}</style>
+.pecas b .n{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:10px;border-radius:50%;background:var(--mogno);color:var(--mel);font:700 15px/1 'Zilla Slab',serif;vertical-align:3px}
+.anima .surge{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.anima .surge.visto{opacity:1;transform:none}
+.anima .capa .selo{animation:carimba .9s cubic-bezier(.3,1.5,.5,1) .5s both}
+@keyframes carimba{0%{opacity:0;transform:scale(1.7) rotate(-24deg)}70%{opacity:1;transform:scale(.95) rotate(-9deg)}100%{opacity:1;transform:scale(1) rotate(-9deg)}}
+.anima .capa h1,.anima .capa .lead,.anima .capa .acoes,.anima .capa .etiqueta{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
+.anima .capa h1{animation-delay:.05s}.anima .capa .lead{animation-delay:.18s}.anima .capa .acoes{animation-delay:.3s}
+@keyframes sobe{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.anima .zap.conversa .bolha{opacity:0;transform:translateY(16px) scale(.96);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.anima .zap.conversa .bolha.chegou{opacity:1;transform:none}
+.zap .digitando{display:none}
+.anima .zap.conversa .digitando{display:flex;align-self:flex-start;gap:6px;background:#fff;border-radius:12px;border-top-left-radius:3px;padding:12px 14px;opacity:0;transition:opacity .3s;box-shadow:0 1px 1px rgba(31,18,10,.12)}
+.anima .zap.conversa .digitando.chegou{opacity:1}
+.anima .zap.conversa .digitando.sai{display:none}
+.zap .digitando i{width:8px;height:8px;border-radius:50%;background:var(--cinza);animation:ponto 1s infinite}
+.zap .digitando i:nth-child(2){animation-delay:.15s}.zap .digitando i:nth-child(3){animation-delay:.3s}
+@keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Madeireira Martinelli","address":{"@type":"PostalAddress","streetAddress":"Av. João Batista de Souza Soares, 3001","addressLocality":"São José dos Campos","addressRegion":"SP","postalCode":"12236-660","addressCountry":"BR"},"telephone":"+55-12-3931-5699","openingHours":"Mo-Fr 07:50-17:30","url":"https://www.madeireiramartinelli.com.br/"}</script>
+<script>(function(d){if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window)d.documentElement.classList.add("anima")})(document)</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -459,6 +476,30 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 </footer>
 <script>
 (function(){var b=document.querySelector('.abre'),p=document.getElementById('painel');if(!b)return;b.addEventListener('click',function(){var a=p.classList.toggle('aberto');b.setAttribute('aria-expanded',a?'true':'false');});p.querySelectorAll('a').forEach(function(x){x.addEventListener('click',function(){p.classList.remove('aberto');b.setAttribute('aria-expanded','false');});});})();
+</script>
+<script>
+/* S80: animação da página principal (entrada ao rolar, carimbo, conversa do orçamento) */
+(function(){var H=document.documentElement;if(!H.classList.contains('anima'))return;
+var alvo='main h2, main .chapeu, main .lead, .produto, .cartoes4>div, .valores>*, .patio-fotos li, .temas>div, .nota, .canais li, .mapa, .faixa-zap, .citacao, .foto-patio';
+var els=[].slice.call(document.querySelectorAll(alvo)).filter(function(e){return !e.closest('.capa')&&!e.closest('#orcamento .zap')});
+els.forEach(function(e){e.classList.add('surge')});
+/* atraso em cascata dentro de cada grade */
+['.produtos','.cartoes4','.temas','.patio-fotos','.canais'].forEach(function(s){[].forEach.call(document.querySelectorAll(s),function(g){[].forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*90)+'ms'})})});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visto');io.unobserve(x.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+els.forEach(function(e){io.observe(e)});
+/* conversa do orçamento: desenho, pergunta, "digitando", resposta */
+var z=document.querySelector('#orcamento .zap');if(z){var b=[].slice.call(z.querySelectorAll('.bolha'));
+  var dig=document.createElement('div');dig.className='digitando';dig.setAttribute('aria-hidden','true');dig.innerHTML='<i></i><i></i><i></i>';
+  var loja=z.querySelector('.bolha.loja');if(loja)loja.parentNode.insertBefore(dig,loja);
+  z.classList.add('conversa');
+  var io2=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io2.disconnect();
+    var t=[300,1300,2200];b.forEach(function(x,i){if(x.classList.contains('loja'))return;setTimeout(function(){x.classList.add('chegou')},t[i]||300)});
+    setTimeout(function(){dig.classList.add('chegou')},2900);
+    setTimeout(function(){dig.classList.remove('chegou');dig.classList.add('sai');if(loja)loja.classList.add('chegou')},4600);},{threshold:.4});
+  io2.observe(z);}
+/* segurança: se algo não disparar, mostra tudo depois de 6 s */
+setTimeout(function(){[].forEach.call(document.querySelectorAll('.surge:not(.visto)'),function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add('visto')})},6000);
+})();
 </script>
 </body>
 </html>

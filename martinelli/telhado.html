@@ -255,7 +255,23 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .iso .pc,.iso .num-iso{transform-box:fill-box;transform-origin:center}
 .iso.pre .pc,.iso.pre .num-iso{opacity:0}
 .duas.alinha .diagrama{display:flex;align-items:center;justify-content:center}
-.pecas b .n{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:10px;border-radius:50%;background:var(--mogno);color:var(--mel);font:700 15px/1 'Zilla Slab',serif;vertical-align:3px}</style>
+.pecas b .n{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:10px;border-radius:50%;background:var(--mogno);color:var(--mel);font:700 15px/1 'Zilla Slab',serif;vertical-align:3px}
+.anima .surge{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.anima .surge.visto{opacity:1;transform:none}
+.anima .capa .selo{animation:carimba .9s cubic-bezier(.3,1.5,.5,1) .5s both}
+@keyframes carimba{0%{opacity:0;transform:scale(1.7) rotate(-24deg)}70%{opacity:1;transform:scale(.95) rotate(-9deg)}100%{opacity:1;transform:scale(1) rotate(-9deg)}}
+.anima .capa h1,.anima .capa .lead,.anima .capa .acoes,.anima .capa .etiqueta{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
+.anima .capa h1{animation-delay:.05s}.anima .capa .lead{animation-delay:.18s}.anima .capa .acoes{animation-delay:.3s}
+@keyframes sobe{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.anima .zap.conversa .bolha{opacity:0;transform:translateY(16px) scale(.96);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.anima .zap.conversa .bolha.chegou{opacity:1;transform:none}
+.zap .digitando{display:none}
+.anima .zap.conversa .digitando{display:flex;align-self:flex-start;gap:6px;background:#fff;border-radius:12px;border-top-left-radius:3px;padding:12px 14px;opacity:0;transition:opacity .3s;box-shadow:0 1px 1px rgba(31,18,10,.12)}
+.anima .zap.conversa .digitando.chegou{opacity:1}
+.anima .zap.conversa .digitando.sai{display:none}
+.zap .digitando i{width:8px;height:8px;border-radius:50%;background:var(--cinza);animation:ponto 1s infinite}
+.zap .digitando i:nth-child(2){animation-delay:.15s}.zap .digitando i:nth-child(3){animation-delay:.3s}
+@keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A madeira tem DOF?","acceptedAnswer":{"@type":"Answer","text":"Sim. Toda a madeira nativa da madeireira é regularizada pelo Ibama através do DOF, o Documento de Origem Florestal."}},{"@type":"Question","name":"Como peço o orçamento?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp (12) 97405-2842, com as medidas do telhado, uma foto do local, a madeira que você quer e o endereço da entrega."}}]}</script>
 </head>
 <body>
