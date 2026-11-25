@@ -3,7 +3,7 @@
    paleta de madeira (nogueira, mogno, cambará, mel), fundo de tábuas em madeira.svg, títulos em Zilla Slab. */
 :root{
   --nogueira:#2b1a10;--nogueira2:#1f120a;--mogno:#4a2a16;--cambara:#a8582a;--cambara-t:#8f4519;--mel:#e8b77a;--mel2:#d79a55;
-  --areia:#dfcfae;--papel:#ede3cf;--linha:#cbb894;--cartao:#f8f2e5;--cinza:#6a5644;--zap:#1f8f4e;
+  --areia:#dfcfae;--papel:#ede3cf;--linha:#cbb894;--cartao:#f8f2e5;--cinza:#6a5644;--zap:#1a7f45;
   --tinta:var(--nogueira);
 }
 *,*::before,*::after{box-sizing:border-box}
