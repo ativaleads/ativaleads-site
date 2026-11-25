@@ -119,7 +119,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 .alterna button{font:600 14.5px 'Barlow';border:0;background:transparent;color:var(--texto);padding:9px 18px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s}
 .alterna button[aria-pressed="true"]{background:var(--tinta);color:#fff}
 .alterna button[aria-pressed="false"]{text-decoration:underline;text-decoration-color:rgba(43,26,16,.35);text-underline-offset:4px}
-.palco{display:flex;justify-content:flex-start}
+.palco{display:flex;justify-content:center}
 .aparelho{background:var(--tinta2);border-radius:38px;padding:14px;box-shadow:0 30px 60px -30px rgba(31,18,10,.55);max-width:100%}
 .aparelho .vidro{width:100%;height:100%;overflow:hidden;border-radius:26px}
 .aparelho iframe{display:block;border:0;border-radius:26px;background:#FFFFFF;width:100%;height:100%}
@@ -129,7 +129,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 .aparelho.pc{width:min(100%,1040px);height:auto;border-radius:14px;padding:10px}
 .aparelho.pc .vidro{height:calc(800px * var(--k,.8));border-radius:6px}
 .aparelho.pc iframe{width:1280px;height:800px;border-radius:0;transform:scale(var(--k,.8));transform-origin:0 0}
-.abrir-p{margin:16px 0 0}.abrir{font-weight:600;color:var(--madeira-t)}
+.abrir-p{margin:16px 0 0;text-align:center}.abrir{font-weight:600;color:var(--madeira-t)}
 .paginas-tit{font-size:28px;margin:48px 0 14px}
 .psi{margin-top:56px;padding-top:40px;border-top:1px solid var(--linha)}
 .psi .rot{font:700 14px/1 'Barlow Condensed';letter-spacing:.14em;text-transform:uppercase;color:var(--madeira-t)}
@@ -278,9 +278,20 @@ section{padding:84px 0;scroll-margin-top:60px}
 .reels{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
 @media (min-width:900px){.reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}}
 .reel{margin:0;flex:0 0 72%;scroll-snap-align:start;min-width:0}
-.cel{aspect-ratio:9/16;max-width:300px;background:var(--tinta2);border-radius:30px;padding:9px;box-shadow:0 26px 44px -26px rgba(31,18,10,.7)}
-.cel iframe{display:block;width:100%;height:100%;border:0;border-radius:22px;background:var(--tinta)}
+.cel-reel{aspect-ratio:9/16;max-width:300px;background:var(--tinta2);border-radius:30px;padding:9px;box-shadow:0 26px 44px -26px rgba(31,18,10,.7)}
+.cel-reel iframe{display:block;width:100%;height:100%;border:0;border-radius:22px;background:var(--tinta)}
 .nota-reel{margin-top:22px;font-size:15px;color:var(--cinza);max-width:80ch}
+
+/* S80 25/11 · escala única de letras (Operador: "manter uma padrão de tamanho de fontes tb").
+   Título de seção (h2) · subtítulo de bloco 30 · título de cartão 24 · texto 17 · apoio 15,5 · nota 14 */
+:root{--f-sub:30px;--f-cartao:24px;--f-corpo:17px;--f-apoio:15.5px;--f-nota:14px}
+.psi h3,.paginas-tit,.id-sub,.oferta-tit{font-size:var(--f-sub)}
+.card h3,.logo-op h3,.legenda h3,#regra h3,#crm .card h3{font-size:var(--f-cartao)}
+.card p,.lista li,.alerta p,#hoje p:not(.pergunta):not(.texto):not(.nota-p),.id-hoje p,.bio-prop,.legenda .leg,.passos li,.logo-op p,
+.carro figcaption,.reel figcaption,.carro figcaption b,.reel figcaption b,.nota-reel,.id-fim{font-size:var(--f-apoio)}
+.paginas span,.formatos div{font-size:var(--f-apoio)}
+.paginas b{font-size:var(--f-cartao)}
+.alerta-links span,.busca span,.fatos span,.legenda .porque,.legenda .dica,.nota-p,.psi-nota,.psi-nome small,.grade-real figcaption,.cor span,.bio-prop small,.alterna button,.letras small,small{font-size:var(--f-nota)}
 </style>
 </head>
 <body>
@@ -535,7 +546,7 @@ section{padding:84px 0;scroll-margin-top:60px}
     <h3 class="id-sub">Carrosséis</h3>
     <div class="carros"><figure class="carro"><div class="tira" tabindex="0" aria-label="Carrossel do telhado, 6 telas"><img src="img/carrossel/c1_1.jpg" width="720" height="900" alt="Carrossel do telhado, tela 1 de 6" loading="lazy"><img src="img/carrossel/c1_2.jpg" width="720" height="900" alt="Carrossel do telhado, tela 2 de 6" loading="lazy"><img src="img/carrossel/c1_3.jpg" width="720" height="900" alt="Carrossel do telhado, tela 3 de 6" loading="lazy"><img src="img/carrossel/c1_4.jpg" width="720" height="900" alt="Carrossel do telhado, tela 4 de 6" loading="lazy"><img src="img/carrossel/c1_5.jpg" width="720" height="900" alt="Carrossel do telhado, tela 5 de 6" loading="lazy"><img src="img/carrossel/c1_6.jpg" width="720" height="900" alt="Carrossel do telhado, tela 6 de 6" loading="lazy"></div><figcaption><b>Telhado novo? 5 perguntas antes de comprar.</b>6 telas · arraste para o lado</figcaption></figure><figure class="carro"><div class="tira" tabindex="0" aria-label="Carrossel da história, 6 telas"><img src="img/carrossel/c2_1.jpg" width="720" height="900" alt="Carrossel da história, tela 1 de 6" loading="lazy"><img src="img/carrossel/c2_2.jpg" width="720" height="900" alt="Carrossel da história, tela 2 de 6" loading="lazy"><img src="img/carrossel/c2_3.jpg" width="720" height="900" alt="Carrossel da história, tela 3 de 6" loading="lazy"><img src="img/carrossel/c2_4.jpg" width="720" height="900" alt="Carrossel da história, tela 4 de 6" loading="lazy"><img src="img/carrossel/c2_5.jpg" width="720" height="900" alt="Carrossel da história, tela 5 de 6" loading="lazy"><img src="img/carrossel/c2_6.jpg" width="720" height="900" alt="Carrossel da história, tela 6 de 6" loading="lazy"></div><figcaption><b>Nossa história: desde 2001, a verdade como pilar.</b>6 telas · arraste para o lado</figcaption></figure></div>
     <h3 class="id-sub">Reels com movimento</h3>
-    <div class="reels"><figure class="reel"><div class="cel"><iframe src="reels/reel.html?r=1" title="Reel de exemplo: Comprou madeira nativa? Peça o DOF." loading="lazy"></iframe></div><figcaption><b>Comprou madeira nativa? Peça o DOF.</b>O carimbo entra batendo na tela; a lei em uma frase; o logo no fim.</figcaption></figure><figure class="reel"><div class="cel"><iframe src="reels/reel.html?r=2" title="Reel de exemplo: Quem segura o seu telhado?" loading="lazy"></iframe></div><figcaption><b>Quem segura o seu telhado?</b>Terça, caibro, ripa e telha caem uma a uma, cada uma com o seu nome.</figcaption></figure><figure class="reel"><div class="cel"><iframe src="reels/reel.html?r=3" title="Reel de exemplo: Do seu projeto ao orçamento, numa conversa." loading="lazy"></iframe></div><figcaption><b>Do seu projeto ao orçamento, numa conversa.</b>A conversa do site acontecendo: medidas, "digitando…", resposta e o botão do WhatsApp.</figcaption></figure></div>
+    <div class="reels"><figure class="reel"><div class="cel-reel"><iframe src="reels/reel.html?r=1" title="Reel de exemplo: Comprou madeira nativa? Peça o DOF." loading="lazy"></iframe></div><figcaption><b>Comprou madeira nativa? Peça o DOF.</b>O carimbo entra batendo na tela; a lei em uma frase; o logo no fim.</figcaption></figure><figure class="reel"><div class="cel-reel"><iframe src="reels/reel.html?r=2" title="Reel de exemplo: Quem segura o seu telhado?" loading="lazy"></iframe></div><figcaption><b>Quem segura o seu telhado?</b>Terça, caibro, ripa e telha caem uma a uma, cada uma com o seu nome.</figcaption></figure><figure class="reel"><div class="cel-reel"><iframe src="reels/reel.html?r=3" title="Reel de exemplo: Do seu projeto ao orçamento, numa conversa." loading="lazy"></iframe></div><figcaption><b>Do seu projeto ao orçamento, numa conversa.</b>A conversa do site acontecendo: medidas, "digitando…", resposta e o botão do WhatsApp.</figcaption></figure></div>
     <p class="nota-reel">Esboços de movimento feitos em código, em repetição de 12 segundos. No Reel de verdade entram filmagens do pátio, das obras e da equipe, com as mesmas letras, a régua e o logo no fim. A história vem do site de 2016 e é confirmada com o dono antes de publicar.</p>
   </div>
 </section>
