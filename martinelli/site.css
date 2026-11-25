@@ -148,8 +148,9 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .rodape .marca b{color:#fff}
 .rodape .marca small{color:var(--mel)}
 .rodape p{margin:0;line-height:1.6}
-.rodape .dev{width:100%;padding-top:20px;margin-top:6px;border-top:1px solid #4a2a16;color:#fff}
-.rodape .dev a{color:#fff;font-weight:600}
+.rodape .dev{width:100%;padding-top:20px;margin-top:6px;border-top:1px solid #4a2a16;color:#fff;display:flex;justify-content:center;align-items:center;gap:10px;font-size:13px}
+.rodape .dev a{display:block;line-height:0}
+.rodape .dev img{width:110px;height:auto;display:block}
 /* página de produto */
 .cabeca{position:relative;color:#fff;padding:70px 0 60px;background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.84) 50%,rgba(31,18,10,.45) 100%),url(madeira.webp) center/cover}
 .cabeca h1{font-size:clamp(44px,6.4vw,72px)}
