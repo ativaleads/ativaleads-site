@@ -124,6 +124,8 @@ section{padding:84px 0;scroll-margin-top:60px}
 .aparelho .vidro{width:100%;height:100%;overflow:hidden;border-radius:26px}
 .aparelho iframe{display:block;border:0;border-radius:26px;background:#FFFFFF;width:100%;height:100%}
 .aparelho.cel{width:360px;height:min(720px,calc(100dvh - 140px));min-height:520px}
+.aparelho.cel .vidro{position:relative}
+.aparelho.cel iframe{width:375px;height:calc(100% / var(--kc,1));transform:scale(var(--kc,1));transform-origin:0 0;border-radius:calc(26px / var(--kc,1))}
 .aparelho.pc{width:min(100%,1040px);height:auto;border-radius:14px;padding:10px}
 .aparelho.pc .vidro{height:calc(800px * var(--k,.8));border-radius:6px}
 .aparelho.pc iframe{width:1280px;height:800px;border-radius:0;transform:scale(var(--k,.8));transform-origin:0 0}
@@ -680,7 +682,17 @@ section{padding:84px 0;scroll-margin-top:60px}
 
   // S80: aparelho do protótipo (no computador o site é desenhado com 1280 px e reduzido para caber)
   var ap = document.getElementById("aparelho");
-  function escala(){ if (!ap.classList.contains("pc")) return; var w = ap.clientWidth - 20; ap.style.setProperty("--k", (w / 1280).toFixed(4)); }
+  // no celular o site é desenhado com 375 px (largura de um celular comum) e reduzido para caber, sem barra de rolagem
+  function escala(){
+    if (ap.classList.contains("pc")) { var w = ap.clientWidth - 20; ap.style.setProperty("--k", (w / 1280).toFixed(4)); return; }
+    var v = ap.querySelector(".vidro"); if (v && v.clientWidth) ap.style.setProperty("--kc", (v.clientWidth / 375).toFixed(4));
+  }
+  var ifr = ap.querySelector("iframe");
+  function semBarra(){ try { var d = ifr.contentDocument; if (!d || d.getElementById("sem-barra")) return;
+    var st = d.createElement("style"); st.id = "sem-barra";
+    st.textContent = "html{scrollbar-width:none}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}";
+    d.head.appendChild(st); } catch (e) {} }
+  ifr.addEventListener("load", semBarra); semBarra(); escala();
   window.addEventListener("resize", escala);
   if ("ResizeObserver" in window) new ResizeObserver(escala).observe(ap);
   document.querySelectorAll("[data-aparelho]").forEach(function(b){
