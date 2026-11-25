@@ -7,6 +7,9 @@
 @font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Zilla Slab';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/zilla-slab-600.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Zilla Slab';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/zilla-slab-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* reservas com as medidas da Zilla Slab 700 e da Barlow 400: a troca de fonte não empurra a página */
+@font-face{font-family:'Zilla Fallback';font-style:normal;font-weight:700;src:local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('Tinos Bold');size-adjust:102.16%;ascent-override:92.40%;descent-override:25.06%;line-gap-override:0.00%}
+@font-face{font-family:'Barlow Fallback';font-style:normal;font-weight:400;src:local('Arial'), local('ArialMT'), local('Liberation Sans'), local('Arimo');size-adjust:95.76%;ascent-override:104.42%;descent-override:20.88%;line-gap-override:0.00%}
 /* Prévia do site novo · Madeireira Martinelli · S80 (25/11/2026).
    v2 (15:30, Operador: "faltou criatividade e capricho na capa … eu usaria tons de morrons, tons de madeira"):
    paleta de madeira (nogueira, mogno, cambará, mel), fundo de tábuas em madeira.svg, títulos em Zilla Slab. */
@@ -17,11 +20,11 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:'Barlow',system-ui,sans-serif;color:var(--mogno);background:var(--papel);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:'Barlow','Barlow Fallback',system-ui,sans-serif;color:var(--mogno);background:var(--papel);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--mel);outline-offset:3px}
-h1,h2,h3{font-family:'Zilla Slab',Georgia,serif;font-weight:700;line-height:1.04;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1,h2,h3{font-family:'Zilla Slab','Zilla Fallback',Georgia,serif;font-weight:700;line-height:1.04;margin:0;text-wrap:balance;letter-spacing:-.01em}
 p{margin:0 0 14px;text-wrap:pretty}
 .faixa{max-width:1160px;margin:0 auto;padding:0 20px}
 .m{white-space:nowrap}
