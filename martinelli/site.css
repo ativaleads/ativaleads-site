@@ -212,3 +212,23 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 /* 4 peças: 2 + 2 ou 1 (nunca 3 + 1) */
 .pecas{grid-template-columns:minmax(0,1fr)}
 @media (min-width:480px){.pecas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Orçamento · caminho A, conversa ilustrativa (S80, escolhido pelo Operador 25/11) */
+.orc{display:grid;gap:44px;align-items:center}
+@media (min-width:900px){.orc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.orc h2{margin-bottom:16px}
+.orc .lead{margin:0 0 26px}
+.fecho-p{margin:14px 0 0;font-size:15px;color:#e9dcc6}
+.nota-conversa{font-size:12.5px;color:#cdbb9d;margin:10px 0 0;text-align:center}
+.zap{max-width:420px;width:100%;justify-self:center;background:var(--areia);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);color:var(--nogueira)}
+.zap-topo{display:flex;align-items:center;gap:12px;background:var(--mogno);color:#fff;padding:12px 16px}
+.zap-topo .av{width:38px;height:38px;border-radius:50%;background:var(--nogueira2);display:grid;place-items:center;flex:none;color:var(--mel)}
+.zap-topo b{display:block;font-size:15.5px;line-height:1.2}
+.zap-topo small{font-size:12.5px;color:#e9dcc6}
+.zap-corpo{padding:16px 14px 18px;display:flex;flex-direction:column;gap:10px;background:var(--papel)}
+.bolha{max-width:84%;padding:9px 12px 7px;border-radius:12px;font-size:15px;line-height:1.45;box-shadow:0 1px 1px rgba(31,18,10,.12)}
+.bolha small{display:block;text-align:right;font-size:11px;color:var(--cinza);margin-top:2px}
+.cli{align-self:flex-end;background:var(--cartao);border-top-right-radius:3px}
+.loja{align-self:flex-start;background:#fff;border-top-left-radius:3px}
+.foto{padding:5px;width:84%}
+.foto svg{display:block;width:100%;height:auto;border-radius:8px}
