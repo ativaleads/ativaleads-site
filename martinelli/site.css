@@ -8,7 +8,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:'Barlow',system-ui,sans-serif;color:var(--nogueira);background:var(--papel);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:'Barlow',system-ui,sans-serif;color:var(--mogno);background:var(--papel);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--mel);outline-offset:3px}
@@ -45,9 +45,9 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .marca small{font:600 11px/1 'Barlow';letter-spacing:.14em;text-transform:uppercase;color:var(--cambara-t);margin-top:5px}
 .nav{display:flex;gap:20px}
 .nav a{text-decoration:none;font-size:15px;color:var(--cinza);white-space:nowrap}
-.nav a:hover,.nav a[aria-current]{color:var(--nogueira)}
+.nav a:hover,.nav a[aria-current]{color:var(--mogno)}
 .topo .bt{padding:10px 16px;font-size:14.5px}
-.abre{display:none;background:var(--cartao);border:1px solid var(--linha);border-radius:40px;padding:8px 14px;font:600 14px 'Barlow';color:var(--nogueira);cursor:pointer;align-items:center;gap:6px}
+.abre{display:none;background:var(--cartao);border:1px solid var(--linha);border-radius:40px;padding:8px 14px;font:600 14px 'Barlow';color:var(--mogno);cursor:pointer;align-items:center;gap:6px}
 .painel{display:none}
 @media (max-width:1079px){
   .nav,.topo .bt-zap{display:none}
@@ -65,7 +65,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .capa-grade{display:grid;gap:28px;align-items:center;padding-top:92px;padding-bottom:64px}
 @media (min-width:920px){.capa-grade{grid-template-columns:minmax(0,1.5fr) minmax(0,.8fr);padding-top:110px;padding-bottom:80px}}
 .capa-grade>*{min-width:0}
-.etiqueta{display:inline-flex;align-items:center;gap:10px;font:700 13.5px/1 'Barlow Condensed';letter-spacing:.18em;text-transform:uppercase;color:var(--nogueira);background:var(--mel);padding:9px 14px 8px;border-radius:3px;box-shadow:0 6px 16px -8px rgba(0,0,0,.7);margin-bottom:24px;position:relative}
+.etiqueta{display:inline-flex;align-items:center;gap:10px;font:700 13.5px/1 'Barlow Condensed';letter-spacing:.18em;text-transform:uppercase;color:var(--mogno);background:var(--mel);padding:9px 14px 8px;border-radius:3px;box-shadow:0 6px 16px -8px rgba(0,0,0,.7);margin-bottom:24px;position:relative}
 .etiqueta::after{content:"";position:absolute;right:-9px;top:50%;width:18px;height:18px;transform:translateY(-50%) rotate(45deg);background:var(--mel);z-index:-1}
 .capa h1{font-size:clamp(44px,6.6vw,80px);line-height:.98;text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .capa h1 em{font-style:normal;color:var(--mel);display:block}
@@ -74,7 +74,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .selo{justify-self:center;width:min(100%,290px);transform:rotate(-9deg);filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
 @media (max-width:919px){.selo{justify-self:start;width:170px;margin-top:6px;order:2}}
 /* régua de carpinteiro */
-.regua{position:relative;z-index:1;background:linear-gradient(180deg,#e9bd7f,#d9a05c);color:var(--nogueira);box-shadow:0 -10px 30px -10px rgba(0,0,0,.5)}
+.regua{position:relative;z-index:1;background:linear-gradient(180deg,#e9bd7f,#d9a05c);color:var(--mogno);box-shadow:0 -10px 30px -10px rgba(0,0,0,.5)}
 .regua::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;pointer-events:none;
   background:repeating-linear-gradient(90deg,rgba(43,26,16,.75) 0 2px,transparent 2px 60px),repeating-linear-gradient(90deg,rgba(43,26,16,.45) 0 1px,transparent 1px 12px);
   background-size:100% 16px,100% 8px;background-repeat:no-repeat}
@@ -92,7 +92,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .produto{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:0 0 22px;display:flex;flex-direction:column;text-decoration:none;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
 .produto:hover{border-color:var(--cambara);transform:translateY(-3px);box-shadow:0 18px 30px -22px rgba(31,18,10,.6)}
 .produto .tampa{height:86px;background:linear-gradient(rgba(31,18,10,.25),rgba(31,18,10,.45)),url(madeira.webp) center/cover;display:flex;align-items:flex-end;padding:0 22px;margin-bottom:-28px}
-.produto .ic{width:58px;height:58px;border-radius:12px;background:var(--mel);display:grid;place-items:center;color:var(--nogueira);box-shadow:0 8px 16px -8px rgba(0,0,0,.5)}
+.produto .ic{width:58px;height:58px;border-radius:12px;background:var(--mel);display:grid;place-items:center;color:var(--mogno);box-shadow:0 8px 16px -8px rgba(0,0,0,.5)}
 .produto .ic svg{width:30px;height:30px}
 .produto h3{font-size:26px;margin:44px 22px 8px}
 .produto p{font-size:15.5px;color:#4a3626;margin:0 22px 16px}
@@ -172,7 +172,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.produto{transition:none}}
 .cabeca .faixa{position:relative;z-index:1}
 /* logo · caminho A (no topo sem a linha do lema; no rodapé completo) */
-.logo-topo{display:block;height:46px;width:auto;color:var(--nogueira);overflow:hidden}
+.logo-topo{display:block;height:46px;width:auto;color:var(--mogno);overflow:hidden}
 .logo-rodape{display:block;height:96px;width:auto;color:var(--mel);overflow:visible}
 @media (max-width:380px){.logo-topo{height:40px}}
 /* fotos do site de 2016 (a confirmar com o dono): no tamanho original, nunca esticadas */
@@ -180,7 +180,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .foto-patio img{width:100%;max-width:800px;height:auto;border-radius:10px;border:1px solid var(--linha);display:block}
 .foto-patio figcaption{font-size:14px;color:var(--cinza);margin-top:8px}
 .pilares{list-style:none;margin:6px 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.pilares li{font:600 14px/1 'Barlow';padding:8px 12px;border-radius:40px;background:var(--cartao);border:1px solid var(--linha);color:var(--nogueira)}
+.pilares li{font:600 14px/1 'Barlow';padding:8px 12px;border-radius:40px;background:var(--cartao);border:1px solid var(--linha);color:var(--mogno)}
 .patio{margin-top:40px}
 .patio h3{font-size:24px;margin-bottom:12px}
 .patio-fotos{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr))}
@@ -188,7 +188,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .patio-fotos img{width:100%;max-width:200px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:8px;display:block}
 /* S80 · seção A madeireira com os textos de 2016 */
 .citacao{margin:52px 0 28px;padding:6px 0 6px 26px;border-left:5px solid var(--cambara);max-width:900px}
-.citacao p{margin:0;font:700 clamp(26px,3.2vw,38px)/1.18 'Zilla Slab',serif;color:var(--nogueira);text-wrap:balance}
+.citacao p{margin:0;font:700 clamp(26px,3.2vw,38px)/1.18 'Zilla Slab',serif;color:var(--mogno);text-wrap:balance}
 .citacao p::before{content:"“";color:var(--cambara);margin-right:2px}
 .citacao p::after{content:"”";color:var(--cambara);margin-left:2px}
 .cartoes4{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
@@ -221,7 +221,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .orc .lead{margin:0 0 26px}
 .fecho-p{margin:14px 0 0;font-size:15px;color:#e9dcc6}
 .nota-conversa{font-size:12.5px;color:#cdbb9d;margin:10px 0 0;text-align:center}
-.zap{max-width:420px;width:100%;justify-self:center;background:var(--areia);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);color:var(--nogueira)}
+.zap{max-width:420px;width:100%;justify-self:center;background:var(--areia);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);color:var(--mogno)}
 .zap-topo{display:flex;align-items:center;gap:12px;background:var(--mogno);color:#fff;padding:12px 16px}
 .zap-topo .av{width:38px;height:38px;border-radius:50%;background:var(--nogueira2);display:grid;place-items:center;flex:none;color:var(--mel)}
 .zap-topo b{display:block;font-size:15.5px;line-height:1.2}
