@@ -7,6 +7,9 @@
 @font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Zilla Slab';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/zilla-slab-600.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Zilla Slab';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/zilla-slab-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* textura de madeira: versão em pé e leve no celular (PageSpeed, S80 25/11) */
+:root{--tex:url(madeira.webp)}
+@media (max-width:700px){:root{--tex:url(madeira-cel.webp)}}
 /* reservas com as medidas da Zilla Slab 700 e da Barlow 400: a troca de fonte não empurra a página */
 @font-face{font-family:'Zilla Fallback';font-style:normal;font-weight:700;font-display:swap;src:local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('Tinos Bold');size-adjust:102.16%;ascent-override:92.40%;descent-override:25.06%;line-gap-override:0.00%}
 @font-face{font-family:'Barlow Fallback';font-style:normal;font-weight:400;font-display:swap;src:local('Arial'), local('ArialMT'), local('Liberation Sans'), local('Arimo');size-adjust:95.76%;ascent-override:104.42%;descent-override:20.88%;line-gap-override:0.00%}
@@ -35,7 +38,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .lead{font-size:18px;max-width:62ch;color:#4a3626}
 .creme{background:var(--areia)}
 /* fundo de madeira escurecida, para seções escuras */
-.escuro{background:linear-gradient(rgba(31,18,10,.90),rgba(31,18,10,.94)),url(madeira.webp) center/cover;color:#fff}
+.escuro{background:linear-gradient(rgba(31,18,10,.90),rgba(31,18,10,.94)),var(--tex) center/cover;color:#fff}
 .escuro .chapeu{color:var(--mel)}
 .escuro .lead{color:#fff}
 .aviso-previa{background:var(--nogueira2);color:#fff;font-size:13px;text-align:center;padding:7px 16px}
@@ -71,7 +74,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 
 /* ===== capa: tábuas de madeira, carimbo e régua ===== */
 .capa{position:relative;color:#fff;overflow:hidden;padding:0;
-  background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.86) 40%,rgba(31,18,10,.42) 70%,rgba(31,18,10,.18) 100%),url(madeira.webp) center/cover}
+  background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.86) 40%,rgba(31,18,10,.42) 70%,rgba(31,18,10,.18) 100%),var(--tex) center/cover}
 .capa::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 85% 40%,rgba(232,183,122,.16),transparent 60%);pointer-events:none}
 .capa .faixa{position:relative;z-index:1}
 .capa-grade{display:grid;gap:28px;align-items:center;padding-top:92px;padding-bottom:64px}
@@ -103,7 +106,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .produtos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));margin-top:10px}
 .produto{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:0 0 22px;display:flex;flex-direction:column;text-decoration:none;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
 .produto:hover{border-color:var(--cambara);transform:translateY(-3px);box-shadow:0 18px 30px -22px rgba(31,18,10,.6)}
-.produto .tampa{height:86px;background:linear-gradient(rgba(31,18,10,.25),rgba(31,18,10,.45)),url(madeira.webp) center/cover;display:flex;align-items:flex-end;padding:0 22px;margin-bottom:-28px}
+.produto .tampa{height:86px;background:linear-gradient(rgba(31,18,10,.25),rgba(31,18,10,.45)),var(--tex) center/cover;display:flex;align-items:flex-end;padding:0 22px;margin-bottom:-28px}
 .produto .ic{width:58px;height:58px;border-radius:12px;background:var(--mel);display:grid;place-items:center;color:var(--mogno);box-shadow:0 8px 16px -8px rgba(0,0,0,.5)}
 .produto .ic svg{width:30px;height:30px}
 .produto h3{font-size:26px;margin:44px 22px 8px}
@@ -128,7 +131,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .dof h3{font-size:28px;margin-bottom:10px}
 .dof p{font-size:16px}
 .dof small{display:block;color:var(--cinza);font-size:13.5px}
-.foto-vazia{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(rgba(31,18,10,.55),rgba(31,18,10,.85)),url(madeira.webp) center/cover;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.foto-vazia{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(rgba(31,18,10,.55),rgba(31,18,10,.85)),var(--tex) center/cover;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
 .foto-vazia b{font:700 26px/1.1 'Zilla Slab',serif}
 .foto-vazia span{font-size:14.5px}
 /* avaliações */
@@ -151,7 +154,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .canais a,.canais span{font-size:17px;text-decoration:none;overflow-wrap:anywhere}
 .mapa{width:100%;height:100%;min-height:340px;border:1px solid var(--linha);border-radius:10px;display:block;background:var(--areia)}
 @media (max-width:899px){.mapa{min-height:260px}}
-.faixa-zap{margin-top:36px;background:linear-gradient(90deg,rgba(31,18,10,.92),rgba(31,18,10,.7)),url(madeira.webp) center/cover;color:#fff;border-radius:10px;padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
+.faixa-zap{margin-top:36px;background:linear-gradient(90deg,rgba(31,18,10,.92),rgba(31,18,10,.7)),var(--tex) center/cover;color:#fff;border-radius:10px;padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
 .faixa-zap p{margin:0;font:700 30px/1.1 'Zilla Slab',serif;max-width:24ch}
 @media (max-width:420px){.faixa-zap .bt{width:100%}.faixa-zap{padding:26px 20px}}
 /* rodapé do cliente */
@@ -164,7 +167,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .rodape .dev a{display:block;line-height:0}
 .rodape .dev img{width:110px;height:auto;display:block}
 /* página de produto */
-.cabeca{position:relative;color:#fff;padding:70px 0 60px;background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.84) 50%,rgba(31,18,10,.45) 100%),url(madeira.webp) center/cover}
+.cabeca{position:relative;color:#fff;padding:70px 0 60px;background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.84) 50%,rgba(31,18,10,.45) 100%),var(--tex) center/cover}
 .cabeca h1{font-size:clamp(44px,6.4vw,72px)}
 .cabeca .lead{color:#fff;margin:18px 0 26px}
 .trilha{font-size:14px;margin-bottom:18px}
