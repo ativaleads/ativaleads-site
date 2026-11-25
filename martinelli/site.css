@@ -274,3 +274,13 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
   .selos-capa li{flex-direction:column;justify-content:flex-start;gap:8px;text-align:center;white-space:normal;font-size:15px}
   .selos-capa svg{width:24px;height:24px}
 }
+
+/* página do telhado (S80 25/11): desenho em perspectiva com montagem animada; quadros numerados e alinhados com o quadro grande */
+.duas.alinha{align-items:stretch}
+.duas.alinha>div:first-child{display:flex;flex-direction:column}
+.duas.alinha .pecas{margin-top:auto}
+.diagrama .iso{display:block;width:100%;height:auto}
+.iso .pc,.iso .num-iso{transform-box:fill-box;transform-origin:center}
+.iso.pre .pc,.iso.pre .num-iso{opacity:0}
+.duas.alinha .diagrama{display:flex;align-items:center;justify-content:center}
+.pecas b .n{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:10px;border-radius:50%;background:var(--mogno);color:var(--mel);font:700 15px/1 'Zilla Slab',serif;vertical-align:3px}
