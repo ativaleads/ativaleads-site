@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reel de exemplo · Madeireira Martinelli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@500;600;700&family=Zilla+Slab:wght@600;700&display=swap">
+<style>
+/* S80 (25/11): Reels de exemplo com motion, no padrão do site. reel.html?r=1 (DOF), r=2 (telhado), r=3 (orçamento).
+   Palco fixo de 1080 × 1920 escalado para caber em qualquer moldura; laço de 12 s. Esboço de movimento: no Reel real entra filmagem da madeireira. */
+:root{--nogueira:#2b1a10;--nogueira2:#1f120a;--mogno:#4a2a16;--cambara:#a8582a;--cambara-t:#8f4519;--mel:#e8b77a;--mel2:#d79a55;--areia:#dfcfae;--papel:#ede3cf;--linha:#cbb894;--cartao:#f8f2e5;--cinza:#6a5644;--zap:#1f8f4e;--T:12s}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--nogueira2)}
+body{font-family:'Barlow',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+#palco{position:fixed;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;overflow:hidden;color:#fff}
+.fundo{position:absolute;inset:-60px;background:linear-gradient(rgba(31,18,10,.78),rgba(31,18,10,.9)),url(madeira.webp) center/cover;animation:kb var(--T) linear infinite}
+.fundo.claro{background:var(--papel)}
+@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.08) translate(-20px,10px)}}
+.cena{position:absolute;left:84px;right:84px}
+.a{opacity:0;animation-duration:var(--T);animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.2,.8,.2,1);animation-fill-mode:both}
+h1,.z{font-family:'Zilla Slab',Georgia,serif;font-weight:700;margin:0;line-height:1.02;letter-spacing:-.012em}
+em{font-style:normal;color:var(--mel)}
+.etiqueta{display:inline-block;font:700 34px/1 'Barlow Condensed';letter-spacing:.18em;text-transform:uppercase;color:var(--mogno);background:var(--mel);padding:18px 58px 16px 26px;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 50%,calc(100% - 28px) 100%,0 100%)}
+/* régua com logo no pé, entra no fim */
+.regua{position:absolute;left:0;right:0;bottom:0;height:230px;background:linear-gradient(180deg,#e9bd7f,#d9a05c);color:var(--mogno);display:flex;align-items:center;justify-content:space-between;padding:30px 84px 0}
+.regua::before{content:"";position:absolute;left:0;right:0;top:0;height:34px;background:repeating-linear-gradient(90deg,rgba(43,26,16,.75) 0 3px,transparent 3px 90px),repeating-linear-gradient(90deg,rgba(43,26,16,.45) 0 2px,transparent 2px 18px);background-size:100% 34px,100% 17px;background-repeat:no-repeat}
+.regua svg{height:140px;width:auto}
+.regua b{font:700 44px/1.1 'Barlow';text-align:right}
+.regua small{display:block;font:700 28px/1 'Barlow Condensed';letter-spacing:.14em;text-transform:uppercase;color:var(--cambara-t);margin-bottom:8px}
+.ex{position:absolute;top:60px;right:60px;font:700 26px/1 'Barlow Condensed';letter-spacing:.2em;color:var(--mel);border:3px solid var(--mel);padding:10px 14px;border-radius:5px}
+.claro-palco .ex{color:var(--cambara-t);border-color:var(--cambara-t)}
+/* entradas: cada uma tem o seu tempo dentro dos 12 s */
+.r{display:none}
+body[data-r="1"] .r1,body[data-r="2"] .r2,body[data-r="3"] .r3{display:block}
+
+@keyframes cai10{0%,10%{opacity:0;transform:translateY(-500px)}16%{opacity:1;transform:translateY(14px)}18%,88%{opacity:1;transform:none}94%,100%{opacity:0;transform:none}}
+@keyframes cai20{0%,20%{opacity:0;transform:translateY(-500px)}26%{opacity:1;transform:translateY(14px)}28%,88%{opacity:1;transform:none}94%,100%{opacity:0;transform:none}}
+@keyframes cai30{0%,30%{opacity:0;transform:translateY(-500px)}36%{opacity:1;transform:translateY(14px)}38%,88%{opacity:1;transform:none}94%,100%{opacity:0;transform:none}}
+@keyframes cai40{0%,40%{opacity:0;transform:translateY(-500px)}46%{opacity:1;transform:translateY(14px)}48%,88%{opacity:1;transform:none}94%,100%{opacity:0;transform:none}}
+@keyframes rot12{0%,12%{opacity:0;transform:translateX(80px)}18%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes rot22{0%,22%{opacity:0;transform:translateX(80px)}28%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes rot32{0%,32%{opacity:0;transform:translateX(80px)}38%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes rot42{0%,42%{opacity:0;transform:translateX(80px)}48%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes bol14{0%,14%{opacity:0;transform:translateY(40px) scale(.9)}18%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes bol26{0%,26%{opacity:0;transform:translateY(40px) scale(.9)}30%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes bol52{0%,52%{opacity:0;transform:translateY(40px) scale(.9)}56%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes dig38{0%,38%{opacity:0}40%,50%{opacity:1}52%,100%{opacity:0}}
+/* ===== REEL 1 · DOF ===== */
+@keyframes r1a{0%{opacity:0;transform:translateY(70px)}5%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes r1b{0%,16%{opacity:0;transform:scale(.6)}22%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes r1c{0%,30%{opacity:0;transform:scale(2.6) rotate(-24deg)}35%{opacity:1;transform:scale(.94) rotate(-8deg)}37%,88%{opacity:1;transform:scale(1) rotate(-8deg)}94%,100%{opacity:0}}
+@keyframes r1d{0%,46%{opacity:0;transform:translateX(-60px)}52%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes r1e{0%,66%{opacity:0;transform:translateY(240px)}72%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes tremor{0%,34.5%,38%,100%{transform:none}35.2%{transform:translate(-10px,6px)}36%{transform:translate(8px,-6px)}36.8%{transform:translate(-5px,3px)}}
+.r1 .tremor{position:absolute;inset:0;animation:tremor var(--T) infinite}
+.r1 .t1{top:230px;font-size:110px;animation-name:r1a}
+.r1 .t2{top:470px;font-size:180px;color:var(--mel);animation-name:r1b}
+.r1 .carimbo{position:absolute;left:50%;top:900px;width:420px;height:420px;margin-left:-210px;animation-name:r1c;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.r1 .t3{top:1390px;font:600 46px/1.35 'Barlow';color:#f1e6d4;border-left:10px solid var(--mel);padding-left:30px;animation-name:r1d}
+.r1 .t3 b{display:block;font:700 56px/1.1 'Zilla Slab',serif;color:#fff;margin-bottom:8px}
+.r1 .regua{animation-name:r1e}
+
+/* ===== REEL 2 · TELHADO ===== */
+@keyframes r2t{0%{opacity:0;transform:translateY(-60px)}5%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes cai{0%{opacity:0;transform:translateY(-500px)}6%{opacity:1;transform:translateY(14px)}8%{transform:none}86%{opacity:1;transform:none}92%,100%{opacity:0;transform:none}}
+@keyframes rot{0%{opacity:0;transform:translateX(80px)}6%,86%{opacity:1;transform:none}92%,100%{opacity:0}}
+@keyframes r2f{0%,64%{opacity:0;transform:translateY(240px)}70%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes r2c{0%,58%{opacity:0;transform:scale(.9)}63%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+.r2 .t1{top:200px;font-size:124px;color:var(--mogno);animation-name:r2t}
+.r2 .t1 em{color:var(--cambara-t)}
+.r2 .pilha{position:absolute;left:84px;top:640px;width:560px;display:grid;gap:34px}
+.r2 .linha{position:absolute;left:680px;right:60px;font:700 64px/1 'Zilla Slab',serif;color:var(--mogno)}
+.r2 .linha small{display:block;font:600 34px/1.25 'Barlow';color:var(--cinza);margin-top:10px}
+.peca{border-radius:7px;background:linear-gradient(var(--tom),var(--tom)),url(madeira.webp) center/cover;box-shadow:inset 0 -8px 0 rgba(31,18,10,.28),0 20px 30px -18px rgba(31,18,10,.8)}
+.r2 .p1{animation-name:cai40}
+.r2 .p2{animation-name:cai30}
+.r2 .p3{animation-name:cai20}
+.r2 .p4{animation-name:cai10}
+.r2 .l1{top:636px;animation-name:rot42}
+.r2 .l2{top:770px;animation-name:rot32}
+.r2 .l3{top:884px;animation-name:rot22}
+.r2 .l4{top:1018px;animation-name:rot12}
+.r2 .cta{top:1290px;font:600 48px/1.3 'Barlow';color:var(--mogno);background:var(--cartao);border:3px solid var(--linha);border-left:12px solid var(--cambara);border-radius:12px;padding:30px 36px;animation-name:r2c}
+.r2 .regua{animation-name:r2f}
+
+/* ===== REEL 3 · ORÇAMENTO ===== */
+@keyframes r3t{0%{opacity:0;transform:translateY(60px)}5%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes r3card{0%,6%{opacity:0;transform:translateY(300px)}12%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes bolha{0%{opacity:0;transform:translateY(40px) scale(.9)}4%,80%{opacity:1;transform:none}86%,100%{opacity:0}}
+@keyframes digita{0%{opacity:0}2%,12%{opacity:1}14%,100%{opacity:0}}
+@keyframes ponto{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-12px);opacity:1}}
+@keyframes pulsa{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes r3f{0%,70%{opacity:0;transform:translateY(240px)}76%,94%{opacity:1;transform:none}100%{opacity:0}}
+.r3 .t1{top:170px;font-size:112px;animation-name:r3t}
+.r3 .zapcard{position:absolute;left:84px;right:84px;top:560px;background:var(--areia);border-radius:40px;overflow:hidden;box-shadow:0 40px 70px -36px rgba(0,0,0,.9);animation-name:r3card}
+.r3 .zap-topo{display:flex;align-items:center;gap:24px;background:var(--mogno);padding:26px 34px}
+.r3 .av{width:84px;height:84px;border-radius:50%;background:var(--nogueira2);display:grid;place-items:center;color:var(--mel)}
+.r3 .zap-topo b{display:block;font:700 40px/1.2 'Barlow'}
+.r3 .zap-topo small{font-size:30px;color:#e9dcc6}
+.r3 .corpo{background:var(--papel);padding:30px 30px 36px;display:flex;flex-direction:column;gap:22px;min-height:780px}
+.r3 .b{max-width:82%;padding:20px 26px 14px;border-radius:26px;font-size:40px;line-height:1.36;color:var(--mogno);box-shadow:0 3px 3px rgba(31,18,10,.12);animation-name:bolha}
+.r3 .b small{display:block;text-align:right;font-size:24px;color:var(--cinza);margin-top:4px}
+.r3 .cli{align-self:flex-end;background:var(--cartao);border-top-right-radius:6px}
+.r3 .loja{align-self:flex-start;background:#fff;border-top-left-radius:6px}
+.r3 .b1{animation-name:bol14}
+.r3 .b2{animation-name:bol26}
+.r3 .b3{animation-name:bol52}
+.r3 .dig{align-self:flex-start;background:#fff;border-radius:26px;padding:24px 30px;display:flex;gap:12px;animation:dig38 var(--T) infinite;opacity:0}
+.r3 .dig i{width:18px;height:18px;border-radius:50%;background:var(--cinza);animation:ponto .9s infinite}
+.r3 .dig i:nth-child(2){animation-delay:.15s}.r3 .dig i:nth-child(3){animation-delay:.3s}
+.r3 .foto{width:62%;padding:10px}
+.r3 .foto svg{display:block;width:100%;height:auto;border-radius:18px}
+.r3 .regua{animation-name:r3f}
+.r3 .zapbt{display:inline-flex;align-items:center;gap:16px;background:var(--zap);color:#fff;border-radius:999px;padding:22px 34px;font:700 42px/1 'Barlow';animation:pulsa 1.2s infinite}
+.r3 .zapbt svg{width:46px;height:46px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mA" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="6"><polyline points="8,52 60,10 112,52"/><path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106"/></g></symbol>
+    <symbol id="lockA" viewBox="0 0 531 178"><use href="#mA" x="10" y="12" width="120" height="120"/><g fill="currentColor"><text x="150.333" y="38.667" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="32" letter-spacing="25.815">MADEIREIRA</text><text x="149.667" y="117" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="82">Martinelli</text><text x="14.667" y="158" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="8.657">CONFIANÇA E HONESTIDADE, SEMPRE</text></g></symbol>
+    <path id="arcoTopo" d="M42.75 130 a87.25 87.25 0 1 1 174.5 0"/><path id="arcoBase" d="M30.85 130 a99.15 99.15 0 0 0 198.3 0"/>
+    <filter id="tinta-carimbo"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+    <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
+  </defs>
+</svg>
+
+<div id="palco">
+
+  <!-- REEL 1 · "Comprou madeira nativa? Peça o DOF." -->
+  <div class="r r1"><div class="fundo"></div><div class="tremor">
+    <span class="ex">EXEMPLO</span>
+    <div class="cena a t1 z">Comprou madeira nativa?</div>
+    <div class="cena a t2 z">Peça o DOF.</div>
+    <svg class="a carimbo" viewBox="0 0 260 260" aria-hidden="true"><g filter="url(#tinta-carimbo)" fill="#e8b77a"><circle cx="130" cy="130" r="124" fill="rgba(31,18,10,.62)" stroke="#e8b77a" stroke-width="5"/><circle cx="130" cy="130" r="113" fill="none" stroke="#e8b77a" stroke-width="1.6"/><circle cx="130" cy="130" r="74" fill="none" stroke="#e8b77a" stroke-width="2.2"/><text dx="1.8" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="18" letter-spacing="3.6" text-anchor="middle"><textPath href="#arcoTopo" startOffset="50%">MADEIREIRA MARTINELLI</textPath></text><text dx="2.5" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="16" letter-spacing="5" text-anchor="middle"><textPath href="#arcoBase" startOffset="50%">DESDE 2001</textPath></text><circle cx="36.35" cy="130" r="3.2"/><circle cx="223.65" cy="130" r="3.2"/><text x="131.2" y="99.7" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="12.5" letter-spacing="2.4">MADEIRA NATIVA</text><path d="M81 108.5h98" stroke="#e8b77a" stroke-width="1.6"/><text x="130" y="145.3" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="44">COM</text><text x="133.5" y="169.3" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="24" letter-spacing="7">DOF</text></g></svg>
+    <div class="cena a t3"><b>Documento de Origem Florestal</b>A licença do Ibama que acompanha a madeira nativa até a sua obra.</div>
+  </div>
+    <div class="regua a"><svg viewBox="0 0 531 178"><use href="#lockA"/></svg><b><small>Madeira nativa</small>com DOF</b></div>
+  </div>
+
+  <!-- REEL 2 · "Quem segura o seu telhado?" -->
+  <div class="r r2"><div class="fundo claro"></div>
+    <span class="ex" style="color:#8f4519;border-color:#8f4519">EXEMPLO</span>
+    <div class="cena a t1 z">Quem segura o <em>seu telhado?</em></div>
+    <div class="pilha">
+      <svg class="a p1" viewBox="0 0 560 104" style="display:block;width:560px;height:104px"><defs><linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c06a35"/><stop offset="1" stop-color="#8f4519"/></linearGradient></defs><path fill="url(#tg)" stroke="#4a2a16" stroke-width="3" d="M2 100 V66 q35 -64 70 0 q35 -64 70 0 q35 -64 70 0 q35 -64 70 0 q35 -64 70 0 q35 -64 70 0 q35 -64 70 0 q35 -64 70 0 V100 Z"/></svg>
+      <div class="a p2" style="display:grid;gap:14px"><div class="peca" style="height:30px;--tom:rgba(232,183,122,.55)"></div><div class="peca" style="height:30px;--tom:rgba(232,183,122,.55)"></div></div>
+      <div class="a p3 peca" style="height:80px;--tom:rgba(168,88,42,.45)"></div>
+      <div class="a p4 peca" style="height:120px;--tom:rgba(74,42,22,.45)"></div>
+    </div>
+    <div class="a linha l1">Telha<small>apoia na ripa</small></div>
+    <div class="a linha l2">Ripa<small>pregada no caibro</small></div>
+    <div class="a linha l3">Caibro<small>apoia na terça</small></div>
+    <div class="a linha l4">Terça<small>atravessa o vão</small></div>
+    <div class="cena a cta">Cada peça tem a espécie e a bitola certas para o vão. Mande as medidas e o vendedor indica.</div>
+    <div class="regua a"><svg viewBox="0 0 531 178"><use href="#lockA"/></svg><b><small>Madeiramento</small>de telhado</b></div>
+  </div>
+
+  <!-- REEL 3 · "Do seu projeto ao orçamento, numa conversa." -->
+  <div class="r r3"><div class="fundo"></div>
+    <span class="ex">EXEMPLO</span>
+    <div class="cena a t1 z">Do seu projeto ao orçamento, <em>numa conversa.</em></div>
+    <div class="a zapcard">
+      <div class="zap-topo"><span class="av"><svg width="50" height="50" viewBox="0 0 120 120"><use href="#mA"/></svg></span><div><b>Madeireira Martinelli</b><small>WhatsApp · (12) 97405-2842</small></div></div>
+      <div class="corpo">
+        <div class="a b cli foto b1"><svg viewBox="0 0 320 170" aria-hidden="true"><rect width="320" height="170" fill="#4a2a16"/><g stroke="#e8b77a" stroke-width="5" fill="none" stroke-linejoin="round"><path d="M40 126 L160 44 L280 126"/><path d="M60 126h200"/></g><g stroke="#d79a55" stroke-width="3"><path d="M85 109V126M120 85V126M160 56V126M200 85V126M235 109V126"/></g><g stroke="#ede3cf" stroke-width="1.6"><path d="M40 146h240M40 140v12M280 140v12"/><path d="M298 44v82M292 44h12M292 126h12"/></g><g fill="#ede3cf" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="17" text-anchor="middle"><text x="160" y="165">6,00 m</text><text x="286" y="91" text-anchor="end">1,80 m</text></g></svg><small>14:02</small></div>
+        <div class="a b cli b2">Vou cobrir uma área de 6 × 4 m. Qual madeira vocês indicam?<small>14:02</small></div>
+        <div class="dig"><i></i><i></i><i></i></div>
+        <div class="a b loja b3">Boa tarde! Recebi as medidas. Já te mando as opções de madeira.<small>14:05</small></div>
+      </div>
+    </div>
+    <div class="regua a"><svg viewBox="0 0 531 178"><use href="#lockA"/></svg><span class="zapbt"><svg><use href="#zap"/></svg>(12) 97405-2842</span></div>
+  </div>
+</div>
+
+<script>
+var r = new URLSearchParams(location.search).get('r') || '1';
+document.body.setAttribute('data-r', r);
+function ajusta(){ var s = Math.min(innerWidth / 1080, innerHeight / 1920), p = document.getElementById('palco');
+  p.style.transform = 'translate(' + ((innerWidth - 1080 * s) / 2) + 'px,' + ((innerHeight - 1920 * s) / 2) + 'px) scale(' + s + ')'; }
+addEventListener('resize', ajusta); ajusta();
+/* conferência: ?t=ms congela a animação naquele instante */
+var tq = new URLSearchParams(location.search).get('t');
+if (tq) { document.fonts.ready.then(function(){ document.getAnimations().forEach(function(x){ x.pause(); x.currentTime = +tq; }); }); }
+</script>
+</body>
+</html>
