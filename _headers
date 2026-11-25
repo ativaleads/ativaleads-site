@@ -6,3 +6,7 @@
 # Página de aprovação das peças da Black Friday do Flow (corretor Maike, S73): fora da busca, inclusive vídeos e imagens.
 /maike/*
   X-Robots-Tag: noindex, nofollow
+
+# Proposta e site de exemplo da Madeireira Martinelli (S80): fora da busca, inclusive imagens e PDF.
+/martinelli/*
+  X-Robots-Tag: noindex, nofollow
