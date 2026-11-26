@@ -30,17 +30,20 @@ section{padding:84px 0;scroll-margin-top:60px}
 .creme{background:var(--creme)}
 .texto{max-width:64ch}
 /* aviso e menu */
-.aviso{font-size:13.5px;text-align:center;padding:8px 16px;background:var(--tinta2);color:var(--claro)}
-.menu{position:sticky;top:0;z-index:20;background:rgba(237,227,207,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.aviso{font-size:13.5px;text-align:center;padding:8px 16px;background:#007A3F;color:#fff;border-bottom:1px solid rgba(255,255,255,.22)}
+/* S79 (Operador, 25/11/2026): topo e rodapé da proposta no verde da Ativaleads, com o logo; o nome do cliente já aparece na capa */
+.menu{position:sticky;top:0;z-index:20;background:#007A3F}
 .menu .faixa{display:flex;align-items:center;gap:20px;height:56px}
-.menu b{font:700 19px 'Barlow Condensed';letter-spacing:.02em;white-space:nowrap;margin-right:auto;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.menu .faixa>a{text-decoration:none;font-size:14.5px;color:var(--cinza);white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
-.menu .faixa>a:hover{color:var(--texto)}
+.menu .marca{margin-right:auto;flex:none;line-height:0}
+.menu .marca a{display:block}
+.menu .marca img{display:block;width:150px;height:auto}
+.menu .faixa>a{text-decoration:none;font-size:14.5px;color:#fff;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+.menu .faixa>a:hover{border-bottom-color:#fff}
 .menu-cel{display:none;position:relative}
 @media (max-width:1139px){
 .menu .faixa>a{display:none}
 .menu-cel{display:block;flex:none;position:static}
-.menu-cel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 14px 'Barlow';color:var(--texto);padding:8px 14px;border:1px solid var(--linha);border-radius:40px;background:var(--cartao)}
+.menu-cel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 14px 'Barlow';color:#007A3F;padding:8px 14px;border:1px solid #fff;border-radius:40px;background:#fff}
 .menu-cel summary::-webkit-details-marker{display:none}
 .menu-cel[open] summary svg{transform:rotate(180deg)}
 .menu-painel{position:absolute;left:0;right:0;top:56px;display:flex;flex-direction:column;background:var(--papel);border-bottom:1px solid var(--linha);box-shadow:0 18px 30px -20px rgba(31,18,10,.35);padding:4px 20px 14px;max-height:calc(100vh - 124px);max-height:calc(100dvh - 124px);overflow-y:auto}
@@ -213,7 +216,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 .rodape-padrao-fim{max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
 .rodape-padrao img{width:180px;height:auto;display:block}
 .rodape-padrao-txt{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
-.rodape-padrao-para{margin:0;font-size:15px;line-height:1.5;color:#fff;font-weight:600}
+.rodape-padrao-para{margin:0;font-size:15px;line-height:1.5;color:#fff;font-weight:600;text-wrap:balance}
 .rodape-padrao-legal{margin:0;font-size:14px;line-height:1.5;color:#fff}
 @media (max-width:639px){
   .rodape-padrao-fim{flex-direction:column;text-align:center}
@@ -322,7 +325,7 @@ section{padding:84px 0;scroll-margin-top:60px}
 
 <nav class="menu" aria-label="Seções">
   <div class="faixa">
-    <b>Madeireira Martinelli · proposta</b>
+    <span class="marca"><a href="https://ativaleads.com.br/ativaleads/" aria-label="Ativaleads"><img src="img/ativaleads-2026-branco-checkclaro-250.webp" alt="Ativaleads" width="250" height="41"></a></span>
     <a href="#hoje">Hoje</a><a href="#google">Google</a><a href="#busca">Busca</a><a href="#site">Site</a><a href="#identidade">Identidade</a><a href="#redes">Redes</a><a href="#posts">Posts</a><a href="#reels">Reels</a><a href="#antes">Antes e depois</a><a href="#regra">Regra</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a>
     <details class="menu-cel"><summary>Seções <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="menu-painel"><a href="#hoje">Hoje</a><a href="#google">Google</a><a href="#busca">Busca</a><a href="#site">Site</a><a href="#identidade">Identidade</a><a href="#redes">Redes</a><a href="#posts">Posts</a><a href="#reels">Reels</a><a href="#antes">Antes e depois</a><a href="#regra">Regra</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a></div></details>
   </div>
