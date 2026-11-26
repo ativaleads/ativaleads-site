@@ -27,21 +27,23 @@ section{padding:88px 0;scroll-margin-top:60px}
 .escuro{background:var(--tinta);color:var(--claro)}.escuro .chapeu{color:var(--ouro2)}
 .creme{background:var(--creme)}
 /* aviso e menu */
-.aviso{font-size:13px;text-align:center;padding:8px 16px;background:var(--tinta2);color:var(--claro)}
-.menu{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.aviso{font-size:13px;text-align:center;padding:8px 16px;background:#007A3F;color:#fff;border-bottom:1px solid rgba(255,255,255,.22)}
+/* S79 (Operador, 25/11/2026): topo e rodapé da proposta no verde da Ativaleads, com o logo; o nome do cliente já aparece na capa */
+.menu{position:sticky;top:0;z-index:20;background:#007A3F}
 .menu .faixa{display:flex;align-items:center;gap:22px;height:56px;overflow-x:auto;scrollbar-width:none}
 .menu .faixa::-webkit-scrollbar{display:none}
-.menu b{font-family:'Newsreader',serif;font-weight:500;font-size:17px;white-space:nowrap;margin-right:auto}
-.menu a{text-decoration:none;font-size:14px;color:var(--cinza);white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
-.menu a.ativo{color:var(--tinta);border-color:var(--ouro2)}
+.menu .marca{margin-right:auto;flex:none;line-height:0}
+.menu .marca img{display:block;width:150px;height:auto}
+.menu a{text-decoration:none;font-size:14px;color:#fff;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+.menu .marca a{display:block;padding:0;border:0}
+.menu a.ativo{color:#fff;border-color:#fff}
 .menu-cel{display:none}
 /* S56 (A6): botão "Seções" até 1099 px; o menu de links precisa de 878 px (1039 com letra a 125%) */
 @media (max-width:1099px){
 .menu .faixa{overflow:visible}
 .menu .faixa>a{display:none}
 .menu-cel{display:block;flex:none}
-.menu b{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:15.5px}
-.menu-cel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 14px 'IBM Plex Sans';color:var(--tinta);padding:8px 14px;border:1px solid var(--linha);border-radius:40px;background:#fff}
+.menu-cel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 14px 'IBM Plex Sans';color:#007A3F;padding:8px 14px;border:1px solid #fff;border-radius:40px;background:#fff}
 .menu-cel summary::-webkit-details-marker{display:none}
 .menu-cel[open] summary svg{transform:rotate(180deg)}
 .menu-painel{position:absolute;left:0;right:0;top:56px;display:flex;flex-direction:column;background:var(--branco);border-bottom:1px solid var(--linha);box-shadow:0 18px 30px -20px rgba(15,24,34,.35);padding:4px 20px 14px}
@@ -156,18 +158,20 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .passos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:1fr}@media (min-width:560px){.passos{grid-template-columns:repeat(2,1fr)}}@media (min-width:1000px){.passos{grid-template-columns:repeat(4,1fr)}} /* S56: 4, 2+2 ou 1, nunca um passo sozinho na fileira */
 .passos li{counter-increment:p;border-top:2px solid var(--ouro2);padding-top:14px;font-size:15.5px}
 .passos li::before{content:"0" counter(p);display:block;font:500 13px 'IBM Plex Mono';color:var(--ouro2);margin-bottom:6px}
-.rodape{background:var(--tinta2);color:var(--claro);padding:56px 0 40px;font-size:14px;border-top:3px solid var(--ouro2)} /* S61: rodapé refeito (Operador: "antes melhora o rodapé") */
-.rodape p{margin:0}
-.rod-topo{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;padding-bottom:28px;border-bottom:1px solid #2c3a47}
-.rod-para{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.3;text-align:right;text-wrap:balance}
-.rod-para span{display:block;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro2);margin-top:8px}
-.rod-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 40px;padding-top:22px;font-size:13px;line-height:1.5}
-.rod-base p:last-child{max-width:52ch;text-align:right}
-@media (min-width:1000px){.rod-base p:first-child{flex:0 0 auto;white-space:nowrap}}
-@media (max-width:999px){.rod-topo,.rod-base{flex-direction:column;align-items:flex-start}.rod-para,.rod-base p:last-child{text-align:left}}
-.rodape b{color:var(--claro);font-weight:500}
-.logo-ativa{display:block;width:max-content;line-height:0}
-.logo-ativa img{display:block;height:26px;width:auto}
+/* rodapé padrão da Ativaleads (RODAPE_PADRAO.md) */
+.rodape-padrao{background:#007A3F;color:#fff;padding:34px 0 40px}
+.rodape-padrao-fim{max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
+.rodape-padrao img{width:180px;height:auto;display:block}
+.rodape-padrao-txt{display:flex;flex-direction:column;gap:4px;align-items:flex-end;text-align:right}
+.rodape-padrao-para{margin:0;font-size:15px;line-height:1.5;color:#fff;font-weight:600;text-wrap:balance}
+.rodape-padrao-legal{margin:0;font-size:14px;line-height:1.5;color:#fff}
+.rodape-padrao-nota{margin:0;font-size:14px;line-height:1.5;color:#fff;text-wrap:balance}
+@media (max-width:639px){
+  .rodape-padrao-fim{flex-direction:column;text-align:center}
+  .rodape-padrao-txt{align-items:center;text-align:center}
+  .rodape-padrao-legal>span:not(.sep){display:block;text-wrap:balance}
+  .rodape-padrao-legal .sep{display:none}
+}
 .perfil-wrap>*,.carrossel>*,.duas>*{min-width:0}
 @media (max-width:899px){.perfil-wrap,.carrossel{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:819px){.duas{grid-template-columns:minmax(0,1fr)}}
@@ -203,7 +207,7 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 
 <nav class="menu" aria-label="Seções">
   <div class="faixa">
-    <b>Emilson Antunes · proposta</b>
+    <span class="marca"><a href="https://ativaleads.com.br/ativaleads/" aria-label="Ativaleads"><img src="img/ativaleads-2026-branco-checkclaro-250.webp" alt="Ativaleads" width="250" height="41"></a></span>
     <a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a>
     <details class="menu-cel"><summary>Seções <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="menu-painel"><a href="#hoje">Hoje</a><a href="#regra">Regra</a><a href="#site">Site</a><a href="#perfil">Instagram</a><a href="#carrosseis">Carrosséis</a><a href="#antes">Antes e depois</a><a href="#google">Google</a><a href="#crm">CRM</a><a href="#seguir">Próximos passos</a></div></details>
   </div>
@@ -444,10 +448,16 @@ h2,h3{text-wrap:balance}p{text-wrap:pretty}
 </section>
 </main>
 
-<footer class="rodape"><div class="faixa">
-  <div class="rod-topo"><a class="logo-ativa" href="https://ativaleads.com.br/ativaleads/" rel="noopener"><img src="img/ativaleads-branco.webp" width="160" height="26" alt="Ativaleads"></a><p class="rod-para">Proposta para Emilson Antunes e Advogados Associados<span>Novembro de 2026</span></p></div>
-  <div class="rod-base"><p>Ativaleads Consultoria em Marketing Digital · CNPJ 52.788.441/0001-01</p><p>Esboço para conversa. Textos legais devem ser revisados pelo escritório antes de qualquer publicação.</p></div>
-</div></footer>
+<footer class="rodape-padrao">
+  <div class="rodape-padrao-fim">
+    <a href="https://ativaleads.com.br/ativaleads/" aria-label="Ativaleads"><img src="img/ativaleads-2026-branco-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a>
+    <div class="rodape-padrao-txt">
+      <p class="rodape-padrao-para">Proposta para Emilson Antunes e Advogados Associados · novembro de 2026</p>
+      <p class="rodape-padrao-legal"><span>Ativaleads Consultoria em Marketing Digital LTDA</span><span class="sep"> · </span><span>CNPJ 52.788.441/0001-01</span><span class="sep"> · </span><span>São Paulo/SP</span></p>
+      <p class="rodape-padrao-nota">Esboço para conversa. Textos legais devem ser revisados pelo escritório antes de qualquer publicação.</p>
+    </div>
+  </div>
+</footer>
 
 <script>
 (function(){
