@@ -9,6 +9,9 @@
 <meta name="theme-color" content="#007A3F">
 <script>document.documentElement.className+=' js'</script>
 <style>@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url(../../assets/fonts/manrope-latin.woff2) format('woff2')}
+@font-face{font-family:'Kit Zilla';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/zilla-slab-700.woff2) format('woff2')}
+@font-face{font-family:'Kit Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/barlow-400.woff2) format('woff2')}
+@font-face{font-family:'Kit Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/barlow-condensed-700.woff2) format('woff2')}
 :root{--fundo:#ffffff;--texto:#14212b;--creme:#f3f4f1;--cartao:#ffffff;--linha:#dfe5e0;--escuro:#007a3f;--escuro-texto:#ffffff;--acento:#ffffff;--acento-t:#007a3f;--alerta:#b3261e;--ruim:#b3261e;--bom:#007a3f;--medio:#b85a00;--f-titulo:'Manrope','Segoe UI',Arial,sans-serif;--f-texto:'Manrope','Segoe UI',Arial,sans-serif;--f-rotulo:'Manrope','Segoe UI',Arial,sans-serif;--f-pergunta:'Manrope','Segoe UI',Arial,sans-serif;--peso-titulo:800;--rotulo-peso:700;--peso-pergunta:600;--titulo-espaco:-.03em;--texto-2:#55646d}
 :root{
 --verde:#007A3F;
@@ -196,7 +199,7 @@ p{text-wrap:pretty}
 .js .ap-entrou .ap-mini .a{stroke-dashoffset:calc(150.8 * (1 - var(--p)))}
 @media (prefers-reduced-motion:reduce){.js .ap-mini .a{stroke-dashoffset:calc(150.8 * (1 - var(--p)));transition:none}}
 .ap-buscas{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(5px,1svh,8px)}
-.ap-buscas li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:clamp(6px,1.2svh,12px) 14px;background:var(--cartao);border:1px solid var(--linha);border-left:5px solid var(--est,var(--linha));border-radius:6px}
+.ap-buscas li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:clamp(5px,0.85svh,12px) 14px;background:var(--cartao);border:1px solid var(--linha);border-left:5px solid var(--est,var(--linha));border-radius:6px}
 .ap-busca-termo{min-width:0}
 .ap-busca-termo b{display:block;font-weight:600;font-size:calc(var(--tx)*.98);line-height:1.25}
 .ap-busca-termo small{display:block;font-size:var(--tn);line-height:1.3}
@@ -225,6 +228,20 @@ p{text-wrap:pretty}
 .ap-paleta i{grid-row:span 2;width:30px;height:30px}
 .ap-paleta small{display:block;font-size:13px;line-height:1.3}
 }
+.ap-kit{display:grid;gap:clamp(10px,2svh,22px);margin-top:var(--respiro)}
+.ap-letras{list-style:none;padding:0;display:grid;gap:clamp(6px,1.3svh,12px)}
+.ap-letras li{border-top:1px solid var(--linha);padding-top:clamp(5px,1svh,10px)}
+.ap-letra-rot{font-size:var(--tn);color:var(--texto-2,var(--texto))}
+.ap-letra-rot b{color:var(--texto);margin-right:6px}
+.ap-letra-amostra{font-size:clamp(19px,min(5.6vw,3.6svh),34px);line-height:1.15;color:var(--texto);margin-top:2px}
+.ap-kit-cores{display:grid;gap:clamp(8px,1.6svh,16px);align-content:start}
+.ap-kit-logo{border-radius:8px;padding:clamp(10px,2svh,20px);display:flex;justify-content:center}
+.ap-kit-logo img{height:clamp(30px,6svh,64px);width:auto}
+.t-kit .ap-paleta{margin-top:0}
+@media (min-width:860px){
+.ap-kit{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
+.t-kit .ap-paleta{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 .ap-regra{display:grid;gap:clamp(8px,1.4svh,16px);margin-top:var(--respiro)}
 .ap-regra-col{background:var(--cartao);border:1px solid var(--linha);border-top:4px solid var(--est);border-radius:6px;padding:clamp(8px,1.6svh,18px) 16px}
 .ap-regra-col.sim{--est:var(--bom,#2e7d32)}.ap-regra-col.nao{--est:var(--ruim,#b3261e)}
@@ -242,7 +259,7 @@ p{text-wrap:pretty}
 .ap-cel-sobre img{width:100%;height:auto;border-radius:10px}
 .tela-midia:has(.ap-disp) .ap-midia{justify-content:center}
 .ap-quadro{position:relative;line-height:0}
-.ap-quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:6px;background:transparent}
+.ap-quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:6px;background:transparent;pointer-events:none}
 .tela:not([data-fundo="escuro"]) :is(.ap-texto,.ap-nota,.ap-item p,.ap-barra-nome small,.ap-busca-termo small,.ap-fig figcaption,.ap-vel-linha,.ap-paleta small,.ap-id-caminhos p){color:var(--texto-2,var(--texto))}
 .tela:not([data-fundo="escuro"]) .ap-fig figcaption b,.tela:not([data-fundo="escuro"]) .ap-id-caminhos b{color:var(--acento-t)}
 @media (min-width:860px){
@@ -374,7 +391,7 @@ p{text-wrap:pretty}
 </header>
 <main class="ap-palco" id="palco" aria-roledescription="apresentação">
   <div class="ap-trilho" id="trilho">
-<section class="tela t-abertura" id="1" data-tela="1" data-fundo="escuro" aria-label="Tela 1 de 11" tabindex="-1">
+<section class="tela t-abertura" id="1" data-tela="1" data-fundo="escuro" aria-label="Tela 1 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Madeireira Martinelli</p>
 <h1 class="ap-e" style="--i:1">Quanto custa não ser achado pelo cliente certo?</h1>
@@ -382,7 +399,7 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:3">Primeira página do Google, busca feita em 25/11/2026.</p>
 </div>
 </section>
-<section class="tela t-lista" id="2" data-tela="2" data-fundo="creme" aria-label="Tela 2 de 11" tabindex="-1">
+<section class="tela t-lista" id="2" data-tela="2" data-fundo="claro" aria-label="Tela 2 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Como está hoje</p>
 <p class="ap-pergunta ap-e" style="--i:1">O que o cliente encontra quando te pesquisa?</p>
@@ -395,7 +412,7 @@ p{text-wrap:pretty}
 </ul>
 </div>
 </section>
-<section class="tela t-barras lado" id="3" data-tela="3" data-fundo="claro" aria-label="Tela 3 de 11" tabindex="-1">
+<section class="tela t-barras lado" id="3" data-tela="3" data-fundo="creme" aria-label="Tela 3 de 12" tabindex="-1">
 <div class="ap-miolo">
 <div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Perfil no Google</p>
 <p class="ap-pergunta ap-e" style="--i:1">Quem cuida do seu nome no Google?</p>
@@ -409,7 +426,7 @@ p{text-wrap:pretty}
 </ul>
 </div>
 </section>
-<section class="tela t-buscas" id="4" data-tela="4" data-fundo="creme" aria-label="Tela 4 de 11" tabindex="-1">
+<section class="tela t-buscas" id="4" data-tela="4" data-fundo="claro" aria-label="Tela 4 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Onde o cliente te acha</p>
 <p class="ap-pergunta ap-e" style="--i:1">Quem o cliente encontra quando procura madeira para telhado?</p>
@@ -424,7 +441,7 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:8">Buscas com “são josé dos campos”, primeira página do Google em 25/11/2026.</p>
 </div>
 </section>
-<section class="tela t-identidade" id="5" data-tela="5" data-fundo="claro" aria-label="Tela 5 de 11" tabindex="-1">
+<section class="tela t-identidade" id="5" data-tela="5" data-fundo="creme" aria-label="Tela 5 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Nova identidade visual</p>
 <p class="ap-pergunta ap-e" style="--i:1">O cliente reconhece a madeireira só de olhar o perfil?</p>
@@ -435,10 +452,17 @@ p{text-wrap:pretty}
 <li class="ap-e" style="--i:5"><p><b>Caminho B</b> Selo marcado a fogo</p><div class="ap-id-fundos" style="--soma:7.647"><img src="img/logo_b_claro.webp" alt="Caminho B, Selo marcado a fogo, fundo claro" width="420" height="200" draggable="false" loading="lazy"><img src="img/logo_b_escuro.webp" alt="Caminho B, Selo marcado a fogo, fundo escuro" width="420" height="197" draggable="false" loading="lazy"><img src="img/logo_b_madeira.webp" alt="Caminho B, Selo marcado a fogo, na madeira" width="420" height="123" draggable="false" loading="lazy"></div></li>
 <li class="ap-e" style="--i:6"><p><b>Caminho C</b> A placa</p><div class="ap-id-fundos" style="--soma:7.647"><img src="img/logo_c_claro.webp" alt="Caminho C, A placa, fundo claro" width="420" height="200" draggable="false" loading="lazy"><img src="img/logo_c_escuro.webp" alt="Caminho C, A placa, fundo escuro" width="420" height="197" draggable="false" loading="lazy"><img src="img/logo_c_madeira.webp" alt="Caminho C, A placa, na madeira" width="420" height="123" draggable="false" loading="lazy"></div></li>
 </ul>
-<ul class="ap-paleta ap-e" style="--i:7"><li><i style="background:#2b1a10"></i><b>Nogueira</b><small>faixas escuras e capa</small></li><li><i style="background:#4a2a16"></i><b>Mogno</b><small>logo e textos</small></li><li><i style="background:#a8582a"></i><b>Cambará</b><small>destaques e etiquetas</small></li><li><i style="background:#e8b77a"></i><b>Mel</b><small>sobre a madeira escura</small></li><li><i style="background:#dfcfae"></i><b>Areia</b><small>faixas claras</small></li><li><i style="background:#ede3cf"></i><b>Papel</b><small>fundo do site</small></li></ul>
 </div>
 </section>
-<section class="tela tela-midia" id="6" data-tela="6" data-fundo="creme" aria-label="Tela 6 de 11" tabindex="-1">
+<section class="tela t-kit" id="6" data-tela="6" data-fundo="claro" aria-label="Tela 6 de 12" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Kit do site</p>
+<h2 class="ap-e" style="--i:1">As cores e as letras do site novo.</h2>
+<div class="ap-kit"><ul class="ap-letras"><li class="ap-e" style="--i:2"><p class="ap-letra-rot"><b>Zilla Slab</b> títulos e o nome no logo</p><p class="ap-letra-amostra" style="font-family:'Kit Zilla',Georgia,serif;font-weight:700">Madeira para telhado</p></li><li class="ap-e" style="--i:3"><p class="ap-letra-rot"><b>Barlow</b> texto corrido</p><p class="ap-letra-amostra" style="font-family:'Kit Barlow',system-ui,sans-serif;font-weight:400">Cada cliente é orientado pelos nossos vendedores.</p></li><li class="ap-e" style="--i:4"><p class="ap-letra-rot"><b>Barlow Condensed</b> etiquetas e selos</p><p class="ap-letra-amostra" style="font-family:'Kit Barlow Condensed',system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.72em">Madeira nativa com DOF</p></li></ul><div class="ap-kit-cores"><ul class="ap-paleta ap-e" style="--i:5"><li><i style="background:#2b1a10"></i><b>Nogueira</b><small>faixas escuras e capa</small></li><li><i style="background:#4a2a16"></i><b>Mogno</b><small>logo e textos</small></li><li><i style="background:#a8582a"></i><b>Cambará</b><small>destaques e etiquetas</small></li><li><i style="background:#e8b77a"></i><b>Mel</b><small>sobre a madeira escura</small></li><li><i style="background:#dfcfae"></i><b>Areia</b><small>faixas claras</small></li><li><i style="background:#ede3cf"></i><b>Papel</b><small>fundo do site</small></li></ul>
+</div></div>
+</div>
+</section>
+<section class="tela tela-midia" id="7" data-tela="7" data-fundo="creme" aria-label="Tela 7 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Site novo</p>
 <h2 class="ap-e" style="--i:1">Um site no endereço que já é seu.</h2>
@@ -448,7 +472,7 @@ p{text-wrap:pretty}
 </div>
 </div>
 </section>
-<section class="tela t-aneis" id="7" data-tela="7" data-fundo="claro" aria-label="Tela 7 de 11" tabindex="-1">
+<section class="tela t-aneis" id="8" data-tela="8" data-fundo="claro" aria-label="Tela 8 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">PageSpeed do Google</p>
 <p class="ap-pergunta ap-e" style="--i:1">Quanto tempo o cliente espera antes de ir para o próximo?</p>
@@ -460,7 +484,7 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:5">Notas do celular, de 0 a 100 (Google, 25/11/2026). *SEO em 66 porque a proposta está fechada para o Google.</p>
 </div>
 </section>
-<section class="tela tela-midia" id="8" data-tela="8" data-fundo="creme" aria-label="Tela 8 de 11" tabindex="-1">
+<section class="tela tela-midia" id="9" data-tela="9" data-fundo="creme" aria-label="Tela 9 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Instagram e Facebook</p>
 <p class="ap-pergunta ap-e" style="--i:1">O que faz o cliente parar de rolar o feed?</p>
@@ -471,7 +495,7 @@ p{text-wrap:pretty}
 </div>
 </div>
 </section>
-<section class="tela t-lista" id="9" data-tela="9" data-fundo="escuro" aria-label="Tela 9 de 11" tabindex="-1">
+<section class="tela t-lista" id="10" data-tela="10" data-fundo="escuro" aria-label="Tela 10 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">O que fazemos</p>
 <h2 class="ap-e" style="--i:1">Relatório, site, redes e tráfego.</h2>
@@ -482,7 +506,7 @@ p{text-wrap:pretty}
 </ul>
 </div>
 </section>
-<section class="tela t-passos" id="10" data-tela="10" data-fundo="claro" aria-label="Tela 10 de 11" tabindex="-1">
+<section class="tela t-passos" id="11" data-tela="11" data-fundo="claro" aria-label="Tela 11 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Próximos passos</p>
 <h2 class="ap-e" style="--i:1">Do esboço ao ar.</h2>
@@ -494,7 +518,7 @@ p{text-wrap:pretty}
 </ol>
 </div>
 </section>
-<section class="tela tela-fim" id="11" data-tela="11" data-fundo="escuro" aria-label="Tela 11 de 11" tabindex="-1">
+<section class="tela tela-fim" id="12" data-tela="12" data-fundo="escuro" aria-label="Tela 12 de 12" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Ativaleads · novembro de 2026</p>
 <h2 class="ap-e" style="--i:1">Proposta de valores</h2>
@@ -507,7 +531,7 @@ p{text-wrap:pretty}
 </main>
 <div class="ap-controle" role="group" aria-label="Navegação entre as telas">
   <button type="button" class="ap-bt ant" data-ap="ant"><svg aria-hidden="true"><use href="#i-ant"/></svg>Voltar</button>
-  <div class="ap-meio"><div class="ap-pontos" data-ap="pontos"></div><span class="ap-conta" data-ap="conta" aria-live="polite">1/11</span></div>
+  <div class="ap-meio"><div class="ap-pontos" data-ap="pontos"></div><span class="ap-conta" data-ap="conta" aria-live="polite">1/12</span></div>
   <button type="button" class="ap-bt prox" data-ap="prox">Avançar<svg aria-hidden="true"><use href="#i-prox"/></svg></button>
 </div>
 <script>(function(){
