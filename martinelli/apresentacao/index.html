@@ -8,15 +8,13 @@
 <meta name="description" content="Proposta da Ativaleads para a Madeireira Martinelli: como está hoje, como pode ficar e o próximo passo.">
 <meta name="theme-color" content="#007A3F">
 <script>document.documentElement.className+=' js'</script>
-<style>@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/barlow-400.woff2) format('woff2')}
-@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/barlow-500.woff2) format('woff2')}
-@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/barlow-600.woff2) format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/barlow-condensed-700.woff2) format('woff2')}
-:root{--fundo:#ffffff;--texto:#14212b;--creme:#f3f4f1;--cartao:#ffffff;--linha:#dfe5e0;--escuro:#007a3f;--escuro-texto:#ffffff;--acento:#ffffff;--acento-t:#007a3f;--alerta:#b3261e;--ruim:#b3261e;--bom:#007a3f;--medio:#b85a00;--f-titulo:'Barlow Condensed',system-ui,sans-serif;--f-texto:'Barlow',system-ui,sans-serif;--f-rotulo:'Barlow Condensed',system-ui,sans-serif;--f-pergunta:'Barlow',system-ui,sans-serif;--peso-titulo:700;--rotulo-peso:700;--peso-pergunta:500;--escuro-fundo:radial-gradient(ellipse 120% 90% at 50% 40%,#12603b 0%,#0b4a2c 55%,#07301d 100%)}
+<style>@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url(../../assets/fonts/manrope-latin.woff2) format('woff2')}
+:root{--fundo:#ffffff;--texto:#14212b;--creme:#f3f4f1;--cartao:#ffffff;--linha:#dfe5e0;--escuro:#007a3f;--escuro-texto:#ffffff;--acento:#ffffff;--acento-t:#007a3f;--alerta:#b3261e;--ruim:#b3261e;--bom:#007a3f;--medio:#b85a00;--f-titulo:'Manrope','Segoe UI',Arial,sans-serif;--f-texto:'Manrope','Segoe UI',Arial,sans-serif;--f-rotulo:'Manrope','Segoe UI',Arial,sans-serif;--f-pergunta:'Manrope','Segoe UI',Arial,sans-serif;--peso-titulo:800;--rotulo-peso:700;--peso-pergunta:600;--titulo-espaco:-.03em;--texto-2:#55646d}
 :root{
 --verde:#007A3F;
+--escuro-fundo:radial-gradient(ellipse 120% 90% at 50% 40%,#12603b 0%,#0b4a2c 55%,#07301d 100%);
 --t1:clamp(30px,min(9.4vw,6.6svh),68px);
---t2:clamp(23px,min(6.8vw,4.6svh),48px);
+--t2:clamp(21px,min(6.2vw,4.6svh),48px);
 --t3:clamp(18px,min(4.9vw,3.1svh),25px);
 --tx:clamp(15px,min(4.15vw,2.75svh),19px);
 --tn:clamp(13px,min(3.5vw,2.2svh),14.5px);
@@ -122,11 +120,11 @@ p{text-wrap:pretty}
 .rodape-padrao-legal .sep{display:none}
 .rodape-padrao-legal,.rodape-padrao-prop,.rodape-padrao-extra{font-size:12px}
 }
-.ap-pergunta{font-family:var(--f-pergunta,var(--f-texto));font-weight:var(--peso-pergunta,500);font-style:italic;font-size:clamp(17px,min(4.7vw,3svh),27px);line-height:1.28;max-width:34ch;padding-left:14px;border-left:4px solid var(--acento-t);margin-bottom:calc(var(--respiro)*.8);text-wrap:balance}
+.ap-pergunta{font-family:var(--f-pergunta,var(--f-texto));font-weight:var(--peso-pergunta,500);font-style:italic;font-size:clamp(15.5px,min(4.4vw,3svh),27px);line-height:1.28;max-width:34ch;padding-left:14px;border-left:4px solid var(--acento-t);margin-bottom:calc(var(--respiro)*.8);text-wrap:balance}
 [data-fundo="escuro"] .ap-pergunta{border-left-color:var(--acento);color:var(--escuro-texto)}
 .est-ruim{--est:var(--ruim,#b3261e)}.est-bom{--est:var(--bom,#2e7d32)}.est-medio{--est:var(--medio,#9a5b00)}
 .ap-item[class*="est-"]{border-top:4px solid var(--est)}
-@media (max-width:859px){.ap-itens.quatro{grid-template-columns:1fr 1fr}.ap-itens.quatro .ap-item{padding:10px 12px}.ap-itens.quatro .ap-rot{letter-spacing:.08em}}
+@media (max-width:859px){.ap-itens.quatro{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:8px}.ap-itens.quatro .ap-item{padding:10px 12px;grid-row:span 4;grid-template-rows:subgrid;row-gap:0}.ap-itens.quatro .ap-item h3{margin-top:4px}.ap-itens.quatro .ap-item p{margin-top:4px}.ap-itens.quatro .ap-rot{letter-spacing:.08em}}
 @media (max-width:859px) and (max-height:600px){.ap-itens.quatro .ap-item p,.ap-itens.quatro .ap-link{display:none}}
 .ap-barras{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(6px,1.2svh,12px)}
 .ap-barra{background:var(--cartao);border:1px solid var(--linha);border-radius:6px;padding:clamp(7px,1.4svh,14px) 16px}
@@ -166,8 +164,11 @@ p{text-wrap:pretty}
 .ap-vel-linha{font-size:var(--tn);margin-top:2px}
 .ap-vel-fora{font:var(--peso-titulo) calc(var(--t3)*1.2)/1.1 var(--f-titulo);color:var(--ruim,#b3261e);margin-top:10px}
 @media (max-width:859px){
-.ap-vel.duplo{grid-template-columns:1fr 1fr;gap:8px}
-.ap-vel.duplo .ap-vel-cartao{padding:10px 8px 12px}
+.ap-vel.duplo{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.ap-vel.duplo .ap-vel-cartao{padding:10px 8px 12px;min-width:0}
+.ap-vel.duplo .ap-aneis{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.ap-vel.duplo .ap-aneis li{min-width:0}
+.ap-vel.duplo .ap-aneis span{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;max-width:100%}
 .ap-vel.duplo .ap-vel-nome small{display:block}
 .ap-vel.duplo .ap-aneis{grid-template-columns:1fr 1fr;row-gap:8px}
 .ap-vel.duplo .ap-aneis li{font-size:12px;gap:2px;line-height:1.15}
@@ -175,6 +176,9 @@ p{text-wrap:pretty}
 .ap-vel.duplo .ap-aneis b{font-size:clamp(13.5px,2.2svh,16px)}
 .ap-vel.duplo .ap-vel-tempo{font-size:13px;line-height:1.3;margin-top:6px;padding-top:6px}
 .ap-itens.quatro .ap-item p{font-size:var(--tn);line-height:1.35}
+.ap-aneis{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:6px}
+.ap-aneis li{min-width:0}
+.ap-aneis span{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;max-width:100%}
 }
 .ap-mini{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(56px,1fr));gap:4px;margin-top:clamp(6px,1.2svh,14px)}
 .ap-mini li{display:grid;justify-items:center;text-align:center;gap:3px;font-size:12px;line-height:1.2}
@@ -232,6 +236,16 @@ p{text-wrap:pretty}
 @media (min-width:860px){.ap-regra{grid-template-columns:1fr 1fr}}
 .ap-quadro{position:relative;line-height:0}
 .ap-quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:6px;background:transparent}
+.tela:not([data-fundo="escuro"]) :is(.ap-texto,.ap-nota,.ap-item p,.ap-barra-nome small,.ap-busca-termo small,.ap-fig figcaption,.ap-vel-linha,.ap-paleta small,.ap-id-caminhos p){color:var(--texto-2,var(--texto))}
+.tela:not([data-fundo="escuro"]) .ap-fig figcaption b,.tela:not([data-fundo="escuro"]) .ap-id-caminhos b{color:var(--acento-t)}
+@media (min-width:860px){
+.tela:has(.ap-pergunta) .ap-pergunta{font:var(--peso-titulo) var(--t2)/1.1 var(--f-titulo);font-style:normal;letter-spacing:var(--titulo-espaco,0);color:var(--texto);border-left:0;padding-left:0;max-width:30ch;margin-bottom:calc(var(--respiro)*.6)}
+.tela[data-fundo="escuro"]:has(.ap-pergunta) .ap-pergunta{color:var(--escuro-texto)}
+.tela:has(.ap-pergunta) h2{font-size:calc(var(--t2)*.62);line-height:1.2;color:var(--acento-t);max-width:46ch}
+.tela[data-fundo="escuro"]:has(.ap-pergunta) h2{color:var(--escuro-texto)}
+.tela h2{max-width:34ch}
+.tela h1{max-width:20ch}
+}
 @media (max-height:640px){
 .js .tela{padding-top:12px;padding-bottom:12px}
 .js .tela-fim{padding-bottom:0}
@@ -250,8 +264,9 @@ p{text-wrap:pretty}
 }
 @media (max-height:600px) and (max-width:859px){
 .tela:not(.t-abertura):not(.tela-fim) .ap-chapeu{display:none}
-.ap-pergunta{font-size:16px;line-height:1.22;margin-bottom:6px}
-.tela h2{font-size:22px}
+.ap-pergunta{font-size:15px;line-height:1.22;margin-bottom:6px}
+.t-aneis .ap-pergunta,.t-barras .ap-pergunta{display:none}
+.tela h2{font-size:19.5px}
 .js .tela:not(.t-abertura){padding-top:8px}
 .ap-vel-tempo{font-size:13.5px}.ap-vel-tempo b{font-size:16px}
 .ap-aneis{margin-top:4px}
@@ -289,7 +304,7 @@ p{text-wrap:pretty}
 .js .ap-topo,.js .ap-controle{flex:none}
 .js .ap-palco{flex:1 1 auto;min-height:0;overflow:clip;touch-action:pan-y}
 .js .ap-trilho{display:flex;height:100%;transition:transform .45s cubic-bezier(.25,.8,.25,1);will-change:transform}
-.js .tela{flex:0 0 100%;height:100%;overflow:hidden;display:flex;flex-direction:column;justify-content:safe center;padding:clamp(14px,3.2svh,44px) var(--lado);visibility:hidden}
+.js .tela{flex:0 0 100%;height:100%;overflow:hidden;display:flex;flex-direction:column;justify-content:safe center;padding:clamp(12px,2.6svh,44px) var(--lado);visibility:hidden}
 .js .tela.ap-vis{visibility:visible}
 .js .ap-arrastando,.js .ap-arrastando *{user-select:none;-webkit-user-select:none}
 .js .ap-arrastando img{pointer-events:none}
