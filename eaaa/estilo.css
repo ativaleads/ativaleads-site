@@ -284,7 +284,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .area .mais span{font-size:16px}
 @media (max-width:420px){.area{padding:24px 20px 0}.area .mais{margin:auto -20px 0;padding:14px 20px}.area .num{font-size:52px}}
 /* contato enxuto: faixa do WhatsApp + quatro blocos · S42 */
-.contato .cta-faixa{margin-top:36px} /* S56: faixa embaixo dos canais (Operador: "icones em cima e faixa embaixo") */
+.contato .cta-faixa{margin:0 0 36px} /* S79 (Operador, 26/11/2026): a faixa sobe para logo abaixo do título, antes dos canais; embaixo ela ficava colada no rodapé, com dois botões de WhatsApp juntos. Na S56 era "icones em cima e faixa embaixo". */
 @media (min-width:860px){.contato .cab-sec{align-items:baseline}.contato .cta-faixa{padding:38px 48px}}
 .contato .cw-titulo{max-width:none;font-size:clamp(24px,2.8vw,30px)}
 .contato .cw-texto{max-width:58ch}

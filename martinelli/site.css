@@ -154,7 +154,8 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .canais a,.canais span{font-size:17px;text-decoration:none;overflow-wrap:anywhere}
 .mapa{width:100%;height:100%;min-height:340px;border:1px solid var(--linha);border-radius:10px;display:block;background:var(--areia)}
 @media (max-width:899px){.mapa{min-height:260px}}
-.faixa-zap{margin-top:36px;background:linear-gradient(90deg,rgba(31,18,10,.92),rgba(31,18,10,.7)),var(--tex) center/cover;color:#fff;border-radius:10px;padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
+/* a faixa de orçamento fica logo abaixo do título do Contato, ANTES dos canais e do mapa: embaixo ela ficava colada no rodapé, com dois botões de WhatsApp juntos (Operador, 26/11/2026) */
+.faixa-zap{margin:0 0 36px;background:linear-gradient(90deg,rgba(31,18,10,.92),rgba(31,18,10,.7)),var(--tex) center/cover;color:#fff;border-radius:10px;padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
 .faixa-zap p{margin:0;font:700 30px/1.1 'Zilla Slab',serif;max-width:24ch}
 @media (max-width:420px){.faixa-zap .bt{width:100%}.faixa-zap{padding:26px 20px}}
 /* rodapé do cliente */
