@@ -468,6 +468,7 @@ telas.forEach(function(t, k){
 var b = d.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Tela " + (k + 1) + " de " + n);
 b.addEventListener("click", function(){ vai(k, true); }); pontos.appendChild(b);
 });
+
 function conta0(t){
 if (reduz.matches) return;
 [].forEach.call(t.querySelectorAll("[data-numero]"), function(b){
@@ -479,6 +480,7 @@ requestAnimationFrame(passo);
 setTimeout(function(){ b.textContent = fim.toLocaleString("pt-BR"); }, 1700);
 });
 }
+
 function reels(k){
 telas.forEach(function(t, j){
 [].forEach.call(t.querySelectorAll("[data-reel]"), function(q){
@@ -522,6 +524,7 @@ else if (k === "End") { e.preventDefault(); vai(n - 1, true); }
 });
 window.addEventListener("popstate", function(){ var k = daHash(); if (k !== i) vai(k, false); });
 window.addEventListener("hashchange", function(){ var k = daHash(); if (k !== i) vai(k, false); });
+
 var x0 = null, y0 = 0, dx = 0, w = 1, pegou = false, idp = null, bloqueiaClique = false;
 palco.addEventListener("pointerdown", function(e){
 if (e.button !== 0) return;
