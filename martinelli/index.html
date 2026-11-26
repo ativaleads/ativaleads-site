@@ -271,7 +271,34 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .anima .zap.conversa .digitando.sai{display:none}
 .zap .digitando i{width:8px;height:8px;border-radius:50%;background:var(--cinza);animation:ponto 1s infinite}
 .zap .digitando i:nth-child(2){animation-delay:.15s}.zap .digitando i:nth-child(3){animation-delay:.3s}
-@keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}</style>
+@keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}
+.rodape-dados{display:grid;grid-template-columns:auto auto;gap:18px 40px;align-items:start}
+.rodape .redes{width:100%;display:flex;justify-content:center;gap:14px}
+.rodape .redes a{width:36px;height:36px;border-radius:50%;border:1px solid var(--mel);color:var(--mel);display:grid;place-items:center;transition:background .2s ease,color .2s ease}
+.rodape .redes a:hover,.rodape .redes a:focus-visible{background:var(--mel);color:var(--nogueira2)}
+.rodape .redes svg{width:17px;height:17px}
+@media (max-width:639px){.rodape-dados{grid-template-columns:minmax(0,1fr);width:100%;row-gap:18px;justify-items:center;text-align:center}}
+.insta{padding-bottom:0}
+.insta .chapeu{text-transform:none;letter-spacing:.04em}
+.insta-grade{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.insta-grade{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
+.insta-grade>li{min-width:0}
+.insta-grade img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--areia)}
+.insta-grade>li>img,.ig-trilho img{border:1px solid var(--linha)}
+.ig-visor{position:relative;overflow:hidden;padding-bottom:38px;touch-action:pan-y;cursor:grab;user-select:none}
+.ig-visor:active{cursor:grabbing}
+.ig-trilho{display:flex;transition:transform .35s ease}
+.ig-trilho img{flex:0 0 100%;pointer-events:none}
+.ig-seta{position:absolute;bottom:0;width:30px;height:30px;padding:0;border:1px solid var(--mogno);border-radius:50%;background:transparent;color:var(--mogno);display:grid;place-items:center;cursor:pointer;transition:opacity .2s ease,background .2s ease,color .2s ease}
+.ig-seta svg{width:18px;height:18px}
+.ig-seta:hover{background:var(--mogno);color:var(--papel)}
+.ig-seta:disabled{opacity:0;pointer-events:none}
+.ig-seta.ant{right:38px}.ig-seta.prox{right:0}
+@media (max-width:759px){.ig-visor{padding-bottom:36px}.ig-seta{width:28px;height:28px}.ig-seta svg{width:16px;height:16px}.ig-seta.ant{right:36px}}
+.ig-conta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bt-contorno{margin-top:28px;border-color:var(--mogno);color:var(--mogno);background:transparent}
+.bt-contorno:hover{background:var(--mogno);color:var(--papel)}
+@media (prefers-reduced-motion:reduce){.ig-trilho{transition:none}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Madeireira Martinelli","address":{"@type":"PostalAddress","streetAddress":"Av. João Batista de Souza Soares, 3001","addressLocality":"São José dos Campos","addressRegion":"SP","postalCode":"12236-660","addressCountry":"BR"},"telephone":"+55-12-3931-5699","openingHours":"Mo-Fr 07:50-17:30","url":"https://www.madeireiramartinelli.com.br/"}</script>
 <script>(function(d){if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window)d.documentElement.classList.add("anima")})(document)</script>
 </head>
@@ -448,6 +475,35 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
   </div>
 </section>
 
+<section class="insta" id="instagram" aria-labelledby="t-insta">
+  <!-- Acompanhe no Instagram (Operador, 26/11/2026: "Site da labate e da eaaa tem atalhos das redes sociais se siga no insta. Martinelli faltou"). Estrutura da EAAA; peças de exemplo da proposta (/martinelli/social/), com o selo EXEMPLO. -->
+  <div class="faixa">
+    <div class="chapeu">@madeireiramartinelli</div>
+    <h2 id="t-insta">Acompanhe no Instagram.</h2>
+    <ul class="insta-grade">
+        <li class="ig-carrossel">
+          <div class="ig-visor" tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel de exemplo do telhado, 6 telas">
+            <div class="ig-trilho"><img src="img/insta_c1_1_p.webp" srcset="img/insta_c1_1_p.webp 300w, img/insta_c1_1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Carrossel de exemplo do telhado: Telhado novo? 5 perguntas antes de comprar." loading="lazy" draggable="false"><img data-src="img/insta_c1_2.webp" width="540" height="675" alt="Tela 2 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_3.webp" width="540" height="675" alt="Tela 3 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_4.webp" width="540" height="675" alt="Tela 4 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_5.webp" width="540" height="675" alt="Tela 5 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_6.webp" width="540" height="675" alt="Tela 6 de 6 do carrossel do telhado" draggable="false"></div>
+            <button class="ig-seta ant" type="button" aria-label="Tela anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button class="ig-seta prox" type="button" aria-label="Próxima tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            <span class="ig-conta" aria-live="polite">Tela 1 de 6</span>
+          </div>
+        </li>
+        <li><img src="img/insta_post1_p.webp" srcset="img/insta_post1_p.webp 300w, img/insta_post1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Post de exemplo: Chegou a madeira? Confira 4 coisas antes de assinar." loading="lazy"></li>
+        <li class="ig-carrossel">
+          <div class="ig-visor" tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel de exemplo da história, 6 telas">
+            <div class="ig-trilho"><img src="img/insta_c2_1_p.webp" srcset="img/insta_c2_1_p.webp 300w, img/insta_c2_1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Carrossel de exemplo da história: Desde 2001, a verdade como pilar." loading="lazy" draggable="false"><img data-src="img/insta_c2_2.webp" width="540" height="675" alt="Tela 2 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_3.webp" width="540" height="675" alt="Tela 3 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_4.webp" width="540" height="675" alt="Tela 4 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_5.webp" width="540" height="675" alt="Tela 5 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_6.webp" width="540" height="675" alt="Tela 6 de 6 do carrossel da história" draggable="false"></div>
+            <button class="ig-seta ant" type="button" aria-label="Tela anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button class="ig-seta prox" type="button" aria-label="Próxima tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            <span class="ig-conta" aria-live="polite">Tela 1 de 6</span>
+          </div>
+        </li>
+        <li><img src="img/insta_post4_p.webp" srcset="img/insta_post4_p.webp 300w, img/insta_post4.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Post de exemplo: Pergolado de madeira, com instalação." loading="lazy"></li>
+    </ul>
+    <a class="bt bt-contorno" href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Ver no Instagram</a>
+  </div>
+</section>
+
 <section id="contato">
   <div class="faixa">
     <div class="chapeu">Contato</div>
@@ -469,8 +525,11 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 <footer class="rodape">
   <div class="faixa">
     <a class="marca marca-rodape" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-rodape" viewBox="0 0 531 178" role="img" aria-label="Madeireira Martinelli. Confiança e honestidade, sempre"><use href="#lockA"/></svg></a>
-    <p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
-    <p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
+    <div class="rodape-dados">
+      <p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
+      <p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
+    </div>
+    <p class="redes"><a href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener" aria-label="Instagram da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/madmartinelli" target="_blank" rel="noopener" aria-label="Facebook da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3H13a4 4 0 0 0-4 4v3H7v3h2v8h3v-8h2.6l.4-3h-3V7.4c0-.5.4-.9.9-.9h1.6z"/></svg></a></p>
     <p class="dev">Desenvolvido por <a href="https://ativaleads.com.br/ativaleads/" target="_blank" rel="noopener" aria-label="Ativaleads"><img src="img/ativaleads-2026-mel-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a></p>
   </div>
 </footer>
@@ -480,11 +539,11 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 <script>
 /* S80: animação da página principal (entrada ao rolar, carimbo, conversa do orçamento) */
 (function(){var H=document.documentElement;if(!H.classList.contains('anima'))return;
-var alvo='main h2, main .chapeu, main .lead, .produto, .cartoes4>div, .valores>*, .patio-fotos li, .temas>div, .nota, .canais li, .mapa, .faixa-zap, .citacao, .foto-patio';
+var alvo='main h2, main .chapeu, main .lead, .produto, .cartoes4>div, .valores>*, .patio-fotos li, .temas>div, .nota, .canais li, .mapa, .faixa-zap, .citacao, .foto-patio, .insta-grade>li';
 var els=[].slice.call(document.querySelectorAll(alvo)).filter(function(e){return !e.closest('.capa')&&!e.closest('#orcamento .zap')});
 els.forEach(function(e){e.classList.add('surge')});
 /* atraso em cascata dentro de cada grade */
-['.produtos','.cartoes4','.temas','.patio-fotos','.canais'].forEach(function(s){[].forEach.call(document.querySelectorAll(s),function(g){[].forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*90)+'ms'})})});
+['.produtos','.cartoes4','.temas','.patio-fotos','.canais','.insta-grade'].forEach(function(s){[].forEach.call(document.querySelectorAll(s),function(g){[].forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*90)+'ms'})})});
 var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visto');io.unobserve(x.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
 els.forEach(function(e){io.observe(e)});
 /* conversa do orçamento: desenho, pergunta, "digitando", resposta */
@@ -500,6 +559,23 @@ var z=document.querySelector('#orcamento .zap');if(z){var b=[].slice.call(z.quer
 /* segurança: se algo não disparar, mostra tudo depois de 6 s */
 setTimeout(function(){[].forEach.call(document.querySelectorAll('.surge:not(.visto)'),function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add('visto')})},6000);
 })();
+</script>
+<script>
+/* faixa do Instagram (26/11/2026): carrossel de uma tela por vez, com setas, teclado e arrasto que acompanha o dedo e o mouse; telas 2 a 6 só carregam perto do uso */
+(function(){document.querySelectorAll('.ig-visor').forEach(function(v){
+  var tr=v.querySelector('.ig-trilho'),im=tr.children,n=im.length,i=0,a=v.querySelector('.ant'),b=v.querySelector('.prox'),ct=v.querySelector('.ig-conta');
+  function carrega(k){var e=im[k];if(e&&e.dataset.src){e.src=e.dataset.src;e.removeAttribute('data-src')}}
+  function ir(k){i=Math.max(0,Math.min(n-1,k));carrega(i);carrega(i+1);tr.style.transition='';tr.style.transform='translateX('+(-100*i)+'%)';a.disabled=i===0;b.disabled=i===n-1;ct.textContent='Tela '+(i+1)+' de '+n}
+  a.addEventListener('click',function(){if(!arrastou)ir(i-1)});b.addEventListener('click',function(){if(!arrastou)ir(i+1)});
+  v.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')ir(i-1);if(e.key==='ArrowRight')ir(i+1)});
+  var x0=null,dx=0,w=1,arrastou=false;
+  /* o toque pode começar em cima da seta (o navegador puxa o toque para o botão mais perto): o arrasto vale também ali, e o clique que vier depois de um arrasto não conta */
+  v.addEventListener('pointerdown',function(e){x0=e.clientX;dx=0;w=v.clientWidth;arrastou=false;carrega(i+1);tr.style.transition='none';if(!e.target.closest('.ig-seta'))try{v.setPointerCapture(e.pointerId)}catch(_){}});
+  v.addEventListener('pointermove',function(e){if(x0===null)return;dx=e.clientX-x0;if((i===0&&dx>0)||(i===n-1&&dx<0))dx=dx/3;tr.style.transform='translateX(calc('+(-100*i)+'% + '+dx+'px))'});
+  function solta(){if(x0===null)return;x0=null;if(Math.abs(dx)>w*.18){arrastou=true;setTimeout(function(){arrastou=false},0);ir(i+(dx<0?1:-1))}else ir(i)}
+  v.addEventListener('pointerup',solta);v.addEventListener('pointercancel',solta);
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();carrega(1)}},{rootMargin:'200px'});io.observe(v)}else carrega(1);
+});})();
 </script>
 </body>
 </html>

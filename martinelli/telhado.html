@@ -271,7 +271,34 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .anima .zap.conversa .digitando.sai{display:none}
 .zap .digitando i{width:8px;height:8px;border-radius:50%;background:var(--cinza);animation:ponto 1s infinite}
 .zap .digitando i:nth-child(2){animation-delay:.15s}.zap .digitando i:nth-child(3){animation-delay:.3s}
-@keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}</style>
+@keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}
+.rodape-dados{display:grid;grid-template-columns:auto auto;gap:18px 40px;align-items:start}
+.rodape .redes{width:100%;display:flex;justify-content:center;gap:14px}
+.rodape .redes a{width:36px;height:36px;border-radius:50%;border:1px solid var(--mel);color:var(--mel);display:grid;place-items:center;transition:background .2s ease,color .2s ease}
+.rodape .redes a:hover,.rodape .redes a:focus-visible{background:var(--mel);color:var(--nogueira2)}
+.rodape .redes svg{width:17px;height:17px}
+@media (max-width:639px){.rodape-dados{grid-template-columns:minmax(0,1fr);width:100%;row-gap:18px;justify-items:center;text-align:center}}
+.insta{padding-bottom:0}
+.insta .chapeu{text-transform:none;letter-spacing:.04em}
+.insta-grade{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.insta-grade{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
+.insta-grade>li{min-width:0}
+.insta-grade img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--areia)}
+.insta-grade>li>img,.ig-trilho img{border:1px solid var(--linha)}
+.ig-visor{position:relative;overflow:hidden;padding-bottom:38px;touch-action:pan-y;cursor:grab;user-select:none}
+.ig-visor:active{cursor:grabbing}
+.ig-trilho{display:flex;transition:transform .35s ease}
+.ig-trilho img{flex:0 0 100%;pointer-events:none}
+.ig-seta{position:absolute;bottom:0;width:30px;height:30px;padding:0;border:1px solid var(--mogno);border-radius:50%;background:transparent;color:var(--mogno);display:grid;place-items:center;cursor:pointer;transition:opacity .2s ease,background .2s ease,color .2s ease}
+.ig-seta svg{width:18px;height:18px}
+.ig-seta:hover{background:var(--mogno);color:var(--papel)}
+.ig-seta:disabled{opacity:0;pointer-events:none}
+.ig-seta.ant{right:38px}.ig-seta.prox{right:0}
+@media (max-width:759px){.ig-visor{padding-bottom:36px}.ig-seta{width:28px;height:28px}.ig-seta svg{width:16px;height:16px}.ig-seta.ant{right:36px}}
+.ig-conta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bt-contorno{margin-top:28px;border-color:var(--mogno);color:var(--mogno);background:transparent}
+.bt-contorno:hover{background:var(--mogno);color:var(--papel)}
+@media (prefers-reduced-motion:reduce){.ig-trilho{transition:none}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A madeira tem DOF?","acceptedAnswer":{"@type":"Answer","text":"Sim. Toda a madeira nativa da madeireira é regularizada pelo Ibama através do DOF, o Documento de Origem Florestal."}},{"@type":"Question","name":"Como peço o orçamento?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp (12) 97405-2842, com as medidas do telhado, uma foto do local, a madeira que você quer e o endereço da entrega."}}]}</script>
 </head>
 <body>
@@ -484,8 +511,11 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 <footer class="rodape">
   <div class="faixa">
     <a class="marca marca-rodape" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-rodape" viewBox="0 0 531 178" role="img" aria-label="Madeireira Martinelli. Confiança e honestidade, sempre"><use href="#lockA"/></svg></a>
-    <p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
-    <p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
+    <div class="rodape-dados">
+      <p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
+      <p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
+    </div>
+    <p class="redes"><a href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener" aria-label="Instagram da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/madmartinelli" target="_blank" rel="noopener" aria-label="Facebook da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3H13a4 4 0 0 0-4 4v3H7v3h2v8h3v-8h2.6l.4-3h-3V7.4c0-.5.4-.9.9-.9h1.6z"/></svg></a></p>
     <p class="dev">Desenvolvido por <a href="https://ativaleads.com.br/ativaleads/" target="_blank" rel="noopener" aria-label="Ativaleads"><img src="img/ativaleads-2026-mel-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a></p>
   </div>
 </footer>
