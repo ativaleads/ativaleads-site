@@ -429,3 +429,22 @@ a.botao:has(.ic-wa){display:inline-flex;align-items:center;justify-content:cente
 .rodape .redes a{width:36px;height:36px;border-radius:50%;border:1px solid #c9a66b;color:#fff;display:grid;place-items:center;transition:background .2s ease,color .2s ease}
 .rodape .redes a:hover,.rodape .redes a:focus-visible{background:#c9a66b;color:#141f2b}
 .rodape .redes svg{width:17px;height:17px}
+/* botão flutuante do WhatsApp que trava no rodapé · 26/11/2026 (Operador: "o botão flutuante da Labate que invade o rodapé deve ser uma 'marca' nossa")
+   Comportamento do labate-site (S48): o flutuante fica no canto de baixo à direita; no rodapé há um botão igual (a vaga); quando a vaga sobe até a
+   altura do flutuante, o flutuante some e fica o do rodapé, que rola com a página; subindo, o flutuante volta. Sem JS os dois aparecem. */
+.wa-flutua{position:fixed;right:20px;bottom:20px;z-index:50;box-shadow:0 10px 30px -8px rgba(20,31,43,.55)}
+.wa-flutua--parado,.wa-vaga--espera{visibility:hidden}
+.rodape .rodape-linha{position:relative;margin-top:18px}
+.rodape .rodape-linha .redes{margin:0!important}
+/* no computador a vaga fica na ponta direita da linha das redes, na borda direita da coluna; fora do fluxo e centrada na altura dos ícones,
+   então os ícones continuam no centro exato e a linha não cresce (na Labate o mesmo efeito vem da margem negativa) */
+.rodape .wa-vaga{position:absolute;right:0;top:0;bottom:0;margin-block:auto;height:max-content}
+@media (max-width:639px){
+/* no celular o flutuante é um círculo só com o ícone, à direita; a vaga é o botão inteiro, no centro, em linha própria abaixo das redes */
+.wa-flutua{padding:0;width:56px;height:56px;border-radius:50%}
+.wa-flutua span{display:none}
+.wa-flutua .ic-wa{width:24px;height:24px}
+.rodape .rodape-linha{display:flex;flex-direction:column;align-items:center}
+.rodape .wa-vaga{position:static;height:auto;margin-top:18px}
+}
+@media print{.wa-flutua{display:none}}
