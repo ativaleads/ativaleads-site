@@ -34,23 +34,17 @@ a{color:inherit}
 h1,h2,h3{font-family:'Zilla Slab','Zilla Fallback',Georgia,serif;font-weight:700;line-height:1.04;margin:0;text-wrap:balance;letter-spacing:-.01em}
 p{margin:0 0 14px;text-wrap:pretty}
 .faixa{max-width:1160px;margin:0 auto;padding:0 20px}
-.m{white-space:nowrap}
 .chapeu{display:inline-flex;align-items:center;gap:10px;font:700 14px/1 'Barlow Condensed';letter-spacing:.16em;text-transform:uppercase;color:var(--cambara-t);margin-bottom:16px}
 .chapeu::before{content:"";width:26px;height:4px;flex:none;background:currentColor}
 section{padding:84px 0;scroll-margin-top:68px}
 h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .lead{font-size:18px;max-width:62ch;color:#4a3626}
 .creme{background:var(--areia)}
-.escuro{background:linear-gradient(rgba(31,18,10,.90),rgba(31,18,10,.94)),var(--tex) center/cover;color:#fff}
-.escuro .chapeu{color:var(--mel)}
-.escuro .lead{color:#fff}
 .aviso-previa{background:var(--nogueira2);color:#fff;font-size:13px;text-align:center;padding:7px 16px}
 .bt{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 24px;border-radius:40px;font:600 16px/1.2 'Barlow',sans-serif;text-decoration:none;white-space:nowrap;border:2px solid transparent;cursor:pointer}
 .bt svg{width:20px;height:20px;flex:none}
 .bt-zap{background:var(--zap);color:#fff;box-shadow:0 10px 24px -12px rgba(0,0,0,.6)}
 .bt-zap:hover{filter:brightness(1.08)}
-.bt-linha{border-color:var(--mel);color:#fff;background:rgba(31,18,10,.35)}
-.bt-linha:hover{background:rgba(31,18,10,.55)}
 .topo{position:sticky;top:0;z-index:30;background:rgba(237,227,207,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
 .topo .faixa{display:flex;align-items:center;gap:22px;height:68px}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none;line-height:1;margin-right:auto;min-width:0}
@@ -65,49 +59,13 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .topo .bt{padding:10px 16px;font-size:14.5px}
 .abre{display:none;background:var(--cartao);border:1px solid var(--linha);border-radius:40px;padding:8px 14px;font:600 14px 'Barlow';color:var(--mogno);cursor:pointer;align-items:center;gap:6px}
 .painel{display:none}
-@media (max-width:1079px){
-.nav,.topo .bt-zap{display:none}
+@media (max-width:1079px){.nav,.topo .bt-zap{display:none}
 .abre{display:inline-flex}
 .painel.aberto{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:68px;background:var(--papel);border-bottom:1px solid var(--linha);box-shadow:0 18px 30px -20px rgba(31,18,10,.35);padding:6px 20px 18px;max-height:calc(100dvh - 80px);overflow-y:auto}
 .painel a{padding:13px 0;border-bottom:1px solid var(--linha);text-decoration:none;font-size:16.5px}
-.painel .bt{margin-top:14px;border-bottom:0}
-}
-.capa{position:relative;color:#fff;overflow:hidden;padding:0;
-background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.86) 40%,rgba(31,18,10,.42) 70%,rgba(31,18,10,.18) 100%),var(--tex) center/cover}
-.capa::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 85% 40%,rgba(232,183,122,.16),transparent 60%);pointer-events:none}
-.capa .faixa{position:relative;z-index:1}
-.capa-grade{display:grid;gap:28px;align-items:center;padding-top:92px;padding-bottom:64px}
-@media (min-width:920px){.capa-grade{grid-template-columns:minmax(0,1.5fr) minmax(0,.8fr);padding-top:110px;padding-bottom:80px}}
-.capa-grade>*{min-width:0}
+.painel .bt{margin-top:14px;border-bottom:0}}
 .etiqueta{display:inline-flex;align-items:center;gap:10px;font:700 13.5px/1 'Barlow Condensed';letter-spacing:.18em;text-transform:uppercase;color:var(--mogno);background:var(--mel);padding:9px 14px 8px;border-radius:3px;box-shadow:0 6px 16px -8px rgba(0,0,0,.7);margin-bottom:24px;position:relative}
 .etiqueta::after{content:"";position:absolute;right:-9px;top:50%;width:18px;height:18px;transform:translateY(-50%) rotate(45deg);background:var(--mel);z-index:-1}
-.capa h1{font-size:clamp(44px,6.6vw,80px);line-height:.98;text-shadow:0 2px 24px rgba(0,0,0,.35)}
-.capa h1 em{font-style:normal;color:var(--mel);display:block}
-.capa .lead{color:#fff;margin:24px 0 30px;font-size:19px;max-width:52ch}
-.acoes{display:flex;flex-wrap:wrap;gap:12px}
-.selo{justify-self:center;width:min(100%,290px);transform:rotate(-9deg);filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
-@media (max-width:919px){.selo{justify-self:start;width:170px;margin-top:6px;order:2}}
-.regua{position:relative;z-index:1;background:linear-gradient(180deg,#e9bd7f,#d9a05c);color:var(--mogno);box-shadow:0 -10px 30px -10px rgba(0,0,0,.5)}
-.regua::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;pointer-events:none;
-background:repeating-linear-gradient(90deg,rgba(43,26,16,.75) 0 2px,transparent 2px 60px),repeating-linear-gradient(90deg,rgba(43,26,16,.45) 0 1px,transparent 1px 12px);
-background-size:100% 16px,100% 8px;background-repeat:no-repeat}
-.regua .faixa{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.regua div{padding:28px 18px 22px;position:relative}
-.regua div+div{border-left:2px solid rgba(43,26,16,.28)}
-.regua div+div::before{content:"";position:absolute;left:-7px;top:50%;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f6e3b0,#a87a2e);box-shadow:0 0 0 2px rgba(43,26,16,.35)}
-.regua b{display:block;font:700 26px/1 'Zilla Slab',serif;margin-bottom:6px}
-.regua span{font-size:14.5px;line-height:1.35;display:block;color:#3b2616}
-@media (max-width:860px){.regua .faixa{grid-template-columns:repeat(2,minmax(0,1fr))}.regua div:nth-child(3){border-left:0}.regua div:nth-child(3)::before{display:none}.regua div:nth-child(n+3){border-top:2px solid rgba(43,26,16,.22)}}
-@media (max-width:360px){.regua div{padding:24px 12px 18px}.regua b{font-size:22px}}
-.produtos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));margin-top:10px}
-.produto{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:0 0 22px;display:flex;flex-direction:column;text-decoration:none;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
-.produto:hover{border-color:var(--cambara);transform:translateY(-3px);box-shadow:0 18px 30px -22px rgba(31,18,10,.6)}
-.produto .tampa{height:86px;background:linear-gradient(rgba(31,18,10,.25),rgba(31,18,10,.45)),var(--tex) center/cover;display:flex;align-items:flex-end;padding:0 22px;margin-bottom:-28px}
-.produto .ic{width:58px;height:58px;border-radius:12px;background:var(--mel);display:grid;place-items:center;color:var(--mogno);box-shadow:0 8px 16px -8px rgba(0,0,0,.5)}
-.produto .ic svg{width:30px;height:30px}
-.produto h3{font-size:26px;margin:44px 22px 8px}
-.produto p{font-size:15.5px;color:#4a3626;margin:0 22px 16px}
-.produto .mais{margin:auto 22px 0;font-weight:600;color:var(--cambara-t);font-size:15px}
 .passos{list-style:none;margin:10px 0 0;padding:0;counter-reset:p;display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
 @media (min-width:560px){.passos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1000px){.passos{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -116,39 +74,13 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .passos b{display:block;font:700 22px/1.15 'Zilla Slab',serif;margin-bottom:4px}
 .creme .passos li{border-color:var(--cambara)}
 .creme .passos li::before{color:var(--cambara-t)}
-.fecho{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
-.fecho p{margin:0;font-size:16px}
 .duas{display:grid;gap:36px;align-items:start}
 @media (min-width:900px){.duas{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 .duas>*{min-width:0}
-.dof{background:var(--cartao);border:1px solid var(--linha);border-left:5px solid var(--cambara);border-radius:10px;padding:26px 26px 22px}
-.dof h3{font-size:28px;margin-bottom:10px}
-.dof p{font-size:16px}
-.dof small{display:block;color:var(--cinza);font-size:13.5px}
-.foto-vazia{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(rgba(31,18,10,.55),rgba(31,18,10,.85)),var(--tex) center/cover;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
-.foto-vazia b{font:700 26px/1.1 'Zilla Slab',serif}
-.foto-vazia span{font-size:14.5px}
-.nota{display:flex;align-items:center;gap:18px;margin:6px 0 24px;flex-wrap:wrap}
-.nota strong{font:700 66px/1 'Zilla Slab',serif}
-.nota .estrelas{color:var(--cambara);font-size:26px;letter-spacing:3px;line-height:1}
-.nota span{display:block;font-size:15px;color:var(--cinza)}
-.temas{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
-.temas div{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:20px 22px}
-.temas b{display:block;font:700 23px/1.1 'Zilla Slab',serif;margin-bottom:6px}
-.temas p{margin:0;font-size:15.5px;color:#4a3626}
-.link-seta{display:inline-block;margin-top:20px;font-weight:600;color:var(--cambara-t)}
-.canais{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.canais li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid var(--linha)}
-.canais li:last-child{border-bottom:1px solid var(--linha)}
-.canais .ic{width:44px;height:44px;border-radius:50%;background:var(--areia);display:grid;place-items:center;color:var(--cambara)}
-.canais .ic svg{width:22px;height:22px}
-.canais small{display:block;font:700 13px 'Barlow Condensed';letter-spacing:.14em;text-transform:uppercase;color:var(--cambara-t)}
-.canais a,.canais span{font-size:17px;text-decoration:none;overflow-wrap:anywhere}
-.mapa{width:100%;height:100%;min-height:340px;border:1px solid var(--linha);border-radius:10px;display:block;background:var(--areia)}
-@media (max-width:899px){.mapa{min-height:260px}}
 .faixa-zap{margin:0 0 36px;background:linear-gradient(90deg,rgba(31,18,10,.92),rgba(31,18,10,.7)),var(--tex) center/cover;color:#fff;border-radius:10px;padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
 .faixa-zap p{margin:0;font:700 30px/1.1 'Zilla Slab',serif;max-width:24ch}
-@media (max-width:420px){.faixa-zap .bt{width:100%}.faixa-zap{padding:26px 20px}}
+@media (max-width:420px){.faixa-zap .bt{width:100%}
+.faixa-zap{padding:26px 20px}}
 .rodape{background:var(--nogueira2);color:var(--mel);padding:30px 0 30px;font-size:14.5px;border-top:6px solid var(--cambara)}
 .rodape .faixa{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 40px;align-items:flex-start}
 .rodape .marca b{color:var(--mel)}
@@ -174,80 +106,16 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .perguntas details[open] summary::after{content:"−"}
 .perguntas p{font-size:16px;margin:0 0 16px}
 .diagrama{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:20px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.produto{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .cabeca .faixa{position:relative;z-index:1}
 .logo-topo{display:block;height:46px;width:auto;color:var(--mogno);overflow:hidden}
 .logo-rodape{display:block;height:96px;width:auto;color:var(--mel);overflow:visible}
 @media (max-width:380px){.logo-topo{height:40px}}
-.foto-patio{margin:0;align-self:start}
-.foto-patio img{width:100%;max-width:800px;height:auto;border-radius:10px;border:1px solid var(--linha);display:block}
-.foto-patio figcaption{font-size:14px;color:var(--cinza);margin-top:8px}
-.pilares{list-style:none;margin:6px 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.pilares li{font:600 14px/1 'Barlow';padding:8px 12px;border-radius:40px;background:var(--cartao);border:1px solid var(--linha);color:var(--mogno)}
-.patio{margin-top:40px}
-.patio h3{font-size:24px;margin-bottom:12px}
-.patio-fotos{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr))}
-.patio-fotos li{max-width:200px}
-.patio-fotos img{width:100%;max-width:200px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:8px;display:block}
-.citacao{margin:52px 0 28px;padding:6px 0 6px 26px;border-left:5px solid var(--cambara);max-width:900px}
-.citacao p{margin:0;font:700 clamp(26px,3.2vw,38px)/1.18 'Zilla Slab',serif;color:var(--mogno);text-wrap:balance}
-.citacao p::before{content:"“";color:var(--cambara);margin-right:2px}
-.citacao p::after{content:"”";color:var(--cambara);margin-left:2px}
-.cartoes4{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
-.cartoes4>div{background:var(--cartao);border:1px solid var(--linha);border-top:4px solid var(--cambara);border-radius:10px;padding:20px 22px}
-.cartoes4 .num{display:block;font:700 14px/1 'Barlow Condensed';letter-spacing:.14em;color:var(--cambara-t);margin-bottom:10px}
-.cartoes4 h3{font-size:23px;margin-bottom:8px}
-.cartoes4 p{margin:0;font-size:15.5px;color:#4a3626}
-.valores{margin-top:36px;align-items:start}
-.valores .sub{font-size:24px;margin-bottom:12px}
-.valores .pilares{margin:0}
-.cartoes4>div{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;align-content:start}
-.produtos .produto{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0}
-.produtos .produto .mais{align-self:end}
 .temas>div,.pecas>div{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
-.produtos,.cartoes4{grid-template-columns:minmax(0,1fr)}
-@media (min-width:560px){.produtos,.cartoes4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.produtos,.cartoes4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.temas{grid-template-columns:minmax(0,1fr)}
-@media (min-width:720px){.temas{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .pecas{grid-template-columns:minmax(0,1fr)}
 @media (min-width:480px){.pecas{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.orc{display:grid;gap:44px;align-items:center}
-@media (min-width:900px){.orc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
-.orc h2{margin-bottom:16px}
-.orc .lead{margin:0 0 26px}
-.fecho-p{margin:14px 0 0;font-size:15px;color:#e9dcc6}
-.nota-conversa{font-size:12.5px;color:#cdbb9d;margin:10px 0 0;text-align:center}
-.zap{max-width:420px;width:100%;justify-self:center;background:var(--areia);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);color:var(--mogno)}
-.zap-topo{display:flex;align-items:center;gap:12px;background:var(--mogno);color:#fff;padding:12px 16px}
-.zap-topo .av{width:38px;height:38px;border-radius:50%;background:var(--nogueira2);display:grid;place-items:center;flex:none;color:var(--mel)}
-.zap-topo b{display:block;font-size:15.5px;line-height:1.2}
-.zap-topo small{font-size:12.5px;color:#e9dcc6}
-.zap-corpo{padding:16px 14px 18px;display:flex;flex-direction:column;gap:10px;background:var(--papel)}
-.bolha{max-width:84%;padding:9px 12px 7px;border-radius:12px;font-size:15px;line-height:1.45;box-shadow:0 1px 1px rgba(31,18,10,.12)}
-.bolha small{display:block;text-align:right;font-size:11px;color:var(--cinza);margin-top:2px}
-.cli{align-self:flex-end;background:var(--cartao);border-top-right-radius:3px}
-.loja{align-self:flex-start;background:#fff;border-top-left-radius:3px}
-.foto{padding:5px;width:84%}
-.foto svg{display:block;width:100%;height:auto;border-radius:8px}
-@media (max-width:639px){
-.rodape .marca-rodape{margin:0 auto}
-.fecho-p>span:not(.sep){display:block}
-.fecho-p .sep{display:none}
-}
-.regua .faixa{grid-auto-rows:auto}
-.regua div{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0;align-content:start}
-@media (max-width:860px){.regua div{text-align:center;padding-left:14px;padding-right:14px}}
+@media (max-width:639px){.rodape .marca-rodape{margin:0 auto}}
 @media (max-width:400px){.bt{white-space:normal;text-align:center;max-width:100%}}
-.selos-capa{position:relative;z-index:1;background:var(--nogueira2);border-top:3px solid var(--mel);color:#f1e6d4}
-.selos-capa ul{list-style:none;margin:0 auto;padding-top:18px;padding-bottom:18px;display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:12px 24px}
-.selos-capa li{display:flex;align-items:center;gap:10px;font:600 16px/1.25 'Barlow','Barlow Fallback',sans-serif;white-space:nowrap}
-.selos-capa svg{width:22px;height:22px;color:var(--mel);flex:none}
-@media (max-width:860px){
-.selos-capa ul{grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch;gap:18px 12px;padding-top:20px;padding-bottom:20px}
-.selos-capa li{flex-direction:column;justify-content:flex-start;gap:8px;text-align:center;white-space:normal;font-size:15px}
-.selos-capa svg{width:24px;height:24px}
-}
 .duas.alinha{align-items:stretch}
 .duas.alinha>div:first-child{display:flex;flex-direction:column}
 .duas.alinha .pecas{margin-top:auto}
@@ -258,19 +126,8 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .pecas b .n{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:10px;border-radius:50%;background:var(--mogno);color:var(--mel);font:700 15px/1 'Zilla Slab',serif;vertical-align:3px}
 .anima .surge{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
 .anima .surge.visto{opacity:1;transform:none}
-.anima .capa .selo{animation:carimba .9s cubic-bezier(.3,1.5,.5,1) .5s both}
 @keyframes carimba{0%{opacity:0;transform:scale(1.7) rotate(-24deg)}70%{opacity:1;transform:scale(.95) rotate(-9deg)}100%{opacity:1;transform:scale(1) rotate(-9deg)}}
-.anima .capa h1,.anima .capa .lead,.anima .capa .acoes,.anima .capa .etiqueta{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
-.anima .capa h1{animation-delay:.05s}.anima .capa .lead{animation-delay:.18s}.anima .capa .acoes{animation-delay:.3s}
 @keyframes sobe{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.anima .zap.conversa .bolha{opacity:0;transform:translateY(16px) scale(.96);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
-.anima .zap.conversa .bolha.chegou{opacity:1;transform:none}
-.zap .digitando{display:none}
-.anima .zap.conversa .digitando{display:flex;align-self:flex-start;gap:6px;background:#fff;border-radius:12px;border-top-left-radius:3px;padding:12px 14px;opacity:0;transition:opacity .3s;box-shadow:0 1px 1px rgba(31,18,10,.12)}
-.anima .zap.conversa .digitando.chegou{opacity:1}
-.anima .zap.conversa .digitando.sai{display:none}
-.zap .digitando i{width:8px;height:8px;border-radius:50%;background:var(--cinza);animation:ponto 1s infinite}
-.zap .digitando i:nth-child(2){animation-delay:.15s}.zap .digitando i:nth-child(3){animation-delay:.3s}
 @keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}
 .rodape-dados{display:grid;grid-template-columns:auto auto;gap:18px 40px;align-items:start}
 .rodape .redes{width:100%;display:flex;justify-content:center;gap:14px}
@@ -278,97 +135,74 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .rodape .redes a:hover,.rodape .redes a:focus-visible{background:var(--mel);color:var(--nogueira2)}
 .rodape .redes svg{width:17px;height:17px}
 @media (max-width:639px){.rodape-dados{grid-template-columns:minmax(0,1fr);width:100%;row-gap:18px;justify-items:center;text-align:center}}
-.insta{padding-bottom:0}
-.insta .chapeu{text-transform:none;letter-spacing:.04em}
-.insta-grade{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-@media (min-width:760px){.insta-grade{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
-.insta-grade>li{min-width:0}
-.insta-grade img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--areia)}
-.insta-grade>li>img,.ig-trilho img{border:1px solid var(--linha)}
-.ig-visor{position:relative;overflow:hidden;padding-bottom:38px;touch-action:pan-y;cursor:grab;user-select:none}
-.ig-visor:active{cursor:grabbing}
-.ig-trilho{display:flex;transition:transform .35s ease}
-.ig-trilho img{flex:0 0 100%;pointer-events:none}
-.ig-seta{position:absolute;bottom:0;width:30px;height:30px;padding:0;border:1px solid var(--mogno);border-radius:50%;background:transparent;color:var(--mogno);display:grid;place-items:center;cursor:pointer;transition:opacity .2s ease,background .2s ease,color .2s ease}
-.ig-seta svg{width:18px;height:18px}
-.ig-seta:hover{background:var(--mogno);color:var(--papel)}
-.ig-seta:disabled{opacity:0;pointer-events:none}
-.ig-seta.ant{right:38px}.ig-seta.prox{right:0}
-@media (max-width:759px){.ig-visor{padding-bottom:36px}.ig-seta{width:28px;height:28px}.ig-seta svg{width:16px;height:16px}.ig-seta.ant{right:36px}}
-.ig-conta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.bt-contorno{margin-top:28px;border-color:var(--mogno);color:var(--mogno);background:transparent}
-.bt-contorno:hover{background:var(--mogno);color:var(--papel)}
-@media (prefers-reduced-motion:reduce){.ig-trilho{transition:none}}
 .flutua{position:fixed;right:20px;bottom:20px;z-index:50;box-shadow:0 10px 30px -8px rgba(0,0,0,.6)}
 .rodape-linha{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center}
 .rodape-linha .redes{grid-column:2;width:auto}
 .rodape-vaga{grid-column:3;justify-self:end;margin-block:-8px}
 .rodape-vaga--espera,.flutua--parado{visibility:hidden}
-@media (max-width:639px){
-.rodape-linha{display:flex;flex-direction:column;align-items:center;gap:18px}
+@media (max-width:639px){.rodape-linha{display:flex;flex-direction:column;align-items:center;gap:18px}
 .rodape-vaga{margin-block:0}
 .flutua{width:56px;height:56px;padding:0}
-.flutua span{display:none}
-}</style>
+.flutua span{display:none}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A madeira tem DOF?","acceptedAnswer":{"@type":"Answer","text":"Sim. Toda a madeira nativa da madeireira é regularizada pelo Ibama através do DOF, o Documento de Origem Florestal."}},{"@type":"Question","name":"Como peço o orçamento?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp (12) 97405-2842, com as medidas do telhado, uma foto do local, a madeira que você quer e o endereço da entrega."}}]}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <!-- Logo · caminho A (estudo da origem S79: logo\LOGO_estudo.html; regras em logo\DECISOES_LOGO.md). Posições internas medidas por pixel: não mexer, só escalar. -->
-  <defs>
-    <symbol id="mA" viewBox="0 0 120 120">
-      <g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="6">
-        <polyline points="8,52 60,10 112,52" stroke-linecap="butt"/>
-        <path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106" stroke-linecap="butt"/>
-      </g>
-    </symbol>
-    <symbol id="lockA" viewBox="0 0 531 178">
-      <use href="#mA" x="10" y="12" width="120" height="120"/>
-      <g fill="currentColor">
-        <text x="150.333" y="38.667" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="32" letter-spacing="25.815">MADEIREIRA</text>
-        <text x="149.667" y="117" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="82">Martinelli</text>
-        <text x="14.667" y="158" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="8.657">CONFIANÇA E HONESTIDADE, SEMPRE</text>
-      </g>
-    </symbol>
-  </defs>
+
+<defs>
+<symbol id="mA" viewBox="0 0 120 120">
+<g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="6">
+<polyline points="8,52 60,10 112,52" stroke-linecap="butt"/>
+<path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106" stroke-linecap="butt"/>
+</g>
+</symbol>
+<symbol id="lockA" viewBox="0 0 531 178">
+<use href="#mA" x="10" y="12" width="120" height="120"/>
+<g fill="currentColor">
+<text x="150.333" y="38.667" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="32" letter-spacing="25.815">MADEIREIRA</text>
+<text x="149.667" y="117" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="82">Martinelli</text>
+<text x="14.667" y="158" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="8.657">CONFIANÇA E HONESTIDADE, SEMPRE</text>
+</g>
+</symbol>
+</defs>
 </svg>
 <div class="aviso-previa" role="note">Prévia da Ativaleads para a Madeireira Martinelli · site de exemplo, não é o site oficial</div>
 
 <header class="topo">
-  <div class="faixa">
-    <a class="marca" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-topo" viewBox="0 0 531 134" role="img" aria-label="Madeireira Martinelli"><use href="#lockA" width="531" height="178"/></svg></a>
-    <nav class="nav" aria-label="Menu"><a href="telhado.html" aria-current="page">Madeira para telhado</a><a href="index.html#produtos">Telhas</a><a href="index.html#produtos">Pergolados e decks</a><a href="index.html#produtos">Forros e portas</a><a href="index.html#madeireira">A madeireira</a><a href="index.html#contato">Contato</a></nav>
-    <a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a>
-    <button class="abre" type="button" aria-expanded="false" aria-controls="painel">Menu <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-    <div class="painel" id="painel"><a href="telhado.html">Madeira para telhado</a><a href="index.html#produtos">Telhas</a><a href="index.html#produtos">Pergolados e decks</a><a href="index.html#produtos">Forros e portas</a><a href="index.html#madeireira">A madeireira</a><a href="index.html#contato">Contato</a><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener">Falar pelo WhatsApp</a></div>
-  </div>
+<div class="faixa">
+<a class="marca" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-topo" viewBox="0 0 531 134" role="img" aria-label="Madeireira Martinelli"><use href="#lockA" width="531" height="178"/></svg></a>
+<nav class="nav" aria-label="Menu"><a href="telhado.html" aria-current="page">Madeira para telhado</a><a href="index.html#produtos">Telhas</a><a href="index.html#produtos">Pergolados e decks</a><a href="index.html#produtos">Forros e portas</a><a href="index.html#madeireira">A madeireira</a><a href="index.html#contato">Contato</a></nav>
+<a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a>
+<button class="abre" type="button" aria-expanded="false" aria-controls="painel">Menu <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="painel" id="painel"><a href="telhado.html">Madeira para telhado</a><a href="index.html#produtos">Telhas</a><a href="index.html#produtos">Pergolados e decks</a><a href="index.html#produtos">Forros e portas</a><a href="index.html#madeireira">A madeireira</a><a href="index.html#contato">Contato</a><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener">Falar pelo WhatsApp</a></div>
+</div>
 </header>
 
 <main>
 <section class="cabeca">
-  <div class="faixa">
-    <p class="trilha"><a href="index.html">Início</a> · Madeira para telhado</p>
-    <span class="etiqueta">Madeiramento de telhado</span>
-    <h1>Madeira para telhado.</h1>
-    <p class="lead">Terças, caibros, ripas e vigas, com a espécie e a bitola escritas no orçamento. Madeira nativa com DOF, entregue na obra.</p>
-    <a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Pedir orçamento do telhado</a>
-  </div>
+<div class="faixa">
+<p class="trilha"><a href="index.html">Início</a> · Madeira para telhado</p>
+<span class="etiqueta">Madeiramento de telhado</span>
+<h1>Madeira para telhado.</h1>
+<p class="lead">Terças, caibros, ripas e vigas, com a espécie e a bitola escritas no orçamento. Madeira nativa com DOF, entregue na obra.</p>
+<a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Pedir orçamento do telhado</a>
+</div>
 </section>
 
 <section>
-  <div class="faixa duas alinha">
-    <div>
-      <div class="chapeu">As peças</div>
-      <h2>Quem segura o seu telhado.</h2>
-      <p class="lead">A telha apoia na ripa, a ripa é pregada no caibro e o caibro descansa na terça. Cada peça tem bitola e espécie certas para o vão.</p>
-      <div class="pecas">
-        <div><b><span class="n">1</span>Terça</b><p>A viga grossa que atravessa o vão e apoia os caibros.</p></div>
-        <div><b><span class="n">2</span>Caibro</b><p>Desce na inclinação do telhado, de terça a terça.</p></div>
-        <div><b><span class="n">3</span>Ripa</b><p>A peça fina pregada nos caibros, no passo da telha.</p></div>
-        <div><b><span class="n">4</span>Telha</b><p>Apoia nas ripas. Diga qual vai usar antes de orçar a madeira.</p></div>
-      </div>
-    </div>
-    <div class="diagrama"><svg class="iso" viewBox="150 -42 870 704" role="img" aria-label="Estrutura de um telhado de madeira: terças sobre pontaletes, caibros sobre as terças, ripas sobre os caibros e as telhas por cima"><g stroke="rgba(43,26,16,.55)" stroke-width="1.2" stroke-linejoin="round"><g class="pc" data-k="pont" data-o="10"><polygon points="465.8,193.8 481.7,184.6 481.7,87.5 465.8,96.7" fill="#4f2c15"/><polygon points="449.9,184.6 465.8,193.8 465.8,96.7 449.9,87.5" fill="#633819"/><polygon points="449.9,87.5 465.8,96.7 481.7,87.5 465.8,78.3" fill="#7a4a26"/></g>
+<div class="faixa duas alinha">
+<div>
+<div class="chapeu">As peças</div>
+<h2>Quem segura o seu telhado.</h2>
+<p class="lead">A telha apoia na ripa, a ripa é pregada no caibro e o caibro descansa na terça. Cada peça tem bitola e espécie certas para o vão.</p>
+<div class="pecas">
+<div><b><span class="n">1</span>Terça</b><p>A viga grossa que atravessa o vão e apoia os caibros.</p></div>
+<div><b><span class="n">2</span>Caibro</b><p>Desce na inclinação do telhado, de terça a terça.</p></div>
+<div><b><span class="n">3</span>Ripa</b><p>A peça fina pregada nos caibros, no passo da telha.</p></div>
+<div><b><span class="n">4</span>Telha</b><p>Apoia nas ripas. Diga qual vai usar antes de orçar a madeira.</p></div>
+</div>
+</div>
+<div class="diagrama"><svg class="iso" viewBox="150 -42 870 704" role="img" aria-label="Estrutura de um telhado de madeira: terças sobre pontaletes, caibros sobre as terças, ripas sobre os caibros e as telhas por cima"><g stroke="rgba(43,26,16,.55)" stroke-width="1.2" stroke-linejoin="round"><g class="pc" data-k="pont" data-o="10"><polygon points="465.8,193.8 481.7,184.6 481.7,87.5 465.8,96.7" fill="#4f2c15"/><polygon points="449.9,184.6 465.8,193.8 465.8,96.7 449.9,87.5" fill="#633819"/><polygon points="449.9,87.5 465.8,96.7 481.7,87.5 465.8,78.3" fill="#7a4a26"/></g>
 <g class="pc" data-k="pont" data-o="0"><polygon points="366.4,251.2 382.4,242.0 382.4,203.3 366.4,212.5" fill="#4f2c15"/><polygon points="350.5,242.0 366.4,251.2 366.4,212.5 350.5,203.3" fill="#633819"/><polygon points="350.5,203.3 366.4,212.5 382.4,203.3 366.4,194.1" fill="#7a4a26"/></g>
 <g class="pc" data-k="pont" data-o="11"><polygon points="692.9,324.9 708.8,315.7 708.8,218.6 692.9,227.8" fill="#4f2c15"/><polygon points="676.9,315.7 692.9,324.9 692.9,227.8 676.9,218.6" fill="#633819"/><polygon points="676.9,218.6 692.9,227.8 708.8,218.6 692.9,209.4" fill="#7a4a26"/></g>
 <g class="pc" data-k="pont" data-o="1"><polygon points="593.5,382.3 609.4,373.1 609.4,334.4 593.5,343.6" fill="#4f2c15"/><polygon points="577.6,373.1 593.5,382.3 593.5,343.6 577.6,334.4" fill="#633819"/><polygon points="577.6,334.4 593.5,343.6 609.4,334.4 593.5,325.2" fill="#7a4a26"/></g>
@@ -487,114 +321,112 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 <g class="pc" data-k="telha" data-o="448"><polygon points="723.6,501.5 749.9,516.7 779.0,482.7 752.7,467.6" fill="#c4653a"/><polygon points="726.8,507.0 753.1,522.2 749.9,516.7 723.6,501.5" fill="#ad552e"/><polygon points="753.1,522.2 782.2,488.2 779.0,482.7 749.9,516.7" fill="#9b4a27"/><line x1="738.1" y1="484.5" x2="764.4" y2="499.7" stroke="rgba(255,226,190,.35)" stroke-width="3"/></g>
 <g class="pc" data-k="telha" data-o="428"><polygon points="700.2,528.8 726.4,544.0 755.6,510.1 729.3,494.9" fill="#c4653a"/><polygon points="703.4,534.3 729.7,549.5 726.4,544.0 700.2,528.8" fill="#ad552e"/><polygon points="729.7,549.5 758.8,515.6 755.6,510.1 726.4,544.0" fill="#9b4a27"/><line x1="714.7" y1="511.8" x2="741.0" y2="527.0" stroke="rgba(255,226,190,.35)" stroke-width="3"/></g>
 <g class="pc" data-k="telha" data-o="408"><polygon points="676.7,556.1 703.0,571.3 732.1,537.4 705.8,522.2" fill="#c4653a"/><polygon points="680.0,561.6 706.3,576.8 703.0,571.3 676.7,556.1" fill="#ad552e"/><polygon points="706.3,576.8 735.4,542.9 732.1,537.4 703.0,571.3" fill="#9b4a27"/><line x1="691.3" y1="539.1" x2="717.6" y2="554.3" stroke="rgba(255,226,190,.35)" stroke-width="3"/></g></g><g transform="translate(223 285)"><g class="num-iso" data-n="1"><circle r="24" fill="#4a2a16" stroke="#e8b77a" stroke-width="3"/><text y="9" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="26" fill="#e8b77a">1</text></g></g><g transform="translate(395 301)"><g class="num-iso" data-n="2"><circle r="24" fill="#4a2a16" stroke="#e8b77a" stroke-width="3"/><text y="9" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="26" fill="#e8b77a">2</text></g></g><g transform="translate(468 106)"><g class="num-iso" data-n="3"><circle r="24" fill="#4a2a16" stroke="#e8b77a" stroke-width="3"/><text y="9" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="26" fill="#e8b77a">3</text></g></g><g transform="translate(802 319)"><g class="num-iso" data-n="4"><circle r="24" fill="#4a2a16" stroke="#e8b77a" stroke-width="3"/><text y="9" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="26" fill="#e8b77a">4</text></g></g></svg></div>
-  </div>
+</div>
 </section>
 
 <section>
-  <div class="faixa">
-    <div class="faixa-zap" style="margin:0"><p>Peça o orçamento do seu telhado.</p><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a></div>
-  </div>
+<div class="faixa">
+<div class="faixa-zap" style="margin:0"><p>Peça o orçamento do seu telhado.</p><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20madeira%20para%20telhado." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a></div>
+</div>
 </section>
 <section class="creme">
-  <div class="faixa duas">
-    <div>
-      <div class="chapeu">Na entrega</div>
-      <h2>Antes de assinar, confira a madeira.</h2>
-      <ol class="passos" style="grid-template-columns:minmax(0,1fr)">
-        <li><b>A espécie</b>É a que está no orçamento?</li>
-        <li><b>A bitola</b>Largura e espessura batem?</li>
-        <li><b>A conta</b>Quantas peças, de que comprimento.</li>
-        <li><b>O estado</b>Rachada ou empenada, separe na hora.</li>
-      </ol>
-    </div>
-    <div class="perguntas">
-      <div class="chapeu">Perguntas frequentes</div>
-      <details open><summary>A madeira tem DOF?</summary><p>Sim. Toda a madeira nativa da madeireira é regularizada pelo Ibama através do DOF, o Documento de Origem Florestal, que acompanha a madeira até a obra.</p></details>
-      <details><summary>Como peço o orçamento?</summary><p>Pelo WhatsApp (12) 97405-2842, com as medidas do telhado, uma foto do local, a madeira que você quer e o endereço da entrega.</p></details>
-      <details><summary>Vocês entregam?</summary><p>Sim, na obra, no dia combinado no orçamento.</p></details>
-      <details><summary>Vendem as telhas também?</summary><p>Sim: cerâmica, cimento, esmaltada, vidro, PET e fibrocimento, e o acabamento do telhado.</p></details>
-    </div>
-  </div>
+<div class="faixa duas">
+<div>
+<div class="chapeu">Na entrega</div>
+<h2>Antes de assinar, confira a madeira.</h2>
+<ol class="passos" style="grid-template-columns:minmax(0,1fr)">
+<li><b>A espécie</b>É a que está no orçamento?</li>
+<li><b>A bitola</b>Largura e espessura batem?</li>
+<li><b>A conta</b>Quantas peças, de que comprimento.</li>
+<li><b>O estado</b>Rachada ou empenada, separe na hora.</li>
+</ol>
+</div>
+<div class="perguntas">
+<div class="chapeu">Perguntas frequentes</div>
+<details open><summary>A madeira tem DOF?</summary><p>Sim. Toda a madeira nativa da madeireira é regularizada pelo Ibama através do DOF, o Documento de Origem Florestal, que acompanha a madeira até a obra.</p></details>
+<details><summary>Como peço o orçamento?</summary><p>Pelo WhatsApp (12) 97405-2842, com as medidas do telhado, uma foto do local, a madeira que você quer e o endereço da entrega.</p></details>
+<details><summary>Vocês entregam?</summary><p>Sim, na obra, no dia combinado no orçamento.</p></details>
+<details><summary>Vendem as telhas também?</summary><p>Sim: cerâmica, cimento, esmaltada, vidro, PET e fibrocimento, e o acabamento do telhado.</p></details>
+</div>
+</div>
 </section>
 
 </main>
 
-<!-- botão flutuante do WhatsApp que trava no rodapé (Operador, 26/11/2026: "o botão flutuante da Labate que invade o rodapé deve ser uma 'marca' nossa") -->
+
 <a class="bt bt-zap flutua" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
 <footer class="rodape">
-  <div class="faixa">
-    <a class="marca marca-rodape" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-rodape" viewBox="0 0 531 178" role="img" aria-label="Madeireira Martinelli. Confiança e honestidade, sempre"><use href="#lockA"/></svg></a>
-    <div class="rodape-dados">
-      <p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
-      <p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
-    </div>
-    <div class="rodape-linha">
-      <p class="redes"><a href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener" aria-label="Instagram da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/madmartinelli" target="_blank" rel="noopener" aria-label="Facebook da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3H13a4 4 0 0 0-4 4v3H7v3h2v8h3v-8h2.6l.4-3h-3V7.4c0-.5.4-.9.9-.9h1.6z"/></svg></a></p>
-      <a class="bt bt-zap rodape-vaga" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
-    </div>
-    <p class="dev">Desenvolvido por <a href="https://ativaleads.com.br/ativaleads/" target="_blank" rel="noopener" aria-label="Ativaleads"><img src="img/ativaleads-2026-mel-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a></p>
-  </div>
+<div class="faixa">
+<a class="marca marca-rodape" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-rodape" viewBox="0 0 531 178" role="img" aria-label="Madeireira Martinelli. Confiança e honestidade, sempre"><use href="#lockA"/></svg></a>
+<div class="rodape-dados">
+<p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
+<p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
+</div>
+<div class="rodape-linha">
+<p class="redes"><a href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener" aria-label="Instagram da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/madmartinelli" target="_blank" rel="noopener" aria-label="Facebook da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3H13a4 4 0 0 0-4 4v3H7v3h2v8h3v-8h2.6l.4-3h-3V7.4c0-.5.4-.9.9-.9h1.6z"/></svg></a></p>
+<a class="bt bt-zap rodape-vaga" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
+</div>
+<p class="dev">Desenvolvido por <a href="https://ativaleads.com.br/ativaleads/" target="_blank" rel="noopener" aria-label="Ativaleads"><img src="img/ativaleads-2026-mel-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a></p>
+</div>
 </footer>
 <script>
 (function(){var b=document.querySelector('.abre'),p=document.getElementById('painel');if(!b)return;b.addEventListener('click',function(){var a=p.classList.toggle('aberto');b.setAttribute('aria-expanded',a?'true':'false');});p.querySelectorAll('a').forEach(function(x){x.addEventListener('click',function(){p.classList.remove('aberto');b.setAttribute('aria-expanded','false');});});})();
 </script>
 <script>
-/* S80: montagem do telhado peça por peça quando a seção aparece (pontaletes, terças, caibros, ripas, telhas e números) */
 (function(){var s=document.querySelector('.diagrama .iso');if(!s||!s.animate||/estatico/.test(location.search))return;
 var pc=[].slice.call(s.querySelectorAll('.pc')),nb=[].slice.call(s.querySelectorAll('.num-iso'));
 var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;if(red)return;
 var base={pont:0,terca:450,caibro:1000,ripa:1700,telha:2400},passo={pont:60,terca:120,caibro:55,ripa:45,telha:9},
-    de={pont:'translateY(-40px)',terca:'translateX(-90px)',caibro:'translateY(-70px)',ripa:'translateY(-50px)',telha:'translateY(-36px)'};
+de={pont:'translateY(-40px)',terca:'translateX(-90px)',caibro:'translateY(-70px)',ripa:'translateY(-50px)',telha:'translateY(-36px)'};
 pc.sort(function(a,b){return a.getAttribute('data-o')-b.getAttribute('data-o')});
 var cont={},foi=false;s.classList.add('pre');
 function roda(){if(foi)return;foi=true;s.classList.remove('pre');pc.forEach(function(g){var k=g.getAttribute('data-k');cont[k]=(cont[k]||0)+1;
-  g.animate([{opacity:0,transform:de[k]},{opacity:1,transform:'none'}],{duration:k==='telha'?260:420,delay:base[k]+passo[k]*cont[k],easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'});});
-  nb.forEach(function(g,i){g.animate([{opacity:0,transform:'scale(.4)'},{opacity:1,transform:'scale(1)'}],{duration:320,delay:3500+i*180,easing:'cubic-bezier(.3,1.6,.5,1)',fill:'both'});});}
+g.animate([{opacity:0,transform:de[k]},{opacity:1,transform:'none'}],{duration:k==='telha'?260:420,delay:base[k]+passo[k]*cont[k],easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'});});
+nb.forEach(function(g,i){g.animate([{opacity:0,transform:'scale(.4)'},{opacity:1,transform:'scale(1)'}],{duration:320,delay:3500+i*180,easing:'cubic-bezier(.3,1.6,.5,1)',fill:'both'});});}
 if(!('IntersectionObserver' in window)){roda();return;}
 var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();roda();}},{threshold:.35});io.observe(s);
 setTimeout(function(){var r=s.getBoundingClientRect();if(!foi&&r.top<innerHeight&&r.bottom>0)roda();},2500);})();
 </script>
 <script>
-/* flutuante do WhatsApp trava no rodapé (marca da Ativaleads, 26/11/2026; comportamento do site da Labate, S48). Versão com IntersectionObserver: não mede a página ao carregar (PageSpeed). Fonte: skill ativaleads-padrao-entrega, references/flutuante.js */
 (function () {
-  var F = 'flutua', V = 'rodape-vaga';
-  var f = document.querySelector('.' + F), v = document.querySelector('.' + V);
-  if (!f || !v || !('IntersectionObserver' in window)) return;
-  var calmo = matchMedia('(prefers-reduced-motion: reduce)'), primeira = true, obs = null, pend = false;
-  v.classList.add(V + '--espera');
-  function desliza(parado) {
-    if (calmo.matches) return;
-    var de = parado ? f : v, para = parado ? v : f, a = de.getBoundingClientRect(), b = para.getBoundingClientRect();
-    var dx = (a.left + a.right) / 2 - (b.left + b.right) / 2;
-    if (Math.abs(dx) < 1) return;
-    para.style.transition = 'none'; para.style.transform = 'translateX(' + dx + 'px)';
-    void para.offsetWidth;
-    para.style.transition = 'transform .28s ease'; para.style.transform = '';
-    setTimeout(function () { para.style.transition = ''; }, 300);
-  }
-  function troca(parado) {
-    var antes = !v.classList.contains(V + '--espera');
-    if (parado !== antes && !primeira) desliza(parado);
-    f.classList.toggle(F + '--parado', parado);
-    v.classList.toggle(V + '--espera', !parado);
-    primeira = false;
-  }
-  function arma() {
-    pend = false;
-    if (obs) obs.disconnect();
-    var cs = getComputedStyle(f);
-    if (cs.display === 'none') { f.classList.remove(F + '--parado'); v.classList.remove(V + '--espera'); return; }
-    var linha = Math.round(parseFloat(cs.bottom) + f.offsetHeight);
-    obs = new IntersectionObserver(function (es) {
-      var e = es[es.length - 1];
-      troca(e.boundingClientRect.top <= e.rootBounds.bottom + 0.5);
-    }, { rootMargin: '0px 0px -' + linha + 'px 0px', threshold: [0, 1] });
-    obs.observe(v);
-  }
-  function pede() { if (!pend) { pend = true; requestAnimationFrame(arma); } }
-  function depois() { (window.requestIdleCallback || function (fn) { setTimeout(fn, 200); })(arma); }
-  if (document.readyState === 'complete') depois(); else addEventListener('load', depois);
-  addEventListener('resize', pede);
+var F = 'flutua', V = 'rodape-vaga';
+var f = document.querySelector('.' + F), v = document.querySelector('.' + V);
+if (!f || !v || !('IntersectionObserver' in window)) return;
+var calmo = matchMedia('(prefers-reduced-motion: reduce)'), primeira = true, obs = null, pend = false;
+v.classList.add(V + '--espera');
+function desliza(parado) {
+if (calmo.matches) return;
+var de = parado ? f : v, para = parado ? v : f, a = de.getBoundingClientRect(), b = para.getBoundingClientRect();
+var dx = (a.left + a.right) / 2 - (b.left + b.right) / 2;
+if (Math.abs(dx) < 1) return;
+para.style.transition = 'none'; para.style.transform = 'translateX(' + dx + 'px)';
+void para.offsetWidth;
+para.style.transition = 'transform .28s ease'; para.style.transform = '';
+setTimeout(function () { para.style.transition = ''; }, 300);
+}
+function troca(parado) {
+var antes = !v.classList.contains(V + '--espera');
+if (parado !== antes && !primeira) desliza(parado);
+f.classList.toggle(F + '--parado', parado);
+v.classList.toggle(V + '--espera', !parado);
+primeira = false;
+}
+function arma() {
+pend = false;
+if (obs) obs.disconnect();
+var cs = getComputedStyle(f);
+if (cs.display === 'none') { f.classList.remove(F + '--parado'); v.classList.remove(V + '--espera'); return; }
+var linha = Math.round(parseFloat(cs.bottom) + f.offsetHeight);
+obs = new IntersectionObserver(function (es) {
+var e = es[es.length - 1];
+troca(e.boundingClientRect.top <= e.rootBounds.bottom + 0.5);
+}, { rootMargin: '0px 0px -' + linha + 'px 0px', threshold: [0, 1] });
+obs.observe(v);
+}
+function pede() { if (!pend) { pend = true; requestAnimationFrame(arma); } }
+function depois() { (window.requestIdleCallback || function (fn) { setTimeout(fn, 200); })(arma); }
+if (document.readyState === 'complete') depois(); else addEventListener('load', depois);
+addEventListener('resize', pede);
 })();
 </script>
 </body>
