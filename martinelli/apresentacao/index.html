@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposta em telas · Madeireira Martinelli · Ativaleads</title>
+<meta name="description" content="Proposta da Ativaleads para a Madeireira Martinelli: como está hoje, como pode ficar e o próximo passo.">
+<meta name="theme-color" content="#007A3F">
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* ===== Identidade do cliente (vem do dados.json; o resto do arquivo é o molde, igual para todo cliente) ===== */
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/barlow-400.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/barlow-600.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/barlow-condensed-700.woff2) format('woff2')}
+:root{--fundo:#ede3cf;--texto:#4a2a16;--creme:#dfcfae;--cartao:#f8f2e5;--linha:#cbb894;--escuro:#2b1a10;--escuro-texto:#fff;--acento:#e8b77a;--acento-t:#8f4519;--alerta:#b3261e;--f-titulo:'Barlow Condensed',system-ui,sans-serif;--f-texto:'Barlow',system-ui,sans-serif;--f-rotulo:'Barlow Condensed',system-ui,sans-serif;--peso-titulo:700;--rotulo-peso:700}
+/* ===== Molde da apresentação em telas (Ativaleads, S82) ===== */
+:root{
+  --verde:#007A3F;
+  --t1:clamp(30px,min(9.4vw,6.6svh),68px);
+  --t2:clamp(23px,min(6.8vw,4.6svh),48px);
+  --t3:clamp(18px,min(4.9vw,3.1svh),25px);
+  --tx:clamp(15px,min(4.15vw,2.75svh),19px);
+  --tn:clamp(13px,min(3.5vw,2.2svh),14.5px);
+  --tr:clamp(12.5px,min(3.4vw,1.9svh),14px);
+  --lado:20px;
+  --respiro:clamp(10px,2.2svh,26px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f-texto);font-size:var(--tx);line-height:1.5;color:var(--texto);background:var(--fundo);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acento);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-titulo);font-weight:var(--peso-titulo);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:var(--titulo-espaco,0)}
+p,ul,ol{margin:0}
+p{text-wrap:pretty}
+.m{white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* topo: verde da Ativaleads, com o logo; o nome do cliente fica no aviso e nas telas */
+.ap-topo{background:var(--verde);color:#fff;display:flex;align-items:center;gap:6px 24px;padding:8px var(--lado);flex-wrap:wrap}
+.ap-marca{background:var(--verde);flex:none;line-height:0}
+.ap-marca a{display:block}
+.ap-marca img{width:150px;height:auto}
+.ap-aviso{flex:1 1 300px;font-size:12.5px;line-height:1.35;color:#fff;text-align:right}
+@media (max-width:639px){.ap-topo{padding:6px var(--lado);row-gap:3px}.ap-aviso{flex-basis:100%;text-align:left;font-size:12px}}
+
+/* palco e telas */
+.ap-palco{position:relative}
+.ap-trilho{display:block}
+.tela{padding:48px var(--lado);position:relative}
+.ap-miolo{width:100%;max-width:1080px;margin:0 auto}
+.tela[data-fundo="escuro"]{background:var(--escuro);color:var(--escuro-texto)}
+.tela[data-fundo="claro"]{background:var(--fundo);color:var(--texto)}
+.tela[data-fundo="creme"]{background:var(--creme);color:var(--texto)}
+.ap-chapeu{font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.15em;text-transform:uppercase;color:var(--acento-t);display:flex;align-items:center;gap:12px;margin-bottom:var(--respiro)}
+.ap-chapeu::before{content:"";width:30px;height:3px;background:currentColor;flex:none}
+[data-fundo="escuro"] .ap-chapeu{color:var(--acento)}
+.tela h1{font-size:var(--t1);max-width:17ch}
+.tela h2{font-size:var(--t2);max-width:24ch}
+.ap-texto{margin-top:var(--respiro);max-width:58ch}
+.ap-nota{margin-top:calc(var(--respiro)*.7);font-size:var(--tn);max-width:62ch}
+[data-fundo="escuro"] .ap-texto,[data-fundo="escuro"] .ap-nota{color:var(--escuro-texto)}
+.t-abertura h1{color:var(--escuro-texto)}
+.t-abertura .ap-texto{padding-left:16px;border-left:4px solid var(--acento);font-size:calc(var(--tx)*1.06)}
+
+/* lista de itens (como está hoje · o que fazemos) */
+.ap-itens{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(6px,1.4svh,10px)}
+.ap-item{background:var(--cartao);border:1px solid var(--linha);border-radius:6px;padding:clamp(8px,1.7svh,13px) 16px;display:grid;grid-template-rows:auto auto 1fr auto;align-content:start}
+.t-lista .ap-itens.numerados .ap-item{grid-template-columns:auto minmax(0,1fr);column-gap:12px}
+.ap-itens.numerados .ap-rot{grid-row:span 3;align-self:start}
+.ap-itens.numerados .ap-item>:not(.ap-rot){grid-column:2}
+@media (max-width:859px){.ap-itens.numerados{gap:0}.ap-itens.numerados .ap-item,[data-fundo="escuro"] .ap-itens.numerados .ap-item{background:none;border:0;border-top:1px solid var(--linha);border-radius:0;padding:10px 0}[data-fundo="escuro"] .ap-itens.numerados .ap-item{border-top-color:rgba(255,255,255,.25)}}
+[data-fundo="escuro"] .ap-item{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22)}
+.ap-rot{font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.13em;text-transform:uppercase;color:var(--acento-t);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+[data-fundo="escuro"] .ap-rot{color:var(--acento)}
+.ap-alerta{display:inline-flex;align-items:center;gap:5px;color:var(--alerta);letter-spacing:.08em}
+.ap-alerta svg{width:15px;height:15px;flex:none}
+.ap-item h3{font-size:var(--t3);margin-top:4px}
+.ap-itens.numerados .ap-item h3{margin-top:0}
+.ap-item p{font-size:calc(var(--tx)*.95);margin-top:3px}
+.ap-link{display:inline-flex;align-items:center;gap:6px;margin-top:4px;min-height:26px;font-size:var(--tn);font-weight:600;color:var(--acento-t);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;justify-self:start}
+.ap-link svg{width:13px;height:13px;flex:none}
+.ap-num{font:var(--peso-titulo) calc(var(--t3)*1.25)/1 var(--f-titulo);color:var(--acento-t)}
+[data-fundo="escuro"] .ap-num{color:var(--acento)}
+[data-fundo="escuro"] .ap-item p{color:var(--escuro-texto)}
+@media (min-width:860px){
+  .ap-itens{grid-template-columns:repeat(var(--colunas,3),minmax(0,1fr));gap:16px;margin-top:calc(var(--respiro)*1.4)}
+  .ap-item{grid-row:span 4;grid-template-rows:subgrid;row-gap:0;padding:20px 22px 22px}
+  .t-lista .ap-itens.numerados .ap-item{grid-template-columns:none}
+  .ap-itens.numerados .ap-rot{grid-row:auto}
+  .ap-itens.numerados .ap-item>:not(.ap-rot){grid-column:auto}
+  .ap-itens.numerados .ap-item h3{margin-top:10px}
+  .ap-item h3{margin-top:10px}
+  .ap-item p{margin-top:8px}
+}
+
+/* passos */
+.ap-passos{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:8px;counter-reset:p}
+.ap-passos li{counter-increment:p;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:10px 0;border-top:1px solid var(--linha)}
+.ap-passos li::before{content:counter(p);display:grid;place-items:center;width:1.9em;height:1.9em;border-radius:50%;background:var(--escuro);color:var(--escuro-texto);font:var(--peso-titulo) calc(var(--tx)*1.05)/1 var(--f-titulo)}
+@media (min-width:860px){.ap-passos{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 32px;margin-top:calc(var(--respiro)*1.4)}.ap-passos li{padding:16px 0}}
+
+/* capa e peças: imagens que se ajustam à altura da tela */
+.ap-midia{display:flex;justify-content:center;align-items:flex-start;gap:var(--gap,14px);margin-top:var(--respiro)}
+.ap-fig{margin:0;display:flex;flex-direction:column;align-items:center;min-width:0}
+.ap-fig img{width:auto;height:var(--alt-img,360px);aspect-ratio:var(--ar);object-fit:contain;border-radius:6px;box-shadow:0 18px 36px -22px rgba(0,0,0,.55)}
+.ap-fig figcaption{margin-top:8px;font-size:var(--tn);line-height:1.35;text-align:center;max-width:100%;text-wrap:balance}
+.ap-fig figcaption b{display:block;font-family:var(--f-rotulo);font-weight:var(--rotulo-peso);letter-spacing:.12em;text-transform:uppercase;font-size:var(--tr);color:var(--acento-t)}
+[data-fundo="escuro"] .ap-fig figcaption b{color:var(--acento)}
+.ap-cel{background:#14100e;padding:7px;border-radius:26px;box-shadow:0 22px 44px -24px rgba(0,0,0,.6)}
+.ap-cel img{border-radius:20px;box-shadow:none}
+
+/* última tela: valores em PDF, conversa e rodapé padrão */
+.ap-botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:calc(var(--respiro)*1.3)}
+.ap-botao{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:40px;font:600 calc(var(--tx)*.98)/1.2 var(--f-texto);text-decoration:none;border:0}
+.ap-botao svg{width:20px;height:20px;flex:none}
+.ap-botao.pdf{background:var(--acento);color:var(--escuro)}
+.ap-botao.whats{background:#1a7f45;color:#fff}
+@media (max-width:479px){.ap-botao{width:100%}}
+.rodape-padrao{background:var(--verde);color:#fff;padding:18px 0 20px}
+.rodape-padrao-fim{max-width:1080px;margin:0 auto;padding:0 var(--lado);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 28px}
+.rodape-padrao-fim>a{display:block;padding:3px 0}
+.rodape-padrao img{width:150px;height:auto;display:block}
+.rodape-padrao-legal,.rodape-padrao-prop,.rodape-padrao-extra{margin:0;font-size:13px;line-height:1.45;color:#fff}
+.rodape-padrao-textos{display:grid;gap:3px}
+@media (max-width:639px){
+  .rodape-padrao{padding:14px 0 16px}
+  .rodape-padrao-fim{flex-direction:column;text-align:center;gap:8px}
+  .rodape-padrao img{width:130px}
+  .rodape-padrao-legal>span:not(.sep){display:block;text-wrap:balance}
+  .rodape-padrao-legal .sep{display:none}
+  .rodape-padrao-legal,.rodape-padrao-prop,.rodape-padrao-extra{font-size:12px}
+}
+
+/* tela baixa (celular pequeno com a barra do navegador aberta): menos ar, mesma letra */
+@media (max-height:640px){
+  .js .tela{padding-top:12px;padding-bottom:12px}
+  .js .tela-fim{padding-bottom:0}
+  .ap-chapeu{margin-bottom:8px}
+  .ap-item{padding-top:8px;padding-bottom:8px}
+  .ap-item p,.ap-passos li{line-height:1.38}
+  .ap-itens{margin-top:12px}
+  .ap-item h3{margin-top:2px}
+}
+@media (max-height:640px) and (max-width:859px){
+  .ap-itens:not(.numerados) .ap-item:not(.tem-alerta){display:block}
+  .ap-itens:not(.numerados) .ap-item:not(.tem-alerta) .ap-rot{display:inline-flex;margin-right:10px;vertical-align:1px}
+  .ap-itens:not(.numerados) .ap-item:not(.tem-alerta) h3{display:inline}
+  .ap-itens:not(.numerados) .ap-item p{margin-top:3px}
+  .ap-bt{min-height:40px}
+}
+/* celular bem baixo (375 x 548): a etiqueta de cima sai das telas de lista; o título diz o mesmo */
+@media (max-height:600px) and (max-width:859px){
+  .t-lista .ap-chapeu{display:none}
+}
+/* controle: voltar, pontos, contador, avançar (só com JavaScript) */
+.ap-controle{display:none}
+
+/* ===== Com JavaScript: uma tela por vez, que cabe inteira na janela ===== */
+.js body{height:100vh;height:100svh;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.js .ap-topo,.js .ap-controle{flex:none}
+.js .ap-palco{flex:1 1 auto;min-height:0;overflow:clip;touch-action:pan-y}
+.js .ap-trilho{display:flex;height:100%;transition:transform .45s cubic-bezier(.25,.8,.25,1);will-change:transform}
+.js .tela{flex:0 0 100%;height:100%;overflow:hidden;display:flex;flex-direction:column;justify-content:safe center;padding:clamp(14px,3.2svh,44px) var(--lado);visibility:hidden}
+.js .tela.ap-vis{visibility:visible}
+.js .ap-arrastando,.js .ap-arrastando *{user-select:none;-webkit-user-select:none}
+.js .ap-arrastando img{pointer-events:none}
+.js .tela-midia .ap-miolo,.js .tela-fim .ap-miolo{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;justify-content:safe center}
+.js .tela-midia .ap-midia{flex:1 1 auto;min-height:0;container-type:size}
+.js .ap-fig img{--alt-img:min(calc(100cqh - var(--leg,0px)),calc((100cqw - var(--gap,14px)*(var(--n,1) - 1) - var(--moldura,0px)) / var(--soma,1)))}
+.js .tela-fim{padding-bottom:0}
+.js .tela-fim .rodape-padrao{flex:none;margin:clamp(10px,2svh,24px) calc(var(--lado)*-1) 0}
+@media (min-width:860px){
+  .js .tela-midia.lado .ap-miolo{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:100%;align-items:center;gap:56px;height:100%}
+  .js .tela-midia.lado .ap-midia{height:100%;margin-top:0;width:min(42vw,440px)}
+  .tela-midia:not(.lado) .ap-midia{justify-content:flex-start;gap:24px}
+}
+
+.js .ap-controle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px var(--lado) calc(6px + env(safe-area-inset-bottom));background:var(--fundo);border-top:1px solid var(--linha)}
+.ap-controle>*{flex:none}
+.ap-bt{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:40px;font:600 15px/1 var(--f-texto);cursor:pointer;border:1px solid var(--texto);background:transparent;color:var(--texto)}
+.ap-bt svg{width:18px;height:18px}
+.ap-bt.prox{background:var(--escuro);border-color:var(--escuro);color:var(--escuro-texto)}
+.ap-bt[aria-hidden="true"]{visibility:hidden}
+.ap-meio{display:flex;align-items:center;gap:12px;flex:0 1 auto;min-width:0}
+.ap-pontos{display:none;gap:6px}
+@media (min-width:480px){.ap-pontos{display:flex}}
+.ap-pontos button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:var(--linha);cursor:pointer}
+.ap-pontos button[aria-current="true"]{background:var(--texto);width:20px;border-radius:5px}
+.ap-conta{font:600 14px/1 var(--f-texto);color:var(--texto);font-variant-numeric:tabular-nums;min-width:2.6em;text-align:center}
+@media (max-width:359px){.ap-bt{padding:0 14px}}
+@media (min-width:860px){.ap-controle>*{flex:none}.js .ap-controle{padding-left:max(var(--lado),calc(50vw - 540px));padding-right:max(var(--lado),calc(50vw - 540px))}}
+
+/* entrada: só transform e opacity, em cascata curta, na primeira vez que a tela aparece */
+.js .ap-e{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 70ms + 80ms)}
+.js .ap-entrou .ap-e{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .ap-e{opacity:1;transform:none;transition:none}
+  .js .ap-trilho{transition:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+  <symbol id="i-baixar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 5-5m-5 5-5-5M4 19h16"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm1 15h-2v-2h2v2Zm0-4h-2V9h2v4Z"/></symbol>
+  <symbol id="i-fora" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-ant" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m0 0 6-6m-6 6 6 6"/></symbol>
+  <symbol id="i-prox" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0-6-6m6 6-6 6"/></symbol>
+</svg>
+<header class="ap-topo">
+  <nav class="ap-marca" aria-label="Ativaleads"><a href="https://ativaleads.com.br/ativaleads/" aria-label="Ativaleads"><img src="img/ativaleads-2026-branco-checkclaro-250.webp" alt="Ativaleads" width="250" height="41"></a></nav>
+  <p class="ap-aviso">Proposta da Ativaleads, para conversa com a Madeireira Martinelli. Nada foi publicado em nome da empresa.</p>
+</header>
+<main class="ap-palco" id="palco" aria-roledescription="apresentação">
+  <div class="ap-trilho" id="trilho">
+<section class="tela t-abertura" id="1" data-tela="1" data-fundo="escuro" aria-label="Tela 1 de 7" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Madeireira Martinelli</p>
+<h1 class="ap-e" style="--i:1">Quanto custa não ser achado pelo cliente certo?</h1>
+<p class="ap-texto ap-e" style="--i:2">No Google, quem busca “madeira para telhado são josé dos campos” vê a Avanço, a Bom Sucesso e a Morumbi, e não vê a Martinelli. O mesmo vale para deck e telhas.</p>
+<p class="ap-nota ap-e" style="--i:3">Primeira página do Google, busca feita em 25/11/2026.</p>
+</div>
+</section>
+<section class="tela t-lista" id="2" data-tela="2" data-fundo="claro" aria-label="Tela 2 de 7" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Como está hoje</p>
+<h2 class="ap-e" style="--i:1">O que o cliente encontra quando te pesquisa?</h2>
+<ul class="ap-itens" style="--colunas:3">
+<li class="ap-item tem-alerta ap-e" style="--i:2"><span class="ap-rot">Site <span class="ap-alerta"><svg aria-hidden="true"><use href="#i-alerta"/></svg>Para resolver já</span></span><h3>Fora do ar</h3><p>Abre uma página de erro. É para lá que levam o botão “Site” do Google e o Facebook.</p><a class="ap-link" href="https://www.madeireiramartinelli.com.br/" target="_blank" rel="noopener">madeireiramartinelli.com.br<svg aria-hidden="true"><use href="#i-fora"/></svg></a></li>
+<li class="ap-item ap-e" style="--i:3"><span class="ap-rot">Google</span><h3>Nota 4,5 com 45 avaliações</h3><p>Sem resposta da madeireira desde junho.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:4"><span class="ap-rot">Instagram e Facebook</span><h3>13 meses sem publicação</h3><p>A última é de 31/10/2025.</p><span></span></li>
+</ul>
+</div>
+</section>
+<section class="tela tela-midia lado" id="3" data-tela="3" data-fundo="creme" aria-label="Tela 3 de 7" tabindex="-1">
+<div class="ap-miolo">
+<div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Como pode ficar</p>
+<h2 class="ap-e" style="--i:1">Um site no endereço que já é seu.</h2>
+<p class="ap-texto ap-e" style="--i:2">O mesmo madeireiramartinelli.com.br, de volta no ar, com uma página para cada coisa que o cliente procura.</p>
+</div><div class="ap-midia" style="--n:1;--soma:0.5433;--leg:calc(0px + 14px);--moldura:14px">
+<figure class="ap-fig ap-e" style="--i:3"><div class="ap-cel"><img src="img/capa_site.webp" alt="Primeira tela do site de exemplo da Madeireira Martinelli no celular: “Madeira para telhado, telhas, pergolados e decks.” e o botão de orçamento pelo WhatsApp." width="540" height="994" style="--ar:540/994" draggable="false"></div></figure>
+</div>
+</div>
+</section>
+<section class="tela tela-midia" id="4" data-tela="4" data-fundo="claro" aria-label="Tela 4 de 7" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Como pode ficar</p>
+<h2 class="ap-e" style="--i:1">Carrossel para explicar. Reel para parar o dedo.</h2>
+<div class="ap-midia" style="--n:2;--soma:1.3625;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 10px + 0px);--moldura:0px">
+<figure class="ap-fig ap-e" style="--i:2"><img src="img/carrossel_telhado.webp" alt="Primeira tela do carrossel de exemplo “Telhado novo? 5 perguntas antes de comprar.”" width="540" height="675" style="--ar:540/675" draggable="false" loading="lazy"><figcaption><b>Carrossel</b>Telhado novo? 5 perguntas antes de comprar.</figcaption></figure>
+<figure class="ap-fig ap-e" style="--i:3"><img src="img/reel_dof.webp" alt="Quadro do Reel de exemplo “Comprou madeira nativa? Peça o DOF.”, com o carimbo “com DOF”." width="540" height="960" style="--ar:540/960" draggable="false" loading="lazy"><figcaption><b>Reel</b>Comprou madeira nativa? Peça o DOF.</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="tela t-lista" id="5" data-tela="5" data-fundo="escuro" aria-label="Tela 5 de 7" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">O que fazemos</p>
+<h2 class="ap-e" style="--i:1">Relatório, site, redes e tráfego.</h2>
+<ul class="ap-itens numerados" style="--colunas:3">
+<li class="ap-item ap-e" style="--i:2"><span class="ap-rot"><span class="ap-num">01</span></span><h3>Relatório estratégico</h3><p>Onde a madeireira está hoje, o que a concorrência faz e o que fazer nos próximos 90 dias.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:3"><span class="ap-rot"><span class="ap-num">02</span></span><h3>Site, perfis e Google</h3><p>Site de volta no endereço de sempre, perfil do Google e redes repaginados e CRM ligado.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:4"><span class="ap-rot"><span class="ap-num">03</span></span><h3>Redes, Google e anúncios</h3><p>Publicações e um vídeo curto por semana, anúncios no Google e na Meta e relatório semanal.</p><span></span></li>
+</ul>
+</div>
+</section>
+<section class="tela t-passos" id="6" data-tela="6" data-fundo="claro" aria-label="Tela 6 de 7" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Próximos passos</p>
+<h2 class="ap-e" style="--i:1">Do esboço ao ar.</h2>
+<ol class="ap-passos">
+<li class="ap-e" style="--i:2">Conversa para responder o que falta e escolher por onde começar.</li>
+<li class="ap-e" style="--i:3">Site de volta no endereço de sempre e os links corrigidos.</li>
+<li class="ap-e" style="--i:4">Relatório estratégico apresentado em reunião.</li>
+<li class="ap-e" style="--i:5">Perfil do Google arrumado, CRM ligado e Instagram retomado.</li>
+</ol>
+</div>
+</section>
+<section class="tela tela-fim" id="7" data-tela="7" data-fundo="escuro" aria-label="Tela 7 de 7" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Ativaleads · novembro de 2026</p>
+<h2 class="ap-e" style="--i:1">Proposta de valores</h2>
+<p class="ap-texto ap-e" style="--i:2">Implantação e o Pacote Social + Tráfego, em PDF.</p>
+<div class="ap-botoes ap-e" style="--i:3"><a class="ap-botao pdf" href="../social/Proposta_Ativaleads_Martinelli.pdf" download><svg aria-hidden="true"><use href="#i-baixar"/></svg>Baixar o PDF</a></div>
+</div>
+<footer class="rodape-padrao"><div class="rodape-padrao-fim"><a href="https://ativaleads.com.br/ativaleads/" aria-label="Ativaleads"><img src="img/ativaleads-2026-branco-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a><div class="rodape-padrao-textos"><p class="rodape-padrao-prop">Proposta para Madeireira Martinelli · novembro de 2026</p><p class="rodape-padrao-legal"><span>Ativaleads Consultoria em Marketing Digital LTDA</span><span class="sep"> · </span><span>CNPJ 52.788.441/0001-01</span><span class="sep"> · </span><span>São Paulo/SP</span></p></div></div></footer>
+</section>
+  </div>
+</main>
+<div class="ap-controle" role="group" aria-label="Navegação entre as telas">
+  <button type="button" class="ap-bt ant" data-ap="ant"><svg aria-hidden="true"><use href="#i-ant"/></svg>Voltar</button>
+  <div class="ap-meio"><div class="ap-pontos" data-ap="pontos"></div><span class="ap-conta" data-ap="conta" aria-live="polite">1/7</span></div>
+  <button type="button" class="ap-bt prox" data-ap="prox">Avançar<svg aria-hidden="true"><use href="#i-prox"/></svg></button>
+</div>
+<script>
+(function(){
+  var d = document, trilho = d.getElementById("trilho"), palco = d.getElementById("palco");
+  var telas = [].slice.call(trilho.children), n = telas.length, i = -1;
+  var ant = d.querySelector('[data-ap="ant"]'), prox = d.querySelector('[data-ap="prox"]');
+  var conta = d.querySelector('[data-ap="conta"]'), pontos = d.querySelector('[data-ap="pontos"]');
+  var reduz = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var espera = null;
+  telas.forEach(function(t, k){
+    var b = d.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Tela " + (k + 1) + " de " + n);
+    b.addEventListener("click", function(){ vai(k, true); }); pontos.appendChild(b);
+  });
+  function daHash(){ var k = parseInt((location.hash || "").slice(1), 10); return k >= 1 && k <= n ? k - 1 : 0; }
+  function some(b, sim){ b.setAttribute("aria-hidden", sim ? "true" : "false"); b.tabIndex = sim ? -1 : 0; }
+  function deixa(a, b){ telas.forEach(function(t, k){ var ve = k >= Math.min(a, b) && k <= Math.max(a, b); t.classList.toggle("ap-vis", ve); }); }
+  function vai(k, empurra, semAnimar){
+    k = Math.max(0, Math.min(n - 1, k));
+    var de = i < 0 ? k : i; i = k;
+    clearTimeout(espera);
+    trilho.style.transition = semAnimar || reduz.matches ? "none" : "";
+    deixa(de, i);
+    trilho.style.transform = "translate3d(" + (-100 * i) + "%,0,0)";
+    espera = setTimeout(function(){ deixa(i, i); }, semAnimar || reduz.matches ? 0 : 480);
+    telas.forEach(function(t, j){ var atual = j === i; t.inert = !atual; t.setAttribute("aria-hidden", atual ? "false" : "true"); });
+    telas[i].classList.add("ap-entrou");
+    var foco = d.activeElement;
+    some(ant, i === 0); some(prox, i === n - 1);
+    if ((foco === ant && i === 0) || (foco === prox && i === n - 1)) (i === 0 ? prox : ant).focus();
+    conta.textContent = (i + 1) + "/" + n;
+    [].forEach.call(pontos.children, function(b, j){ b.setAttribute("aria-current", j === i ? "true" : "false"); });
+    var alvo = "#" + (i + 1);
+    if (location.hash !== alvo) { try { history[empurra ? "pushState" : "replaceState"](null, "", alvo); } catch (e) {} }
+  }
+  ant.addEventListener("click", function(){ vai(i - 1, true); });
+  prox.addEventListener("click", function(){ vai(i + 1, true); });
+  d.addEventListener("keydown", function(e){
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    var k = e.key;
+    if (k === "ArrowRight" || k === "PageDown") { e.preventDefault(); vai(i + 1, true); }
+    else if (k === "ArrowLeft" || k === "PageUp") { e.preventDefault(); vai(i - 1, true); }
+    else if (k === "Home") { e.preventDefault(); vai(0, true); }
+    else if (k === "End") { e.preventDefault(); vai(n - 1, true); }
+  });
+  window.addEventListener("popstate", function(){ var k = daHash(); if (k !== i) vai(k, false); });
+  window.addEventListener("hashchange", function(){ var k = daHash(); if (k !== i) vai(k, false); });
+  // arrasto: a tela acompanha o dedo (e o mouse); arraste curto volta
+  var x0 = null, y0 = 0, dx = 0, w = 1, pegou = false, idp = null, bloqueiaClique = false;
+  palco.addEventListener("pointerdown", function(e){
+    if (e.button !== 0) return;
+    x0 = e.clientX; y0 = e.clientY; dx = 0; w = palco.clientWidth || 1; pegou = false; idp = e.pointerId;
+  });
+  palco.addEventListener("pointermove", function(e){
+    if (x0 === null || e.pointerId !== idp) return;
+    dx = e.clientX - x0;
+    if (!pegou) {
+      if (Math.abs(dx) < 8 || Math.abs(dx) < Math.abs(e.clientY - y0)) return;
+      pegou = true; clearTimeout(espera); trilho.style.transition = "none"; palco.classList.add("ap-arrastando");
+      deixa(Math.max(0, i - 1), Math.min(n - 1, i + 1));
+      try { palco.setPointerCapture(idp); } catch (er) {}
+      if (window.getSelection) window.getSelection().removeAllRanges();
+    }
+    var r = (i === 0 && dx > 0) || (i === n - 1 && dx < 0) ? dx / 3 : dx;
+    trilho.style.transform = "translate3d(calc(" + (-100 * i) + "% + " + r + "px),0,0)";
+  });
+  function solta(){
+    if (x0 === null) return;
+    var foi = pegou; x0 = null; pegou = false; palco.classList.remove("ap-arrastando");
+    if (!foi) return;
+    bloqueiaClique = true; setTimeout(function(){ bloqueiaClique = false; }, 50);
+    var k = Math.abs(dx) > w * 0.18 ? i + (dx < 0 ? 1 : -1) : i;
+    if (k < 0 || k > n - 1) k = i;
+    if (k === i) { trilho.style.transition = ""; trilho.style.transform = "translate3d(" + (-100 * i) + "%,0,0)"; espera = setTimeout(function(){ deixa(i, i); }, 480); }
+    else vai(k, true);
+  }
+  palco.addEventListener("pointerup", solta);
+  palco.addEventListener("pointercancel", solta);
+  palco.addEventListener("click", function(e){ if (bloqueiaClique) { e.preventDefault(); e.stopPropagation(); } }, true);
+  palco.addEventListener("dragstart", function(e){ e.preventDefault(); });
+  vai(daHash(), false, true);
+})();
+</script>
+</body>
+</html>
