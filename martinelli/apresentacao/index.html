@@ -173,6 +173,21 @@ p{text-wrap:pretty}
 .ap-vel.duplo .ap-vel-tempo{font-size:13px;line-height:1.3;margin-top:6px;padding-top:6px}
 .ap-itens.quatro .ap-item p{font-size:var(--tn);line-height:1.35}
 }
+.ap-mini{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(56px,1fr));gap:4px;margin-top:clamp(6px,1.2svh,14px)}
+.ap-mini li{display:grid;justify-items:center;text-align:center;gap:3px;font-size:12px;line-height:1.2}
+.ap-mini svg{grid-area:1/1;width:clamp(34px,min(10vw,6svh),52px);height:auto;transform:rotate(-90deg)}
+.ap-mini b{grid-area:1/1;align-self:center;position:relative;z-index:1;font:700 clamp(12.5px,2.1svh,16px)/1 var(--f-texto)}
+.ap-mini circle{fill:none;stroke-width:5}
+.ap-mini .f{fill:var(--anel-fundo)}
+.ap-mini .a{stroke:var(--anel);stroke-linecap:round;stroke-dasharray:150.8;stroke-dashoffset:calc(150.8 * (1 - var(--p)))}
+.ap-mini .nota-bom{--anel:#0c6;--anel-fundo:#e5f8ec;color:#080}
+.ap-mini .nota-medio{--anel:#fa3;--anel-fundo:#fff3e3;color:#c33300}
+.ap-mini .nota-ruim{--anel:#f33;--anel-fundo:#ffe8e8;color:#c00}
+.ap-mini span{color:var(--texto)}
+.ap-mini small{display:block;color:#b3261e;font-weight:600;font-size:12px}
+.js .ap-mini .a{stroke-dashoffset:150.8;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.7,.2,1) calc(var(--i,0) * 90ms + 400ms)}
+.js .ap-entrou .ap-mini .a{stroke-dashoffset:calc(150.8 * (1 - var(--p)))}
+@media (prefers-reduced-motion:reduce){.js .ap-mini .a{stroke-dashoffset:calc(150.8 * (1 - var(--p)));transition:none}}
 .ap-buscas{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(5px,1svh,8px)}
 .ap-buscas li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:clamp(6px,1.2svh,12px) 14px;background:var(--cartao);border:1px solid var(--linha);border-left:5px solid var(--est,var(--linha));border-radius:6px}
 .ap-busca-termo{min-width:0}
@@ -181,19 +196,21 @@ p{text-wrap:pretty}
 .ap-selo{flex:none;font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:20px;background:var(--est,var(--texto));color:#fff;white-space:nowrap}
 .ap-id-hoje{display:flex;align-items:center;gap:12px;margin-top:var(--respiro);font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.12em;text-transform:uppercase;color:var(--acento-t)}
 .ap-id-hoje img{height:clamp(26px,4.6svh,44px);width:auto;border-radius:3px}
-.ap-id-caminhos{list-style:none;padding:0;display:grid;gap:clamp(6px,1.2svh,10px);margin-top:clamp(8px,1.6svh,16px)}
-.ap-id-caminhos li{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px}
-.ap-id-caminhos img{width:clamp(120px,40vw,190px);height:auto;border-radius:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.6)}
-.ap-id-caminhos p{font-size:calc(var(--tx)*.95);line-height:1.3}
-.ap-id-caminhos b{display:block;font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.12em;text-transform:uppercase;color:var(--acento-t)}
+.ap-id-caminhos{list-style:none;padding:0;display:grid;gap:clamp(6px,1.3svh,12px);margin-top:clamp(8px,1.6svh,16px)}
+.ap-id-caminhos p{font-size:calc(var(--tx)*.92);line-height:1.25;margin-bottom:4px}
+.ap-id-caminhos b{font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.12em;text-transform:uppercase;color:var(--acento-t);margin-right:6px}
+.ap-id-fundos{display:flex;gap:6px;align-items:center}
+.ap-id-fundos img{height:min(clamp(34px,7.5svh,84px),calc((100vw - 2 * var(--lado) - 14px) / var(--soma,7.7)));width:auto;border-radius:5px;box-shadow:0 8px 18px -12px rgba(0,0,0,.6)}
 .ap-paleta{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:clamp(8px,1.6svh,16px)}
 .ap-paleta li{display:flex;align-items:center;gap:6px;font-size:var(--tn)}
 .ap-paleta i{width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.18);flex:none}
 .ap-paleta small{display:none}
 @media (min-width:860px){
-.ap-id-caminhos{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ap-id-caminhos li{grid-template-columns:none;gap:8px}
-.ap-id-caminhos img{width:100%}
+.ap-id-caminhos li{display:grid;grid-template-columns:200px auto;align-items:center;gap:16px}
+.ap-id-caminhos p{margin:0}
+.ap-id-caminhos b{display:block;margin:0 0 2px}
+.ap-id-fundos{gap:10px}
+.ap-id-fundos img{height:clamp(40px,9svh,90px)}
 .ap-paleta{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 .ap-paleta li{display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:start}
 .ap-paleta i{grid-row:span 2;width:30px;height:30px}
@@ -242,10 +259,18 @@ p{text-wrap:pretty}
 .ap-barra-nome b{display:inline;font-size:17px}
 .ap-barra-nome small{display:inline;margin-left:6px}
 .ap-vel-linha{display:none}
-.ap-vel-cartao:not(:has(.ap-aneis)){display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:8px 14px}
-.ap-vel-cartao:not(:has(.ap-aneis)) .ap-vel-fora{margin-top:0;font-size:var(--t3)}
+.ap-vel-cartao:not(:has(.ap-aneis)):not(.ap-vel-ranking){display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:8px 14px}
+.ap-vel-cartao:not(:has(.ap-aneis)):not(.ap-vel-ranking) .ap-vel-fora{margin-top:0;font-size:var(--t3)}
 .ap-vel-tempo{margin-top:6px;padding-top:6px}
 .t-aneis .ap-nota{font-size:12.5px;line-height:1.35}
+.t-aneis:has(.ap-vel-ranking) .ap-nota{display:none}
+.ap-mini svg{width:30px}
+.ap-mini{margin-top:4px}
+.ap-id-fundos img{height:min(34px,calc((100vw - 2 * var(--lado) - 14px) / var(--soma,7.7)))}
+.ap-id-hoje{margin-top:6px}.ap-id-hoje img{height:24px}
+.ap-id-caminhos{gap:5px;margin-top:6px}.ap-id-caminhos p{margin-bottom:2px}
+.ap-paleta{margin-top:6px}.ap-paleta i{width:18px;height:18px}
+.ap-aneis svg{width:38px}.ap-vel-cartao{padding-top:8px;padding-bottom:8px}
 .ap-vel.duplo .ap-vel-nome small{display:none}
 .ap-vel.duplo .ap-vel-cartao{padding-top:6px;padding-bottom:8px}
 .ap-regra-col li{font-size:13.5px;line-height:1.3}
@@ -371,7 +396,21 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:8">Buscas com “são josé dos campos”, primeira página do Google em 25/11/2026.</p>
 </div>
 </section>
-<section class="tela tela-midia lado" id="5" data-tela="5" data-fundo="creme" aria-label="Tela 5 de 11" tabindex="-1">
+<section class="tela t-identidade" id="5" data-tela="5" data-fundo="creme" aria-label="Tela 5 de 11" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Nova identidade visual</p>
+<p class="ap-pergunta ap-e" style="--i:1">O cliente reconhece a madeireira só de olhar o perfil?</p>
+<h2 class="ap-e" style="--i:2">A mesma marca, com cara de madeireira.</h2>
+<div class="ap-id-hoje ap-e" style="--i:3"><span>Hoje</span><img src="img/logo_hoje.webp" alt="Logo de hoje da Madeireira Martinelli: MM vermelho numa moldura de casa e o nome em azul" width="325" height="75" draggable="false"></div>
+<ul class="ap-id-caminhos">
+<li class="ap-e" style="--i:4"><p><b>Caminho A</b> MM sob o telhado</p><div class="ap-id-fundos" style="--soma:7.647"><img src="img/logo_a_claro.webp" alt="Caminho A, MM sob o telhado, fundo claro" width="420" height="200" draggable="false" loading="lazy"><img src="img/logo_a_escuro.webp" alt="Caminho A, MM sob o telhado, fundo escuro" width="420" height="197" draggable="false" loading="lazy"><img src="img/logo_a_madeira.webp" alt="Caminho A, MM sob o telhado, na madeira" width="420" height="123" draggable="false" loading="lazy"></div></li>
+<li class="ap-e" style="--i:5"><p><b>Caminho B</b> Selo marcado a fogo</p><div class="ap-id-fundos" style="--soma:7.647"><img src="img/logo_b_claro.webp" alt="Caminho B, Selo marcado a fogo, fundo claro" width="420" height="200" draggable="false" loading="lazy"><img src="img/logo_b_escuro.webp" alt="Caminho B, Selo marcado a fogo, fundo escuro" width="420" height="197" draggable="false" loading="lazy"><img src="img/logo_b_madeira.webp" alt="Caminho B, Selo marcado a fogo, na madeira" width="420" height="123" draggable="false" loading="lazy"></div></li>
+<li class="ap-e" style="--i:6"><p><b>Caminho C</b> A placa</p><div class="ap-id-fundos" style="--soma:7.647"><img src="img/logo_c_claro.webp" alt="Caminho C, A placa, fundo claro" width="420" height="200" draggable="false" loading="lazy"><img src="img/logo_c_escuro.webp" alt="Caminho C, A placa, fundo escuro" width="420" height="197" draggable="false" loading="lazy"><img src="img/logo_c_madeira.webp" alt="Caminho C, A placa, na madeira" width="420" height="123" draggable="false" loading="lazy"></div></li>
+</ul>
+<ul class="ap-paleta ap-e" style="--i:7"><li><i style="background:#2b1a10"></i><b>Nogueira</b><small>faixas escuras e capa</small></li><li><i style="background:#4a2a16"></i><b>Mogno</b><small>logo e textos</small></li><li><i style="background:#a8582a"></i><b>Cambará</b><small>destaques e etiquetas</small></li><li><i style="background:#e8b77a"></i><b>Mel</b><small>sobre a madeira escura</small></li><li><i style="background:#dfcfae"></i><b>Areia</b><small>faixas claras</small></li><li><i style="background:#ede3cf"></i><b>Papel</b><small>fundo do site</small></li></ul>
+</div>
+</section>
+<section class="tela tela-midia lado" id="6" data-tela="6" data-fundo="claro" aria-label="Tela 6 de 11" tabindex="-1">
 <div class="ap-miolo">
 <div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Site novo</p>
 <h2 class="ap-e" style="--i:1">Um site no endereço que já é seu.</h2>
@@ -381,33 +420,19 @@ p{text-wrap:pretty}
 </div>
 </div>
 </section>
-<section class="tela t-aneis" id="6" data-tela="6" data-fundo="claro" aria-label="Tela 6 de 11" tabindex="-1">
+<section class="tela t-aneis" id="7" data-tela="7" data-fundo="creme" aria-label="Tela 7 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">PageSpeed do Google</p>
 <p class="ap-pergunta ap-e" style="--i:1">Quanto tempo o cliente espera antes de ir para o próximo?</p>
 <h2 class="ap-e" style="--i:2">Site novo: 100. A cidade fica entre 37 e 94.</h2>
 <div class="ap-vel" style="--colunas:2">
-<div class="ap-vel-cartao ap-e" style="--i:3"><p class="ap-vel-nome"><b>Hoje</b> <small>madeireiramartinelli.com.br</small></p><p class="ap-vel-fora">Fora do ar</p></div>
-<div class="ap-vel-cartao destaque ap-e" style="--i:4"><p class="ap-vel-nome"><b>Site novo</b> <small>proposta</small></p><ul class="ap-aneis"><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Desempenho</span></li><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Acessibilidade</span></li><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Boas práticas</span></li><li class="nota-medio"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:0.66"/></svg><b data-numero="66">66</b><i>*</i><span>SEO</span></li></ul><p class="ap-vel-tempo"><b>1,5 s</b> para mostrar o conteúdo principal no celular</p><p class="ap-vel-linha">No computador: 100 · 100 · 100 · 66* · <a href="https://pagespeed.web.dev/analysis/https-ativaleads-com-br-martinelli/y32fh1oi40haux44vjgk93?form_factor=mobile" target="_blank" rel="noopener">ver relatório</a></p></div>
+<div class="ap-vel-cartao destaque ap-e" style="--i:3"><p class="ap-vel-nome"><b>Site novo</b> <small>proposta</small></p><ul class="ap-aneis"><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Desempenho</span></li><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Acessibilidade</span></li><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Boas práticas</span></li><li class="nota-medio"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:0.66"/></svg><b data-numero="66">66</b><i>*</i><span>SEO</span></li></ul><p class="ap-vel-tempo"><b>1,5 s</b> para mostrar o conteúdo principal no celular</p><p class="ap-vel-linha">No computador: 100 · 100 · 100 · 66* · <a href="https://pagespeed.web.dev/analysis/https-ativaleads-com-br-martinelli/y32fh1oi40haux44vjgk93?form_factor=mobile" target="_blank" rel="noopener">ver relatório</a></p></div>
+<div class="ap-vel-cartao ap-vel-ranking ap-e" style="--i:4"><p class="ap-vel-nome"><b>E os concorrentes, medidos no mesmo dia</b></p><ul class="ap-mini"><li class="nota-ruim fora"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1"/></svg><b>✕</b><span>Martinelli hoje<small>fora do ar</small></span></li><li class="nota-ruim"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:0.37"/></svg><b data-numero="37">37</b><span>Avanço Madeiras</span></li><li class="nota-medio"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:0.52"/></svg><b data-numero="52">52</b><span>Alemão Madeiras</span></li><li class="nota-medio"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:0.60"/></svg><b data-numero="60">60</b><span>Madeireira Pantanal</span></li><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:0.94"/></svg><b data-numero="94">94</b><span>Morumbi Madeiras</span></li></ul></div>
 </div>
 <p class="ap-nota ap-e" style="--i:5">Notas do celular, de 0 a 100 (Google, 25/11/2026). *SEO em 66 porque a proposta está fechada para o Google.</p>
 </div>
 </section>
-<section class="tela t-identidade" id="7" data-tela="7" data-fundo="claro" aria-label="Tela 7 de 11" tabindex="-1">
-<div class="ap-miolo">
-<p class="ap-chapeu ap-e" style="--i:0">Nova identidade visual</p>
-<p class="ap-pergunta ap-e" style="--i:1">O cliente reconhece a madeireira só de olhar o perfil?</p>
-<h2 class="ap-e" style="--i:2">A mesma marca, com cara de madeireira.</h2>
-<div class="ap-id-hoje ap-e" style="--i:3"><span>Hoje</span><img src="img/logo_hoje.webp" alt="Logo de hoje da Madeireira Martinelli: MM vermelho numa moldura de casa e o nome em azul" width="325" height="75" draggable="false"></div>
-<ul class="ap-id-caminhos">
-<li class="ap-e" style="--i:4"><img src="img/logo_caminho_a.webp" alt="Caminho A, MM sob o telhado, entalhado na madeira" width="480" height="141" draggable="false" loading="lazy"><p><b>Caminho A</b> MM sob o telhado</p></li>
-<li class="ap-e" style="--i:5"><img src="img/logo_caminho_b.webp" alt="Caminho B, selo marcado a fogo na madeira" width="480" height="141" draggable="false" loading="lazy"><p><b>Caminho B</b> Selo marcado a fogo</p></li>
-<li class="ap-e" style="--i:6"><img src="img/logo_caminho_c.webp" alt="Caminho C, a placa com o nome por extenso, entalhada na madeira" width="480" height="141" draggable="false" loading="lazy"><p><b>Caminho C</b> A placa</p></li>
-</ul>
-<ul class="ap-paleta ap-e" style="--i:7"><li><i style="background:#2b1a10"></i><b>Nogueira</b><small>faixas escuras e capa</small></li><li><i style="background:#4a2a16"></i><b>Mogno</b><small>logo e textos</small></li><li><i style="background:#a8582a"></i><b>Cambará</b><small>destaques e etiquetas</small></li><li><i style="background:#e8b77a"></i><b>Mel</b><small>sobre a madeira escura</small></li><li><i style="background:#dfcfae"></i><b>Areia</b><small>faixas claras</small></li><li><i style="background:#ede3cf"></i><b>Papel</b><small>fundo do site</small></li></ul>
-</div>
-</section>
-<section class="tela tela-midia" id="8" data-tela="8" data-fundo="creme" aria-label="Tela 8 de 11" tabindex="-1">
+<section class="tela tela-midia" id="8" data-tela="8" data-fundo="claro" aria-label="Tela 8 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Instagram e Facebook</p>
 <p class="ap-pergunta ap-e" style="--i:1">O que faz o cliente parar de rolar o feed?</p>
@@ -435,8 +460,8 @@ p{text-wrap:pretty}
 <h2 class="ap-e" style="--i:1">Do esboço ao ar.</h2>
 <ol class="ap-passos">
 <li class="ap-e" style="--i:2">Conversa para responder o que falta e escolher por onde começar.</li>
-<li class="ap-e" style="--i:3">Site de volta no endereço de sempre e os links corrigidos.</li>
-<li class="ap-e" style="--i:4">Relatório estratégico apresentado em reunião.</li>
+<li class="ap-e" style="--i:3">Relatório estratégico apresentado em reunião.</li>
+<li class="ap-e" style="--i:4">Site de volta no endereço de sempre e os links corrigidos.</li>
 <li class="ap-e" style="--i:5">Perfil do Google arrumado, CRM ligado e Instagram retomado.</li>
 </ol>
 </div>
