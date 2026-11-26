@@ -1,4 +1,27 @@
-/* Site de exemplo da Martinelli: scripts que podem esperar a página (S81, 26/11/2026: saíram do HTML para ele caber na primeira janela do TCP). Carrega com defer. */
+/* Site de exemplo da Martinelli: scripts que podem esperar a página (S81, 26/11/2026: saíram do HTML para ele caber na primeira janela do TCP). Carrega com defer. A animação de entrada veio para cá também: nenhum elemento animado aparece na primeira tela em 375 nem em 1280, então nada pisca. */
+/* S80: animação da página principal (entrada ao rolar, carimbo, conversa do orçamento) */
+(function(){var H=document.documentElement;if(!H.classList.contains('anima'))return;
+var alvo='main h2, main .chapeu, main .lead, .produto, .cartoes4>div, .valores>*, .patio-fotos li, .temas>div, .nota, .canais li, .mapa, .faixa-zap, .citacao, .foto-patio, .insta-grade>li';
+var els=[].slice.call(document.querySelectorAll(alvo)).filter(function(e){return !e.closest('.capa')&&!e.closest('#orcamento .zap')});
+/* atraso em cascata dentro de cada grade */
+['.produtos','.cartoes4','.temas','.patio-fotos','.canais','.insta-grade'].forEach(function(s){[].forEach.call(document.querySelectorAll(s),function(g){[].forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*90)+'ms'})})});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visto');io.unobserve(x.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+/* S81: com o defer o script pode rodar depois da primeira pintura; o que já está à vista nessa hora fica como está (esconder piscaria) e só o que está fora da tela ganha a entrada. A primeira observação diz quem está à vista sem medir a página. */
+var io0=new IntersectionObserver(function(es){io0.disconnect();es.forEach(function(x){if(!x.isIntersecting){x.target.classList.add('surge');io.observe(x.target)}})});
+els.forEach(function(e){io0.observe(e)});
+/* conversa do orçamento: desenho, pergunta, "digitando", resposta */
+var z=document.querySelector('#orcamento .zap');if(z){var b=[].slice.call(z.querySelectorAll('.bolha'));
+  var dig=document.createElement('div');dig.className='digitando';dig.setAttribute('aria-hidden','true');dig.innerHTML='<i></i><i></i><i></i>';
+  var loja=z.querySelector('.bolha.loja');if(loja)loja.parentNode.insertBefore(dig,loja);
+  z.classList.add('conversa');
+  var io2=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io2.disconnect();
+    var t=[300,1300,2200];b.forEach(function(x,i){if(x.classList.contains('loja'))return;setTimeout(function(){x.classList.add('chegou')},t[i]||300)});
+    setTimeout(function(){dig.classList.add('chegou')},2900);
+    setTimeout(function(){dig.classList.remove('chegou');dig.classList.add('sai');if(loja)loja.classList.add('chegou')},4600);},{threshold:.4});
+  io2.observe(z);}
+/* segurança: se algo não disparar, mostra tudo depois de 6 s */
+setTimeout(function(){[].forEach.call(document.querySelectorAll('.surge:not(.visto)'),function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add('visto')})},6000);
+})();
 (function(){var b=document.querySelector('.abre'),p=document.getElementById('painel');if(!b)return;b.addEventListener('click',function(){var a=p.classList.toggle('aberto');b.setAttribute('aria-expanded',a?'true':'false');});p.querySelectorAll('a').forEach(function(x){x.addEventListener('click',function(){p.classList.remove('aberto');b.setAttribute('aria-expanded','false');});});})();
 /* faixa do Instagram (26/11/2026): carrossel de uma tela por vez, com setas, teclado e arrasto que acompanha o dedo e o mouse; telas 2 a 6 só carregam perto do uso */
 (function(){document.querySelectorAll('.ig-visor').forEach(function(v){
