@@ -34,7 +34,6 @@ a{color:inherit}
 h1,h2,h3{font-family:'Zilla Slab','Zilla Fallback',Georgia,serif;font-weight:700;line-height:1.04;margin:0;text-wrap:balance;letter-spacing:-.01em}
 p{margin:0 0 14px;text-wrap:pretty}
 .faixa{max-width:1160px;margin:0 auto;padding:0 20px}
-.m{white-space:nowrap}
 .chapeu{display:inline-flex;align-items:center;gap:10px;font:700 14px/1 'Barlow Condensed';letter-spacing:.16em;text-transform:uppercase;color:var(--cambara-t);margin-bottom:16px}
 .chapeu::before{content:"";width:26px;height:4px;flex:none;background:currentColor}
 section{padding:84px 0;scroll-margin-top:68px}
@@ -49,8 +48,6 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .bt svg{width:20px;height:20px;flex:none}
 .bt-zap{background:var(--zap);color:#fff;box-shadow:0 10px 24px -12px rgba(0,0,0,.6)}
 .bt-zap:hover{filter:brightness(1.08)}
-.bt-linha{border-color:var(--mel);color:#fff;background:rgba(31,18,10,.35)}
-.bt-linha:hover{background:rgba(31,18,10,.55)}
 .topo{position:sticky;top:0;z-index:30;background:rgba(237,227,207,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
 .topo .faixa{display:flex;align-items:center;gap:22px;height:68px}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none;line-height:1;margin-right:auto;min-width:0}
@@ -65,13 +62,11 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .topo .bt{padding:10px 16px;font-size:14.5px}
 .abre{display:none;background:var(--cartao);border:1px solid var(--linha);border-radius:40px;padding:8px 14px;font:600 14px 'Barlow';color:var(--mogno);cursor:pointer;align-items:center;gap:6px}
 .painel{display:none}
-@media (max-width:1079px){
-.nav,.topo .bt-zap{display:none}
+@media (max-width:1079px){.nav,.topo .bt-zap{display:none}
 .abre{display:inline-flex}
 .painel.aberto{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:68px;background:var(--papel);border-bottom:1px solid var(--linha);box-shadow:0 18px 30px -20px rgba(31,18,10,.35);padding:6px 20px 18px;max-height:calc(100dvh - 80px);overflow-y:auto}
 .painel a{padding:13px 0;border-bottom:1px solid var(--linha);text-decoration:none;font-size:16.5px}
-.painel .bt{margin-top:14px;border-bottom:0}
-}
+.painel .bt{margin-top:14px;border-bottom:0}}
 .capa{position:relative;color:#fff;overflow:hidden;padding:0;
 background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.86) 40%,rgba(31,18,10,.42) 70%,rgba(31,18,10,.18) 100%),var(--tex) center/cover}
 .capa::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 85% 40%,rgba(232,183,122,.16),transparent 60%);pointer-events:none}
@@ -87,18 +82,6 @@ background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.86) 40%,rg
 .acoes{display:flex;flex-wrap:wrap;gap:12px}
 .selo{justify-self:center;width:min(100%,290px);transform:rotate(-9deg);filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
 @media (max-width:919px){.selo{justify-self:start;width:170px;margin-top:6px;order:2}}
-.regua{position:relative;z-index:1;background:linear-gradient(180deg,#e9bd7f,#d9a05c);color:var(--mogno);box-shadow:0 -10px 30px -10px rgba(0,0,0,.5)}
-.regua::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;pointer-events:none;
-background:repeating-linear-gradient(90deg,rgba(43,26,16,.75) 0 2px,transparent 2px 60px),repeating-linear-gradient(90deg,rgba(43,26,16,.45) 0 1px,transparent 1px 12px);
-background-size:100% 16px,100% 8px;background-repeat:no-repeat}
-.regua .faixa{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.regua div{padding:28px 18px 22px;position:relative}
-.regua div+div{border-left:2px solid rgba(43,26,16,.28)}
-.regua div+div::before{content:"";position:absolute;left:-7px;top:50%;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f6e3b0,#a87a2e);box-shadow:0 0 0 2px rgba(43,26,16,.35)}
-.regua b{display:block;font:700 26px/1 'Zilla Slab',serif;margin-bottom:6px}
-.regua span{font-size:14.5px;line-height:1.35;display:block;color:#3b2616}
-@media (max-width:860px){.regua .faixa{grid-template-columns:repeat(2,minmax(0,1fr))}.regua div:nth-child(3){border-left:0}.regua div:nth-child(3)::before{display:none}.regua div:nth-child(n+3){border-top:2px solid rgba(43,26,16,.22)}}
-@media (max-width:360px){.regua div{padding:24px 12px 18px}.regua b{font-size:22px}}
 .produtos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));margin-top:10px}
 .produto{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:0 0 22px;display:flex;flex-direction:column;text-decoration:none;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
 .produto:hover{border-color:var(--cambara);transform:translateY(-3px);box-shadow:0 18px 30px -22px rgba(31,18,10,.6)}
@@ -108,16 +91,6 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .produto h3{font-size:26px;margin:44px 22px 8px}
 .produto p{font-size:15.5px;color:#4a3626;margin:0 22px 16px}
 .produto .mais{margin:auto 22px 0;font-weight:600;color:var(--cambara-t);font-size:15px}
-.passos{list-style:none;margin:10px 0 0;padding:0;counter-reset:p;display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
-@media (min-width:560px){.passos{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.passos{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.passos li{counter-increment:p;border-top:3px solid var(--mel);padding-top:14px;font-size:16px}
-.passos li::before{content:"0" counter(p);display:block;font:700 24px/1 'Zilla Slab',serif;color:var(--mel);margin-bottom:8px}
-.passos b{display:block;font:700 22px/1.15 'Zilla Slab',serif;margin-bottom:4px}
-.creme .passos li{border-color:var(--cambara)}
-.creme .passos li::before{color:var(--cambara-t)}
-.fecho{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
-.fecho p{margin:0;font-size:16px}
 .duas{display:grid;gap:36px;align-items:start}
 @media (min-width:900px){.duas{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 .duas>*{min-width:0}
@@ -125,9 +98,6 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .dof h3{font-size:28px;margin-bottom:10px}
 .dof p{font-size:16px}
 .dof small{display:block;color:var(--cinza);font-size:13.5px}
-.foto-vazia{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(rgba(31,18,10,.55),rgba(31,18,10,.85)),var(--tex) center/cover;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
-.foto-vazia b{font:700 26px/1.1 'Zilla Slab',serif}
-.foto-vazia span{font-size:14.5px}
 .nota{display:flex;align-items:center;gap:18px;margin:6px 0 24px;flex-wrap:wrap}
 .nota strong{font:700 66px/1 'Zilla Slab',serif}
 .nota .estrelas{color:var(--cambara);font-size:26px;letter-spacing:3px;line-height:1}
@@ -148,7 +118,8 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 @media (max-width:899px){.mapa{min-height:260px}}
 .faixa-zap{margin:0 0 36px;background:linear-gradient(90deg,rgba(31,18,10,.92),rgba(31,18,10,.7)),var(--tex) center/cover;color:#fff;border-radius:10px;padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
 .faixa-zap p{margin:0;font:700 30px/1.1 'Zilla Slab',serif;max-width:24ch}
-@media (max-width:420px){.faixa-zap .bt{width:100%}.faixa-zap{padding:26px 20px}}
+@media (max-width:420px){.faixa-zap .bt{width:100%}
+.faixa-zap{padding:26px 20px}}
 .rodape{background:var(--nogueira2);color:var(--mel);padding:30px 0 30px;font-size:14.5px;border-top:6px solid var(--cambara)}
 .rodape .faixa{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 40px;align-items:flex-start}
 .rodape .marca b{color:var(--mel)}
@@ -157,25 +128,8 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .rodape .dev{width:100%;padding-top:20px;margin-top:6px;border-top:1px solid #4a2a16;color:var(--mel);display:flex;justify-content:center;align-items:center;gap:10px;font-size:13px}
 .rodape .dev a{display:block;line-height:0}
 .rodape .dev img{width:110px;height:auto;display:block}
-.cabeca{position:relative;color:#fff;padding:70px 0 60px;background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.84) 50%,rgba(31,18,10,.45) 100%),var(--tex) center/cover}
-.cabeca h1{font-size:clamp(44px,6.4vw,72px)}
-.cabeca .lead{color:#fff;margin:18px 0 26px}
-.trilha{font-size:14px;margin-bottom:18px}
-.trilha a{color:var(--mel)}
-.pecas{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
-.pecas div{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:18px 20px}
-.pecas b{display:block;font:700 24px/1.1 'Zilla Slab',serif;margin-bottom:4px}
-.pecas p{margin:0;font-size:15px;color:#4a3626}
-.perguntas details{border-top:1px solid var(--linha);padding:4px 0}
-.perguntas details:last-child{border-bottom:1px solid var(--linha)}
-.perguntas summary{cursor:pointer;list-style:none;padding:14px 34px 14px 0;font:700 21px/1.25 'Zilla Slab',serif;position:relative}
-.perguntas summary::-webkit-details-marker{display:none}
-.perguntas summary::after{content:"+";position:absolute;right:4px;top:10px;font:600 26px/1 'Barlow';color:var(--cambara)}
-.perguntas details[open] summary::after{content:"−"}
-.perguntas p{font-size:16px;margin:0 0 16px}
-.diagrama{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:20px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.produto{transition:none}}
-.cabeca .faixa{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.produto{transition:none}}
 .logo-topo{display:block;height:46px;width:auto;color:var(--mogno);overflow:hidden}
 .logo-rodape{display:block;height:96px;width:auto;color:var(--mel);overflow:visible}
 @media (max-width:380px){.logo-topo{height:40px}}
@@ -210,8 +164,6 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 @media (min-width:1000px){.produtos,.cartoes4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .temas{grid-template-columns:minmax(0,1fr)}
 @media (min-width:720px){.temas{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.pecas{grid-template-columns:minmax(0,1fr)}
-@media (min-width:480px){.pecas{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .orc{display:grid;gap:44px;align-items:center}
 @media (min-width:900px){.orc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 .orc h2{margin-bottom:16px}
@@ -230,38 +182,25 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .loja{align-self:flex-start;background:#fff;border-top-left-radius:3px}
 .foto{padding:5px;width:84%}
 .foto svg{display:block;width:100%;height:auto;border-radius:8px}
-@media (max-width:639px){
-.rodape .marca-rodape{margin:0 auto}
+@media (max-width:639px){.rodape .marca-rodape{margin:0 auto}
 .fecho-p>span:not(.sep){display:block}
-.fecho-p .sep{display:none}
-}
-.regua .faixa{grid-auto-rows:auto}
-.regua div{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0;align-content:start}
-@media (max-width:860px){.regua div{text-align:center;padding-left:14px;padding-right:14px}}
+.fecho-p .sep{display:none}}
 @media (max-width:400px){.bt{white-space:normal;text-align:center;max-width:100%}}
 .selos-capa{position:relative;z-index:1;background:var(--nogueira2);border-top:3px solid var(--mel);color:#f1e6d4}
 .selos-capa ul{list-style:none;margin:0 auto;padding-top:18px;padding-bottom:18px;display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:12px 24px}
 .selos-capa li{display:flex;align-items:center;gap:10px;font:600 16px/1.25 'Barlow','Barlow Fallback',sans-serif;white-space:nowrap}
 .selos-capa svg{width:22px;height:22px;color:var(--mel);flex:none}
-@media (max-width:860px){
-.selos-capa ul{grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch;gap:18px 12px;padding-top:20px;padding-bottom:20px}
+@media (max-width:860px){.selos-capa ul{grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch;gap:18px 12px;padding-top:20px;padding-bottom:20px}
 .selos-capa li{flex-direction:column;justify-content:flex-start;gap:8px;text-align:center;white-space:normal;font-size:15px}
-.selos-capa svg{width:24px;height:24px}
-}
-.duas.alinha{align-items:stretch}
-.duas.alinha>div:first-child{display:flex;flex-direction:column}
-.duas.alinha .pecas{margin-top:auto}
-.diagrama .iso{display:block;width:100%;height:auto}
-.iso .pc,.iso .num-iso{transform-box:fill-box;transform-origin:center}
-.iso.pre .pc,.iso.pre .num-iso{opacity:0}
-.duas.alinha .diagrama{display:flex;align-items:center;justify-content:center}
-.pecas b .n{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:10px;border-radius:50%;background:var(--mogno);color:var(--mel);font:700 15px/1 'Zilla Slab',serif;vertical-align:3px}
+.selos-capa svg{width:24px;height:24px}}
 .anima .surge{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
 .anima .surge.visto{opacity:1;transform:none}
 .anima .capa .selo{animation:carimba .9s cubic-bezier(.3,1.5,.5,1) .5s both}
 @keyframes carimba{0%{opacity:0;transform:scale(1.7) rotate(-24deg)}70%{opacity:1;transform:scale(.95) rotate(-9deg)}100%{opacity:1;transform:scale(1) rotate(-9deg)}}
 .anima .capa h1,.anima .capa .lead,.anima .capa .acoes,.anima .capa .etiqueta{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
-.anima .capa h1{animation-delay:.05s}.anima .capa .lead{animation-delay:.18s}.anima .capa .acoes{animation-delay:.3s}
+.anima .capa h1{animation-delay:.05s}
+.anima .capa .lead{animation-delay:.18s}
+.anima .capa .acoes{animation-delay:.3s}
 @keyframes sobe{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .anima .zap.conversa .bolha{opacity:0;transform:translateY(16px) scale(.96);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
 .anima .zap.conversa .bolha.chegou{opacity:1;transform:none}
@@ -270,7 +209,8 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .anima .zap.conversa .digitando.chegou{opacity:1}
 .anima .zap.conversa .digitando.sai{display:none}
 .zap .digitando i{width:8px;height:8px;border-radius:50%;background:var(--cinza);animation:ponto 1s infinite}
-.zap .digitando i:nth-child(2){animation-delay:.15s}.zap .digitando i:nth-child(3){animation-delay:.3s}
+.zap .digitando i:nth-child(2){animation-delay:.15s}
+.zap .digitando i:nth-child(3){animation-delay:.3s}
 @keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}
 .rodape-dados{display:grid;grid-template-columns:auto auto;gap:18px 40px;align-items:start}
 .rodape .redes{width:100%;display:flex;justify-content:center;gap:14px}
@@ -293,8 +233,12 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .ig-seta svg{width:18px;height:18px}
 .ig-seta:hover{background:var(--mogno);color:var(--papel)}
 .ig-seta:disabled{opacity:0;pointer-events:none}
-.ig-seta.ant{right:38px}.ig-seta.prox{right:0}
-@media (max-width:759px){.ig-visor{padding-bottom:36px}.ig-seta{width:28px;height:28px}.ig-seta svg{width:16px;height:16px}.ig-seta.ant{right:36px}}
+.ig-seta.ant{right:38px}
+.ig-seta.prox{right:0}
+@media (max-width:759px){.ig-visor{padding-bottom:36px}
+.ig-seta{width:28px;height:28px}
+.ig-seta svg{width:16px;height:16px}
+.ig-seta.ant{right:36px}}
 .ig-conta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .bt-contorno{margin-top:28px;border-color:var(--mogno);color:var(--mogno);background:transparent}
 .bt-contorno:hover{background:var(--mogno);color:var(--papel)}
@@ -304,335 +248,267 @@ background-size:100% 16px,100% 8px;background-repeat:no-repeat}
 .rodape-linha .redes{grid-column:2;width:auto}
 .rodape-vaga{grid-column:3;justify-self:end;margin-block:-8px}
 .rodape-vaga--espera,.flutua--parado{visibility:hidden}
-@media (max-width:639px){
-.rodape-linha{display:flex;flex-direction:column;align-items:center;gap:18px}
+@media (max-width:639px){.rodape-linha{display:flex;flex-direction:column;align-items:center;gap:18px}
 .rodape-vaga{margin-block:0}
 .flutua{width:56px;height:56px;padding:0}
-.flutua span{display:none}
-}</style>
+.flutua span{display:none}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Madeireira Martinelli","address":{"@type":"PostalAddress","streetAddress":"Av. João Batista de Souza Soares, 3001","addressLocality":"São José dos Campos","addressRegion":"SP","postalCode":"12236-660","addressCountry":"BR"},"telephone":"+55-12-3931-5699","openingHours":"Mo-Fr 07:50-17:30","url":"https://www.madeireiramartinelli.com.br/"}</script>
 <script>(function(d){if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window)d.documentElement.classList.add("anima")})(document)</script>
+<script src="site.js?v=1" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <!-- Logo · caminho A (estudo da origem S79: logo\LOGO_estudo.html; regras em logo\DECISOES_LOGO.md). Posições internas medidas por pixel: não mexer, só escalar. -->
-  <defs>
-    <symbol id="mA" viewBox="0 0 120 120">
-      <g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="6">
-        <polyline points="8,52 60,10 112,52" stroke-linecap="butt"/>
-        <path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106" stroke-linecap="butt"/>
-      </g>
-    </symbol>
-    <symbol id="lockA" viewBox="0 0 531 178">
-      <use href="#mA" x="10" y="12" width="120" height="120"/>
-      <g fill="currentColor">
-        <text x="150.333" y="38.667" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="32" letter-spacing="25.815">MADEIREIRA</text>
-        <text x="149.667" y="117" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="82">Martinelli</text>
-        <text x="14.667" y="158" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="8.657">CONFIANÇA E HONESTIDADE, SEMPRE</text>
-      </g>
-    </symbol>
-  </defs>
+
+<defs>
+<symbol id="mA" viewBox="0 0 120 120">
+<g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="6">
+<polyline points="8,52 60,10 112,52" stroke-linecap="butt"/>
+<path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106" stroke-linecap="butt"/>
+</g>
+</symbol>
+<symbol id="lockA" viewBox="0 0 531 178">
+<use href="#mA" x="10" y="12" width="120" height="120"/>
+<g fill="currentColor">
+<text x="150.333" y="38.667" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="32" letter-spacing="25.815">MADEIREIRA</text>
+<text x="149.667" y="117" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="82">Martinelli</text>
+<text x="14.667" y="158" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="8.657">CONFIANÇA E HONESTIDADE, SEMPRE</text>
+</g>
+</symbol>
+</defs>
 </svg>
 <div class="aviso-previa" role="note">Prévia da Ativaleads para a Madeireira Martinelli · site de exemplo, não é o site oficial</div>
 
 <header class="topo">
-  <div class="faixa">
-    <a class="marca" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-topo" viewBox="0 0 531 134" role="img" aria-label="Madeireira Martinelli"><use href="#lockA" width="531" height="178"/></svg></a>
-    <nav class="nav" aria-label="Menu"><a href="telhado.html">Madeira para telhado</a><a href="#produtos">Telhas</a><a href="#produtos">Pergolados e decks</a><a href="#produtos">Forros e portas</a><a href="#madeireira">A madeireira</a><a href="#contato">Contato</a></nav>
-    <a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a>
-    <button class="abre" type="button" aria-expanded="false" aria-controls="painel">Menu <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-    <div class="painel" id="painel"><a href="telhado.html">Madeira para telhado</a><a href="#produtos">Telhas</a><a href="#produtos">Pergolados e decks</a><a href="#produtos">Forros e portas</a><a href="#madeireira">A madeireira</a><a href="#contato">Contato</a><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar pelo WhatsApp</a></div>
-  </div>
+<div class="faixa">
+<a class="marca" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-topo" viewBox="0 0 531 134" role="img" aria-label="Madeireira Martinelli"><use href="#lockA" width="531" height="178"/></svg></a>
+<nav class="nav" aria-label="Menu"><a href="telhado.html">Madeira para telhado</a><a href="#produtos">Telhas</a><a href="#produtos">Pergolados e decks</a><a href="#produtos">Forros e portas</a><a href="#madeireira">A madeireira</a><a href="#contato">Contato</a></nav>
+<a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a>
+<button class="abre" type="button" aria-expanded="false" aria-controls="painel">Menu <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="painel" id="painel"><a href="telhado.html">Madeira para telhado</a><a href="#produtos">Telhas</a><a href="#produtos">Pergolados e decks</a><a href="#produtos">Forros e portas</a><a href="#madeireira">A madeireira</a><a href="#contato">Contato</a><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar pelo WhatsApp</a></div>
+</div>
 </header>
 
 <main>
 <section class="capa">
-  <div class="faixa capa-grade">
-    <div>
-      <span class="etiqueta">Madeira nativa com DOF</span>
-      <h1>Madeira para telhado, telhas, <em>pergolados e decks.</em></h1>
-      <p class="lead">Do madeiramento do telhado ao deck instalado. Cada cliente é orientado pelos nossos vendedores sobre o melhor custo-benefício para a sua obra.</p>
-      <div class="acoes">
-        <a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Pedir orçamento pelo WhatsApp</a>
-      </div>
-    </div>
-    <svg class="selo" viewBox="0 0 260 260" role="img" aria-label="Carimbo: Madeireira Martinelli, desde 2001, madeira nativa com DOF">
-      <defs>
-        <!-- S80 (16:15, "corrige questão de alinhamento interno"): arcos centrados em (130,130); texto de cima com base em r=87,25 e o de baixo em r=99,15, para as letras (altura medida no navegador) ficarem no meio da faixa entre os anéis (75,1 a 112,2); pontos em r=93,65; miolo centrado em y=130 com 8 de folga entre as linhas; dx compensa o meio espaço de letra que sobra no fim de cada texto -->
-        <path id="arcoTopo" d="M42.75 130 a87.25 87.25 0 1 1 174.5 0"/>
-        <path id="arcoBase" d="M30.85 130 a99.15 99.15 0 0 0 198.3 0"/>
-        <filter id="tinta-carimbo"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
-      </defs>
-      <g filter="url(#tinta-carimbo)" fill="#e8b77a">
-        <circle cx="130" cy="130" r="124" fill="rgba(31,18,10,.62)" stroke="#e8b77a" stroke-width="5"/>
-        <circle cx="130" cy="130" r="113" fill="none" stroke="#e8b77a" stroke-width="1.6"/>
-        <circle cx="130" cy="130" r="74" fill="none" stroke="#e8b77a" stroke-width="2.2"/>
-        <text class="s-topo" dx="1.8" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="18" letter-spacing="3.6" text-anchor="middle"><textPath href="#arcoTopo" startOffset="50%">MADEIREIRA MARTINELLI</textPath></text>
-        <text class="s-base" dx="2.5" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="16" letter-spacing="5" text-anchor="middle"><textPath href="#arcoBase" startOffset="50%">DESDE 2001</textPath></text>
-        <circle class="s-ponto" cx="36.35" cy="130" r="3.2"/><circle class="s-ponto" cx="223.65" cy="130" r="3.2"/>
-        <text class="s-nativa" x="131.2" y="99.7" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="12.5" letter-spacing="2.4">MADEIRA NATIVA</text>
-        <path class="s-fio" d="M81 108.5h98" stroke="#e8b77a" stroke-width="1.6"/>
-        <text class="s-com" x="130" y="145.3" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="44">COM</text>
-        <text class="s-dof" x="133.5" y="169.3" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="24" letter-spacing="7">DOF</text>
-      </g>
-    </svg>
-  </div>
-  <div class="selos-capa"><ul class="faixa"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M6 10v10h12V10"/></svg><span>Desde 2001</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Vendedor que orienta</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Entrega no dia combinado</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/></svg><span>Orçamento pelo WhatsApp</span></li></ul></div>
+<div class="faixa capa-grade">
+<div>
+<span class="etiqueta">Madeira nativa com DOF</span>
+<h1>Madeira para telhado, telhas, <em>pergolados e decks.</em></h1>
+<p class="lead">Do madeiramento do telhado ao deck instalado. Cada cliente é orientado pelos nossos vendedores sobre o melhor custo-benefício para a sua obra.</p>
+<div class="acoes">
+<a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Pedir orçamento pelo WhatsApp</a>
+</div>
+</div>
+<svg class="selo" viewBox="0 0 260 260" role="img" aria-label="Carimbo: Madeireira Martinelli, desde 2001, madeira nativa com DOF">
+<defs>
+
+<path id="arcoTopo" d="M42.75 130 a87.25 87.25 0 1 1 174.5 0"/>
+<path id="arcoBase" d="M30.85 130 a99.15 99.15 0 0 0 198.3 0"/>
+<filter id="tinta-carimbo"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+</defs>
+<g filter="url(#tinta-carimbo)" fill="#e8b77a">
+<circle cx="130" cy="130" r="124" fill="rgba(31,18,10,.62)" stroke="#e8b77a" stroke-width="5"/>
+<circle cx="130" cy="130" r="113" fill="none" stroke="#e8b77a" stroke-width="1.6"/>
+<circle cx="130" cy="130" r="74" fill="none" stroke="#e8b77a" stroke-width="2.2"/>
+<text class="s-topo" dx="1.8" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="18" letter-spacing="3.6" text-anchor="middle"><textPath href="#arcoTopo" startOffset="50%">MADEIREIRA MARTINELLI</textPath></text>
+<text class="s-base" dx="2.5" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="16" letter-spacing="5" text-anchor="middle"><textPath href="#arcoBase" startOffset="50%">DESDE 2001</textPath></text>
+<circle class="s-ponto" cx="36.35" cy="130" r="3.2"/><circle class="s-ponto" cx="223.65" cy="130" r="3.2"/>
+<text class="s-nativa" x="131.2" y="99.7" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="12.5" letter-spacing="2.4">MADEIRA NATIVA</text>
+<path class="s-fio" d="M81 108.5h98" stroke="#e8b77a" stroke-width="1.6"/>
+<text class="s-com" x="130" y="145.3" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="44">COM</text>
+<text class="s-dof" x="133.5" y="169.3" text-anchor="middle" font-family="Zilla Slab, Georgia, serif" font-weight="700" font-size="24" letter-spacing="7">DOF</text>
+</g>
+</svg>
+</div>
+<div class="selos-capa"><ul class="faixa"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M6 10v10h12V10"/></svg><span>Desde 2001</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Vendedor que orienta</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Entrega no dia combinado</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/></svg><span>Orçamento pelo WhatsApp</span></li></ul></div>
 </section>
 
 <section id="produtos">
-  <div class="faixa">
-    <div class="chapeu">Produtos</div>
-    <h2>Tudo para o telhado e para a área externa.</h2>
-    <div class="produtos">
-      <a class="produto" href="telhado.html"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M3 16 16 5l13 11"/><path d="M7 13v14h18V13"/><path d="M11 18h10M11 22h10"/></svg></span></span><h3>Madeira para telhado</h3><p>Terças, caibros, ripas e vigas, na espécie e na bitola certas para o vão.</p><span class="mais">Ver a página &rarr;</span></a>
-      <a class="produto" href="#contato"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M4 12c3-5 5-5 8 0 3-5 5-5 8 0 3-5 5-5 8 0"/><path d="M4 20c3-5 5-5 8 0 3-5 5-5 8 0 3-5 5-5 8 0"/></svg></span></span><h3>Telhas</h3><p>Cerâmica, cimento, esmaltada, vidro, PET e fibrocimento, e o acabamento do telhado.</p><span class="mais">Pedir orçamento &rarr;</span></a>
-      <a class="produto" href="#contato"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M6 12v16M26 12v16M3 12h26M8 8l3 4M14 8l3 4M20 8l3 4"/></svg></span></span><h3>Pergolados e decks</h3><p>Sob medida, com instalação. Degraus e espaços gourmet nas medidas do seu projeto.</p><span class="mais">Pedir orçamento &rarr;</span></a>
-      <a class="produto" href="#contato"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="4" width="14" height="24" rx="1"/><path d="M19 16h1"/></svg></span></span><h3>Forros, portas e batentes</h3><p>Forros, tabuados, chapeados, portas e batentes de fabricação própria, além de mantas, vernizes e pregos.</p><span class="mais">Pedir orçamento &rarr;</span></a>
-    </div>
-  </div>
+<div class="faixa">
+<div class="chapeu">Produtos</div>
+<h2>Tudo para o telhado e para a área externa.</h2>
+<div class="produtos">
+<a class="produto" href="telhado.html"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M3 16 16 5l13 11"/><path d="M7 13v14h18V13"/><path d="M11 18h10M11 22h10"/></svg></span></span><h3>Madeira para telhado</h3><p>Terças, caibros, ripas e vigas, na espécie e na bitola certas para o vão.</p><span class="mais">Ver a página &rarr;</span></a>
+<a class="produto" href="#contato"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M4 12c3-5 5-5 8 0 3-5 5-5 8 0 3-5 5-5 8 0"/><path d="M4 20c3-5 5-5 8 0 3-5 5-5 8 0 3-5 5-5 8 0"/></svg></span></span><h3>Telhas</h3><p>Cerâmica, cimento, esmaltada, vidro, PET e fibrocimento, e o acabamento do telhado.</p><span class="mais">Pedir orçamento &rarr;</span></a>
+<a class="produto" href="#contato"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M6 12v16M26 12v16M3 12h26M8 8l3 4M14 8l3 4M20 8l3 4"/></svg></span></span><h3>Pergolados e decks</h3><p>Sob medida, com instalação. Degraus e espaços gourmet nas medidas do seu projeto.</p><span class="mais">Pedir orçamento &rarr;</span></a>
+<a class="produto" href="#contato"><span class="tampa"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="4" width="14" height="24" rx="1"/><path d="M19 16h1"/></svg></span></span><h3>Forros, portas e batentes</h3><p>Forros, tabuados, chapeados, portas e batentes de fabricação própria, além de mantas, vernizes e pregos.</p><span class="mais">Pedir orçamento &rarr;</span></a>
+</div>
+</div>
 </section>
 
 <section class="escuro" id="orcamento">
-  <div class="faixa orc">
-    <div>
-      <div class="chapeu">Orçamento</div>
-      <h2>Do seu projeto ao orçamento, numa conversa.</h2>
-      <p class="lead">Conte pelo WhatsApp o que você vai construir e as medidas do projeto. O vendedor indica a madeira com o melhor custo-benefício para a sua obra.</p>
-      <a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Pedir orçamento pelo WhatsApp</a>
-      <p class="fecho-p"><span>(12) 97405-2842</span><span class="sep"> · </span><span>segunda a sexta, das 7h50 às 17h30</span></p>
-    </div>
-    <div>
-      <div class="zap" aria-label="Exemplo de conversa de orçamento pelo WhatsApp">
-        <div class="zap-topo"><span class="av"><svg width="24" height="24" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="11"><polyline points="8,52 60,10 112,52"/><path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106"/></svg></span><div><b>Madeireira Martinelli</b><small>WhatsApp · (12) 97405-2842</small></div></div>
-        <div class="zap-corpo">
-          <div class="bolha cli foto">
-            <svg viewBox="0 0 320 190" role="img" aria-label="Foto da obra: estrutura de telhado com as medidas anotadas">
-              <rect width="320" height="190" fill="#4a2a16"/>
-              <g stroke="#e8b77a" stroke-width="5" fill="none" stroke-linejoin="round"><path d="M40 140 L160 52 L280 140"/><path d="M60 140h200"/></g>
-              <g stroke="#d79a55" stroke-width="3"><path d="M85 122V140M120 96V140M160 66V140M200 96V140M235 122V140"/></g>
-              <g stroke="#ede3cf" stroke-width="1.6" fill="#ede3cf"><path d="M40 162h240M40 156v12M280 156v12"/><path d="M296 52v88M290 52h12M290 140h12"/></g>
-              <g fill="#ede3cf" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="17" text-anchor="middle"><text x="160" y="182">6,00 m</text><text x="286" y="101" text-anchor="end">1,80 m</text></g>
-            </svg>
-            <small>14:02</small>
-          </div>
-          <div class="bolha cli">Boa tarde! Vou cobrir uma área de 6 × 4 m. Qual madeira vocês indicam?<small>14:02</small></div>
-          <div class="bolha loja">Boa tarde! Recebi a foto e as medidas. Já te mando as opções de madeira, com o preço de cada uma.<small>14:05</small></div>
-        </div>
-      </div>
-      <p class="nota-conversa">Conversa ilustrativa</p>
-    </div>
-  </div>
+<div class="faixa orc">
+<div>
+<div class="chapeu">Orçamento</div>
+<h2>Do seu projeto ao orçamento, numa conversa.</h2>
+<p class="lead">Conte pelo WhatsApp o que você vai construir e as medidas do projeto. O vendedor indica a madeira com o melhor custo-benefício para a sua obra.</p>
+<a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Pedir orçamento pelo WhatsApp</a>
+<p class="fecho-p"><span>(12) 97405-2842</span><span class="sep"> · </span><span>segunda a sexta, das 7h50 às 17h30</span></p>
+</div>
+<div>
+<div class="zap" aria-label="Exemplo de conversa de orçamento pelo WhatsApp">
+<div class="zap-topo"><span class="av"><svg width="24" height="24" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="11"><polyline points="8,52 60,10 112,52"/><path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106"/></svg></span><div><b>Madeireira Martinelli</b><small>WhatsApp · (12) 97405-2842</small></div></div>
+<div class="zap-corpo">
+<div class="bolha cli foto">
+<svg viewBox="0 0 320 190" role="img" aria-label="Foto da obra: estrutura de telhado com as medidas anotadas">
+<rect width="320" height="190" fill="#4a2a16"/>
+<g stroke="#e8b77a" stroke-width="5" fill="none" stroke-linejoin="round"><path d="M40 140 L160 52 L280 140"/><path d="M60 140h200"/></g>
+<g stroke="#d79a55" stroke-width="3"><path d="M85 122V140M120 96V140M160 66V140M200 96V140M235 122V140"/></g>
+<g stroke="#ede3cf" stroke-width="1.6" fill="#ede3cf"><path d="M40 162h240M40 156v12M280 156v12"/><path d="M296 52v88M290 52h12M290 140h12"/></g>
+<g fill="#ede3cf" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="17" text-anchor="middle"><text x="160" y="182">6,00 m</text><text x="286" y="101" text-anchor="end">1,80 m</text></g>
+</svg>
+<small>14:02</small>
+</div>
+<div class="bolha cli">Boa tarde! Vou cobrir uma área de 6 × 4 m. Qual madeira vocês indicam?<small>14:02</small></div>
+<div class="bolha loja">Boa tarde! Recebi a foto e as medidas. Já te mando as opções de madeira, com o preço de cada uma.<small>14:05</small></div>
+</div>
+</div>
+<p class="nota-conversa">Conversa ilustrativa</p>
+</div>
+</div>
 </section>
 
 <section id="madeireira">
-  <!-- S80 · textos reescritos do site de 2016 (A madeireira, Nossa história, Missão, Visão, Valores, Diferencial): A CONFIRMAR COM O DONO -->
-  <div class="faixa duas">
-    <div>
-      <div class="chapeu">A madeireira</div>
-      <h2>Desde 2001, a verdade como pilar.</h2>
-      <p class="lead">Em 2001, um dos irmãos Martinelli revendia telhas em Tambaú (SP) quando um fornecedor ofereceu a ele a madeireira que tinha em São José dos Campos. O negócio foi fechado, e os irmãos assumiram a loja.</p>
-      <p>Nos primeiros anos, cuidando de tudo sozinhos, aprenderam o mercado de perto e descobriram o que sustenta a casa até hoje: falar a verdade em cada venda. Daí vem o lema que está na marca: confiança e honestidade, sempre.</p>
-    </div>
-    <figure class="foto-patio">
-      <img src="img/obra_pergolado.webp" width="774" height="580" alt="Pergolado de madeira sobre a área de lazer de um prédio à beira-mar" loading="lazy">
-    </figure>
-  </div>
-  <div class="faixa">
-    <blockquote class="citacao"><p>A verdade é o pilar que sustenta, conquista e fideliza os nossos clientes.</p></blockquote>
-    <div class="cartoes4">
-      <div><span class="num">01</span><h3>Por que existimos</h3><p>Entregar a confiança e a honestidade necessárias, com os melhores produtos para a construção, a cada cliente.</p></div>
-      <div><span class="num">02</span><h3>Aonde queremos chegar</h3><p>Ser reconhecida pelos clientes da região como uma das melhores empresas da construção civil.</p></div>
-      <div><span class="num">03</span><h3>Nosso diferencial</h3><p>Cada cliente é orientado pelos nossos vendedores sobre o melhor custo-benefício para a sua necessidade.</p></div>
-      <div><span class="num">04</span><h3>Fornecedores</h3><p>Uma relação boa e duradoura com os fornecedores, que dá força à negociação com o cliente.</p></div>
-    </div>
-  </div>
-  <div class="faixa duas valores">
-    <div>
-      <h3 class="sub">Nossos pilares</h3>
-      <ul class="pilares" aria-label="Nossos pilares"><li>Confiança</li><li>Honestidade</li><li>Verdade</li><li>Respeito ao cliente</li><li>Ética</li><li>Transparência</li><li>Humildade</li><li>Equipe comprometida</li><li>Relação forte com o cliente</li></ul>
-    </div>
-    <div class="dof">
-      <h3>Madeira com origem</h3>
-      <p>Nossa madeira nativa é regularizada pelo Ibama através do DOF, o Documento de Origem Florestal, que acompanha a madeira do pátio até a sua obra. Quando for comprar madeira, exija o DOF.</p>
-      <small>Código Florestal, Lei 12.651/2012, art. 36</small>
-    </div>
-  </div>
-  <div class="faixa patio">
-    <h3>O pátio</h3>
-    <ul class="patio-fotos">
-      <li><img src="img/patio_2016_04.webp" width="200" height="200" alt="Tábuas empilhadas nas prateleiras do pátio" loading="lazy"></li>
-      <li><img src="img/patio_2016_01.webp" width="200" height="200" alt="Pilhas de tábuas no pátio" loading="lazy"></li>
-      <li><img src="img/patio_2016_05.webp" width="200" height="200" alt="Vigas e caibros no pátio" loading="lazy"></li>
-      <li><img src="img/patio_2016_08.webp" width="200" height="200" alt="Peças de madeira aparelhada" loading="lazy"></li>
-      <li><img src="img/patio_2016_12.webp" width="200" height="200" alt="Caibros empilhados" loading="lazy"></li>
-      <li><img src="img/patio_2016_14.webp" width="200" height="200" alt="Vigas sob a cobertura" loading="lazy"></li>
-    </ul>
-  </div>
+
+<div class="faixa duas">
+<div>
+<div class="chapeu">A madeireira</div>
+<h2>Desde 2001, a verdade como pilar.</h2>
+<p class="lead">Em 2001, um dos irmãos Martinelli revendia telhas em Tambaú (SP) quando um fornecedor ofereceu a ele a madeireira que tinha em São José dos Campos. O negócio foi fechado, e os irmãos assumiram a loja.</p>
+<p>Nos primeiros anos, cuidando de tudo sozinhos, aprenderam o mercado de perto e descobriram o que sustenta a casa até hoje: falar a verdade em cada venda. Daí vem o lema que está na marca: confiança e honestidade, sempre.</p>
+</div>
+<figure class="foto-patio">
+<img src="img/obra_pergolado.webp" width="774" height="580" alt="Pergolado de madeira sobre a área de lazer de um prédio à beira-mar" loading="lazy">
+</figure>
+</div>
+<div class="faixa">
+<blockquote class="citacao"><p>A verdade é o pilar que sustenta, conquista e fideliza os nossos clientes.</p></blockquote>
+<div class="cartoes4">
+<div><span class="num">01</span><h3>Por que existimos</h3><p>Entregar a confiança e a honestidade necessárias, com os melhores produtos para a construção, a cada cliente.</p></div>
+<div><span class="num">02</span><h3>Aonde queremos chegar</h3><p>Ser reconhecida pelos clientes da região como uma das melhores empresas da construção civil.</p></div>
+<div><span class="num">03</span><h3>Nosso diferencial</h3><p>Cada cliente é orientado pelos nossos vendedores sobre o melhor custo-benefício para a sua necessidade.</p></div>
+<div><span class="num">04</span><h3>Fornecedores</h3><p>Uma relação boa e duradoura com os fornecedores, que dá força à negociação com o cliente.</p></div>
+</div>
+</div>
+<div class="faixa duas valores">
+<div>
+<h3 class="sub">Nossos pilares</h3>
+<ul class="pilares" aria-label="Nossos pilares"><li>Confiança</li><li>Honestidade</li><li>Verdade</li><li>Respeito ao cliente</li><li>Ética</li><li>Transparência</li><li>Humildade</li><li>Equipe comprometida</li><li>Relação forte com o cliente</li></ul>
+</div>
+<div class="dof">
+<h3>Madeira com origem</h3>
+<p>Nossa madeira nativa é regularizada pelo Ibama através do DOF, o Documento de Origem Florestal, que acompanha a madeira do pátio até a sua obra. Quando for comprar madeira, exija o DOF.</p>
+<small>Código Florestal, Lei 12.651/2012, art. 36</small>
+</div>
+</div>
+<div class="faixa patio">
+<h3>O pátio</h3>
+<ul class="patio-fotos">
+<li><img src="img/patio_2016_04.webp" width="200" height="200" alt="Tábuas empilhadas nas prateleiras do pátio" loading="lazy"></li>
+<li><img src="img/patio_2016_01.webp" width="200" height="200" alt="Pilhas de tábuas no pátio" loading="lazy"></li>
+<li><img src="img/patio_2016_05.webp" width="200" height="200" alt="Vigas e caibros no pátio" loading="lazy"></li>
+<li><img src="img/patio_2016_08.webp" width="200" height="200" alt="Peças de madeira aparelhada" loading="lazy"></li>
+<li><img src="img/patio_2016_12.webp" width="200" height="200" alt="Caibros empilhados" loading="lazy"></li>
+<li><img src="img/patio_2016_14.webp" width="200" height="200" alt="Vigas sob a cobertura" loading="lazy"></li>
+</ul>
+</div>
 </section>
 
 <section class="creme" id="avaliacoes">
-  <div class="faixa">
-    <div class="chapeu">No Google</div>
-    <h2>O que os clientes dizem.</h2>
-    <div class="nota"><strong>4,5</strong><div><div class="estrelas" aria-label="4,5 de 5 estrelas">★★★★★</div><span>45 avaliações no Google</span></div></div>
-    <div class="temas">
-      <div><b>Atendimento</b><p>Vendedoras citadas pelo nome, que explicam e ajudam a escolher a madeira.</p></div>
-      <div><b>Preço justo</b><p>Clientes contam que cotaram outras madeireiras antes de fechar.</p></div>
-      <div><b>Entrega no prazo</b><p>Material entregue no dia combinado, com cuidado na descarga.</p></div>
-    </div>
-    <a class="link-seta" href="https://www.google.com/maps/place/Madeireira+Martinelli/@-23.2505173,-45.9083155,17z/data=!4m6!3m5!1s0x94cc3556ceb892e9:0xbe81dd70eb75fa4b" target="_blank" rel="noopener">Ver as avaliações no Google &rarr;</a>
-  </div>
+<div class="faixa">
+<div class="chapeu">No Google</div>
+<h2>O que os clientes dizem.</h2>
+<div class="nota"><strong>4,5</strong><div><div class="estrelas" aria-label="4,5 de 5 estrelas">★★★★★</div><span>45 avaliações no Google</span></div></div>
+<div class="temas">
+<div><b>Atendimento</b><p>Vendedoras citadas pelo nome, que explicam e ajudam a escolher a madeira.</p></div>
+<div><b>Preço justo</b><p>Clientes contam que cotaram outras madeireiras antes de fechar.</p></div>
+<div><b>Entrega no prazo</b><p>Material entregue no dia combinado, com cuidado na descarga.</p></div>
+</div>
+<a class="link-seta" href="https://www.google.com/maps/place/Madeireira+Martinelli/@-23.2505173,-45.9083155,17z/data=!4m6!3m5!1s0x94cc3556ceb892e9:0xbe81dd70eb75fa4b" target="_blank" rel="noopener">Ver as avaliações no Google &rarr;</a>
+</div>
 </section>
 
 <section class="insta" id="instagram" aria-labelledby="t-insta">
-  <!-- Acompanhe no Instagram (Operador, 26/11/2026: "Site da labate e da eaaa tem atalhos das redes sociais se siga no insta. Martinelli faltou"). Estrutura da EAAA; peças de exemplo da proposta (/martinelli/social/), com o selo EXEMPLO. -->
-  <div class="faixa">
-    <div class="chapeu">@madeireiramartinelli</div>
-    <h2 id="t-insta">Acompanhe no Instagram.</h2>
-    <ul class="insta-grade">
-        <li class="ig-carrossel">
-          <div class="ig-visor" tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel de exemplo do telhado, 6 telas">
-            <div class="ig-trilho"><img src="img/insta_c1_1_p.webp" srcset="img/insta_c1_1_p.webp 300w, img/insta_c1_1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Carrossel de exemplo do telhado: Telhado novo? 5 perguntas antes de comprar." loading="lazy" draggable="false"><img data-src="img/insta_c1_2.webp" width="540" height="675" alt="Tela 2 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_3.webp" width="540" height="675" alt="Tela 3 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_4.webp" width="540" height="675" alt="Tela 4 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_5.webp" width="540" height="675" alt="Tela 5 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_6.webp" width="540" height="675" alt="Tela 6 de 6 do carrossel do telhado" draggable="false"></div>
-            <button class="ig-seta ant" type="button" aria-label="Tela anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="ig-seta prox" type="button" aria-label="Próxima tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="ig-conta" aria-live="polite">Tela 1 de 6</span>
-          </div>
-        </li>
-        <li><img src="img/insta_post1_p.webp" srcset="img/insta_post1_p.webp 300w, img/insta_post1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Post de exemplo: Chegou a madeira? Confira 4 coisas antes de assinar." loading="lazy"></li>
-        <li class="ig-carrossel">
-          <div class="ig-visor" tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel de exemplo da história, 6 telas">
-            <div class="ig-trilho"><img src="img/insta_c2_1_p.webp" srcset="img/insta_c2_1_p.webp 300w, img/insta_c2_1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Carrossel de exemplo da história: Desde 2001, a verdade como pilar." loading="lazy" draggable="false"><img data-src="img/insta_c2_2.webp" width="540" height="675" alt="Tela 2 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_3.webp" width="540" height="675" alt="Tela 3 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_4.webp" width="540" height="675" alt="Tela 4 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_5.webp" width="540" height="675" alt="Tela 5 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_6.webp" width="540" height="675" alt="Tela 6 de 6 do carrossel da história" draggable="false"></div>
-            <button class="ig-seta ant" type="button" aria-label="Tela anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="ig-seta prox" type="button" aria-label="Próxima tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="ig-conta" aria-live="polite">Tela 1 de 6</span>
-          </div>
-        </li>
-        <li><img src="img/insta_post4_p.webp" srcset="img/insta_post4_p.webp 300w, img/insta_post4.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Post de exemplo: Pergolado de madeira, com instalação." loading="lazy"></li>
-    </ul>
-    <a class="bt bt-contorno" href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Ver no Instagram</a>
-  </div>
+
+<div class="faixa">
+<div class="chapeu">@madeireiramartinelli</div>
+<h2 id="t-insta">Acompanhe no Instagram.</h2>
+<ul class="insta-grade">
+<li class="ig-carrossel">
+<div class="ig-visor" tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel de exemplo do telhado, 6 telas">
+<div class="ig-trilho"><img src="img/insta_c1_1_p.webp" srcset="img/insta_c1_1_p.webp 300w, img/insta_c1_1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Carrossel de exemplo do telhado: Telhado novo? 5 perguntas antes de comprar." loading="lazy" draggable="false"><img data-src="img/insta_c1_2.webp" width="540" height="675" alt="Tela 2 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_3.webp" width="540" height="675" alt="Tela 3 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_4.webp" width="540" height="675" alt="Tela 4 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_5.webp" width="540" height="675" alt="Tela 5 de 6 do carrossel do telhado" draggable="false"><img data-src="img/insta_c1_6.webp" width="540" height="675" alt="Tela 6 de 6 do carrossel do telhado" draggable="false"></div>
+<button class="ig-seta ant" type="button" aria-label="Tela anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button class="ig-seta prox" type="button" aria-label="Próxima tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+<span class="ig-conta" aria-live="polite">Tela 1 de 6</span>
+</div>
+</li>
+<li><img src="img/insta_post1_p.webp" srcset="img/insta_post1_p.webp 300w, img/insta_post1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Post de exemplo: Chegou a madeira? Confira 4 coisas antes de assinar." loading="lazy"></li>
+<li class="ig-carrossel">
+<div class="ig-visor" tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel de exemplo da história, 6 telas">
+<div class="ig-trilho"><img src="img/insta_c2_1_p.webp" srcset="img/insta_c2_1_p.webp 300w, img/insta_c2_1.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Carrossel de exemplo da história: Desde 2001, a verdade como pilar." loading="lazy" draggable="false"><img data-src="img/insta_c2_2.webp" width="540" height="675" alt="Tela 2 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_3.webp" width="540" height="675" alt="Tela 3 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_4.webp" width="540" height="675" alt="Tela 4 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_5.webp" width="540" height="675" alt="Tela 5 de 6 do carrossel da história" draggable="false"><img data-src="img/insta_c2_6.webp" width="540" height="675" alt="Tela 6 de 6 do carrossel da história" draggable="false"></div>
+<button class="ig-seta ant" type="button" aria-label="Tela anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button class="ig-seta prox" type="button" aria-label="Próxima tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+<span class="ig-conta" aria-live="polite">Tela 1 de 6</span>
+</div>
+</li>
+<li><img src="img/insta_post4_p.webp" srcset="img/insta_post4_p.webp 300w, img/insta_post4.webp 540w" sizes="(min-width:1160px) 265px, (min-width:760px) calc((100vw - 100px) / 4), calc((100vw - 52px) / 2)" width="540" height="675" alt="Post de exemplo: Pergolado de madeira, com instalação." loading="lazy"></li>
+</ul>
+<a class="bt bt-contorno" href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Ver no Instagram</a>
+</div>
 </section>
 
 <section id="contato">
-  <div class="faixa">
-    <div class="chapeu">Contato</div>
-    <h2>Segunda a sexta, das 7h50 às 17h30.</h2>
-    <div class="faixa-zap"><p>Peça o orçamento da sua obra.</p><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a></div>
-    <div class="duas">
-      <ul class="canais">
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><small>Endereço</small><span>Av. João Batista de Souza Soares, 3001<br>Cidade Morumbi · São José dos Campos - SP</span></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span><div><small>WhatsApp</small><a href="https://wa.me/5512974052842" target="_blank" rel="noopener">(12) 97405-2842</a></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><small>Telefone</small><a href="tel:+551239315699">(12) 3931-5699</a></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><small>E-mail</small><a class="email" data-u="atendimento" data-d="madeireiramartinelli.com.br" href="#contato">atendimento [arroba] madeireiramartinelli.com.br</a><script>document.querySelectorAll("a.email").forEach(function(a){var e=a.getAttribute("data-u")+String.fromCharCode(64)+a.getAttribute("data-d");a.href="mailto:"+e;a.textContent=e;});</script></div></li>
-      </ul>
-      <iframe class="mapa" title="Mapa: Av. João Batista de Souza Soares, 3001, São José dos Campos" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Madeireira+Martinelli,+Av.+Jo%C3%A3o+Batista+de+Souza+Soares,+3001,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP&output=embed"></iframe>
-    </div>
-  </div>
+<div class="faixa">
+<div class="chapeu">Contato</div>
+<h2>Segunda a sexta, das 7h50 às 17h30.</h2>
+<div class="faixa-zap"><p>Peça o orçamento da sua obra.</p><a class="bt bt-zap" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar pelo WhatsApp</a></div>
+<div class="duas">
+<ul class="canais">
+<li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><small>Endereço</small><span>Av. João Batista de Souza Soares, 3001<br>Cidade Morumbi · São José dos Campos - SP</span></div></li>
+<li><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span><div><small>WhatsApp</small><a href="https://wa.me/5512974052842" target="_blank" rel="noopener">(12) 97405-2842</a></div></li>
+<li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><small>Telefone</small><a href="tel:+551239315699">(12) 3931-5699</a></div></li>
+<li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><small>E-mail</small><a class="email" data-u="atendimento" data-d="madeireiramartinelli.com.br" href="#contato">atendimento [arroba] madeireiramartinelli.com.br</a><script>document.querySelectorAll("a.email").forEach(function(a){var e=a.getAttribute("data-u")+String.fromCharCode(64)+a.getAttribute("data-d");a.href="mailto:"+e;a.textContent=e;});</script></div></li>
+</ul>
+<iframe class="mapa" title="Mapa: Av. João Batista de Souza Soares, 3001, São José dos Campos" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Madeireira+Martinelli,+Av.+Jo%C3%A3o+Batista+de+Souza+Soares,+3001,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP&output=embed"></iframe>
+</div>
+</div>
 </section>
 </main>
 
-<!-- botão flutuante do WhatsApp que trava no rodapé (Operador, 26/11/2026: "o botão flutuante da Labate que invade o rodapé deve ser uma 'marca' nossa") -->
+
 <a class="bt bt-zap flutua" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
 <footer class="rodape">
-  <div class="faixa">
-    <a class="marca marca-rodape" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-rodape" viewBox="0 0 531 178" role="img" aria-label="Madeireira Martinelli. Confiança e honestidade, sempre"><use href="#lockA"/></svg></a>
-    <div class="rodape-dados">
-      <p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
-      <p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
-    </div>
-    <div class="rodape-linha">
-      <p class="redes"><a href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener" aria-label="Instagram da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/madmartinelli" target="_blank" rel="noopener" aria-label="Facebook da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3H13a4 4 0 0 0-4 4v3H7v3h2v8h3v-8h2.6l.4-3h-3V7.4c0-.5.4-.9.9-.9h1.6z"/></svg></a></p>
-      <a class="bt bt-zap rodape-vaga" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
-    </div>
-    <p class="dev">Desenvolvido por <a href="https://ativaleads.com.br/ativaleads/" target="_blank" rel="noopener" aria-label="Ativaleads"><img src="img/ativaleads-2026-mel-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a></p>
-  </div>
+<div class="faixa">
+<a class="marca marca-rodape" href="index.html" aria-label="Madeireira Martinelli, início"><svg class="logo-rodape" viewBox="0 0 531 178" role="img" aria-label="Madeireira Martinelli. Confiança e honestidade, sempre"><use href="#lockA"/></svg></a>
+<div class="rodape-dados">
+<p>Martinelli e Martinelli Comércio de Madeiras Ltda<br>CNPJ 05.161.751/0001-03</p>
+<p>Av. João Batista de Souza Soares, 3001<br>São José dos Campos - SP</p>
+</div>
+<div class="rodape-linha">
+<p class="redes"><a href="https://www.instagram.com/madeireiramartinelli/" target="_blank" rel="noopener" aria-label="Instagram da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/madmartinelli" target="_blank" rel="noopener" aria-label="Facebook da Madeireira Martinelli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3H13a4 4 0 0 0-4 4v3H7v3h2v8h3v-8h2.6l.4-3h-3V7.4c0-.5.4-.9.9-.9h1.6z"/></svg></a></p>
+<a class="bt bt-zap rodape-vaga" href="https://wa.me/5512974052842?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
+</div>
+<p class="dev">Desenvolvido por <a href="https://ativaleads.com.br/ativaleads/" target="_blank" rel="noopener" aria-label="Ativaleads"><img src="img/ativaleads-2026-mel-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a></p>
+</div>
 </footer>
 <script>
-(function(){var b=document.querySelector('.abre'),p=document.getElementById('painel');if(!b)return;b.addEventListener('click',function(){var a=p.classList.toggle('aberto');b.setAttribute('aria-expanded',a?'true':'false');});p.querySelectorAll('a').forEach(function(x){x.addEventListener('click',function(){p.classList.remove('aberto');b.setAttribute('aria-expanded','false');});});})();
-</script>
-<script>
-/* S80: animação da página principal (entrada ao rolar, carimbo, conversa do orçamento) */
 (function(){var H=document.documentElement;if(!H.classList.contains('anima'))return;
 var alvo='main h2, main .chapeu, main .lead, .produto, .cartoes4>div, .valores>*, .patio-fotos li, .temas>div, .nota, .canais li, .mapa, .faixa-zap, .citacao, .foto-patio, .insta-grade>li';
 var els=[].slice.call(document.querySelectorAll(alvo)).filter(function(e){return !e.closest('.capa')&&!e.closest('#orcamento .zap')});
 els.forEach(function(e){e.classList.add('surge')});
-/* atraso em cascata dentro de cada grade */
 ['.produtos','.cartoes4','.temas','.patio-fotos','.canais','.insta-grade'].forEach(function(s){[].forEach.call(document.querySelectorAll(s),function(g){[].forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*90)+'ms'})})});
 var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visto');io.unobserve(x.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
 els.forEach(function(e){io.observe(e)});
-/* conversa do orçamento: desenho, pergunta, "digitando", resposta */
 var z=document.querySelector('#orcamento .zap');if(z){var b=[].slice.call(z.querySelectorAll('.bolha'));
-  var dig=document.createElement('div');dig.className='digitando';dig.setAttribute('aria-hidden','true');dig.innerHTML='<i></i><i></i><i></i>';
-  var loja=z.querySelector('.bolha.loja');if(loja)loja.parentNode.insertBefore(dig,loja);
-  z.classList.add('conversa');
-  var io2=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io2.disconnect();
-    var t=[300,1300,2200];b.forEach(function(x,i){if(x.classList.contains('loja'))return;setTimeout(function(){x.classList.add('chegou')},t[i]||300)});
-    setTimeout(function(){dig.classList.add('chegou')},2900);
-    setTimeout(function(){dig.classList.remove('chegou');dig.classList.add('sai');if(loja)loja.classList.add('chegou')},4600);},{threshold:.4});
-  io2.observe(z);}
-/* segurança: se algo não disparar, mostra tudo depois de 6 s */
+var dig=document.createElement('div');dig.className='digitando';dig.setAttribute('aria-hidden','true');dig.innerHTML='<i></i><i></i><i></i>';
+var loja=z.querySelector('.bolha.loja');if(loja)loja.parentNode.insertBefore(dig,loja);
+z.classList.add('conversa');
+var io2=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io2.disconnect();
+var t=[300,1300,2200];b.forEach(function(x,i){if(x.classList.contains('loja'))return;setTimeout(function(){x.classList.add('chegou')},t[i]||300)});
+setTimeout(function(){dig.classList.add('chegou')},2900);
+setTimeout(function(){dig.classList.remove('chegou');dig.classList.add('sai');if(loja)loja.classList.add('chegou')},4600);},{threshold:.4});
+io2.observe(z);}
 setTimeout(function(){[].forEach.call(document.querySelectorAll('.surge:not(.visto)'),function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add('visto')})},6000);
-})();
-</script>
-<script>
-/* faixa do Instagram (26/11/2026): carrossel de uma tela por vez, com setas, teclado e arrasto que acompanha o dedo e o mouse; telas 2 a 6 só carregam perto do uso */
-(function(){document.querySelectorAll('.ig-visor').forEach(function(v){
-  var tr=v.querySelector('.ig-trilho'),im=tr.children,n=im.length,i=0,a=v.querySelector('.ant'),b=v.querySelector('.prox'),ct=v.querySelector('.ig-conta');
-  function carrega(k){var e=im[k];if(e&&e.dataset.src){e.src=e.dataset.src;e.removeAttribute('data-src')}}
-  function ir(k){i=Math.max(0,Math.min(n-1,k));carrega(i);carrega(i+1);tr.style.transition='';tr.style.transform='translateX('+(-100*i)+'%)';a.disabled=i===0;b.disabled=i===n-1;ct.textContent='Tela '+(i+1)+' de '+n}
-  a.addEventListener('click',function(){if(!arrastou)ir(i-1)});b.addEventListener('click',function(){if(!arrastou)ir(i+1)});
-  v.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')ir(i-1);if(e.key==='ArrowRight')ir(i+1)});
-  var x0=null,dx=0,w=1,arrastou=false;
-  /* o toque pode começar em cima da seta (o navegador puxa o toque para o botão mais perto): o arrasto vale também ali, e o clique que vier depois de um arrasto não conta */
-  v.addEventListener('pointerdown',function(e){x0=e.clientX;dx=0;w=v.clientWidth;arrastou=false;carrega(i+1);tr.style.transition='none';if(!e.target.closest('.ig-seta'))try{v.setPointerCapture(e.pointerId)}catch(_){}});
-  v.addEventListener('pointermove',function(e){if(x0===null)return;dx=e.clientX-x0;if((i===0&&dx>0)||(i===n-1&&dx<0))dx=dx/3;tr.style.transform='translateX(calc('+(-100*i)+'% + '+dx+'px))'});
-  function solta(){if(x0===null)return;x0=null;if(Math.abs(dx)>w*.18){arrastou=true;setTimeout(function(){arrastou=false},0);ir(i+(dx<0?1:-1))}else ir(i)}
-  v.addEventListener('pointerup',solta);v.addEventListener('pointercancel',solta);
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();carrega(1)}},{rootMargin:'200px'});io.observe(v)}else carrega(1);
-});})();
-</script>
-<script>
-/* flutuante do WhatsApp trava no rodapé (marca da Ativaleads, 26/11/2026; comportamento do site da Labate, S48). Versão com IntersectionObserver: não mede a página ao carregar (PageSpeed). Fonte: skill ativaleads-padrao-entrega, references/flutuante.js */
-(function () {
-  var F = 'flutua', V = 'rodape-vaga';
-  var f = document.querySelector('.' + F), v = document.querySelector('.' + V);
-  if (!f || !v || !('IntersectionObserver' in window)) return;
-  var calmo = matchMedia('(prefers-reduced-motion: reduce)'), primeira = true, obs = null, pend = false;
-  v.classList.add(V + '--espera');
-  function desliza(parado) {
-    if (calmo.matches) return;
-    var de = parado ? f : v, para = parado ? v : f, a = de.getBoundingClientRect(), b = para.getBoundingClientRect();
-    var dx = (a.left + a.right) / 2 - (b.left + b.right) / 2;
-    if (Math.abs(dx) < 1) return;
-    para.style.transition = 'none'; para.style.transform = 'translateX(' + dx + 'px)';
-    void para.offsetWidth;
-    para.style.transition = 'transform .28s ease'; para.style.transform = '';
-    setTimeout(function () { para.style.transition = ''; }, 300);
-  }
-  function troca(parado) {
-    var antes = !v.classList.contains(V + '--espera');
-    if (parado !== antes && !primeira) desliza(parado);
-    f.classList.toggle(F + '--parado', parado);
-    v.classList.toggle(V + '--espera', !parado);
-    primeira = false;
-  }
-  function arma() {
-    pend = false;
-    if (obs) obs.disconnect();
-    var cs = getComputedStyle(f);
-    if (cs.display === 'none') { f.classList.remove(F + '--parado'); v.classList.remove(V + '--espera'); return; }
-    var linha = Math.round(parseFloat(cs.bottom) + f.offsetHeight);
-    obs = new IntersectionObserver(function (es) {
-      var e = es[es.length - 1];
-      troca(e.boundingClientRect.top <= e.rootBounds.bottom + 0.5);
-    }, { rootMargin: '0px 0px -' + linha + 'px 0px', threshold: [0, 1] });
-    obs.observe(v);
-  }
-  function pede() { if (!pend) { pend = true; requestAnimationFrame(arma); } }
-  function depois() { (window.requestIdleCallback || function (fn) { setTimeout(fn, 200); })(arma); }
-  if (document.readyState === 'complete') depois(); else addEventListener('load', depois);
-  addEventListener('resize', pede);
 })();
 </script>
 </body>
