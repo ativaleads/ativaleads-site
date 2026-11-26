@@ -434,6 +434,8 @@ a.botao:has(.ic-wa){display:inline-flex;align-items:center;justify-content:cente
    altura do flutuante, o flutuante some e fica o do rodapé, que rola com a página; subindo, o flutuante volta. Sem JS os dois aparecem. */
 .wa-flutua{position:fixed;right:20px;bottom:20px;z-index:50;box-shadow:0 10px 30px -8px rgba(20,31,43,.55)}
 .wa-flutua--parado,.wa-vaga--espera{visibility:hidden}
+/* na troca o botão desliza de lado; sem este corte ele alarga a página por um instante no celular, o navegador rola para cima e a vaga nunca trava (medido em 26/11/2026) */
+.rodape{overflow-x:clip}
 .rodape .rodape-linha{position:relative;margin-top:18px}
 .rodape .rodape-linha .redes{margin:0!important}
 /* no computador a vaga fica na ponta direita da linha das redes, na borda direita da coluna; fora do fluxo e centrada na altura dos ícones,

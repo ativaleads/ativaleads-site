@@ -593,22 +593,47 @@ setTimeout(function(){[].forEach.call(document.querySelectorAll('.surge:not(.vis
 });})();
 </script>
 <script>
-/* flutuante do WhatsApp trava no rodapé (marca da Ativaleads, 26/11/2026; comportamento do site da Labate, S48): quando a vaga do rodapé
-   sobe até a altura do flutuante, ele some e fica o do rodapé, que rola com a página; subindo, o flutuante volta. Na troca o botão desliza
-   do centro de um até o centro do outro (sem deslize com "reduzir movimento"). Sem script os dois aparecem. */
-(function(){var f=document.querySelector('.flutua'),v=document.querySelector('.rodape-vaga');if(!f||!v)return;
-var pend=false,primeira=true,calmo=matchMedia('(prefers-reduced-motion: reduce)');
-function desliza(parado){if(calmo.matches)return;var de=parado?f:v,para=parado?v:f,a=de.getBoundingClientRect(),b=para.getBoundingClientRect(),dx=(a.left+a.right)/2-(b.left+b.right)/2;if(Math.abs(dx)<1)return;
-  para.style.transition='none';para.style.transform='translateX('+dx+'px)';void para.offsetWidth;para.style.transition='transform .28s ease';para.style.transform='';setTimeout(function(){para.style.transition=''},300)}
-function confere(){pend=false;var cs=getComputedStyle(f),vis=cs.display!=='none',parado=true;
-  if(vis)parado=v.getBoundingClientRect().top<=innerHeight-parseFloat(cs.bottom)-f.offsetHeight+.5;
-  var antes=!v.classList.contains('rodape-vaga--espera');if(parado!==antes&&vis&&!primeira)desliza(parado);
-  f.classList.toggle('flutua--parado',parado&&vis);v.classList.toggle('rodape-vaga--espera',!parado);primeira=false}
-function pede(){if(!pend){pend=true;requestAnimationFrame(confere)}}
-addEventListener('scroll',pede,{passive:true});addEventListener('resize',pede);
-/* a página pode mudar de altura sem rolar (imagens, carrossel): reconfere */
-if(window.ResizeObserver)new ResizeObserver(pede).observe(document.body);
-confere()})();
+/* flutuante do WhatsApp trava no rodapé (marca da Ativaleads, 26/11/2026; comportamento do site da Labate, S48). Versão com IntersectionObserver: não mede a página ao carregar (PageSpeed). Fonte: skill ativaleads-padrao-entrega, references/flutuante.js */
+(function () {
+  var F = 'flutua', V = 'rodape-vaga';
+  var f = document.querySelector('.' + F), v = document.querySelector('.' + V);
+  if (!f || !v || !('IntersectionObserver' in window)) return;
+  var calmo = matchMedia('(prefers-reduced-motion: reduce)'), primeira = true, obs = null, pend = false;
+  v.classList.add(V + '--espera');
+  function desliza(parado) {
+    if (calmo.matches) return;
+    var de = parado ? f : v, para = parado ? v : f, a = de.getBoundingClientRect(), b = para.getBoundingClientRect();
+    var dx = (a.left + a.right) / 2 - (b.left + b.right) / 2;
+    if (Math.abs(dx) < 1) return;
+    para.style.transition = 'none'; para.style.transform = 'translateX(' + dx + 'px)';
+    void para.offsetWidth;
+    para.style.transition = 'transform .28s ease'; para.style.transform = '';
+    setTimeout(function () { para.style.transition = ''; }, 300);
+  }
+  function troca(parado) {
+    var antes = !v.classList.contains(V + '--espera');
+    if (parado !== antes && !primeira) desliza(parado);
+    f.classList.toggle(F + '--parado', parado);
+    v.classList.toggle(V + '--espera', !parado);
+    primeira = false;
+  }
+  function arma() {
+    pend = false;
+    if (obs) obs.disconnect();
+    var cs = getComputedStyle(f);
+    if (cs.display === 'none') { f.classList.remove(F + '--parado'); v.classList.remove(V + '--espera'); return; }
+    var linha = Math.round(parseFloat(cs.bottom) + f.offsetHeight);
+    obs = new IntersectionObserver(function (es) {
+      var e = es[es.length - 1];
+      troca(e.boundingClientRect.top <= e.rootBounds.bottom + 0.5);
+    }, { rootMargin: '0px 0px -' + linha + 'px 0px', threshold: [0, 1] });
+    obs.observe(v);
+  }
+  function pede() { if (!pend) { pend = true; requestAnimationFrame(arma); } }
+  function depois() { (window.requestIdleCallback || function (fn) { setTimeout(fn, 200); })(arma); }
+  if (document.readyState === 'complete') depois(); else addEventListener('load', depois);
+  addEventListener('resize', pede);
+})();
 </script>
 </body>
 </html>
