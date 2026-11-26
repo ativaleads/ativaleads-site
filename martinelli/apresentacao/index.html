@@ -8,23 +8,21 @@
 <meta name="description" content="Proposta da Ativaleads para a Madeireira Martinelli: como está hoje, como pode ficar e o próximo passo.">
 <meta name="theme-color" content="#007A3F">
 <script>document.documentElement.className+=' js'</script>
-<style>
-/* ===== Identidade do cliente (vem do dados.json; o resto do arquivo é o molde, igual para todo cliente) ===== */
-@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/barlow-400.woff2) format('woff2')}
+<style>@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/barlow-400.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/barlow-500.woff2) format('woff2')}
 @font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/barlow-600.woff2) format('woff2')}
 @font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/barlow-condensed-700.woff2) format('woff2')}
-:root{--fundo:#ede3cf;--texto:#4a2a16;--creme:#dfcfae;--cartao:#f8f2e5;--linha:#cbb894;--escuro:#2b1a10;--escuro-texto:#fff;--acento:#e8b77a;--acento-t:#8f4519;--alerta:#b3261e;--f-titulo:'Barlow Condensed',system-ui,sans-serif;--f-texto:'Barlow',system-ui,sans-serif;--f-rotulo:'Barlow Condensed',system-ui,sans-serif;--peso-titulo:700;--rotulo-peso:700}
-/* ===== Molde da apresentação em telas (Ativaleads, S82) ===== */
+:root{--fundo:#ede3cf;--texto:#4a2a16;--creme:#dfcfae;--cartao:#f8f2e5;--linha:#cbb894;--escuro:#2b1a10;--escuro-texto:#fff;--acento:#e8b77a;--acento-t:#8f4519;--alerta:#b3261e;--ruim:#b3261e;--bom:#2e7d32;--medio:#9a5b00;--f-titulo:'Barlow Condensed',system-ui,sans-serif;--f-texto:'Barlow',system-ui,sans-serif;--f-rotulo:'Barlow Condensed',system-ui,sans-serif;--f-pergunta:'Barlow',system-ui,sans-serif;--peso-titulo:700;--rotulo-peso:700;--peso-pergunta:500}
 :root{
-  --verde:#007A3F;
-  --t1:clamp(30px,min(9.4vw,6.6svh),68px);
-  --t2:clamp(23px,min(6.8vw,4.6svh),48px);
-  --t3:clamp(18px,min(4.9vw,3.1svh),25px);
-  --tx:clamp(15px,min(4.15vw,2.75svh),19px);
-  --tn:clamp(13px,min(3.5vw,2.2svh),14.5px);
-  --tr:clamp(12.5px,min(3.4vw,1.9svh),14px);
-  --lado:20px;
-  --respiro:clamp(10px,2.2svh,26px);
+--verde:#007A3F;
+--t1:clamp(30px,min(9.4vw,6.6svh),68px);
+--t2:clamp(23px,min(6.8vw,4.6svh),48px);
+--t3:clamp(18px,min(4.9vw,3.1svh),25px);
+--tx:clamp(15px,min(4.15vw,2.75svh),19px);
+--tn:clamp(13px,min(3.5vw,2.2svh),14.5px);
+--tr:clamp(12.5px,min(3.4vw,1.9svh),14px);
+--lado:20px;
+--respiro:clamp(10px,2.2svh,26px);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -37,16 +35,12 @@ p,ul,ol{margin:0}
 p{text-wrap:pretty}
 .m{white-space:nowrap}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-/* topo: verde da Ativaleads, com o logo; o nome do cliente fica no aviso e nas telas */
 .ap-topo{background:var(--verde);color:#fff;display:flex;align-items:center;gap:6px 24px;padding:8px var(--lado);flex-wrap:wrap}
 .ap-marca{background:var(--verde);flex:none;line-height:0}
 .ap-marca a{display:block}
 .ap-marca img{width:150px;height:auto}
 .ap-aviso{flex:1 1 300px;font-size:12.5px;line-height:1.35;color:#fff;text-align:right}
 @media (max-width:639px){.ap-topo{padding:6px var(--lado);row-gap:3px}.ap-aviso{flex-basis:100%;text-align:left;font-size:12px}}
-
-/* palco e telas */
 .ap-palco{position:relative}
 .ap-trilho{display:block}
 .tela{padding:48px var(--lado);position:relative}
@@ -58,14 +52,12 @@ p{text-wrap:pretty}
 .ap-chapeu::before{content:"";width:30px;height:3px;background:currentColor;flex:none}
 [data-fundo="escuro"] .ap-chapeu{color:var(--acento)}
 .tela h1{font-size:var(--t1);max-width:17ch}
-.tela h2{font-size:var(--t2);max-width:24ch}
+.tela h2{font-size:var(--t2);max-width:28ch}
 .ap-texto{margin-top:var(--respiro);max-width:58ch}
 .ap-nota{margin-top:calc(var(--respiro)*.7);font-size:var(--tn);max-width:62ch}
 [data-fundo="escuro"] .ap-texto,[data-fundo="escuro"] .ap-nota{color:var(--escuro-texto)}
 .t-abertura h1{color:var(--escuro-texto)}
 .t-abertura .ap-texto{padding-left:16px;border-left:4px solid var(--acento);font-size:calc(var(--tx)*1.06)}
-
-/* lista de itens (como está hoje · o que fazemos) */
 .ap-itens{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(6px,1.4svh,10px)}
 .ap-item{background:var(--cartao);border:1px solid var(--linha);border-radius:6px;padding:clamp(8px,1.7svh,13px) 16px;display:grid;grid-template-rows:auto auto 1fr auto;align-content:start}
 .t-lista .ap-itens.numerados .ap-item{grid-template-columns:auto minmax(0,1fr);column-gap:12px}
@@ -80,29 +72,25 @@ p{text-wrap:pretty}
 .ap-item h3{font-size:var(--t3);margin-top:4px}
 .ap-itens.numerados .ap-item h3{margin-top:0}
 .ap-item p{font-size:calc(var(--tx)*.95);margin-top:3px}
-.ap-link{display:inline-flex;align-items:center;gap:6px;margin-top:4px;min-height:26px;font-size:var(--tn);font-weight:600;color:var(--acento-t);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;justify-self:start}
+.ap-link{display:inline-flex;align-items:center;gap:6px;margin-top:4px;min-height:26px;font-size:var(--tn);font-weight:600;color:var(--acento-t);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;justify-self:start;min-width:0}
 .ap-link svg{width:13px;height:13px;flex:none}
 .ap-num{font:var(--peso-titulo) calc(var(--t3)*1.25)/1 var(--f-titulo);color:var(--acento-t)}
 [data-fundo="escuro"] .ap-num{color:var(--acento)}
 [data-fundo="escuro"] .ap-item p{color:var(--escuro-texto)}
 @media (min-width:860px){
-  .ap-itens{grid-template-columns:repeat(var(--colunas,3),minmax(0,1fr));gap:16px;margin-top:calc(var(--respiro)*1.4)}
-  .ap-item{grid-row:span 4;grid-template-rows:subgrid;row-gap:0;padding:20px 22px 22px}
-  .t-lista .ap-itens.numerados .ap-item{grid-template-columns:none}
-  .ap-itens.numerados .ap-rot{grid-row:auto}
-  .ap-itens.numerados .ap-item>:not(.ap-rot){grid-column:auto}
-  .ap-itens.numerados .ap-item h3{margin-top:10px}
-  .ap-item h3{margin-top:10px}
-  .ap-item p{margin-top:8px}
+.ap-itens{grid-template-columns:repeat(var(--colunas,3),minmax(0,1fr));gap:16px;margin-top:calc(var(--respiro)*1.4)}
+.ap-item{grid-row:span 4;grid-template-rows:subgrid;row-gap:0;padding:20px 22px 22px}
+.t-lista .ap-itens.numerados .ap-item{grid-template-columns:none}
+.ap-itens.numerados .ap-rot{grid-row:auto}
+.ap-itens.numerados .ap-item>:not(.ap-rot){grid-column:auto}
+.ap-itens.numerados .ap-item h3{margin-top:10px}
+.ap-item h3{margin-top:10px}
+.ap-item p{margin-top:8px}
 }
-
-/* passos */
 .ap-passos{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:8px;counter-reset:p}
 .ap-passos li{counter-increment:p;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:10px 0;border-top:1px solid var(--linha)}
 .ap-passos li::before{content:counter(p);display:grid;place-items:center;width:1.9em;height:1.9em;border-radius:50%;background:var(--escuro);color:var(--escuro-texto);font:var(--peso-titulo) calc(var(--tx)*1.05)/1 var(--f-titulo)}
 @media (min-width:860px){.ap-passos{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 32px;margin-top:calc(var(--respiro)*1.4)}.ap-passos li{padding:16px 0}}
-
-/* capa e peças: imagens que se ajustam à altura da tela */
 .ap-midia{display:flex;justify-content:center;align-items:flex-start;gap:var(--gap,14px);margin-top:var(--respiro)}
 .ap-fig{margin:0;display:flex;flex-direction:column;align-items:center;min-width:0}
 .ap-fig img{width:auto;height:var(--alt-img,360px);aspect-ratio:var(--ar);object-fit:contain;border-radius:6px;box-shadow:0 18px 36px -22px rgba(0,0,0,.55)}
@@ -111,8 +99,6 @@ p{text-wrap:pretty}
 [data-fundo="escuro"] .ap-fig figcaption b{color:var(--acento)}
 .ap-cel{background:#14100e;padding:7px;border-radius:26px;box-shadow:0 22px 44px -24px rgba(0,0,0,.6)}
 .ap-cel img{border-radius:20px;box-shadow:none}
-
-/* última tela: valores em PDF, conversa e rodapé padrão */
 .ap-botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:calc(var(--respiro)*1.3)}
 .ap-botao{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:40px;font:600 calc(var(--tx)*.98)/1.2 var(--f-texto);text-decoration:none;border:0}
 .ap-botao svg{width:20px;height:20px;flex:none}
@@ -126,39 +112,149 @@ p{text-wrap:pretty}
 .rodape-padrao-legal,.rodape-padrao-prop,.rodape-padrao-extra{margin:0;font-size:13px;line-height:1.45;color:#fff}
 .rodape-padrao-textos{display:grid;gap:3px}
 @media (max-width:639px){
-  .rodape-padrao{padding:14px 0 16px}
-  .rodape-padrao-fim{flex-direction:column;text-align:center;gap:8px}
-  .rodape-padrao img{width:130px}
-  .rodape-padrao-legal>span:not(.sep){display:block;text-wrap:balance}
-  .rodape-padrao-legal .sep{display:none}
-  .rodape-padrao-legal,.rodape-padrao-prop,.rodape-padrao-extra{font-size:12px}
+.rodape-padrao{padding:14px 0 16px}
+.rodape-padrao-fim{flex-direction:column;text-align:center;gap:8px}
+.rodape-padrao img{width:130px}
+.rodape-padrao-legal>span:not(.sep){display:block;text-wrap:balance}
+.rodape-padrao-legal .sep{display:none}
+.rodape-padrao-legal,.rodape-padrao-prop,.rodape-padrao-extra{font-size:12px}
 }
-
-/* tela baixa (celular pequeno com a barra do navegador aberta): menos ar, mesma letra */
+.ap-pergunta{font-family:var(--f-pergunta,var(--f-texto));font-weight:var(--peso-pergunta,500);font-style:italic;font-size:clamp(17px,min(4.7vw,3svh),27px);line-height:1.28;max-width:34ch;padding-left:14px;border-left:4px solid var(--acento-t);margin-bottom:calc(var(--respiro)*.8);text-wrap:balance}
+[data-fundo="escuro"] .ap-pergunta{border-left-color:var(--acento);color:var(--escuro-texto)}
+.est-ruim{--est:var(--ruim,#b3261e)}.est-bom{--est:var(--bom,#2e7d32)}.est-medio{--est:var(--medio,#9a5b00)}
+.ap-item[class*="est-"]{border-top:4px solid var(--est)}
+@media (max-width:859px){.ap-itens.quatro{grid-template-columns:1fr 1fr}.ap-itens.quatro .ap-item{padding:10px 12px}.ap-itens.quatro .ap-rot{letter-spacing:.08em}}
+@media (max-width:859px) and (max-height:600px){.ap-itens.quatro .ap-item p,.ap-itens.quatro .ap-link{display:none}}
+.ap-barras{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(6px,1.2svh,12px)}
+.ap-barra{background:var(--cartao);border:1px solid var(--linha);border-radius:6px;padding:clamp(7px,1.4svh,14px) 16px}
+.ap-barra.destaque{border:2px solid var(--acento-t)}
+[data-fundo="escuro"] .ap-barra{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22)}
+[data-fundo="escuro"] .ap-barra.destaque{border-color:var(--acento)}
+.ap-barra-topo{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ap-barra-nome{min-width:0}
+.ap-barra-nome b{display:block;font:var(--peso-titulo) var(--t3)/1.15 var(--f-titulo)}
+.ap-barra-nome small{display:block;font-size:var(--tn);line-height:1.3;margin-top:1px}
+.ap-barra-valor{flex:none;text-align:right;font-size:var(--tn);white-space:nowrap}
+.ap-barra-valor small,.ap-vel-nome small{font-size:12.5px}
+.ap-barra-valor b{font:var(--peso-titulo) calc(var(--t3)*1.45)/1 var(--f-titulo)}
+.ap-barra-trilho{height:clamp(5px,1svh,8px);border-radius:5px;background:var(--linha);margin-top:clamp(5px,1svh,9px);overflow:hidden}
+[data-fundo="escuro"] .ap-barra-trilho{background:rgba(255,255,255,.16)}
+.ap-barra-trilho i{display:block;height:100%;border-radius:5px;background:var(--acento-t);transform-origin:left center;transform:scaleX(var(--v))}
+[data-fundo="escuro"] .ap-barra-trilho i{background:var(--acento)}
+.ap-barra[class*="est-"] .ap-barra-trilho i{background:var(--est)}
+.ap-vel{display:grid;gap:clamp(8px,1.4svh,16px);margin-top:var(--respiro)}
+.ap-vel-cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:8px;padding:clamp(10px,1.8svh,20px) 16px}
+.ap-vel-cartao.destaque{border:2px solid var(--acento-t)}
+.ap-vel-nome{font-size:var(--tn)}.ap-vel-nome b{font-size:calc(var(--tx)*1.02);font-weight:600;margin-right:6px}
+.ap-aneis{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:clamp(6px,1.2svh,14px)}
+.ap-aneis li{display:grid;justify-items:center;text-align:center;font-size:12.5px;line-height:1.2;gap:4px}
+.ap-aneis svg{grid-area:1/1;width:clamp(42px,min(12.5vw,7.6svh),66px);height:auto;transform:rotate(-90deg)}
+.ap-aneis b{grid-area:1/1;align-self:center;position:relative;z-index:1;font:700 clamp(14px,min(4vw,2.5svh),20px)/1 var(--f-texto);font-variant-numeric:tabular-nums}
+.ap-aneis i{grid-area:1/1;align-self:start;justify-self:end;font-style:normal;font-weight:700;position:relative;z-index:1}
+.ap-aneis circle{fill:none;stroke-width:5}
+.ap-aneis .f{fill:var(--anel-fundo)}
+.ap-aneis .a{stroke:var(--anel);stroke-linecap:round;stroke-dasharray:150.8;stroke-dashoffset:calc(150.8 * (1 - var(--p)))}
+.ap-aneis .nota-bom{--anel:#0c6;--anel-fundo:#e5f8ec;color:#080}
+.ap-aneis .nota-medio{--anel:#fa3;--anel-fundo:#fff3e3;color:#c33300}
+.ap-aneis .nota-ruim{--anel:#f33;--anel-fundo:#ffe8e8;color:#c00}
+.ap-aneis li span{color:var(--texto)}
+.ap-vel-tempo{margin-top:clamp(6px,1.2svh,14px);padding-top:clamp(6px,1.2svh,12px);border-top:1px solid var(--linha);font-size:calc(var(--tx)*.95)}
+.ap-vel-tempo b{font-size:calc(var(--tx)*1.25)}
+.ap-vel-linha{font-size:var(--tn);margin-top:2px}
+.ap-vel-fora{font:var(--peso-titulo) calc(var(--t3)*1.2)/1.1 var(--f-titulo);color:var(--ruim,#b3261e);margin-top:10px}
+@media (max-width:859px){
+.ap-vel.duplo{grid-template-columns:1fr 1fr;gap:8px}
+.ap-vel.duplo .ap-vel-cartao{padding:10px 8px 12px}
+.ap-vel.duplo .ap-vel-nome small{display:block}
+.ap-vel.duplo .ap-aneis{grid-template-columns:1fr 1fr;row-gap:8px}
+.ap-vel.duplo .ap-aneis li{font-size:12px;gap:2px;line-height:1.15}
+.ap-vel.duplo .ap-aneis svg{width:clamp(36px,6svh,52px)}
+.ap-vel.duplo .ap-aneis b{font-size:clamp(13.5px,2.2svh,16px)}
+.ap-vel.duplo .ap-vel-tempo{font-size:13px;line-height:1.3;margin-top:6px;padding-top:6px}
+.ap-itens.quatro .ap-item p{font-size:var(--tn);line-height:1.35}
+}
+.ap-buscas{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(5px,1svh,8px)}
+.ap-buscas li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:clamp(6px,1.2svh,12px) 14px;background:var(--cartao);border:1px solid var(--linha);border-left:5px solid var(--est,var(--linha));border-radius:6px}
+.ap-busca-termo{min-width:0}
+.ap-busca-termo b{display:block;font-weight:600;font-size:calc(var(--tx)*.98);line-height:1.25}
+.ap-busca-termo small{display:block;font-size:var(--tn);line-height:1.3}
+.ap-selo{flex:none;font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:20px;background:var(--est,var(--texto));color:#fff;white-space:nowrap}
+.ap-id-hoje{display:flex;align-items:center;gap:12px;margin-top:var(--respiro);font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.12em;text-transform:uppercase;color:var(--acento-t)}
+.ap-id-hoje img{height:clamp(26px,4.6svh,44px);width:auto;border-radius:3px}
+.ap-id-caminhos{list-style:none;padding:0;display:grid;gap:clamp(6px,1.2svh,10px);margin-top:clamp(8px,1.6svh,16px)}
+.ap-id-caminhos li{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px}
+.ap-id-caminhos img{width:clamp(120px,40vw,190px);height:auto;border-radius:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.6)}
+.ap-id-caminhos p{font-size:calc(var(--tx)*.95);line-height:1.3}
+.ap-id-caminhos b{display:block;font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.12em;text-transform:uppercase;color:var(--acento-t)}
+.ap-paleta{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:clamp(8px,1.6svh,16px)}
+.ap-paleta li{display:flex;align-items:center;gap:6px;font-size:var(--tn)}
+.ap-paleta i{width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.18);flex:none}
+.ap-paleta small{display:none}
+@media (min-width:860px){
+.ap-id-caminhos{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ap-id-caminhos li{grid-template-columns:none;gap:8px}
+.ap-id-caminhos img{width:100%}
+.ap-paleta{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.ap-paleta li{display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:start}
+.ap-paleta i{grid-row:span 2;width:30px;height:30px}
+.ap-paleta small{display:block;font-size:13px;line-height:1.3}
+}
+.ap-regra{display:grid;gap:clamp(8px,1.4svh,16px);margin-top:var(--respiro)}
+.ap-regra-col{background:var(--cartao);border:1px solid var(--linha);border-top:4px solid var(--est);border-radius:6px;padding:clamp(8px,1.6svh,18px) 16px}
+.ap-regra-col.sim{--est:var(--bom,#2e7d32)}.ap-regra-col.nao{--est:var(--ruim,#b3261e)}
+.ap-regra-col h3{font-size:var(--t3)}
+.ap-regra-col ul{list-style:none;padding:0;margin-top:6px;display:grid;gap:3px}
+.ap-regra-col li{position:relative;padding-left:22px;font-size:calc(var(--tx)*.92);line-height:1.35}
+.ap-regra-col li::before{position:absolute;left:0;top:0;font-weight:700;color:var(--est)}
+.ap-regra-col.sim li::before{content:"\2713"}.ap-regra-col.nao li::before{content:"\2715"}
+@media (min-width:860px){.ap-regra{grid-template-columns:1fr 1fr}}
+.ap-quadro{position:relative;line-height:0}
+.ap-quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:6px;background:transparent}
 @media (max-height:640px){
-  .js .tela{padding-top:12px;padding-bottom:12px}
-  .js .tela-fim{padding-bottom:0}
-  .ap-chapeu{margin-bottom:8px}
-  .ap-item{padding-top:8px;padding-bottom:8px}
-  .ap-item p,.ap-passos li{line-height:1.38}
-  .ap-itens{margin-top:12px}
-  .ap-item h3{margin-top:2px}
+.js .tela{padding-top:12px;padding-bottom:12px}
+.js .tela-fim{padding-bottom:0}
+.ap-chapeu{margin-bottom:8px}
+.ap-item{padding-top:8px;padding-bottom:8px}
+.ap-item p,.ap-passos li{line-height:1.38}
+.ap-itens{margin-top:12px}
+.ap-item h3{margin-top:2px}
 }
 @media (max-height:640px) and (max-width:859px){
-  .ap-itens:not(.numerados) .ap-item:not(.tem-alerta){display:block}
-  .ap-itens:not(.numerados) .ap-item:not(.tem-alerta) .ap-rot{display:inline-flex;margin-right:10px;vertical-align:1px}
-  .ap-itens:not(.numerados) .ap-item:not(.tem-alerta) h3{display:inline}
-  .ap-itens:not(.numerados) .ap-item p{margin-top:3px}
-  .ap-bt{min-height:40px}
+.ap-itens:not(.numerados):not(.quatro) .ap-item:not(.tem-alerta){display:block}
+.ap-itens:not(.numerados):not(.quatro) .ap-item:not(.tem-alerta) .ap-rot{display:inline-flex;margin-right:10px;vertical-align:1px}
+.ap-itens:not(.numerados):not(.quatro) .ap-item:not(.tem-alerta) h3{display:inline}
+.ap-itens:not(.numerados) .ap-item p{margin-top:3px}
+.ap-bt{min-height:40px}
 }
-/* celular bem baixo (375 x 548): a etiqueta de cima sai das telas de lista; o título diz o mesmo */
 @media (max-height:600px) and (max-width:859px){
-  .t-lista .ap-chapeu{display:none}
+.tela:not(.t-abertura):not(.tela-fim) .ap-chapeu{display:none}
+.ap-pergunta{font-size:16px;line-height:1.22;margin-bottom:6px}
+.tela h2{font-size:22px}
+.js .tela:not(.t-abertura){padding-top:8px}
+.ap-vel-tempo{font-size:13.5px}.ap-vel-tempo b{font-size:16px}
+.ap-aneis{margin-top:4px}
+.ap-buscas li{padding-top:6px;padding-bottom:6px}
+.ap-barras{gap:5px}
+.ap-busca-termo small{display:none}
+.ap-buscas li{padding-top:7px;padding-bottom:7px}
+.ap-barra{padding:5px 12px}
+.ap-barra-trilho{margin-top:4px}
+.ap-barra-nome b{display:inline;font-size:17px}
+.ap-barra-nome small{display:inline;margin-left:6px}
+.ap-vel-linha{display:none}
+.ap-vel-cartao:not(:has(.ap-aneis)){display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:8px 14px}
+.ap-vel-cartao:not(:has(.ap-aneis)) .ap-vel-fora{margin-top:0;font-size:var(--t3)}
+.ap-vel-tempo{margin-top:6px;padding-top:6px}
+.t-aneis .ap-nota{font-size:12.5px;line-height:1.35}
+.ap-vel.duplo .ap-vel-nome small{display:none}
+.ap-vel.duplo .ap-vel-cartao{padding-top:6px;padding-bottom:8px}
+.ap-regra-col li{font-size:13.5px;line-height:1.3}
+.ap-regra-col{padding:6px 12px}
+.ap-regra-col ul{margin-top:3px;gap:2px}
+.ap-regra{gap:6px}
+.t-regra .ap-nota{display:none}
 }
-/* controle: voltar, pontos, contador, avançar (só com JavaScript) */
 .ap-controle{display:none}
-
-/* ===== Com JavaScript: uma tela por vez, que cabe inteira na janela ===== */
 .js body{height:100vh;height:100svh;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
 .js .ap-topo,.js .ap-controle{flex:none}
 .js .ap-palco{flex:1 1 auto;min-height:0;overflow:clip;touch-action:pan-y}
@@ -173,11 +269,13 @@ p{text-wrap:pretty}
 .js .tela-fim{padding-bottom:0}
 .js .tela-fim .rodape-padrao{flex:none;margin:clamp(10px,2svh,24px) calc(var(--lado)*-1) 0}
 @media (min-width:860px){
-  .js .tela-midia.lado .ap-miolo{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:100%;align-items:center;gap:56px;height:100%}
-  .js .tela-midia.lado .ap-midia{height:100%;margin-top:0;width:min(42vw,440px)}
-  .tela-midia:not(.lado) .ap-midia{justify-content:flex-start;gap:24px}
+.js .tela.lado .ap-miolo{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:100%;align-items:center;gap:56px;height:100%}
+.js .t-barras.lado .ap-miolo{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+.t-barras.lado .ap-barras{margin-top:0}
+.ap-vel{grid-template-columns:repeat(var(--colunas,2),minmax(0,1fr))}
+.js .tela-midia.lado .ap-midia{height:100%;margin-top:0;width:min(42vw,440px)}
+.tela-midia:not(.lado) .ap-midia{justify-content:flex-start;gap:24px}
 }
-
 .js .ap-controle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px var(--lado) calc(6px + env(safe-area-inset-bottom));background:var(--fundo);border-top:1px solid var(--linha)}
 .ap-controle>*{flex:none}
 .ap-bt{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:40px;font:600 15px/1 var(--f-texto);cursor:pointer;border:1px solid var(--texto);background:transparent;color:var(--texto)}
@@ -193,15 +291,20 @@ p{text-wrap:pretty}
 .ap-conta{font:600 14px/1 var(--f-texto);color:var(--texto);font-variant-numeric:tabular-nums;min-width:2.6em;text-align:center}
 @media (max-width:359px){.ap-bt{padding:0 14px}}
 @media (min-width:860px){.ap-controle>*{flex:none}.js .ap-controle{padding-left:max(var(--lado),calc(50vw - 540px));padding-right:max(var(--lado),calc(50vw - 540px))}}
-
-/* entrada: só transform e opacity, em cascata curta, na primeira vez que a tela aparece */
-.js .ap-e{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 70ms + 80ms)}
+.js .ap-e{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 90ms + 80ms)}
 .js .ap-entrou .ap-e{opacity:1;transform:none}
+.js .ap-barra-trilho i{transform:scaleX(0);transition:transform 1.1s cubic-bezier(.2,.7,.2,1) calc(var(--i,0) * 90ms + 350ms)}
+.js .ap-entrou .ap-barra-trilho i{transform:scaleX(var(--v))}
+.js .ap-aneis .a{stroke-dashoffset:150.8;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.7,.2,1) calc(var(--i,0) * 90ms + 300ms)}
+.js .ap-entrou .ap-aneis .a{stroke-dashoffset:calc(150.8 * (1 - var(--p)))}
+.js .ap-selo{transform:scale(.4);opacity:0;transition:transform .45s cubic-bezier(.3,1.6,.5,1),opacity .3s ease;transition-delay:calc(var(--i,0) * 90ms + 450ms)}
+.js .ap-entrou .ap-selo{transform:none;opacity:1}
 @media (prefers-reduced-motion:reduce){
-  .js .ap-e{opacity:1;transform:none;transition:none}
-  .js .ap-trilho{transition:none}
-}
-</style>
+.js .ap-e,.js .ap-selo{opacity:1;transform:none;transition:none}
+.js .ap-barra-trilho i{transform:scaleX(var(--v));transition:none}
+.js .ap-aneis .a{stroke-dashoffset:calc(150.8 * (1 - var(--p)));transition:none}
+.js .ap-trilho{transition:none}
+}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -218,7 +321,7 @@ p{text-wrap:pretty}
 </header>
 <main class="ap-palco" id="palco" aria-roledescription="apresentação">
   <div class="ap-trilho" id="trilho">
-<section class="tela t-abertura" id="1" data-tela="1" data-fundo="escuro" aria-label="Tela 1 de 7" tabindex="-1">
+<section class="tela t-abertura" id="1" data-tela="1" data-fundo="escuro" aria-label="Tela 1 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Madeireira Martinelli</p>
 <h1 class="ap-e" style="--i:1">Quanto custa não ser achado pelo cliente certo?</h1>
@@ -226,38 +329,96 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:3">Primeira página do Google, busca feita em 25/11/2026.</p>
 </div>
 </section>
-<section class="tela t-lista" id="2" data-tela="2" data-fundo="claro" aria-label="Tela 2 de 7" tabindex="-1">
+<section class="tela t-lista" id="2" data-tela="2" data-fundo="claro" aria-label="Tela 2 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Como está hoje</p>
-<h2 class="ap-e" style="--i:1">O que o cliente encontra quando te pesquisa?</h2>
-<ul class="ap-itens" style="--colunas:3">
-<li class="ap-item tem-alerta ap-e" style="--i:2"><span class="ap-rot">Site <span class="ap-alerta"><svg aria-hidden="true"><use href="#i-alerta"/></svg>Para resolver já</span></span><h3>Fora do ar</h3><p>Abre uma página de erro. É para lá que levam o botão “Site” do Google e o Facebook.</p><a class="ap-link" href="https://www.madeireiramartinelli.com.br/" target="_blank" rel="noopener">madeireiramartinelli.com.br<svg aria-hidden="true"><use href="#i-fora"/></svg></a></li>
-<li class="ap-item ap-e" style="--i:3"><span class="ap-rot">Google</span><h3>Nota 4,5 com 45 avaliações</h3><p>Sem resposta da madeireira desde junho.</p><span></span></li>
-<li class="ap-item ap-e" style="--i:4"><span class="ap-rot">Instagram e Facebook</span><h3>13 meses sem publicação</h3><p>A última é de 31/10/2025.</p><span></span></li>
+<p class="ap-pergunta ap-e" style="--i:1">O que o cliente encontra quando te pesquisa?</p>
+<h2 class="ap-e" style="--i:2">Quatro canais, só um trabalhando a favor da madeireira.</h2>
+<ul class="ap-itens quatro" style="--colunas:4">
+<li class="ap-item tem-alerta est-ruim ap-e" style="--i:3"><span class="ap-rot">Site <span class="ap-alerta"><svg aria-hidden="true"><use href="#i-alerta"/></svg>Para resolver já</span></span><h3>Fora do ar</h3><p>O endereço é seu e está pago até 2028, mas abre uma página de erro do Wix.</p><a class="ap-link" href="https://www.madeireiramartinelli.com.br/" target="_blank" rel="noopener">madeireiramartinelli.com.br<svg aria-hidden="true"><use href="#i-fora"/></svg></a></li>
+<li class="ap-item est-bom ap-e" style="--i:4"><span class="ap-rot">Google</span><h3>Nota 4,5 com 45 avaliações</h3><p>Clientes elogiam o atendimento, o preço e a entrega.</p><span></span></li>
+<li class="ap-item est-medio ap-e" style="--i:5"><span class="ap-rot">Instagram</span><h3>Parado desde outubro de 2025</h3><p>843 seguidores; de 2 a 8 curtidas por post.</p><span></span></li>
+<li class="ap-item est-medio ap-e" style="--i:6"><span class="ap-rot">Facebook</span><h3>O mesmo post, o mesmo dia</h3><p>815 seguidores; ainda aponta para o site fora do ar.</p><span></span></li>
 </ul>
 </div>
 </section>
-<section class="tela tela-midia lado" id="3" data-tela="3" data-fundo="creme" aria-label="Tela 3 de 7" tabindex="-1">
+<section class="tela t-barras lado" id="3" data-tela="3" data-fundo="creme" aria-label="Tela 3 de 11" tabindex="-1">
 <div class="ap-miolo">
-<div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Como pode ficar</p>
+<div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Perfil no Google</p>
+<p class="ap-pergunta ap-e" style="--i:1">Quem cuida do seu nome no Google?</p>
+<h2 class="ap-e" style="--i:2">A nota já é boa. Falta cuidar dela.</h2>
+<p class="ap-nota ap-e" style="--i:3">Contagem do Google Maps em 25/11/2026.</p>
+</div><ul class="ap-barras">
+<li class="ap-barra destaque ap-e" style="--i:4"><div class="ap-barra-topo"><span class="ap-barra-nome"><b>Madeireira Martinelli</b><small>nota 4,5 · 41 respondidas</small></span><span class="ap-barra-valor"><b data-numero="45">45</b> <small>avaliações</small></span></div><div class="ap-barra-trilho" aria-hidden="true"><i style="--v:0.1772"></i></div></li>
+<li class="ap-barra ap-e" style="--i:5"><div class="ap-barra-topo"><span class="ap-barra-nome"><b>Avanço Madeiras</b><small>nota 4,5 · vizinha, mesma região</small></span><span class="ap-barra-valor"><b data-numero="97">97</b> <small>avaliações</small></span></div><div class="ap-barra-trilho" aria-hidden="true"><i style="--v:0.3819"></i></div></li>
+<li class="ap-barra ap-e" style="--i:6"><div class="ap-barra-topo"><span class="ap-barra-nome"><b>Madeireira Bom Sucesso</b><small>nota 4,9</small></span><span class="ap-barra-valor"><b data-numero="127">127</b> <small>avaliações</small></span></div><div class="ap-barra-trilho" aria-hidden="true"><i style="--v:0.5000"></i></div></li>
+<li class="ap-barra ap-e" style="--i:7"><div class="ap-barra-topo"><span class="ap-barra-nome"><b>Morumbi Madeiras</b><small>nota 4,0 · 1ª no Maps</small></span><span class="ap-barra-valor"><b data-numero="254">254</b> <small>avaliações</small></span></div><div class="ap-barra-trilho" aria-hidden="true"><i style="--v:1.0000"></i></div></li>
+</ul>
+</div>
+</section>
+<section class="tela t-buscas" id="4" data-tela="4" data-fundo="claro" aria-label="Tela 4 de 11" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Onde o cliente te acha</p>
+<p class="ap-pergunta ap-e" style="--i:1">Quem o cliente encontra quando procura madeira para telhado?</p>
+<h2 class="ap-e" style="--i:2">Ganha em pergolado. Some em telhado, deck e telhas.</h2>
+<ul class="ap-buscas">
+<li class="est-bom ap-e" style="--i:3"><span class="ap-busca-termo"><b>pergolado de madeira</b><small>Facebook e Instagram também na primeira página</small></span><span class="ap-selo">1ª no mapa</span></li>
+<li class="est-medio ap-e" style="--i:4"><span class="ap-busca-termo"><b>madeireira</b><small>sem site; 5ª no Maps entre 55 lojas</small></span><span class="ap-selo">3ª no mapa</span></li>
+<li class="est-ruim ap-e" style="--i:5"><span class="ap-busca-termo"><b>madeira para telhado</b><small>aparecem Avanço, Bom Sucesso e Morumbi</small></span><span class="ap-selo">Não aparece</span></li>
+<li class="est-ruim ap-e" style="--i:6"><span class="ap-busca-termo"><b>deck de madeira</b><small>aparecem MadeiraDeck, Avanço e Mundo dos Dormentes</small></span><span class="ap-selo">Não aparece</span></li>
+<li class="est-ruim ap-e" style="--i:7"><span class="ap-busca-termo"><b>telhas</b><small>aparecem lojas de telha e calha</small></span><span class="ap-selo">Não aparece</span></li>
+</ul>
+<p class="ap-nota ap-e" style="--i:8">Buscas com “são josé dos campos”, primeira página do Google em 25/11/2026.</p>
+</div>
+</section>
+<section class="tela tela-midia lado" id="5" data-tela="5" data-fundo="creme" aria-label="Tela 5 de 11" tabindex="-1">
+<div class="ap-miolo">
+<div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Site novo</p>
 <h2 class="ap-e" style="--i:1">Um site no endereço que já é seu.</h2>
-<p class="ap-texto ap-e" style="--i:2">O mesmo madeireiramartinelli.com.br, de volta no ar, com uma página para cada coisa que o cliente procura.</p>
-</div><div class="ap-midia" style="--n:1;--soma:0.5433;--leg:calc(0px + 14px);--moldura:14px">
-<figure class="ap-fig ap-e" style="--i:3"><div class="ap-cel"><img src="img/capa_site.webp" alt="Primeira tela do site de exemplo da Madeireira Martinelli no celular: “Madeira para telhado, telhas, pergolados e decks.” e o botão de orçamento pelo WhatsApp." width="540" height="994" style="--ar:540/994" draggable="false"></div></figure>
+<p class="ap-texto ap-e" style="--i:2">O mesmo madeireiramartinelli.com.br, de volta no ar, com uma página para cada coisa que o cliente procura. Feito para aparecer no Google e nas respostas de IA.</p>
+</div><div class="ap-midia" style="--n:1;--soma:0.5433;--leg:calc(0px + 24px);--moldura:14px">
+<figure class="ap-fig ap-e" style="--i:3"><div class="ap-cel"><div class="ap-quadro"><img src="img/capa_site.webp" alt="Primeira tela do site de exemplo da Madeireira Martinelli no celular: “Madeira para telhado, telhas, pergolados e decks.” e o botão de orçamento pelo WhatsApp." width="540" height="994" draggable="false" style="--ar:540/994"></div></div></figure>
 </div>
 </div>
 </section>
-<section class="tela tela-midia" id="4" data-tela="4" data-fundo="claro" aria-label="Tela 4 de 7" tabindex="-1">
+<section class="tela t-aneis" id="6" data-tela="6" data-fundo="claro" aria-label="Tela 6 de 11" tabindex="-1">
 <div class="ap-miolo">
-<p class="ap-chapeu ap-e" style="--i:0">Como pode ficar</p>
-<h2 class="ap-e" style="--i:1">Carrossel para explicar. Reel para parar o dedo.</h2>
-<div class="ap-midia" style="--n:2;--soma:1.3625;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 10px + 0px);--moldura:0px">
-<figure class="ap-fig ap-e" style="--i:2"><img src="img/carrossel_telhado.webp" alt="Primeira tela do carrossel de exemplo “Telhado novo? 5 perguntas antes de comprar.”" width="540" height="675" style="--ar:540/675" draggable="false" loading="lazy"><figcaption><b>Carrossel</b>Telhado novo? 5 perguntas antes de comprar.</figcaption></figure>
-<figure class="ap-fig ap-e" style="--i:3"><img src="img/reel_dof.webp" alt="Quadro do Reel de exemplo “Comprou madeira nativa? Peça o DOF.”, com o carimbo “com DOF”." width="540" height="960" style="--ar:540/960" draggable="false" loading="lazy"><figcaption><b>Reel</b>Comprou madeira nativa? Peça o DOF.</figcaption></figure>
+<p class="ap-chapeu ap-e" style="--i:0">PageSpeed do Google</p>
+<p class="ap-pergunta ap-e" style="--i:1">Quanto tempo o cliente espera antes de ir para o próximo?</p>
+<h2 class="ap-e" style="--i:2">Site novo: 100. A cidade fica entre 37 e 94.</h2>
+<div class="ap-vel" style="--colunas:2">
+<div class="ap-vel-cartao ap-e" style="--i:3"><p class="ap-vel-nome"><b>Hoje</b> <small>madeireiramartinelli.com.br</small></p><p class="ap-vel-fora">Fora do ar</p></div>
+<div class="ap-vel-cartao destaque ap-e" style="--i:4"><p class="ap-vel-nome"><b>Site novo</b> <small>proposta</small></p><ul class="ap-aneis"><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Desempenho</span></li><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Acessibilidade</span></li><li class="nota-bom"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:1.00"/></svg><b data-numero="100">100</b><span>Boas práticas</span></li><li class="nota-medio"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="f" cx="28" cy="28" r="24"/><circle class="a" cx="28" cy="28" r="24" style="--p:0.66"/></svg><b data-numero="66">66</b><i>*</i><span>SEO</span></li></ul><p class="ap-vel-tempo"><b>1,5 s</b> para mostrar o conteúdo principal no celular</p><p class="ap-vel-linha">No computador: 100 · 100 · 100 · 66* · <a href="https://pagespeed.web.dev/analysis/https-ativaleads-com-br-martinelli/y32fh1oi40haux44vjgk93?form_factor=mobile" target="_blank" rel="noopener">ver relatório</a></p></div>
+</div>
+<p class="ap-nota ap-e" style="--i:5">Notas do celular, de 0 a 100 (Google, 25/11/2026). *SEO em 66 porque a proposta está fechada para o Google.</p>
+</div>
+</section>
+<section class="tela t-identidade" id="7" data-tela="7" data-fundo="claro" aria-label="Tela 7 de 11" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Nova identidade visual</p>
+<p class="ap-pergunta ap-e" style="--i:1">O cliente reconhece a madeireira só de olhar o perfil?</p>
+<h2 class="ap-e" style="--i:2">A mesma marca, com cara de madeireira.</h2>
+<div class="ap-id-hoje ap-e" style="--i:3"><span>Hoje</span><img src="img/logo_hoje.webp" alt="Logo de hoje da Madeireira Martinelli: MM vermelho numa moldura de casa e o nome em azul" width="325" height="75" draggable="false"></div>
+<ul class="ap-id-caminhos">
+<li class="ap-e" style="--i:4"><img src="img/logo_caminho_a.webp" alt="Caminho A, MM sob o telhado, entalhado na madeira" width="480" height="141" draggable="false" loading="lazy"><p><b>Caminho A</b> MM sob o telhado</p></li>
+<li class="ap-e" style="--i:5"><img src="img/logo_caminho_b.webp" alt="Caminho B, selo marcado a fogo na madeira" width="480" height="141" draggable="false" loading="lazy"><p><b>Caminho B</b> Selo marcado a fogo</p></li>
+<li class="ap-e" style="--i:6"><img src="img/logo_caminho_c.webp" alt="Caminho C, a placa com o nome por extenso, entalhada na madeira" width="480" height="141" draggable="false" loading="lazy"><p><b>Caminho C</b> A placa</p></li>
+</ul>
+<ul class="ap-paleta ap-e" style="--i:7"><li><i style="background:#2b1a10"></i><b>Nogueira</b><small>faixas escuras e capa</small></li><li><i style="background:#4a2a16"></i><b>Mogno</b><small>logo e textos</small></li><li><i style="background:#a8582a"></i><b>Cambará</b><small>destaques e etiquetas</small></li><li><i style="background:#e8b77a"></i><b>Mel</b><small>sobre a madeira escura</small></li><li><i style="background:#dfcfae"></i><b>Areia</b><small>faixas claras</small></li><li><i style="background:#ede3cf"></i><b>Papel</b><small>fundo do site</small></li></ul>
+</div>
+</section>
+<section class="tela tela-midia" id="8" data-tela="8" data-fundo="creme" aria-label="Tela 8 de 11" tabindex="-1">
+<div class="ap-miolo">
+<p class="ap-chapeu ap-e" style="--i:0">Instagram e Facebook</p>
+<p class="ap-pergunta ap-e" style="--i:1">O que faz o cliente parar de rolar o feed?</p>
+<h2 class="ap-e" style="--i:2">Carrossel para explicar. Reel para parar o dedo.</h2>
+<div class="ap-midia" style="--n:2;--soma:1.3625;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px);--moldura:0px">
+<figure class="ap-fig ap-e" style="--i:3"><div class="ap-quadro"><img src="img/carrossel_telhado.webp" alt="Primeira tela do carrossel de exemplo “Telhado novo? 5 perguntas antes de comprar.”" width="540" height="675" draggable="false" loading="lazy" style="--ar:540/675"></div><figcaption><b>Carrossel</b>Telhado novo? 5 perguntas antes de comprar.</figcaption></figure>
+<figure class="ap-fig ap-e" style="--i:4"><div class="ap-quadro" data-reel="../social/reels/reel.html?r=1" data-reel-titulo="Reel de exemplo “Comprou madeira nativa? Peça o DOF.”, com o carimbo “com DOF”."><img src="img/reel_dof.webp" alt="Reel de exemplo “Comprou madeira nativa? Peça o DOF.”, com o carimbo “com DOF”." width="540" height="960" draggable="false" loading="lazy" style="--ar:540/960"></div><figcaption><b>Reel</b>Comprou madeira nativa? Peça o DOF.</figcaption></figure>
 </div>
 </div>
 </section>
-<section class="tela t-lista" id="5" data-tela="5" data-fundo="escuro" aria-label="Tela 5 de 7" tabindex="-1">
+<section class="tela t-lista" id="9" data-tela="9" data-fundo="escuro" aria-label="Tela 9 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">O que fazemos</p>
 <h2 class="ap-e" style="--i:1">Relatório, site, redes e tráfego.</h2>
@@ -268,7 +429,7 @@ p{text-wrap:pretty}
 </ul>
 </div>
 </section>
-<section class="tela t-passos" id="6" data-tela="6" data-fundo="claro" aria-label="Tela 6 de 7" tabindex="-1">
+<section class="tela t-passos" id="10" data-tela="10" data-fundo="claro" aria-label="Tela 10 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Próximos passos</p>
 <h2 class="ap-e" style="--i:1">Do esboço ao ar.</h2>
@@ -280,7 +441,7 @@ p{text-wrap:pretty}
 </ol>
 </div>
 </section>
-<section class="tela tela-fim" id="7" data-tela="7" data-fundo="escuro" aria-label="Tela 7 de 7" tabindex="-1">
+<section class="tela tela-fim" id="11" data-tela="11" data-fundo="escuro" aria-label="Tela 11 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Ativaleads · novembro de 2026</p>
 <h2 class="ap-e" style="--i:1">Proposta de valores</h2>
@@ -293,89 +454,107 @@ p{text-wrap:pretty}
 </main>
 <div class="ap-controle" role="group" aria-label="Navegação entre as telas">
   <button type="button" class="ap-bt ant" data-ap="ant"><svg aria-hidden="true"><use href="#i-ant"/></svg>Voltar</button>
-  <div class="ap-meio"><div class="ap-pontos" data-ap="pontos"></div><span class="ap-conta" data-ap="conta" aria-live="polite">1/7</span></div>
+  <div class="ap-meio"><div class="ap-pontos" data-ap="pontos"></div><span class="ap-conta" data-ap="conta" aria-live="polite">1/11</span></div>
   <button type="button" class="ap-bt prox" data-ap="prox">Avançar<svg aria-hidden="true"><use href="#i-prox"/></svg></button>
 </div>
-<script>
-(function(){
-  var d = document, trilho = d.getElementById("trilho"), palco = d.getElementById("palco");
-  var telas = [].slice.call(trilho.children), n = telas.length, i = -1;
-  var ant = d.querySelector('[data-ap="ant"]'), prox = d.querySelector('[data-ap="prox"]');
-  var conta = d.querySelector('[data-ap="conta"]'), pontos = d.querySelector('[data-ap="pontos"]');
-  var reduz = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var espera = null;
-  telas.forEach(function(t, k){
-    var b = d.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Tela " + (k + 1) + " de " + n);
-    b.addEventListener("click", function(){ vai(k, true); }); pontos.appendChild(b);
-  });
-  function daHash(){ var k = parseInt((location.hash || "").slice(1), 10); return k >= 1 && k <= n ? k - 1 : 0; }
-  function some(b, sim){ b.setAttribute("aria-hidden", sim ? "true" : "false"); b.tabIndex = sim ? -1 : 0; }
-  function deixa(a, b){ telas.forEach(function(t, k){ var ve = k >= Math.min(a, b) && k <= Math.max(a, b); t.classList.toggle("ap-vis", ve); }); }
-  function vai(k, empurra, semAnimar){
-    k = Math.max(0, Math.min(n - 1, k));
-    var de = i < 0 ? k : i; i = k;
-    clearTimeout(espera);
-    trilho.style.transition = semAnimar || reduz.matches ? "none" : "";
-    deixa(de, i);
-    trilho.style.transform = "translate3d(" + (-100 * i) + "%,0,0)";
-    espera = setTimeout(function(){ deixa(i, i); }, semAnimar || reduz.matches ? 0 : 480);
-    telas.forEach(function(t, j){ var atual = j === i; t.inert = !atual; t.setAttribute("aria-hidden", atual ? "false" : "true"); });
-    telas[i].classList.add("ap-entrou");
-    var foco = d.activeElement;
-    some(ant, i === 0); some(prox, i === n - 1);
-    if ((foco === ant && i === 0) || (foco === prox && i === n - 1)) (i === 0 ? prox : ant).focus();
-    conta.textContent = (i + 1) + "/" + n;
-    [].forEach.call(pontos.children, function(b, j){ b.setAttribute("aria-current", j === i ? "true" : "false"); });
-    var alvo = "#" + (i + 1);
-    if (location.hash !== alvo) { try { history[empurra ? "pushState" : "replaceState"](null, "", alvo); } catch (e) {} }
-  }
-  ant.addEventListener("click", function(){ vai(i - 1, true); });
-  prox.addEventListener("click", function(){ vai(i + 1, true); });
-  d.addEventListener("keydown", function(e){
-    if (e.altKey || e.ctrlKey || e.metaKey) return;
-    var k = e.key;
-    if (k === "ArrowRight" || k === "PageDown") { e.preventDefault(); vai(i + 1, true); }
-    else if (k === "ArrowLeft" || k === "PageUp") { e.preventDefault(); vai(i - 1, true); }
-    else if (k === "Home") { e.preventDefault(); vai(0, true); }
-    else if (k === "End") { e.preventDefault(); vai(n - 1, true); }
-  });
-  window.addEventListener("popstate", function(){ var k = daHash(); if (k !== i) vai(k, false); });
-  window.addEventListener("hashchange", function(){ var k = daHash(); if (k !== i) vai(k, false); });
-  // arrasto: a tela acompanha o dedo (e o mouse); arraste curto volta
-  var x0 = null, y0 = 0, dx = 0, w = 1, pegou = false, idp = null, bloqueiaClique = false;
-  palco.addEventListener("pointerdown", function(e){
-    if (e.button !== 0) return;
-    x0 = e.clientX; y0 = e.clientY; dx = 0; w = palco.clientWidth || 1; pegou = false; idp = e.pointerId;
-  });
-  palco.addEventListener("pointermove", function(e){
-    if (x0 === null || e.pointerId !== idp) return;
-    dx = e.clientX - x0;
-    if (!pegou) {
-      if (Math.abs(dx) < 8 || Math.abs(dx) < Math.abs(e.clientY - y0)) return;
-      pegou = true; clearTimeout(espera); trilho.style.transition = "none"; palco.classList.add("ap-arrastando");
-      deixa(Math.max(0, i - 1), Math.min(n - 1, i + 1));
-      try { palco.setPointerCapture(idp); } catch (er) {}
-      if (window.getSelection) window.getSelection().removeAllRanges();
-    }
-    var r = (i === 0 && dx > 0) || (i === n - 1 && dx < 0) ? dx / 3 : dx;
-    trilho.style.transform = "translate3d(calc(" + (-100 * i) + "% + " + r + "px),0,0)";
-  });
-  function solta(){
-    if (x0 === null) return;
-    var foi = pegou; x0 = null; pegou = false; palco.classList.remove("ap-arrastando");
-    if (!foi) return;
-    bloqueiaClique = true; setTimeout(function(){ bloqueiaClique = false; }, 50);
-    var k = Math.abs(dx) > w * 0.18 ? i + (dx < 0 ? 1 : -1) : i;
-    if (k < 0 || k > n - 1) k = i;
-    if (k === i) { trilho.style.transition = ""; trilho.style.transform = "translate3d(" + (-100 * i) + "%,0,0)"; espera = setTimeout(function(){ deixa(i, i); }, 480); }
-    else vai(k, true);
-  }
-  palco.addEventListener("pointerup", solta);
-  palco.addEventListener("pointercancel", solta);
-  palco.addEventListener("click", function(e){ if (bloqueiaClique) { e.preventDefault(); e.stopPropagation(); } }, true);
-  palco.addEventListener("dragstart", function(e){ e.preventDefault(); });
-  vai(daHash(), false, true);
-})();
-</script>
+<script>(function(){
+var d = document, trilho = d.getElementById("trilho"), palco = d.getElementById("palco");
+var telas = [].slice.call(trilho.children), n = telas.length, i = -1;
+var ant = d.querySelector('[data-ap="ant"]'), prox = d.querySelector('[data-ap="prox"]');
+var conta = d.querySelector('[data-ap="conta"]'), pontos = d.querySelector('[data-ap="pontos"]');
+var reduz = window.matchMedia("(prefers-reduced-motion: reduce)");
+var espera = null;
+telas.forEach(function(t, k){
+var b = d.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Tela " + (k + 1) + " de " + n);
+b.addEventListener("click", function(){ vai(k, true); }); pontos.appendChild(b);
+});
+function conta0(t){
+if (reduz.matches) return;
+[].forEach.call(t.querySelectorAll("[data-numero]"), function(b){
+var fim = +b.getAttribute("data-numero"), t0 = null, atraso = 350;
+if (!fim) return;
+b.textContent = "0";
+function passo(ts){ if (t0 === null) t0 = ts + atraso; var p = Math.max(0, Math.min(1, (ts - t0) / 1000)); var v = Math.round(fim * (1 - Math.pow(1 - p, 3))); b.textContent = v.toLocaleString("pt-BR"); if (p < 1) requestAnimationFrame(passo); }
+requestAnimationFrame(passo);
+setTimeout(function(){ b.textContent = fim.toLocaleString("pt-BR"); }, 1700);
+});
+}
+function reels(k){
+telas.forEach(function(t, j){
+[].forEach.call(t.querySelectorAll("[data-reel]"), function(q){
+var f = q.querySelector("iframe");
+if (j === k && !f && !reduz.matches) { f = d.createElement("iframe"); f.src = q.getAttribute("data-reel"); f.title = q.getAttribute("data-reel-titulo") || "Reel"; f.tabIndex = -1; f.setAttribute("aria-hidden", "true"); q.appendChild(f); }
+else if (j !== k && f) q.removeChild(f);
+});
+});
+}
+function daHash(){ var k = parseInt((location.hash || "").slice(1), 10); return k >= 1 && k <= n ? k - 1 : 0; }
+function some(b, sim){ b.setAttribute("aria-hidden", sim ? "true" : "false"); b.tabIndex = sim ? -1 : 0; }
+function deixa(a, b){ telas.forEach(function(t, k){ var ve = k >= Math.min(a, b) && k <= Math.max(a, b); t.classList.toggle("ap-vis", ve); }); }
+function vai(k, empurra, semAnimar){
+k = Math.max(0, Math.min(n - 1, k));
+var de = i < 0 ? k : i; i = k;
+clearTimeout(espera);
+trilho.style.transition = semAnimar || reduz.matches ? "none" : "";
+deixa(de, i);
+trilho.style.transform = "translate3d(" + (-100 * i) + "%,0,0)";
+espera = setTimeout(function(){ deixa(i, i); }, semAnimar || reduz.matches ? 0 : 480);
+telas.forEach(function(t, j){ var atual = j === i; t.inert = !atual; t.setAttribute("aria-hidden", atual ? "false" : "true"); });
+if (!telas[i].classList.contains("ap-entrou")) { telas[i].classList.add("ap-entrou"); conta0(telas[i]); }
+reels(i);
+var foco = d.activeElement;
+some(ant, i === 0); some(prox, i === n - 1);
+if ((foco === ant && i === 0) || (foco === prox && i === n - 1)) (i === 0 ? prox : ant).focus();
+conta.textContent = (i + 1) + "/" + n;
+[].forEach.call(pontos.children, function(b, j){ b.setAttribute("aria-current", j === i ? "true" : "false"); });
+var alvo = "#" + (i + 1);
+if (location.hash !== alvo) { try { history[empurra ? "pushState" : "replaceState"](null, "", alvo); } catch (e) {} }
+}
+ant.addEventListener("click", function(){ vai(i - 1, true); });
+prox.addEventListener("click", function(){ vai(i + 1, true); });
+d.addEventListener("keydown", function(e){
+if (e.altKey || e.ctrlKey || e.metaKey) return;
+var k = e.key;
+if (k === "ArrowRight" || k === "PageDown") { e.preventDefault(); vai(i + 1, true); }
+else if (k === "ArrowLeft" || k === "PageUp") { e.preventDefault(); vai(i - 1, true); }
+else if (k === "Home") { e.preventDefault(); vai(0, true); }
+else if (k === "End") { e.preventDefault(); vai(n - 1, true); }
+});
+window.addEventListener("popstate", function(){ var k = daHash(); if (k !== i) vai(k, false); });
+window.addEventListener("hashchange", function(){ var k = daHash(); if (k !== i) vai(k, false); });
+var x0 = null, y0 = 0, dx = 0, w = 1, pegou = false, idp = null, bloqueiaClique = false;
+palco.addEventListener("pointerdown", function(e){
+if (e.button !== 0) return;
+x0 = e.clientX; y0 = e.clientY; dx = 0; w = palco.clientWidth || 1; pegou = false; idp = e.pointerId;
+});
+palco.addEventListener("pointermove", function(e){
+if (x0 === null || e.pointerId !== idp) return;
+dx = e.clientX - x0;
+if (!pegou) {
+if (Math.abs(dx) < 8 || Math.abs(dx) < Math.abs(e.clientY - y0)) return;
+pegou = true; clearTimeout(espera); trilho.style.transition = "none"; palco.classList.add("ap-arrastando");
+deixa(Math.max(0, i - 1), Math.min(n - 1, i + 1));
+try { palco.setPointerCapture(idp); } catch (er) {}
+if (window.getSelection) window.getSelection().removeAllRanges();
+}
+var r = (i === 0 && dx > 0) || (i === n - 1 && dx < 0) ? dx / 3 : dx;
+trilho.style.transform = "translate3d(calc(" + (-100 * i) + "% + " + r + "px),0,0)";
+});
+function solta(){
+if (x0 === null) return;
+var foi = pegou; x0 = null; pegou = false; palco.classList.remove("ap-arrastando");
+if (!foi) return;
+bloqueiaClique = true; setTimeout(function(){ bloqueiaClique = false; }, 50);
+var k = Math.abs(dx) > w * 0.18 ? i + (dx < 0 ? 1 : -1) : i;
+if (k < 0 || k > n - 1) k = i;
+if (k === i) { trilho.style.transition = ""; trilho.style.transform = "translate3d(" + (-100 * i) + "%,0,0)"; espera = setTimeout(function(){ deixa(i, i); }, 480); }
+else vai(k, true);
+}
+palco.addEventListener("pointerup", solta);
+palco.addEventListener("pointercancel", solta);
+palco.addEventListener("click", function(e){ if (bloqueiaClique) { e.preventDefault(); e.stopPropagation(); } }, true);
+palco.addEventListener("dragstart", function(e){ e.preventDefault(); });
+vai(daHash(), false, true);
+})();</script>
 </body>
 </html>
