@@ -236,7 +236,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 .rodape .faixa{text-align:center}
 .logo-rodape{height:92px;width:auto;margin:0 auto 31px} /* S56 (A8): logo no meio do seu espaço, 31 px acima e abaixo (era 44 · 18) */
 .rodape .dev{margin-top:22px!important;font-size:13px;font-weight:400;color:#fff;display:flex;justify-content:center;align-items:center;gap:10px} /* S79 (Operador, 25/11/2026): o crédito leva o logo da Ativaleads, nunca o nome escrito */
-.rodape{color:#fff;padding-top:27px}
+.rodape{color:#fff;padding-top:26px;padding-bottom:26px} /* S79 (Operador, 26/11/2026: "acho que pode igualar em 30"): 30 px, medidos na tinta, do começo do rodapé ao logo e do crédito ao fim; igual em todo site de cliente */
 .rodape .dev a{display:block;line-height:0}
 .rodape .dev img{display:block;width:110px;height:auto}
 /* como o escritório trabalha */
@@ -325,7 +325,7 @@ address{font-style:normal;font-size:19px;line-height:1.55}
 @media (max-width:639px){.contato .mapa{margin-top:24px}.contato .mapa iframe{height:260px}}
 .contatos a.val{text-decoration:none}
 /* logo do rodapé leva ao início · S61 (Operador: "não tem link nesse logo") */
-.rodape .logo-link{display:block;width:max-content;margin:0 auto 31px;line-height:0}.rodape .logo-link .logo-rodape{margin:0}
+.rodape .logo-link{display:block;width:max-content;margin:0 auto 30px;line-height:0}.rodape .logo-link .logo-rodape{margin:0}
 /* áreas em galeria · S42 */
 @media (min-width:980px){.grade-areas{grid-template-columns:repeat(4,1fr)}}
 .area{min-height:290px}
