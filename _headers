@@ -10,3 +10,7 @@
 # Proposta e site de exemplo da Madeireira Martinelli (S80): fora da busca, inclusive imagens e PDF.
 /martinelli/*
   X-Robots-Tag: noindex, nofollow
+
+# Apresentação em telas da EAAA (S82, teste de formato): fora da busca, inclusive imagens. A da Martinelli já está coberta por /martinelli/*.
+/eaaa/apresentacao/*
+  X-Robots-Tag: noindex, nofollow
