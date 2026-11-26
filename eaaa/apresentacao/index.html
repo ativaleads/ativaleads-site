@@ -43,7 +43,7 @@ p{text-wrap:pretty}
 .ap-trilho{display:block}
 .tela{padding:48px var(--lado);position:relative}
 .ap-miolo{width:100%;max-width:1080px;margin:0 auto}
-.tela[data-fundo="escuro"]{background:var(--escuro);color:var(--escuro-texto)}
+.tela[data-fundo="escuro"]{background:var(--escuro-fundo,var(--escuro));color:var(--escuro-texto)}
 .tela[data-fundo="claro"]{background:var(--fundo);color:var(--texto)}
 .tela[data-fundo="creme"]{background:var(--creme);color:var(--texto)}
 .ap-chapeu{font:var(--rotulo-peso) var(--tr)/1.2 var(--f-rotulo);letter-spacing:.15em;text-transform:uppercase;color:var(--acento-t);display:flex;align-items:center;gap:12px;margin-bottom:var(--respiro)}
@@ -54,8 +54,10 @@ p{text-wrap:pretty}
 .ap-texto{margin-top:var(--respiro);max-width:58ch}
 .ap-nota{margin-top:calc(var(--respiro)*.7);font-size:var(--tn);max-width:62ch}
 [data-fundo="escuro"] .ap-texto,[data-fundo="escuro"] .ap-nota{color:var(--escuro-texto)}
-.t-abertura h1{color:var(--escuro-texto)}
+.t-abertura[data-fundo="escuro"] h1{color:var(--escuro-texto)}
+.t-abertura:not([data-fundo="escuro"]) h1{color:var(--acento-t)}
 .t-abertura .ap-texto{padding-left:16px;border-left:4px solid var(--acento);font-size:calc(var(--tx)*1.06)}
+.t-abertura:not([data-fundo="escuro"]) .ap-texto{border-left-color:var(--acento-t)}
 .ap-itens{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:clamp(6px,1.4svh,10px)}
 .ap-item{background:var(--cartao);border:1px solid var(--linha);border-radius:6px;padding:clamp(8px,1.7svh,13px) 16px;display:grid;grid-template-rows:auto auto 1fr auto;align-content:start}
 .t-lista .ap-itens.numerados .ap-item{grid-template-columns:auto minmax(0,1fr);column-gap:12px}
@@ -101,6 +103,7 @@ p{text-wrap:pretty}
 .ap-botao{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:40px;font:600 calc(var(--tx)*.98)/1.2 var(--f-texto);text-decoration:none;border:0}
 .ap-botao svg{width:20px;height:20px;flex:none}
 .ap-botao.pdf{background:var(--acento);color:var(--escuro)}
+.tela:not([data-fundo="escuro"]) .ap-botao.pdf{background:var(--escuro);color:var(--escuro-texto)}
 .ap-botao.whats{background:#1a7f45;color:#fff}
 @media (max-width:479px){.ap-botao{width:100%}}
 .rodape-padrao{background:var(--verde);color:#fff;padding:18px 0 20px}
@@ -347,7 +350,7 @@ p{text-wrap:pretty}
 </header>
 <main class="ap-palco" id="palco" aria-roledescription="apresentação">
   <div class="ap-trilho" id="trilho">
-<section class="tela t-abertura" id="1" data-tela="1" data-fundo="escuro" aria-label="Tela 1 de 10" tabindex="-1">
+<section class="tela t-abertura" id="1" data-tela="1" data-fundo="creme" aria-label="Tela 1 de 10" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Emilson Antunes e Advogados Associados</p>
 <h1 class="ap-e" style="--i:1">Quanto custa não ser achado pelo cliente certo?</h1>
@@ -446,7 +449,7 @@ p{text-wrap:pretty}
 </ol>
 </div>
 </section>
-<section class="tela tela-fim" id="10" data-tela="10" data-fundo="escuro" aria-label="Tela 10 de 10" tabindex="-1">
+<section class="tela tela-fim" id="10" data-tela="10" data-fundo="creme" aria-label="Tela 10 de 10" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Ativaleads · novembro de 2026</p>
 <h2 class="ap-e" style="--i:1">Proposta de valores</h2>
