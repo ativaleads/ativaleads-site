@@ -234,6 +234,13 @@ p{text-wrap:pretty}
 .ap-regra-col li::before{position:absolute;left:0;top:0;font-weight:700;color:var(--est)}
 .ap-regra-col.sim li::before{content:"\2713"}.ap-regra-col.nao li::before{content:"\2715"}
 @media (min-width:860px){.ap-regra{grid-template-columns:1fr 1fr}}
+.ap-disp{position:relative;padding:0 26px 26px 0}
+.ap-nav{background:#1d2430;border-radius:10px;padding:18px 6px 6px;position:relative;box-shadow:0 22px 44px -24px rgba(0,0,0,.55)}
+.ap-nav::before{content:"";position:absolute;left:10px;top:6px;width:6px;height:6px;border-radius:50%;background:#ff5f57;box-shadow:10px 0 #febc2e,20px 0 #28c840}
+.ap-nav img{border-radius:3px;box-shadow:none}
+.ap-cel-sobre{position:absolute;right:0;bottom:0;width:22%;padding:4px;border-radius:14px}
+.ap-cel-sobre img{width:100%;height:auto;border-radius:10px}
+.tela-midia:has(.ap-disp) .ap-midia{justify-content:center}
 .ap-quadro{position:relative;line-height:0}
 .ap-quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:6px;background:transparent}
 .tela:not([data-fundo="escuro"]) :is(.ap-texto,.ap-nota,.ap-item p,.ap-barra-nome small,.ap-busca-termo small,.ap-fig figcaption,.ap-vel-linha,.ap-paleta small,.ap-id-caminhos p){color:var(--texto-2,var(--texto))}
@@ -375,7 +382,7 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:3">Primeira página do Google, busca feita em 25/11/2026.</p>
 </div>
 </section>
-<section class="tela t-lista" id="2" data-tela="2" data-fundo="claro" aria-label="Tela 2 de 11" tabindex="-1">
+<section class="tela t-lista" id="2" data-tela="2" data-fundo="creme" aria-label="Tela 2 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Como está hoje</p>
 <p class="ap-pergunta ap-e" style="--i:1">O que o cliente encontra quando te pesquisa?</p>
@@ -388,7 +395,7 @@ p{text-wrap:pretty}
 </ul>
 </div>
 </section>
-<section class="tela t-barras lado" id="3" data-tela="3" data-fundo="creme" aria-label="Tela 3 de 11" tabindex="-1">
+<section class="tela t-barras lado" id="3" data-tela="3" data-fundo="claro" aria-label="Tela 3 de 11" tabindex="-1">
 <div class="ap-miolo">
 <div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Perfil no Google</p>
 <p class="ap-pergunta ap-e" style="--i:1">Quem cuida do seu nome no Google?</p>
@@ -402,7 +409,7 @@ p{text-wrap:pretty}
 </ul>
 </div>
 </section>
-<section class="tela t-buscas" id="4" data-tela="4" data-fundo="claro" aria-label="Tela 4 de 11" tabindex="-1">
+<section class="tela t-buscas" id="4" data-tela="4" data-fundo="creme" aria-label="Tela 4 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Onde o cliente te acha</p>
 <p class="ap-pergunta ap-e" style="--i:1">Quem o cliente encontra quando procura madeira para telhado?</p>
@@ -417,7 +424,7 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:8">Buscas com “são josé dos campos”, primeira página do Google em 25/11/2026.</p>
 </div>
 </section>
-<section class="tela t-identidade" id="5" data-tela="5" data-fundo="creme" aria-label="Tela 5 de 11" tabindex="-1">
+<section class="tela t-identidade" id="5" data-tela="5" data-fundo="claro" aria-label="Tela 5 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Nova identidade visual</p>
 <p class="ap-pergunta ap-e" style="--i:1">O cliente reconhece a madeireira só de olhar o perfil?</p>
@@ -431,17 +438,17 @@ p{text-wrap:pretty}
 <ul class="ap-paleta ap-e" style="--i:7"><li><i style="background:#2b1a10"></i><b>Nogueira</b><small>faixas escuras e capa</small></li><li><i style="background:#4a2a16"></i><b>Mogno</b><small>logo e textos</small></li><li><i style="background:#a8582a"></i><b>Cambará</b><small>destaques e etiquetas</small></li><li><i style="background:#e8b77a"></i><b>Mel</b><small>sobre a madeira escura</small></li><li><i style="background:#dfcfae"></i><b>Areia</b><small>faixas claras</small></li><li><i style="background:#ede3cf"></i><b>Papel</b><small>fundo do site</small></li></ul>
 </div>
 </section>
-<section class="tela tela-midia lado" id="6" data-tela="6" data-fundo="claro" aria-label="Tela 6 de 11" tabindex="-1">
+<section class="tela tela-midia" id="6" data-tela="6" data-fundo="creme" aria-label="Tela 6 de 11" tabindex="-1">
 <div class="ap-miolo">
-<div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Site novo</p>
+<p class="ap-chapeu ap-e" style="--i:0">Site novo</p>
 <h2 class="ap-e" style="--i:1">Um site no endereço que já é seu.</h2>
 <p class="ap-texto ap-e" style="--i:2">O mesmo madeireiramartinelli.com.br, de volta no ar, com uma página para cada coisa que o cliente procura. Feito para aparecer no Google e nas respostas de IA.</p>
-</div><div class="ap-midia" style="--n:1;--soma:0.5433;--leg:calc(0px + 24px);--moldura:14px">
-<figure class="ap-fig ap-e" style="--i:3"><div class="ap-cel"><div class="ap-quadro"><img src="img/capa_site.webp" alt="Primeira tela do site de exemplo da Madeireira Martinelli no celular: “Madeira para telhado, telhas, pergolados e decks.” e o botão de orçamento pelo WhatsApp." width="540" height="994" draggable="false" style="--ar:540/994"></div></div></figure>
+<div class="ap-midia" style="--n:1;--soma:1.6000;--leg:calc(0px + 0px + 64px);--moldura:52px">
+<figure class="ap-fig ap-disp ap-e" style="--i:3"><div class="ap-nav"><img src="img/capa_pc.webp" alt="Primeira tela do site de exemplo da Madeireira Martinelli no computador." width="960" height="600" draggable="false" style="--ar:960/600"></div><div class="ap-cel ap-cel-sobre"><img src="img/capa_cel.webp" alt="A mesma primeira tela no celular, com “Madeira para telhado, telhas, pergolados e decks.” e o botão de orçamento pelo WhatsApp." width="540" height="994" draggable="false"></div></figure>
 </div>
 </div>
 </section>
-<section class="tela t-aneis" id="7" data-tela="7" data-fundo="creme" aria-label="Tela 7 de 11" tabindex="-1">
+<section class="tela t-aneis" id="7" data-tela="7" data-fundo="claro" aria-label="Tela 7 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">PageSpeed do Google</p>
 <p class="ap-pergunta ap-e" style="--i:1">Quanto tempo o cliente espera antes de ir para o próximo?</p>
@@ -453,12 +460,12 @@ p{text-wrap:pretty}
 <p class="ap-nota ap-e" style="--i:5">Notas do celular, de 0 a 100 (Google, 25/11/2026). *SEO em 66 porque a proposta está fechada para o Google.</p>
 </div>
 </section>
-<section class="tela tela-midia" id="8" data-tela="8" data-fundo="claro" aria-label="Tela 8 de 11" tabindex="-1">
+<section class="tela tela-midia" id="8" data-tela="8" data-fundo="creme" aria-label="Tela 8 de 11" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Instagram e Facebook</p>
 <p class="ap-pergunta ap-e" style="--i:1">O que faz o cliente parar de rolar o feed?</p>
 <h2 class="ap-e" style="--i:2">Carrossel para explicar. Reel para parar o dedo.</h2>
-<div class="ap-midia" style="--n:2;--soma:1.3625;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px);--moldura:0px">
+<div class="ap-midia" style="--n:2;--soma:1.3625;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px + 0px);--moldura:0px">
 <figure class="ap-fig ap-e" style="--i:3"><div class="ap-quadro"><img src="img/carrossel_telhado.webp" alt="Primeira tela do carrossel de exemplo “Telhado novo? 5 perguntas antes de comprar.”" width="540" height="675" draggable="false" loading="lazy" style="--ar:540/675"></div><figcaption><b>Carrossel</b>Telhado novo? 5 perguntas antes de comprar.</figcaption></figure>
 <figure class="ap-fig ap-e" style="--i:4"><div class="ap-quadro" data-reel="../social/reels/reel.html?r=1" data-reel-titulo="Reel de exemplo “Comprou madeira nativa? Peça o DOF.”, com o carimbo “com DOF”."><img src="img/reel_dof.webp" alt="Reel de exemplo “Comprou madeira nativa? Peça o DOF.”, com o carimbo “com DOF”." width="540" height="960" draggable="false" loading="lazy" style="--ar:540/960"></div><figcaption><b>Reel</b>Comprou madeira nativa? Peça o DOF.</figcaption></figure>
 </div>

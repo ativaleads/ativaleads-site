@@ -234,6 +234,13 @@ p{text-wrap:pretty}
 .ap-regra-col li::before{position:absolute;left:0;top:0;font-weight:700;color:var(--est)}
 .ap-regra-col.sim li::before{content:"\2713"}.ap-regra-col.nao li::before{content:"\2715"}
 @media (min-width:860px){.ap-regra{grid-template-columns:1fr 1fr}}
+.ap-disp{position:relative;padding:0 26px 26px 0}
+.ap-nav{background:#1d2430;border-radius:10px;padding:18px 6px 6px;position:relative;box-shadow:0 22px 44px -24px rgba(0,0,0,.55)}
+.ap-nav::before{content:"";position:absolute;left:10px;top:6px;width:6px;height:6px;border-radius:50%;background:#ff5f57;box-shadow:10px 0 #febc2e,20px 0 #28c840}
+.ap-nav img{border-radius:3px;box-shadow:none}
+.ap-cel-sobre{position:absolute;right:0;bottom:0;width:22%;padding:4px;border-radius:14px}
+.ap-cel-sobre img{width:100%;height:auto;border-radius:10px}
+.tela-midia:has(.ap-disp) .ap-midia{justify-content:center}
 .ap-quadro{position:relative;line-height:0}
 .ap-quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:6px;background:transparent}
 .tela:not([data-fundo="escuro"]) :is(.ap-texto,.ap-nota,.ap-item p,.ap-barra-nome small,.ap-busca-termo small,.ap-fig figcaption,.ap-vel-linha,.ap-paleta small,.ap-id-caminhos p){color:var(--texto-2,var(--texto))}
@@ -367,7 +374,7 @@ p{text-wrap:pretty}
 </header>
 <main class="ap-palco" id="palco" aria-roledescription="apresentação">
   <div class="ap-trilho" id="trilho">
-<section class="tela t-abertura" id="1" data-tela="1" data-fundo="creme" aria-label="Tela 1 de 10" tabindex="-1">
+<section class="tela t-abertura" id="1" data-tela="1" data-fundo="escuro" aria-label="Tela 1 de 10" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Emilson Antunes e Advogados Associados</p>
 <h1 class="ap-e" style="--i:1">Quanto custa não ser achado pelo cliente certo?</h1>
@@ -410,13 +417,13 @@ p{text-wrap:pretty}
 </ul>
 </div>
 </section>
-<section class="tela tela-midia lado" id="5" data-tela="5" data-fundo="creme" aria-label="Tela 5 de 10" tabindex="-1">
+<section class="tela tela-midia" id="5" data-tela="5" data-fundo="creme" aria-label="Tela 5 de 10" tabindex="-1">
 <div class="ap-miolo">
-<div class="ap-lado-texto"><p class="ap-chapeu ap-e" style="--i:0">Site novo</p>
+<p class="ap-chapeu ap-e" style="--i:0">Site novo</p>
 <h2 class="ap-e" style="--i:1">Moderno, direto, com a sede e as pessoas do escritório à frente.</h2>
 <p class="ap-texto ap-e" style="--i:2">Cada área tem página própria com o que o escritório faz e perguntas frequentes. Feito para aparecer no Google e nas respostas de IA.</p>
-</div><div class="ap-midia" style="--n:1;--soma:0.5433;--leg:calc(0px + 24px);--moldura:14px">
-<figure class="ap-fig ap-e" style="--i:3"><div class="ap-cel"><div class="ap-quadro"><img src="img/capa_site.webp" alt="Primeira tela do site de exemplo do escritório no celular: “O jurídico da empresa, do contrato ao tribunal.” e o botão Falar pelo WhatsApp." width="540" height="994" draggable="false" style="--ar:540/994"></div></div></figure>
+<div class="ap-midia" style="--n:1;--soma:1.6000;--leg:calc(0px + 0px + 64px);--moldura:52px">
+<figure class="ap-fig ap-disp ap-e" style="--i:3"><div class="ap-nav"><img src="img/capa_pc.webp" alt="Primeira tela do site de exemplo do escritório no computador." width="960" height="600" draggable="false" style="--ar:960/600"></div><div class="ap-cel ap-cel-sobre"><img src="img/capa_cel.webp" alt="A mesma primeira tela no celular, com “O jurídico da empresa, do contrato ao tribunal.” e o botão Falar pelo WhatsApp." width="540" height="994" draggable="false"></div></figure>
 </div>
 </div>
 </section>
@@ -437,7 +444,7 @@ p{text-wrap:pretty}
 <p class="ap-chapeu ap-e" style="--i:0">Instagram e Facebook</p>
 <p class="ap-pergunta ap-e" style="--i:1">Que dúvida o seu cliente leva ao Google antes de te ligar?</p>
 <h2 class="ap-e" style="--i:2">Temas que o escritório já tratou, refeitos.</h2>
-<div class="ap-midia" style="--n:2;--soma:1.6000;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px);--moldura:0px">
+<div class="ap-midia" style="--n:2;--soma:1.6000;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px + 0px);--moldura:0px">
 <figure class="ap-fig ap-e" style="--i:3"><div class="ap-quadro"><img src="img/carrossel_tributario.webp" alt="Primeira tela do carrossel de exemplo “Pagou tributo a mais? O que a lei prevê.”" width="540" height="675" draggable="false" loading="lazy" style="--ar:540/675"></div><figcaption><b>Carrossel</b>Pagou tributo a mais? O que a lei prevê.</figcaption></figure>
 <figure class="ap-fig ap-e" style="--i:4"><div class="ap-quadro"><img src="img/carrossel_trabalhista.webp" alt="Primeira tela do carrossel de exemplo “Contratar como PJ? Quando vira vínculo de emprego.”" width="540" height="675" draggable="false" loading="lazy" style="--ar:540/675"></div><figcaption><b>Carrossel</b>Contratar como PJ? Quando vira vínculo de emprego.</figcaption></figure>
 </div>
@@ -466,7 +473,7 @@ p{text-wrap:pretty}
 </ol>
 </div>
 </section>
-<section class="tela tela-fim" id="10" data-tela="10" data-fundo="creme" aria-label="Tela 10 de 10" tabindex="-1">
+<section class="tela tela-fim" id="10" data-tela="10" data-fundo="escuro" aria-label="Tela 10 de 10" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Ativaleads · novembro de 2026</p>
 <h2 class="ap-e" style="--i:1">Proposta de valores</h2>
