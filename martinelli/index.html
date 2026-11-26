@@ -254,7 +254,7 @@ background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.86) 40%,rg
 .flutua span{display:none}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Madeireira Martinelli","address":{"@type":"PostalAddress","streetAddress":"Av. João Batista de Souza Soares, 3001","addressLocality":"São José dos Campos","addressRegion":"SP","postalCode":"12236-660","addressCountry":"BR"},"telephone":"+55-12-3931-5699","openingHours":"Mo-Fr 07:50-17:30","url":"https://www.madeireiramartinelli.com.br/"}</script>
 <script>(function(d){if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window)d.documentElement.classList.add("anima")})(document)</script>
-<script src="site.js?v=1" defer></script>
+<script src="site.js?v=2" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -491,25 +491,5 @@ background:linear-gradient(90deg,rgba(31,18,10,.94) 0%,rgba(31,18,10,.86) 40%,rg
 <p class="dev">Desenvolvido por <a href="https://ativaleads.com.br/ativaleads/" target="_blank" rel="noopener" aria-label="Ativaleads"><img src="img/ativaleads-2026-mel-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a></p>
 </div>
 </footer>
-<script>
-(function(){var H=document.documentElement;if(!H.classList.contains('anima'))return;
-var alvo='main h2, main .chapeu, main .lead, .produto, .cartoes4>div, .valores>*, .patio-fotos li, .temas>div, .nota, .canais li, .mapa, .faixa-zap, .citacao, .foto-patio, .insta-grade>li';
-var els=[].slice.call(document.querySelectorAll(alvo)).filter(function(e){return !e.closest('.capa')&&!e.closest('#orcamento .zap')});
-els.forEach(function(e){e.classList.add('surge')});
-['.produtos','.cartoes4','.temas','.patio-fotos','.canais','.insta-grade'].forEach(function(s){[].forEach.call(document.querySelectorAll(s),function(g){[].forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*90)+'ms'})})});
-var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visto');io.unobserve(x.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
-els.forEach(function(e){io.observe(e)});
-var z=document.querySelector('#orcamento .zap');if(z){var b=[].slice.call(z.querySelectorAll('.bolha'));
-var dig=document.createElement('div');dig.className='digitando';dig.setAttribute('aria-hidden','true');dig.innerHTML='<i></i><i></i><i></i>';
-var loja=z.querySelector('.bolha.loja');if(loja)loja.parentNode.insertBefore(dig,loja);
-z.classList.add('conversa');
-var io2=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io2.disconnect();
-var t=[300,1300,2200];b.forEach(function(x,i){if(x.classList.contains('loja'))return;setTimeout(function(){x.classList.add('chegou')},t[i]||300)});
-setTimeout(function(){dig.classList.add('chegou')},2900);
-setTimeout(function(){dig.classList.remove('chegou');dig.classList.add('sai');if(loja)loja.classList.add('chegou')},4600);},{threshold:.4});
-io2.observe(z);}
-setTimeout(function(){[].forEach.call(document.querySelectorAll('.surge:not(.visto)'),function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add('visto')})},6000);
-})();
-</script>
 </body>
 </html>
