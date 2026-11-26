@@ -158,7 +158,7 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .faixa-zap p{margin:0;font:700 30px/1.1 'Zilla Slab',serif;max-width:24ch}
 @media (max-width:420px){.faixa-zap .bt{width:100%}.faixa-zap{padding:26px 20px}}
 /* rodapé do cliente */
-.rodape{background:var(--nogueira2);color:var(--mel);padding:44px 0 34px;font-size:14.5px;border-top:6px solid var(--cambara)}
+.rodape{background:var(--nogueira2);color:var(--mel);padding:30px 0 30px;font-size:14.5px;border-top:6px solid var(--cambara)}
 .rodape .faixa{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 40px;align-items:flex-start}
 .rodape .marca b{color:var(--mel)}
 .rodape .marca small{color:var(--mel)}
@@ -302,3 +302,42 @@ h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:18px;max-width:780px}
 .zap .digitando i{width:8px;height:8px;border-radius:50%;background:var(--cinza);animation:ponto 1s infinite}
 .zap .digitando i:nth-child(2){animation-delay:.15s}.zap .digitando i:nth-child(3){animation-delay:.3s}
 @keyframes ponto{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}
+
+/* redes no rodapé (26/11/2026, Operador: "Site da labate e da eaaa tem atalhos das redes sociais se siga no insta. Martinelli faltou"):
+   estrutura da EAAA (círculos de 36 px, 14 px entre eles), na cor mel do rodapé; ficam na coluna dos dados, abaixo deles */
+.rodape-dados{display:grid;grid-template-columns:auto auto;gap:18px 40px;align-items:start}
+/* os ícones ficam numa linha própria, no eixo do meio, o mesmo do crédito logo abaixo (como na EAAA e na Labate); embaixo de uma coluna eles ficavam 18 px fora desse eixo */
+.rodape .redes{width:100%;display:flex;justify-content:center;gap:14px}
+.rodape .redes a{width:36px;height:36px;border-radius:50%;border:1px solid var(--mel);color:var(--mel);display:grid;place-items:center;transition:background .2s ease,color .2s ease}
+.rodape .redes a:hover,.rodape .redes a:focus-visible{background:var(--mel);color:var(--nogueira2)}
+.rodape .redes svg{width:17px;height:17px}
+/* celular: tudo no eixo do meio, como o logo e o crédito (Operador, 26/11/2026: "Precisa analisar alinhamentos") */
+@media (max-width:639px){.rodape-dados{grid-template-columns:minmax(0,1fr);width:100%;row-gap:18px;justify-items:center;text-align:center}}
+
+/* Acompanhe no Instagram, antes do Contato, só na inicial (26/11/2026; estrutura da EAAA): 4 itens a partir de 760 px, 2 por linha abaixo.
+   Carrossel = uma tela por vez (o componente .visor da proposta, com classe própria .ig-visor) */
+/* mesmo fundo do Contato logo abaixo: sem o fundo do pé, para não somar duas folgas */
+.insta{padding-bottom:0}
+.insta .chapeu{text-transform:none;letter-spacing:.04em}
+.insta-grade{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.insta-grade{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
+.insta-grade>li{min-width:0}
+.insta-grade img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--areia)}
+/* tela clara sobre o fundo bege: o fio da linha marca a borda da peça (como na EAAA) */
+.insta-grade>li>img,.ig-trilho img{border:1px solid var(--linha)}
+/* setas FORA da imagem, numa faixa de 38 px logo abaixo dela e encostadas na borda direita da peça: em cima da tela elas cobriam o texto da capa (Operador, 26/11/2026: "Precisa analisar alinhamentos") */
+.ig-visor{position:relative;overflow:hidden;padding-bottom:38px;touch-action:pan-y;cursor:grab;user-select:none}
+.ig-visor:active{cursor:grabbing}
+.ig-trilho{display:flex;transition:transform .35s ease}
+.ig-trilho img{flex:0 0 100%;pointer-events:none}
+.ig-seta{position:absolute;bottom:0;width:30px;height:30px;padding:0;border:1px solid var(--mogno);border-radius:50%;background:transparent;color:var(--mogno);display:grid;place-items:center;cursor:pointer;transition:opacity .2s ease,background .2s ease,color .2s ease}
+.ig-seta svg{width:18px;height:18px}
+.ig-seta:hover{background:var(--mogno);color:var(--papel)}
+.ig-seta:disabled{opacity:0;pointer-events:none}
+.ig-seta.ant{right:38px}.ig-seta.prox{right:0}
+@media (max-width:759px){.ig-visor{padding-bottom:36px}.ig-seta{width:28px;height:28px}.ig-seta svg{width:16px;height:16px}.ig-seta.ant{right:36px}}
+/* a tela já traz o próprio contador "1/6" no canto; este é o mesmo número para leitor de tela */
+.ig-conta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bt-contorno{margin-top:28px;border-color:var(--mogno);color:var(--mogno);background:transparent}
+.bt-contorno:hover{background:var(--mogno);color:var(--papel)}
+@media (prefers-reduced-motion:reduce){.ig-trilho{transition:none}}
