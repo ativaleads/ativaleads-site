@@ -12,7 +12,7 @@
 @font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/barlow-500.woff2) format('woff2')}
 @font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/barlow-600.woff2) format('woff2')}
 @font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/barlow-condensed-700.woff2) format('woff2')}
-:root{--fundo:#ede3cf;--texto:#4a2a16;--creme:#dfcfae;--cartao:#f8f2e5;--linha:#cbb894;--escuro:#2b1a10;--escuro-texto:#fff;--acento:#e8b77a;--acento-t:#8f4519;--alerta:#b3261e;--ruim:#b3261e;--bom:#2e7d32;--medio:#9a5b00;--f-titulo:'Barlow Condensed',system-ui,sans-serif;--f-texto:'Barlow',system-ui,sans-serif;--f-rotulo:'Barlow Condensed',system-ui,sans-serif;--f-pergunta:'Barlow',system-ui,sans-serif;--peso-titulo:700;--rotulo-peso:700;--peso-pergunta:500}
+:root{--fundo:#ffffff;--texto:#14212b;--creme:#f3f4f1;--cartao:#ffffff;--linha:#dfe5e0;--escuro:#007a3f;--escuro-texto:#ffffff;--acento:#ffffff;--acento-t:#007a3f;--alerta:#b3261e;--ruim:#b3261e;--bom:#007a3f;--medio:#b85a00;--f-titulo:'Barlow Condensed',system-ui,sans-serif;--f-texto:'Barlow',system-ui,sans-serif;--f-rotulo:'Barlow Condensed',system-ui,sans-serif;--f-pergunta:'Barlow',system-ui,sans-serif;--peso-titulo:700;--rotulo-peso:700;--peso-pergunta:500}
 :root{
 --verde:#007A3F;
 --t1:clamp(30px,min(9.4vw,6.6svh),68px);
@@ -35,7 +35,7 @@ p,ul,ol{margin:0}
 p{text-wrap:pretty}
 .m{white-space:nowrap}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.ap-topo{background:var(--verde);color:#fff;display:flex;align-items:center;gap:6px 24px;padding:8px var(--lado);flex-wrap:wrap}
+.ap-topo{border-bottom:1px solid rgba(255,255,255,.22);background:var(--verde);color:#fff;display:flex;align-items:center;gap:6px 24px;padding:8px var(--lado);flex-wrap:wrap}
 .ap-marca{background:var(--verde);flex:none;line-height:0}
 .ap-marca a{display:block}
 .ap-marca img{width:150px;height:auto}
@@ -294,6 +294,7 @@ p{text-wrap:pretty}
 .js .tela-midia .ap-midia{flex:1 1 auto;min-height:0;container-type:size}
 .js .ap-fig img{--alt-img:min(calc(100cqh - var(--leg,0px)),calc((100cqw - var(--gap,14px)*(var(--n,1) - 1) - var(--moldura,0px)) / var(--soma,1)))}
 .js .tela-fim{padding-bottom:0}
+.tela-fim[data-fundo="escuro"] .rodape-padrao{border-top:1px solid rgba(255,255,255,.25)}
 .js .tela-fim .rodape-padrao{flex:none;margin:clamp(10px,2svh,24px) calc(var(--lado)*-1) 0}
 @media (min-width:860px){
 .js .tela.lado .ap-miolo{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:100%;align-items:center;gap:56px;height:100%}
