@@ -376,11 +376,11 @@ p{text-wrap:pretty}
 .ap-regra{gap:6px}
 }
 .ap-controle{display:none}
-.js body{height:100vh;height:100svh;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.js body{height:100vh;height:100svh;height:100dvh;display:flex;flex-direction:column;overflow-x:clip}
 .js .ap-topo,.js .ap-controle{flex:none}
 .js .ap-palco{flex:1 1 auto;min-height:0;overflow:clip}
 .js .ap-trilho{position:relative;height:100%}
-.js .tela{position:absolute;inset:0;width:100%;height:100%;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;display:flex;flex-direction:column;justify-content:safe center;padding:clamp(12px,2.6svh,44px) var(--lado);visibility:hidden}
+.js .tela{position:absolute;inset:0;width:100%;height:100%;overflow-x:hidden;overflow-y:auto;overscroll-behavior-x:contain;scrollbar-width:none;display:flex;flex-direction:column;justify-content:safe center;padding:clamp(12px,2.6svh,44px) var(--lado);visibility:hidden}
 .js .tela.ap-vis{visibility:visible;z-index:1}
 .js .tela.ap-cima{z-index:2}
 .js .tela::-webkit-scrollbar{display:none}
@@ -617,7 +617,7 @@ p{text-wrap:pretty}
 <section class="tela t-lista" id="11" data-tela="11" data-fundo="claro" data-etapas="2" aria-label="Tela 11 de 15" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Feito para esta conversa</p>
-<h2 class="ap-e" style="--i:1">Uma amostra do que a Martinelli vai receber.</h2>
+<h2 class="ap-e" style="--i:1">Isto a Martinelli já recebeu.</h2>
 <ul class="ap-itens quatro" style="--colunas:4">
 <li class="ap-item ap-e" style="--i:2" data-e="1"><span class="ap-rot">Site</span><h3>A primeira tela do site novo</h3><p>Com nota 100 no PageSpeed do Google.</p><span></span></li>
 <li class="ap-item ap-e" style="--i:3" data-e="1"><span class="ap-rot">Marca</span><h3>3 caminhos de logo</h3><p>Cada um em fundo claro, escuro e na madeira.</p><span></span></li>
@@ -666,8 +666,8 @@ p{text-wrap:pretty}
 <section class="tela tela-fim" id="15" data-tela="15" data-fundo="escuro" aria-label="Tela 15 de 15" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Madeireira Martinelli</p>
-<h2 class="ap-e" style="--i:1">Faz sentido para a Martinelli?</h2>
-<p class="ap-texto ap-e" style="--i:2">Site no ar, Google em dia e redes com rotina, com relatório semanal. Agora, os valores: a implantação e os três pacotes mensais.</p>
+<h2 class="ap-e" style="--i:1">Quer a Martinelli na cotação?</h2>
+<p class="ap-texto ap-e" style="--i:2">Quem compra madeira cota em várias lojas, e hoje quem aparece no Google é a Avanço, a Bom Sucesso e a Morumbi. Do site ao relatório semanal, a gente cuida de tudo. Da sua parte, é só decidir por onde começar.</p>
 </div>
 <footer class="rodape-padrao"><div class="rodape-padrao-fim"><a href="https://ativaleads.com.br/ativaleads/" aria-label="Ativaleads"><img src="img/ativaleads-2026-branco-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a><div class="rodape-padrao-textos"><p class="rodape-padrao-prop">Proposta para Madeireira Martinelli · novembro de 2026</p><p class="rodape-padrao-legal"><span>Ativaleads Consultoria em Marketing Digital LTDA</span><span class="sep"> · </span><span>CNPJ 52.788.441/0001-01</span><span class="sep"> · </span><span>São Paulo/SP</span></p></div></div></footer>
 </section>
