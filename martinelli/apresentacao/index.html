@@ -910,7 +910,7 @@ para.classList.add("ap-entrou");
 para.scrollTop = 0;
 poeEtapa(para, frente ? 0 : nEt(para), false);
 telas.forEach(function(t){ if (t !== para && t !== de) esconde(t); t.inert = t !== para; t.setAttribute("aria-hidden", t === para ? "false" : "true"); });
-if (!de || semAnimar || reduz.matches) { if (de) esconde(de); mostra(para); if (!de && !semAnimar && !reduz.matches) entrou(para, 150); }
+if (!de || semAnimar || reduz.matches) { if (de) esconde(de); mostra(para); }
 else {
 ocupado = true;
 var fim = function(){ ocupado = false; marca(); };
