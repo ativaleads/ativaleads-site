@@ -274,7 +274,7 @@ p{text-wrap:pretty}
 .ap-preco-sub{font-size:var(--tn);margin-top:4px}
 .ap-preco-cond{font-size:calc(var(--tx)*.95);line-height:1.4;margin-top:clamp(6px,1.4svh,16px);padding-top:clamp(6px,1.4svh,14px);border-top:1px solid rgba(255,255,255,.3)}
 .ap-bloco{background:var(--cartao);border:1px solid var(--linha);border-radius:8px;padding:clamp(10px,1.8svh,20px) 16px;display:grid;grid-template-rows:auto auto 1fr;align-content:start}
-.ap-bloco h3{font-size:var(--t3)}
+.ap-bloco h3,.tela .ap-bloco h2.ap-ct{font-size:var(--t3);line-height:1.08;max-width:none;color:inherit;letter-spacing:var(--titulo-espaco,0)}
 .ap-bloco-sub{font-size:var(--tn);margin:2px 0 clamp(6px,1.2svh,12px)}
 .tela:not([data-fundo="escuro"]) .ap-bloco-sub{color:var(--texto-2,var(--texto))}
 @media (min-width:860px){
@@ -543,8 +543,8 @@ p{text-wrap:pretty}
 <p class="ap-pergunta ap-e" style="--i:1">Quanto custa começar?</p>
 <h1 class="ap-h2 ap-e" style="--i:2">Uma vez só: relatório, site, perfis e Google.</h1>
 <div class="ap-preco">
-<div class="ap-bloco" data-e="1"><h3>Relatório estratégico</h3><p class="ap-bloco-sub">apresentado em reunião</p><ul class="ap-checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Diagnóstico do site, das redes e do Google</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Concorrência e onde há espaço</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Metas para 3, 6 e 12 meses</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Plano dos primeiros 90 dias</span></li></ul></div>
-<div class="ap-bloco" data-e="2"><h3>Site, perfis e Google</h3><p class="ap-bloco-sub">incluído na implantação</p><ul class="ap-checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Site de volta no endereço de sempre</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Sessão de fotos profissional</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Google, Instagram e Facebook repaginados</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>CRM com a origem de cada orçamento</span></li></ul></div>
+<div class="ap-bloco" data-e="1"><h2 class="ap-ct" data-conferir-ignora="alinhamento" data-motivo="título de cartão em coluna, não de seção">Relatório estratégico</h2><p class="ap-bloco-sub">apresentado em reunião</p><ul class="ap-checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Diagnóstico do site, das redes e do Google</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Concorrência e onde há espaço</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Metas para 3, 6 e 12 meses</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Plano dos primeiros 90 dias</span></li></ul></div>
+<div class="ap-bloco" data-e="2"><h2 class="ap-ct" data-conferir-ignora="alinhamento" data-motivo="título de cartão em coluna, não de seção">Site, perfis e Google</h2><p class="ap-bloco-sub">incluído na implantação</p><ul class="ap-checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Site de volta no endereço de sempre</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Sessão de fotos profissional</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Google, Instagram e Facebook repaginados</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>CRM com a origem de cada orçamento</span></li></ul></div>
 <div class="ap-preco-cartao" data-e="3"><p class="ap-preco-rot">Implantação</p><p class="ap-preco-valor"><b>R$ 4.997</b></p><p class="ap-preco-sub">valor único</p><p class="ap-preco-cond">No Pix, em 3x sem juros ou em até 18x no cartão.</p></div>
 <div class="ap-prazo" data-e="4"><span class="ap-pz-pto">Fotos e aprovação do material</span><span class="ap-pz-linha"><i></i><b>até 15 dias</b></span><span class="ap-pz-pto fim">Implantação pronta</span></div>
 </div>
@@ -691,7 +691,7 @@ var revela = {
 "t-preco": function(t, els){
 els.forEach(function(el){
 if (el.classList.contains("ap-bloco")) {
-entra(el, 0, 40, 800); entra(el.querySelector("h3"), 120, 16, 700); entra(el.querySelector(".ap-bloco-sub"), 220, 10, 600);
+entra(el, 0, 40, 800); entra(el.querySelector("h2, h3"), 120, 16, 700); entra(el.querySelector(".ap-bloco-sub"), 220, 10, 600);
 [].forEach.call(el.querySelectorAll(".ap-checks li"), function(li, k){ entra(li, 330 + k * 110, 14, 600);
 var u = li.querySelector("use"); if (u) u.animate([{ strokeDashoffset: 20 }, { strokeDashoffset: 0 }], { duration: 380, delay: 470 + k * 110, easing: "ease-out", fill: "backwards" }); });
 } else if (el.classList.contains("ap-preco-cartao")) {
