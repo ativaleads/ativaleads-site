@@ -913,6 +913,7 @@ function rolaAte(t, alvo){
 var tr = t.getBoundingClientRect(), r = alvo.getBoundingClientRect(), pe = Math.min(tr.bottom, ctl ? ctl.getBoundingClientRect().top : innerHeight);
 var modo = reduz.matches ? "auto" : "smooth";
 if (r.bottom > pe - 8) t.scrollBy({ top: Math.min(r.top - tr.top - 12, r.bottom - pe + 24), behavior: modo });
+else if (alvo.matches("h1, h2") && t.scrollTop > 0) t.scrollTo({ top: 0, behavior: modo });
 else if (r.top < tr.top + 8) t.scrollBy({ top: r.top - tr.top - 12, behavior: modo });
 }
 function botoes(){ if (i < 0) return; var t = telas[i], tot = nEt(t), e = et(t), fimDe = i === n - 1 && e >= tot;
