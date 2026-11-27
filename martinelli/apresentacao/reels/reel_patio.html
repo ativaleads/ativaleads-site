@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reel do pátio · Madeireira Martinelli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@500;600;700&family=Zilla+Slab:wght@600;700&display=swap">
+<style>
+/* Reel de exemplo "do pátio à sua obra" (S88, 27/11). Palco 1080 × 1920 escalado para caber; laço de 24 s.
+   ?t=ms congela no instante para conferir. Movimento só com transform, opacity e stroke-dashoffset (Web Animations).
+   Com prefers-reduced-motion: cenas trocam por corte, cada uma já pronta. */
+:root{--nogueira:#2b1a10;--nogueira2:#1f120a;--mogno:#4a2a16;--cambara:#a8582a;--cambara-t:#8f4519;--mel:#e8b77a;--mel2:#d79a55;--areia:#dfcfae;--papel:#ede3cf;--linha:#cbb894;--cartao:#f8f2e5;--cinza:#6a5644;--zap:#1f8f4e}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--nogueira2)}
+body{font-family:'Barlow',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+#palco{position:fixed;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;overflow:hidden;color:#fff;background:var(--nogueira2)}
+.fundo{position:absolute;inset:-60px;background:linear-gradient(rgba(31,18,10,.8),rgba(31,18,10,.9)),url(madeira.webp) center/cover}
+.cena{position:absolute;inset:0;opacity:0}
+.fr{position:absolute;left:84px;right:84px;top:180px;margin:0;font:700 108px/1.04 'Zilla Slab',Georgia,serif;letter-spacing:-.012em;color:#fff;text-shadow:0 4px 26px rgba(0,0,0,.5)}
+em{font-style:normal;color:var(--mel)}
+.ilu{position:absolute;left:0;width:1080px;overflow:visible}
+.ilu .roda,.ilu .dia,.ilu .selo5,.ilu .po{transform-box:fill-box;transform-origin:center}
+.ex{position:absolute;z-index:9;top:60px;right:60px;font:700 30px/1 'Barlow Condensed',sans-serif;letter-spacing:.2em;color:var(--mel);border:3px solid var(--mel);padding:12px 14px 11px 18px;border-radius:6px;background:rgba(31,18,10,.55)}
+/* pé: faixa nogueira com borda mel; o logo chega como carimbo e desce para cá */
+.pe{position:absolute;z-index:5;left:0;right:0;bottom:0;height:220px;background:var(--nogueira2);border-top:6px solid var(--mel)}
+.marca{position:absolute;z-index:6;left:343px;top:1750px;width:394px;height:132px;color:var(--mel)}
+.marca svg{position:relative;display:block;width:100%;height:100%;overflow:visible}
+.moldura{position:absolute;inset:-34px -40px;border:5px solid var(--mel);border-radius:18px;background:rgba(31,18,10,.78);box-shadow:0 0 0 3px rgba(31,18,10,.6),0 30px 50px -20px #000;opacity:0}
+.moldura::after{content:'';position:absolute;inset:9px;border:2px solid var(--mel);border-radius:11px;opacity:.7}
+
+/* cena 2: celular */
+.celw{position:absolute;left:250px;top:470px;width:580px;height:1160px}
+.cel{width:100%;height:100%;border-radius:80px;background:#140b06;padding:20px;box-shadow:0 60px 90px -40px #000,inset 0 0 0 3px #4a2a16,inset 0 0 0 9px #1f120a}
+.tela{position:relative;height:100%;border-radius:62px;overflow:hidden;background:#efe6d4;display:flex;flex-direction:column}
+.st{height:66px;background:#3d2312;position:relative;flex:none}
+.st::after{content:'';position:absolute;left:50%;top:16px;width:150px;height:36px;margin-left:-75px;border-radius:20px;background:#140b06}
+.zt{height:132px;flex:none;background:var(--mogno);display:flex;align-items:center;gap:20px;padding:0 30px 0 18px}
+.zt .av{position:relative;width:88px;height:88px;border-radius:50%;background:var(--nogueira2);display:grid;place-items:center;color:var(--mel);flex:none;box-shadow:0 0 0 3px rgba(232,183,122,.35)}
+.zt .av::after{content:'';position:absolute;right:2px;bottom:4px;width:20px;height:20px;border-radius:50%;background:#3fbf6f;border:3px solid var(--mogno)}
+.zt .ic{margin-left:auto;display:flex;gap:34px;color:var(--papel)}
+.chat{flex:1;padding:26px 24px;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;background-color:#efe6d4;background-image:radial-gradient(rgba(74,42,22,.1) 3px,transparent 3.6px),radial-gradient(rgba(74,42,22,.06) 2px,transparent 2.6px);background-size:56px 56px,56px 56px;background-position:0 0,28px 28px}
+.verde{align-self:flex-end;width:440px;background:#d9fdd3;border-radius:30px;border-top-right-radius:8px;padding:12px 12px 10px;box-shadow:0 4px 4px rgba(31,18,10,.14);transform-origin:100% 100%}
+.verde .img{display:block;width:100%;height:auto;border-radius:20px}
+.verde .tk{position:relative;height:30px;margin-top:6px}
+.verde .tk svg{position:absolute;right:8px;top:0;width:44px;height:30px}
+.dig{align-self:flex-start;background:#fff;border-radius:30px;border-top-left-radius:8px;padding:28px 32px;display:flex;gap:14px;box-shadow:0 4px 4px rgba(31,18,10,.12)}
+.dig i{width:20px;height:20px;border-radius:50%;background:var(--cinza)}
+.barra{height:124px;flex:none;display:flex;align-items:center;gap:16px;padding:0 20px 8px;background:#e4d7bf}
+.barra .campo{flex:1;height:78px;border-radius:40px;background:#fff;display:flex;align-items:center;padding:0 24px;color:#a08a63}
+.barra .mic{width:84px;height:84px;border-radius:50%;background:var(--zap);display:grid;place-items:center;color:#fff;flex:none}
+
+/* cena 3: etiquetas das pilhas */
+.etqw{position:absolute;top:1496px}
+.etq{display:inline-block;position:relative;font:700 48px/1 'Barlow Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mogno);background:var(--mel);padding:22px 76px 19px 30px;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 50%,calc(100% - 36px) 100%,0 100%);transform-origin:12px 50%;box-shadow:inset 0 -6px 0 rgba(143,69,25,.25)}
+.etq::after{content:'';position:absolute;right:46px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--nogueira)}
+
+/* cena 4: conferência */
+.lista{position:absolute;left:84px;right:84px;top:440px;background:var(--cartao);border-radius:30px;border-left:16px solid var(--cambara);padding:34px 48px;box-shadow:0 40px 70px -36px rgba(0,0,0,.95)}
+.item{display:flex;align-items:center;gap:42px;height:132px;font:700 86px/1 'Zilla Slab',Georgia,serif;color:var(--mogno);letter-spacing:-.01em}
+.item+.item{border-top:3px dashed var(--linha)}
+.caixa{position:relative;width:92px;height:92px;flex:none;border:7px solid var(--mogno);border-radius:16px;background:#fff}
+.caixa svg{position:absolute;left:-8px;top:-30px;width:124px;height:124px;overflow:visible}
+.ck{fill:none;stroke:var(--cambara);stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1}
+.cam{position:absolute;overflow:visible}
+
+/* cena 5: calendário */
+.calw{position:absolute;left:250px;top:440px;width:580px;height:600px;transform:rotate(-2deg)}
+.calw svg{display:block;width:100%;height:100%;overflow:visible}
+.risco{fill:none;stroke:#a08a63;stroke-width:6;stroke-linecap:round;stroke-dasharray:1 1}
+.circ{fill:none;stroke:var(--cambara);stroke-width:9;stroke-linecap:round;stroke-dasharray:1 1}
+.ok{fill:none;stroke:var(--mogno);stroke-width:13;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1}
+
+/* cena 6: fecho */
+.s6 .fr{top:210px;font-size:124px}
+.ctaw{position:absolute;left:0;right:0;top:1300px;display:flex;justify-content:center}
+.cta{display:inline-flex;align-items:center;gap:22px;background:var(--zap);color:#fff;border-radius:999px;padding:30px 52px 30px 40px;font:700 56px/1 'Barlow',sans-serif;box-shadow:0 0 0 6px rgba(232,183,122,.9),0 30px 50px -20px #000}
+.cta svg{width:68px;height:68px;flex:none}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mA" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter" stroke-miterlimit="6"><polyline points="8,52 60,10 112,52"/><path d="M22,106 V58 L41,84 L60,58 V106 M60,58 L79,84 L98,58 V106"/></g></symbol>
+    <symbol id="lockA" viewBox="0 0 531 178"><use href="#mA" x="10" y="12" width="120" height="120"/><g fill="currentColor"><text x="150.333" y="38.667" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="32" letter-spacing="25.815">MADEIREIRA</text><text x="149.667" y="117" font-family="'Zilla Slab',Rockwell,Georgia,serif" font-weight="700" font-size="82">Martinelli</text><text x="14.667" y="158" font-family="'Barlow Condensed','Bahnschrift','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="8.657">CONFIANÇA E HONESTIDADE, SEMPRE</text></g></symbol>
+    <filter id="tinta" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/></filter>
+    <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/><path fill="currentColor" d="M8.6 6.9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3l-1.8-.9c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.2-.3 0-.4.1-.5l.4-.4.3-.4c.1-.2 0-.3 0-.4l-.8-2.1z"/></symbol>
+    <linearGradient id="vidro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1e6d4"/><stop offset="1" stop-color="#a99067"/></linearGradient>
+    <linearGradient id="chao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2414"/><stop offset="1" stop-color="#1f120a" stop-opacity="0"/></linearGradient>
+    <radialGradient id="brilho" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  </defs>
+</svg>
+
+<div id="palco">
+  <div class="fundo"></div>
+
+  <!-- 0–4 s · pátio -->
+  <section class="cena s1">
+    <h2 class="fr">Sua madeira, <em>do pátio à sua obra.</em></h2>
+    <svg class="ilu" id="patio" style="top:700px;height:1100px" viewBox="0 0 1080 1100" aria-hidden="true"></svg>
+  </section>
+
+  <!-- 4–7 s · pedido -->
+  <section class="cena s2">
+    <h2 class="fr">Pedido pelo <em>WhatsApp.</em></h2>
+    <div class="celw"><div class="cel"><div class="tela">
+      <div class="st"></div>
+      <div class="zt">
+        <svg width="30" height="44" viewBox="0 0 30 44" aria-hidden="true"><path d="M24 6 8 22l16 16" fill="none" stroke="#ede3cf" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="av"><svg width="54" height="54" viewBox="0 0 120 120"><use href="#mA"/></svg></span>
+        <span class="ic"><svg width="56" height="40" viewBox="0 0 56 40" aria-hidden="true"><rect x="3" y="6" width="34" height="28" rx="7" fill="none" stroke="currentColor" stroke-width="5"/><path d="M38 16 53 8v24l-15-8z" fill="currentColor"/></svg><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span>
+      </div>
+      <div class="chat">
+        <div class="verde"><svg class="img" id="pedido" viewBox="0 0 400 260" aria-hidden="true"></svg><div class="tk"><svg viewBox="0 0 44 30" aria-hidden="true"><path d="M3 16l7 7L24 7M18 21l3 3L39 6" fill="none" stroke="#8a9a8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="azul" viewBox="0 0 44 30" aria-hidden="true"><path d="M3 16l7 7L24 7M18 21l3 3L39 6" fill="none" stroke="#2fa6de" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="dig"><i></i><i></i><i></i></div>
+      </div>
+      <div class="barra"><span class="campo"><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.3" fill="currentColor"/><circle cx="15" cy="10" r="1.3" fill="currentColor"/><path d="M8 14.5c1 1.5 2.4 2.2 4 2.2s3-.7 4-2.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="mic"><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+    </div></div></div>
+  </section>
+
+  <!-- 7–10 s · separação -->
+  <section class="cena s3">
+    <h2 class="fr">As peças separadas <em>no pátio.</em></h2>
+    <svg class="ilu" id="pilhas" style="top:520px;height:1080px" viewBox="0 0 1080 1080" aria-hidden="true"></svg>
+    <div class="etqw" style="left:70px"><span class="etq">Cambará</span></div>
+    <div class="etqw" style="left:590px"><span class="etq">Cedrinho</span></div>
+  </section>
+
+  <!-- 10–14 s · descarga -->
+  <section class="cena s4">
+    <h2 class="fr" style="top:200px">Na descarga, <em>confira:</em></h2>
+    <div class="lista">
+      <div class="item"><span class="caixa"><svg viewBox="0 0 124 124" aria-hidden="true"><path class="ck" pathLength="1" d="M16 66 46 96 110 18"/></svg></span>espécie,</div>
+      <div class="item"><span class="caixa"><svg viewBox="0 0 124 124" aria-hidden="true"><path class="ck" pathLength="1" d="M16 66 46 96 110 18"/></svg></span>bitola e</div>
+      <div class="item"><span class="caixa"><svg viewBox="0 0 124 124" aria-hidden="true"><path class="ck" pathLength="1" d="M16 66 46 96 110 18"/></svg></span>quantidade.</div>
+    </div>
+    <svg class="ilu" id="desc" style="top:1110px;height:560px" viewBox="0 0 1080 560" aria-hidden="true"></svg>
+  </section>
+
+  <!-- 14–20 s · entrega -->
+  <section class="cena s5">
+    <h2 class="fr">Entrega no <em>dia combinado.</em></h2>
+    <div class="calw"><svg id="cal" viewBox="0 0 600 620" aria-hidden="true"></svg></div>
+    <svg class="ilu" id="rua" style="top:1040px;height:560px" viewBox="0 0 1080 560" aria-hidden="true"></svg>
+  </section>
+
+  <!-- 20–24 s · fecho -->
+  <section class="cena s6">
+    <h2 class="fr">Do pátio à sua obra, <em>no dia combinado.</em></h2>
+    <svg class="ilu" id="fecho" style="top:700px;height:500px" viewBox="0 0 1080 500" aria-hidden="true"></svg>
+    <div class="ctaw"><span class="cta"><svg aria-hidden="true"><use href="#zap"/></svg>Peça o seu orçamento</span></div>
+  </section>
+
+  <div class="pe"></div>
+  <div class="marca"><div class="moldura"></div><svg viewBox="0 0 531 178" role="img" aria-label="Madeireira Martinelli"><use href="#lockA" filter="url(#tinta)"/></svg></div>
+  <span class="ex">EXEMPLO</span>
+</div>
+
+<script>
+(function(){
+var T = 24000, RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var EZ = 'cubic-bezier(.2,.8,.2,1)';
+function $(s, r){ return (r || document).querySelector(s); }
+function $$(s, r){ return [].slice.call((r || document).querySelectorAll(s)); }
+/* pseudo-aleatório com semente: o desenho sai igual a cada abertura */
+var sd = 11; function R(){ sd = (sd * 16807) % 2147483647; return (sd - 1) / 2147483646; }
+function f1(n){ return Math.round(n * 10) / 10; }
+
+/* ---------- linha do tempo: A(el, [[segundo, {props}, easing?], ...]) dentro do laço de 24 s ---------- */
+function A(el, fr, cena){
+  if (!el || (RM && !cena)) return;
+  var k = [];
+  if (fr[0][0] > 0) k.push(Object.assign({ offset: 0, easing: 'linear' }, fr[0][1]));
+  fr.forEach(function(f){ k.push(Object.assign({ offset: Math.min(1, f[0] / 24), easing: f[2] || EZ }, f[1])); });
+  if (fr[fr.length - 1][0] < 24) k.push(Object.assign({ offset: 1 }, fr[fr.length - 1][1]));
+  el.animate(k, { duration: T, iterations: Infinity });
+}
+/* movimento curto e contínuo (pontos, pulso): some com reduced-motion */
+function L(el, k, dur, atraso){ if (!el || RM) return; el.animate(k, { duration: dur, iterations: Infinity, delay: atraso || 0, easing: 'ease-in-out' }); }
+
+/* ---------- desenho: madeira com veio ---------- */
+function veio(x, y, w, h, cor){
+  var s = '', n = Math.max(2, Math.round(h / 11));
+  for (var i = 0; i < n; i++){
+    var yy = y + h * (i + .5) / n + (R() - .5) * 3, d = 'M' + x + ' ' + f1(yy);
+    for (var xx = x; xx < x + w - 1; xx += 120){ var x2 = Math.min(x + w, xx + 120); d += ' Q' + f1((xx + x2) / 2) + ' ' + f1(yy + (R() - .5) * 6) + ' ' + f1(x2) + ' ' + f1(yy + (R() - .5) * 2); }
+    s += '<path d="' + d + '" stroke="' + cor + '" stroke-width="' + f1(1.2 + R() * 1.4) + '" fill="none" opacity="' + (.22 + R() * .22).toFixed(2) + '"/>';
+  }
+  if (w > 240){ /* desenho de catedral */
+    var cx = x + w * (.18 + R() * .64), b = y + h * .9;
+    for (var k = 0; k < 3; k++){ var ww = 46 + k * 30, hh = h * (.9 + k * .25); s += '<path d="M' + f1(cx - ww) + ' ' + f1(b) + ' Q' + f1(cx + (R() - .5) * 20) + ' ' + f1(b - hh) + ' ' + f1(cx + ww) + ' ' + f1(b) + '" stroke="' + cor + '" stroke-width="1.8" fill="none" opacity=".3"/>'; }
+  }
+  if (w > 300 && R() > .4){ var nx = x + w * (.1 + R() * .8), ny = y + h * (.35 + R() * .3); s += '<ellipse cx="' + f1(nx) + '" cy="' + f1(ny) + '" rx="10" ry="' + f1(h * .16) + '" fill="' + cor + '" opacity=".45"/><ellipse cx="' + f1(nx) + '" cy="' + f1(ny) + '" rx="17" ry="' + f1(h * .26) + '" fill="none" stroke="' + cor + '" stroke-width="1.5" opacity=".35"/>'; }
+  return s;
+}
+/* tábua vista de lado, com tampo e topo (anéis) */
+function prancha(x, y, w, h, d, c){
+  var dy = d * .7, s = '';
+  s += '<polygon points="' + [x, y, x + d, y - dy, x + w + d, y - dy, x + w, y].join(' ') + '" fill="' + c.t + '"/>';
+  s += veio(x + d * .5, y - dy * .85, w, dy * .7, c.l).replace(/opacity="[\d.]+"/g, 'opacity=".18"');
+  s += '<polygon points="' + [x + w, y, x + w + d, y - dy, x + w + d, y + h - dy, x + w, y + h].join(' ') + '" fill="' + c.e + '"/>';
+  var ex = x + w + d * .5, ey = y + h * .5 - dy * .5;
+  for (var r = 1; r <= 3; r++) s += '<ellipse cx="' + f1(ex) + '" cy="' + f1(ey + h * .25) + '" rx="' + f1(d * .14 * r) + '" ry="' + f1(h * .16 * r) + '" fill="none" stroke="' + c.l + '" stroke-width="1.3" opacity=".45"/>';
+  s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + c.f + '"/>';
+  s += veio(x, y, w, h, c.l);
+  s += '<rect x="' + x + '" y="' + (y + h - 4) + '" width="' + w + '" height="4" fill="#1f120a" opacity=".3"/>';
+  return s;
+}
+/* peça vista de topo (caibro, ripa): face com anéis, tampo e lateral */
+var nclip = 0;
+function topo(x, y, w, h, d, c, ripa){
+  var dy = d * .74, id = 'cp' + (nclip++), s = '';
+  s += '<polygon points="' + [x, y, x + d, y - dy, x + w + d, y - dy, x + w, y].join(' ') + '" fill="' + c.t + '"/>';
+  s += '<polygon points="' + [x + w, y, x + w + d, y - dy, x + w + d, y + h - dy, x + w, y + h].join(' ') + '" fill="' + c.s + '"/>';
+  s += '<clipPath id="' + id + '"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="2"/></clipPath>';
+  s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="2" fill="' + c.f + '"/>';
+  var px = x + w * (ripa ? R() : (.3 + R() * .4)), py = ripa ? y + h + 14 + R() * 40 : y + h * (.3 + R() * .4), g = '<g clip-path="url(#' + id + ')">';
+  for (var r = ripa ? 18 : 5; r < 150; r += 7 + R() * 4) g += '<circle cx="' + f1(px) + '" cy="' + f1(py) + '" r="' + f1(r) + '" fill="none" stroke="' + c.l + '" stroke-width="' + f1(1.1 + R()) + '" opacity=".42"/>';
+  if (!ripa) g += '<path d="M' + f1(px) + ' ' + f1(py) + ' L' + f1(px + (R() - .5) * w) + ' ' + f1(y + (R() > .5 ? 0 : h)) + '" stroke="' + c.l + '" stroke-width="2" opacity=".5"/>';
+  g += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="url(#brilho)"/></g>';
+  s += g + '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="2" fill="none" stroke="#1f120a" stroke-opacity=".35" stroke-width="2"/>';
+  return s;
+}
+var PAL = [
+  { f: '#a8582a', t: '#c98448', e: '#7d4220', l: '#3a1f0e' },
+  { f: '#b5652f', t: '#d4924f', e: '#86481f', l: '#3a1f0e' },
+  { f: '#9a4f25', t: '#bd7a40', e: '#71391a', l: '#2b1a10' },
+  { f: '#b97039', t: '#d89a5a', e: '#8a5027', l: '#3a1f0e' }
+];
+
+/* caminhão de lado (carroceria de madeira, carga de tábuas) */
+function caminhao(){
+  var s = '<ellipse cx="450" cy="416" rx="440" ry="16" fill="#000" opacity=".42"/><g class="corpo">';
+  s += '<rect x="26" y="328" width="836" height="22" rx="4" fill="#1f120a"/>';
+  s += '<path d="M138 352a62 62 0 0 1 124 0zM248 352a62 62 0 0 1 124 0zM678 352a62 62 0 0 1 124 0z" fill="#140b06"/>';
+  /* carga */
+  var cores = ['#c27a3e', '#b5652f', '#cf8d4f', '#a8582a'];
+  for (var c = 0; c < 4; c++){
+    var yy = 206 - c * 26, x0 = 12 + (c % 2) * 8;
+    s += '<rect x="' + x0 + '" y="' + yy + '" width="' + (600 - x0) + '" height="24" fill="' + cores[c] + '"/>' + veio(x0, yy, 600 - x0, 24, '#3a1f0e');
+    s += '<rect x="' + x0 + '" y="' + yy + '" width="' + (600 - x0) + '" height="2" fill="#f1e6d4" opacity=".25"/>';
+    for (var e = 0; e < 1; e++){ s += '<rect x="' + x0 + '" y="' + yy + '" width="18" height="24" fill="#d9a46c"/><ellipse cx="' + (x0 + 9) + '" cy="' + (yy + 20) + '" rx="6" ry="9" fill="none" stroke="#7d4220" stroke-width="1.4"/><ellipse cx="' + (x0 + 9) + '" cy="' + (yy + 20) + '" rx="11" ry="15" fill="none" stroke="#7d4220" stroke-width="1.2" opacity=".6"/>'; }
+  }
+  /* carroceria: tábuas laterais e fueiros */
+  var lat = ['#6b3c1d', '#5e3419', '#73431f'];
+  for (var b = 0; b < 3; b++){ var by = 232 + b * 26; s += '<rect x="26" y="' + by + '" width="594" height="24" fill="' + lat[b] + '"/>' + veio(26, by, 594, 24, '#1f120a'); }
+  s += '<rect x="26" y="306" width="594" height="24" fill="#2b1a10"/>';
+  [26, 170, 316, 462, 604].forEach(function(px){ s += '<rect x="' + px + '" y="196" width="16" height="134" rx="2" fill="#2b1a10"/><circle cx="' + (px + 8) + '" cy="246" r="3" fill="#e8b77a"/><circle cx="' + (px + 8) + '" cy="296" r="3" fill="#e8b77a"/>'; });
+  /* cintas da carga */
+  [120, 400].forEach(function(px){ s += '<rect x="' + px + '" y="124" width="12" height="108" fill="#e8b77a"/><rect x="' + (px - 3) + '" y="214" width="18" height="12" rx="2" fill="#4a2a16"/>'; });
+  /* cabine */
+  s += '<path d="M626 336V152q0-24 24-24h112q20 0 30 18l40 72 28 10q14 5 14 20v88z" fill="#a8582a"/>';
+  s += '<path d="M626 292h248v44H626z" fill="#8f4519"/>';
+  s += '<path d="M650 152h102q12 0 18 10l34 62H650z" fill="url(#vidro)"/><path d="M668 160l-6 54M690 160l-14 54" stroke="#fff" stroke-width="5" opacity=".35"/>';
+  s += '<path d="M642 236h150v62H642z" fill="none" stroke="#6b2f10" stroke-width="3"/><rect x="702" y="246" width="34" height="8" rx="4" fill="#2b1a10"/>';
+  s += '<rect x="676" y="116" width="66" height="12" rx="5" fill="#e8b77a"/>';
+  s += '<path d="M626 168h-10v48h10" fill="#2b1a10"/><rect x="606" y="164" width="12" height="56" rx="4" fill="#2b1a10"/>';
+  s += '<rect x="858" y="250" width="16" height="24" rx="5" fill="#f3d39b"/><rect x="842" y="312" width="40" height="26" rx="6" fill="#2b1a10"/><path d="M846 290h28" stroke="#6b2f10" stroke-width="3"/>';
+  s += '<path d="M600 336v26" stroke="#2b1a10" stroke-width="10"/><path d="M20 336h18v34H20z" fill="#140b06"/>';
+  s += '</g>';
+  [200, 310, 740].forEach(function(cx){
+    s += '<g transform="translate(' + cx + ' 372)"><g class="roda"><circle r="46" fill="#140b06"/><circle r="39" fill="none" stroke="#2b1a10" stroke-width="3"/><circle r="25" fill="#cbb894"/><circle r="25" fill="none" stroke="#a08a63" stroke-width="3"/><circle r="9" fill="#4a2a16"/>';
+    for (var i = 0; i < 5; i++){ var a = i * Math.PI * 2 / 5; s += '<circle cx="' + f1(Math.cos(a) * 16) + '" cy="' + f1(Math.sin(a) * 16) + '" r="3" fill="#6a5644"/>'; }
+    s += '<rect x="-3" y="-44" width="6" height="10" rx="2" fill="#e8b77a"/></g></g>';
+  });
+  return s;
+}
+function poeira(x, y){ var s = ''; for (var i = 0; i < 3; i++) s += '<circle class="po" cx="' + (x - i * 26) + '" cy="' + (y - i * 6) + '" r="' + (18 + i * 6) + '" fill="#cbb894" opacity="0"/>'; return s; }
+
+/* ---------- cena 1: pátio ---------- */
+(function(){
+  var s = '<rect x="0" y="880" width="1080" height="220" fill="url(#chao)"/>';
+  /* galpão ao fundo */
+  var f = '<g opacity=".5"><path d="M30 160 540 40 1050 160Z" fill="none" stroke="#5e3419" stroke-width="16" stroke-linejoin="round"/>';
+  [160, 300, 440, 640, 780, 920].forEach(function(x){ var yt = 160 - (x < 540 ? (x - 30) : (1050 - x)) * 120 / 510; f += '<path d="M' + x + ' 160V' + f1(yt) + '" stroke="#5e3419" stroke-width="10"/>'; });
+  f += '<rect x="40" y="160" width="22" height="730" fill="#3d2312"/><rect x="1018" y="160" width="22" height="730" fill="#3d2312"/>';
+  [330, 480, 630].forEach(function(by){ f += '<rect x="90" y="' + by + '" width="900" height="14" fill="#3d2312"/>'; });
+  for (var r = 0; r < 3; r++) for (var c = 0; c < 17; c++){
+    for (var k = 0; k < 2; k++){ var x = 104 + c * 52, y = 300 + r * 150 - k * 24 + (c % 3) * 0; if (R() < .12) continue;
+      f += '<rect x="' + x + '" y="' + (y + 6) + '" width="46" height="20" rx="2" fill="' + ['#7d4220', '#8a5027', '#71391a'][(c + k + r) % 3] + '"/><ellipse cx="' + (x + 23) + '" cy="' + (y + 22) + '" rx="13" ry="7" fill="none" stroke="#2b1a10" stroke-width="1.4" opacity=".7"/>'; }
+  }
+  f += '</g>';
+  s += f;
+  /* tábua puxada da prateleira (move ao fundo) */
+  s += '<g class="fundo-tb" opacity=".55">' + prancha(120, 404, 520, 20, 0, PAL[2]) + '</g>';
+  /* dormentes */
+  [150, 480, 810].forEach(function(x){ s += '<rect x="' + x + '" y="860" width="80" height="34" rx="3" fill="#2b1a10"/><rect x="' + x + '" y="860" width="80" height="6" fill="#5e3419"/>'; });
+  s += '<g class="trem">';
+  for (var i = 0; i < 7; i++){
+    var y = 860 - (i + 1) * 58, g = '<g class="tb">';
+    if (i > 0) [170, 500, 830].forEach(function(x){ g += '<rect x="' + x + '" y="' + (y + 46) + '" width="40" height="12" fill="#1f120a"/>'; });
+    g += prancha(110, y, 790, 46, 34, PAL[(i * 3 + 1) % 4]) + '</g>';
+    s += g;
+  }
+  s += '</g>';
+  $('#patio').innerHTML = s;
+})();
+
+/* ---------- cena 2: imagem do pedido (esboço das peças) ---------- */
+$('#pedido').innerHTML = (function(){
+  var s = '<rect width="400" height="260" rx="18" fill="#4a2a16"/><g fill="none" stroke="#e8b77a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">';
+  for (var r = 0; r < 2; r++) for (var c = 0; c < 2; c++){ var x = 34 + c * 58, y = 66 + r * 64; s += '<rect x="' + x + '" y="' + y + '" width="50" height="56" rx="3"/><circle cx="' + (x + 24) + '" cy="' + (y + 30) + '" r="8" stroke-width="2.5"/><circle cx="' + (x + 24) + '" cy="' + (y + 30) + '" r="17" stroke-width="2"/>'; }
+  for (var k = 0; k < 6; k++) s += '<rect x="174" y="' + (64 + k * 22) + '" width="70" height="16" rx="2" stroke="#ede3cf" stroke-width="3"/>';
+  s += '<path d="M276 196 L356 60 L376 72 L296 208 Z"/><path d="M290 172l52-88M300 186l52-88" stroke-width="2" opacity=".6"/>';
+  s += '</g><path d="M30 226h340" stroke="#e8b77a" stroke-width="2" stroke-dasharray="8 8" opacity=".5"/>';
+  return s;
+})();
+
+/* ---------- cena 3: pilhas ---------- */
+(function(){
+  var s = '<rect x="0" y="950" width="1080" height="130" fill="url(#chao)"/>';
+  s += '<g opacity=".45"><path d="M20 120 540 20 1060 120Z" fill="none" stroke="#5e3419" stroke-width="14" stroke-linejoin="round"/><rect x="34" y="120" width="20" height="830" fill="#3d2312"/><rect x="1026" y="120" width="20" height="830" fill="#3d2312"/><rect x="530" y="120" width="20" height="830" fill="#3d2312"/></g>';
+  [[60, 450], [580, 390]].forEach(function(p){ s += '<rect x="' + p[0] + '" y="936" width="' + p[1] + '" height="24" rx="3" fill="#2b1a10"/><rect x="' + p[0] + '" y="936" width="' + p[1] + '" height="5" fill="#5e3419"/>'; });
+  var cab = { f: '#a65a2c', t: '#c98448', s: '#7d4220', l: '#3a1f0e' }, rip = { f: '#d29a68', t: '#e5b886', s: '#a8714a', l: '#7d4a26' };
+  var gL = '', gR = '';
+  for (var r = 0; r < 5; r++) for (var c = 0; c < 4; c++){ var x = 70 + c * 98, y = 936 - (r + 1) * 112 + 8; gL += '<g class="pz pzL">' + topo(x, y, 92, 104, 44, cab, false) + '</g>'; }
+  for (var r2 = 0; r2 < 10; r2++) for (var c2 = 0; c2 < 3; c2++){ var x2 = 590 + c2 * 110, y2 = 936 - (r2 + 1) * 40 + 6; gR += '<g class="pz pzR">' + topo(x2, y2, 104, 34, 44, rip, true) + '</g>'; }
+  $('#pilhas').innerHTML = s + gL + gR;
+})();
+
+/* ---------- cena 4: caminhão chega para a descarga ---------- */
+$('#desc').innerHTML = '<rect x="0" y="470" width="1080" height="90" fill="#140b06" opacity=".75"/><path d="M0 520H1080" stroke="#e8b77a" stroke-width="6" stroke-dasharray="54 42" opacity=".45"/><rect x="0" y="456" width="1080" height="14" fill="#6a5644"/>'
+  + '<g transform="translate(70 66) scale(1.02)"><g class="cam4">' + caminhao() + '</g></g>' + poeira(240, 470);
+
+/* ---------- cena 5: calendário e obra ---------- */
+(function(){
+  var s = '<rect x="0" y="30" width="600" height="580" rx="30" fill="#f8f2e5"/><path d="M0 60a30 30 0 0 1 30-30h540a30 30 0 0 1 30 30v112H0z" fill="#a8582a"/><rect x="0" y="160" width="600" height="12" fill="#8f4519"/>';
+  [150, 450].forEach(function(x){ s += '<circle cx="' + x + '" cy="72" r="14" fill="#6b2f10"/><rect x="' + (x - 11) + '" y="0" width="22" height="78" rx="11" fill="#2b1a10"/><rect x="' + (x - 5) + '" y="6" width="5" height="60" rx="2" fill="#6a5644"/>'; });
+  s += '<g opacity=".85">' + veio(30, 92, 540, 50, '#6b2f10') + '</g>';
+  for (var d = 0; d < 7; d++) s += '<circle cx="' + (84 + d * 72) + '" cy="200" r="6" fill="' + (d > 4 ? '#a8582a' : '#a08a63') + '"/>';
+  var marc = 17, cx0 = 0, cy0 = 0;
+  for (var i = 0; i < 35; i++){
+    var c = i % 7, r = Math.floor(i / 7), x = 54 + c * 72, y = 226 + r * 72;
+    if (i === marc){ cx0 = x + 30; cy0 = y + 30;
+      s += '<g class="dia"><rect x="' + x + '" y="' + y + '" width="60" height="60" rx="11" fill="#e8b77a" stroke="#d79a55" stroke-width="2"/><g transform="translate(' + (x + 9) + ' ' + (y + 19) + ')" fill="#4a2a16"><rect x="0" y="0" width="26" height="16" rx="2"/><path d="M27 4h8l6 6v6H27z"/><circle cx="8" cy="19" r="4.5"/><circle cx="33" cy="19" r="4.5"/></g></g>';
+    } else s += '<rect x="' + x + '" y="' + y + '" width="60" height="60" rx="11" fill="#ede3cf" stroke="#cbb894" stroke-width="2"/>';
+    if (i < marc) s += '<path class="risco" pathLength="1" d="M' + (x + 16) + ' ' + (y + 44) + 'L' + (x + 44) + ' ' + (y + 16) + '"/>';
+  }
+  s += '<path class="circ" pathLength="1" d="M' + (cx0 - 8) + ' ' + (cy0 - 46) + 'C' + (cx0 + 40) + ' ' + (cy0 - 50) + ' ' + (cx0 + 56) + ' ' + (cy0 - 18) + ' ' + (cx0 + 52) + ' ' + (cy0 + 8) + 'S' + (cx0 + 22) + ' ' + (cy0 + 50) + ' ' + (cx0 - 8) + ' ' + (cy0 + 46) + 'S' + (cx0 - 56) + ' ' + (cy0 + 20) + ' ' + (cx0 - 52) + ' ' + (cy0 - 8) + 'S' + (cx0 - 30) + ' ' + (cy0 - 52) + ' ' + (cx0 + 14) + ' ' + (cy0 - 50) + '"/>';
+  $('#cal').innerHTML = s;
+
+  /* rua e obra */
+  var o = '<rect x="0" y="470" width="1080" height="90" fill="#140b06" opacity=".75"/><path d="M0 520H1080" stroke="#e8b77a" stroke-width="6" stroke-dasharray="54 42" opacity=".45"/><rect x="0" y="456" width="1080" height="14" fill="#6a5644"/>';
+  o += '<rect x="660" y="282" width="370" height="174" fill="#cbb894"/>';
+  for (var by = 282; by < 456; by += 29){ o += '<path d="M660 ' + by + 'H1030" stroke="#a8916a" stroke-width="2.5"/>'; for (var bx = 660 + ((by - 282) / 29 % 2) * 30; bx < 1030; bx += 60) o += '<path d="M' + bx + ' ' + by + 'v29" stroke="#a8916a" stroke-width="2.5"/>'; }
+  o += '<rect x="716" y="336" width="74" height="120" fill="#1f120a"/><rect x="864" y="318" width="110" height="74" fill="#1f120a"/><rect x="856" y="306" width="126" height="12" fill="#8f4519"/><rect x="708" y="324" width="90" height="12" fill="#8f4519"/>';
+  o += '<rect x="640" y="268" width="410" height="18" fill="#8f4519"/>' + veio(640, 268, 410, 18, '#3a1f0e');
+  o += '<g stroke-linecap="round"><path d="M650 272 845 128 1040 272" fill="none" stroke="#a8582a" stroke-width="16" stroke-linejoin="round"/><path d="M845 132V270M845 270 760 210M845 270 930 210" stroke="#b5652f" stroke-width="11"/>';
+  for (var k = 1; k < 6; k++){ var t = k / 6; o += '<path d="M' + f1(650 + 195 * t) + ' ' + f1(272 - 144 * t - 10) + 'h-0" stroke="#e8b77a" stroke-width="12"/><path d="M' + f1(1040 - 195 * t) + ' ' + f1(272 - 144 * t - 10) + 'h0" stroke="#e8b77a" stroke-width="12"/>'; }
+  o += '</g>';
+  o += '<g transform="translate(26 236) scale(.68)"><g class="cam5">' + caminhao() + '</g></g>' + poeira(170, 500);
+  o += '<g class="selo5"><circle cx="845" cy="62" r="50" fill="#e8b77a" stroke="#1f120a" stroke-width="5"/><path class="ok" pathLength="1" d="M820 62l18 18 32-36"/></g>';
+  $('#rua').innerHTML = o;
+})();
+
+/* ---------- cena 6: fecho ---------- */
+$('#fecho').innerHTML = '<rect x="40" y="430" width="1000" height="14" rx="7" fill="#6a5644" opacity=".7"/><g transform="translate(90 20) scale(1)"><g class="cam6">' + caminhao() + '</g></g>';
+
+/* =================== tempos =================== */
+/* fundo de madeira sempre em movimento lento */
+A($('.fundo'), [[0, { transform: 'scale(1)' }, 'linear'], [12, { transform: 'scale(1.08) translate(-18px,10px)' }, 'linear'], [24, { transform: 'scale(1)' }]]);
+
+/* cenas: entram, ficam, saem (com reduced-motion viram cortes, já prontas) */
+var cenas = [[0, 4], [4, 7], [7, 10], [10, 14], [14, 20], [20, 24]];
+cenas.forEach(function(c, i){
+  var el = $('.s' + (i + 1)), a = c[0], b = c[1];
+  if (i === 0) A(el, [[0, { opacity: 1 }], [b - .15, { opacity: 1 }, 'linear'], [b, { opacity: 0 }]], true);
+  else if (RM) A(el, [[0, { opacity: 0 }, 'steps(1,end)'], [a, { opacity: 1 }, 'steps(1,end)'], [b, { opacity: 0 }, 'linear']], true);
+  else A(el, [[a, { opacity: 0 }, 'linear'], [a + .2, { opacity: 1 }, 'linear'], [b - (i === 5 ? .25 : .15), { opacity: 1 }, 'linear'], [b, { opacity: 0 }]], true);
+  /* frase: entra rápido e fica PARADA até o fim da cena */
+  A($('.fr', el), [[a + (i === 0 ? .1 : 0), { opacity: 0, transform: 'translateY(46px)' }], [a + (i === 0 ? .5 : .35), { opacity: 1, transform: 'none' }]]);
+});
+
+/* pé e logo: o logo bate como carimbo no pátio e desce para o pé */
+A($('.pe'), [[0, { opacity: 1, transform: 'translateY(240px)' }], [3.5, { opacity: 1, transform: 'translateY(240px)' }, 'cubic-bezier(.3,.7,.3,1)'], [4.0, { opacity: 1, transform: 'none' }], [23.8, { opacity: 1, transform: 'none' }, 'linear'], [24, { opacity: 0, transform: 'none' }]]);
+A($('.marca'), [
+  [0, { opacity: 0, transform: 'translateY(-470px) scale(4.2) rotate(-18deg)' }],
+  [1.1, { opacity: 0, transform: 'translateY(-470px) scale(4.2) rotate(-18deg)' }, 'cubic-bezier(.55,0,.9,.4)'],
+  [1.42, { opacity: 1, transform: 'translateY(-470px) scale(1.38) rotate(-7deg)' }, 'ease-out'],
+  [1.52, { opacity: 1, transform: 'translateY(-470px) scale(1.45) rotate(-6deg)' }],
+  [3.45, { opacity: 1, transform: 'translateY(-470px) scale(1.45) rotate(-6deg)' }, 'cubic-bezier(.5,0,.2,1)'],
+  [4.05, { opacity: 1, transform: 'none' }],
+  [23.8, { opacity: 1, transform: 'none' }, 'linear'], [24, { opacity: 0, transform: 'none' }]
+]);
+A($('.moldura'), [[1.1, { opacity: 0 }], [1.42, { opacity: 1 }], [3.45, { opacity: 1 }], [3.85, { opacity: 0 }]]);
+
+/* cena 1: tábuas deslizam para a pilha */
+$$('#patio .tb').forEach(function(g, i){
+  var t0 = i < 6 ? .05 + i * .17 : 2.0;
+  A(g, [[t0, { transform: 'translateX(1150px)' }, 'cubic-bezier(.25,.75,.3,1)'], [t0 + .55, { transform: 'translateX(-8px)' }, 'ease-out'], [t0 + .68, { transform: 'none' }]]);
+});
+A($('#patio .trem'), [[1.4, { transform: 'none' }, 'linear'], [1.47, { transform: 'translate(-9px,5px)' }, 'linear'], [1.55, { transform: 'translate(8px,-5px)' }, 'linear'], [1.63, { transform: 'translate(-4px,2px)' }, 'linear'], [1.72, { transform: 'none' }]]);
+A($('#patio .fundo-tb'), [[2.3, { transform: 'none' }, 'cubic-bezier(.4,0,.2,1)'], [3.6, { transform: 'translateX(-150px)' }], [3.9, { transform: 'translateX(-150px)' }]]);
+
+/* cena 2: celular, mensagem chega, lida, resposta digitando */
+A($('.celw'), [[4.0, { opacity: 0, transform: 'translateY(180px)' }], [4.45, { opacity: 1, transform: 'none' }], [6.95, { opacity: 1, transform: 'translateY(-18px)' }, 'linear']]);
+A($('.cel'), [[4.62, { transform: 'none' }, 'linear'], [4.7, { transform: 'rotate(-2deg)' }, 'linear'], [4.78, { transform: 'rotate(2deg)' }, 'linear'], [4.86, { transform: 'rotate(-1deg)' }, 'linear'], [4.94, { transform: 'none' }]]);
+A($('.verde'), [[4.55, { opacity: 0, transform: 'translateY(70px) scale(.55)' }], [4.85, { opacity: 1, transform: 'scale(1.03)' }, 'ease-out'], [4.97, { opacity: 1, transform: 'none' }]]);
+A($('.verde .azul'), [[5.3, { opacity: 0 }], [5.5, { opacity: 1 }]]);
+A($('.dig'), [[5.65, { opacity: 0, transform: 'translateY(30px) scale(.8)' }], [5.95, { opacity: 1, transform: 'none' }]]);
+$$('.dig i').forEach(function(p, i){ L(p, [{ transform: 'translateY(0)', opacity: .4 }, { transform: 'translateY(-12px)', opacity: 1 }, { transform: 'translateY(0)', opacity: .4 }], 900, i * 150); });
+
+/* cena 3: peças caem e empilham; etiquetas penduradas */
+$$('#pilhas .pzL').forEach(function(g, i){ var t = 7.05 + i * .036; A(g, [[t, { opacity: 0, transform: 'translateY(-240px)' }, 'cubic-bezier(.55,0,1,.5)'], [t + .22, { opacity: 1, transform: 'translateY(5px)' }, 'ease-out'], [t + .3, { opacity: 1, transform: 'none' }]]); });
+$$('#pilhas .pzR').forEach(function(g, i){ var t = 7.1 + i * .026; A(g, [[t, { opacity: 0, transform: 'translateY(-200px)' }, 'cubic-bezier(.55,0,1,.5)'], [t + .2, { opacity: 1, transform: 'translateY(4px)' }, 'ease-out'], [t + .27, { opacity: 1, transform: 'none' }]]); });
+$$('.etqw').forEach(function(w, i){ var t = 7.55 + i * .1; A(w, [[t, { opacity: 0, transform: 'translateX(-90px)' }], [t + .28, { opacity: 1, transform: 'none' }]]); });
+$$('.etq').forEach(function(e, i){ L(e, [{ transform: 'rotate(0deg)' }, { transform: 'rotate(-2.5deg)' }, { transform: 'rotate(0deg)' }], 1800, i * 400); });
+
+/* cena 4: caminhão entra, para; os ✓ se desenham um a um */
+A($('.s4 .lista'), [[10.0, { opacity: 0, transform: 'translateY(50px)' }], [10.35, { opacity: 1, transform: 'none' }]]);
+A($('.cam4'), [[10.1, { transform: 'translateX(-1150px)' }, 'cubic-bezier(.3,.6,.35,1)'], [11.3, { transform: 'none' }]]);
+$$('.cam4 .roda').forEach(function(w){ A(w, [[10.1, { transform: 'rotate(-1400deg)' }, 'cubic-bezier(.3,.6,.35,1)'], [11.3, { transform: 'none' }]]); });
+A($('.cam4 .corpo'), [[11.2, { transform: 'none' }, 'ease-out'], [11.34, { transform: 'translateY(6px)' }, 'ease-in-out'], [11.52, { transform: 'translateY(-2px)' }, 'ease-in-out'], [11.66, { transform: 'none' }]]);
+$$('#desc .po').forEach(function(p, i){ A(p, [[11.15 + i * .05, { opacity: 0, transform: 'scale(.4)' }], [11.4 + i * .05, { opacity: .45, transform: 'scale(1)' }, 'ease-out'], [12.1 + i * .05, { opacity: 0, transform: 'translate(-40px,-20px) scale(1.6)' }]]); });
+$$('.s4 .ck').forEach(function(p, i){ var t = 11.35 + i * .6; A(p, [[t, { strokeDashoffset: 1 }, 'cubic-bezier(.6,0,.3,1)'], [t + .45, { strokeDashoffset: 0 }]]); });
+$$('.s4 .caixa').forEach(function(b, i){ var t = 11.65 + i * .6; A(b, [[t, { transform: 'none' }, 'ease-out'], [t + .1, { transform: 'scale(1.12)' }, 'ease-in-out'], [t + .25, { transform: 'none' }]]); });
+
+/* cena 5: dias passam, o dia combinado é marcado; caminhão para na obra */
+A($('.calw'), [[14.0, { opacity: 0, transform: 'translateY(90px) rotate(-7deg)' }], [14.45, { opacity: 1, transform: 'rotate(-2deg)' }], [19.9, { opacity: 1, transform: 'rotate(-1deg)' }, 'linear']]);
+$$('#cal .risco').forEach(function(p, i){ var t = 14.4 + i * .036; A(p, [[t, { strokeDashoffset: 1 }, 'ease-out'], [t + .16, { strokeDashoffset: 0 }]]); });
+A($('#cal .dia'), [[15.0, { transform: 'scale(.3)', opacity: 0 }, 'cubic-bezier(.3,1.6,.5,1)'], [15.3, { transform: 'none', opacity: 1 }]]);
+A($('#cal .circ'), [[15.2, { strokeDashoffset: 1 }, 'cubic-bezier(.5,0,.3,1)'], [15.9, { strokeDashoffset: 0 }]]);
+A($('.cam5'), [[15.9, { transform: 'translateX(-1050px)' }, 'cubic-bezier(.3,.6,.35,1)'], [17.4, { transform: 'none' }]]);
+$$('.cam5 .roda').forEach(function(w){ A(w, [[15.9, { transform: 'rotate(-1310deg)' }, 'cubic-bezier(.3,.6,.35,1)'], [17.4, { transform: 'none' }]]); });
+A($('.cam5 .corpo'), [[17.3, { transform: 'none' }, 'ease-out'], [17.44, { transform: 'translateY(6px)' }, 'ease-in-out'], [17.62, { transform: 'translateY(-2px)' }, 'ease-in-out'], [17.76, { transform: 'none' }]]);
+$$('#rua .po').forEach(function(p, i){ A(p, [[17.25 + i * .05, { opacity: 0, transform: 'scale(.4)' }], [17.5 + i * .05, { opacity: .45, transform: 'scale(1)' }, 'ease-out'], [18.2 + i * .05, { opacity: 0, transform: 'translate(-40px,-20px) scale(1.6)' }]]); });
+A($('.selo5'), [[17.8, { opacity: 0, transform: 'scale(.3)' }, 'cubic-bezier(.3,1.6,.5,1)'], [18.1, { opacity: 1, transform: 'none' }], [19.9, { opacity: 1, transform: 'translateY(-8px)' }, 'linear']]);
+A($('.selo5 .ok'), [[18.05, { strokeDashoffset: 1 }, 'ease-out'], [18.45, { strokeDashoffset: 0 }]]);
+
+/* cena 6: caminhão carregado estaciona; chamada pulsa */
+A($('.cam6'), [[20.1, { transform: 'translateX(-1100px)' }, 'cubic-bezier(.3,.6,.35,1)'], [21.2, { transform: 'none' }]]);
+$$('.cam6 .roda').forEach(function(w){ A(w, [[20.1, { transform: 'rotate(-1370deg)' }, 'cubic-bezier(.3,.6,.35,1)'], [21.2, { transform: 'none' }]]); });
+A($('.cam6 .corpo'), [[21.1, { transform: 'none' }, 'ease-out'], [21.24, { transform: 'translateY(6px)' }, 'ease-in-out'], [21.42, { transform: 'translateY(-2px)' }, 'ease-in-out'], [21.56, { transform: 'none' }]]);
+A($('.ctaw'), [[20.6, { opacity: 0, transform: 'translateY(60px) scale(.85)' }], [21.0, { opacity: 1, transform: 'none' }]]);
+L($('.cta'), [{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }], 1200);
+L($('.cta svg'), [{ transform: 'rotate(0deg)' }, { transform: 'rotate(-12deg)' }, { transform: 'rotate(10deg)' }, { transform: 'rotate(0deg)' }], 1200);
+
+/* palco escalado para caber na janela */
+function ajusta(){ var k = Math.min(innerWidth / 1080, innerHeight / 1920), p = document.getElementById('palco');
+  p.style.transform = 'translate(' + ((innerWidth - 1080 * k) / 2) + 'px,' + ((innerHeight - 1920 * k) / 2) + 'px) scale(' + k + ')'; }
+addEventListener('resize', ajusta); ajusta();
+/* conferência: ?t=ms congela a animação naquele instante */
+var tq = new URLSearchParams(location.search).get('t');
+if (tq !== null) document.fonts.ready.then(function(){ document.getAnimations().forEach(function(x){ x.pause(); x.currentTime = +tq; }); });
+})();
+</script>
+</body>
+</html>

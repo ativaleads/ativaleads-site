@@ -88,10 +88,13 @@ p{text-wrap:pretty}
 .ap-item h3{margin-top:10px}
 .ap-item p{margin-top:8px}
 }
-.ap-passos{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:8px;counter-reset:p}
-.ap-passos li{counter-increment:p;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:10px 0;border-top:1px solid var(--linha)}
-.ap-passos li::before{content:counter(p);display:grid;place-items:center;width:1.9em;height:1.9em;border-radius:50%;background:var(--escuro);color:var(--escuro-texto);font:var(--peso-titulo) calc(var(--tx)*1.05)/1 var(--f-titulo)}
-@media (min-width:860px){.ap-passos{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 32px;margin-top:calc(var(--respiro)*1.4)}.ap-passos li{padding:16px 0}}
+.ap-passos{list-style:none;padding:0;margin-top:var(--respiro);display:grid;gap:0}
+.ap-passos li{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;align-items:start;padding:0 0 clamp(12px,2.4svh,22px)}
+.ap-ps-n{position:relative;z-index:1;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--escuro);color:var(--escuro-texto);font:var(--peso-titulo) calc(var(--tx)*1.05)/1 var(--f-titulo)}
+.ap-ps-t{padding-top:8px}
+.ap-passos li:not(:last-child)::after{content:"";position:absolute;left:18.5px;top:44px;bottom:4px;width:3px;border-radius:2px;background:var(--acento-t);opacity:.45;transform-origin:top center}
+.js .ap-passos li:has(+ li[data-e]:not(.ap-revelado))::after{opacity:0}
+@media (min-width:860px){.ap-passos{grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:0 24px;margin-top:calc(var(--respiro)*1.6)}.ap-passos li{grid-template-columns:none;gap:14px;padding:0}.ap-ps-t{padding-top:0}.ap-passos li:not(:last-child)::after{left:48px;right:-16px;top:18.5px;bottom:auto;width:auto;height:3px;transform-origin:left center}}
 .ap-midia{display:flex;justify-content:center;align-items:flex-start;gap:var(--gap,14px);margin-top:var(--respiro)}
 .ap-fig{margin:0;display:flex;flex-direction:column;align-items:center;min-width:0}
 .ap-fig img{width:auto;height:var(--alt-img,360px);aspect-ratio:var(--ar);object-fit:contain;border-radius:6px;box-shadow:0 18px 36px -22px rgba(0,0,0,.55)}
@@ -124,6 +127,22 @@ p{text-wrap:pretty}
 .js .t-identidade[data-meio] .ap-id-fundos{gap:12px;flex-wrap:nowrap}
 .js .t-identidade[data-meio] .ap-id-fundos img{height:min(34svh,calc((min(100vw - 2 * var(--lado),1080px) - 24px) / var(--soma,6.6)))}
 @media (max-width:859px){.js .t-identidade[data-meio] .ap-id-fundos{flex-direction:column;align-items:flex-start;gap:8px}.js .t-identidade[data-meio] .ap-id-fundos img{height:auto;width:min(100%,calc((100svh - 330px) / 3 * 2.1))}}
+.ap-visor{position:relative;overflow:hidden;touch-action:pan-y pinch-zoom;border-radius:6px}
+.ap-visor img:not(:first-child){display:none}
+.js .ap-visor img:not(:first-child){display:block;position:absolute;inset:0;width:100%;height:100%}
+.js .ap-visor img{will-change:transform;user-select:none;-webkit-user-select:none}
+.ap-visor:focus-visible{outline:3px solid var(--acento-t);outline-offset:3px}
+.ap-visor-ctl{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px;min-height:28px}
+.ap-visor-seta{display:grid;place-items:center;width:28px;height:28px;padding:0;border-radius:50%;border:1px solid var(--texto);background:transparent;color:var(--texto);cursor:pointer;transition:transform .12s ease-out}
+.ap-visor-seta:active{transform:scale(.92)}
+.ap-visor-seta svg{width:14px;height:14px}
+.ap-visor-seta[aria-hidden="true"]{visibility:hidden}
+[data-fundo="escuro"] .ap-visor-seta{border-color:#fff;color:#fff}
+.ap-visor-pontos{display:flex;gap:4px}
+.ap-visor-pontos i{width:6px;height:6px;border-radius:50%;background:var(--linha)}
+.ap-visor-pontos i.atual{background:var(--acento-t)}
+.js .ap-midia:has(.ap-visor-ctl) .ap-fig:not(:has(.ap-visor-ctl)) figcaption{margin-top:42px}
+@media (max-width:859px){.ap-visor-ctl{gap:3px}.ap-visor-seta{width:24px;height:24px}.ap-visor-pontos{gap:3px}.ap-visor-pontos i{width:5px;height:5px}}
 .ap-fecho{position:relative;margin:calc(var(--respiro)*1.1) 0 0;background:var(--escuro-fundo,var(--escuro));color:#fff;border-radius:10px;padding:clamp(16px,3.2svh,36px) 26px;font:var(--peso-titulo) calc(var(--t2)*.95)/1.1 var(--f-titulo);letter-spacing:var(--titulo-espaco,0);text-wrap:balance}
 .ap-fecho-linha{position:absolute;left:0;right:0;top:0;height:3px;border-radius:10px 10px 0 0;background:rgba(255,255,255,.6);transform-origin:left center}
 .ap-fecho-txt{display:block}
@@ -376,7 +395,7 @@ p{text-wrap:pretty}
 .js .t-barras.lado .ap-miolo{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
 .t-barras.lado .ap-barras{margin-top:0}
 .ap-vel{grid-template-columns:repeat(var(--colunas,2),minmax(0,1fr))}
-.js .tela-midia.lado .ap-midia{height:100%;margin-top:0;width:min(42vw,440px)}
+.js .tela-midia.lado .ap-midia{height:min(100%,70svh);margin-top:0;width:min(42vw,440px);align-items:center;align-self:center}
 .js .tela-midia.lado:has(.ap-disp) .ap-miolo{grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr);gap:40px}
 .js .tela-midia.lado:has(.ap-disp) .ap-midia{width:100%}
 .tela-midia .ap-disp .ap-cel-sobre{width:30%}
@@ -472,7 +491,7 @@ p{text-wrap:pretty}
 <p class="ap-pergunta ap-e" style="--i:1">O que o cliente vê quando procura?</p>
 <h2 class="ap-e" style="--i:2">Quem aparece é a concorrência. O seu nome leva <span style="color:var(--alerta)">ao erro.</span></h2>
 <p class="ap-texto ap-e" style="--i:3">Em madeira para telhado, aparecem Avanço, Bom Sucesso e Morumbi. Pelo nome, o primeiro link leva à página fora do ar.</p>
-<div class="ap-midia" style="--n:3;--soma:1.6024;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 24px + 0px);--moldura:42px">
+<div class="ap-midia" style="--n:3;--soma:1.6024;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 24px + 0px + 0px);--moldura:42px">
 <figure class="ap-fig ap-e" style="--i:4" data-e="1"><div class="ap-cel"><div class="ap-quadro"><img src="img/google_telhado_locais.webp" alt="Print do Google no celular, busca “madeira para telhado são josé dos campos”: no mapa aparecem Avanço Madeiras, Madeireira Bom Sucesso, Morumbi Madeiras e um anúncio; a Martinelli não aparece." width="540" height="1011" draggable="false" style="--ar:540/1011"></div></div><figcaption><b>Telhado</b>Google, 27/11/2026</figcaption></figure>
 <figure class="ap-fig ap-e" style="--i:5" data-e="1"><div class="ap-cel"><div class="ap-quadro"><img src="img/google_nome_resultados.webp" alt="Print do Google no celular, busca “Madeireira Martinelli”: o primeiro resultado, do site madeireiramartinelli.com.br, marcado em vermelho, leva à página fora do ar." width="540" height="1011" draggable="false" style="--ar:540/1011"></div></div><figcaption><b>Pelo nome</b>Google, 27/11/2026</figcaption></figure>
 <figure class="ap-fig ap-e" style="--i:6" data-e="1"><div class="ap-cel"><div class="ap-quadro"><img src="img/wix_hoje_cel_print.webp" alt="O site madeireiramartinelli.com.br aberto no celular em 27/11/2026: página do Wix “Este domínio não está conectado a um site”." width="540" height="1011" draggable="false" style="--ar:540/1011"></div></div><figcaption><b>Clicou no site</b>Site, 27/11/2026</figcaption></figure>
@@ -485,7 +504,7 @@ p{text-wrap:pretty}
 <p class="ap-pergunta ap-e" style="--i:1">O que diz quem já comprou aí?</p>
 <h2 class="ap-e" style="--i:2">Quem compra na Martinelli elogia. O que falta é o cliente achar a madeireira.</h2>
 <p class="ap-texto ap-e" style="--i:3">Preço que ganha a cotação, vendedoras citadas pelo nome e entrega no prazo, nas palavras de quem comprou.</p>
-</div><div class="ap-midia" style="--n:1;--soma:0.7117;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px + 0px);--moldura:0px">
+</div><div class="ap-midia" style="--n:1;--soma:0.7117;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px + 0px + 0px);--moldura:0px">
 <figure class="ap-fig ap-e" style="--i:4" data-e="1"><div class="ap-quadro"><img src="img/google_avaliacoes_tres.webp" alt="Três avaliações de 5 estrelas da Madeireira Martinelli no Google, com o nome de quem avaliou apagado: “Só tenho elogios a eles. Fiz cotação com 4 madeireiras e eles tiveram o melhor preço mesmo com uma madeira mais nobre.” (há 5 anos); “Atendimento nota mil comprei madeira com a vendedora Dayana, foram entregues com agilidade e as madeiras são de alta qualidade.” (há 6 meses); “Excelente atendimento, a Marcella é incrível! Empresa séria e confiável. Entrega no prazo combinado.” (há 4 anos)." width="780" height="1096" draggable="false" style="--ar:780/1096"></div><figcaption><b>Google</b>3 das 39 avaliações de 5 estrelas, 27/11/2026</figcaption></figure>
 </div>
 </div>
@@ -540,7 +559,7 @@ p{text-wrap:pretty}
 <p class="ap-pergunta ap-e" style="--i:1">O cliente reconhece a madeireira só de olhar o perfil?</p>
 <h2 class="ap-e" style="--i:2">A mesma marca, agora modernizada e com cara de madeireira.</h2>
 <p class="ap-texto ap-e" style="--i:3">Três caminhos já desenhados a partir do logo de hoje.</p>
-<div class="ap-id-hoje ap-e" style="--i:4" data-e="1"><span>Hoje</span><img src="img/logo_hoje.webp" alt="Logo de hoje da Madeireira Martinelli: MM vermelho numa moldura de casa e o nome em azul" width="325" height="75" draggable="false"></div>
+<div class="ap-id-hoje ap-e" style="--i:4"><span>Hoje</span><img src="img/logo_hoje.webp" alt="Logo de hoje da Madeireira Martinelli: MM vermelho numa moldura de casa e o nome em azul" width="325" height="75" draggable="false"></div>
 <ul class="ap-id-caminhos">
 <li class="ap-e" style="--i:5" data-e="1"><p><b>Caminho A</b> MM sob o telhado</p><div class="ap-id-fundos" style="--soma:7.647"><img src="img/logo_a_claro.webp" alt="Caminho A, MM sob o telhado, fundo claro" width="420" height="200" draggable="false" loading="lazy"><img src="img/logo_a_escuro.webp" alt="Caminho A, MM sob o telhado, fundo escuro" width="420" height="197" draggable="false" loading="lazy"><img src="img/logo_a_madeira.webp" alt="Caminho A, MM sob o telhado, na madeira" width="420" height="123" draggable="false" loading="lazy"></div></li>
 <li class="ap-e" style="--i:6" data-e="2"><p><b>Caminho B</b> Selo marcado a fogo</p><div class="ap-id-fundos" style="--soma:7.647"><img src="img/logo_b_claro.webp" alt="Caminho B, Selo marcado a fogo, fundo claro" width="420" height="200" draggable="false" loading="lazy"><img src="img/logo_b_escuro.webp" alt="Caminho B, Selo marcado a fogo, fundo escuro" width="420" height="197" draggable="false" loading="lazy"><img src="img/logo_b_madeira.webp" alt="Caminho B, Selo marcado a fogo, na madeira" width="420" height="123" draggable="false" loading="lazy"></div></li>
@@ -554,7 +573,7 @@ p{text-wrap:pretty}
 <p class="ap-pergunta ap-e" style="--i:1">E quando o cliente clicar em “Site”?</p>
 <h2 class="ap-e" style="--i:2">O endereço de sempre volta, feito para o celular.</h2>
 <p class="ap-texto ap-e" style="--i:3">O site novo no computador e no celular: botão do WhatsApp sempre à vista e uma página para cada produto.</p>
-<div class="ap-midia" style="--n:1;--soma:1.6000;--leg:calc(0px + 0px + 64px);--moldura:52px">
+<div class="ap-midia" style="--n:1;--soma:1.6000;--leg:calc(0px + 0px + 64px + 0px);--moldura:52px">
 <figure class="ap-fig ap-disp ap-e" style="--i:4" data-e="1"><div class="ap-nav"><img src="img/capa_pc.webp" alt="Primeira tela do site de exemplo da Madeireira Martinelli no computador." width="960" height="600" draggable="false" style="--ar:960/600"></div><div class="ap-cel ap-cel-sobre"><img src="img/capa_cel.webp" alt="A mesma primeira tela no celular, com “Madeira para telhado, telhas, pergolados e decks.” e o botão de orçamento pelo WhatsApp." width="540" height="994" draggable="false"></div></figure>
 </div>
 </div>
@@ -578,15 +597,16 @@ p{text-wrap:pretty}
 <p class="ap-pergunta ap-e" style="--i:1">Por que o cliente lembraria da Martinelli na hora de comprar?</p>
 <h2 class="ap-e" style="--i:2">Toda semana, um motivo para o cliente lembrar da Martinelli.</h2>
 <p class="ap-texto ap-e" style="--i:3">Obra entregue, checklist da compra, infográfico e vídeo curto.</p>
-<div class="ap-midia" style="--n:2;--soma:1.3625;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px + 0px);--moldura:0px">
-<figure class="ap-fig ap-e" style="--i:4" data-e="1"><div class="ap-quadro"><img src="img/carrossel_caibro.webp" alt="Primeira tela do carrossel de exemplo “Caibro, ripa ou terça: você sabe o que está comprando?”, com 5 perguntas antes de comprar a madeira do telhado." width="540" height="675" draggable="false" loading="lazy" style="--ar:540/675"></div><figcaption><b>Carrossel</b>Caibro, ripa ou terça: você sabe o que está comprando?</figcaption></figure>
-<figure class="ap-fig ap-e" style="--i:5" data-e="1"><div class="ap-quadro" data-reel="reels/reel.html?r=1" data-reel-titulo="Reel de exemplo “Madeira certificada? O Ibama não emite isso. O documento certo é o DOF.”"><img src="img/reel_certificada.webp" alt="Reel de exemplo “Madeira certificada? O Ibama não emite isso. O documento certo é o DOF.”" width="540" height="960" draggable="false" loading="lazy" style="--ar:540/960"></div><figcaption><b>Reel</b>“Madeira certificada”? O Ibama não emite isso.</figcaption></figure>
+<div class="ap-midia" style="--n:3;--soma:2.1625;--leg:calc(var(--tr)*1.25 + var(--tn)*1.35*2 + 18px + 0px + 0px + 34px);--moldura:0px">
+<figure class="ap-fig ap-e" style="--i:4" data-e="1"><div class="ap-quadro"><img src="img/post_dof.webp" alt="Post de exemplo: “Madeira nativa? Exija o DOF.”, com o carimbo madeira nativa com DOF e a frase “É a licença do Ibama que acompanha a madeira até a sua obra.”" width="540" height="675" draggable="false" loading="lazy" style="--ar:540/675"></div><figcaption><b>Post</b>Madeira nativa? Exija o DOF.</figcaption></figure>
+<figure class="ap-fig ap-e" style="--i:5" data-e="1"><div class="ap-quadro ap-visor" data-visor tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel"><img src="img/carrossel_pecas_1.webp" alt="Capa do carrossel de exemplo “Caibro, ripa ou terça: você sabe o que está comprando?”, com o desenho do telhado de madeira; nas telas seguintes, terça, caibro, ripa, o que conferir na entrega e o WhatsApp." width="540" height="675" draggable="false" style="--ar:540/675"><img src="img/carrossel_pecas_2.webp" alt="Capa do carrossel de exemplo “Caibro, ripa ou terça: você sabe o que está comprando?”, com o desenho do telhado de madeira; nas telas seguintes, terça, caibro, ripa, o que conferir na entrega e o WhatsApp. · tela 2 de 6" width="540" height="675" draggable="false" loading="lazy"><img src="img/carrossel_pecas_3.webp" alt="Capa do carrossel de exemplo “Caibro, ripa ou terça: você sabe o que está comprando?”, com o desenho do telhado de madeira; nas telas seguintes, terça, caibro, ripa, o que conferir na entrega e o WhatsApp. · tela 3 de 6" width="540" height="675" draggable="false" loading="lazy"><img src="img/carrossel_pecas_4.webp" alt="Capa do carrossel de exemplo “Caibro, ripa ou terça: você sabe o que está comprando?”, com o desenho do telhado de madeira; nas telas seguintes, terça, caibro, ripa, o que conferir na entrega e o WhatsApp. · tela 4 de 6" width="540" height="675" draggable="false" loading="lazy"><img src="img/carrossel_pecas_5.webp" alt="Capa do carrossel de exemplo “Caibro, ripa ou terça: você sabe o que está comprando?”, com o desenho do telhado de madeira; nas telas seguintes, terça, caibro, ripa, o que conferir na entrega e o WhatsApp. · tela 5 de 6" width="540" height="675" draggable="false" loading="lazy"><img src="img/carrossel_pecas_6.webp" alt="Capa do carrossel de exemplo “Caibro, ripa ou terça: você sabe o que está comprando?”, com o desenho do telhado de madeira; nas telas seguintes, terça, caibro, ripa, o que conferir na entrega e o WhatsApp. · tela 6 de 6" width="540" height="675" draggable="false" loading="lazy"></div><figcaption><b>Carrossel</b>Caibro, ripa ou terça: você sabe o que está comprando?</figcaption></figure>
+<figure class="ap-fig ap-e" style="--i:6" data-e="1"><div class="ap-quadro" data-reel="reels/reel_patio.html" data-reel-titulo="Reel de exemplo “Do pátio à sua obra”: o pedido pelo WhatsApp, as peças separadas no pátio, a conferência na descarga e a entrega no dia combinado."><img src="img/reel_patio.webp" alt="Reel de exemplo “Do pátio à sua obra”: o pedido pelo WhatsApp, as peças separadas no pátio, a conferência na descarga e a entrega no dia combinado." width="540" height="960" draggable="false" loading="lazy" style="--ar:540/960"></div><figcaption><b>Reel</b>Do pátio à sua obra, no dia combinado.</figcaption></figure>
 </div>
 </div>
 </section>
 <section class="tela t-lista" id="11" data-tela="11" data-fundo="claro" data-etapas="2" aria-label="Tela 11 de 15" tabindex="-1">
 <div class="ap-miolo">
-<p class="ap-chapeu ap-e" style="--i:0">Amostra para a Martinelli</p>
+<p class="ap-chapeu ap-e" style="--i:0">Feito para esta conversa</p>
 <h2 class="ap-e" style="--i:1">Uma amostra do que a Martinelli vai receber.</h2>
 <ul class="ap-itens quatro" style="--colunas:4">
 <li class="ap-item ap-e" style="--i:2" data-e="1"><span class="ap-rot">Site</span><h3>A primeira tela do site novo</h3><p>Com nota 100 no PageSpeed do Google.</p><span></span></li>
@@ -604,7 +624,7 @@ p{text-wrap:pretty}
 <ul class="ap-itens numerados quatro" style="--colunas:4">
 <li class="ap-item destaque ap-e" style="--i:2" data-e="1"><span class="ap-rot"><span class="ap-num">01</span></span><h3>Relatório estratégico</h3><p>A estratégia da madeireira: diagnóstico completo, concorrência, metas para 3, 6 e 12 meses e o plano dos primeiros 90 dias.</p><span></span></li>
 <li class="ap-item ap-e" style="--i:3" data-e="1"><span class="ap-rot"><span class="ap-num">02</span></span><h3>Site, fotos e perfis</h3><p>Site de volta com uma página por produto, sessão de fotos profissional, Google, Instagram e Facebook repaginados e CRM com a origem de cada orçamento.</p><span></span></li>
-<li class="ap-item ap-e" style="--i:4" data-e="1"><span class="ap-rot"><span class="ap-num">03</span></span><h3>Redes e Google</h3><p>8 publicações no 1º mês, 12 no 2º e 16 por mês a partir do 3º, 1 vídeo curto por semana e 4 publicações por mês no perfil do Google.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:4" data-e="1"><span class="ap-rot"><span class="ap-num">03</span></span><h3>Redes e Google</h3><p>Por semana: 3 Reels, 2 carrosséis e 3 posts no 1º mês; 3 de cada no 2º; 4 de cada a partir do 3º. No Google, 4 publicações por mês.</p><span></span></li>
 <li class="ap-item ap-e" style="--i:5" data-e="1"><span class="ap-rot"><span class="ap-num">04</span></span><h3>Campanhas</h3><p>No Instagram, no Facebook e no Google Ads, com criativos feitos pela Ativaleads e relatório semanal. A verba é paga pela madeireira direto à Meta e ao Google.</p><span></span></li>
 </ul>
 </div>
@@ -614,22 +634,22 @@ p{text-wrap:pretty}
 <p class="ap-chapeu ap-e" style="--i:0">Antes de decidir</p>
 <h2 class="ap-e" style="--i:1">Pouco muda na rotina, e nada prende a madeireira.</h2>
 <ul class="ap-itens quatro" style="--colunas:4">
-<li class="ap-item ap-e" style="--i:2" data-e="1"><span class="ap-rot">Indicação</span><h3>“Meu cliente vem por indicação.”</h3><p>Quem recebe a indicação e procura o nome encontra 3 links para a página fora do ar entre os 8 primeiros.</p><span></span></li>
-<li class="ap-item ap-e" style="--i:3" data-e="1"><span class="ap-rot">Redes</span><h3>“Já postamos e não deu nada.”</h3><p>Foram 8 posts em 3 semanas e 13 meses parado. A gestão é toda semana, com relatório semanal.</p><span></span></li>
-<li class="ap-item ap-e" style="--i:4" data-e="1"><span class="ap-rot">Tempo</span><h3>“Não tenho tempo para isso.”</h3><p>A Ativaleads faz. Da madeireira: os acessos e a aprovação do material.</p><span></span></li>
-<li class="ap-item ap-e" style="--i:5" data-e="1"><span class="ap-rot">Risco</span><h3>“E se não der certo?”</h3><p>Sem fidelidade. O relatório semanal mostra o que andou, e a madeireira decide se continua.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:2" data-e="1"><span class="ap-rot">Indicação</span><h3>“Meu cliente vem por indicação.”</h3><p>A indicação continua sendo ouro. Só que, se o cliente indicado procurar o nome no Google, o primeiro link abre a página fora do ar.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:3" data-e="1"><span class="ap-rot">Redes</span><h3>“Já postamos e não deu nada.”</h3><p>Faltou rotina, não vontade: foram 8 posts em 3 semanas e depois 13 meses de silêncio. Com a gente é toda semana, e você acompanha tudo no relatório semanal.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:4" data-e="1"><span class="ap-rot">Tempo</span><h3>“Não tenho tempo para isso.”</h3><p>Você cuida da madeireira, a gente cuida do resto. Da sua parte, só os acessos e o “ok” no material.</p><span></span></li>
+<li class="ap-item ap-e" style="--i:5" data-e="1"><span class="ap-rot">Risco</span><h3>“E se não der certo?”</h3><p>Sem fidelidade. Toda semana você vê no relatório o que andou e decide se a gente continua.</p><span></span></li>
 </ul>
 </div>
 </section>
-<section class="tela t-passos" id="14" data-tela="14" data-fundo="claro" data-etapas="1" aria-label="Tela 14 de 15" tabindex="-1">
+<section class="tela t-passos" id="14" data-tela="14" data-fundo="claro" data-etapas="4" aria-label="Tela 14 de 15" tabindex="-1">
 <div class="ap-miolo">
 <p class="ap-chapeu ap-e" style="--i:0">Próximos passos</p>
 <h2 class="ap-e" style="--i:1">Implantação pronta em até 15 dias depois das fotos.</h2>
-<ol class="ap-passos">
-<li class="ap-e" style="--i:2" data-e="1">Conversa para escolher o pacote e por onde começar.</li>
-<li class="ap-e" style="--i:3" data-e="1">Relatório estratégico apresentado em reunião.</li>
-<li class="ap-e" style="--i:4" data-e="1">Site de volta no endereço de sempre e os links do erro corrigidos.</li>
-<li class="ap-e" style="--i:5" data-e="1">Google respondido em dia, CRM ligado e Instagram retomado.</li>
+<ol class="ap-passos" style="--n:4">
+<li class="ap-e" style="--i:2" data-e="1"><span class="ap-ps-n" aria-hidden="true">1</span><span class="ap-ps-t">Conversa para escolher o pacote e por onde começar.</span></li>
+<li class="ap-e" style="--i:3" data-e="2"><span class="ap-ps-n" aria-hidden="true">2</span><span class="ap-ps-t">Relatório estratégico apresentado em reunião.</span></li>
+<li class="ap-e" style="--i:4" data-e="3"><span class="ap-ps-n" aria-hidden="true">3</span><span class="ap-ps-t">Site de volta no endereço de sempre e os links do erro corrigidos.</span></li>
+<li class="ap-e" style="--i:5" data-e="4"><span class="ap-ps-n" aria-hidden="true">4</span><span class="ap-ps-t">Google respondido em dia, CRM ligado e Instagram retomado.</span></li>
 </ol>
 </div>
 </section>
@@ -638,7 +658,7 @@ p{text-wrap:pretty}
 <p class="ap-chapeu ap-e" style="--i:0">Madeireira Martinelli</p>
 <h2 class="ap-e" style="--i:1">Faz sentido para a Martinelli?</h2>
 <p class="ap-texto ap-e" style="--i:2">Site no ar, Google em dia e redes com rotina, com relatório semanal. Agora, os valores: a implantação e os três pacotes mensais.</p>
-<div class="ap-botoes ap-e" style="--i:3"><a class="ap-botao valores" href="../valores/">Ver os valores<svg aria-hidden="true"><use href="#i-prox"/></svg></a><a class="ap-botao pdf segundo" href="../social/Proposta_Ativaleads_Martinelli.pdf" download><svg aria-hidden="true"><use href="#i-baixar"/></svg>Baixar o PDF</a></div>
+<div class="ap-botoes ap-e" style="--i:3"><a class="ap-botao valores" href="../valores/">Ver os valores<svg aria-hidden="true"><use href="#i-prox"/></svg></a></div>
 </div>
 <footer class="rodape-padrao"><div class="rodape-padrao-fim"><a href="https://ativaleads.com.br/ativaleads/" aria-label="Ativaleads"><img src="img/ativaleads-2026-branco-300.webp" alt="Ativaleads" width="300" height="49" loading="lazy"></a><div class="rodape-padrao-textos"><p class="rodape-padrao-prop">Proposta para Madeireira Martinelli · novembro de 2026</p><p class="rodape-padrao-legal"><span>Ativaleads Consultoria em Marketing Digital LTDA</span><span class="sep"> · </span><span>CNPJ 52.788.441/0001-01</span><span class="sep"> · </span><span>São Paulo/SP</span></p></div></div></footer>
 </section>
@@ -802,6 +822,16 @@ entra(el.querySelector("h3"), 120, 14, 650); entra(el.querySelector(".ap-pc-sub"
 if (el.classList.contains("destaque")) combinado(t, el);
 else { heroi(el.querySelector(".ap-pc-valor b"), 300); entra(el.querySelector(".ap-pc-valor small"), 800, 8, 500); checks(el, 420); }
 }
+});
+},
+"t-passos": function(t, els){
+var vertical = !matchMedia("(min-width:860px)").matches;
+els.forEach(function(li){
+var ant = li.previousElementSibling, at = 0;
+if (ant) { try { ant.animate([{ transform: vertical ? "scaleY(0)" : "scaleX(0)", opacity: .45 }, { transform: "none", opacity: .45 }], { pseudoElement: "::after", duration: 600, easing: SUAVE, fill: "backwards" }); } catch (x) {} at = 450; }
+anim(li, [{ opacity: 0 }, { opacity: 1 }], { duration: 200, delay: at });
+anim(li.querySelector(".ap-ps-n"), [{ opacity: 0, transform: "scale(2.2) rotate(-12deg)" }, { opacity: 1, transform: "scale(.92) rotate(2deg)", offset: .6 }, { opacity: 1, transform: "none" }], { duration: 520, delay: at, easing: "cubic-bezier(.5,0,.6,1)" });
+entra(li.querySelector(".ap-ps-t"), at + 300, 12, 650);
 });
 },
 "t-conta": function(t, els){
@@ -1011,6 +1041,41 @@ if (!reduz.matches) anim(r, novo ? [{ opacity: 0, transform: "translateY(12px)" 
 rolaAte(t, r);
 });
 var bloqueiaClique = false;
+[].forEach.call(trilho.querySelectorAll("[data-visor]"), function(v){
+var ims = [].slice.call(v.querySelectorAll("img")), q = ims.length, k = 0;
+var ctl = d.createElement("div"); ctl.className = "ap-visor-ctl";
+ctl.innerHTML = '<button type="button" class="ap-visor-seta" aria-label="Tela anterior do carrossel"><svg aria-hidden="true"><use href="#i-ant"/></svg></button><span class="ap-visor-pontos" aria-hidden="true"></span><button type="button" class="ap-visor-seta" aria-label="Próxima tela do carrossel"><svg aria-hidden="true"><use href="#i-prox"/></svg></button>';
+v.after(ctl);
+var bts = ctl.querySelectorAll("button"), pts = ctl.querySelector(".ap-visor-pontos");
+ims.forEach(function(){ pts.appendChild(d.createElement("i")); });
+var esconde0 = null;
+function vis(js){ ims.forEach(function(im, j){ im.style.visibility = js.indexOf(j) >= 0 ? "visible" : "hidden"; }); }
+function poe(x, mexe){
+var antes = k; k = Math.max(0, Math.min(q - 1, x));
+clearTimeout(esconde0);
+var anima = mexe && !reduz.matches;
+vis(anima ? [antes, k, k - 1, k + 1] : [k]);
+if (anima) esconde0 = setTimeout(function(){ vis([k]); }, 480);
+ims.forEach(function(im, j){ im.style.transition = anima ? "transform .45s cubic-bezier(.16,1,.3,1)" : "none"; im.style.transform = "translateX(" + (j - k) * 100 + "%)"; im.setAttribute("aria-hidden", j === k ? "false" : "true"); im.tabIndex = j === k ? 0 : -1; });
+[].forEach.call(pts.children, function(p, j){ p.classList.toggle("atual", j === k); });
+some(bts[0], k === 0); some(bts[1], k === q - 1);
+}
+bts[0].addEventListener("click", function(){ poe(k - 1, true); });
+bts[1].addEventListener("click", function(){ poe(k + 1, true); });
+var x0 = null, dx = 0, larg = 1;
+v.addEventListener("pointerdown", function(e){ if (e.button) return; x0 = e.clientX; dx = 0; larg = v.getBoundingClientRect().width || 1; });
+v.addEventListener("pointermove", function(e){
+if (x0 === null) return; dx = e.clientX - x0;
+if (Math.abs(dx) > 6) { if (!v.hasPointerCapture(e.pointerId)) v.setPointerCapture(e.pointerId); clearTimeout(esconde0); vis([k - 1, k, k + 1]); ims.forEach(function(im, j){ im.style.transition = "none"; im.style.transform = "translateX(calc(" + (j - k) * 100 + "% + " + dx + "px))"; }); }
+});
+function solta(){ if (x0 === null) return; var foi = Math.abs(dx) > 6; x0 = null;
+if (foi) { bloqueiaClique = true; setTimeout(function(){ bloqueiaClique = false; }, 0); poe(k + (dx < -larg * .18 ? 1 : dx > larg * .18 ? -1 : 0), true); } }
+v.addEventListener("pointerup", solta); v.addEventListener("pointercancel", solta);
+[v, ctl].forEach(function(el){ el.addEventListener("keydown", function(e){
+if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); e.stopPropagation(); poe(k + (e.key === "ArrowRight" ? 1 : -1), true); }
+}); });
+poe(0, false);
+});
 var ampla = d.createElement("dialog"); ampla.className = "ap-ampla"; ampla.setAttribute("aria-label", "Imagem ampliada");
 var amplaImg = d.createElement("img"); amplaImg.alt = "";
 var fecha = d.createElement("button"); fecha.type = "button"; fecha.textContent = "Fechar";
